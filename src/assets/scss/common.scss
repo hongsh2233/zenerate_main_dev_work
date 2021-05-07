@@ -5,7 +5,7 @@
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box; /* Firefox, other Gecko */
   box-sizing: border-box; /* Opera/IE 8+ */
-  vertical-align: middle;
+  // vertical-align: middle;
   letter-spacing: -0.04em !important;
 }
 *:focus {
@@ -210,4 +210,21 @@ textarea {
 // Misc
 .hidden {
   display: none;
+}
+
+
+.hidden-desktop {
+  @include desktop {
+    display: none !important;
+  }
+}
+.hidden-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
 }

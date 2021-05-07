@@ -11,6 +11,7 @@ import '/Assets/scss/common.scss'
 import '/Assets/scss/transitions.scss'
 import '/Assets/scss/components.scss'
 import 'vue-slider-component/theme/default.css'
+import 'vue3-carousel/dist/carousel.css';
 
 
 createApp(App)

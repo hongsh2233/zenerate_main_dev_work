@@ -11,9 +11,8 @@
         </div>
       </div>
       <div class="column-insight">
-        <div class="insight-caption">인사이트</div>
+        <div class="insight-caption caption-large">인사이트</div>
         <div class="spacer"></div>
-        <div class="insight-date">August - December 2020</div>
         <div class="insight-items-wrapper">
           <div class="insight-item">
             <span class="item-title">-싹다 망할거라던 공유오피스</span>
@@ -64,6 +63,9 @@
       @include tablet {
         height: 436px;
       }
+      @include mobile {
+        max-width: 100%;
+      }
     }
   }
   .column-title {
@@ -75,6 +77,9 @@
     @include tablet {
       margin-bottom: 16px;
     }
+    @include mobile {
+      margin-bottom: 36px;
+    }
     .title-caption {
       color: $main;
       @include desktop {
@@ -83,31 +88,40 @@
       @include tablet {
         @include bold(16);
       }
+      @include mobile {
+        @include bold(16);
+      }
       margin-bottom: 12px;
     }
     .title-text {
+      padding-right: 36px;
       @include desktop {
         @include bold(68);
       }
       @include tablet {
         @include bold(40);
       }
+      @include mobile {
+        @include bold(24);
+      }
     }
   }
   .column-insight {
     flex: 2;
     width: 100%;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+    @include flex($dir: column, $justify: flex-end);
+
     .insight-caption {
       color: $main;
-      @include bold(24);
+      @include bold(32);
       margin-bottom: 12px;
     }
     .spacer {
       width: 100%;
       height: 0;
       border-bottom: solid 1px $main;
-      margin: 8px 0px;
+      margin: 12px 0px;
     }
     .insight-date {
       @include medium(24);
@@ -120,9 +134,15 @@
         @include flex($justify: space-between);
         .item-title {
           @include medium(20);
+          @include mobile {
+            @include medium(15);
+          }
         }
         .item-date {
           @include medium(20);
+          @include mobile {
+            @include medium(15);
+          }
         }
       }
     }
