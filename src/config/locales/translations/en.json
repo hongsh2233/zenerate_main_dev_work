@@ -1,0 +1,240 @@
+{
+  "header": {
+    "langButton": "KOR"
+  },
+  "footer": {
+    "CEO": "CEO Bongjai Shin",
+    "address": "Zenerate, 3F, 27, Dongil-ro 147-gil, Seoul, Republic of Korea"
+  },
+  "module": {
+    "column": {
+      "caption": "Column",
+      "title": "Interview: Architecture and Society No.33",
+      "contents": [
+        "CEO Bongjai Shin wrote about the current state of design automation. This article is about global trends and major software companies, the changing role of architects and so on."
+      ],
+      "insight": "Insights"
+    },
+    "explanation": {
+      "mainSlogan": "Zenerate all possibilities of building design to maximize your success",
+      "services": {
+        "summary": "In Spring 2020, architectural designer Bongjai Shin and Ph.D. in mathematics and A.I. developer Gahye Jeong co-founded their firm, Zenerate Inc., secured their seed funding from three venture capital firms, offering building design AI services to the Korea and US markets. They are pioneering a new path in the real estate development industry with unprecedented ways of transforming building design problems to mathematics and algorithm problems.",
+        "caption": "Consulting Service",
+        "types": {
+          "web": "Web Service",
+          "consulting": "Consulting Service"
+        },
+        "titles": [
+          "초기 사업성 검토",
+          "빌딩 디자인 AI 솔루션",
+          "적정가 분양가 산출"
+        ],
+        "contents": [
+          "대지에 적합한 다양한 빌딩 디자인 대안을 생성하여 제공함으로써 사용자가 쉽고 빠르게 사업성 평가",
+          "건물의 형태, 크기, 구성, 향, 조망 등을 고려한 수익극대화 대안 생성",
+          "실거래가 데이터에 기반하여 지역,층,향,조망. 건물의 유형 등을 고려한 분양가 산정"
+        ]
+      }
+    },
+    "fold": {
+      "company": {
+        "category": "Our Company",
+        "headers": {
+          "intro": "Introduction",
+          "timeline": "Timeline",
+          "team": "Team"
+        },
+        "contents": {
+          "intro": {
+            "title": [
+              "Our Vision"
+            ],
+            "contents": [
+              "In the era of artificial intelligence, how much more profit can we make if we use it for real estate development? Zenerate began with this question. We're pioneering a new path in the real estate development industry with unprecedented ways of transforming building design problems to mathematics and algorithm problems. Our building design AI solution will generate and analyze various scenarios to contribute to your real estate development business with the most profitable alternative. "
+            ],
+            "circle": [
+              "Innovation",
+              "Challenge",
+              "Unite"
+            ]
+          },
+          "timeline": {
+            "date": [
+              "2021. 03",
+              "2020. 12",
+              "2020. 12",
+              "2020. 11",
+              "2020. 10",
+              "2020. 09",
+              "2020. 08",
+              "2020. 07"
+            ],
+            "contents": [
+              "Selected for Startup Voucher",
+              "Selected for IBK Changong Mapo 6th Batch",
+              "3rd Prizer UKC 2020 startup Pitch Competition",
+              "3rd Prizer Innovative Tech Competiton",
+              "TIPS R&D Funding",
+              "Rookie League Startups at Comeup 2020",
+              "Data Voucher Prizer by K-Data",
+              "3rd Prizer at LH Public Data Startup Competiton"
+            ]
+          },
+          "team": {
+            "desc": [
+              "Our Team",
+              "Product Team",
+              "IT Team",
+              "Marketing Team"
+            ],
+            "work": [
+              "",
+              "Architectural Designer Computational Designer",
+              "AI Developer, Back-end Developer, Front-end Developer",
+              "Marketer & Graphic designer"
+            ]
+          }
+        }
+      },
+      "news": {
+        "category": "News",
+        "headers": {
+          "1": "1",
+          "2": "2",
+          "3": "3"
+        },
+        "contents": {
+          "1": {
+            "title": [
+              "Selected for Startup Voucher"
+            ],
+            "contents": [
+              "Zenerate has been selected as the finalist for Startup Voucher hosted by Korea International Trade Association. The Program aims at startups with less than 7 years in operation to support their global business expansion and marketing to buyers and investors. $40K at maximum will be awarded to the selected startups."
+            ]
+          },
+          "2": {
+            "title": [
+              "Signed Consulting Contract with Shin Young"
+            ],
+            "contents": [
+              "ShinYoung(developer) signed a consulting contract with Zenerate for a mixed-use project in Yongsan, Seoul. Zenerate will find the unit mix and unit layout solution for maximizing sales revenue of a residential tower and retail space. Additionally, appropriate sales prices will be projected through Zenerate’s AI solution."
+            ]
+          },
+          "3": {
+            "title": [
+              "Selected for IBK Changong Mapo 6th Batch "
+            ],
+            "contents": [
+              "Zenerate has been selected for Industrial bank of Korea(IBK)’s Changong Mapo(accelerator program). The selected startups will be supported by IBK in relation to angel investment, loan, venture capital as well as office space, mentoring, education, consulting, networking, marketing and promotion."
+            ]
+          }
+        }
+      },
+      "program": {
+        "category": "Program",
+        "headers": {
+          "consulting": "Consulting Service",
+          "websolution": "Web Solution"
+        },
+        "contents": {
+          "consulting": {
+            "title": [
+              "Building Design AI Solution",
+              "Revenue Estimation"
+            ],
+            "contents": [
+              "Providing alternatives considering site, massing, floor height, view, etc., and maximize profits of the client’s project.",
+              "Based on actual transaction data, our AI model learns how the price is decided in relation to area, floor, height, view, etc."
+            ]
+          },
+          "websolution": {
+            "title": [
+              "Profitability Evaluation"
+            ],
+            "contents": [
+              "By providing millions of building design alternatives with algorithms, users can easily example profitability of their projects."
+            ]
+          }
+        }
+      },
+      "contact": {
+        "category": "Contact",
+        "headers": {
+          "contact": "Contact us"
+        },
+        "contents": {
+          "contact": {
+            "title": [
+              "Feel Free to",
+              "Contact Us!"
+            ],
+            "contents": [
+              "Do you have any questions about us?",
+              "Please feel free to contact me."
+            ],
+            "button": "Contact"
+          }
+        }
+      }
+    },
+    "monthlyZenerate": {
+      "title": {
+        "desktop": "Monthly Zenerate",
+        "mobile": "Monthly Zenerate"
+      },
+      "caption": "Newsletter",
+      "contents": [
+        "Subscribe to receive exclusive contents about real estate development insights and our latest news! "
+      ],
+      "subscription": "Subscribe!"
+    },
+    "news": {
+      "caption": "News",
+      "date": [
+        "Dec 18 2020",
+        "Dec 18 2020",
+        "Dec 18 2020",
+        "Dec 18 2020",
+        "Dec 18 2020",
+        "Dec 18 2020",
+        "Dec 18 2020",
+        "Dec 18 2020",
+        "Dec 18 2020",
+        "Dec 18 2020"
+      ],
+      "contents": [
+        "Selected for IBK Changong Mapo 6th Batch.",
+        "Selected for IBK Changong Mapo 6th Batch.",
+        "Selected for IBK Changong Mapo 6th Batch.",
+        "Selected for IBK Changong Mapo 6th Batch.",
+        "Selected for IBK Changong Mapo 6th Batch.",
+        "Selected for IBK Changong Mapo 6th Batch.",
+        "Selected for IBK Changong Mapo 6th Batch.",
+        "Selected for IBK Changong Mapo 6th Batch.",
+        "Selected for IBK Changong Mapo 6th Batch.",
+        "Selected for IBK Changong Mapo 6th Batch."
+      ]
+    },
+    "partnership": {
+      "title": "Partnership",
+      "caption": "Inquiries",
+      "contents": [
+        "We has been partnering with various firms; real estate developers and investors, operation companies, design firms, general contractors."
+      ]
+    },
+    "program": {
+      "title": "How to use our service",
+      "caption": "Our Solutions",
+      "contents": [
+        "We provide AI-based building design solutions for real estate development. Depending on client’s needs, we can deliver various alternatives including the most efficient, profitable and/or cost-effective ones.",
+        "By exploring all possible design alternatives with algorithms, we maximize profits of your  development project."
+      ]
+    },
+    "team": {
+      "caption": "Our Team",
+      "contents": [
+        "In Spring 2020, architectural designer Bongjai Shin and Ph.D. in mathematics and A.I. developer Gahye Jeong co-founded their firm, Zenerate Inc."
+      ]
+    }
+  }
+}

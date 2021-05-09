@@ -3,18 +3,17 @@
     <div class="team-inner">
       <div class="team-title">
         <div class="title-caption caption-large">
-          <span>팀소개</span>
+          <span>{{ $t('module.team.caption') }}</span>
         </div>
         <div class="spacer"></div>
+        <div class="title-date">2017 - 2021</div>
         <div class="title-content">
-          2020년 5월, 건축디자이너 신봉재와 인공지능 개발자이자 수학박사인
-          정가혜가 공동 창업하여 현재 엔지니어, 디자이너 등 총 8명으로 구성되어
-          있습니다.
+          {{ $t('module.team.contents[0]') }}
         </div>
       </div>
       <div
         class="team-image"
-        style="background-image: url('/img/main_team.jpg')"
+        style="background-image: url('/img/main_team.png')"
       ></div>
     </div>
   </div>
@@ -42,20 +41,33 @@
   @include mobile {
     padding: 24px 0px;
     grid-template-areas:
-      'image'
-      'title';
+      'title'
+      'image';
   }
 
   .team-title {
     grid-area: title;
+    @include tablet {
+      height: 302px;
+      margin-top: auto;
+    }
+    .title-date {
+      @include desktop {
+        @include medium(15);
+        color: $grey-2;
+      }
+
+      margin-bottom: 28px;
+    }
     .title-content {
-      padding-right:12px;
-      @include medium(24);
+      padding-right: 12px;
+      @include medium(20);
       @include tablet {
-        @include medium(24);
+        @include medium(20);
       }
       @include mobile {
         @include medium(15);
+        margin-bottom: 24px;
       }
     }
   }
@@ -66,7 +78,8 @@
     background-position-y: top;
     background-size: cover;
     @include desktop {
-      height: 300px;
+      height: 266px;
+      margin-top: auto;
     }
     @include tablet {
       height: 360px;

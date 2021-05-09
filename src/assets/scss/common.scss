@@ -129,6 +129,10 @@ ul {
   padding: 0;
 }
 
+p {
+  margin: 0;
+}
+
 // Misc
 .fullsize {
   width: 100%;
@@ -211,7 +215,6 @@ textarea {
 .hidden {
   display: none;
 }
-
 
 .hidden-desktop {
   @include desktop {

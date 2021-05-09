@@ -1,45 +1,42 @@
 <template>
-  <div class="layout-module">
+  <div class="layout-main">
     <Header @toggleDrawer="toggleDrawer" />
-    <ModulePage></ModulePage>
-    <Footer></Footer>
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <div class="section-main">
+          <component :is="Component" />
+        </div>
+      </transition>
+    </router-view>
+    <Footer />
     <transition name="fade">
       <MenuDrawer v-show="showDrawer" @toggleDrawer="toggleDrawer" />
     </transition>
-
   </div>
 </template>
-
-<script setup lang="ts">
+<script lang="ts" setup>
 // @ts-ignore
-import Header from '/Components/Header.vue'
-// @ts-ignore
-import ModulePage from '/Pages/ModulePage.vue'
+import Header from '/Components/HeaderMain.vue'
 // @ts-ignore
 import Footer from '/Components/Footer.vue'
 // @ts-ignore
 import MenuDrawer from '/Components/MenuDrawer.vue'
-
-import { useI18n } from 'vue-i18n'
 import { ref } from '@vue/reactivity'
-const { t } = useI18n()
-
 const showDrawer = ref(false)
 
 const toggleDrawer = (flag) => {
   showDrawer.value = flag
 }
 </script>
-
 <style lang="scss" scoped>
-.layout-module {
+.layout-main {
   margin: 0px;
   width: 100%;
   @include desktop {
     width: 1280px;
     margin: 0px auto;
     padding: 0px 56px;
-    padding-top: 135px;
+    padding-top: 81px;
   }
   @include tablet {
     padding: 32px;
@@ -49,5 +46,10 @@ const toggleDrawer = (flag) => {
     padding: 28px;
     padding-top: 69px;
   }
+  // .section-main {
+  //   @include desktop {
+  //     margin-top: 81px;
+  //   }
+  // }
 }
 </style>

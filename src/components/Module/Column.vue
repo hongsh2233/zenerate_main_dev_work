@@ -5,14 +5,22 @@
         <img src="/img/main_left.jpg" alt="" class="thumb" />
       </div>
       <div class="column-title">
-        <div class="title-caption">칼럼 소식</div>
+        <div class="title-caption caption-large">
+          {{ $t('module.column.caption') }}
+        </div>
         <div class="title-text">
-          [건축과 사회] 2020년 33호 제너레잇 인터뷰 기고!
+          {{ $t('module.column.title') }}
+        </div>
+        <div class="title-detail">
+          {{ $t('module.column.contents[0]') }}
         </div>
       </div>
       <div class="column-insight">
-        <div class="insight-caption caption-large">인사이트</div>
+        <div class="insight-caption caption-large">
+          {{ $t('module.column.insight') }}
+        </div>
         <div class="spacer"></div>
+        <div class="insight-date">August - December 2020</div>
         <div class="insight-items-wrapper">
           <div class="insight-item">
             <span class="item-title">-싹다 망할거라던 공유오피스</span>
@@ -44,18 +52,23 @@
 .column-inner {
   width: 100%;
   height: 100%;
-  @include flex($dir: column, $justify: space-between);
+  @include flex($dir: column);
   @include desktop {
     padding-right: 24px;
   }
   @include tablet {
     padding-right: 12px;
+    padding-bottom: 41px;
   }
   .column-thumb {
-    flex: 3;
+    @include desktop {
+      height: 670px;
+    }
+    width: 100%;
+    overflow: hidden;
     margin-bottom: 24px;
+    text-align: center;
     .thumb {
-      max-width: 100%;
       margin: 0px auto;
       @include desktop {
         height: 670px;
@@ -64,12 +77,11 @@
         height: 436px;
       }
       @include mobile {
-        max-width: 100%;
+        height: 450px;
       }
     }
   }
   .column-title {
-    flex: 2;
     width: 100%;
     @include desktop {
       margin-bottom: 24px;
@@ -83,7 +95,7 @@
     .title-caption {
       color: $main;
       @include desktop {
-        @include bold(24);
+        margin-bottom: 24px;
       }
       @include tablet {
         @include bold(16);
@@ -94,9 +106,10 @@
       margin-bottom: 12px;
     }
     .title-text {
-      padding-right: 36px;
+      margin-bottom: 24px;
       @include desktop {
-        @include bold(68);
+        padding-right: 12px;
+        @include bold(48);
       }
       @include tablet {
         @include bold(40);
@@ -105,28 +118,34 @@
         @include bold(24);
       }
     }
+    .title-detail {
+      @include desktop {
+        @include medium(20);
+      }
+      @include tablet {
+        @include medium(20);
+      }
+      @include mobile {
+        @include medium(20);
+      }
+    }
   }
   .column-insight {
-    flex: 2;
     width: 100%;
-    margin-bottom: 24px;
+    margin-top: auto;
     @include flex($dir: column, $justify: flex-end);
+    @include desktop {
+      height: 315px;
+    }
 
     .insight-caption {
       color: $main;
-      @include bold(32);
-      margin-bottom: 12px;
     }
-    .spacer {
-      width: 100%;
-      height: 0;
-      border-bottom: solid 1px $main;
-      margin: 12px 0px;
-    }
+
     .insight-date {
-      @include medium(24);
+      @include medium(15);
       color: $grey-2;
-      margin-bottom: 16px;
+      margin-bottom: 28px;
     }
     .insight-items-wrapper {
       padding-right: 8px;
@@ -137,6 +156,7 @@
           @include mobile {
             @include medium(15);
           }
+          margin-bottom: 8px;
         }
         .item-date {
           @include medium(20);

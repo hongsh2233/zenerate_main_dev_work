@@ -2,19 +2,22 @@
   <div class="module-consulting-wrapper module-item-wrapper">
     <div class="consulting-inner">
       <div class="image-wrapper" :class="{ inactive: currentImage !== 1 }">
-        <img src="/img/main_service_1.png" />
+        <img :src="`/img/main_service${locale === 'en' ? '_en' : ''}_1.png`" />
       </div>
       <div class="image-wrapper" :class="{ inactive: currentImage !== 2 }">
-        <img src="/img/main_service_2.png" />
+        <img :src="`/img/main_service${locale === 'en' ? '_en' : ''}_2.png`" />
       </div>
       <div class="image-wrapper" :class="{ inactive: currentImage !== 3 }">
-        <img src="/img/main_service_3.png" />
+        <img :src="`/img/main_service${locale === 'en' ? '_en' : ''}_3.png`" />
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
+
 const currentImage = ref(1)
 const interval = ref(null)
 
@@ -42,6 +45,7 @@ onBeforeUnmount(() => {
   }
   @include tablet {
     padding-left: 12px;
+    margin-bottom: 24px;
   }
   .image-wrapper {
     flex: 1;
@@ -52,6 +56,7 @@ onBeforeUnmount(() => {
     }
     img {
       max-width: 100%;
+      max-height: 100%;
     }
     &.inactive {
       @include desktop {

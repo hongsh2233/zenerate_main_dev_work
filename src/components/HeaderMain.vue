@@ -1,8 +1,13 @@
 <template>
   <div class="header-wrapper">
     <div class="header-inner">
-      <div class="header-logo">
-        <img class="logo" src="/img/logo_color.png" alt="" />
+      <div class="header-logo hover-pointer" @click="router.push('/')">
+        <img
+          class="logo hidden-tablet hidden-mobile"
+          src="/img/logo_color.png"
+          alt=""
+        />
+        <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="" />
       </div>
       <div class="header-buttons-wrapper">
         <button class="button-lang" @click="setLocale(locale)">
@@ -29,6 +34,8 @@ const setLocale = (loc) => {
   locale.value = loc === 'ko' ? 'en' : 'ko'
 }
 
+import { useRouter } from 'vue-router'
+const router = useRouter()
 </script>
 <style lang="scss" scoped>
 .header-wrapper {
@@ -70,13 +77,13 @@ const setLocale = (loc) => {
         }
       }
       @include tablet {
-        width: 160px;
+        width: 24px;
         .logo {
           width: 100%;
         }
       }
       @include mobile {
-        width: 120px;
+        width: 18px;
         .logo {
           width: 100%;
         }

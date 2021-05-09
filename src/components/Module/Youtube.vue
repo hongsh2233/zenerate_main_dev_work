@@ -18,7 +18,8 @@
   width: 100%;
   height: 100%;
   @include desktop {
-    padding-bottom: 32px;
+    padding-bottom: 24px;
+    padding-left: 24px;
   }  
   @include tablet {
     padding: 24px 0px;

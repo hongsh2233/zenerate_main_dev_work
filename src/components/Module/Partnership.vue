@@ -1,17 +1,13 @@
 <template>
   <div class="module-partnership-wrapper module-item-wrapper">
     <div class="partnership-inner">
-      <div class="spacer hidden-mobile hidden-tablet"></div>
-      <div class="partnership-title">파트너쉽?</div>
-      <div class="spacer hidden-desktop"></div>
-      <div class="partnership-contact caption-small">문의하기</div>
+      <div class="partnership-title">{{ $t('module.partnership.title') }}</div>
+      <div class="partnership-contact caption-small">
+        {{ $t('module.partnership.caption') }}
+      </div>
+      <div class="spacer"></div>
       <div class="partnership-content">
-        <span
-          >현재 시행, 건축설계,건설, 부동산 개발과 운영에 관계된 여러 회사들이
-          사업수익의 극대화목표로 제너레잇과 협력하고 있습니다. 자세한
-          내용은</span
-        >
-        <span class="click hover-pointer">클릭</span> 해서 문의 해주세요.
+        <span>{{ $t('module.partnership.contents[0]') }} </span>
       </div>
     </div>
   </div>
@@ -22,6 +18,10 @@
   width: 100%;
   height: 100%;
   padding-top: 24px;
+  @include desktop {
+    padding: 40px 0px;
+    padding-left: 32px;
+  }
   @include tablet {
     padding-top: 48px;
     padding-left: 12px;
@@ -32,8 +32,8 @@
 
   .partnership-title {
     @include desktop {
-      @include medium(50);
-      margin-bottom: 24px;
+      @include medium(48);
+      margin-bottom: 32px;
     }
     @include tablet {
       @include medium(50);
@@ -46,10 +46,10 @@
   }
   .partnership-content {
     @include desktop {
-      @include medium(24);
+      @include medium(20);
     }
     @include tablet {
-      @include medium(24);
+      @include medium(20);
     }
 
     .click {
