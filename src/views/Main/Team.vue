@@ -2,7 +2,7 @@
   <div class="section-team">
     <div
       class="team-image"
-      style="background-image: url('/img/people_top.jpg')"
+      :style="{'background-image': `url('/img/team_${currentTab}.jpg')`}"
     ></div>
     <div class="team-contents">
       <div class="contents-title">제너레잇 팀</div>
@@ -49,10 +49,10 @@
             <div class="item-image noselect">
               <img :src="`/img/people/${member.img}.gif`" :alt="member.name" />
             </div>
-            <div class="item-name">{{ member.name }}</div>
+            <div class="item-name">{{ $t(member.name) }}</div>
             <div class="item-desc">{{ member.title }}</div>
             <div class="item-covered">
-              {{ member.comment }}
+              {{ $t(member.comment) }}
             </div>
           </div>
         </transition-group>
@@ -74,58 +74,58 @@ const toggleTab = (idx) => {
 
 const memberList = reactive([
   {
-    name: '신봉재',
+    name: 'main.team.name.sbj',
     title: 'CEO, Architectrual Designer',
-    comment: '모든 가능성으로 가득한 제너레잇을 만듭니다.',
+    comment: 'main.team.comment.sbj',
     img: 'sbj',
     team: 'product',
   },
   {
-    name: '정가혜',
+    name: 'main.team.name.jgh',
     title: 'CTO, AI Developer',
-    comment: '모든 가능성으로 가득한 제너레잇을 만듭니다.',
+    comment: 'main.team.comment.jgh',
     img: 'jgh',
     team: 'it',
   },
   {
-    name: '이학',
+    name: 'main.team.name.lh',
     title: 'Software Developer',
-    comment: '모든 가능성으로 가득한 제너레잇을 만듭니다.',
+    comment: 'main.team.comment.lh',
     img: 'lh',
     team: 'it',
   },
   {
-    name: '강연재',
+    name: 'main.team.name.kyj',
     title: 'Architectrual Designer',
-    comment: '모든 가능성으로 가득한 제너레잇을 만듭니다.',
+    comment: 'main.team.comment.kyj',
     img: 'kyj',
     team: 'product',
   },
   {
-    name: '유상훈',
+    name: 'main.team.name.ysh',
     title: 'AI Developer',
-    comment: '모든 가능성으로 가득한 제너레잇을 만듭니다.',
+    comment: 'main.team.comment.ysh',
     img: 'ysh',
     team: 'it',
   },
   {
-    name: '오범교',
+    name: 'main.team.name.obg',
     title: 'Web Developer',
-    comment: '모든 가능성으로 가득한 제너레잇을 만듭니다.',
+    comment: 'main.team.comment.obg',
     img: 'obg',
     team: 'it',
   },
   {
-    name: '이신후',
+    name: 'main.team.name.lsh',
     title: 'Computational Designer',
-    comment: '모든 가능성으로 가득한 제너레잇을 만듭니다.',
+    comment: 'main.team.comment.lsh',
     img: 'lsh',
     team: 'product',
   },
   {
-    name: '송우정',
+    name: 'main.team.name.swj',
     title: 'Graphic Designer',
-    comment: '모든 가능성으로 가득한 제너레잇을 만듭니다.',
+    comment: 'main.team.comment.swj',
     img: 'swj',
     team: 'marketing',
   },
@@ -193,7 +193,7 @@ const filteredMember = computed(() => {
       border-radius: 24px;
       .contents-item {
         @include relative;
-        background-color: #fbfbfb;
+        background-color: #fafafa;
         text-align: center;
         margin-bottom: 28px;
         padding: 24px;
@@ -215,6 +215,7 @@ const filteredMember = computed(() => {
           height: 0px;
           border: none;
           margin: 0;
+          padding: 0;
         }
         .item-image {
           margin: 0px auto;

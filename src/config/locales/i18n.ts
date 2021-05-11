@@ -3,6 +3,8 @@ import { createI18n } from 'vue-i18n'
 import tranEn from './translations/en.json'
 import tranKo from './translations/ko.json'
 
+import datetimeFormats from './datetimeFormats'
+
 const resources = {
   en: tranEn,
   ko: tranKo,
@@ -25,7 +27,10 @@ const i18n = createI18n({
   fallbackLocale: 'ko',
   messages: resources,
   globalInjection: true,
+  // @ts-ignore
+  datetimeFormats
 })
+
 
 export default i18n
 

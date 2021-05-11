@@ -23,17 +23,7 @@
         "types": {
           "web": "Web Service",
           "consulting": "Consulting Service"
-        },
-        "titles": [
-          "초기 사업성 검토",
-          "빌딩 디자인 AI 솔루션",
-          "적정가 분양가 산출"
-        ],
-        "contents": [
-          "대지에 적합한 다양한 빌딩 디자인 대안을 생성하여 제공함으로써 사용자가 쉽고 빠르게 사업성 평가",
-          "건물의 형태, 크기, 구성, 향, 조망 등을 고려한 수익극대화 대안 생성",
-          "실거래가 데이터에 기반하여 지역,층,향,조망. 건물의 유형 등을 고려한 분양가 산정"
-        ]
+        }
       }
     },
     "fold": {
@@ -236,5 +226,82 @@
         "In Spring 2020, architectural designer Bongjai Shin and Ph.D. in mathematics and A.I. developer Gahye Jeong co-founded their firm, Zenerate Inc."
       ]
     }
+  },
+  "main": {
+    "service": {
+      "title": "Services & Programs",
+      "types": {
+        "web": "Web Solution",
+        "consulting": "Consulting Service"
+      },
+      "chip": {
+        "web": "Web Solution",
+        "consulting": "Consulting"
+      },
+      "titles": [
+        "Profitability Evaluation",
+        "Building Design AI Solutions",
+        "Revenue Estimation"
+      ],
+      "contents": [
+        "By providing millions of building design alternatives with algorithms, users can easily examine profitability of their projects.",
+        "Zenerate provides all possible design alternatives considering site, massing, floor height, view, etc., and maximize profits of the client’s project.",
+        "Based on actual transaction data,  our A.I. model learns how the price is decided in relation to  area, floor, height, view, etc.. Then, it will price every single space properly in a new project."
+      ]
+    },
+    "contact": {
+      "title": [
+        "Feel Free to",
+        "Contact Us!"
+      ],
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "purpose": "Purpose",
+        "message": "Message",
+        "send": "Send",
+        "dropdown": {
+          "business": "Business",
+          "marketing": "Marketing",
+          "research": "Research",
+          "career": "Career",
+          "inquery": "Feedback"
+        }
+      }
+    },
+    "news": {
+      "link": "Links"
+    },
+    "team": {
+      "name": {
+        "sbj": "Bongjai Shin",
+        "jgh": "Gahye Jeong",
+        "lh": "Hak Lee",
+        "kyj": "Yeonjae Kang",
+        "ysh": "Sang-Hoon Yu",
+        "obg": "Beomgyo Oh",
+        "lsh": "Sinhoo Lee",
+        "swj": "Woojeong Song"
+      },
+      "comment": {
+        "sbj": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
+        "jgh": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
+        "lh": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
+        "kyj": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
+        "ysh": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
+        "obg": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
+        "lsh": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
+        "swj": "모든 가능성으로 가득한 제너레잇을 만듭니다."
+      }
+    }
+  },
+  "menu": {
+    "ourCompany": "Our Company",
+    "news": "News",
+    "service": "Service",
+    "contact": "Contact",
+    "intro": "Introduction",
+    "timeline": "Timeline",
+    "team": "Team"
   }
 }

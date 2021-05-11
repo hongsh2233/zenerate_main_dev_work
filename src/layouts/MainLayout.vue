@@ -1,6 +1,6 @@
 <template>
   <div class="layout-main">
-    <Header @toggleDrawer="toggleDrawer" />
+    <Header @toggleDrawer="toggleDrawer" :showDrawer="showDrawer" />
     <router-view v-slot="{ Component }">
       <transition name="fade">
         <div class="section-main">
@@ -10,7 +10,11 @@
     </router-view>
     <Footer />
     <transition name="fade">
-      <MenuDrawer v-show="showDrawer" @toggleDrawer="toggleDrawer" />
+      <MenuDrawer
+        v-show="showDrawer"
+        :showDrawer="showDrawer"
+        @toggleDrawer="toggleDrawer"
+      />
     </transition>
   </div>
 </template>

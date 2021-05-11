@@ -14,27 +14,41 @@
       <div class="menu-item">
         <div class="item-left">
           <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/about">회사소개</router-link>
+            <router-link @click="toggleDrawer(false)" to="/main/about">{{
+              $t('menu.ourCompany')
+            }}</router-link>
           </div>
           <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/news">새소식</router-link>
+            <router-link @click="toggleDrawer(false)" to="/main/news">{{
+              $t('menu.news')
+            }}</router-link>
           </div>
           <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/service">프로그램</router-link>
+            <router-link @click="toggleDrawer(false)" to="/main/service">{{
+              $t('menu.service')
+            }}</router-link>
           </div>
           <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/contact">문의</router-link>
+            <router-link @click="toggleDrawer(false)" to="/main/contact">{{
+              $t('menu.contact')
+            }}</router-link>
           </div>
         </div>
         <div class="item-right">
           <div class="right-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/about">소개</router-link>
+            <router-link @click="toggleDrawer(false)" to="/main/about">{{
+              $t('menu.intro')
+            }}</router-link>
           </div>
           <div class="right-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/timeline">연혁</router-link>
+            <router-link @click="toggleDrawer(false)" to="/main/timeline">{{
+              $t('menu.timeline')
+            }}</router-link>
           </div>
           <div class="right-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/team">조직도</router-link>
+            <router-link @click="toggleDrawer(false)" to="/main/team">{{
+              $t('menu.team')
+            }}</router-link>
           </div>
           <!-- <div class="right-link hover-pointer">
             <a href="">공시</a>
@@ -53,8 +67,6 @@ const emit = defineEmit(['toggleDrawer'])
 const toggleDrawer = (flag) => {
   emit('toggleDrawer', flag)
 }
-
-
 </script>
 <style lang="scss" scoped>
 .section-menu {
@@ -123,12 +135,12 @@ const toggleDrawer = (flag) => {
     }
 
     .item-left {
-      width: 240px;
+      width: 300px;
       margin-right: 120px;
 
       @include mobile {
-        width: 160px;
-        margin-right: 60px;
+        width: 172px;
+        margin-right: 24px;
       }
       .left-link {
         &:hover {
@@ -140,7 +152,7 @@ const toggleDrawer = (flag) => {
         }
         @include mobile {
           a {
-            @include medium(32);
+            @include medium(26);
           }
         }
       }
@@ -154,7 +166,7 @@ const toggleDrawer = (flag) => {
         a {
           @include medium(32);
           @include mobile {
-            font-size: 24px;
+            font-size: 18px;
           }
         }
       }

@@ -1,12 +1,11 @@
 <template>
   <div class="layout-module">
-    <Header @toggleDrawer="toggleDrawer" />
+    <Header @toggleDrawer="toggleDrawer" :showDrawer="showDrawer" />
     <ModulePage></ModulePage>
     <Footer></Footer>
     <transition name="fade">
       <MenuDrawer v-show="showDrawer" @toggleDrawer="toggleDrawer" />
     </transition>
-
   </div>
 </template>
 
@@ -27,6 +26,7 @@ const { t } = useI18n()
 const showDrawer = ref(false)
 
 const toggleDrawer = (flag) => {
+  console.log(flag)
   showDrawer.value = flag
 }
 </script>

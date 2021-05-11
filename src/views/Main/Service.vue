@@ -2,14 +2,14 @@
   <section class="section-main-service">
     <div class="service-container">
       <div class="service-title">
-        <div class="title-text">서비스 라인업</div>
+        <div class="title-text">{{ $t('main.service.title') }}</div>
         <div class="title-tab">
           <div
             class="tab-item hover-pointer"
             :class="{ active: serviceTab === 'consulting' }"
             @click="toggleServiceTab('consulting')"
           >
-            컨설팅 서비스
+            {{ $t('main.service.types.consulting') }}
           </div>
           <div class="horizontal-spacer"></div>
           <div
@@ -17,7 +17,7 @@
             :class="{ active: serviceTab === 'websolution' }"
             @click="toggleServiceTab('websolution')"
           >
-            웹 솔루션
+            {{ $t('main.service.types.web') }}
           </div>
         </div>
       </div>
@@ -29,11 +29,14 @@
                 <img :src="`/img/program_${i}.png`" alt="" />
               </div>
               <div class="item-explnation">
-                <div class="explnation-chip">컨설팅</div>
-                <div class="explnation-title">초기 사업성 검토</div>
+                <div class="explnation-chip">
+                  {{ $t('main.service.chip.consulting') }}
+                </div>
+                <div class="explnation-title">
+                  {{ $t(`main.service.titles[${i - 1}]`) }}
+                </div>
                 <div class="explnation-content">
-                  대지에 적합한 다양한 빌딩 디자인 대안을 생성하여 제공함으로써
-                  사용자가 쉽고 빠르게 사업성 평가
+                  {{ $t(`main.service.contents[${i - 1}]`) }}
                 </div>
               </div>
             </div>
@@ -51,11 +54,14 @@
                 <img :src="`/img/program_${3}.png`" alt="" />
               </div>
               <div class="item-explnation">
-                <div class="explnation-chip">웹 솔루션</div>
-                <div class="explnation-title">초기 사업성 검토</div>
+                <div class="explnation-chip">
+                  {{ $t('main.service.chip.web') }}
+                </div>
+                <div class="explnation-title">
+                  {{ $t(`main.service.titles[2]`) }}
+                </div>
                 <div class="explnation-content">
-                  대지에 적합한 다양한 빌딩 디자인 대안을 생성하여 제공함으로써
-                  사용자가 쉽고 빠르게 사업성 평가
+                  {{ $t(`main.service.contents[2]`) }}
                 </div>
               </div>
             </div>
@@ -168,13 +174,13 @@ const toggleServiceTab = (tab) => {
           @include bold(24);
           margin-bottom: 12px;
           @include mobile {
-            font-size: 20px
+            font-size: 20px;
           }
         }
         .explanation-content {
           @include medium(15);
           @include mobile {
-            font-size: 12px
+            font-size: 12px;
           }
         }
       }

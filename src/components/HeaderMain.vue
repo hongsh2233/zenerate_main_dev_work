@@ -13,8 +13,10 @@
         <button class="button-lang" @click="setLocale(locale)">
           <span>{{ t('header.langButton') }}</span>
         </button>
-        <button class="button-menu" @click="toggleDrawer(true)">
-          <i class="material-icons">menu</i>
+        <button class="button-menu" @click="toggleDrawer">
+          <i class="material-icons">
+            {{ props.showDrawer ? 'close' : 'menu' }}
+          </i>
         </button>
       </div>
     </div>
@@ -23,11 +25,15 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n()
+import { defineEmit, defineProps } from 'vue'
 
-import { defineEmit } from 'vue'
+const props = defineProps({
+  showDrawer: Boolean,
+})
+
 const emit = defineEmit(['toggleDrawer'])
-const toggleDrawer = (flag) => {
-  emit('toggleDrawer', flag)
+const toggleDrawer = () => {
+  emit('toggleDrawer', !props.showDrawer)
 }
 
 const setLocale = (loc) => {
@@ -43,7 +49,7 @@ const router = useRouter()
   top: 0;
   left: 0;
   background: white;
-  z-index: 100;
+  z-index: 1000;
   width: 100%;
   @include desktop {
     height: 81px;

@@ -4,12 +4,12 @@
     <div class="input-select hover-pointer" @click="toggleDropDown()">
       <span
         :class="{
-          selected: props.selected && props.selected.length > 0,
-          placholder: !props.selected || props.selected.length === 0,
+          selected: props.selected,
+          placholder: !props.selected,
         }"
         >{{
-          props.selected && props.selected.length > 0
-            ? props.selected
+          props.selected
+            ? $t(props.selected.label)
             : props.placeholder || 'Select'
         }}</span
       >
@@ -22,10 +22,10 @@
         <div
           class="input-select-dropdown-item hover-pointer"
           v-for="(item, idx) in props.items"
-          @click="onSelect(item.value)"
+          @click="onSelect(item)"
           :key="idx"
         >
-          <span>{{ item.value }}</span>
+          <span>{{ $t(item.label) }}</span>
         </div>
       </div>
     </transition>
@@ -46,23 +46,21 @@ const props = defineProps({
     },
   },
   selected: {
-    type: String,
-    defualt() {
-      return ''
-    },
+    type: Object,
+    required: false,
   },
 })
 
 const emit = defineEmit(['onSelect'])
 
 const onSelect = (value) => {
+  console.log(value)
   emit('onSelect', value)
   toggleDropDown(false)
 }
 
 const showDropdown = ref(false)
 const toggleDropDown = (flag) => {
-  console.log(flag)
   if (flag != null) {
     showDropdown.value = flag
   } else {

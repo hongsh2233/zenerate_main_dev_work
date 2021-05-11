@@ -10,7 +10,7 @@
       >
         <div class="item-title">Zenerate News No. {{ i }}</div>
         <div class="item-content">
-          <div class="content-date">2021년 3월 5일</div>
+          <div class="content-date">{{ $d(new Date(), 'short') }}</div>
           <div class="content-title">스타트업 해외진출 바우처 선정</div>
         </div>
       </div>
@@ -40,7 +40,9 @@
         <div class="item-title">
           <span>신영그룹과 컨설팅 계약 체결</span>
         </div>
-        <div class="item-date"></div>
+        <div class="item-date">
+          <p>{{ $d(new Date(), 'short') }}</p>
+        </div>
         <div class="item-content">
           <p>
             부동산 디벨로퍼 신영그룹과 제너레잇이 용산구의 한 개발사업에 대한
@@ -51,7 +53,7 @@
           </p>
         </div>
         <div class="item-links">
-          <p class="link-title">기사 링크</p>
+          <p class="link-title">{{ $t('main.news.link') }}</p>
           <a
             href="https://n.news.naver.com/article/008/0004531402"
             class="link-content"
@@ -120,6 +122,7 @@ onMounted(() => {
         height: 0px;
         border: none;
         margin: 0;
+        margin-right: 8px;
       }
       .item-title {
         height: 100px;
@@ -205,6 +208,17 @@ onMounted(() => {
         @include mobile {
           font-size: 20px;
         }
+      }
+    }
+    .item-date {
+      margin-bottom: 16px;
+      text-align: right;
+      p {
+        @include medium(16);
+        @include mobile {
+          font-size: 12px;
+        }
+        color: white;
       }
     }
     .item-content {

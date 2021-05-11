@@ -2,35 +2,39 @@
   <section class="section-main-contact">
     <div class="contact-container">
       <div class="contact-title">
-        <p>무엇이든</p>
-        <p>문의해주세요!</p>
+        <p>{{ $t('main.contact.title[0]') }}</p>
+        <p>{{ $t('main.contact.title[1]') }}</p>
       </div>
       <div class="contact-form">
         <div class="label-text">
-          <input type="text" placeholder="이름" v-model="contactForm.name" />
+          <input
+            type="text"
+            :placeholder="$t('main.contact.form.name')"
+            v-model="contactForm.name"
+          />
         </div>
         <div class="label-text">
           <input
             type="text"
-            placeholder="메일주소"
+            :placeholder="$t('main.contact.form.email')"
             v-model="contactForm.email"
           />
         </div>
         <SelectInput
-          placeholder="문의목적"
+          :placeholder="$t('main.contact.form.purpose')"
           :items="items"
           :selected="contactForm.purpose"
           @onSelect="(v) => (contactForm.purpose = v)"
         />
         <div class="label-textarea">
           <textarea
-            placeholder="메세지"
+            :placeholder="$t('main.contact.form.message')"
             v-model="contactForm.message"
             rows="7"
           />
         </div>
         <div class="contact-send">
-          <span>보내기</span>
+          <span>{{ $t('main.contact.form.send') }}</span>
         </div>
       </div>
     </div>
@@ -44,36 +48,42 @@ import SelectInput from '/Components/SelectInput.vue'
 type Item = {
   id: number
   value: string
+  label: string
   ref?: string
 }
 
 const items: Item[] = [
   {
     id: 0,
-    value: '사업',
+    value: 'business',
+    label: 'main.contact.form.dropdown.business',
   },
   {
     id: 1,
-    value: '마케팅',
+    value: 'marketing',
+    label: 'main.contact.form.dropdown.marketing',
   },
   {
     id: 2,
-    value: '연구',
+    value: 'research',
+    label: 'main.contact.form.dropdown.research',
   },
   {
     id: 3,
-    value: '구직',
+    value: 'career',
+    label: 'main.contact.form.dropdown.career',
   },
   {
     id: 4,
-    value: '문의',
+    value: 'inquery',
+    label: 'main.contact.form.dropdown.inquery',
   },
 ]
 
 const contactForm = reactive({
   name: '',
   email: '',
-  purpose: '',
+  purpose: null,
   message: '',
 })
 </script>
