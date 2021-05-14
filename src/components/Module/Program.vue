@@ -17,7 +17,7 @@
     </div>
   </div>
 </template>
-<script lang="ts" scoped></script>
+<script lang="ts" setup></script>
 <style lang="scss" scoped>
 .program-inner {
   width: 100%;
