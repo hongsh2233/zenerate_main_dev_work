@@ -2,7 +2,7 @@
   <div class="module-team-wrapper module-item-wrapper">
     <div class="team-inner">
       <div class="team-title">
-        <div class="title-caption caption-large">
+        <div class="title-caption caption-large hover-pointer" @click="router.push('/main/team')">
           <span>{{ $t('module.team.caption') }}</span>
         </div>
         <div class="spacer"></div>
@@ -18,7 +18,10 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import {useRouter} from 'vue-router'
+const router = useRouter()
+</script>
 <style lang="scss" scoped>
 .team-inner {
   padding-top: 24px;

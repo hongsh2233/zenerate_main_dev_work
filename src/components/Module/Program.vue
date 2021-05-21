@@ -2,7 +2,7 @@
   <div class="module-program-wrapper module-item-wrapper">
     <div class="program-inner">
       <div class="program-title">{{ $t('module.program.title') }}</div>
-      <div class="program-caption caption-small">
+      <div class="program-caption caption-small hover-pointer" @click="router.push('/main/service')">
         {{ $t('module.program.caption') }}
       </div>
       <div class="spacer"></div>
@@ -17,7 +17,10 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import {useRouter} from "vue-router"
+const router = useRouter()
+</script>
 <style lang="scss" scoped>
 .program-inner {
   width: 100%;

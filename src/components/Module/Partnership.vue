@@ -2,7 +2,7 @@
   <div class="module-partnership-wrapper module-item-wrapper">
     <div class="partnership-inner">
       <div class="partnership-title">{{ $t('module.partnership.title') }}</div>
-      <div class="partnership-contact caption-small">
+      <div class="partnership-contact caption-small hover-pointer" @click="router.push('/main/contact')">
         {{ $t('module.partnership.caption') }}
       </div>
       <div class="spacer"></div>
@@ -12,7 +12,10 @@
     </div>
   </div>
 </template>
-<script lang="ts" scoped></script>
+<script lang="ts" setup>
+import {useRouter} from "vue-router"
+const router = useRouter()
+</script>
 <style lang="scss" scoped>
 .partnership-inner {
   width: 100%;

@@ -273,6 +273,13 @@
       "link": "Links"
     },
     "team": {
+      "title": "Zenerate Team",
+      "menu": {
+        "zenerate": "Zenerate",
+        "marketing": "Marketing",
+        "product": "Product",
+        "it": "IT"
+      },
       "name": {
         "sbj": "Bongjai Shin",
         "jgh": "Gahye Jeong",
@@ -283,15 +290,25 @@
         "lsh": "Sinhoo Lee",
         "swj": "Woojeong Song"
       },
+      "job": {
+        "sbj": "CEO, Architectrual Designer",
+        "jgh": "CTO, AI Developer",
+        "lh": "Software Engineer",
+        "kyj": "Architectrual Designer",
+        "ysh": "AI Developer",
+        "obg": "Web Developer",
+        "lsh": "Computational Designer",
+        "swj": "Graphic Designer"
+      },
       "comment": {
-        "sbj": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
-        "jgh": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
-        "lh": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
-        "kyj": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
-        "ysh": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
+        "sbj": "It all depends on how we look at it",
+        "jgh": "Focus on signal over noise",
+        "lh": "git push --force origin HEAD",
+        "kyj": "Expansion through integration",
+        "ysh": "Likes: dogs, math and Python",
         "obg": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
-        "lsh": "모든 가능성으로 가득한 제너레잇을 만듭니다.",
-        "swj": "모든 가능성으로 가득한 제너레잇을 만듭니다."
+        "lsh": "Connect Architecture and Codes",
+        "swj": "Make it simple, but significant"
       }
     }
   },

@@ -31,7 +31,7 @@
         </p>
       </div>
       <div class="contact-link">
-        <button>
+        <button @click="router.push('/main/contact')">
           {{ $t('module.fold.contact.contents.contact.button') }}
         </button>
       </div>
@@ -44,10 +44,15 @@ const props = defineProps({
   active: Boolean,
   classProp: String,
 })
+import {useRouter} from "vue-router"
+
 const contactTab = ref('contact')
 const toggleContactTab = (idx) => {
   contactTab.value = idx
 }
+
+const router = useRouter()
+
 </script>
 
 <style lang="scss" scoped></style>

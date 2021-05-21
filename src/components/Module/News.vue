@@ -1,7 +1,7 @@
 <template>
   <div class="module-news-wrapper module-item-wrapper">
     <div class="news-inner">
-      <div class="news-caption caption-large">
+      <div class="news-caption caption-large hover-pointer" @click="router.push('/main/news')">
         {{ $t('module.news.caption') }}
       </div>
       <div class="spacer"></div>
@@ -50,6 +50,8 @@
 </template>
 <script lang="ts" setup>
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import {useRouter} from "vue-router"
+const router = useRouter()
 </script>
 <style lang="scss" scoped>
 .news-inner {

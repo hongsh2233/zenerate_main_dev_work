@@ -2,17 +2,17 @@
   <div class="section-team">
     <div
       class="team-image"
-      :style="{'background-image': `url('/img/team_${currentTab}.jpg')`}"
+      :style="{ 'background-image': `url('/img/team_${currentTab}.jpg')` }"
     ></div>
     <div class="team-contents">
-      <div class="contents-title">제너레잇 팀</div>
+      <div class="contents-title">{{ $t('main.team.title') }}</div>
       <div class="contents-tab-wrapper">
         <div
           class="contents-tab hover-pointer"
           :class="{ active: currentTab === 'all' }"
           @click="toggleTab('all')"
         >
-          제너레잇
+          {{ $t('main.team.menu.zenerate') }}
         </div>
         <div class="horizontal-spacer"></div>
         <div
@@ -20,7 +20,7 @@
           :class="{ active: currentTab === 'marketing' }"
           @click="toggleTab('marketing')"
         >
-          마케팅
+          {{ $t('main.team.menu.marketing') }}
         </div>
         <div class="horizontal-spacer"></div>
         <div
@@ -28,7 +28,7 @@
           :class="{ active: currentTab === 'product' }"
           @click="toggleTab('product')"
         >
-          프로덕트
+          {{ $t('main.team.menu.product') }}
         </div>
         <div class="horizontal-spacer"></div>
         <div
@@ -36,7 +36,7 @@
           :class="{ active: currentTab === 'it' }"
           @click="toggleTab('it')"
         >
-          IT
+          {{ $t('main.team.menu.it') }}
         </div>
       </div>
       <div class="contents-item-wrapper">
@@ -50,7 +50,7 @@
               <img :src="`/img/people/${member.img}.gif`" :alt="member.name" />
             </div>
             <div class="item-name">{{ $t(member.name) }}</div>
-            <div class="item-desc">{{ member.title }}</div>
+            <div class="item-desc">{{ $t(member.title) }}</div>
             <div class="item-covered">
               {{ $t(member.comment) }}
             </div>
@@ -75,56 +75,56 @@ const toggleTab = (idx) => {
 const memberList = reactive([
   {
     name: 'main.team.name.sbj',
-    title: 'CEO, Architectrual Designer',
+    title: 'main.team.job.sbj',
     comment: 'main.team.comment.sbj',
     img: 'sbj',
     team: 'product',
   },
   {
     name: 'main.team.name.jgh',
-    title: 'CTO, AI Developer',
+    title: 'main.team.job.jgh',
     comment: 'main.team.comment.jgh',
     img: 'jgh',
     team: 'it',
   },
   {
     name: 'main.team.name.lh',
-    title: 'Software Developer',
+    title: 'main.team.job.lh',
     comment: 'main.team.comment.lh',
     img: 'lh',
     team: 'it',
   },
   {
     name: 'main.team.name.kyj',
-    title: 'Architectrual Designer',
+    title: 'main.team.job.kyj',
     comment: 'main.team.comment.kyj',
     img: 'kyj',
     team: 'product',
   },
   {
     name: 'main.team.name.ysh',
-    title: 'AI Developer',
+    title: 'main.team.job.ysh',
     comment: 'main.team.comment.ysh',
     img: 'ysh',
     team: 'it',
   },
   {
     name: 'main.team.name.obg',
-    title: 'Web Developer',
+    title: 'main.team.job.obg',
     comment: 'main.team.comment.obg',
     img: 'obg',
     team: 'it',
   },
   {
     name: 'main.team.name.lsh',
-    title: 'Computational Designer',
+    title: 'main.team.job.lsh',
     comment: 'main.team.comment.lsh',
     img: 'lsh',
     team: 'product',
   },
   {
     name: 'main.team.name.swj',
-    title: 'Graphic Designer',
+    title: 'main.team.job.swj',
     comment: 'main.team.comment.swj',
     img: 'swj',
     team: 'marketing',
