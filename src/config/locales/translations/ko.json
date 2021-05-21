@@ -303,5 +303,8 @@
     "intro": "소개",
     "timeline": "연혁",
     "team": "조직도"
+  },
+  "about": {
+    "allPossibilities": "모든 가능성을"
   }
 }
