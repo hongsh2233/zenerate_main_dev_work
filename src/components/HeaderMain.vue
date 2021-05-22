@@ -9,11 +9,60 @@
         />
         <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="" />
       </div>
+      <div
+        class="header-navigation-wrapper hidden-mobile hidden-tablet"
+        @mouseleave="setMenuHovered(null)"
+      >
+        <div class="navigation-main">
+          <div
+            class="navigation-main-item hover-pointer"
+            @click="router.push('/main/about')"
+            @mouseover="setMenuHovered(true)"
+          >
+            {{ $t('menu.ourCompany') }}
+          </div>
+          <div
+            class="navigation-main-item hover-pointer"
+            @click="router.push('/main/news')"
+            @mouseover="setMenuHovered(false)"
+          >
+            {{ $t('menu.news') }}
+          </div>
+          <div
+            class="navigation-main-item hover-pointer"
+            @click="router.push('/main/service')"
+            @mouseover="setMenuHovered(false)"
+          >
+            {{ $t('menu.service') }}
+          </div>
+          <div
+            class="navigation-main-item hover-pointer"
+            @click="router.push('/main/contact')"
+            @mouseover="setMenuHovered(false)"
+          >
+            {{ $t('menu.contact') }}
+          </div>
+        </div>
+        <div class="navigation-sub" v-show="isMenuHovered">
+          <div
+            class="navigation-sub-item hover-pointer"
+            @click="router.push('/main/about')"
+          >
+            {{ $t('menu.timeline') }}
+          </div>
+          <div
+            class="navigation-sub-item hover-pointer"
+            @click="router.push('/main/team')"
+          >
+            {{ $t('menu.team') }}
+          </div>
+        </div>
+      </div>
       <div class="header-buttons-wrapper">
         <button class="button-lang" @click="setLocale(locale)">
           <span>{{ t('header.langButton') }}</span>
         </button>
-        <button class="button-menu" @click="toggleDrawer">
+        <button class="button-menu hidden-desktop" @click="toggleDrawer">
           <i class="material-icons">
             {{ props.showDrawer ? 'close' : 'menu' }}
           </i>
@@ -25,7 +74,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n()
-import { defineEmit, defineProps } from 'vue'
+import { defineEmit, defineProps, ref } from 'vue'
 
 const props = defineProps({
   showDrawer: Boolean,
@@ -38,6 +87,11 @@ const toggleDrawer = () => {
 
 const setLocale = (loc) => {
   locale.value = loc === 'ko' ? 'en' : 'ko'
+}
+
+const isMenuHovered = ref(false)
+const setMenuHovered = (flag) => {
+  isMenuHovered.value = flag
 }
 
 import { useRouter } from 'vue-router'
@@ -92,6 +146,38 @@ const router = useRouter()
         width: 18px;
         .logo {
           width: 100%;
+        }
+      }
+    }
+    .header-navigation-wrapper {
+      flex: 1;
+      height: 80px;
+      @include relative;
+      margin: 16px 48px;
+      .navigation-main {
+        @include flex($justify: space-between);
+        .navigation-main-item {
+          width: 192px;
+          height: 48px;
+          @include flex($justify: center);
+          align-items: center;
+          border-bottom: solid 2px transparent;
+          &:hover {
+            border-bottom-color: $main;
+          }
+        }
+      }
+      .navigation-sub {
+        @include flex;
+        @include absolute(top 56px left 48px);
+        .navigation-sub-item {
+          margin-right: 24px;
+          width: 60px;
+          height: 20px;
+          @include medium(15);
+          &:hover {
+            font-weight: $bold;
+          }
         }
       }
     }

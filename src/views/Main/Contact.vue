@@ -33,8 +33,14 @@
             rows="7"
           />
         </div>
-        <div class="contact-send">
-          <span>{{ $t('main.contact.form.send') }}</span>
+        <div class="contact-send" @click="sendEmail">
+          <span>{{
+            $t(
+              sendEmailStatus
+                ? 'main.contact.form.sent'
+                : 'main.contact.form.send'
+            )
+          }}</span>
         </div>
       </div>
     </div>
@@ -42,8 +48,11 @@
 </template>
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
+import ApiService from '/Services/api'
 // @ts-ignore
 import SelectInput from '/Components/SelectInput.vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 type Item = {
   id: number
@@ -79,6 +88,7 @@ const items: Item[] = [
     label: 'main.contact.form.dropdown.inquery',
   },
 ]
+const sendEmailStatus = ref(false)
 
 const contactForm = reactive({
   name: '',
@@ -86,6 +96,16 @@ const contactForm = reactive({
   purpose: null,
   message: '',
 })
+
+const sendEmail = async () => {
+  if (sendEmailStatus.value == true) return
+  const payload = {
+    ...contactForm,
+    purpose: t(contactForm.purpose.label),
+  }
+  await ApiService.SEND_EMAIL(payload)
+  sendEmailStatus.value = true
+}
 </script>
 <style lang="scss" scoped>
 .section-main-contact {

@@ -260,6 +260,7 @@
         "purpose": "Purpose",
         "message": "Message",
         "send": "Send",
+        "sent": "Your inquery has been submitted. Thank you",
         "dropdown": {
           "business": "Business",
           "marketing": "Marketing",
@@ -322,6 +323,10 @@
     "team": "Team"
   },
   "about": {
-    "allPossibilities": "All Possibilities"
+    "allPossibilities": "All Possibilities",
+    "comment": [
+      "By converting design issues into mathematical and algorithmic problems, Zenerate finds the most optimized solution.",
+      "Zenerate disrupts real estate development industries with our AI solutions."
+    ]
   }
 }

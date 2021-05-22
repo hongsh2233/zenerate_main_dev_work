@@ -10,6 +10,9 @@ import News from '/Views/Main/News.vue'
 import Company from '/Views/Main/Company.vue'
 import Timeline from '/Views/Main/Timeline.vue'
 import Team from '/Views/Main/Team.vue'
+import NewsList from "/Views/Admin/NewsList.vue"
+import NewsEdit from "/Views/Admin/NewsEdit.vue"
+
 
 const routes: Array<any> = [
   {
@@ -58,6 +61,17 @@ const routes: Array<any> = [
         name: 'Team',
         component: Team,
       },
+      {
+        path: "admin",
+        name: "NewsList",
+        component: NewsList
+      },
+      {
+        path: "admin/edit/:id?",
+        name: "NewsEdit",
+        component: NewsEdit,
+        props: true
+      }
     ],
   },
 ]

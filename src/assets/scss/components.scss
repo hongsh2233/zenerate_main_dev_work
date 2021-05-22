@@ -50,8 +50,7 @@
       height: 60px;
     }
     @include mobile {
-
-    };
+    }
   }
 }
 
@@ -60,4 +59,50 @@
 .carousel__track,
 .carousel__slide {
   height: 100% !important;
+}
+
+.swal2-popup.swal-popup-desc {
+  background-color: $white-2;
+}
+
+.swal2-title.swal-title-desc {
+  font-size: 36px;
+  color: $main;
+}
+
+.swal2-content.swal-content-desc {
+  background: white;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+
+.swal2-popup.swal-popup-done {
+  background-color: $main;
+  color: white;
+  width: 360px;
+  padding: 36px;
+}
+
+.swal2-title.swal-title-done {
+  font-size: 32px;
+  color: $white;
+  margin-bottom: 32px;
+}
+
+.swal2-content.swal-content-done {
+  max-height: 250px;
+  overflow-y: auto;
+  color: white;
+  padding: 0px 24px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.swal2-styled.swal2-confirm.swal-confirm-done {
+  background-color: white;
+  color: $text-darken;
+  width: 80px;
+  height: 32px;
+  padding: 0;
 }
