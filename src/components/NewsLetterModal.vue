@@ -1,9 +1,6 @@
 <template>
   <Teleport to="body">
-    <div
-      class="newsletter-modal-wrapper"
-      :style="{ 'padding-top': locale == 'ko' ? '44px' : '20px' }"
-    >
+    <div class="newsletter-modal-wrapper">
       <div class="letter-buttons-wrapper">
         <button class="close" @click="close">
           <i class="material-icons">close</i>
@@ -22,7 +19,7 @@
           $t('newsletter.submit')
         }}</span>
       </div>
-      <div class="letter-allow">
+      <!-- <div class="letter-allow">
         <label
           for=""
           class="label-check hover-pointer"
@@ -35,7 +32,7 @@
         <span class="see hover-pointer" @click="toggleEmailDesc">{{
           $t('newsletter.description')
         }}</span>
-      </div>
+      </div> -->
     </div>
   </Teleport>
 </template>
@@ -52,7 +49,7 @@ const close = () => {
 }
 
 const emailForm = ref({
-  allow: false,
+  allow: true,
   email_address: '',
 })
 const toggleAllow = (flag) => {
@@ -84,8 +81,7 @@ const toggleEmailDesc = () => {
 const submit = async () => {
   console.log(emailForm.value)
   if (!emailForm.value.allow) return
-  const emailRegex =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   console.log(emailRegex.test(emailForm.value.email_address))
   if (!emailRegex.test(emailForm.value.email_address)) return
   ApiService.SUBSCRIBE(emailForm.value).then((res) => {
@@ -111,20 +107,20 @@ const submit = async () => {
   z-index: 1059;
   right: 16px;
   @include mobile {
-    right: calc((100vw - 360px) / 2);
-    left: calc((100vw - 360px) / 2);
+    right: calc((100vw - 348px) / 2);
+    left: calc((100vw - 348px) / 2);
   }
   @include desktop {
     right: MAX(0.1px, calc((100vw - 1296px) / 2));
   }
   top: 80px;
-  width: 360px;
-  height: 180px;
+  width: 348px;
+  height: 148px;
   border-radius: 12px;
   @include border-set(1px, $fogged, 12px);
   background: $main;
   color: white;
-  padding: 44px 36px;
+  padding: 24px 32px;
   .letter-buttons-wrapper {
     width: 100%;
     text-align: right;
@@ -157,6 +153,7 @@ const submit = async () => {
       background: transparent;
       color: white;
       width: 100%;
+      border-radius: 0px;
       &::placeholder {
         color: $fogged;
       }

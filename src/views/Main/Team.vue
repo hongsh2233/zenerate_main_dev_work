@@ -51,24 +51,32 @@
             </div>
             <div class="item-name">{{ $t(member.name) }}</div>
             <div class="item-desc">{{ $t(member.title) }}</div>
+            <div class="item-icons plain">
+              <a
+                :href="member.linkedin"
+                class="icon-linkedin"
+                v-if="member.linkedin"
+              >
+                <img src="/img/logo_linkedin.svg" alt="" />
+              </a>
+              <a :href="member.github" class="icon-github" v-if="member.github">
+                <img src="/img/logo_github.svg" alt="" />
+              </a>
+            </div>
+            <div class="item-icons hovered">
+              <a
+                :href="member.linkedin"
+                class="icon-linkedin"
+                v-if="member.linkedin"
+              >
+                <img src="/img/logo_linkedin_white.svg" alt="" />
+              </a>
+              <a :href="member.github" class="icon-github" v-if="member.github">
+                <img src="/img/logo_github_white.svg" alt="" />
+              </a>
+            </div>
             <div class="item-covered">
               <span>{{ $t(member.comment) }}</span>
-              <div class="icons">
-                <a
-                  :href="member.linkedin"
-                  class="icon-linkedin"
-                  v-if="member.linkedin"
-                >
-                  <img src="/img/logo_linkedin.svg" alt="" />
-                </a>
-                <a
-                  :href="member.github"
-                  class="icon-github"
-                  v-if="member.github"
-                >
-                  <img src="/img/logo_github.png" alt="" />
-                </a>
-              </div>
             </div>
           </div>
         </transition-group>
@@ -133,7 +141,7 @@ const memberList = reactive([
     img: 'obg',
     team: 'it',
     linkedin: 'https://www.linkedin.com/in/beomgyo-oh-abb9201a5/',
-    github: 'https://github.com/Coldsewoo/',
+    // github: 'https://github.com/Coldsewoo/',
   },
   {
     name: 'main.team.name.lsh',
@@ -252,6 +260,7 @@ const filteredMember = computed(() => {
           @include mobile {
             width: 124px;
             height: 124px;
+            margin-bottom: 4px;
           }
           img {
             width: 100%;
@@ -262,18 +271,19 @@ const filteredMember = computed(() => {
           @include bold(24);
           margin-bottom: 8px;
           @include mobile {
-            font-size: 18px;
+            font-size: 16px;
           }
         }
         .item-desc {
           @include medium(15);
           color: rgba($black, 0.5);
+            margin-bottom: 20px;
           @include mobile {
-            font-size: 12px;
+            font-size: 11px;
+            margin-bottom: 8px;
           }
         }
         .item-covered {
-          opacity: 0;
           @include absolute(left 0 top 0);
           width: 100%;
           height: 100%;
@@ -287,19 +297,40 @@ const filteredMember = computed(() => {
           @include mobile {
             font-size: 18px;
           }
-          .icons {
-            @include absolute(left 48px bottom 24px);
-            a {
-              margin-right: 12px;
-              img {
-                width: 40px;
-                height: 40px;
+        }
+        .item-icons {
+          @include relative;
+          z-index: 5;
+          a {
+            img {
+              width: 32px;
+              height: 32px;
+              @include mobile {
+                width: 24px;
+                height: 24px;
               }
             }
           }
         }
-        &:hover .item-covered {
-          opacity: 1;
+        .plain {
+          display: block;
+        }
+        .hovered {
+          display: none;
+        }
+        .item-covered {
+          opacity: 0;
+        }
+        &:hover {
+          .plain {
+            display: none;
+          }
+          .hovered {
+            display: block;
+          }
+          .item-covered {
+            opacity: 1;
+          }
         }
       }
     }

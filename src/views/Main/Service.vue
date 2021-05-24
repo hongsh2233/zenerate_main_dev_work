@@ -28,14 +28,14 @@
               <div class="item-image">
                 <img :src="`/img/program_${i}.png`" alt="" />
               </div>
-              <div class="item-explnation">
-                <div class="explnation-chip">
+              <div class="item-explanation">
+                <div class="explanation-chip">
                   {{ $t('main.service.chip.consulting') }}
                 </div>
-                <div class="explnation-title">
+                <div class="explanation-title">
                   {{ $t(`main.service.titles[${i - 1}]`) }}
                 </div>
-                <div class="explnation-content">
+                <div class="explanation-content">
                   {{ $t(`main.service.contents[${i - 1}]`) }}
                 </div>
               </div>
@@ -53,14 +53,14 @@
               <div class="item-image">
                 <img :src="`/img/program_${3}.png`" alt="" />
               </div>
-              <div class="item-explnation">
-                <div class="explnation-chip">
+              <div class="item-explanation">
+                <div class="explanation-chip">
                   {{ $t('main.service.chip.web') }}
                 </div>
-                <div class="explnation-title">
+                <div class="explanation-title">
                   {{ $t(`main.service.titles[2]`) }}
                 </div>
-                <div class="explnation-content">
+                <div class="explanation-content">
                   {{ $t(`main.service.contents[2]`) }}
                 </div>
               </div>
@@ -87,9 +87,11 @@ const toggleServiceTab = (tab) => {
     padding-left: 36px;
     @include tablet {
       text-align: center;
+      padding-left: 0;
     }
     @include mobile {
       text-align: center;
+      padding-left: 0;
     }
     .title-text {
       @include bold(32);
@@ -114,6 +116,9 @@ const toggleServiceTab = (tab) => {
         height: 24px;
         width: 1px;
         background-color: $black;
+        @include mobile {
+          margin: 0px 16px;
+        }
       }
     }
   }
@@ -121,6 +126,9 @@ const toggleServiceTab = (tab) => {
     margin-bottom: 80px;
     @include tablet {
       padding: 36px 0px;
+    }
+    @include mobile {
+      margin-bottom: 40px;
     }
     .slider-item-wrapper {
       @include flex($justify: space-between);
@@ -139,11 +147,11 @@ const toggleServiceTab = (tab) => {
         }
         @include mobile {
           width: auto;
-          height: 250px;
+          height: 152px;
           margin: 0px auto;
         }
       }
-      .item-explnation {
+      .item-explanation {
         width: 220px;
         @include vertical-center;
         text-align: center;
@@ -153,7 +161,7 @@ const toggleServiceTab = (tab) => {
         @include mobile {
           margin: 40px auto;
         }
-        .explnation-chip {
+        .explanation-chip {
           margin: 0px auto;
           margin-bottom: 24px;
           @include bold(15);
@@ -170,7 +178,7 @@ const toggleServiceTab = (tab) => {
             padding: 4px 0px;
           }
         }
-        .explnation-title {
+        .explanation-title {
           @include bold(24);
           margin-bottom: 12px;
           @include mobile {

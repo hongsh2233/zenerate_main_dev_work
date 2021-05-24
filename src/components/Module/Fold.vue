@@ -219,7 +219,7 @@ const currentComponent = computed(() => {
         margin-top: 24px;
       }
       @include mobile {
-        @include bold(20);
+        @include bold(14);
         margin-top: 16px;
       }
       .header-item {
@@ -262,19 +262,19 @@ const currentComponent = computed(() => {
           color: white;
           margin-bottom: 24px;
           @include mobile {
-            @include bold(15);
+            @include bold(14);
           }
         }
         .left-content {
           @include medium(24);
           color: white;
           @include mobile {
-            @include medium(15);
+            @include medium(12);
           }
           &.en {
-            font-size: 20px;
+            font-size: 14px;
             @include mobile {
-              font-size: 15px;
+              font-size: 12px;
             }
           }
         }

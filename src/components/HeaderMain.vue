@@ -153,12 +153,13 @@ const router = useRouter()
       flex: 1;
       height: 80px;
       @include relative;
-      margin: 16px 48px;
+      margin: 6px 48px;
       .navigation-main {
         @include flex($justify: space-between);
         .navigation-main-item {
           width: 192px;
-          height: 48px;
+          height: 36px;
+          @include bold(20);
           @include flex($justify: center);
           align-items: center;
           border-bottom: solid 2px transparent;
@@ -169,7 +170,8 @@ const router = useRouter()
       }
       .navigation-sub {
         @include flex;
-        @include absolute(top 56px left 48px);
+        @include absolute(top 44px left 24px);
+        background: white;
         .navigation-sub-item {
           margin-right: 24px;
           width: 60px;

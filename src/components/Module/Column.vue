@@ -2,7 +2,12 @@
   <div class="module-column-wrapper module-item-wrapper">
     <div class="column-inner">
       <div class="column-thumb">
-        <img src="/img/main_left.jpg" alt="" class="thumb" />
+        <a
+          href="https://zenerate.medium.com/it-%EA%B8%B0%EB%B0%98-%EB%B6%80%EB%8F%99%EC%82%B0-%EC%86%94%EB%A3%A8%EC%85%98%EC%9D%98-%ED%98%84%EC%9E%AC-3bcff2e490cf"
+          class="href"
+        >
+          <img src="/img/main_left.jpg" alt="" class="thumb" />
+        </a>
       </div>
       <div class="column-title">
         <div class="title-caption caption-large">
@@ -35,9 +40,7 @@
             :href="blog.link"
           >
             <span class="item-title">{{ blog.title }}</span>
-            <span class="item-date">{{
-              $d(new Date(blog.pubDate), 'short')
-            }}</span>
+            <span class="item-date">{{ $d(blog.pubDate, 'short') }}</span>
           </a>
         </div>
       </div>
@@ -55,7 +58,23 @@ const sortedBlogList = computed(() => {
 
 onMounted(async () => {
   const getBlogListRes = await ApiService.GET_RSS_FEED()
-  blogList.value = getBlogListRes.data.body.data.items
+  const isIOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/i)
+  blogList.value = getBlogListRes.data.body.data.items.map((blog) => {
+    if (isIOS) {
+      let arr = blog.pubDate.split(/[- :]/)
+      blog.pubDate = new Date(
+        arr[0],
+        arr[1] - 1,
+        arr[2],
+        arr[3],
+        arr[4],
+        arr[5]
+      )
+    } else {
+      blog.pubDate = new Date(blog.pubDate)
+    }
+    return blog
+  })
   console.log(blogList.value)
 })
 </script>
@@ -63,13 +82,14 @@ onMounted(async () => {
 .column-inner {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   @include flex($dir: column);
   @include desktop {
     padding-right: 24px;
   }
   @include tablet {
     padding-right: 12px;
-    padding-bottom: 56px;
+    padding-bottom: 24px;
   }
   .column-thumb {
     @include desktop {
@@ -82,13 +102,16 @@ onMounted(async () => {
     .thumb {
       margin: 0px auto;
       @include desktop {
+        max-height: 670px;
         height: 670px;
       }
       @include tablet {
-        height: 436px;
+        max-height: 412px;
+        height: 412px;
       }
       @include mobile {
-        height: 450px;
+        max-height: 426px;
+        height: 426px;
       }
     }
   }
@@ -96,9 +119,11 @@ onMounted(async () => {
     width: 100%;
     @include desktop {
       margin-bottom: 24px;
+      height: 504px;
     }
     @include tablet {
       margin-bottom: 16px;
+      height: 418px;
     }
     @include mobile {
       margin-bottom: 36px;
@@ -144,7 +169,8 @@ onMounted(async () => {
   .column-insight {
     width: 100%;
     margin-top: auto;
-    @include flex($dir: column, $justify: flex-end);
+    flex: 1;
+    @include flex($dir: column, $justify: flex-start);
     @include desktop {
       height: 315px;
     }
@@ -160,9 +186,15 @@ onMounted(async () => {
     }
     .insight-items-wrapper {
       padding-right: 8px;
+      width: 100%;
       .insight-item {
+        width: 100%;
         @include flex($justify: space-between);
         .item-title {
+          flex: 1;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
           @include medium(16);
           @include mobile {
             @include medium(14);
