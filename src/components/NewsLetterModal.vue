@@ -148,6 +148,7 @@ const submit = async () => {
       padding: 2px;
       background: transparent;
       color: white;
+      width: 100%;
       &::placeholder {
         color: $fogged;
       }
