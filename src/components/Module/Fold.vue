@@ -413,7 +413,7 @@ const currentComponent = computed(() => {
       .contact-title {
         margin-bottom: 32px;
         @include mobile {
-          margin-botom: 16px;
+          margin-bottom: 16px;
         }
         p {
           @include bold(50);

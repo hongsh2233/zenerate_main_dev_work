@@ -107,7 +107,7 @@ const submit = async () => {
     left: calc((100vw - 360px) / 2);
   }
   @include desktop {
-    right: max(0px, calc((100vw - 1296px) / 2));
+    right: MAX(0.1px, calc((100vw - 1296px) / 2));
   }
   top: 80px;
   width: 360px;
