@@ -1,13 +1,16 @@
 <template>
   <Teleport to="body">
-    <div class="newsletter-modal-wrapper">
+    <div
+      class="newsletter-modal-wrapper"
+      :style="{ 'padding-top': locale == 'ko' ? '44px' : '20px' }"
+    >
       <div class="letter-buttons-wrapper">
         <button class="close" @click="close">
           <i class="material-icons">close</i>
         </button>
       </div>
       <div class="letter-title">
-        <span>제너레잇의 최신 소식이 궁금하다면?</span>
+        <span>{{ $t('newsletter.title') }}</span>
       </div>
       <div class="letter-input">
         <input
@@ -15,7 +18,9 @@
           placeholder="Your email address"
           v-model="emailForm.email_address"
         />
-        <span class="submit hover-pointer" @click="submit">구독신청</span>
+        <span class="submit hover-pointer" @click="submit">{{
+          $t('newsletter.submit')
+        }}</span>
       </div>
       <div class="letter-allow">
         <label
@@ -25,9 +30,11 @@
         >
           <input type="checkbox" v-model="emailForm.allow" />
           <i class="material-icons"></i>
-          <span>이메일 수집 동의</span>
+          <span>{{ $t('newsletter.email') }}</span>
         </label>
-        <span class="see hover-pointer" @click="toggleEmailDesc">상세보기</span>
+        <span class="see hover-pointer" @click="toggleEmailDesc">{{
+          $t('newsletter.description')
+        }}</span>
       </div>
     </div>
   </Teleport>
@@ -36,7 +43,8 @@
 import { defineEmit, ref } from 'vue'
 import ApiService from '/Services/api'
 import Swal from 'sweetalert2'
-
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
 const emit = defineEmit(['close'])
 
 const close = () => {
@@ -100,7 +108,7 @@ const submit = async () => {
 <style lang="scss" scoped>
 .newsletter-modal-wrapper {
   position: fixed;
-  z-index: 9999;
+  z-index: 1059;
   right: 16px;
   @include mobile {
     right: calc((100vw - 360px) / 2);
