@@ -1,24 +1,34 @@
 <template>
   <div class="module-news-wrapper module-item-wrapper">
     <div class="news-inner">
-      <div class="news-caption caption-large hover-pointer" @click="router.push('/main/news')">
+      <div
+        class="news-caption caption-large hover-pointer"
+        @click="router.push('/main/news')"
+      >
         {{ $t('module.news.caption') }}
       </div>
       <div class="spacer"></div>
       <div class="news-items hidden-tablet hidden-mobile">
-        <div class="news-item" v-for="i in 5" :key="i">
+        <div
+          class="news-item hover-pointer"
+          v-for="news in newsListSliced"
+          :key="news.id"
+          @click="toNewsPage(news.id)"
+        >
           <div class="item-date">
-            {{ i - 1 }}. {{ $t(`module.news.date[${i - 1}]`) }}
+            {{ $d(new Date(news.date), 'short') }}
           </div>
           <div class="item-content">
-            {{ $t(`module.news.contents[${i}]`) }}
+            {{
+              locale === 'ko' ? news.content_kr.title : news.content_en.title
+            }}
           </div>
         </div>
       </div>
       <div class="news-items hidden-desktop">
         <Carousel
-          :itemsToShow="5"
-          :wrap-around="true"
+          :itemsToShow="4"
+          :wrap-around="false"
           :breakpoints="{
             100: {
               itemsToShow: 2,
@@ -30,13 +40,21 @@
             },
           }"
         >
-          <Slide v-for="i in 10" :key="i">
-            <div class="news-item">
+          <Slide
+            v-for="news in newsList"
+            :key="news.id"
+            @click="toNewsPage(news.id)"
+          >
+            <div class="news-item hover-pointer">
               <div class="item-date">
-                {{ $t(`module.news.date[${i - 1}]`) }}
+                {{ $d(new Date(news.date), 'short') }}
               </div>
               <div class="item-content">
-                {{ $t(`module.news.contents[${i - 1}]`) }}
+                {{
+                  locale === 'ko'
+                    ? news.content_kr.title
+                    : news.content_en.title
+                }}
               </div>
             </div>
           </Slide>
@@ -50,8 +68,24 @@
 </template>
 <script lang="ts" setup>
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
-import {useRouter} from "vue-router"
+import ApiService from '/Services/api'
+import { useRouter } from 'vue-router'
+import { computed, onMounted, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
+
 const router = useRouter()
+const newsList = ref([])
+const newsListSliced = computed(() => newsList.value.slice(0, 5))
+
+const toNewsPage = (id) => {
+  router.push(`/main/news?q=${id}`)
+}
+
+onMounted(async () => {
+  const getNewsListRes = await ApiService.GET_NEWS_LIST()
+  newsList.value = getNewsListRes.data.body.data
+})
 </script>
 <style lang="scss" scoped>
 .news-inner {
@@ -93,6 +127,7 @@ const router = useRouter()
         }
         @include mobile {
           text-align: left;
+          @include medium(12);
         }
       }
       .item-content {
@@ -109,7 +144,7 @@ const router = useRouter()
           margin-top: auto;
         }
         @include mobile {
-          font-size: 15px;
+          font-size: 16px;
         }
       }
     }

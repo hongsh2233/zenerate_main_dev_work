@@ -4,7 +4,7 @@ import { AxiosPromise } from 'axios'
 const baseURL =
   process.env.NODE_ENV === 'production'
     ? 'https://devmain.zenerate.ai/api'
-    : 'http://devmain.zenerate.ai/api'
+    : 'http://dev.rzenerate/api'
 
 const apiClient = axios.create({
   baseURL,

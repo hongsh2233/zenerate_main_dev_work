@@ -3,15 +3,19 @@
     <div class="news-items-wrapper">
       <div
         class="news-item hover-pointer"
-        :class="{ active: currentNews === i }"
-        v-for="i in 10"
-        :key="i"
-        @click="toggleNewsModal(true, i)"
+        :class="{ active: currentNews && currentNews.id === news.id }"
+        v-for="(news, idx) in newsList"
+        :key="news.id"
+        @click="toggleNewsModal(true, news)"
       >
-        <div class="item-title">Zenerate News No. {{ i }}</div>
+        <div class="item-title">Zenerate News No. {{ idx + 1 }}</div>
         <div class="item-content">
-          <div class="content-date">{{ $d(new Date(), 'short') }}</div>
-          <div class="content-title">스타트업 해외진출 바우처 선정</div>
+          <div class="content-date">{{ $d(new Date(news.date), 'short') }}</div>
+          <div class="content-title">
+            {{
+              locale === 'ko' ? news.content_kr.title : news.content_en.title
+            }}
+          </div>
         </div>
       </div>
       <div class="news-item fake"></div>
@@ -32,33 +36,48 @@
       <div
         class="modal-item"
         @click="($evt) => $evt.stopPropagation()"
-        v-if="showNewsModal"
+        v-if="showNewsModal && currentNews"
       >
         <div class="item-button" @click="toggleNewsModal(false)">
           <button><i class="material-icons">close</i></button>
         </div>
         <div class="item-title">
-          <span>신영그룹과 컨설팅 계약 체결</span>
+          <span>{{
+            locale === 'ko'
+              ? currentNews.content_kr.title
+              : currentNews.content_en.title
+          }}</span>
         </div>
         <div class="item-date">
-          <p>{{ $d(new Date(), 'short') }}</p>
+          <p>{{ $d(new Date(currentNews.date), 'short') }}</p>
         </div>
         <div class="item-content">
           <p>
-            부동산 디벨로퍼 신영그룹과 제너레잇이 용산구의 한 개발사업에 대한
-            컨설팅 계약을 체결했습니다. 신영은 해당 사업지역에 새로운 고급 주거
-            타워를 계획하고 있으며, 제너레잇에 분양 매출을 극대화할 수 있는 주거
-            세대 구성과 배치, 적정 분양가 산출, 상업시설에 관한 업종 구성 및
-            배치에 관한 인공지능 솔루션을 의뢰했습니다.
+            <span>{{
+              locale === 'ko'
+                ? currentNews.content_kr.content
+                : currentNews.content_en.content
+            }}</span>
           </p>
         </div>
-        <div class="item-links">
+        <div
+          class="item-links"
+          v-if="
+            locale === 'ko'
+              ? currentNews.content_kr.links.length
+              : currentNews.content_en.links.length
+          "
+        >
           <p class="link-title">{{ $t('main.news.link') }}</p>
           <a
-            href="https://n.news.naver.com/article/008/0004531402"
+            :href="link"
             class="link-content"
+            v-for="(link, idx) in locale === 'ko'
+              ? currentNews.content_kr.links
+              : currentNews.content_en.links"
+            :key="idx"
           >
-            https://n.news.naver.com/article/008/0004531402
+            {{ link }}
           </a>
         </div>
       </div>
@@ -68,11 +87,14 @@
 <script lang="ts" setup>
 import { onMounted, ref } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
+import ApiService from '/Services/api'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
 
 const showNewsModal = ref(false)
-const toggleNewsModal = (flag, newsIndex = null) => {
+const toggleNewsModal = (flag, news = null) => {
   showNewsModal.value = flag == null ? !showNewsModal.value : flag
-  currentNews.value = newsIndex
+  currentNews.value = news
   if (showNewsModal.value) {
     const scrollY = window.scrollY
     document.body.style.position = 'fixed'
@@ -90,15 +112,23 @@ const currentNews = ref(null)
 
 import { useRoute } from 'vue-router'
 const route = useRoute()
-onMounted(() => {
+const newsList = ref([])
+onMounted(async () => {
+  const getNewsListRes = await ApiService.GET_NEWS_LIST()
+  newsList.value = getNewsListRes.data.body.data
+
+  // debugger
   if (route.query.q && !isNaN(+route.query.q)) {
-    toggleNewsModal(true, +route.query.q)
+    toggleNewsModal(true, newsList.value.find(n => n.id == route.query.q))
   }
 })
 </script>
 <style lang="scss" scoped>
 .section-news {
   padding: 80px 0px;
+  @include desktop {
+    padding: 80px 96px;
+  }
   @include relative;
   .news-items-wrapper {
     @include flex($justify: space-between);
@@ -110,7 +140,7 @@ onMounted(() => {
     }
     .news-item {
       margin-bottom: 24px;
-      margin-right: 8px;
+      margin-right: 32px;
       width: 280px;
       height: 360px;
       @include flex($dir: column, $justify: space-between);
@@ -140,7 +170,7 @@ onMounted(() => {
           margin-bottom: 16px;
         }
         .content-title {
-          @include bold(28);
+          @include bold(20);
         }
       }
       &:hover,

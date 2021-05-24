@@ -37,14 +37,14 @@
         <div class="item-right">
           <div class="right-link hover-pointer">
             <router-link @click="toggleDrawer(false)" to="/main/about">{{
-              $t('menu.intro')
-            }}</router-link>
-          </div>
-          <div class="right-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/timeline">{{
               $t('menu.timeline')
             }}</router-link>
           </div>
+          <!-- <div class="right-link hover-pointer">
+            <router-link @click="toggleDrawer(false)" to="/main/timeline">{{
+              $t('menu.timeline')
+            }}</router-link>
+          </div> -->
           <div class="right-link hover-pointer">
             <router-link @click="toggleDrawer(false)" to="/main/team">{{
               $t('menu.team')

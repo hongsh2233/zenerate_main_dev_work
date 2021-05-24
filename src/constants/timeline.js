@@ -1,0 +1,96 @@
+export default [
+  {
+    en: ['Spoke at Open Building Council', 'Los Angeles'],
+    kr: ['오픈빌딩 학회 발표', '로스엔젤레스 미국'],
+    active: false,
+    icon: 'business',
+  },
+  {
+    en: ['USC Student Housing'],
+    kr: ['USC 기숙사 프로젝트'],
+    active: false,
+    icon: 'business',
+  },
+  {
+    kr: ['패스트파이브 MOU 체결', '런던클럽 MOU 체결'],
+    en: ['MOU with Fastfive', 'MOU with London Club'],
+    active: true,
+    icon: 'question_answer',
+  },
+  {
+    kr: ['한양대 캠퍼스타운', '창업경진대회 수상'],
+    en: ['HY Campustown Startup Competition Winner'],
+    active: false,
+    icon: 'emoji_events',
+  },
+  {
+    kr: [
+      '3개 벤처투자사 시드투자유치',
+      'BLUEPOINT PARTNERS',
+      'KRYPTON',
+      'PLAN. H VENTURES',
+    ],
+    en: [
+      'Raised Seed Funding',
+      'BLUEPOINT PARTNERS',
+      'KRYPTON',
+      'PLAN. H VENTURES',
+    ],
+    active: true,
+    icon: 'paid',
+  },
+  {
+    kr: ['LH 공공데이터 창업경진대회 장려상'],
+    en: ['Honorable Mention at LH Public Data Startup Competition'],
+    active: false,
+    icon: 'emoji_events',
+  },
+  {
+    kr: ['하반기 데이터바우처 우선협상자 선정'],
+    en: ['Won AI Voucher at K-Data'],
+    active: true,
+    icon: 'emoji_events',
+  },
+  {
+    kr: ['한림건축 MOU 체결'],
+    en: ['MOU with Hanlim Architecture Group'],
+    active: true,
+    icon: 'question_answer',
+  },
+  {
+    kr: ['TRYEVERYTHING', '100개사 선정'],
+    en: ['Selected for TryEverything 100 Startups'],
+    active: false,
+    icon: 'emoji_events',
+  },
+  {
+    kr: ['컴업 2020 루키리그', '36개사 선정'],
+    en: ['Selected for Comeup2020 36 Startups'],
+    active: false,
+    icon: 'emoji_events',
+  },
+  {
+    kr: ['팁스 R&D 9월 기업 선정'],
+    en: ['Won TIPS R&D Fund'],
+    active: false,
+    icon: 'paid',
+  },
+  {
+    kr: ['혁신기술공모전 우수상'],
+    en: ['Third-tier prize at Innovative Technology Competition'],
+    active: false,
+    icon: 'emoji_events',
+  },
+  {
+    kr: ['K - 비대면 바우처 기업 선정', '창업 진흥원'],
+    en: ['Won K-untact Voucher'],
+    active: false,
+    icon: 'paid',
+  },
+  {
+    kr: ['IBK창공 마포 6기 선정'],
+    en: ['Selected for IBK Accelerator Program'],
+    active: false,
+    icon: 'emoji_events',
+  },
+]

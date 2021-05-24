@@ -11,12 +11,10 @@
       </div>
       <div class="overview-content">
         <p>
-          디자인의 문제를 수학과 알고리듬의 문제로 전환하여 모든 가능성을
-          탐색합니다.
+          {{ $t('about.comment[0]') }}
         </p>
         <p>
-          인공지능 솔루션으로 부동산 개발 영역에서 새로운 길을 개척하고
-          있습니다.
+          {{ $t('about.comment[1]') }}
         </p>
       </div>
     </div>
@@ -25,23 +23,48 @@
       <div class="timeline-start"></div>
       <div class="timeline-end"></div>
       <div
-        class="timeline-item"
-        v-for="i in 15"
+        class="timeline-item hidden-mobile hidden-tablet"
+        v-for="(item, i) in timelineItem"
         :key="i"
         :class="{
           'timeline-item left': i % 2,
           'timeline-item right': !(i % 2),
-          active: !(i % 4),
+          active: item.active,
         }"
       >
         <div
           class="content"
           data-aos="zoom-in-up"
           data-aos-offset="600"
-          data-aos-duration="800"
+          data-aos-duration="300"
         >
-          <p v-for="i in 3" :key="i">asdasfasfqasdqwsd</p>
-          <i class="material-icons">draw</i>
+          <p
+            v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
+            :key="idx"
+          >
+            {{ line }}
+          </p>
+          <i class="material-icons">{{ item.icon }}</i>
+        </div>
+      </div>
+      <div
+        class="timeline-item hidden-desktop"
+        v-for="(item, i) in timelineItem"
+        :key="i"
+        :class="{
+          'timeline-item left': i % 2,
+          'timeline-item right': !(i % 2),
+          active: item.active,
+        }"
+      >
+        <div class="content">
+          <p
+            v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
+            :key="idx"
+          >
+            {{ line }}
+          </p>
+          <i class="material-icons">{{ item.icon }}</i>
         </div>
       </div>
     </div>
@@ -50,9 +73,11 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
+import timelineItem from '/Constants/timeline'
 </script>
 <style lang="scss" scoped>
 .section-about {
+  padding: 80px 0px;
   .about-animation-wrapper {
     width: 100%;
     img {
@@ -112,7 +137,7 @@ const { locale } = useI18n()
       p {
         @include desktop {
           margin-bottom: 8px;
-          @include medium(28);
+          @include medium(26);
         }
         @include tablet {
           margin-bottom: 4px;
@@ -131,12 +156,18 @@ const { locale } = useI18n()
     padding: 0px 24px;
     padding-top: 108px;
     margin-bottom: 108px;
+    @include mobile {
+      padding: 0px 4px;
+    }
     .timeline-spacer {
       @include absolute(top 0 left 50%);
       width: 0px;
-      height: 100%;
+      height: calc(100% + 48px);
       transform: translateX(-50%);
       border-right: 1.5px dashed rgba($main, 0.3);
+      @include mobile {
+        display: none;
+      }
     }
     .timeline-start {
       @include absolute(top 0 left 50%);
@@ -145,20 +176,29 @@ const { locale } = useI18n()
       border-radius: 50%;
       transform: translateX(-50%);
       background: $gradient-blue;
+      @include mobile {
+        display: none;
+      }
     }
     .timeline-end {
-      @include absolute(bottom 0 left 50%);
+      @include absolute(bottom -48px left 50%);
       width: 16px;
       height: 16px;
       border-radius: 50%;
       transform: translateX(-7px);
       background: $gradient-blue;
+      @include mobile {
+        display: none;
+      }
     }
     .timeline-item {
       padding: 10px 40px;
       position: relative;
       background-color: inherit;
       width: 50%;
+      @include mobile {
+        width: 100%;
+      }
       .content {
         width: 328px;
         padding: 20px 24px;
@@ -168,6 +208,21 @@ const { locale } = useI18n()
         border-radius: 12px;
         text-align: center;
         @include elevation-hover-blue;
+        p {
+          @include bold(15);
+        }
+        @include tablet {
+          width: 264px;
+          p {
+            @include medium(14);
+          }
+        }
+        @include mobile {
+          width: 248px;
+          p {
+            @include medium(13);
+          }
+        }
       }
 
       &::after {
@@ -183,6 +238,13 @@ const { locale } = useI18n()
         border-radius: 50%;
         z-index: 1;
       }
+      @include mobile {
+        &::after,
+        &::before {
+          display: none;
+        }
+      }
+
       &.left {
         left: 0;
         &::before {
@@ -206,10 +268,22 @@ const { locale } = useI18n()
           }
         }
         padding-right: 96px;
+        @include tablet {
+          padding-right: 32px;
+          &::before {
+            width: 32px;
+          }
+        }
+        @include mobile {
+          padding: 16px 0px;
+        }
       }
 
       &.right {
         left: 50%;
+        @include mobile {
+          left: 5%;
+        }
         &::before {
           content: ' ';
           position: absolute;
@@ -234,6 +308,15 @@ const { locale } = useI18n()
           }
         }
         padding-left: 96px;
+        @include tablet {
+          padding-left: 32px;
+          &::before {
+            width: 32px;
+          }
+        }
+        @include mobile {
+          padding: 16px 0px;
+        }
       }
 
       &.active {

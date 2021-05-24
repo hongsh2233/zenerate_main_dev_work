@@ -30,16 +30,33 @@
             >{{ $t('module.monthlyZenerate.contents[3]') }}</span
           > -->
         </div>
-        <div class="subscription-button hover-pointer">
+        <div
+          class="subscription-button hover-pointer"
+          @click="toggleNewsLetterModal(true)"
+        >
           {{ $t('module.monthlyZenerate.subscription') }}
         </div>
       </div>
     </div>
+    <NewsLetterModal
+      v-if="showNewsLetterModal"
+      @close="showNewsLetterModal = false"
+    ></NewsLetterModal>
   </div>
 </template>
 <script lang="ts" setup>
+// @ts-ignore
+import NewsLetterModal from '/Components/NewsLetterModal.vue'
+
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
+
+import { ref, computed, onMounted } from 'vue'
+const showNewsLetterModal = ref(false)
+const toggleNewsLetterModal = (flag) => {
+  if (flag != null) showNewsLetterModal.value = flag
+  else showNewsLetterModal.value = !showNewsLetterModal.value
+}
 </script>
 <style lang="scss" scoped>
 .monthly-inner {

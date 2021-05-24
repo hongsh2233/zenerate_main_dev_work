@@ -9,7 +9,12 @@
           {{ $t('module.column.caption') }}
         </div>
         <div class="title-text">
-          {{ $t('module.column.title') }}
+          <a
+            href="https://zenerate.medium.com/it-%EA%B8%B0%EB%B0%98-%EB%B6%80%EB%8F%99%EC%82%B0-%EC%86%94%EB%A3%A8%EC%85%98%EC%9D%98-%ED%98%84%EC%9E%AC-3bcff2e490cf"
+            target="_blank"
+          >
+            {{ $t('module.column.title') }}
+          </a>
         </div>
         <div class="title-detail">
           {{ $t('module.column.contents[0]') }}
@@ -22,32 +27,38 @@
         <div class="spacer"></div>
         <div class="insight-date">August - December 2020</div>
         <div class="insight-items-wrapper">
-          <div class="insight-item">
-            <span class="item-title">-싹다 망할거라던 공유오피스</span>
-            <span class="item-date">Nov 02</span>
-          </div>
-          <div class="insight-item">
-            <span class="item-title">-싹다 망할거라던 공유오피스</span>
-            <span class="item-date">Nov 02</span>
-          </div>
-          <div class="insight-item">
-            <span class="item-title">-싹다 망할거라던 공유오피스</span>
-            <span class="item-date">Nov 02</span>
-          </div>
-          <div class="insight-item">
-            <span class="item-title">-싹다 망할거라던 공유오피스</span>
-            <span class="item-date">Nov 02</span>
-          </div>
-          <div class="insight-item">
-            <span class="item-title">-싹다 망할거라던 공유오피스</span>
-            <span class="item-date">Nov 02</span>
-          </div>
+          <a
+            class="insight-item"
+            v-for="blog in sortedBlogList"
+            :key="blog.guid"
+            target="_blank"
+            :href="blog.link"
+          >
+            <span class="item-title">{{ blog.title }}</span>
+            <span class="item-date">{{
+              $d(new Date(blog.pubDate), 'short')
+            }}</span>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </template>
-<script lang="ts" script></script>
+<script lang="ts" setup>
+import { ref, computed, onMounted } from 'vue'
+import ApiService from '/Services/api'
+
+const blogList = ref([])
+const sortedBlogList = computed(() => {
+  return blogList.value.slice(0, 5)
+})
+
+onMounted(async () => {
+  const getBlogListRes = await ApiService.GET_RSS_FEED()
+  blogList.value = getBlogListRes.data.body.data.items
+  console.log(blogList.value)
+})
+</script>
 <style lang="scss" scoped>
 .column-inner {
   width: 100%;
@@ -58,7 +69,7 @@
   }
   @include tablet {
     padding-right: 12px;
-    padding-bottom: 41px;
+    padding-bottom: 56px;
   }
   .column-thumb {
     @include desktop {
@@ -152,16 +163,17 @@
       .insight-item {
         @include flex($justify: space-between);
         .item-title {
-          @include medium(20);
+          @include medium(16);
           @include mobile {
-            @include medium(15);
+            @include medium(14);
           }
           margin-bottom: 8px;
         }
         .item-date {
-          @include medium(20);
+          vertical-align: middle;
+          @include medium(14);
           @include mobile {
-            @include medium(15);
+            @include medium(12);
           }
         }
       }

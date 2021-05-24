@@ -16,6 +16,10 @@
         @toggleDrawer="toggleDrawer"
       />
     </transition>
+    <NewsLetterModal
+      v-if="showNewsLetterModal"
+      @close="showNewsLetterModal = false"
+    ></NewsLetterModal>
   </div>
 </template>
 <script lang="ts" setup>
@@ -25,12 +29,27 @@ import Header from '/Components/HeaderMain.vue'
 import Footer from '/Components/Footer.vue'
 // @ts-ignore
 import MenuDrawer from '/Components/MenuDrawer.vue'
-import { ref } from '@vue/reactivity'
+// @ts-ignore
+import NewsLetterModal from '/Components/NewsLetterModal.vue'
+
+import { ref, onMounted } from 'vue'
 const showDrawer = ref(false)
+
+const showNewsLetterModal = ref(false)
+const toggleNewsLetterModal = (flag) => {
+  if (flag != null) showNewsLetterModal.value = flag
+  else showNewsLetterModal.value = !showNewsLetterModal.value
+}
 
 const toggleDrawer = (flag) => {
   showDrawer.value = flag
 }
+
+const isFirst = ref(true)
+
+onMounted(() => {
+  if (isFirst) toggleNewsLetterModal(true)
+})
 </script>
 <style lang="scss" scoped>
 .layout-main {
