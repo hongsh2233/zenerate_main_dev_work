@@ -11,7 +11,7 @@
       "caption": "Column",
       "title": "Interview: Architecture and Society No.33",
       "contents": [
-        "CEO Bongjai Shin wrote about the current state of design automation. This article is about global trends and major software companies, the changing role of architects and so on."
+        "CEO Bongjai Shin wrote about the design automation trends. He shared his view on how it will change we design buildings and the changing role of architects."
       ],
       "insight": "Insights"
     },
@@ -139,7 +139,7 @@
           },
           "websolution": {
             "title": [
-              "Profitability Evaluation"
+              "Feasibility Study"
             ],
             "contents": [
               "By providing millions of building design alternatives with algorithms, users can easily example profitability of their projects."
@@ -209,7 +209,7 @@
       "title": "Partnership",
       "caption": "Inquiries",
       "contents": [
-        "We has been partnering with various firms; real estate developers and investors, operation companies, design firms, general contractors."
+        "We have partnered with various firms; real estate developers, investment firms, design firms and general contractors."
       ]
     },
     "program": {
@@ -223,7 +223,7 @@
     "team": {
       "caption": "Our Team",
       "contents": [
-        "In Spring 2020, architectural designer Bongjai Shin and Ph.D. in mathematics and A.I. developer Gahye Jeong co-founded their firm, Zenerate Inc."
+        "In Spring 2020, architectural designer Bongjai Shin and Ph.D. in mathematics and A.I. developer Gahye Jeong co-founded Zenerate."
       ]
     }
   },
@@ -239,7 +239,7 @@
         "consulting": "Consulting"
       },
       "titles": [
-        "Profitability Evaluation",
+        "Feasibility Study",
         "Building Design AI Solutions",
         "Revenue Estimation"
       ],

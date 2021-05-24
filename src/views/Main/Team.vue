@@ -42,7 +42,7 @@
       <div class="contents-item-wrapper">
         <transition-group name="fade">
           <div
-            class="contents-item hover-pointer"
+            class="contents-item"
             v-for="(member, idx) in filteredMember"
             :key="idx"
           >
@@ -52,7 +52,23 @@
             <div class="item-name">{{ $t(member.name) }}</div>
             <div class="item-desc">{{ $t(member.title) }}</div>
             <div class="item-covered">
-              {{ $t(member.comment) }}
+              <span>{{ $t(member.comment) }}</span>
+              <div class="icons">
+                <a
+                  :href="member.linkedin"
+                  class="icon-linkedin"
+                  v-if="member.linkedin"
+                >
+                  <img src="/img/logo_linkedin.svg" alt="" />
+                </a>
+                <a
+                  :href="member.github"
+                  class="icon-github"
+                  v-if="member.github"
+                >
+                  <img src="/img/logo_github.png" alt="" />
+                </a>
+              </div>
             </div>
           </div>
         </transition-group>
@@ -79,6 +95,7 @@ const memberList = reactive([
     comment: 'main.team.comment.sbj',
     img: 'sbj',
     team: 'product',
+    linkedin: 'https://www.linkedin.com/in/bongjai-shin-0bb85346/',
   },
   {
     name: 'main.team.name.jgh',
@@ -86,6 +103,7 @@ const memberList = reactive([
     comment: 'main.team.comment.jgh',
     img: 'jgh',
     team: 'it',
+    linkedin: 'https://www.linkedin.com/in/gahye-jeong-phd-300859132',
   },
   {
     name: 'main.team.name.lh',
@@ -114,6 +132,8 @@ const memberList = reactive([
     comment: 'main.team.comment.obg',
     img: 'obg',
     team: 'it',
+    linkedin: 'https://www.linkedin.com/in/beomgyo-oh-abb9201a5/',
+    github: 'https://github.com/Coldsewoo/',
   },
   {
     name: 'main.team.name.lsh',
@@ -258,14 +278,24 @@ const filteredMember = computed(() => {
           width: 100%;
           height: 100%;
           border-radius: 20px;
-          background: rgba($black, 0.6);
+          background: rgba($black, 0.4);
           z-index: 4;
+          padding: 0px 48px;
           @include vertical-center;
-          padding: 0px 24px;
           @include medium(24);
           color: $white;
           @include mobile {
             font-size: 18px;
+          }
+          .icons {
+            @include absolute(left 48px bottom 24px);
+            a {
+              margin-right: 12px;
+              img {
+                width: 40px;
+                height: 40px;
+              }
+            }
           }
         }
         &:hover .item-covered {

@@ -35,7 +35,7 @@
         <div
           class="content"
           data-aos="zoom-in-up"
-          data-aos-offset="600"
+          data-aos-offset="0"
           data-aos-duration="300"
         >
           <p
@@ -126,7 +126,7 @@ import timelineItem from '/Constants/timeline'
     }
     .overview-content {
       @include desktop {
-        width: 50%;
+        width: 45%;
       }
       @include tablet {
         width: 80%;
