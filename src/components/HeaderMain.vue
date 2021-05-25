@@ -154,6 +154,8 @@ const router = useRouter()
       height: 80px;
       @include relative;
       margin: 6px 48px;
+      margin: auto 48px;
+      padding: 16px 0px;
       .navigation-main {
         @include flex($justify: space-between);
         .navigation-main-item {
@@ -170,13 +172,13 @@ const router = useRouter()
       }
       .navigation-sub {
         @include flex;
-        @include absolute(top 44px left 24px);
+        @include absolute(top 58px);
         background: white;
         .navigation-sub-item {
           margin-right: 24px;
-          width: 60px;
+          // width: 60px;
           height: 20px;
-          @include medium(15);
+          @include medium(14);
           &:hover {
             font-weight: $bold;
           }
