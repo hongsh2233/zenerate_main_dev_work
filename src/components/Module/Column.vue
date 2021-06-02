@@ -60,19 +60,12 @@ onMounted(async () => {
   const getBlogListRes = await ApiService.GET_RSS_FEED()
   const isIOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/i)
   blogList.value = getBlogListRes.data.body.data.items.map((blog) => {
-    if (isIOS) {
-      let arr = blog.pubDate.split(/[- :]/)
-      blog.pubDate = new Date(
-        arr[0],
-        arr[1] - 1,
-        arr[2],
-        arr[3],
-        arr[4],
-        arr[5]
-      )
-    } else {
-      blog.pubDate = new Date(blog.pubDate)
-    }
+    // if (isIOS) {
+    let arr = blog.pubDate.split(/[- :]/)
+    blog.pubDate = new Date(arr[0], arr[1] - 1, arr[2], arr[3], arr[4], arr[5])
+    // } else {
+    //   blog.pubDate = new Date(blog.pubDate)
+    // }
     return blog
   })
   console.log(blogList.value)

@@ -272,7 +272,7 @@ const currentComponent = computed(() => {
             @include medium(12);
           }
           &.en {
-            font-size: 14px;
+            font-size: 20px;
             @include mobile {
               font-size: 12px;
             }

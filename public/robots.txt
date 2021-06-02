@@ -3,4 +3,6 @@ User-agent: AdsBot-Google
 User-agent: Googlebot-Image
 User-agent: Googlebot
 User-agent: Storebot-Google
-Disallow: /
+Allow: /
+Disallow: /api
+Disallow: /main/admin
