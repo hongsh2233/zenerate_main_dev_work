@@ -56,9 +56,10 @@ export default defineConfig({
   build: {
     terserOptions: {
       compress: {
-        drop_console: false,
+        drop_console: true,
       },
     },
+    minify: 'terser',
     brotliSize: false,
     rollupOptions: {
       external: (id) => /^\/media\/.*/.test(id),
