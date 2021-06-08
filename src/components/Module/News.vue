@@ -76,7 +76,7 @@ const { locale } = useI18n()
 
 const router = useRouter()
 const newsList = ref([])
-const newsListSliced = computed(() => newsList.value.slice(0, 5))
+const newsListSliced = computed(() => newsList.value.slice(0, 7))
 
 const toNewsPage = (id) => {
   router.push(`/main/news?q=${id}`)
@@ -134,10 +134,12 @@ onMounted(async () => {
         @include medium(24);
         margin: auto 0px;
         flex: 1;
-        @include vertical-center;
+        // @include vertical-center;
         @include desktop {
           justify-content: flex-end;
           padding-bottom: 24px;
+          margin-top: 24px;
+          padding-right: 24px;
         }
         @include tablet {
           font-size: 20px;

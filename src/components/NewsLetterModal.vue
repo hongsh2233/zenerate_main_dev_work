@@ -7,7 +7,7 @@
         </button>
       </div>
       <div class="letter-title">
-        <span>제너레잇의 최신 소식이 궁금하다면?</span>
+        <span>{{ $t('newsletter.title') }}</span>
       </div>
       <div class="letter-input">
         <input
@@ -15,9 +15,11 @@
           placeholder="Your email address"
           v-model="emailForm.email_address"
         />
-        <span class="submit hover-pointer" @click="submit">구독신청</span>
+        <span class="submit hover-pointer" @click="submit">{{
+          $t('newsletter.submit')
+        }}</span>
       </div>
-      <div class="letter-allow">
+      <!-- <div class="letter-allow">
         <label
           for=""
           class="label-check hover-pointer"
@@ -25,10 +27,12 @@
         >
           <input type="checkbox" v-model="emailForm.allow" />
           <i class="material-icons"></i>
-          <span>이메일 수집 동의</span>
+          <span>{{ $t('newsletter.email') }}</span>
         </label>
-        <span class="see hover-pointer" @click="toggleEmailDesc">상세보기</span>
-      </div>
+        <span class="see hover-pointer" @click="toggleEmailDesc">{{
+          $t('newsletter.description')
+        }}</span>
+      </div> -->
     </div>
   </Teleport>
 </template>
@@ -36,7 +40,8 @@
 import { defineEmit, ref } from 'vue'
 import ApiService from '/Services/api'
 import Swal from 'sweetalert2'
-
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
 const emit = defineEmit(['close'])
 
 const close = () => {
@@ -44,7 +49,7 @@ const close = () => {
 }
 
 const emailForm = ref({
-  allow: false,
+  allow: true,
   email_address: '',
 })
 const toggleAllow = (flag) => {
@@ -76,8 +81,7 @@ const toggleEmailDesc = () => {
 const submit = async () => {
   console.log(emailForm.value)
   if (!emailForm.value.allow) return
-  const emailRegex =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   console.log(emailRegex.test(emailForm.value.email_address))
   if (!emailRegex.test(emailForm.value.email_address)) return
   ApiService.SUBSCRIBE(emailForm.value).then((res) => {
@@ -100,23 +104,23 @@ const submit = async () => {
 <style lang="scss" scoped>
 .newsletter-modal-wrapper {
   position: fixed;
-  z-index: 9999;
+  z-index: 1059;
   right: 16px;
   @include mobile {
-    right: calc((100vw - 360px) / 2);
-    left: calc((100vw - 360px) / 2);
+    right: calc((100vw - 348px) / 2);
+    left: calc((100vw - 348px) / 2);
   }
   @include desktop {
-    right: max(0px, calc((100vw - 1296px) / 2));
+    right: MAX(0.1px, calc((100vw - 1296px) / 2));
   }
   top: 80px;
-  width: 360px;
-  height: 180px;
+  width: 348px;
+  height: 148px;
   border-radius: 12px;
   @include border-set(1px, $fogged, 12px);
   background: $main;
   color: white;
-  padding: 44px 36px;
+  padding: 24px 32px;
   .letter-buttons-wrapper {
     width: 100%;
     text-align: right;
@@ -149,6 +153,7 @@ const submit = async () => {
       background: transparent;
       color: white;
       width: 100%;
+      border-radius: 0px;
       &::placeholder {
         color: $fogged;
       }

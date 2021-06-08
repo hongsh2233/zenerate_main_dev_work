@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import type { RouteRecordRaw } from 'vue-router'
 import ModuleLayout from '/Layouts/ModuleLayout.vue'
 import MainLayout from '/Layouts/MainLayout.vue'
 
@@ -13,8 +13,7 @@ import Team from '/Views/Main/Team.vue'
 // import NewsList from "/Views/Admin/NewsList.vue"
 // import NewsEdit from "/Views/Admin/NewsEdit.vue"
 
-
-const routes: Array<any> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'ModuleLayout',
@@ -74,11 +73,20 @@ const routes: Array<any> = [
       // }
     ],
   },
+  {
+    path: '/:catchAll(.*)',
+    redirect: '/',
+    
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 }
+  },
 })
 
 export default router

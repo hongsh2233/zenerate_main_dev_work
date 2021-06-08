@@ -47,7 +47,7 @@ import Youtube from '/Components/Module/Youtube.vue'
   }
   /** grid setting */
   display: grid;
-  grid-template-columns: repeat(10, minmax(0, 1fr));
+  grid-template-columns: repeat(10, minmax(0px, 1fr));
   .grid-item {
     width: 100%;
   }
@@ -70,10 +70,10 @@ import Youtube from '/Components/Module/Youtube.vue'
       height: 1500px;
     }
     @include tablet {
-      height: 300px;
+      height: auto;
     }
     @include mobile {
-      height: 260px;
+      height: auto;
     }
   }
   .team {

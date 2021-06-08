@@ -11,7 +11,7 @@
       "caption": "Column",
       "title": "Interview: Architecture and Society No.33",
       "contents": [
-        "CEO Bongjai Shin wrote about the current state of design automation. This article is about global trends and major software companies, the changing role of architects and so on."
+        "CEO Bongjai Shin discusses the latest design automation trends in an interview with Architecture & Society. Bongjai shares his views on the ways in which these trends will change not only building designs but also the role of architects."
       ],
       "insight": "Insights"
     },
@@ -30,7 +30,7 @@
       "company": {
         "category": "Our Company",
         "headers": {
-          "intro": "Introduction",
+          "intro": "About",
           "timeline": "Timeline",
           "team": "Team"
         },
@@ -139,7 +139,7 @@
           },
           "websolution": {
             "title": [
-              "Profitability Evaluation"
+              "Feasibility Study"
             ],
             "contents": [
               "By providing millions of building design alternatives with algorithms, users can easily example profitability of their projects."
@@ -209,7 +209,7 @@
       "title": "Partnership",
       "caption": "Inquiries",
       "contents": [
-        "We has been partnering with various firms; real estate developers and investors, operation companies, design firms, general contractors."
+        "We have partnered with various firms; real estate developers, investment firms, design firms and general contractors."
       ]
     },
     "program": {
@@ -223,7 +223,7 @@
     "team": {
       "caption": "Our Team",
       "contents": [
-        "In Spring 2020, architectural designer Bongjai Shin and Ph.D. in mathematics and A.I. developer Gahye Jeong co-founded their firm, Zenerate Inc."
+        "In Spring 2020, architectural designer Bongjai Shin and Ph.D. in mathematics and A.I. developer Gahye Jeong co-founded Zenerate."
       ]
     }
   },
@@ -239,7 +239,7 @@
         "consulting": "Consulting"
       },
       "titles": [
-        "Profitability Evaluation",
+        "Feasibility Study",
         "Building Design AI Solutions",
         "Revenue Estimation"
       ],
@@ -292,10 +292,10 @@
         "swj": "Woojeong Song"
       },
       "job": {
-        "sbj": "CEO, Architectrual Designer",
+        "sbj": "CEO, Architectural Designer",
         "jgh": "CTO, AI Developer",
         "lh": "Software Engineer",
-        "kyj": "Architectrual Designer",
+        "kyj": "Architectural Designer",
         "ysh": "AI Developer",
         "obg": "Web Developer",
         "lsh": "Computational Designer",
@@ -328,5 +328,12 @@
       "By converting design issues into mathematical and algorithmic problems, Zenerate finds the most optimized solution.",
       "Zenerate disrupts real estate development industries with our AI solutions."
     ]
+  },
+  "newsletter": {
+    "title": "Sign up to subscribe Zenerate Newsletter!",
+    "submit": "Subscribe",
+    "email": "email agree",
+    "description": "description",
+    "confirm": "confirm"
   }
 }

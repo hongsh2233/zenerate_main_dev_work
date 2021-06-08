@@ -159,7 +159,10 @@ const sendEmail = async () => {
   text-align: left;
   height: 43px;
   margin-bottom: 16px;
+  border-radius: 0px;
+
   input {
+    border-radius: 0px;
     width: 100%;
     border: none;
     border: solid 2px $main;
@@ -176,7 +179,9 @@ const sendEmail = async () => {
 }
 .label-textarea {
   width: 100%;
+  border-radius: 0px;
   textarea {
+    border-radius: 0px;
     font-size: 18px;
     line-height: 125%;
     border: solid 2px $main;

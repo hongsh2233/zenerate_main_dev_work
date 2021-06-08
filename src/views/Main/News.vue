@@ -119,7 +119,10 @@ onMounted(async () => {
 
   // debugger
   if (route.query.q && !isNaN(+route.query.q)) {
-    toggleNewsModal(true, newsList.value.find(n => n.id == route.query.q))
+    toggleNewsModal(
+      true,
+      newsList.value.find((n) => n.id == route.query.q)
+    )
   }
 })
 </script>
@@ -132,6 +135,7 @@ onMounted(async () => {
   @include relative;
   .news-items-wrapper {
     @include flex($justify: space-between);
+
     @include mobile {
       justify-content: center;
     }
@@ -139,14 +143,12 @@ onMounted(async () => {
       justify-content: space-evenly;
     }
     .news-item {
-      margin-bottom: 24px;
-      margin-right: 32px;
       width: 280px;
       height: 360px;
+      margin: 12px 16px;
       @include flex($dir: column, $justify: space-between);
       @include border-set(2px, $main, 12px);
       @include mobile {
-        margin-right: 24px;
       }
       &.fake {
         height: 0px;
@@ -278,6 +280,7 @@ onMounted(async () => {
         color: white;
         word-break: break-all;
         text-decoration: underline;
+        display: block;
       }
     }
   }

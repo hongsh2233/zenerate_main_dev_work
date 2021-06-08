@@ -42,7 +42,7 @@
       <div class="contents-item-wrapper">
         <transition-group name="fade">
           <div
-            class="contents-item hover-pointer"
+            class="contents-item"
             v-for="(member, idx) in filteredMember"
             :key="idx"
           >
@@ -51,8 +51,32 @@
             </div>
             <div class="item-name">{{ $t(member.name) }}</div>
             <div class="item-desc">{{ $t(member.title) }}</div>
+            <div class="item-icons plain">
+              <a
+                :href="member.linkedin"
+                class="icon-linkedin"
+                v-if="member.linkedin"
+              >
+                <img src="/img/logo_linkedin.svg" alt="" />
+              </a>
+              <a :href="member.github" class="icon-github" v-if="member.github">
+                <img src="/img/logo_github.svg" alt="" />
+              </a>
+            </div>
+            <div class="item-icons hovered">
+              <a
+                :href="member.linkedin"
+                class="icon-linkedin"
+                v-if="member.linkedin"
+              >
+                <img src="/img/logo_linkedin_white.svg" alt="" />
+              </a>
+              <a :href="member.github" class="icon-github" v-if="member.github">
+                <img src="/img/logo_github_white.svg" alt="" />
+              </a>
+            </div>
             <div class="item-covered">
-              {{ $t(member.comment) }}
+              <span>{{ $t(member.comment) }}</span>
             </div>
           </div>
         </transition-group>
@@ -79,6 +103,7 @@ const memberList = reactive([
     comment: 'main.team.comment.sbj',
     img: 'sbj',
     team: 'product',
+    linkedin: 'https://www.linkedin.com/in/bongjai-shin-0bb85346/',
   },
   {
     name: 'main.team.name.jgh',
@@ -86,6 +111,7 @@ const memberList = reactive([
     comment: 'main.team.comment.jgh',
     img: 'jgh',
     team: 'it',
+    linkedin: 'https://www.linkedin.com/in/gahye-jeong-phd-300859132',
   },
   {
     name: 'main.team.name.lh',
@@ -114,6 +140,8 @@ const memberList = reactive([
     comment: 'main.team.comment.obg',
     img: 'obg',
     team: 'it',
+    linkedin: 'https://www.linkedin.com/in/beomgyo-oh-abb9201a5/',
+    // github: 'https://github.com/Coldsewoo/',
   },
   {
     name: 'main.team.name.lsh',
@@ -232,6 +260,7 @@ const filteredMember = computed(() => {
           @include mobile {
             width: 124px;
             height: 124px;
+            margin-bottom: 4px;
           }
           img {
             width: 100%;
@@ -242,34 +271,66 @@ const filteredMember = computed(() => {
           @include bold(24);
           margin-bottom: 8px;
           @include mobile {
-            font-size: 18px;
+            font-size: 16px;
           }
         }
         .item-desc {
           @include medium(15);
           color: rgba($black, 0.5);
+            margin-bottom: 20px;
           @include mobile {
-            font-size: 12px;
+            font-size: 11px;
+            margin-bottom: 8px;
           }
         }
         .item-covered {
-          opacity: 0;
           @include absolute(left 0 top 0);
           width: 100%;
           height: 100%;
           border-radius: 20px;
-          background: rgba($black, 0.6);
+          background: rgba($black, 0.4);
           z-index: 4;
+          padding: 0px 48px;
           @include vertical-center;
-          padding: 0px 24px;
           @include medium(24);
           color: $white;
           @include mobile {
             font-size: 18px;
           }
         }
-        &:hover .item-covered {
-          opacity: 1;
+        .item-icons {
+          @include relative;
+          z-index: 5;
+          a {
+            img {
+              width: 32px;
+              height: 32px;
+              @include mobile {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+        }
+        .plain {
+          display: block;
+        }
+        .hovered {
+          display: none;
+        }
+        .item-covered {
+          opacity: 0;
+        }
+        &:hover {
+          .plain {
+            display: none;
+          }
+          .hovered {
+            display: block;
+          }
+          .item-covered {
+            opacity: 1;
+          }
         }
       }
     }
