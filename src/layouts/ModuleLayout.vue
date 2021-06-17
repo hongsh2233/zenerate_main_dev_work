@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 // @ts-ignore
-import Header from '/Components/Header.vue'
+import Header from '/Components/HeaderMain.vue'
 // @ts-ignore
 import ModulePage from '/Pages/ModulePage.vue'
 // @ts-ignore

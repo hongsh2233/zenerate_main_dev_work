@@ -35,6 +35,14 @@
           >
             {{ $t('menu.service') }}
           </div>
+          <a
+            class="navigation-main-item hover-pointer"
+            href="https://www.notion.so/zenerate/c220ca929c9c4f6982c8aca8696e2c86"
+            target="_blank"
+            @mouseover="setMenuHovered(false)"
+          >
+            {{ $t('menu.career') }}
+          </a>
           <div
             class="navigation-main-item hover-pointer"
             @click="router.push('/main/contact')"
@@ -159,7 +167,7 @@ const router = useRouter()
       .navigation-main {
         @include flex($justify: space-between);
         .navigation-main-item {
-          width: 192px;
+          width: 152px;
           height: 36px;
           @include bold(20);
           @include flex($justify: center);

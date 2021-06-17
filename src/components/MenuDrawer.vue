@@ -29,6 +29,14 @@
             }}</router-link>
           </div>
           <div class="left-link hover-pointer">
+            <a
+              @click="toggleDrawer(false)"
+              href="https://www.notion.so/zenerate/c220ca929c9c4f6982c8aca8696e2c86"
+              target="_blank"
+              >{{ $t('menu.career') }}</a
+            >
+          </div>
+          <div class="left-link hover-pointer">
             <router-link @click="toggleDrawer(false)" to="/main/contact">{{
               $t('menu.contact')
             }}</router-link>
