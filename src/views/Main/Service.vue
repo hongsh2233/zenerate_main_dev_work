@@ -71,6 +71,7 @@
     </div>
   </section>
 </template>
+
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
@@ -79,7 +80,9 @@ const toggleServiceTab = (tab) => {
   serviceTab.value = tab
 }
 </script>
+
 <style lang="scss" scoped>
+@import "../../assets/scss/variables.scss";
 .service-container {
   padding-top: 64px;
   .service-title {

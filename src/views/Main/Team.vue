@@ -165,6 +165,7 @@ const filteredMember = computed(() => {
 })
 </script>
 <style lang="scss" scoped>
+@import "../../assets/scss/variables.scss";
 .section-team {
   padding: 24px 0px 80px 0px;
   .team-image {

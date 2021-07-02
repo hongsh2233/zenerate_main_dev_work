@@ -32,6 +32,7 @@ const toggleDrawer = (flag) => {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
 .layout-module {
   margin: 0px;
   width: 100%;

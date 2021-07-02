@@ -77,6 +77,7 @@ watch(showDropdown, (v) => {
 })
 </script>
 <style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
 .input-select-wrapper {
   height: 43px;
   border: solid 2px $main;

@@ -14,6 +14,7 @@
 </template>
 <script lang="ts" scoped></script>
 <style lang="scss" scoped>
+@import "../../assets/scss/variables.scss";
 .youtube-inner {
   width: 100%;
   height: 100%;

@@ -1,5 +1,6 @@
 /*--------- COLORS ---------*/
 $black: #000000;
+$black-1: #161616;
 $grey: #c4c4c4;
 $grey-2: #616161;
 $white: #ffffff;
@@ -46,6 +47,11 @@ $medium: 500;
 @mixin vertical-center() {
   @include prefix(display, flex);
   @include prefix(flex-direction, column);
+  @include prefix(justify-content, center);
+}
+@mixin center-center() {
+  @include prefix(display, flex);
+  @include prefix(align-items, center);
   @include prefix(justify-content, center);
 }
 

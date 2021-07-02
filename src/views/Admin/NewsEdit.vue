@@ -186,6 +186,7 @@ onMounted(async () => {
 })
 </script>
 <style lang="scss" scoped>
+@import "../../assets/scss/variables.scss";
 .section-news-edit {
   width: 100%;
   margin: 32px 0px;

@@ -23,6 +23,7 @@ import {useRouter} from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
+@import "../../assets/scss/variables.scss";
 .team-inner {
   padding-top: 24px;
   width: 100%;

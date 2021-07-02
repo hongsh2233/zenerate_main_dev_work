@@ -106,6 +106,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
 .header-wrapper {
   position: fixed;
   top: 0;

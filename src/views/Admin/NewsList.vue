@@ -70,6 +70,7 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/scss/variables.scss";
 .section-news-list {
   width: 100%;
   padding: 56px 24px;

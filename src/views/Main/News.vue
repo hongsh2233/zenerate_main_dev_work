@@ -127,6 +127,7 @@ onMounted(async () => {
 })
 </script>
 <style lang="scss" scoped>
+@import "../../assets/scss/variables.scss";
 .section-news {
   padding: 80px 0px;
   @include desktop {

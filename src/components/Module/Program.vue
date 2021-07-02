@@ -22,6 +22,7 @@ import {useRouter} from "vue-router"
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
+@import "../../assets/scss/variables.scss";
 .program-inner {
   width: 100%;
   height: 100%;

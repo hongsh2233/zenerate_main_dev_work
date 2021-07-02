@@ -25,6 +25,7 @@
 </template>
 <script lang="ts" scoped></script>
 <style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
 .section-footer {
   border-top: solid 2px $main;
   padding: 12px 0px;

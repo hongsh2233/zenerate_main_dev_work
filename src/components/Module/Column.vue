@@ -72,6 +72,7 @@ onMounted(async () => {
 })
 </script>
 <style lang="scss" scoped>
+@import "../../assets/scss/variables.scss";
 .column-inner {
   width: 100%;
   height: 100%;

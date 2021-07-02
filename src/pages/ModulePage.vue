@@ -1,4 +1,7 @@
 <template>
+  <section class="module-scroll">
+    <ModuleScroll></ModuleScroll>
+  </section>
   <section class="module-grid">
     <div class="grid-item column"><Column></Column></div>
     <div class="grid-item news"><News></News></div>
@@ -36,9 +39,11 @@ import Partnership from '/Components/Module/Partnership.vue'
 import Program from '/Components/Module/Program.vue'
 // @ts-ignore
 import Youtube from '/Components/Module/Youtube.vue'
+import ModuleScroll from '/Components/Module/Scroll.vue'
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/variables.scss";
 /** layout setting */
 .module-grid {
   margin-bottom: 88px;

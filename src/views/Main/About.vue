@@ -76,6 +76,7 @@ const { locale } = useI18n()
 import timelineItem from '/Constants/timeline'
 </script>
 <style lang="scss" scoped>
+@import "../../assets/scss/variables.scss";
 .section-about {
   padding: 80px 0px;
   @include mobile {
@@ -85,6 +86,8 @@ import timelineItem from '/Constants/timeline'
     width: 100%;
     img {
       max-width: 100%;
+      width:1166px;
+      height:640px;
     }
   }
   .about-overview-wrapper {
