@@ -23,7 +23,7 @@
 .career-inner {
   width: 100%;
   height: 100%;
-  padding: 40px 0px;
+  padding: 0px;
   padding-left: 32px;
 }
 </style>
