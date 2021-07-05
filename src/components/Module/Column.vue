@@ -1,6 +1,9 @@
 <template>
   <div class="module-column-wrapper module-item-wrapper">
     <div class="column-inner">
+      <div class="title-caption caption-large">
+        {{ $t('module.column.caption') }}
+      </div>
       <div class="column-thumb">
         <a
           href="https://zenerate.medium.com/it-%EA%B8%B0%EB%B0%98-%EB%B6%80%EB%8F%99%EC%82%B0-%EC%86%94%EB%A3%A8%EC%85%98%EC%9D%98-%ED%98%84%EC%9E%AC-3bcff2e490cf"
@@ -10,9 +13,6 @@
         </a>
       </div>
       <div class="column-title">
-        <div class="title-caption caption-large">
-          {{ $t('module.column.caption') }}
-        </div>
         <div class="title-text">
           <a
             href="https://zenerate.medium.com/it-%EA%B8%B0%EB%B0%98-%EB%B6%80%EB%8F%99%EC%82%B0-%EC%86%94%EB%A3%A8%EC%85%98%EC%9D%98-%ED%98%84%EC%9E%AC-3bcff2e490cf"
@@ -29,7 +29,6 @@
         <div class="insight-caption caption-large">
           {{ $t('module.column.insight') }}
         </div>
-        <div class="spacer"></div>
         <div class="insight-date">August - December 2020</div>
         <div class="insight-items-wrapper">
           <a
@@ -72,7 +71,7 @@ onMounted(async () => {
 })
 </script>
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 .column-inner {
   width: 100%;
   height: 100%;
@@ -87,17 +86,21 @@ onMounted(async () => {
   }
   .column-thumb {
     @include desktop {
-      height: 670px;
+      height: 312px;
+      width: 412px;
     }
     width: 100%;
     overflow: hidden;
     margin-bottom: 24px;
     text-align: center;
     .thumb {
-      margin: 0px auto;
+      margin: 24px auto 0px auto;
+      height: 312px;
+      object-fit: contain;
+
       @include desktop {
-        max-height: 670px;
-        height: 670px;
+        max-height: 312px;
+        height: 312px;
       }
       @include tablet {
         max-height: 412px;
@@ -112,8 +115,8 @@ onMounted(async () => {
   .column-title {
     width: 100%;
     @include desktop {
-      margin-bottom: 24px;
-      height: 504px;
+      margin-bottom: 54px;
+      
     }
     @include tablet {
       margin-bottom: 16px;
@@ -125,6 +128,7 @@ onMounted(async () => {
     .title-caption {
       color: $main;
       @include desktop {
+        @include bold(16);
         margin-bottom: 24px;
       }
       @include tablet {
@@ -133,13 +137,12 @@ onMounted(async () => {
       @include mobile {
         @include bold(16);
       }
-      margin-bottom: 12px;
     }
     .title-text {
       margin-bottom: 24px;
       @include desktop {
         padding-right: 12px;
-        @include bold(48);
+        @include bold(28);
       }
       @include tablet {
         @include bold(40);
@@ -150,7 +153,7 @@ onMounted(async () => {
     }
     .title-detail {
       @include desktop {
-        @include medium(20);
+        @include medium(16);
       }
       @include tablet {
         @include medium(20);
@@ -174,9 +177,10 @@ onMounted(async () => {
     }
 
     .insight-date {
-      @include medium(15);
-      color: $grey-2;
-      margin-bottom: 28px;
+      @include medium(10);
+      color: rgba($black-1, 0.4);
+      height:48px;
+      @include vertical-center;
     }
     .insight-items-wrapper {
       padding-right: 8px;
@@ -193,11 +197,11 @@ onMounted(async () => {
           @include mobile {
             @include medium(14);
           }
-          margin-bottom: 8px;
+          margin-bottom: 4px;
         }
         .item-date {
           vertical-align: middle;
-          @include medium(14);
+          @include medium(12);
           @include mobile {
             @include medium(12);
           }

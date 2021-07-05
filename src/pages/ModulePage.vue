@@ -13,6 +13,7 @@
     <div class="grid-item program"><Program></Program></div>
     <div class="grid-item partnership"><Partnership></Partnership></div>
     <div class="grid-item youtube"><Youtube></Youtube></div>
+    <div class="grid-item career"><Career></Career></div>
   </section>
 </template>
 
@@ -39,6 +40,9 @@ import Partnership from '/Components/Module/Partnership.vue'
 import Program from '/Components/Module/Program.vue'
 // @ts-ignore
 import Youtube from '/Components/Module/Youtube.vue'
+// @ts-ignore
+import Career from '/Components/Module/Career.vue'
+// @ts-ignore
 import ModuleScroll from '/Components/Module/Scroll.vue'
 </script>
 
@@ -52,7 +56,8 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   }
   /** grid setting */
   display: grid;
-  grid-template-columns: repeat(10, minmax(0px, 1fr));
+  grid-template-columns: repeat(11, minmax(0px, 1fr));
+  padding: 0px 4px;
   .grid-item {
     width: 100%;
   }
@@ -178,6 +183,9 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
       height: 320px;
     }
   }
+  .career{
+    grid-area: career;
+  }
   .footer {
     grid-area: footer;
     background: black;
@@ -194,39 +202,41 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
 
   @include desktop {
     grid-template-areas:
-      'column column column column news news explanation explanation explanation explanation'
-      'column column column column news news consulting consulting consulting consulting'
-      'column column column column news news team team team team'
-      'fold fold fold fold fold fold fold fold fold fold'
-      'monthly monthly program program program program program partnership partnership partnership'
-      'monthly monthly youtube youtube youtube youtube youtube youtube youtube youtube'
-      'footer footer footer footer footer footer footer footer footer footer';
+      'column column column column news news news explanation explanation explanation explanation'
+      'column column column column news news news consulting consulting consulting consulting'
+      'column column column column news news news team team team team'
+      'monthly monthly monthly monthly news news news team team team team'
+      'fold fold fold fold fold fold fold fold fold fold fold'
+      'program program program program youtube youtube youtube youtube youtube youtube youtube'
+      'partnership partnership partnership partnership youtube youtube youtube youtube youtube youtube youtube'
+      'partnership partnership partnership partnership career career career career career career career'
+      'footer footer footer footer footer footer footer footer footer footer footer';
   }
-  @include tablet {
-    grid-template-areas:
-      'column column column column column explanation explanation explanation explanation explanation'
-      'column column column column column team team team team team'
-      'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
-      'news news news news news news news news news news'
-      'fold fold fold fold fold fold fold fold fold fold'
-      'monthly monthly monthly monthly monthly partnership partnership partnership partnership partnership'
-      'program program program program program program program program program program'
-      'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
-      'footer footer footer footer footer footer footer footer footer footer';
-  }
-  @include mobile {
-    grid-template-areas:
-      'column column column column column column column column column column'
-      'explanation explanation explanation explanation explanation explanation explanation explanation explanation explanation'
-      'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
-      'team team team team team team team team team team'
-      'news news news news news news news news news news'
-      'fold fold fold fold fold fold fold fold fold fold'
-      'monthly monthly monthly monthly monthly monthly monthly monthly monthly monthly'
-      'program program program program program program program program program program'
-      'partnership partnership partnership partnership partnership partnership partnership partnership partnership partnership'
-      'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
-      'footer footer footer footer footer footer footer footer footer footer';
-  }
+  // @include tablet {
+  //   grid-template-areas:
+  //     'column column column column column explanation explanation explanation explanation explanation'
+  //     'column column column column column team team team team team'
+  //     'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
+  //     'news news news news news news news news news news'
+  //     'fold fold fold fold fold fold fold fold fold fold'
+  //     'monthly monthly monthly monthly monthly partnership partnership partnership partnership partnership'
+  //     'program program program program program program program program program program'
+  //     'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
+  //     'footer footer footer footer footer footer footer footer footer footer';
+  // }
+  // @include mobile {
+  //   grid-template-areas:
+  //     'column column column column column column column column column column'
+  //     'explanation explanation explanation explanation explanation explanation explanation explanation explanation explanation'
+  //     'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
+  //     'team team team team team team team team team team'
+  //     'news news news news news news news news news news'
+  //     'fold fold fold fold fold fold fold fold fold fold'
+  //     'monthly monthly monthly monthly monthly monthly monthly monthly monthly monthly'
+  //     'program program program program program program program program program program'
+  //     'partnership partnership partnership partnership partnership partnership partnership partnership partnership partnership'
+  //     'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
+  //     'footer footer footer footer footer footer footer footer footer footer';
+  // }
 }
 </style>

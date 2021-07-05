@@ -1,5 +1,7 @@
 <template>
-  <div class="module-scroll-wrapper">
+  <div class="module-scroll-wrapper" :style="{
+    visibility: isVisible,
+  }">
     <div
       class="scroll-first"
       :style="{
@@ -20,7 +22,7 @@
       </div>
     </div>
     <div
-      class="scroll-second" 
+      class="scroll-second"
       :style="{
         opacity: opacity.second,
       }"
@@ -39,7 +41,7 @@
           class="second-first-first"
           :style="{
             opacity: opacity.secondFirstFirst,
-            transform: `translateY(${makeTranslate(opacity.secondFirstFirst)}px)`
+            transform: `translateY(${transform.secondFirstFirst}px)`,
           }"
         >
           <p>제너레잇은 인공지능 엔진을 통해</p>
@@ -49,6 +51,7 @@
           class="second-first-second"
           :style="{
             opacity: opacity.secondFirstSecond,
+            transform: `translateY(${transform.secondFirstSecond}px)`,
           }"
         >
           <p>평균 12%의 추가 개발 수익을 발생시키고 있습니다.</p>
@@ -59,6 +62,7 @@
           class="second-second-first"
           :style="{
             opacity: opacity.secondSecondFirst,
+            transform: `translateY(${transform.secondSecondFirst}px)`,
           }"
         >
           <p>제너레잇이 부동산 개발의 방식을</p>
@@ -68,6 +72,7 @@
           class="second-second-second"
           :style="{
             opacity: opacity.secondSecondSecond,
+            transform: `translateY(${transform.secondSecondSecond}px)`,
           }"
         >
           <p>건축 디자인 자동화, 인공지능 데이터를 활용하여</p>
@@ -79,11 +84,29 @@
         </div>
       </div>
     </div>
+    <div class="vector-wrapper" :style="{
+      opacity: opacity.vector,
+    }">
+      <svg
+        width="27"
+        height="83"
+        viewBox="0 0 27 83"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0.999994 1L0.999996 82L26 55.3114"
+          :stroke="vectorColor"
+          stroke-linecap="square"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, registerRuntimeCompiler } from 'vue'
 const opacity = ref({
   first: 1,
   second: 0,
@@ -91,23 +114,59 @@ const opacity = ref({
   secondFirstSecond: 0,
   secondSecondFirst: 0,
   secondSecondSecond: 0,
+  vector: 1,
 })
 const transform = ref({
-  secondFirstFirst: -10,
-  secondFirstSecond: -10,
-  secondSecondFirst: -10,
-  secondSecondSecond: -10,
+  secondFirstFirst: -20,
+  secondFirstSecond: -20,
+  secondSecondFirst: -20,
+  secondSecondSecond: -20,
 })
+const vectorColor = ref('#4747FF');
 const typing = ref('')
 const typingLetter = ['최', '고', '의', ' ', '안']
-function makeTranslate(opacity){
-    if (opacity == 0){
-        return -10
-    }else if (opacity < 1){
-        return -10*opacity
-    }else{
-        return 0
-    }
+const isVisible=ref('block');
+
+function setVectorColor(scrollY){
+  if (scrollY<=800){
+    return "#4747FF";
+  }else if (scrollY<=3300) {
+    return "#FFFFFF";
+  }else{
+    return "transparent"
+  }
+}
+function setVectorOpacity(scrollY){
+  if (scrollY<=800){
+    return 1-scrollY/800;
+  }else{
+    return 1;
+  }
+}
+function lerp(startInc, endInc, startDec, endDec, scrollY) {
+  if (scrollY < startInc) {
+    return 0
+  } else if (scrollY >= startInc && scrollY < endInc) {
+    const leng = endInc - startInc
+    return (scrollY - startInc) / leng
+  } else if (scrollY >= endInc && scrollY < startDec) {
+    return 1
+  } else if (scrollY >= startDec && scrollY < endDec) {
+    const leng = endDec - startDec
+    return 1 - (scrollY - startDec) / leng
+  } else {
+    return 0
+  }
+}
+function makeTranslate(start, end, scrollY) {
+  if (scrollY < start) {
+    return -20
+  } else if (scrollY >= start && scrollY < end) {
+    const leng = end - start
+    return 20 * (1 - (scrollY - start) / leng)
+  } else if (scrollY >= end) {
+    return 0
+  }
 }
 onMounted(() => {
   let startTyping = setInterval(() => {
@@ -119,78 +178,27 @@ onMounted(() => {
 
   window.addEventListener('scroll', ($evt) => {
     const scrollY = $evt.currentTarget.scrollY
-    if (scrollY < 800) {
-      opacity.value = {
-        first: 1 - scrollY / 800,
-        second: 0,
-        secondFirstFirst: 0,
-        secondFirstSecond: 0,
-        secondSecondFirst: 0,
-        secondSecondSecond: 0,
-      }
-    } else if (scrollY < 1300) {
-      opacity.value = {
-        first: 0,
-        second: (scrollY - 800) / 500,
-        secondFirstFirst: (scrollY - 800) / 500,
-        secondFirstSecond: 0,
-        secondSecondFirst: 0,
-        secondSecondSecond: 0,
-      }
-    } else if (scrollY < 1800) {
-      opacity.value = {
-        first: 0,
-        second: 1,
-        secondFirstFirst: 1,
-        secondFirstSecond: (scrollY - 1300) / 300,
-        secondSecondFirst: 0,
-        secondSecondSecond: 0,
-      }
-    } else if (scrollY < 2100) {
-      opacity.value = {
-        first: 0,
-        second: 1,
-        secondFirstFirst: 1 - (scrollY - 1800) / 400,
-        secondFirstSecond: 1 - (scrollY - 1800) / 400,
-        secondSecondFirst: 0,
-        secondSecondSecond: 0,
-      }
-    } else if (scrollY < 2600) {
-      opacity.value = {
-        first: 0,
-        second: 1,
-        secondFirstFirst: 0,
-        secondFirstSecond: 0,
-        secondSecondFirst: (scrollY - 2100) / 500,
-        secondSecondSecond: 0,
-      }
-    } else if (scrollY < 3100) {
-      opacity.value = {
-        first: 0,
-        second: 1,
-        secondFirstFirst: 0,
-        secondFirstSecond: 0,
-        secondSecondFirst: 1,
-        secondSecondSecond: (scrollY - 2600) / 300,
-      }
-    } else if (scrollY < 3700) {
-      opacity.value = {
-        first: 0,
-        second: 1 - (scrollY - 3100) / 400,
-        secondFirstFirst: 0,
-        secondFirstSecond: 0,
-        secondSecondFirst: 1 - (scrollY - 3100) / 600,
-        secondSecondSecond: 1 - (scrollY - 3100) / 600,
-      }
-    } else {
-      opacity.value = {
-        first: 0,
-        second: 0,
-        secondFirstFirst: 0,
-        secondFirstSecond: 0,
-        secondSecondFirst: 0,
-        secondSecondSecond: 0,
-      }
+    console.log(scrollY);
+    opacity.value = {
+      first: lerp(0, 0, 0, 800, scrollY),
+      second: lerp(800, 1300, 3100, 3400, scrollY),
+      secondFirstFirst: lerp(800, 1300, 1900, 2100, scrollY),
+      secondFirstSecond: lerp(1300, 1800, 1900, 2100, scrollY),
+      secondSecondFirst: lerp(2100, 2600, 3100, 3400, scrollY),
+      secondSecondSecond: lerp(2600, 3000, 3100, 3400, scrollY),
+      vector: setVectorOpacity(scrollY)
+    }
+    transform.value = {
+      secondFirstFirst: makeTranslate(800, 1300, scrollY),
+      secondFirstSecond: makeTranslate(1300, 1900, scrollY),
+      secondSecondFirst: makeTranslate(2100, 2600, scrollY),
+      secondSecondSecond: makeTranslate(2600, 3100, scrollY),
+    }
+    vectorColor.value=setVectorColor(scrollY);
+    if (scrollY<=3400){
+      isVisible.value = 'visible';
+    }else{
+      isVisible.value = 'hidden';
     }
   })
 })
@@ -207,11 +215,21 @@ onMounted(() => {
     height: 100vh;
     @include flex;
     @include center-center;
+    @include mobile{
+      @include flex($dir: column);
+    }
     .first-image {
       width: 413px;
       margin-right: 36px;
       img {
         width: 100%;
+      }
+      @include tablet{
+        width: 320px;
+      }
+      @include mobile{
+        width: 320px;
+        margin: 76px 0px 20px 0px;
       }
     }
     .first-text {
@@ -230,6 +248,16 @@ onMounted(() => {
         border-right: 3px solid;
         animation: typingAnimation 1s steps(1) infinite;
       }
+      @include tablet{
+        p{
+          @include bold(32);
+        }
+      }
+      @include mobile{
+        p{
+          @include bold(20);
+        }
+      }
     }
   }
   .scroll-second {
@@ -243,6 +271,18 @@ onMounted(() => {
       z-index: 0;
       video {
         width: 100%;
+      }
+      @include tablet{
+        video{
+          height: 100vh;
+          object-fit: cover;
+        }
+      }
+      @include mobile{
+        video{
+          height: 100vh;
+          object-fit: cover;
+        }
       }
     }
     .second-first-text {
@@ -265,6 +305,34 @@ onMounted(() => {
           font-size: 24px;
           line-height: 32px;
           color: white;
+        }
+      }
+      @include tablet{
+        .second-first-first {
+          p {
+            @include bold(32);
+            line-height: 52px;
+          }
+        }
+        .second-first-second {
+          p {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+      @include mobile{
+        .second-first-first {
+          p {
+            @include bold(20);
+            line-height: 32px;
+          }
+        }
+        .second-first-second {
+          p {
+            font-size: 16px;
+            line-height: 28px;
+          }
         }
       }
     }
@@ -290,7 +358,54 @@ onMounted(() => {
           line-height: 32px;
         }
       }
+      @include tablet{
+        .second-second-first {
+          p {
+            @include bold(32);
+            line-height: 52px;
+          }
+        }
+        .second-second-second {
+          p {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+      @include mobile{
+        .second-second-first {
+          p {
+            @include bold(20);
+            line-height: 32px;
+          }
+        }
+        .second-second-second {
+          p {
+            font-size: 16px;
+            line-height: 28px;
+          }
+        }
+      }
     }
+  }
+  .vector-wrapper {
+    @include fixed(bottom 35px left 50%);
+    animation: ani 1.25s ease-in-out infinite;
+    @include mobile{
+      @include fixed(bottom 23px left 50%);
+      svg{
+        height: 40px;
+      }
+    }
+  }
+}
+@keyframes ani{
+  0%{
+    padding-bottom: 10px;
+  }50%{
+    padding-bottom: 0px;
+  }100%{
+    padding-bottom: 10px;
   }
 }
 </style>

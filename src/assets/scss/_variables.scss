@@ -1,6 +1,7 @@
 /*--------- COLORS ---------*/
 $black: #000000;
 $black-1: #161616;
+
 $grey: #c4c4c4;
 $grey-2: #616161;
 $white: #ffffff;
@@ -26,6 +27,7 @@ $medium: 500;
 @mixin font-set($font-size, $font-weight) {
   font-size: $font-size;
   font-weight: $font-weight;
+  line-height: calc(#{$font-size} + 12px);
 }
 
 @mixin bold($font-size) {

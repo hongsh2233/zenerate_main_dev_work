@@ -40,7 +40,7 @@ const { locale } = useI18n()
     margin-bottom: 36px;
     .title-text {
       @include desktop {
-        @include medium(48);
+        @include bold(40);
         &.en {
           font-size: 36px;
         }
