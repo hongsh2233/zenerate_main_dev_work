@@ -1,17 +1,13 @@
 <template>
   <div class="module-program-wrapper module-item-wrapper">
     <div class="program-inner">
-      <div class="program-title">{{ $t('module.program.title') }}</div>
       <div class="program-caption caption-small hover-pointer" @click="router.push('/main/service')">
         {{ $t('module.program.caption') }}
       </div>
-      <div class="spacer"></div>
+      <div class="program-title">{{ $t('module.program.title') }}</div>
       <div class="program-content">
         <p>
           {{ $t('module.program.contents[0]') }}
-        </p>
-        <p>
-          {{ $t('module.program.contents[1]') }}
         </p>
       </div>
     </div>
@@ -26,14 +22,18 @@ const router = useRouter()
 .program-inner {
   width: 100%;
   height: 100%;
-  padding-top: 24px;
+
   @include desktop {
-    padding: 40px 24px;
+    
+  }
+  .program-caption{
+    height: 40px;
   }
   .program-title {
     @include desktop {
-      @include medium(48);
-      margin-bottom: 32px;
+      @include bold(40);
+      line-height: 60px;
+      margin-bottom: 40px;
     }
     @include tablet {
       @include medium(50);

@@ -114,7 +114,7 @@ const currentComponent = computed(() => {
 .fold-inner {
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: 612px;
   padding-top: 24px;
   @include relative;
   @include flex();
@@ -167,7 +167,7 @@ const currentComponent = computed(() => {
       .title-number {
         @include desktop {
           @include bold(16);
-          padding-top: 48px;
+          padding-top: 36px;
         }
         @include tablet {
           @include bold(32);
@@ -182,7 +182,7 @@ const currentComponent = computed(() => {
         transform: rotate(180deg);
         @include vertical-center;
         @include desktop {
-          padding-top: 48px;
+          padding-top: 36px;
         }
       }
     }
@@ -191,7 +191,7 @@ const currentComponent = computed(() => {
     @include desktop {
       height: 100%;
       width: 935px;
-      padding: 48px;
+      padding: 36px;
     }
     @include tablet {
       width: 100%;
@@ -216,7 +216,7 @@ const currentComponent = computed(() => {
     .item-header {
       @include flex($justify: space-between);
       padding-right: 24px;
-      margin-left:74px;
+      margin-left: 85px;
       @include bold(20);
       @include tablet {
         margin-top: 24px;
@@ -256,7 +256,7 @@ const currentComponent = computed(() => {
       @include flex($justify: space-between);
       .content-left {
         flex: 1;
-        margin-left: 74px;
+        margin-left: 85px;
         @include mobile {
           margin-right: 8px;
         }
@@ -297,7 +297,7 @@ const currentComponent = computed(() => {
     .timeline {
       margin-top: 80px;
       .timeline-item {
-        margin-left: 74px;
+        margin-left: 85px;
         margin-bottom: 4px;
         @include flex;
         color: white;
@@ -324,7 +324,7 @@ const currentComponent = computed(() => {
       margin-top: 80px;
       .team-item {
         @include flex;
-        margin-left: 74px;
+        margin-left: 85px;
         .item-desc {
           width: 220px;
           @include bold(24);
@@ -346,7 +346,7 @@ const currentComponent = computed(() => {
       }
     }
     .news {
-      margin-left: 74px;
+      margin-left: 85px;
       padding-right: 48px;
       @include mobile {
         padding-right: 24px;
@@ -377,15 +377,15 @@ const currentComponent = computed(() => {
     }
     .program {
       padding-right: 48px;
-      margin-left: 74px;
-      width:552px;
+      margin-left: 85px;
+      width: 552px;
       @include mobile {
         padding-right: 24px;
       }
       color: $navy;
       .program-block {
         margin-bottom: 32px;
-        .program-title{
+        .program-title {
           @include bold(28);
           margin-bottom: 32px;
           @include mobile {
@@ -407,16 +407,16 @@ const currentComponent = computed(() => {
           }
         }
       }
-      hr{
+      hr {
         background-color: $main-4;
         height: 1px;
-        border:transparent;
+        border: transparent;
         margin-bottom: 20px;
       }
     }
     .contact {
       color: $main;
-      margin-left: 74px;
+      margin-left: 85px;
       width: 560px;
       .contact-title {
         margin-bottom: 32px;
@@ -425,7 +425,7 @@ const currentComponent = computed(() => {
         }
         p {
           @include bold(40);
-          line-height: 60px; 
+          line-height: 60px;
           @include mobile {
             @include bold(32);
           }
@@ -450,9 +450,9 @@ const currentComponent = computed(() => {
         text-align: end;
         position: relative;
         button {
-          position:relative;
+          position: relative;
           z-index: 20;
-          background: #D6E4FF;
+          background: #d6e4ff;
           color: $main;
           margin-right: 20px;
           @include bold(16);
@@ -469,13 +469,13 @@ const currentComponent = computed(() => {
     background: $main;
   }
   .news {
-    background: #8097FF;
+    background: #8097ff;
   }
   .program {
-    background: #B9CAFF;
+    background: #b9caff;
   }
   .contact {
-    background: #D6E4FF;
+    background: #d6e4ff;
   }
 }
 </style>

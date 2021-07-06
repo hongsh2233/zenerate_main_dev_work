@@ -1,13 +1,15 @@
 <template>
   <div class="module-partnership-wrapper module-item-wrapper">
     <div class="partnership-inner">
-      <div class="partnership-title">{{ $t('module.partnership.title') }}</div>
       <div class="partnership-contact caption-small hover-pointer" @click="router.push('/main/contact')">
         {{ $t('module.partnership.caption') }}
       </div>
-      <div class="spacer"></div>
+      <div class="partnership-title">{{ $t('module.partnership.title') }}</div>
       <div class="partnership-content">
         <span>{{ $t('module.partnership.contents[0]') }} </span>
+      </div>
+      <div class="partner-image-wrapper">
+        <img class = "partner-image" v-for="i in 12" :key="i" :src='`../../public/img/partner_${i}.png`'>
       </div>
     </div>
   </div>
@@ -21,10 +23,8 @@ const router = useRouter()
 .partnership-inner {
   width: 100%;
   height: 100%;
-  padding-top: 24px;
+  
   @include desktop {
-    padding: 40px 0px;
-    padding-left: 32px;
   }
   @include tablet {
     padding-top: 48px;
@@ -33,10 +33,12 @@ const router = useRouter()
   @include mobile {
     margin-bottom: 24px;
   }
-
+  .partnership-contact{
+    height: 40px;
+  }
   .partnership-title {
     @include desktop {
-      @include medium(48);
+      @include bold(28);
       margin-bottom: 32px;
     }
     @include tablet {
@@ -50,7 +52,7 @@ const router = useRouter()
   }
   .partnership-content {
     @include desktop {
-      @include medium(20);
+      @include medium(16);
     }
     @include tablet {
       @include medium(20);
