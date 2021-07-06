@@ -34,6 +34,22 @@
         <button @click="router.push('/main/contact')">
           {{ $t('module.fold.contact.contents.contact.button') }}
         </button>
+        <div class="vector-wrapper">
+          <svg
+            width="558"
+            height="28"
+            viewBox="0 0 558 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 27H557.5L530.923 1"
+              stroke="#4747FF"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </div>
@@ -44,7 +60,7 @@ const props = defineProps({
   active: Boolean,
   classProp: String,
 })
-import {useRouter} from "vue-router"
+import { useRouter } from 'vue-router'
 
 const contactTab = ref('contact')
 const toggleContactTab = (idx) => {
@@ -52,7 +68,6 @@ const toggleContactTab = (idx) => {
 }
 
 const router = useRouter()
-
 </script>
 
 <style lang="scss" scoped></style>

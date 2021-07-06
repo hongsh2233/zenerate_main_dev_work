@@ -5,7 +5,6 @@
         <div class="title-caption caption-large hover-pointer" @click="router.push('/main/team')">
           <span>{{ $t('module.team.caption') }}</span>
         </div>
-        <div class="spacer"></div>
         <div class="title-date">2017 - 2021</div>
         <div class="title-content">
           {{ $t('module.team.contents[0]') }}
@@ -31,7 +30,6 @@ const router = useRouter()
   display: grid;
 
   @include desktop {
-    padding-left: 24px;
     grid-template-areas:
       'title'
       'image';
@@ -55,17 +53,20 @@ const router = useRouter()
       height: 302px;
       margin-top: auto;
     }
+    .title-caption{
+      height: 40px;  
+      @include vertical-center;
+    }
     .title-date {
       @include desktop {
-        @include medium(15);
-        color: $grey-2;
+        @include medium(10);
+        color: rgba($black-1, 0.4);
+        height: 48px;
+        @include vertical-center;
       }
-
-      margin-bottom: 28px;
     }
     .title-content {
-      padding-right: 12px;
-      @include medium(20);
+      @include medium(16);
       @include tablet {
         @include medium(20);
       }
@@ -77,13 +78,13 @@ const router = useRouter()
   }
   .team-image {
     grid-area: image;
-    width: 100%;
+    height: 100%;
     background-position-x: center;
     background-position-y: top;
     background-size: cover;
     @include desktop {
-      height: 266px;
-      margin-top: auto;
+      height: 275px;
+      margin-top: 24px;
     }
     @include tablet {
       height: 360px;

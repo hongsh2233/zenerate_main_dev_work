@@ -1,6 +1,9 @@
 <template>
   <div class="module-monthly-wrapper module-item-wrapper">
     <div class="monthly-inner">
+      <div class="monthly-caption caption-large hidden-tablet hidden-mobile">
+        {{ $t('module.monthlyZenerate.caption') }}
+      </div>
       <div class="monthly-title" :class="{ en: locale === 'en' }">
         <span class="hidden-mobile hidden-tablet">{{
           $t('module.monthlyZenerate.title.desktop')
@@ -9,19 +12,16 @@
           $t('module.monthlyZenerate.title.mobile')
         }}</span>
       </div>
-      <div class="monthly-caption caption-large hidden-tablet hidden-mobile">
-        {{ $t('module.monthlyZenerate.caption') }}
-      </div>
       <div class="monthly-caption caption-small hidden-desktop">
         {{ $t('module.monthlyZenerate.caption') }}
       </div>
-
-      <div class="spacer"></div>
       <div class="monthly-subscription">
         <div class="subscription-title">
-          <span>
+          <p>
             {{ $t('module.monthlyZenerate.contents[0]') }}
-          </span>
+          </p>
+          <p>{{ $t('module.monthlyZenerate.contents[1]') }}</p>
+          <p>{{ $t('module.monthlyZenerate.contents[2]') }}</p>
           <!-- <span class="hidden-desktop"
             >{{ $t('module.monthlyZenerate.contents[1]') }}
             <span class="notion hover-pointer">{{
@@ -30,11 +30,28 @@
             >{{ $t('module.monthlyZenerate.contents[3]') }}</span
           > -->
         </div>
-        <div
-          class="subscription-button hover-pointer"
-          @click="toggleNewsLetterModal(true)"
-        >
-          {{ $t('module.monthlyZenerate.subscription') }}
+        <div class="subscription-button-wrapper">
+          <div class="subscription-button">
+            <span class="hover-pointer" @click="toggleNewsLetterModal(true)">{{
+              $t('module.monthlyZenerate.subscription')
+            }}</span>
+          </div>
+          <div class="vector-wrapper">
+            <svg
+              width="413"
+              height="28"
+              viewBox="0 0 413 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.5 27H412L385.423 1"
+                stroke="#4747FF"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -59,13 +76,13 @@ const toggleNewsLetterModal = (flag) => {
 }
 </script>
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 .monthly-inner {
   width: 100%;
   height: 100%;
+  @include flex($dir: column);
   padding-top: 40px;
   @include desktop {
-    padding-right: 20px;
   }
   @include tablet {
     padding-top: 48px;
@@ -74,12 +91,17 @@ const toggleNewsLetterModal = (flag) => {
   @include mobile {
     padding-top: 24px;
   }
-
+  .monthly-caption {
+    @include desktop {
+      padding-bottom: 4px;
+      height: 40px;
+    }
+  }
   .monthly-title {
     @include desktop {
       padding-right: 24px;
-      @include medium(56);
-      margin-bottom: 88px;
+      @include bold(28);
+      margin-bottom: 28px;
       &.en {
         font-size: 48px;
         margin-bottom: 66px;
@@ -99,10 +121,23 @@ const toggleNewsLetterModal = (flag) => {
     @include desktop {
       .subscription-title {
         @include medium(20);
-        margin-bottom: 32px;
+        margin-bottom: 40px;
       }
-      .subscription-button {
+      .subscription-button-wrapper {
+        position: relative;
+        margin-top: auto;
+        .subscription-button {
+          span {
+            margin-right: 43px;
+          }
+        }
+        .vector-wrapper {
+          position: absolute;
+          top: 10px;
+          z-index: -1;
+        }
         @include bold(20);
+        text-align: right;
         color: $main;
       }
     }
@@ -115,7 +150,7 @@ const toggleNewsLetterModal = (flag) => {
         }
       }
       .subscription-button {
-        @include bold(24);
+        @include bold(16);
       }
     }
     @include mobile {

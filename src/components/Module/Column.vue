@@ -78,7 +78,7 @@ onMounted(async () => {
   overflow: hidden;
   @include flex($dir: column);
   @include desktop {
-    padding-right: 24px;
+    
   }
   @include tablet {
     padding-right: 12px;
@@ -86,7 +86,6 @@ onMounted(async () => {
   }
   .column-thumb {
     @include desktop {
-      height: 312px;
       width: 412px;
     }
     width: 100%;
@@ -95,9 +94,8 @@ onMounted(async () => {
     text-align: center;
     .thumb {
       margin: 24px auto 0px auto;
-      height: 312px;
+      width: 100%;
       object-fit: contain;
-
       @include desktop {
         max-height: 312px;
         height: 312px;
@@ -141,7 +139,6 @@ onMounted(async () => {
     .title-text {
       margin-bottom: 24px;
       @include desktop {
-        padding-right: 12px;
         @include bold(28);
       }
       @include tablet {

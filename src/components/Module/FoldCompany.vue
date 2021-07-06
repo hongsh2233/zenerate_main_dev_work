@@ -33,25 +33,13 @@
         <div class="left-title">
           {{ $t('module.fold.company.contents.intro.title[0]') }}
         </div>
+        <div class="left-subtitle">
+          <span>
+            {{ $t('module.fold.company.contents.intro.subtitle') }}
+          </span>
+        </div>
         <div class="left-content" :class="{ en: locale === 'en' }">
-          {{ $t('module.fold.company.contents.intro.contents[0]') }}
-        </div>
-      </div>
-      <div class="content-right">
-        <div class="right-circle" :class="{ en: locale === 'en' }">
-          <span>
-            {{ $t('module.fold.company.contents.intro.circle[0]') }}
-          </span>
-        </div>
-        <div class="right-circle" :class="{ en: locale === 'en' }">
-          <span>
-            {{ $t('module.fold.company.contents.intro.circle[1]') }}
-          </span>
-        </div>
-        <div class="right-circle" :class="{ en: locale === 'en' }">
-          <span>
-            {{ $t('module.fold.company.contents.intro.circle[2]') }}
-          </span>
+          <p v-for="i in 6" :key="i">{{ $t(`module.fold.company.contents.intro.contents[${i-1}]`) }}</p>
         </div>
       </div>
     </div>

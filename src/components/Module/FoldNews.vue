@@ -33,6 +33,9 @@
       <div class="news-title">
         {{ $t('module.fold.news.contents.1.title[0]') }}
       </div>
+      <div class="news-date">
+        {{ $t('module.fold.news.contents.1.date[0]') }}
+      </div>
       <div class="news-content">
         {{ $t('module.fold.news.contents.1.contents[0]') }}
       </div>
@@ -41,6 +44,9 @@
       <div class="news-title">
         {{ $t('module.fold.news.contents.2.title[0]') }}
       </div>
+      <div class="news-date">
+        {{ $t('module.fold.news.contents.2.date[0]') }}
+      </div>
       <div class="news-content">
         {{ $t('module.fold.news.contents.2.contents[0]') }}
       </div>
@@ -48,6 +54,9 @@
     <div class="item-content news" v-show="newsTab === 3">
       <div class="news-title">
         {{ $t('module.fold.news.contents.3.title[0]') }}
+      </div>
+      <div class="news-date">
+        {{ $t('module.fold.news.contents.3.date[0]') }}
       </div>
       <div class="news-content">
         {{ $t('module.fold.news.contents.3.contents[0]') }}

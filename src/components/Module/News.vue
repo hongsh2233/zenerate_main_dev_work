@@ -7,7 +7,6 @@
       >
         {{ $t('module.news.caption') }}
       </div>
-      <div class="spacer"></div>
       <div class="news-items hidden-tablet hidden-mobile">
         <div
           class="news-item hover-pointer"
@@ -95,7 +94,7 @@ onMounted(async () => {
   .news-caption {
     margin-bottom: 12px;
     @include desktop {
-      margin-bottom: 40px;
+      margin-bottom: 0px;
     }
   }
   .news-items {
@@ -120,8 +119,8 @@ onMounted(async () => {
         height: 100%;
       }
       .item-date {
-        color: $grey-2;
-        @include medium(15);
+        color: rgba($black-1, 0.4);
+        @include medium(10);
         margin-top: 24px;
         @include tablet {
           text-align: left;
@@ -132,7 +131,7 @@ onMounted(async () => {
         }
       }
       .item-content {
-        @include medium(24);
+        @include medium(16);
         margin: auto 0px;
         flex: 1;
         // @include vertical-center;
@@ -156,7 +155,10 @@ onMounted(async () => {
       flex-direction: column;
       .news-item {
         flex: 1;
-        border-bottom: solid 2px $main;
+        border-bottom: solid 1px $grey-3;
+      }
+      .news-item:last-child{
+        border-bottom: transparent;
       }
     }
   }

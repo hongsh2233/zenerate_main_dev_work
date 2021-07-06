@@ -12,6 +12,7 @@
     <div class="grid-item monthly"><monthly-zenerate></monthly-zenerate></div>
     <div class="grid-item program"><Program></Program></div>
     <div class="grid-item partnership"><Partnership></Partnership></div>
+    <div class="grid-item solution"><Solution></Solution></div>
     <div class="grid-item youtube"><Youtube></Youtube></div>
     <div class="grid-item career"><Career></Career></div>
   </section>
@@ -43,6 +44,8 @@ import Youtube from '/Components/Module/Youtube.vue'
 // @ts-ignore
 import Career from '/Components/Module/Career.vue'
 // @ts-ignore
+import Solution from '/Components/Module/Solution.vue'
+// @ts-ignore
 import ModuleScroll from '/Components/Module/Scroll.vue'
 </script>
 
@@ -64,7 +67,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .column {
     grid-area: column;
     @include desktop {
-      height: 1500px;
+      height: 1048px;
     }
     @include tablet {
       height: 1200px;
@@ -77,7 +80,8 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .news {
     grid-area: news;
     @include desktop {
-      height: 1500px;
+      height: 1417px;
+      padding: 0px 56px;
     }
     @include tablet {
       height: auto;
@@ -89,7 +93,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .team {
     grid-area: team;
     @include desktop {
-      height: 555px;
+      height: 559px;
     }
     @include tablet {
       height: 750px;
@@ -102,7 +106,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
     grid-area: consulting;
     background: white;
     @include desktop {
-      height: 640px;
+      height: 608px;
     }
     @include tablet {
       height: auto;
@@ -114,7 +118,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .explanation {
     grid-area: explanation;
     @include desktop {
-      height: 284px;
+      height: 250px;
     }
     @include tablet {
       height: 400px;
@@ -126,7 +130,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .fold {
     grid-area: fold;
     @include desktop {
-      height: 624px;
+      height: 650px;
     }
     @include tablet {
       height: 980px;
@@ -138,7 +142,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .monthly {
     grid-area: monthly;
     @include desktop {
-      height: 912px;
+      height: 369px;
     }
     @include tablet {
       height: 400px;
@@ -150,7 +154,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .program {
     grid-area: program;
     @include desktop {
-      height: 440px;
+      height: 343px;
     }
     @include tablet {
       height: 372px;
@@ -162,7 +166,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .partnership {
     grid-area: partnership;
     @include desktop {
-      height: 440px;
+      height: 588px;
     }
     @include tablet {
       height: 400px;
@@ -174,7 +178,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .youtube {
     grid-area: youtube;
     @include desktop {
-      height: 472px;
+      height: 459px;
     }
     @include tablet {
       height: 400px;
@@ -183,8 +187,23 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
       height: 320px;
     }
   }
+  .solution{
+    grid-area: solution;
+    @include desktop {
+      height: 160px;
+    }
+    @include tablet {
+      height: 160px;
+    }
+    @include mobile {
+      height: 160px;
+    }
+  }
   .career{
     grid-area: career;
+    @include desktop {
+      height: 264px;
+    }
   }
   .footer {
     grid-area: footer;
@@ -207,36 +226,37 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
       'column column column column news news news team team team team'
       'monthly monthly monthly monthly news news news team team team team'
       'fold fold fold fold fold fold fold fold fold fold fold'
+      'program program program program solution solution solution solution solution solution solution'
       'program program program program youtube youtube youtube youtube youtube youtube youtube'
       'partnership partnership partnership partnership youtube youtube youtube youtube youtube youtube youtube'
       'partnership partnership partnership partnership career career career career career career career'
       'footer footer footer footer footer footer footer footer footer footer footer';
   }
-  // @include tablet {
-  //   grid-template-areas:
-  //     'column column column column column explanation explanation explanation explanation explanation'
-  //     'column column column column column team team team team team'
-  //     'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
-  //     'news news news news news news news news news news'
-  //     'fold fold fold fold fold fold fold fold fold fold'
-  //     'monthly monthly monthly monthly monthly partnership partnership partnership partnership partnership'
-  //     'program program program program program program program program program program'
-  //     'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
-  //     'footer footer footer footer footer footer footer footer footer footer';
-  // }
-  // @include mobile {
-  //   grid-template-areas:
-  //     'column column column column column column column column column column'
-  //     'explanation explanation explanation explanation explanation explanation explanation explanation explanation explanation'
-  //     'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
-  //     'team team team team team team team team team team'
-  //     'news news news news news news news news news news'
-  //     'fold fold fold fold fold fold fold fold fold fold'
-  //     'monthly monthly monthly monthly monthly monthly monthly monthly monthly monthly'
-  //     'program program program program program program program program program program'
-  //     'partnership partnership partnership partnership partnership partnership partnership partnership partnership partnership'
-  //     'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
-  //     'footer footer footer footer footer footer footer footer footer footer';
-  // }
+  @include tablet {
+    grid-template-areas:
+      'column column column column column explanation explanation explanation explanation explanation'
+      'column column column column column team team team team team'
+      'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
+      'news news news news news news news news news news'
+      'fold fold fold fold fold fold fold fold fold fold'
+      'monthly monthly monthly monthly monthly partnership partnership partnership partnership partnership'
+      'program program program program program program program program program program'
+      'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
+      'footer footer footer footer footer footer footer footer footer footer';
+  }
+  @include mobile {
+    grid-template-areas:
+      'column column column column column column column column column column'
+      'explanation explanation explanation explanation explanation explanation explanation explanation explanation explanation'
+      'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
+      'team team team team team team team team team team'
+      'news news news news news news news news news news'
+      'fold fold fold fold fold fold fold fold fold fold'
+      'monthly monthly monthly monthly monthly monthly monthly monthly monthly monthly'
+      'program program program program program program program program program program'
+      'partnership partnership partnership partnership partnership partnership partnership partnership partnership partnership'
+      'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
+      'footer footer footer footer footer footer footer footer footer footer';
+  }
 }
 </style>

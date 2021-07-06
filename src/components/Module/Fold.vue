@@ -18,11 +18,11 @@
         />
       </div>
       <div
-        class="fold-news fold-item news hover-pointer"
+        class="fold-news fold-item news"
         @click="toggleFold(2)"
         :class="{ active: currentFold === 2 }"
       >
-        <div class="fold-title">
+        <div class="fold-title hover-pointer">
           <span class="title-number">02</span>
           <span class="title-text">{{ $t('module.fold.news.category') }}</span>
         </div>
@@ -33,11 +33,11 @@
       </div>
 
       <div
-        class="fold-program fold-item program hover-pointer colored"
+        class="fold-program fold-item program colored"
         @click="toggleFold(3)"
         :class="{ active: currentFold === 3 }"
       >
-        <div class="fold-title program">
+        <div class="fold-title program hover-pointer">
           <span class="title-number">03</span>
           <span class="title-text">{{
             $t('module.fold.program.category')
@@ -110,7 +110,7 @@ const currentComponent = computed(() => {
 })
 </script>
 <style lang="scss">
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 .fold-inner {
   overflow: hidden;
   width: 100%;
@@ -122,12 +122,12 @@ const currentComponent = computed(() => {
     height: 100%;
     transition: all 0.5s ease;
     @include desktop {
-      width: 120px;
+      width: 75px;
       @include flex;
       flex-wrap: nowrap;
       &.active,
       &:first-child ~ &:last-child {
-        width: 807.1px;
+        width: 930.1px;
       }
     }
     @include tablet {
@@ -140,7 +140,7 @@ const currentComponent = computed(() => {
     }
     .fold-title {
       height: 100%;
-      width: 119px;
+      width: 75px;
       @include tablet {
         width: 100%;
         padding: 24px;
@@ -155,7 +155,7 @@ const currentComponent = computed(() => {
       span {
         color: white;
         @include desktop {
-          @include bold(32);
+          @include medium(20);
         }
         @include tablet {
           @include bold(24);
@@ -166,6 +166,7 @@ const currentComponent = computed(() => {
       }
       .title-number {
         @include desktop {
+          @include bold(16);
           padding-top: 48px;
         }
         @include tablet {
@@ -189,7 +190,7 @@ const currentComponent = computed(() => {
   .content-item {
     @include desktop {
       height: 100%;
-      width: 688px;
+      width: 935px;
       padding: 48px;
     }
     @include tablet {
@@ -206,7 +207,7 @@ const currentComponent = computed(() => {
     }
 
     &.program .item-header .header-item.active {
-      color: $navy;
+      color: $main-4;
     }
 
     &.contact .item-header .header-item.active {
@@ -215,7 +216,8 @@ const currentComponent = computed(() => {
     .item-header {
       @include flex($justify: space-between);
       padding-right: 24px;
-      @include bold(32);
+      margin-left:74px;
+      @include bold(20);
       @include tablet {
         margin-top: 24px;
       }
@@ -254,21 +256,32 @@ const currentComponent = computed(() => {
       @include flex($justify: space-between);
       .content-left {
         flex: 1;
-        margin-right: 36px;
+        margin-left: 74px;
         @include mobile {
           margin-right: 8px;
         }
         .left-title {
-          @include bold(24);
+          @include bold(28);
           color: white;
-          margin-bottom: 24px;
+          margin-bottom: 8px;
+          @include mobile {
+            @include bold(14);
+          }
+        }
+        .left-subtitle {
+          @include medium(24);
+          color: white;
+          margin-bottom: 40px;
           @include mobile {
             @include bold(14);
           }
         }
         .left-content {
-          @include medium(24);
+          @include medium(20);
           color: white;
+          @include desktop {
+            width: 552px;
+          }
           @include mobile {
             @include medium(12);
           }
@@ -280,46 +293,11 @@ const currentComponent = computed(() => {
           }
         }
       }
-      .content-right {
-        width: 121px;
-        @include mobile {
-          width: 63px;
-        }
-        .right-circle {
-          width: 121px;
-          height: 121px;
-          @include border-set(1px, $white, 50%);
-          @include flex;
-          @include mobile {
-            width: 63px;
-            height: 63px;
-            padding: 8px;
-          }
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 20px;
-          padding: 16px;
-          text-align: center;
-          span {
-            @include bold(24);
-            color: white;
-            @include mobile {
-              @include bold(15);
-            }
-          }
-          &.en {
-            span {
-              font-size: 20px;
-              @include mobile {
-                font-size: 11px;
-              }
-            }
-          }
-        }
-      }
     }
     .timeline {
+      margin-top: 80px;
       .timeline-item {
+        margin-left: 74px;
         margin-bottom: 4px;
         @include flex;
         color: white;
@@ -343,8 +321,10 @@ const currentComponent = computed(() => {
       }
     }
     .team {
+      margin-top: 80px;
       .team-item {
         @include flex;
+        margin-left: 74px;
         .item-desc {
           width: 220px;
           @include bold(24);
@@ -366,21 +346,30 @@ const currentComponent = computed(() => {
       }
     }
     .news {
+      margin-left: 74px;
       padding-right: 48px;
       @include mobile {
         padding-right: 24px;
       }
       .news-title {
-        @include bold(24);
-        margin-bottom: 24px;
+        @include bold(28);
+        margin-bottom: 8px;
         color: white;
         @include mobile {
           @include bold(15);
         }
       }
+      .news-date {
+        color: white;
+        margin-bottom: 24px;
+        @include medium(16);
+        @include mobile {
+          @include medium(15);
+        }
+      }
       .news-content {
         color: white;
-        @include medium(24);
+        @include medium(20);
         @include mobile {
           @include medium(15);
         }
@@ -388,36 +377,55 @@ const currentComponent = computed(() => {
     }
     .program {
       padding-right: 48px;
+      margin-left: 74px;
+      width:552px;
       @include mobile {
         padding-right: 24px;
       }
       color: $navy;
       .program-block {
         margin-bottom: 32px;
+        .program-title{
+          @include bold(28);
+          margin-bottom: 32px;
+          @include mobile {
+            @include bold(15);
+          }
+        }
         .block-title {
-          @include bold(24);
-          margin-bottom: 24px;
+          @include medium(24);
+          margin-bottom: 16px;
           @include mobile {
             @include bold(15);
           }
         }
         .block-content {
-          @include medium(24);
+          @include medium(20);
+          margin-bottom: 20px;
           @include mobile {
             @include medium(15);
           }
         }
       }
+      hr{
+        background-color: $main-4;
+        height: 1px;
+        border:transparent;
+        margin-bottom: 20px;
+      }
     }
     .contact {
       color: $main;
+      margin-left: 74px;
+      width: 560px;
       .contact-title {
         margin-bottom: 32px;
         @include mobile {
           margin-bottom: 16px;
         }
         p {
-          @include bold(50);
+          @include bold(40);
+          line-height: 60px; 
           @include mobile {
             @include bold(32);
           }
@@ -429,7 +437,7 @@ const currentComponent = computed(() => {
           margin-bottom: 44px;
         }
         p {
-          @include medium(24);
+          @include medium(20);
           @include mobile {
             @include bold(20);
           }
@@ -439,13 +447,20 @@ const currentComponent = computed(() => {
         @include mobile {
           text-align: center;
         }
+        text-align: end;
+        position: relative;
         button {
-          width: 206px;
-          height: 36px;
-          border-radius: 20px;
-          background: $main;
-          color: $white;
-          @include bold(15);
+          position:relative;
+          z-index: 20;
+          background: #D6E4FF;
+          color: $main;
+          margin-right: 20px;
+          @include bold(16);
+        }
+        .vector-wrapper {
+          z-index: 10;
+          position: absolute;
+          top: 10px;
         }
       }
     }
@@ -454,13 +469,13 @@ const currentComponent = computed(() => {
     background: $main;
   }
   .news {
-    background: #8097ff;
+    background: #8097FF;
   }
   .program {
-    background: #a3b4ff;
+    background: #B9CAFF;
   }
   .contact {
-    background: #d3dbff;
+    background: #D6E4FF;
   }
 }
 </style>

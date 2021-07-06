@@ -4,12 +4,14 @@ $black-1: #161616;
 
 $grey: #c4c4c4;
 $grey-2: #616161;
+$grey-3: #E5E5E5;
 $white: #ffffff;
 $white-2: #f8f8f8;
 
-$main: #4848ff;
+$main: #4747ff;
 $main-2: #3330ff;
 $main-3: #d3dbff;
+$main-4: #3b3bd3;
 
 $navy: #1c1a9e;
 
@@ -22,7 +24,7 @@ $gradient-blue: linear-gradient(180deg, #7575ff 0%, #3330ff 100%), #3330ff;
 /*--------- FONT ---------*/
 
 $bold: 700;
-$medium: 500;
+$medium: 400;
 
 @mixin font-set($font-size, $font-weight) {
   font-size: $font-size;

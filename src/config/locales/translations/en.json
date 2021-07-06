@@ -16,7 +16,9 @@
       "insight": "Insights"
     },
     "explanation": {
-      "mainSlogan": "Zenerate all possibilities of building design to maximize your success",
+      "mainSlogan-1": "Zenerate all possibilities of ",
+      "colorSlogan": "building design",
+      "mainSlogan-2": " to maximize your success",
       "services": {
         "summary": "In Spring 2020, architectural designer Bongjai Shin and Ph.D. in mathematics and A.I. developer Gahye Jeong co-founded their firm, Zenerate Inc., secured their seed funding from three venture capital firms, offering building design AI services to the Korea and US markets. They are pioneering a new path in the real estate development industry with unprecedented ways of transforming building design problems to mathematics and algorithm problems.",
         "caption": "Consulting Service",
@@ -98,6 +100,7 @@
             "title": [
               "Selected for Startup Voucher"
             ],
+            "date": ["4 Mar 2021"],
             "contents": [
               "Zenerate has been selected as the finalist for Startup Voucher hosted by Korea International Trade Association. The Program aims at startups with less than 7 years in operation to support their global business expansion and marketing to buyers and investors. $40K at maximum will be awarded to the selected startups."
             ]
@@ -106,6 +109,7 @@
             "title": [
               "Signed Consulting Contract with Shin Young"
             ],
+            "date": ["19 Jan 2021"],
             "contents": [
               "ShinYoung(developer) signed a consulting contract with Zenerate for a mixed-use project in Yongsan, Seoul. Zenerate will find the unit mix and unit layout solution for maximizing sales revenue of a residential tower and retail space. Additionally, appropriate sales prices will be projected through Zenerate’s AI solution."
             ]
@@ -114,6 +118,7 @@
             "title": [
               "Selected for IBK Changong Mapo 6th Batch "
             ],
+            "date": ["20 Dec 2020"],
             "contents": [
               "Zenerate has been selected for Industrial bank of Korea(IBK)’s Changong Mapo(accelerator program). The selected startups will be supported by IBK in relation to angel investment, loan, venture capital as well as office space, mentoring, education, consulting, networking, marketing and promotion."
             ]
@@ -128,7 +133,8 @@
         },
         "contents": {
           "consulting": {
-            "title": [
+            "title": ["AAA"],
+            "subtitle": [
               "Building Design AI Solution",
               "Revenue Estimation"
             ],
@@ -138,7 +144,8 @@
             ]
           },
           "websolution": {
-            "title": [
+            "title": ["AAA"],
+            "subtitle": [
               "Feasibility Study"
             ],
             "contents": [

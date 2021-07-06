@@ -24,16 +24,20 @@
     </div>
     <div class="item-content program" v-show="programTab === 'consulting'">
       <div class="program-block">
+        <div class="program-title">
+           {{ $t('module.fold.program.contents.consulting.title[0]') }}
+        </div>
         <div class="block-title">
-          {{ $t('module.fold.program.contents.consulting.title[0]') }}
+          {{ $t('module.fold.program.contents.consulting.subtitle[0]') }}
         </div>
         <div class="block-content">
           {{ $t('module.fold.program.contents.consulting.contents[0]') }}
         </div>
       </div>
+      <hr>
       <div class="program-block">
         <div class="block-title">
-          {{ $t('module.fold.program.contents.consulting.title[1]') }}
+          {{ $t('module.fold.program.contents.consulting.subtitle[1]') }}
         </div>
         <div class="block-content">
           {{ $t('module.fold.program.contents.consulting.contents[1]') }}
@@ -42,8 +46,11 @@
     </div>
     <div class="item-content program" v-show="programTab === 'websolution'">
       <div class="program-block">
+        <div class="program-title">
+           {{ $t('module.fold.program.contents.websolution.title[0]') }}
+        </div>
         <div class="block-title">
-          {{ $t('module.fold.program.contents.websolution.title[0]') }}
+          {{ $t('module.fold.program.contents.websolution.subtitle[0]') }}
         </div>
         <div class="block-content">
           {{ $t('module.fold.program.contents.websolution.contents[0]') }}

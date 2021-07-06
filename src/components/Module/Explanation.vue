@@ -3,17 +3,14 @@
     <div class="explanation-inner">
       <div class="explanation-title">
         <span class="title-text" :class="{ en: locale === 'en' }">{{
-          $t('module.explanation.mainSlogan')
+          $t('module.explanation.mainSlogan-1')
         }}</span>
-      </div>
-      <div class="explanation-consulting">
-        <span class="consulting-caption caption-small">
-          {{ $t('module.explanation.services.caption') }}
-        </span>
-        <div class="spacer hidden-desktop hidden-tablet"></div>
-        <span class="consulting-content" :class="{ en: locale === 'en' }">
-          {{ $t('module.explanation.services.summary') }}
-        </span>
+        <span class="title-text color-title" :class="{ en: locale === 'en' }">{{
+          $t('module.explanation.colorSlogan')
+        }}</span>
+        <span class="title-text" :class="{ en: locale === 'en' }">{{
+          $t('module.explanation.mainSlogan-2')
+        }}</span>
       </div>
     </div>
   </div>
@@ -25,13 +22,13 @@ const { locale } = useI18n()
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 .explanation-inner {
   width: 100%;
   height: 100%;
   @include flex($dir: column, $justify: space-between);
   @include desktop {
-    padding-left: 24px;
+    
   }
   @include tablet {
     padding-left: 12px;
@@ -40,7 +37,9 @@ const { locale } = useI18n()
     margin-bottom: 36px;
     .title-text {
       @include desktop {
+        display: inline;
         @include bold(40);
+        line-height: 60px;
         &.en {
           font-size: 36px;
         }
@@ -53,28 +52,11 @@ const { locale } = useI18n()
         }
       }
     }
+    .color-title{
+      color: $main;
+    }
     @include mobile {
       display: none;
-    }
-  }
-  .explanation-consulting {
-    margin-bottom: 12px;
-    @include mobile {
-      margin-bottom: 32px;
-    }
-    .consulting-content {
-      @include desktop {
-        display: none;
-      }
-      @include tablet {
-        @include medium(20);
-        &.en {
-          font-size: 16px;
-        }
-      }
-      @include mobile {
-        @include medium(15);
-      }
     }
   }
 }
