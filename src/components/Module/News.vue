@@ -87,7 +87,7 @@ onMounted(async () => {
 })
 </script>
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 .news-inner {
   width: 100%;
   height: 100%;
@@ -120,7 +120,7 @@ onMounted(async () => {
       }
       .item-date {
         color: rgba($black-1, 0.4);
-        @include medium(10);
+        @include medium(12);
         margin-top: 24px;
         @include tablet {
           text-align: left;
@@ -157,7 +157,7 @@ onMounted(async () => {
         flex: 1;
         border-bottom: solid 1px $grey-3;
       }
-      .news-item:last-child{
+      .news-item:last-child {
         border-bottom: transparent;
       }
     }

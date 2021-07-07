@@ -2,7 +2,10 @@
   <div class="module-team-wrapper module-item-wrapper">
     <div class="team-inner">
       <div class="team-title">
-        <div class="title-caption caption-large hover-pointer" @click="router.push('/main/team')">
+        <div
+          class="title-caption caption-large hover-pointer"
+          @click="router.push('/main/team')"
+        >
           <span>{{ $t('module.team.caption') }}</span>
         </div>
         <div class="title-date">2017 - 2021</div>
@@ -18,11 +21,11 @@
   </div>
 </template>
 <script lang="ts" setup>
-import {useRouter} from 'vue-router'
+import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 .team-inner {
   padding-top: 24px;
   width: 100%;
@@ -53,13 +56,13 @@ const router = useRouter()
       height: 302px;
       margin-top: auto;
     }
-    .title-caption{
-      height: 40px;  
+    .title-caption {
+      height: 40px;
       @include vertical-center;
     }
     .title-date {
       @include desktop {
-        @include medium(10);
+        @include medium(12);
         color: rgba($black-1, 0.4);
         height: 48px;
         @include vertical-center;

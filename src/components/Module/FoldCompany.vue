@@ -39,7 +39,9 @@
           </span>
         </div>
         <div class="left-content" :class="{ en: locale === 'en' }">
-          <p v-for="i in 6" :key="i">{{ $t(`module.fold.company.contents.intro.contents[${i-1}]`) }}</p>
+          <p v-for="i in 6" :key="i">
+            {{ $t(`module.fold.company.contents.intro.contents[${i - 1}]`) }}
+          </p>
         </div>
       </div>
     </div>

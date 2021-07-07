@@ -178,7 +178,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .youtube {
     grid-area: youtube;
     @include desktop {
-      height: 459px;
+      height: 400px;
     }
     @include tablet {
       height: 400px;
@@ -202,7 +202,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   .career{
     grid-area: career;
     @include desktop {
-      height: 264px;
+      height: 304px;
     }
   }
   .footer {

@@ -8,7 +8,7 @@
 .caption-large {
   color: $main;
   @include desktop {
-    @include bold(16);
+    @include bold(20);
   }
   @include tablet {
     @include bold(20);

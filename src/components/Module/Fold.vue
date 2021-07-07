@@ -122,12 +122,12 @@ const currentComponent = computed(() => {
     height: 100%;
     transition: all 0.5s ease;
     @include desktop {
-      width: 75px;
+      width: 88px;
       @include flex;
       flex-wrap: nowrap;
       &.active,
       &:first-child ~ &:last-child {
-        width: 930.1px;
+        width: 895px;
       }
     }
     @include tablet {
@@ -140,7 +140,7 @@ const currentComponent = computed(() => {
     }
     .fold-title {
       height: 100%;
-      width: 75px;
+      width: 88px;
       @include tablet {
         width: 100%;
         padding: 24px;
@@ -155,7 +155,7 @@ const currentComponent = computed(() => {
       span {
         color: white;
         @include desktop {
-          @include medium(20);
+          @include medium(24);
         }
         @include tablet {
           @include bold(24);

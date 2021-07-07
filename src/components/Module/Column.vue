@@ -18,7 +18,8 @@
             href="https://zenerate.medium.com/it-%EA%B8%B0%EB%B0%98-%EB%B6%80%EB%8F%99%EC%82%B0-%EC%86%94%EB%A3%A8%EC%85%98%EC%9D%98-%ED%98%84%EC%9E%AC-3bcff2e490cf"
             target="_blank"
           >
-            {{ $t('module.column.title') }}
+            <p>{{ $t('module.column.title[0]') }}</p>
+            <p>{{ $t('module.column.title[1]') }}</p>
           </a>
         </div>
         <div class="title-detail">
@@ -78,7 +79,6 @@ onMounted(async () => {
   overflow: hidden;
   @include flex($dir: column);
   @include desktop {
-    
   }
   @include tablet {
     padding-right: 12px;
@@ -113,8 +113,7 @@ onMounted(async () => {
   .column-title {
     width: 100%;
     @include desktop {
-      margin-bottom: 54px;
-      
+      margin-bottom: 80px;
     }
     @include tablet {
       margin-bottom: 16px;
@@ -137,7 +136,7 @@ onMounted(async () => {
       }
     }
     .title-text {
-      margin-bottom: 24px;
+      margin-bottom: 40px;
       @include desktop {
         @include bold(28);
       }
@@ -174,9 +173,9 @@ onMounted(async () => {
     }
 
     .insight-date {
-      @include medium(10);
+      @include medium(12);
       color: rgba($black-1, 0.4);
-      height:48px;
+      height: 48px;
       @include vertical-center;
     }
     .insight-items-wrapper {

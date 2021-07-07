@@ -28,7 +28,6 @@ const { locale } = useI18n()
   height: 100%;
   @include flex($dir: column, $justify: space-between);
   @include desktop {
-    
   }
   @include tablet {
     padding-left: 12px;
@@ -52,7 +51,7 @@ const { locale } = useI18n()
         }
       }
     }
-    .color-title{
+    .color-title {
       color: $main;
     }
     @include mobile {

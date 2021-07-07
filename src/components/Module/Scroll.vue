@@ -1,7 +1,10 @@
 <template>
-  <div class="module-scroll-wrapper" :style="{
-    visibility: isVisible,
-  }">
+  <div
+    class="module-scroll-wrapper"
+    :style="{
+      visibility: isVisible,
+    }"
+  >
     <div
       class="scroll-first"
       :style="{
@@ -84,9 +87,12 @@
         </div>
       </div>
     </div>
-    <div class="vector-wrapper" :style="{
-      opacity: opacity.vector,
-    }">
+    <div
+      class="vector-wrapper"
+      :style="{
+        opacity: opacity.vector,
+      }"
+    >
       <svg
         width="27"
         height="83"
@@ -122,25 +128,25 @@ const transform = ref({
   secondSecondFirst: -20,
   secondSecondSecond: -20,
 })
-const vectorColor = ref('#4747FF');
+const vectorColor = ref('#4747FF')
 const typing = ref('')
 const typingLetter = ['최', '고', '의', ' ', '안']
-const isVisible=ref('block');
+const isVisible = ref('block')
 
-function setVectorColor(scrollY){
-  if (scrollY<=800){
-    return "#4747FF";
-  }else if (scrollY<=3300) {
-    return "#FFFFFF";
-  }else{
-    return "transparent"
+function setVectorColor(scrollY) {
+  if (scrollY <= 800) {
+    return '#4747FF'
+  } else if (scrollY <= 3300) {
+    return '#FFFFFF'
+  } else {
+    return 'transparent'
   }
 }
-function setVectorOpacity(scrollY){
-  if (scrollY<=800){
-    return 1-scrollY/800;
-  }else{
-    return 1;
+function setVectorOpacity(scrollY) {
+  if (scrollY <= 800) {
+    return 1 - scrollY / 800
+  } else {
+    return 1
   }
 }
 function lerp(startInc, endInc, startDec, endDec, scrollY) {
@@ -178,7 +184,7 @@ onMounted(() => {
 
   window.addEventListener('scroll', ($evt) => {
     const scrollY = $evt.currentTarget.scrollY
-    console.log(scrollY);
+    console.log(scrollY)
     opacity.value = {
       first: lerp(0, 0, 0, 800, scrollY),
       second: lerp(800, 1300, 3100, 3400, scrollY),
@@ -186,7 +192,7 @@ onMounted(() => {
       secondFirstSecond: lerp(1300, 1800, 1900, 2100, scrollY),
       secondSecondFirst: lerp(2100, 2600, 3100, 3400, scrollY),
       secondSecondSecond: lerp(2600, 3000, 3100, 3400, scrollY),
-      vector: setVectorOpacity(scrollY)
+      vector: setVectorOpacity(scrollY),
     }
     transform.value = {
       secondFirstFirst: makeTranslate(800, 1300, scrollY),
@@ -194,11 +200,11 @@ onMounted(() => {
       secondSecondFirst: makeTranslate(2100, 2600, scrollY),
       secondSecondSecond: makeTranslate(2600, 3100, scrollY),
     }
-    vectorColor.value=setVectorColor(scrollY);
-    if (scrollY<=3400){
-      isVisible.value = 'visible';
-    }else{
-      isVisible.value = 'hidden';
+    vectorColor.value = setVectorColor(scrollY)
+    if (scrollY <= 3400) {
+      isVisible.value = 'visible'
+    } else {
+      isVisible.value = 'hidden'
     }
   })
 })
@@ -215,7 +221,7 @@ onMounted(() => {
     height: 100vh;
     @include flex;
     @include center-center;
-    @include mobile{
+    @include mobile {
       @include flex($dir: column);
     }
     .first-image {
@@ -224,10 +230,10 @@ onMounted(() => {
       img {
         width: 100%;
       }
-      @include tablet{
+      @include tablet {
         width: 320px;
       }
-      @include mobile{
+      @include mobile {
         width: 320px;
         margin: 76px 0px 20px 0px;
       }
@@ -248,13 +254,13 @@ onMounted(() => {
         border-right: 3px solid;
         animation: typingAnimation 1s steps(1) infinite;
       }
-      @include tablet{
-        p{
+      @include tablet {
+        p {
           @include bold(32);
         }
       }
-      @include mobile{
-        p{
+      @include mobile {
+        p {
           @include bold(20);
         }
       }
@@ -272,14 +278,14 @@ onMounted(() => {
       video {
         width: 100%;
       }
-      @include tablet{
-        video{
+      @include tablet {
+        video {
           height: 100vh;
           object-fit: cover;
         }
       }
-      @include mobile{
-        video{
+      @include mobile {
+        video {
           height: 100vh;
           object-fit: cover;
         }
@@ -307,7 +313,7 @@ onMounted(() => {
           color: white;
         }
       }
-      @include tablet{
+      @include tablet {
         .second-first-first {
           p {
             @include bold(32);
@@ -321,7 +327,7 @@ onMounted(() => {
           }
         }
       }
-      @include mobile{
+      @include mobile {
         .second-first-first {
           p {
             @include bold(20);
@@ -358,7 +364,7 @@ onMounted(() => {
           line-height: 32px;
         }
       }
-      @include tablet{
+      @include tablet {
         .second-second-first {
           p {
             @include bold(32);
@@ -372,7 +378,7 @@ onMounted(() => {
           }
         }
       }
-      @include mobile{
+      @include mobile {
         .second-second-first {
           p {
             @include bold(20);
@@ -391,20 +397,22 @@ onMounted(() => {
   .vector-wrapper {
     @include fixed(bottom 35px left 50%);
     animation: ani 1.25s ease-in-out infinite;
-    @include mobile{
+    @include mobile {
       @include fixed(bottom 23px left 50%);
-      svg{
+      svg {
         height: 40px;
       }
     }
   }
 }
-@keyframes ani{
-  0%{
+@keyframes ani {
+  0% {
     padding-bottom: 10px;
-  }50%{
+  }
+  50% {
     padding-bottom: 0px;
-  }100%{
+  }
+  100% {
     padding-bottom: 10px;
   }
 }

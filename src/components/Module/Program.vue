@@ -1,7 +1,10 @@
 <template>
   <div class="module-program-wrapper module-item-wrapper">
     <div class="program-inner">
-      <div class="program-caption caption-small hover-pointer" @click="router.push('/main/service')">
+      <div
+        class="program-caption caption-small hover-pointer"
+        @click="router.push('/main/service')"
+      >
         {{ $t('module.program.caption') }}
       </div>
       <div class="program-title">{{ $t('module.program.title') }}</div>
@@ -14,19 +17,18 @@
   </div>
 </template>
 <script lang="ts" setup>
-import {useRouter} from "vue-router"
+import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 .program-inner {
   width: 100%;
   height: 100%;
 
   @include desktop {
-    
   }
-  .program-caption{
+  .program-caption {
     height: 40px;
   }
   .program-title {

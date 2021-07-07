@@ -14,14 +14,14 @@
 </template>
 <script lang="ts" scoped></script>
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 .youtube-inner {
-  width: 100%;
-  height: 100%;
+  width: 688px;
+  height: 339px;
   @include desktop {
-    padding-bottom: 24px;
-    padding-left: 24px;
-  }  
+    margin-top: 40px;
+    margin-left: 56px;
+  }
   @include tablet {
     padding: 24px 0px;
   }

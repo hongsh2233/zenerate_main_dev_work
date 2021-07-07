@@ -13,32 +13,27 @@
       <div class="image-wrapper" :class="{ inactive: currentImage !== 1 }">
         <img :src="`/img/main_service_1.png`" />
         <div class="image-explanation">
-          <div class="image-explanation-title">
-              클라이언트 미팅
-          </div>
+          <div class="image-explanation-title">클라이언트 미팅</div>
           <div class="image-explanation-content">
-            프로젝트의 목표, 조건, 평면, 임대 매출, 예산 등의 정보를 수집하여 최적의 솔루션을 계획합니다.
+            프로젝트의 목표, 조건, 평면, 임대 매출, 예산 등의 정보를 수집하여
+            최적의 솔루션을 계획합니다.
           </div>
         </div>
       </div>
       <div class="image-wrapper" :class="{ inactive: currentImage !== 2 }">
         <img :src="`/img/main_service_2.png`" />
         <div class="image-explanation">
-          <div class="image-explanation-title">
-              프로세싱
-          </div>
+          <div class="image-explanation-title">프로세싱</div>
           <div class="image-explanation-content">
-            알고리듬을 활용하여 수백만가지 대안을 생성하고
-            평가하여 최적의 솔루션을 제공합니다.
+            알고리듬을 활용하여 수백만가지 대안을 생성하고 평가하여 최적의
+            솔루션을 제공합니다.
           </div>
         </div>
       </div>
       <div class="image-wrapper" :class="{ inactive: currentImage !== 3 }">
         <img :src="`/img/main_service_3.png`" />
         <div class="image-explanation">
-          <div class="image-explanation-title">
-              솔루션 납품
-          </div>
+          <div class="image-explanation-title">솔루션 납품</div>
           <div class="image-explanation-content">
             보고서와 웹 솔루션을 통해 결과 분석과 추천 대안을 제공합니다.
           </div>
@@ -113,12 +108,12 @@ onBeforeUnmount(() => {
       max-width: 100%;
       max-height: 100%;
     }
-    .image-explanation{
-      .image-explanation-title{
+    .image-explanation {
+      .image-explanation-title {
         @include bold(20);
         margin-bottom: 16px;
       }
-      .image-explanation-content{
+      .image-explanation-content {
         @include medium(20);
       }
     }
