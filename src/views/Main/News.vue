@@ -1,20 +1,33 @@
 <template>
   <section class="section-news">
-    <div class="news-items-wrapper">
+    <div class="news-title-wrapper">
+      <div class="news-title">
+        <span>{{ $t('main.news.title[0]') }}</span>
+        <span>{{ $t('main.news.title[1]') }}</span>
+      </div>
+      <div class="news-year-wrapper">
+        <button @click="() => ((targetYear = 2021), (nowId = -1))">2021</button>
+        <button @click="() => ((targetYear = 2020), (nowId = -1))">2020</button>
+      </div>
+    </div>
+    <NewsContent :newsList="newsList" :nowId="nowId" v-show="nowId != -1" />
+    <div class="news-items-wrapper" v-show="nowId === -1">
       <div
-        class="news-item hover-pointer"
+        class="news-item"
         :class="{ active: currentNews && currentNews.id === news.id }"
-        v-for="(news, idx) in newsList"
+        v-for="news in filteredNews"
         :key="news.id"
-        @click="toggleNewsModal(true, news)"
       >
-        <div class="item-title">Zenerate News No. {{ idx + 1 }}</div>
         <div class="item-content">
           <div class="content-date">{{ $d(new Date(news.date), 'short') }}</div>
-          <div class="content-title">
+          <div
+            class="content-title hover-pointer"
+            @click="() => (nowId = news.id)"
+          >
             {{
               locale === 'ko' ? news.content_kr.title : news.content_en.title
             }}
+            <div class="arrow-right"></div>
           </div>
         </div>
       </div>
@@ -85,11 +98,22 @@
   </section>
 </template>
 <script lang="ts" setup>
-import { onMounted, ref } from 'vue'
+// @ts-ignore
+import NewsContent from '/Components/Module/NewsContent.vue'
+import { onMounted, ref, computed } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
 import ApiService from '/Services/api'
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
+const targetYear = ref(-1)
+const nowId = ref(-1)
+const filteredNews = computed(() => {
+  return targetYear.value === -1
+    ? newsList.value
+    : newsList.value.filter(
+        (news) => new Date(news.date).getFullYear() === targetYear.value
+      )
+})
 
 const showNewsModal = ref(false)
 const toggleNewsModal = (flag, news = null) => {
@@ -116,7 +140,6 @@ const newsList = ref([])
 onMounted(async () => {
   const getNewsListRes = await ApiService.GET_NEWS_LIST()
   newsList.value = getNewsListRes.data.body.data
-
   // debugger
   if (route.query.q && !isNaN(+route.query.q)) {
     toggleNewsModal(
@@ -127,15 +150,41 @@ onMounted(async () => {
 })
 </script>
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 .section-news {
   padding: 80px 0px;
   @include desktop {
-    padding: 80px 96px;
+    padding: 80px 40px;
   }
   @include relative;
+  .news-title-wrapper {
+    @include flex();
+    margin-bottom: 124px;
+    .news-title {
+      margin-right: 71px;
+      span:first-child {
+        @include bold(40);
+        margin-right: 10px;
+      }
+      span:last-child {
+        @include bold(40);
+        color: $main;
+      }
+    }
+    .news-year-wrapper {
+      @include center-center;
+      button {
+        @include bold(16);
+        line-height: 40px;
+        background-color: rgba($grey-3, 0.5);
+        padding: 4px 20px;
+        margin-right: 28px;
+        border-radius: 100px;
+      }
+    }
+  }
   .news-items-wrapper {
-    @include flex($justify: space-between);
+    @include flex($dir: column, $justify: space-between);
 
     @include mobile {
       justify-content: center;
@@ -144,11 +193,9 @@ onMounted(async () => {
       justify-content: space-evenly;
     }
     .news-item {
-      width: 280px;
-      height: 360px;
-      margin: 12px 16px;
-      @include flex($dir: column, $justify: space-between);
-      @include border-set(2px, $main, 12px);
+      height: 130px;
+      padding-bottom: 20px;
+      @include flex($dir: column);
       @include mobile {
       }
       &.fake {
@@ -165,28 +212,42 @@ onMounted(async () => {
         border-bottom: solid 2px $main;
       }
       .item-content {
-        padding: 32px 24px;
-        margin-top: auto;
         .content-date {
-          @include bold(15);
+          @include medium(12);
+          @include vertical-center;
+          height: 40px;
           color: $main;
+          padding-top: 40px;
           margin-bottom: 16px;
         }
         .content-title {
-          @include bold(20);
-        }
-      }
-      &:hover,
-      &.active {
-        background-color: $main;
-        .item-title {
-          color: $white;
-          border-bottom-color: white;
-        }
-        .item-content {
-          .content-date,
-          .content-title {
-            color: $white;
+          @include medium(20);
+          line-height: 40px;
+
+          &:hover {
+            color: $main;
+            .arrow-right {
+              border-top-color: $main;
+              &::after {
+                background-color: $main;
+              }
+            }
+          }
+          .arrow-right {
+            width: 100%;
+            height: 5px;
+            border-top: 1px solid $grey-3;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            transform: rotate(180deg);
+            &::after {
+              content: '';
+              display: block;
+              width: 1px;
+              height: 45px;
+              background-color: $grey-3;
+              transform: rotate(-45deg) translate(15px, 4px);
+            }
           }
         }
       }

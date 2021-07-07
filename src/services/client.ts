@@ -10,7 +10,6 @@ const apiClient = axios.create({
   baseURL,
   headers: {
     Accept: 'application/json, x-access-token',
-    // 'Accept-Encoding': 'gzip',
     'Content-type': 'application/json',
   },
 })
