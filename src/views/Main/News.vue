@@ -10,7 +10,12 @@
         <button @click="() => ((targetYear = 2020), (nowId = -1))">2020</button>
       </div>
     </div>
-    <NewsContent :newsList="newsList" :nowId="nowId" v-show="nowId != -1" />
+    <NewsContent
+      :newsList="newsList"
+      :nowId="nowId"
+      v-show="nowId != -1"
+      @onSelect="(v) => (nowId = v)"
+    />
     <div class="news-items-wrapper" v-show="nowId === -1">
       <div
         class="news-item"
