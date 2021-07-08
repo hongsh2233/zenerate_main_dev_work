@@ -13,29 +13,27 @@
       <div class="image-wrapper" :class="{ inactive: currentImage !== 1 }">
         <img :src="`/img/main_service_1.png`" />
         <div class="image-explanation">
-          <div class="image-explanation-title">클라이언트 미팅</div>
+          <div class="image-explanation-title">{{ $t('module.explanation.services.title[0]') }}</div>
           <div class="image-explanation-content">
-            프로젝트의 목표, 조건, 평면, 임대 매출, 예산 등의 정보를 수집하여
-            최적의 솔루션을 계획합니다.
+            {{ $t('module.explanation.services.content[0]') }}
           </div>
         </div>
       </div>
       <div class="image-wrapper" :class="{ inactive: currentImage !== 2 }">
         <img :src="`/img/main_service_2.png`" />
         <div class="image-explanation">
-          <div class="image-explanation-title">프로세싱</div>
+          <div class="image-explanation-title">{{ $t('module.explanation.services.title[1]') }}</div>
           <div class="image-explanation-content">
-            알고리듬을 활용하여 수백만가지 대안을 생성하고 평가하여 최적의
-            솔루션을 제공합니다.
+            {{ $t('module.explanation.services.content[1]') }}
           </div>
         </div>
       </div>
       <div class="image-wrapper" :class="{ inactive: currentImage !== 3 }">
         <img :src="`/img/main_service_3.png`" />
         <div class="image-explanation">
-          <div class="image-explanation-title">솔루션 납품</div>
+          <div class="image-explanation-title">{{ $t('module.explanation.services.title[2]') }}</div>
           <div class="image-explanation-content">
-            보고서와 웹 솔루션을 통해 결과 분석과 추천 대안을 제공합니다.
+            {{ $t('module.explanation.services.content[2]') }}
           </div>
         </div>
       </div>

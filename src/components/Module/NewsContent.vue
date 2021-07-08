@@ -67,7 +67,7 @@
         onSelect(nowId);
       "
     >
-      BACK
+      <span>BACK</span>
       <svg
         width="122"
         height="28"
@@ -162,7 +162,9 @@ onMounted(()=>{
     @include center-center;
     margin: 48px auto 6px auto;
     @include bold(16);
-    
+    span{
+      padding-bottom: 5px;
+    }
     color: $main;
     svg{
       position: absolute;

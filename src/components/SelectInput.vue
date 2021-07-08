@@ -1,34 +1,38 @@
 <template>
   <div class="input-select-wrapper">
-    <input type="text" class="dummy" ref="dummy" />
-    <div class="input-select hover-pointer" @click="toggleDropDown()">
-      <span
-        :class="{
-          selected: props.selected,
-          placholder: !props.selected,
-        }"
-        >{{
-          props.selected
-            ? $t(props.selected.label)
-            : props.placeholder || 'Select'
-        }}</span
-      >
-      <i className="material-icons noselect">
-        {{ showDropdown ? 'expand_less' : 'expand_more' }}
-      </i>
-    </div>
-    <transition name="slide-up">
-      <div class="input-select-dropdown" v-show="showDropdown">
-        <div
-          class="input-select-dropdown-item hover-pointer"
-          v-for="(item, idx) in props.items"
-          @click="onSelect(item)"
-          :key="idx"
+    <p>{{ $t('main.contact.form.purpose') }}</p>
+    <div class="input-select-container">
+      <input type="text" class="dummy" ref="dummy" />
+
+      <div class="input-select hover-pointer" @click="toggleDropDown()">
+        <span
+          :class="{
+            selected: props.selected,
+            placholder: !props.selected,
+          }"
+          >{{
+            props.selected
+              ? $t(props.selected.label)
+              : props.placeholder || 'Select'
+          }}</span
         >
-          <span>{{ $t(item.label) }}</span>
-        </div>
+        <i className="material-icons noselect">
+          {{ showDropdown ? 'expand_less' : 'expand_more' }}
+        </i>
       </div>
-    </transition>
+      <transition name="slide-up">
+        <div class="input-select-dropdown" v-show="showDropdown">
+          <div
+            class="input-select-dropdown-item hover-pointer"
+            v-for="(item, idx) in props.items"
+            @click="onSelect(item)"
+            :key="idx"
+          >
+            <span>{{ $t(item.label) }}</span>
+          </div>
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -77,49 +81,57 @@ watch(showDropdown, (v) => {
 })
 </script>
 <style lang="scss" scoped>
-@import "../assets/scss/variables.scss";
+@import '../assets/scss/variables.scss';
 .input-select-wrapper {
-  height: 43px;
-  border: solid 2px $main;
-  width: 100%;
-  margin-bottom: 16px;
-  @include relative;
-  .dummy {
-    position: absolute;
-    width: 0px;
-    height: 0px;
-    border: none;
-    padding: 0;
+  margin-bottom: 60px;
+  width: 508px;
+  p{
+    @include medium(16);
+    color: rgba($black-1, 0.4);
+    margin-bottom: 12px;
   }
-  .input-select {
-    width: 100%;
-    padding: 8px 12px 4px;
-    display: flex;
-    justify-content: space-between;
-    span {
-      color: $main;
+  .input-select-container {
+    height: 43px;
+    border-radius: 8px;
+    width: calc(100% + 2px);
+    border: 1px solid rgba(196, 196, 196, 0.6);
+    margin-bottom: 16px;
+    @include relative;
+    .dummy {
+      position: absolute;
+      width: 0px;
+      height: 0px;
+      border: none;
+      padding: 0;
+    }
+    .input-select {
+      width: 100%;
+      padding: 5px 12px 5px;
+      display: flex;
+      justify-content: space-between;
+      span {
+        @include medium(18);
+      }
+      i {
+        color: rgba(196, 196, 196, 0.6);
+        font-size: 30px;
+      }
+    }
+  }
+  .input-select-dropdown {
+    border: solid 1px rgba(196, 196, 196, 0.6);
+    border-radius: 0px 0px 8px 8px;
+    width: calc(100% + 2px);
+    @include absolute(left -2px top 41px);
+    background: $white;
+    .input-select-dropdown-item {
+      width: 100%;
       @include medium(18);
-    }
-    i {
-      color: $main;
-      font-size: 30px;
-    }
-  }
-}
-.input-select-dropdown {
-  border: solid 2px $main;
-  border-top: none;
-  width: calc(100% + 4px);
-  @include absolute(left -2px top 41px);
-  background: $white;
-  .input-select-dropdown-item {
-    width: 100%;
-    color: $main;
-    @include medium(18);
-    padding: 6px 12px;
-    &:hover {
-      background-color: $main;
-      color: $white;
+      padding: 6px 12px;
+      &:hover {
+        background-color: $main;
+        color: $white;
+      }
     }
   }
 }

@@ -4,13 +4,16 @@
   },
   "footer": {
     "CEO": ["CEO", "Bongjai Shin"],
-    "address": ["Address", "Zenerate, 3F, 27, Dongil-ro 147-gil, Seoul, Republic of Korea"],
+    "address": [
+      "Address",
+      "Zenerate, 3F, 27, Dongil-ro 147-gil, Seoul, Republic of Korea"
+    ],
     "question": ["Contact", "help@zenerate.ai"]
   },
   "module": {
     "column": {
       "caption": "Column",
-      "title": "Interview: Architecture and Society No.33",
+      "title": ["Interview", "Architecture and Society No.33"],
       "contents": [
         "CEO Bongjai Shin discusses the latest design automation trends in an interview with Architecture & Society. Bongjai shares his views on the ways in which these trends will change not only building designs but also the role of architects."
       ],
@@ -26,7 +29,13 @@
         "types": {
           "web": "Web Service",
           "consulting": "Consulting Service"
-        }
+        },
+        "title": ["Client meeting", "Processing", "Delivery"],
+        "content": [
+          "Data collection: Project Objectives, Legal Constraints, Building Plans, Rent/Home Price Data, Construction Cost, etc.",
+          "Generate millions of options to find the most profitable one satisfying various conditions.",
+          "Provide various analysis by data sheets and web solution."
+        ]
       }
     },
     "fold": {
@@ -39,17 +48,16 @@
         },
         "contents": {
           "intro": {
-            "title": [
-              "Our Vision"
-            ],
+            "title": ["Our Vision"],
             "contents": [
-              "In the era of artificial intelligence, how much more profit can we make if we use it for real estate development? Zenerate began with this question. We're pioneering a new path in the real estate development industry with unprecedented ways of transforming building design problems to mathematics and algorithm problems. Our building design AI solution will generate and analyze various scenarios to contribute to your real estate development business with the most profitable alternative. "
+              "In the era of artificial intelligence, how much more profit can we make if we use it for real estate development?",
+              "Zenerate began with this question.",
+              "We're pioneering a new path in the real estate development industry with unprecedented ways of transforming building design problems to mathematics and algorithm problems.",
+              "Our building design AI solution will generate and analyze various scenarios to contribute to your real estate development business with the most profitable alternative.",
+              "",
+              ""
             ],
-            "circle": [
-              "Innovation",
-              "Challenge",
-              "Unite"
-            ]
+            "subtitle": "Innovation, Challenge and Unite"
           },
           "timeline": {
             "date": [
@@ -74,12 +82,7 @@
             ]
           },
           "team": {
-            "desc": [
-              "Our Team",
-              "Product Team",
-              "IT Team",
-              "Marketing Team"
-            ],
+            "desc": ["Our Team", "Product Team", "IT Team", "Marketing Team"],
             "work": [
               "",
               "Architectural Designer Computational Designer",
@@ -98,27 +101,21 @@
         },
         "contents": {
           "1": {
-            "title": [
-              "Selected for Startup Voucher"
-            ],
+            "title": ["Selected for Startup Voucher"],
             "date": ["4 Mar 2021"],
             "contents": [
               "Zenerate has been selected as the finalist for Startup Voucher hosted by Korea International Trade Association. The Program aims at startups with less than 7 years in operation to support their global business expansion and marketing to buyers and investors. $40K at maximum will be awarded to the selected startups."
             ]
           },
           "2": {
-            "title": [
-              "Signed Consulting Contract with Shin Young"
-            ],
+            "title": ["Signed Consulting Contract with Shin Young"],
             "date": ["19 Jan 2021"],
             "contents": [
               "ShinYoung(developer) signed a consulting contract with Zenerate for a mixed-use project in Yongsan, Seoul. Zenerate will find the unit mix and unit layout solution for maximizing sales revenue of a residential tower and retail space. Additionally, appropriate sales prices will be projected through Zenerate’s AI solution."
             ]
           },
           "3": {
-            "title": [
-              "Selected for IBK Changong Mapo 6th Batch "
-            ],
+            "title": ["Selected for IBK Changong Mapo 6th Batch "],
             "date": ["20 Dec 2020"],
             "contents": [
               "Zenerate has been selected for Industrial bank of Korea(IBK)’s Changong Mapo(accelerator program). The selected startups will be supported by IBK in relation to angel investment, loan, venture capital as well as office space, mentoring, education, consulting, networking, marketing and promotion."
@@ -135,10 +132,7 @@
         "contents": {
           "consulting": {
             "title": ["AAA"],
-            "subtitle": [
-              "Building Design AI Solution",
-              "Revenue Estimation"
-            ],
+            "subtitle": ["Building Design AI Solution", "Revenue Estimation"],
             "contents": [
               "Providing alternatives considering site, massing, floor height, view, etc., and maximize profits of the client’s project.",
               "Based on actual transaction data, our AI model learns how the price is decided in relation to area, floor, height, view, etc."
@@ -146,9 +140,7 @@
           },
           "websolution": {
             "title": ["AAA"],
-            "subtitle": [
-              "Feasibility Study"
-            ],
+            "subtitle": ["Feasibility Study"],
             "contents": [
               "By providing millions of building design alternatives with algorithms, users can easily example profitability of their projects."
             ]
@@ -162,10 +154,7 @@
         },
         "contents": {
           "contact": {
-            "title": [
-              "Feel Free to",
-              "Contact Us!"
-            ],
+            "title": ["Feel Free to", "Contact Us!"],
             "contents": [
               "Do you have any questions about us?",
               "Please feel free to contact me."
@@ -182,7 +171,9 @@
       },
       "caption": "Newsletter",
       "contents": [
-        "Subscribe to receive exclusive contents about real estate development insights and our latest news! "
+        "Subscribe to receive exclusive contents",
+        "about real estate development insights",
+        "and our latest news!"
       ],
       "subscription": "Subscribe!"
     },
@@ -233,11 +224,25 @@
       "contents": [
         "In Spring 2020, architectural designer Bongjai Shin and Ph.D. in mathematics and A.I. developer Gahye Jeong co-founded Zenerate."
       ]
+    },
+    "solution": {
+      "title": "Why Zenerate's solution special",
+      "contents": [
+        "제너레잇의 솔루션은 부동산 개발 초기 사업성 검토시 조건에 맞는 수백만 가지 건물 형태, 내부 구성, 상품 구성을 생성하고 실제 가격을 반영 후 평가하여 최고의 수익안을 제시합니다."
+      ]
+    },
+    "career": {
+      "caption": "Zenerate Careers",
+      "title": "We are creating a new way of construction design",
+      "contents": [
+        "제너레잇은 최첨단 기술로 기존 업계를 혁신하기 위해 열정적으로 고민하고 연구합니다. 제너레잇팀이 발견해가는 새로움의 순간들을 여러분과 함께하고 싶습니다. 지금 제너레잇에 지원하세요!"
+      ],
+      "button": "Go to find your role!"
     }
   },
   "main": {
     "service": {
-      "title": "Services & Programs",
+      "title": ["차별화된 제너레잇의 AI 솔루션", "빌딩 디자인 AI 솔루션", "프롭핏 초기 사업성 검토 솔루션"],
       "types": {
         "web": "Web Solution",
         "consulting": "Consulting Service"
@@ -258,11 +263,9 @@
       ]
     },
     "contact": {
-      "title": [
-        "Feel Free to",
-        "Contact Us!"
-      ],
+      "title": ["Feel Free to", "Contact Us!"],
       "form": {
+        "company": "Company",
         "name": "Name",
         "email": "Email",
         "purpose": "Purpose",
@@ -331,7 +334,6 @@
     "timeline": "Timeline",
     "team": "Team",
     "career": "Careers"
-
   },
   "about": {
     "allPossibilities": "All Possibilities",

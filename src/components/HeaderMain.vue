@@ -69,6 +69,20 @@
       <div class="header-buttons-wrapper">
         <button class="button-lang" @click="setLocale(locale)">
           <span>{{ t('header.langButton') }}</span>
+          <svg
+            width="122"
+            height="28"
+            viewBox="0 0 122 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 27H121L94.3114 1"
+              stroke="#4747FF"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            />
+          </svg>
         </button>
         <button class="button-menu hidden-desktop" @click="toggleDrawer">
           <i class="material-icons">
@@ -106,7 +120,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-@import "../assets/scss/variables.scss";
+@import '../assets/scss/variables.scss';
 .header-wrapper {
   position: fixed;
   top: 0;
@@ -115,7 +129,7 @@ const router = useRouter()
   z-index: 1000;
   width: 100%;
   @include desktop {
-    height: 81px;
+    height: 100px;
   }
   @include tablet {
     height: 61px;
@@ -160,13 +174,14 @@ const router = useRouter()
     }
     .header-navigation-wrapper {
       flex: 1;
-      height: 80px;
+      height: 70px;
       @include relative;
       margin: 6px 48px;
       margin: auto 48px;
       padding: 16px 0px;
       .navigation-main {
         @include flex($justify: space-between);
+        
         .navigation-main-item {
           width: 152px;
           height: 36px;
@@ -197,10 +212,10 @@ const router = useRouter()
     .header-buttons-wrapper {
       margin: auto 0px;
       @include flex;
+      position: relative;
       align-items: center;
       .button-lang {
-        background-color: $main;
-        color: $white;
+        color: $main;
         border-radius: 30px;
         @include desktop {
           width: 84px;
@@ -228,6 +243,11 @@ const router = useRouter()
             padding-bottom: 3px;
           }
         }
+      }
+      svg{
+        position: absolute;
+        right:0;
+        bottom:0;
       }
       .button-menu {
         background: transparent;

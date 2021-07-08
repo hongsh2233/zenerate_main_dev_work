@@ -7,19 +7,18 @@
       </div>
       <div class="contact-form">
         <div class="label-text">
-          <input
-            type="text"
-            :placeholder="$t('main.contact.form.name')"
-            v-model="contactForm.name"
-          />
+          <p>{{ $t('main.contact.form.company') }}</p>
+          <input type="text" v-model="contactForm.company" />
         </div>
         <div class="label-text">
-          <input
-            type="text"
-            :placeholder="$t('main.contact.form.email')"
-            v-model="contactForm.email"
-          />
+          <p>{{ $t('main.contact.form.name') }}</p>
+          <input type="text" v-model="contactForm.name" />
         </div>
+        <div class="label-text">
+          <p>{{ $t('main.contact.form.email') }}</p>
+          <input type="text" v-model="contactForm.email" />
+        </div>
+
         <SelectInput
           :placeholder="$t('main.contact.form.purpose')"
           :items="items"
@@ -27,13 +26,11 @@
           @onSelect="(v) => (contactForm.purpose = v)"
         />
         <div class="label-textarea">
-          <textarea
-            :placeholder="$t('main.contact.form.message')"
-            v-model="contactForm.message"
-            rows="7"
-          />
+          <p>{{ $t('main.contact.form.message') }}</p>
+          <textarea v-model="contactForm.message" rows="7" />
         </div>
-        <div class="contact-send" @click="sendEmail">
+        <div class="contact-send-wrapper">
+        <div class="contact-send hover-pointer" @click="sendEmail">
           <span>{{
             $t(
               sendEmailStatus
@@ -41,6 +38,21 @@
                 : 'main.contact.form.send'
             )
           }}</span>
+          <svg
+            width="146"
+            height="28"
+            viewBox="0 0 146 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.5 27H145.5L118.923 1"
+              stroke="#4747FF"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
         </div>
       </div>
     </div>
@@ -91,6 +103,7 @@ const items: Item[] = [
 const sendEmailStatus = ref(false)
 
 const contactForm = reactive({
+  company: '',
   name: '',
   email: '',
   purpose: null,
@@ -108,25 +121,29 @@ const sendEmail = async () => {
 }
 </script>
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+@import '../../assets/scss/variables.scss';
 .section-main-contact {
   width: 100%;
   padding: 80px 0px;
-
   .contact-container {
     @include flex($dir: column);
     @include desktop {
+      margin: 0px auto;
+      width: 508px;
       .contact-title {
         flex: 1;
         p:first-child {
+          text-align: center;
           @include bold(40);
           line-height: 60px;
           margin-bottom: 20px;
         }
-        p:last-child{
+        p:last-child {
+          text-align: center;
           @include medium(20);
           line-height: 40px;
           color: rgba($black-1, 0.4);
+          margin-bottom: 40px;
         }
       }
       .contact-form {
@@ -164,37 +181,52 @@ const sendEmail = async () => {
 .label-text {
   width: 100%;
   text-align: left;
-  height: 43px;
-  margin-bottom: 16px;
+  height: 88px;
+  margin-bottom: 60px;
   border-radius: 0px;
-
+  p {
+    @include medium(16);
+    color: rgba($black-1, 0.4);
+    margin-bottom: 12px;
+  }
   input {
-    border-radius: 0px;
+    border-radius: 8px;
     width: 100%;
-    border: none;
-    border: solid 2px $main;
-    height: 100%;
+    border: 1px solid rgba(196, 196, 196, 0.6);
+    height: 48px;
     font-size: 18px;
     line-height: 1.25;
     padding: 1px 12px;
-    color: $main;
+    &:focus{
+      border: 1px solid $main;
+    }
   }
   input::placeholder {
     color: $main;
     font-weight: $medium;
   }
+  &:focus{
+    background-color: red;
+  }
 }
 .label-textarea {
   width: 100%;
-  border-radius: 0px;
+  margin-bottom: 40px;
+  p {
+    @include medium(16);
+    color: rgba($black-1, 0.4);
+    margin-bottom: 12px;
+  }
   textarea {
-    border-radius: 0px;
+    border-radius: 8px;
     font-size: 18px;
     line-height: 125%;
-    border: solid 2px $main;
+    border: 1px solid rgba(196, 196, 196, 0.6);
     padding: 6px 12px 5px 12px;
     width: 100%;
-    color: $main;
+    &:focus{
+      border: 1px solid $main;
+    }
   }
   textarea::placeholder {
     color: $main;
@@ -202,13 +234,26 @@ const sendEmail = async () => {
     font-size: 18px;
   }
 }
-.contact-send {
-  padding-left: 12px;
+.contact-send-wrapper{
+  margin-bottom: 60px;
+  position: relative;
+  .contact-send {
+  width: 145px;
   margin-top: 8px;
+  position: absolute;
+  right: 0;
+  @include flex($dir: column);
+  text-align: center;
   span {
-    @include bold(20);
+    @include bold(16);
+    line-height: 40px;
     color: $main;
-    text-decoration: underline;
+  }
+  svg{
+    position:absolute;
+    bottom: 0;
   }
 }
+}
+
 </style>

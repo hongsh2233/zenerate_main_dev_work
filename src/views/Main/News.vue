@@ -27,7 +27,7 @@
           <div class="content-date">{{ $d(new Date(news.date), 'short') }}</div>
           <div
             class="content-title hover-pointer"
-            @click="scrollTop(); nowId = news.id; "
+            @click="[scrollTop(), nowId = news.id]"
           >
             {{
               locale === 'ko' ? news.content_kr.title : news.content_en.title
@@ -125,6 +125,9 @@ onMounted(async () => {
         padding: 4px 20px;
         margin-right: 28px;
         border-radius: 100px;
+        &:hover{  
+          background-color: $grey-3;
+        }
       }
     }
   }

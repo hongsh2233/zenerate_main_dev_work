@@ -102,10 +102,6 @@ const toggleNewsLetterModal = (flag) => {
       padding-right: 24px;
       @include bold(28);
       margin-bottom: 28px;
-      &.en {
-        font-size: 48px;
-        margin-bottom: 66px;
-      }
     }
     @include tablet {
       @include medium(50);
