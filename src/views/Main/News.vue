@@ -27,7 +27,7 @@
           <div class="content-date">{{ $d(new Date(news.date), 'short') }}</div>
           <div
             class="content-title hover-pointer"
-            @click="() => (nowId = news.id)"
+            @click="scrollTop(); nowId = news.id; "
           >
             {{
               locale === 'ko' ? news.content_kr.title : news.content_en.title
@@ -36,70 +36,7 @@
           </div>
         </div>
       </div>
-      <div class="news-item fake"></div>
-      <div class="news-item fake"></div>
-      <div class="news-item fake"></div>
-      <div class="news-item fake"></div>
-      <div class="news-item fake"></div>
-      <div class="news-item fake"></div>
-      <div class="news-item fake"></div>
-      <div class="news-item fake"></div>
     </div>
-    <div
-      class="news-modal-wrapper hover-pointer"
-      @click="toggleNewsModal(false)"
-      v-if="showNewsModal"
-    ></div>
-    <transition name="fade">
-      <div
-        class="modal-item"
-        @click="($evt) => $evt.stopPropagation()"
-        v-if="showNewsModal && currentNews"
-      >
-        <div class="item-button" @click="toggleNewsModal(false)">
-          <button><i class="material-icons">close</i></button>
-        </div>
-        <div class="item-title">
-          <span>{{
-            locale === 'ko'
-              ? currentNews.content_kr.title
-              : currentNews.content_en.title
-          }}</span>
-        </div>
-        <div class="item-date">
-          <p>{{ $d(new Date(currentNews.date), 'short') }}</p>
-        </div>
-        <div class="item-content">
-          <p>
-            <span>{{
-              locale === 'ko'
-                ? currentNews.content_kr.content
-                : currentNews.content_en.content
-            }}</span>
-          </p>
-        </div>
-        <div
-          class="item-links"
-          v-if="
-            locale === 'ko'
-              ? currentNews.content_kr.links.length
-              : currentNews.content_en.links.length
-          "
-        >
-          <p class="link-title">{{ $t('main.news.link') }}</p>
-          <a
-            :href="link"
-            class="link-content"
-            v-for="(link, idx) in locale === 'ko'
-              ? currentNews.content_kr.links
-              : currentNews.content_en.links"
-            :key="idx"
-          >
-            {{ link }}
-          </a>
-        </div>
-      </div>
-    </transition>
   </section>
 </template>
 <script lang="ts" setup>
@@ -119,7 +56,10 @@ const filteredNews = computed(() => {
         (news) => new Date(news.date).getFullYear() === targetYear.value
       )
 })
-
+const scrollTop = ()=>{
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  
+} 
 const showNewsModal = ref(false)
 const toggleNewsModal = (flag, news = null) => {
   showNewsModal.value = flag == null ? !showNewsModal.value : flag

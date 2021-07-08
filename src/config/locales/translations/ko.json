@@ -258,20 +258,21 @@
       ]
     },
     "contact": {
-      "title": ["무엇이든", "문의해주세요!"],
+      "title": ["무엇이든 문의해주세요", "제너레잇에 궁금하신 점들을 문의해주세요."],
       "form": {
+        "company": "회사명",
         "name": "이름",
         "email": "메일 주소",
-        "purpose": "문의 목적",
+        "purpose": "문의 내용",
         "message": "메세지",
         "send": "보내기",
         "sent": "문의가 접수되었습니다. 감사합니다.",
         "dropdown": {
-          "business": "사업",
+          "business": "제휴",
           "marketing": "마케팅",
           "research": "연구",
-          "career": "구직",
-          "inquery": "문의"
+          "career": "채용",
+          "inquery": "기타"
         }
       }
     },

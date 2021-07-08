@@ -91,12 +91,14 @@
   }
   .footer-text-wrapper {
     .footer-text {
+      display: grid;
+      grid-template-columns: 60px 1fr;
       span:first-child {
         color: black;
         @include bold(11);
-        margin-right: 14px;
       }
-      span:last-child, a{
+      span:last-child,
+      a {
         color: rgba(22, 22, 22, 0.4);
         @include medium(11);
       }
@@ -104,11 +106,12 @@
       @include mobile {
         font-size: 12px;
       }
-      &.copyright {
-        @include medium(11);
-        margin-top: 8px;
-        color: black;
-      }
+    }
+    .copyright {
+      display:block;
+      @include medium(11);
+      margin-top: 8px;
+      color: black;
     }
   }
 }

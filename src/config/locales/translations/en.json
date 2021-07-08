@@ -3,8 +3,9 @@
     "langButton": "KOR"
   },
   "footer": {
-    "CEO": "CEO Bongjai Shin",
-    "address": "Zenerate, 3F, 27, Dongil-ro 147-gil, Seoul, Republic of Korea"
+    "CEO": ["CEO", "Bongjai Shin"],
+    "address": ["Address", "Zenerate, 3F, 27, Dongil-ro 147-gil, Seoul, Republic of Korea"],
+    "question": ["Contact", "help@zenerate.ai"]
   },
   "module": {
     "column": {
@@ -278,6 +279,7 @@
       }
     },
     "news": {
+      "title": ["Zenerate", "Newsroom"],
       "link": "Links"
     },
     "team": {

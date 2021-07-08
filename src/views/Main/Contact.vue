@@ -114,13 +114,19 @@ const sendEmail = async () => {
   padding: 80px 0px;
 
   .contact-container {
-    @include flex;
+    @include flex($dir: column);
     @include desktop {
       .contact-title {
         flex: 1;
-        p {
-          @include bold(50);
-          color: $main;
+        p:first-child {
+          @include bold(40);
+          line-height: 60px;
+          margin-bottom: 20px;
+        }
+        p:last-child{
+          @include medium(20);
+          line-height: 40px;
+          color: rgba($black-1, 0.4);
         }
       }
       .contact-form {

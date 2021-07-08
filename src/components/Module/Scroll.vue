@@ -184,7 +184,7 @@ onMounted(() => {
 
   window.addEventListener('scroll', ($evt) => {
     const scrollY = $evt.currentTarget.scrollY
-    console.log(scrollY)
+    console.log(scrollY)    
     opacity.value = {
       first: lerp(0, 0, 0, 800, scrollY),
       second: lerp(800, 1300, 3100, 3400, scrollY),

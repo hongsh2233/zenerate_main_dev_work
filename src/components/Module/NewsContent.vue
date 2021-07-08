@@ -44,16 +44,16 @@
           <span>Before</span>
           <span
             class="hover-pointer"
-            @click="nowId = props.newsList[idx - 1].id"
-            >{{ props.newsList[idx - 1].content_kr.title }}</span
+            @click="nowId = props.newsList[idx - 1].id;  scrollTop();"
+            >{{ locale==='ko' ? props.newsList[idx - 1].content_kr.title : props.newsList[idx - 1].content_en.title}}</span
           >
         </div>
         <div class="next-news" v-if="idx < props.newsList.length - 1">
           <span>Next</span>
           <span
             class="hover-pointer"
-            @click="nowId = props.newsList[idx + 1].id"
-            >{{ props.newsList[idx + 1].content_kr.title }}</span
+            @click="nowId = props.newsList[idx + 1].id; scrollTop();"
+            >{{ locale==='ko' ? props.newsList[idx + 1].content_kr.title : props.newsList[idx + 1].content_en.title}}</span
           >
         </div>
       </div>
@@ -63,7 +63,8 @@
       class="back-button"
       @click="
         nowId = -1;
-        onSelect(nowId)
+        scrollTop();
+        onSelect(nowId);
       "
     >
       BACK
@@ -85,7 +86,7 @@
   </div>
 </template>
 <script setup>
-import { ref, watch, defineProps, defineEmit } from 'vue'
+import { ref, watch, defineProps, defineEmit, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 const props = defineProps({
   newsList: {
@@ -105,8 +106,13 @@ const emit = defineEmit(['onSelect'])
 const onSelect = (value) => {
   console.log(value)
   emit('onSelect', value)
-  toggleDropDown(false)
 }
+const scrollTop = ()=>{
+  window.scrollTo(0,0);
+} 
+onMounted(()=>{
+  document.documentElement.scrollTop = 0;
+})
 </script>
 <style lang="scss" scoped>
 @import '../../assets/scss/variables.scss';
