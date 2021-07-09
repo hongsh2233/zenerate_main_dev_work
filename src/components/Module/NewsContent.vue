@@ -108,7 +108,7 @@ const onSelect = (value) => {
   emit('onSelect', value)
 }
 const scrollTop = ()=>{
-  window.scrollTo(0,0);
+  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
 } 
 onMounted(()=>{
   document.documentElement.scrollTop = 0;
@@ -148,7 +148,7 @@ onMounted(()=>{
   .next-news {
     display: grid;
     grid-template-columns: 100px 1fr;
-    height: 80px;
+    height: 48px;
     border-top: rgba(22, 22, 22, 0.4) solid 1px;
     span {
       @include vertical-center;

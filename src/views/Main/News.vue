@@ -1,7 +1,7 @@
 <template>
   <section class="section-news">
     <div class="news-title-wrapper">
-      <div class="news-title">
+      <div class="news-title hover-pointer" @click="() => ((targetYear = -1), (nowId = -1))">
         <span>{{ $t('main.news.title[0]') }}</span>
         <span>{{ $t('main.news.title[1]') }}</span>
       </div>
@@ -10,13 +10,16 @@
         <button @click="() => ((targetYear = 2020), (nowId = -1))">2020</button>
       </div>
     </div>
-    <NewsContent
-      :newsList="newsList"
-      :nowId="nowId"
-      v-show="nowId != -1"
-      @onSelect="(v) => (nowId = v)"
-    />
-    <div class="news-items-wrapper" v-show="nowId === -1">
+    <transition name="fade">
+      <NewsContent
+        :newsList="newsList"
+        :nowId="nowId"
+        v-if="nowId != -1"
+        @onSelect="(v) => (nowId = v)"
+      />
+    </transition>
+    <transition name="fade">
+    <div class="news-items-wrapper" v-if="nowId === -1">
       <div
         class="news-item"
         :class="{ active: currentNews && currentNews.id === news.id }"
@@ -37,6 +40,8 @@
         </div>
       </div>
     </div>
+    </transition>
+    
   </section>
 </template>
 <script lang="ts" setup>
@@ -57,25 +62,9 @@ const filteredNews = computed(() => {
       )
 })
 const scrollTop = ()=>{
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 } 
-const showNewsModal = ref(false)
-const toggleNewsModal = (flag, news = null) => {
-  showNewsModal.value = flag == null ? !showNewsModal.value : flag
-  currentNews.value = news
-  if (showNewsModal.value) {
-    const scrollY = window.scrollY
-    document.body.style.position = 'fixed'
-    document.body.style.top = `-${scrollY}px`
-  } else {
-    // When the modal is hidden...
-    const scrollY = document.body.style.top
-    document.body.style.position = ''
-    document.body.style.top = ''
-    window.scrollTo(0, parseInt(scrollY || '0') * -1)
-  }
-}
+
 
 const currentNews = ref(null)
 
@@ -87,10 +76,7 @@ onMounted(async () => {
   newsList.value = getNewsListRes.data.body.data
   // debugger
   if (route.query.q && !isNaN(+route.query.q)) {
-    toggleNewsModal(
-      true,
-      newsList.value.find((n) => n.id == route.query.q)
-    )
+    nowId.value = Number(route.query.q);
   }
 })
 </script>
@@ -104,7 +90,7 @@ onMounted(async () => {
   @include relative;
   .news-title-wrapper {
     @include flex();
-    margin-bottom: 124px;
+    margin-bottom: 48px;
     .news-title {
       margin-right: 71px;
       span:first-child {

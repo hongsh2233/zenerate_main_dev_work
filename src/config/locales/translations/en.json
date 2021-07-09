@@ -242,7 +242,7 @@
   },
   "main": {
     "service": {
-      "title": ["차별화된 제너레잇의 AI 솔루션", "빌딩 디자인 AI 솔루션", "프롭핏 초기 사업성 검토 솔루션"],
+      "title": ["차별화된 제너레잇의 AI 솔루션", "Building Design AI Solutions", "프롭핏 초기 사업성 검토 솔루션"],
       "types": {
         "web": "Web Solution",
         "consulting": "Consulting Service"
@@ -251,6 +251,11 @@
         "web": "Web Solution",
         "consulting": "Consulting"
       },
+      "content": [
+        "By providing millions of building design alternatives with algorithms,", "users can easily examine profitability of their projects.","",
+        "Zenerate provides all possible design alternatives considering site, massing, floor height, view, etc., and maximize profits of the client’s project.",
+        "Based on actual transaction data,  our A.I. model learns how the price is decided in relation to  area, floor, height, view, etc.. Then, it will price every single space properly in a new project."
+      ],
       "titles": [
         "Feasibility Study",
         "Building Design AI Solutions",
