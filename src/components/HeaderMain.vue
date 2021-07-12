@@ -35,14 +35,13 @@
           >
             {{ $t('menu.service') }}
           </div>
-          <a
+          <div
             class="navigation-main-item hover-pointer"
-            href="https://www.notion.so/zenerate/c220ca929c9c4f6982c8aca8696e2c86"
-            target="_blank"
+            @click="router.push('/main/career')"
             @mouseover="setMenuHovered(false)"
           >
             {{ $t('menu.career') }}
-          </a>
+          </div>
           <div
             class="navigation-main-item hover-pointer"
             @click="router.push('/main/contact')"

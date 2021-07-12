@@ -150,7 +150,7 @@
         <div class="timeline-left-wrapper">
           <div
             class="timeline-item left"
-            v-for="(item, i) in timelineItem"
+            v-for="(item, i) in leftItem"
             :key="i"
           >
             <div
@@ -158,7 +158,6 @@
               data-aos="zoom-in-up"
               data-aos-offset="0"
               data-aos-duration="300"
-              v-if="i % 2 === 1"
             >
               <div class="item-year">{{ item.year }}</div>
               <p
@@ -173,16 +172,15 @@
         <div class="timeline-right-wrapper">
           <div
             class="timeline-item right"
-            v-for="(item, i) in timelineItem"
+            v-for="(item, i) in rightItem"
             :key="i"
           >
             <div
               class="content"
               data-aos="zoom-in-up"
               data-aos-offset="0"
-              data-aos-duration="100"
-              data-aos-once="true"
-              v-if="i % 2 === 0"
+              data-aos-duration="300"
+              data-aos-once="false"
             >
               <div class="item-year">{{ item.year }}</div>
               <p
@@ -195,32 +193,6 @@
           </div>
         </div>
 
-        <!-- <div
-          class="timeline-item hidden-mobile hidden-tablet"
-          v-for="(item, i) in timelineItem"
-          :key="i"
-          :class="{
-            'timeline-item left': i % 2,
-            'timeline-item right': !(i % 2),
-            active: item.active,
-          }"
-        >
-          <div
-            class="content"
-            data-aos="zoom-in-up"
-            data-aos-offset="0"
-            data-aos-duration="300"
-          >
-            <div class="item-year">{{ item.year }}</div>
-            <p
-              v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
-              :key="idx"
-            >
-              {{ line }}
-            </p>
-             <i class="material-icons">{{ item.icon }}</i> 
-          </div>
-        </div> -->
         <div
           class="timeline-item hidden-desktop"
           v-for="(item, i) in timelineItem"
@@ -248,8 +220,20 @@
 </template>
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
+import { ref, computed } from 'vue'
 const { locale } = useI18n()
 import timelineItem from '/Constants/timeline'
+const leftItem = ref(computed(()=>{
+  return timelineItem.filter((item, index)=>{
+    return index%2===1;
+  });
+}));
+const rightItem = ref(computed(()=>{
+  return timelineItem.filter((item, index)=>{
+    return index%2===0;
+  });
+}));
+
 </script>
 <style lang="scss" scoped>
 @import '../../assets/scss/variables.scss';
@@ -482,11 +466,13 @@ import timelineItem from '/Constants/timeline'
           }
           &::after {
             display: block;
+            position: absolute;
+            bottom: 0;
             content: '';
             border-right: 1.5px solid $main;
             width: 100%;
             height: 50px;
-            transform: translate(31px, 962px) rotate(45deg);
+            transform: translate(31px, -50%) rotate(45deg);
           }
         }
         .timeline-end {
@@ -498,26 +484,31 @@ import timelineItem from '/Constants/timeline'
           }
         }
       }
+      .timeline-right-wrapper {
+        padding-top: 40px;
+      }
       .timeline-left-wrapper,
       .timeline-right-wrapper {
         .timeline-item {
-          padding: 10px 40px;
+          // padding: 10px 40px;
           position: relative;
           background-color: inherit;
-          width: 40%;
           @include mobile {
             width: 100%;
           }
           .content {
-            width: 328px;
-            padding: 20px 24px;
-            padding-top: 16px;
+            padding: 12px 12px;
+            margin-bottom: 44px;
+            width: 288px;
+            // max-width: 288px;
+            padding-top: 0px;
             position: relative;
             border-radius: 12px;
             text-align: center;
             @include elevation-box-grey;
             .item-year {
               @include medium(10);
+              color: rgba($black-1, 0.4);
               line-height: 48px;
             }
             p {
@@ -538,12 +529,20 @@ import timelineItem from '/Constants/timeline'
           }
 
           &.left {
-            left: 10%;
-            & .content {
+            .content{
+              .item-year {
+                text-align: right;
+              }
+              p{
+                text-align: right;
+              }
+            }
+            &.content {
               margin-left: auto;
               padding-left: 64px;
+              
             }
-            padding-right: 96px;
+            
             @include tablet {
               padding-right: 32px;
               &::before {
@@ -559,15 +558,22 @@ import timelineItem from '/Constants/timeline'
             @include mobile {
               left: 5%;
             }
-
+            .content{
+              .item-year {
+                text-align: left;
+              }
+              p{
+                text-align: left;
+              }
+            }
             &::after {
               left: -16px;
             }
             & .content {
               margin-right: auto;
-              padding-right: 64px;
+              
             }
-            padding-left: 96px;
+            padding-left: 60px;
             @include tablet {
               padding-left: 32px;
               &::before {

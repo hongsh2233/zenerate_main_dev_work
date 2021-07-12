@@ -1,7 +1,7 @@
 export default [
   {
     en: ['Spoke at Open Building Council', 'Los Angeles'],
-    kr: ['오픈빌딩 학회 발표', '로스엔젤레스 미국'],
+    kr: ['로스엔젤레스 오픈빌딩 학회 발표'],
     active: false,
     icon: 'business',
     year: 2018, 
@@ -29,10 +29,7 @@ export default [
   },
   {
     kr: [
-      '3개 벤처투자사 시드투자유치',
-      'BLUEPOINT PARTNERS',
-      'KRYPTON',
-      'PLAN. H VENTURES',
+      '3개 벤처투자사 시드투자유치'
     ],
     en: [
       'Raised Seed Funding',
