@@ -137,52 +137,110 @@
         <span class="colored">{{ $t('about.timeline.title[1]') }}</span>
         <span>{{ $t('about.timeline.title[2]') }}</span>
       </div>
-      <div class="timeline-spacer"></div>
-      <div class="timeline-start"></div>
-      <div class="timeline-end"></div>
-      <div
-        class="timeline-item hidden-mobile hidden-tablet"
-        v-for="(item, i) in timelineItem"
-        :key="i"
-        :class="{
-          'timeline-item left': i % 2,
-          'timeline-item right': !(i % 2),
-          active: item.active,
-        }"
-      >
-        <div
-          class="content"
-          data-aos="zoom-in-up"
-          data-aos-offset="0"
-          data-aos-duration="300"
-        >
-          <p
-            v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
-            :key="idx"
-          >
-            {{ line }}
-          </p>
-          <i class="material-icons">{{ item.icon }}</i>
+      <div class="timeline-item-wrapper">
+        <div class="timeline-spacer-wrapper">
+          <div class="timeline-start">
+            <p>2018</p>
+            <p>2019</p>
+            <p>2020</p>
+          </div>
+          <div class="timeline-spacer"></div>
+          <div class="timeline-end">2021</div>
         </div>
-      </div>
-      <div
-        class="timeline-item hidden-desktop"
-        v-for="(item, i) in timelineItem"
-        :key="i"
-        :class="{
-          'timeline-item left': i % 2,
-          'timeline-item right': !(i % 2),
-          active: item.active,
-        }"
-      >
-        <div class="content">
-          <p
-            v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
-            :key="idx"
+        <div class="timeline-left-wrapper">
+          <div
+            class="timeline-item left"
+            v-for="(item, i) in timelineItem"
+            :key="i"
           >
-            {{ line }}
-          </p>
-          <i class="material-icons">{{ item.icon }}</i>
+            <div
+              class="content"
+              data-aos="zoom-in-up"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              v-if="i % 2 === 1"
+            >
+              <div class="item-year">{{ item.year }}</div>
+              <p
+                v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
+                :key="idx"
+              >
+                {{ line }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-right-wrapper">
+          <div
+            class="timeline-item right"
+            v-for="(item, i) in timelineItem"
+            :key="i"
+          >
+            <div
+              class="content"
+              data-aos="zoom-in-up"
+              data-aos-offset="0"
+              data-aos-duration="100"
+              data-aos-once="true"
+              v-if="i % 2 === 0"
+            >
+              <div class="item-year">{{ item.year }}</div>
+              <p
+                v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
+                :key="idx"
+              >
+                {{ line }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div
+          class="timeline-item hidden-mobile hidden-tablet"
+          v-for="(item, i) in timelineItem"
+          :key="i"
+          :class="{
+            'timeline-item left': i % 2,
+            'timeline-item right': !(i % 2),
+            active: item.active,
+          }"
+        >
+          <div
+            class="content"
+            data-aos="zoom-in-up"
+            data-aos-offset="0"
+            data-aos-duration="300"
+          >
+            <div class="item-year">{{ item.year }}</div>
+            <p
+              v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
+              :key="idx"
+            >
+              {{ line }}
+            </p>
+             <i class="material-icons">{{ item.icon }}</i> 
+          </div>
+        </div> -->
+        <div
+          class="timeline-item hidden-desktop"
+          v-for="(item, i) in timelineItem"
+          :key="i"
+          :class="{
+            'timeline-item left': i % 2,
+            'timeline-item right': !(i % 2),
+            active: item.active,
+          }"
+        >
+          <div class="content">
+            <div class="item-year">{{ item.year }}</div>
+            <p
+              v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
+              :key="idx"
+            >
+              {{ line }}
+            </p>
+            <i class="material-icons">{{ item.icon }}</i>
+          </div>
         </div>
       </div>
     </div>
@@ -348,7 +406,7 @@ import timelineItem from '/Constants/timeline'
   }
   .about-partner-wrapper {
     .partner-title {
-      span{
+      span {
         margin: 0px 5px;
       }
     }
@@ -385,182 +443,140 @@ import timelineItem from '/Constants/timeline'
     @include mobile {
       padding: 0px 4px;
     }
-    .timeline-title{
-      span{
+    .timeline-title {
+      span {
         margin: 0 5px;
       }
     }
-    .timeline-spacer {
-      @include absolute(top 0 left 50%);
-      width: 0px;
-      height: calc(100% + 48px);
-      transform: translateX(-50%);
-      border-right: 1.5px dashed rgba($main, 0.3);
-      @include mobile {
-        display: none;
-      }
-    }
-    .timeline-start {
-      @include absolute(top 0 left 50%);
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      transform: translateX(-50%);
-      background: $gradient-blue;
-      @include mobile {
-        display: none;
-      }
-    }
-    .timeline-end {
-      @include absolute(bottom -48px left 50%);
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      transform: translateX(-7px);
-      background: $gradient-blue;
-      @include mobile {
-        display: none;
-      }
-    }
-    .timeline-item {
-      padding: 10px 40px;
+    .timeline-item-wrapper {
       position: relative;
-      background-color: inherit;
-      width: 50%;
-      @include mobile {
-        width: 100%;
-      }
-      .content {
-        width: 328px;
-        padding: 20px 24px;
-        padding-top: 16px;
-        background-color: white;
-        position: relative;
-        border-radius: 12px;
-        text-align: center;
-        @include elevation-hover-blue;
-        p {
-          @include bold(15);
-        }
-        @include tablet {
-          width: 264px;
+      @include flex($justify: space-around);
+      .timeline-spacer-wrapper {
+        @include absolute(top 0 left 50%);
+        display: grid;
+        grid-template-rows: 284px 1fr 84px;
+        width: 96px;
+        height: calc(100% + 50px);
+        transform: translateX(-50%);
+        .timeline-start {
+          @include flex($dir: column, $justify: space-around);
+          @include mobile {
+            display: none;
+          }
           p {
-            @include medium(14);
+            @include bold(40);
+            color: #b9caff;
+            &:first-child {
+              color: #d6e4ff;
+            }
+            &:last-child {
+              color: #8097ff;
+            }
           }
         }
-        @include mobile {
-          width: 248px;
-          p {
-            @include medium(13);
+        .timeline-spacer {
+          border-right: 1.5px solid $main;
+          transform: translateX(-50%);
+          @include mobile {
+            display: none;
+          }
+          &::after {
+            display: block;
+            content: '';
+            border-right: 1.5px solid $main;
+            width: 100%;
+            height: 50px;
+            transform: translate(31px, 962px) rotate(45deg);
+          }
+        }
+        .timeline-end {
+          color: $main;
+          padding-top: 24px;
+          @include bold(40);
+          @include mobile {
+            display: none;
           }
         }
       }
+      .timeline-left-wrapper,
+      .timeline-right-wrapper {
+        .timeline-item {
+          padding: 10px 40px;
+          position: relative;
+          background-color: inherit;
+          width: 40%;
+          @include mobile {
+            width: 100%;
+          }
+          .content {
+            width: 328px;
+            padding: 20px 24px;
+            padding-top: 16px;
+            position: relative;
+            border-radius: 12px;
+            text-align: center;
+            @include elevation-box-grey;
+            .item-year {
+              @include medium(10);
+              line-height: 48px;
+            }
+            p {
+              @include medium(16);
+            }
+            @include tablet {
+              width: 264px;
+              p {
+                @include medium(14);
+              }
+            }
+            @include mobile {
+              width: 248px;
+              p {
+                @include medium(13);
+              }
+            }
+          }
 
-      &::after {
-        content: '';
-        position: absolute;
-        width: 32px;
-        height: 32px;
-        right: -16px;
-        background-color: $main-3;
-        // border: 2px solid #fff;
-        top: 50%;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        z-index: 1;
-      }
-      @include mobile {
-        &::after,
-        &::before {
-          display: none;
-        }
-      }
+          &.left {
+            left: 10%;
+            & .content {
+              margin-left: auto;
+              padding-left: 64px;
+            }
+            padding-right: 96px;
+            @include tablet {
+              padding-right: 32px;
+              &::before {
+                width: 32px;
+              }
+            }
+            @include mobile {
+              padding: 16px 0px;
+            }
+          }
 
-      &.left {
-        left: 0;
-        &::before {
-          content: ' ';
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 96px;
-          height: 1px;
-          right: 0;
-          background: $main-3;
-        }
-        & .content {
-          margin-left: auto;
-          padding-left: 64px;
-          i {
-            @include absolute(top 50% left 24px);
-            transform: translateY(-50%);
-            color: $main-3;
-            font-size: 40px;
-          }
-        }
-        padding-right: 96px;
-        @include tablet {
-          padding-right: 32px;
-          &::before {
-            width: 32px;
-          }
-        }
-        @include mobile {
-          padding: 16px 0px;
-        }
-      }
+          &.right {
+            @include mobile {
+              left: 5%;
+            }
 
-      &.right {
-        left: 50%;
-        @include mobile {
-          left: 5%;
-        }
-        &::before {
-          content: ' ';
-          position: absolute;
-          width: 96px;
-          height: 1px;
-          top: 50%;
-          transform: translateY(-50%);
-          left: 0;
-          background: $main-3;
-        }
-        &::after {
-          left: -16px;
-        }
-        & .content {
-          margin-right: auto;
-          padding-right: 64px;
-          i {
-            @include absolute(top 50% right 24px);
-            transform: translateY(-50%);
-            color: $main-3;
-            font-size: 40px;
-          }
-        }
-        padding-left: 96px;
-        @include tablet {
-          padding-left: 32px;
-          &::before {
-            width: 32px;
-          }
-        }
-        @include mobile {
-          padding: 16px 0px;
-        }
-      }
-
-      &.active {
-        &::after,
-        &::before {
-          background: $gradient-blue;
-        }
-        .content {
-          background: $gradient-blue;
-          p,
-          span,
-          i {
-            color: white;
+            &::after {
+              left: -16px;
+            }
+            & .content {
+              margin-right: auto;
+              padding-right: 64px;
+            }
+            padding-left: 96px;
+            @include tablet {
+              padding-left: 32px;
+              &::before {
+                width: 32px;
+              }
+            }
+            @include mobile {
+              padding: 16px 0px;
+            }
           }
         }
       }
