@@ -1,7 +1,7 @@
 <template>
   <div class="career-content-wrapper">
     <!-- Backend -->
-    <div class="career-content" v-if="props.careerId===0">
+    <div class="career-content" v-if="props.careerId === 0">
       <div class="image-wrapper">
         <img src="/img/career.png" alt="career" />
       </div>
@@ -77,11 +77,7 @@
       </div>
       <button
         class="back-button"
-        @click="
-          nowId = -1;
-          scrollTop();
-          onSelect(nowId)
-        "
+        @click=";[(nowId = -1), onSelect(nowId), scrollTop()]"
       >
         <span>BACK</span>
         <svg
@@ -101,7 +97,7 @@
       </button>
     </div>
     <!-- Frontend -->
-    <div class="career-content" v-if="props.careerId===1">
+    <div class="career-content" v-if="props.careerId === 1">
       <div class="image-wrapper">
         <img src="/img/career.png" alt="career" />
       </div>
@@ -112,9 +108,7 @@
       <div class="content-item">
         <div class="content-item-title">주요 업무</div>
         <div class="content-item-content">
-          <li>
-            웹페이지 UI 컴포넌트 구현
-          </li>
+          <li>웹페이지 UI 컴포넌트 구현</li>
           <li>웹페이지 로직 개발 및 성능 개선</li>
           <li>WebGL 기반 2D/3D 데이터 시각화</li>
         </div>
@@ -139,11 +133,12 @@
       <div class="content-item">
         <div class="content-item-title">우대 사항</div>
         <div class="content-item-content">
-          <li>Vue.js 또는 React.js 와 같은 프론트엔드 프레임워크를 사용해 완결된 웹 서비스 개발 경험이 있으신 분</li>
-          <li>TypeScript 개발 경험이 있으신 분</li>
           <li>
-            새로운 기술에 대한 호기심이 많고, 빠르게 습득할 수 있는 분
+            Vue.js 또는 React.js 와 같은 프론트엔드 프레임워크를 사용해 완결된
+            웹 서비스 개발 경험이 있으신 분
           </li>
+          <li>TypeScript 개발 경험이 있으신 분</li>
+          <li>새로운 기술에 대한 호기심이 많고, 빠르게 습득할 수 있는 분</li>
           <li>협업과 의사소통이 원활한 분</li>
         </div>
       </div>
@@ -151,9 +146,7 @@
         <div class="content-item-title">이렇게 일해요</div>
         <div class="content-item-content">
           <div class="caption-large">기술 스택</div>
-          <p>
-            Vue.js 3, Vite, CSS, HTML, Node.js, Express, Python, Typescript
-          </p>
+          <p>Vue.js 3, Vite, CSS, HTML, Node.js, Express, Python, Typescript</p>
           <div class="caption-large">개발 환경</div>
           <p>AWS EC2, AWS RDS, AWS S3</p>
           <div class="caption-large">협업 환경</div>
@@ -178,11 +171,7 @@
       </div>
       <button
         class="back-button"
-        @click="
-          nowId = -1;
-          scrollTop();
-          onSelect(nowId)
-        "
+        @click=";[(nowId = -1), scrollTop(), onSelect(nowId)]"
       >
         <span>BACK</span>
         <svg
@@ -202,7 +191,7 @@
       </button>
     </div>
     <!-- Data Analysist -->
-    <div class="career-content" v-if="props.careerId===2">
+    <div class="career-content" v-if="props.careerId === 2">
       <div class="image-wrapper">
         <img src="/img/career.png" alt="career" />
       </div>
@@ -214,7 +203,8 @@
         <div class="content-item-title">주요 업무</div>
         <div class="content-item-content">
           <li>
-            부동산 개발에 관한 데이터 처리 (geospatial data, 거래내역 데이터 등등)
+            부동산 개발에 관한 데이터 처리 (geospatial data, 거래내역 데이터
+            등등)
           </li>
           <li>분석 모델 기획/개발</li>
         </div>
@@ -231,9 +221,7 @@
         <div class="content-item-title">이렇게 일해요</div>
         <div class="content-item-content">
           <div class="caption-large">기술 스택</div>
-          <p>
-            Vue.js 3, Vite, CSS, HTML, Node.js, Express, Python, Typescript
-          </p>
+          <p>Vue.js 3, Vite, CSS, HTML, Node.js, Express, Python, Typescript</p>
           <div class="caption-large">개발 환경</div>
           <p>AWS EC2, AWS RDS, AWS S3</p>
           <div class="caption-large">협업 환경</div>
@@ -258,11 +246,7 @@
       </div>
       <button
         class="back-button"
-        @click="
-          nowId = -1;
-          scrollTop();
-          onSelect(nowId)
-        "
+        @click=";[(nowId = -1), scrollTop(), onSelect(nowId)]"
       >
         <span>BACK</span>
         <svg
@@ -305,7 +289,7 @@ const goToApply = () => {
     '_blank'
   )
 }
-console.log(props.careerId);
+console.log(props.careerId)
 </script>
 <style lang="scss" scoped>
 @import '../../assets/scss/variables.scss';

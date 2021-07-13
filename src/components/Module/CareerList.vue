@@ -1,40 +1,53 @@
 <template>
   <div class="career-list-wrapper">
-    <CareerContent
-      v-if="careerId != -1"
-      @onSelect="(v) => (careerId = v)"
-      :careerId="careerId"
-    ></CareerContent>
-    <div class="career-list" v-if="careerId === -1">
-      <div class="career-item">
-        <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
-        <div class="item-title hover-pointer"  @click="[careerId = 0, scrollTop()]">
-          백엔드 개발자 (경력)
-          <div class="arrow-right"></div>
+    <transition name="fade" mode="out-in">
+      <CareerContent
+        v-if="careerId != -1"
+        @onSelect="(v) => (careerId = v)"
+        :careerId="careerId"
+      ></CareerContent>
+    </transition>
+    <transition name="fade" mode="out-in">
+      <div class="career-list" v-if="careerId === -1">
+        <div class="career-item">
+          <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+          <div
+            class="item-title hover-pointer"
+            @click=";[(careerId = 0), scrollTop()]"
+          >
+            백엔드 개발자 (경력)
+            <div class="arrow-right"></div>
+          </div>
+        </div>
+        <div class="career-item">
+          <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+          <div
+            class="item-title hover-pointer"
+            @click=";[(careerId = 1), scrollTop()]"
+          >
+            프론트엔드 개발자 (경력)
+            <div class="arrow-right"></div>
+          </div>
+        </div>
+        <div class="career-item">
+          <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+          <div
+            class="item-title hover-pointer"
+            @click=";[(careerId = 2), scrollTop()]"
+          >
+            데이터 분석
+            <div class="arrow-right"></div>
+          </div>
         </div>
       </div>
-      <div class="career-item">
-        <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
-        <div class="item-title hover-pointer" @click="[careerId = 1, scrollTop()]">
-          프론트엔드 개발자 (경력)
-          <div class="arrow-right"></div>
-        </div>
-      </div>
-      <div class="career-item">
-        <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
-        <div class="item-title hover-pointer"  @click="[careerId = 2, scrollTop()]">
-          데이터 분석
-          <div class="arrow-right"></div>
-        </div>
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
 <script setup>
 import CareerContent from './CareerContent.vue'
 import { ref } from 'vue'
-const careerId = ref(-1);
-console.log(careerId.value);
+const careerId = ref(-1)
+console.log(careerId.value)
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 }

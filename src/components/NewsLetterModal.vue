@@ -114,14 +114,14 @@ const submit = async () => {
   @include desktop {
     right: MAX(0.1px, calc((100vw - 1296px) / 2));
   }
-  top: 80px;
+  top: 100px;
   width: 348px;
-  height: 148px;
+  height: 160px;
   border-radius: 12px;
   @include border-set(1px, $fogged, 12px);
-  background: $main;
-  color: white;
-  padding: 24px 32px;
+  background: $white;
+  color: $main;
+  padding: 16px 24px;
   .letter-buttons-wrapper {
     width: 100%;
     text-align: right;
@@ -131,7 +131,7 @@ const submit = async () => {
       background-color: transparent;
       i {
         font-size: 24px;
-        color: white;
+        color: $main;
       }
     }
   }
@@ -140,19 +140,19 @@ const submit = async () => {
     text-align: left;
     margin-bottom: 16px;
     span {
-      @include bold(20);
+      @include bold(24);
     }
   }
   .letter-input {
     @include flex;
-    margin-bottom: 16px;
+    padding-bottom: 16px;
     input {
       flex: 1;
       border: none;
-      border-bottom: solid 1px white;
+      border-bottom: solid 1px $main;
       padding: 2px;
       background: transparent;
-      color: white;
+      color: $main;
       width: 100%;
       border-radius: 0px;
       &::placeholder {
@@ -160,10 +160,14 @@ const submit = async () => {
       }
     }
     span {
-      border: solid 1px white;
+      // border: solid 1px $main;
+      border-radius: 12px;
       @include bold(16);
       padding: 6px 12px;
       margin-left: 8px;
+      &:hover{
+        background-color: rgba($main, 0.1);
+      }
     }
   }
   .letter-allow {

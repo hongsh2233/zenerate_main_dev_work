@@ -10,7 +10,7 @@
         <button @click="() => ((targetYear = 2020), (nowId = -1))">2020</button>
       </div>
     </div>
-    <transition name="fade">
+    <transition name="fade" mode="out-in">
       <NewsContent
         :newsList="newsList"
         :nowId="nowId"
@@ -18,7 +18,7 @@
         @onSelect="(v) => (nowId = v)"
       />
     </transition>
-    <transition name="fade">
+    <transition name="fade" mode="out-in">
     <div class="news-items-wrapper" v-if="nowId === -1">
       <div
         class="news-item"

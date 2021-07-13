@@ -12,9 +12,7 @@
         지원을 기다립니다!
       </div>
     </div>
-    <transition name="fade">
       <CareerList></CareerList>
-    </transition>
   </section>
 </template>
 <script lang="ts" setup>
