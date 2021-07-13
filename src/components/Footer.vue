@@ -79,6 +79,9 @@
   padding: 62px 0px;
   color: $main;
   align-items: center;
+  @include mobile{
+    padding: 30px 0px;
+  }
   .footer-sns {
     margin-bottom: 25px;
     width: 96px;

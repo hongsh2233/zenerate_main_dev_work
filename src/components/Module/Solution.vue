@@ -18,14 +18,28 @@
   height: 100%;
   margin-top: 40px;
   padding-left: 56px;
+  @include mobile{
+    padding-left: 0px;
+    margin-top: 10px;
+    padding-bottom: 20px;
+  }
   @include flex($dir: row, $justify: space-between);
   .solution-title {
     width: 216px;
     @include bold(28);
+    @include mobile{
+      width: 60%;
+      @include medium(32);
+      margin-bottom: 16px;
+    }
   }
   .solution-content {
     width: 412px;
     @include medium(16);
+    @include mobile{
+      @include medium(16);
+      padding-bottom: 16px;
+    }
   }
 }
 </style>

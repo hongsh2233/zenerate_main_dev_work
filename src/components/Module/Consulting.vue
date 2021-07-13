@@ -102,6 +102,12 @@ onBeforeUnmount(() => {
       position: absolute;
       top: 40px;
     }
+    @include mobile{
+      margin-right: 10px;
+      &:last-child{
+        margin-right: 0px;
+      }
+    }
     img {
       max-width: 100%;
       max-height: 100%;
@@ -110,9 +116,15 @@ onBeforeUnmount(() => {
       .image-explanation-title {
         @include bold(20);
         margin-bottom: 16px;
+        @include mobile{
+          @include bold(16);
+        }
       }
       .image-explanation-content {
         @include medium(20);
+        @include mobile{
+          @include medium(12);
+        }
       }
     }
     &.inactive {

@@ -108,20 +108,20 @@ const submit = async () => {
   z-index: 1059;
   right: 16px;
   @include mobile {
-    right: calc((100vw - 348px) / 2);
-    left: calc((100vw - 348px) / 2);
+    right: calc((100vw - 260px) / 2);
+    left: calc((100vw - 260px) / 2);
   }
   @include desktop {
-    right: MAX(0.1px, calc((100vw - 1296px) / 2));
+    right: MAX(0.1px, calc((100vw - 1175px) / 2));
   }
   top: 100px;
-  width: 348px;
-  height: 160px;
+  width: 260px;
+  height: 124px;
   border-radius: 12px;
   @include border-set(1px, $fogged, 12px);
   background: $white;
   color: $main;
-  padding: 16px 24px;
+  padding: 12px 24px;
   .letter-buttons-wrapper {
     width: 100%;
     text-align: right;
@@ -130,7 +130,7 @@ const submit = async () => {
       border: none;
       background-color: transparent;
       i {
-        font-size: 24px;
+        font-size: 20px;
         color: $main;
       }
     }
@@ -138,17 +138,18 @@ const submit = async () => {
   .letter-title {
     width: 100%;
     text-align: left;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     span {
-      @include bold(24);
+      @include bold(16);
     }
   }
   .letter-input {
     @include flex;
-    padding-bottom: 16px;
+    padding-bottom: 10px;
     input {
       flex: 1;
       border: none;
+      @include medium(12);
       border-bottom: solid 1px $main;
       padding: 2px;
       background: transparent;
@@ -160,10 +161,11 @@ const submit = async () => {
       }
     }
     span {
-      // border: solid 1px $main;
       border-radius: 12px;
-      @include bold(16);
-      padding: 6px 12px;
+      width: 64px;
+      @include bold(12);
+      padding: 3px 5px;
+      text-align: center;
       margin-left: 8px;
       &:hover{
         background-color: rgba($main, 0.1);

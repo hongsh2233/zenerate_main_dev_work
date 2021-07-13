@@ -39,10 +39,11 @@ const router = useRouter()
     padding-left: 12px;
   }
   @include mobile {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
   }
   .partnership-contact {
     height: 40px;
+    width: 80px;
   }
   .partnership-title {
     @include desktop {
@@ -66,7 +67,9 @@ const router = useRouter()
     @include tablet {
       @include medium(20);
     }
-
+    @include mobile {
+      @include medium(16);
+    }
     .click {
       font-weight: $bold;
     }

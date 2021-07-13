@@ -15,20 +15,7 @@
           {{ $t('module.career.button') }}
         </button>
         <div class="vector-wrapper">
-          <svg
-            width="689"
-            height="28"
-            viewBox="0 0 689 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1 27H688L661.423 1"
-              stroke="#4747FF"
-              stroke-linecap="square"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <div class="arrow-right"></div>
         </div>
       </div>
     </div>
@@ -42,8 +29,14 @@
   height: 100%;
   padding: 0px;
   padding-left: 56px;
+  @include mobile {
+    margin-top: 40px;
+    padding: 0;
+    margin-bottom: 40px;
+  }
   .career-caption {
     height: 40px;
+    width: 40px;
   }
   .career-title {
     @include desktop {
@@ -56,6 +49,10 @@
       @include medium(16);
       margin-bottom: 28px;
     }
+    @include mobile{
+      @include medium(16);
+      margin-bottom: 24px;
+    }
   }
   .contact-link {
     text-align: end;
@@ -64,13 +61,31 @@
       position: relative;
       z-index: 20;
       color: $main;
-      margin-right: 30px;
+      margin-right: 40px;
       @include bold(16);
     }
     .vector-wrapper {
       z-index: 10;
+      width: 100%;
       position: absolute;
-      top: 10px;
+      top: 15px;
+      .arrow-right {
+        z-index: 20;
+        width: 100%;
+        height: 5px;
+        border-top: 1px solid $main;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        transform: rotate(180deg);
+        &::after {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 45px;
+          background-color: $main;
+          transform: rotate(-45deg) translate(15px, 4px);
+        }
+      }
     }
   }
 }

@@ -223,6 +223,7 @@ const currentComponent = computed(() => {
       }
       @include mobile {
         @include bold(14);
+        margin-left: 0px;
         margin-top: 16px;
       }
       .header-item {
@@ -245,11 +246,13 @@ const currentComponent = computed(() => {
     }
     .item-content {
       padding-left: 16px;
+      width: 100%;
       @include tablet {
         margin-top: 60px;
       }
       @include mobile {
-        margin-top: 40px;
+        margin-top: 30px;
+        padding-left: 0px;
       }
     }
     .intro {
@@ -259,6 +262,7 @@ const currentComponent = computed(() => {
         margin-left: 85px;
         @include mobile {
           margin-right: 8px;
+          margin-left: 16px;
         }
         .left-title {
           @include bold(28);
@@ -304,6 +308,7 @@ const currentComponent = computed(() => {
         @include medium(24);
         @include mobile {
           @include medium(15);
+          margin-left: 16px;
         }
 
         .item-date {
@@ -325,6 +330,9 @@ const currentComponent = computed(() => {
       .team-item {
         @include flex;
         margin-left: 85px;
+        @include mobile{
+          margin-left: 24px;
+        }
         .item-desc {
           width: 220px;
           @include bold(24);
@@ -350,6 +358,7 @@ const currentComponent = computed(() => {
       padding-right: 48px;
       @include mobile {
         padding-right: 24px;
+        margin-left: 16px;
       }
       .news-title {
         @include bold(28);
@@ -381,15 +390,19 @@ const currentComponent = computed(() => {
       width: 552px;
       @include mobile {
         padding-right: 24px;
+        margin-left: 16px;
+        width: 100%;
       }
       color: $navy;
       .program-block {
+        width: 100%;
         margin-bottom: 32px;
         .program-title {
           @include bold(28);
           margin-bottom: 32px;
           @include mobile {
-            @include bold(15);
+            @include bold(17);
+            margin-bottom: 16px;
           }
         }
         .block-title {
@@ -397,6 +410,7 @@ const currentComponent = computed(() => {
           margin-bottom: 16px;
           @include mobile {
             @include bold(15);
+            margin-bottom: 8px;
           }
         }
         .block-content {
@@ -404,6 +418,7 @@ const currentComponent = computed(() => {
           margin-bottom: 20px;
           @include mobile {
             @include medium(15);
+            margin-bottom: 16px;
           }
         }
       }
@@ -417,7 +432,10 @@ const currentComponent = computed(() => {
     .contact {
       color: $main;
       margin-left: 85px;
-      width: 560px;
+      width: 100%;
+      @include mobile{
+        margin-left: 16px;
+      }
       .contact-title {
         margin-bottom: 32px;
         @include mobile {
@@ -444,13 +462,19 @@ const currentComponent = computed(() => {
         }
       }
       .contact-link {
+        text-align: end;
+        width: 100%;
+        position: relative;
+        @include desktop{
+          width: 556px;
+        }
         @include mobile {
           text-align: center;
+          width: 90%;
         }
-        text-align: end;
-        position: relative;
         button {
-          position: relative;
+          position: absolute;
+          right: 15px;
           z-index: 20;
           background: #d6e4ff;
           color: $main;
@@ -461,6 +485,27 @@ const currentComponent = computed(() => {
           z-index: 10;
           position: absolute;
           top: 10px;
+          width: 100%;
+          .arrow-right {
+            z-index: 20;
+            width: 100%;
+            height: 5px;
+            border-top: 1px solid $main;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            transform: rotate(180deg);
+            &::after {
+              content: '';
+              display: block;
+              width: 1px;
+              height: 45px;
+              background-color: $main;
+              transform: rotate(-45deg) translate(15px, 4px);
+            }
+          }
+          @include mobile{
+            
+          }
         }
       }
     }

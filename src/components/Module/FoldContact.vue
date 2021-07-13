@@ -35,20 +35,7 @@
           {{ $t('module.fold.contact.contents.contact.button') }}
         </button>
         <div class="vector-wrapper">
-          <svg
-            width="558"
-            height="28"
-            viewBox="0 0 558 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1 27H557.5L530.923 1"
-              stroke="#4747FF"
-              stroke-linecap="square"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <div class="arrow-right"></div>
         </div>
       </div>
     </div>

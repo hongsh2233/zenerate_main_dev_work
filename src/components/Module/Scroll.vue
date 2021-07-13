@@ -31,13 +31,14 @@
       }"
     >
       <div class="second-background">
-        <video
+        <!-- <video
           autoplay="autoplay"
           muted="muted"
           loop="loop"
           src="/video/scroll_background.mp4"
           alt=""
-        />
+        /> -->
+        <img src="/video/scroll_background_2.webp" />
       </div>
       <div class="second-first-text">
         <div
@@ -184,7 +185,7 @@ onMounted(() => {
 
   window.addEventListener('scroll', ($evt) => {
     const scrollY = $evt.currentTarget.scrollY
-    console.log(scrollY)    
+    console.log(scrollY)
     opacity.value = {
       first: lerp(0, 0, 0, 800, scrollY),
       second: lerp(800, 1300, 3100, 3400, scrollY),
@@ -234,7 +235,7 @@ onMounted(() => {
         width: 320px;
       }
       @include mobile {
-        width: 320px;
+        width: 300px;
         margin: 76px 0px 20px 0px;
       }
     }
@@ -275,8 +276,15 @@ onMounted(() => {
     .second-background {
       position: absolute;
       z-index: 0;
-      video {
+      width: 100%;
+      height: 100%;
+      // video {
+      //   width: 100%;
+      // }
+      img {
+        height: 100%;
         width: 100%;
+        object-fit: cover;
       }
       @include tablet {
         video {
@@ -285,8 +293,9 @@ onMounted(() => {
         }
       }
       @include mobile {
-        video {
-          height: 100vh;
+        img {
+          height: 100%;
+          width: 100%;
           object-fit: cover;
         }
       }

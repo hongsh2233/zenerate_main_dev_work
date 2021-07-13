@@ -15,18 +15,25 @@
 <script lang="ts" scoped></script>
 <style lang="scss" scoped>
 @import '../../assets/scss/variables.scss';
-.youtube-inner {
-  width: 688px;
-  height: 339px;
-  @include desktop {
-    margin-top: 40px;
-    margin-left: 56px;
+.module-youtube-wrapper {
+  .youtube-inner {
+    width: 688px;
+    height: 339px;
+    @include desktop {
+      margin-top: 40px;
+      margin-left: 56px;
+    }
+    @include tablet {
+      padding: 24px 0px;
+    }
+    @include mobile {
+      width: 100%;
+      padding: 24px 0px;
+      
+    }
   }
-  @include tablet {
-    padding: 24px 0px;
-  }
-  @include mobile {
-    padding: 16px 0px;
+  @include mobile{
+    margin-bottom: 40px;
   }
 }
 </style>

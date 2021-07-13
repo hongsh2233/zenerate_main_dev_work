@@ -1,6 +1,6 @@
 <template>
   <section class="module-scroll">
-    <ModuleScroll></ModuleScroll>
+    <Scroll></Scroll>
   </section>
   <section class="module-grid">
     <div class="grid-item column"><Column></Column></div>
@@ -46,21 +46,29 @@ import Career from '/Components/Module/Career.vue'
 // @ts-ignore
 import Solution from '/Components/Module/Solution.vue'
 // @ts-ignore
-import ModuleScroll from '/Components/Module/Scroll.vue'
+import Scroll from '/Components/Module/Scroll.vue'
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/variables.scss";
+@import '../assets/scss/variables.scss';
 /** layout setting */
+.module-scroll {
+  width: 100%;
+}
 .module-grid {
   margin-bottom: 88px;
-  @include mobile {
-    margin-bottom: 44px;
-  }
+  
   /** grid setting */
   display: grid;
   grid-template-columns: repeat(11, minmax(0px, 1fr));
   padding: 0px 4px;
+  @include tablet {
+    grid-template-columns: repeat(10, minmax(0px, 1fr));
+  }
+  @include mobile {
+    margin-bottom: 44px;
+    grid-template-columns: repeat(10, minmax(0px, 1fr));
+  }
   .grid-item {
     width: 100%;
   }
@@ -136,7 +144,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
       height: 980px;
     }
     @include mobile {
-      height: 590px;
+      height: 610px;
     }
   }
   .monthly {
@@ -172,7 +180,7 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
       height: 400px;
     }
     @include mobile {
-      height: auto;
+      height: 520px;
     }
   }
   .youtube {
@@ -184,10 +192,10 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
       height: 400px;
     }
     @include mobile {
-      height: 320px;
+      height: 330px;
     }
   }
-  .solution{
+  .solution {
     grid-area: solution;
     @include desktop {
       height: 160px;
@@ -196,10 +204,10 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
       height: 160px;
     }
     @include mobile {
-      height: 160px;
+      height: 190px;
     }
   }
-  .career{
+  .career {
     grid-area: career;
     @include desktop {
       height: 304px;
@@ -234,15 +242,25 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
   }
   @include tablet {
     grid-template-areas:
-      'column column column column column explanation explanation explanation explanation explanation'
-      'column column column column column team team team team team'
-      'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
-      'news news news news news news news news news news'
+      'column column column column news news news explanation explanation explanation'
+      'column column column column news news news consulting consulting consulting'
+      'column column column column news news news team team team'
+      'monthly monthly monthly monthly news news news team team team'
       'fold fold fold fold fold fold fold fold fold fold'
-      'monthly monthly monthly monthly monthly partnership partnership partnership partnership partnership'
-      'program program program program program program program program program program'
-      'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
+      'program program program program solution solution solution solution solution solution'
+      'program program program program youtube youtube youtube youtube youtube youtube'
+      'partnership partnership partnership partnership youtube youtube youtube youtube youtube youtube'
+      'partnership partnership partnership partnership career career career career career career'
       'footer footer footer footer footer footer footer footer footer footer';
+    // 'column column column column column explanation explanation explanation explanation explanation'
+    // 'column column column column column team team team team team'
+    // 'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
+    // 'news news news news news news news news news news'
+    // 'fold fold fold fold fold fold fold fold fold fold'
+    // 'monthly monthly monthly monthly monthly partnership partnership partnership partnership partnership'
+    // 'program program program program program program program program program program'
+    // 'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
+    // 'footer footer footer footer footer footer footer footer footer footer';
   }
   @include mobile {
     grid-template-areas:
@@ -253,9 +271,11 @@ import ModuleScroll from '/Components/Module/Scroll.vue'
       'news news news news news news news news news news'
       'fold fold fold fold fold fold fold fold fold fold'
       'monthly monthly monthly monthly monthly monthly monthly monthly monthly monthly'
-      'program program program program program program program program program program'
+      'program program program program program program program program program  program'
       'partnership partnership partnership partnership partnership partnership partnership partnership partnership partnership'
       'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
+      'solution solution solution solution solution solution solution solution solution solution'
+      'career career career career career career career career career career'
       'footer footer footer footer footer footer footer footer footer footer';
   }
 }

@@ -115,7 +115,7 @@ onMounted(async () => {
         height: 100%;
       }
       @include mobile {
-        width: 100px;
+        width: 120px;
         height: 100%;
       }
       .item-date {
@@ -126,8 +126,8 @@ onMounted(async () => {
           text-align: left;
         }
         @include mobile {
-          text-align: left;
-          @include medium(12);
+          text-align: center;
+          @include medium(11);
         }
       }
       .item-content {
@@ -146,7 +146,7 @@ onMounted(async () => {
           margin-top: auto;
         }
         @include mobile {
-          font-size: 16px;
+          @include medium(12);
         }
       }
     }

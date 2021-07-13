@@ -74,6 +74,7 @@
             viewBox="0 0 122 28"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            class="hidden-mobile"
           >
             <path
               d="M1 27H121L94.3114 1"

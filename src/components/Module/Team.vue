@@ -93,7 +93,7 @@ const router = useRouter()
       height: 360px;
     }
     @include mobile {
-      height: 180px;
+      height: 360px;
       margin-bottom: 16px;
     }
   }

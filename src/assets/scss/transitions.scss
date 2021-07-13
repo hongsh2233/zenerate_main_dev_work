@@ -10,20 +10,21 @@
   opacity: 0;
   mix-blend-mode: overlay;
 }
+.fade-view-enter-from,
+.fade-view-leave-to {
+  opacity: 0;
+}
+.fade-view-enter-active,
+.fade-view-leave-active {
+  transition: opacity 0.5s ease;
+}
+y
 
 .list-sort-move {
   transition: all 0.2s ease;
 }
 
-.fade-view-enter-active,
-.fade-view-leave-active {
-  transition: opacity 0.5s ease;
-}
 
-.fade-view-enter-from,
-.fade-view-leave-to {
-  opacity: 0;
-}
 
 .slide-up-enter-active,
 .slide-up-leave-active {

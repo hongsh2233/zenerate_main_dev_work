@@ -25,11 +25,12 @@ const router = useRouter()
 .program-inner {
   width: 100%;
   height: 100%;
-
-  @include desktop {
+  @include mobile {
+    margin-bottom: 40px;
   }
   .program-caption {
     height: 40px;
+    width: 100px;
   }
   .program-title {
     @include desktop {
@@ -52,7 +53,7 @@ const router = useRouter()
       padding: 0;
       @include medium(20);
       @include mobile {
-        font-size: 15px;
+        @include medium(16);
       }
     }
   }

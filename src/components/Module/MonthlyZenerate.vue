@@ -1,7 +1,7 @@
 <template>
   <div class="module-monthly-wrapper module-item-wrapper">
     <div class="monthly-inner">
-      <div class="monthly-caption caption-large hidden-tablet hidden-mobile">
+      <div class="monthly-caption caption-large hidden-tablet">
         {{ $t('module.monthlyZenerate.caption') }}
       </div>
       <div class="monthly-title" :class="{ en: locale === 'en' }">
@@ -12,9 +12,9 @@
           $t('module.monthlyZenerate.title.mobile')
         }}</span>
       </div>
-      <div class="monthly-caption caption-small hidden-desktop">
+      <!-- <div class="monthly-caption caption-small hidden-desktop">
         {{ $t('module.monthlyZenerate.caption') }}
-      </div>
+      </div> -->
       <div class="monthly-subscription">
         <div class="subscription-title">
           <p>
@@ -89,12 +89,15 @@ const toggleNewsLetterModal = (flag) => {
     padding-right: 12px;
   }
   @include mobile {
-    padding-top: 24px;
+    padding-top: 40px;
   }
   .monthly-caption {
     @include desktop {
       padding-bottom: 4px;
       height: 40px;
+    }
+    @include mobile{
+      height: 28px;
     }
   }
   .monthly-title {
@@ -109,7 +112,7 @@ const toggleNewsLetterModal = (flag) => {
     }
     @include mobile {
       @include medium(32);
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
   }
   .monthly-subscription {
@@ -152,14 +155,29 @@ const toggleNewsLetterModal = (flag) => {
     @include mobile {
       .subscription-title {
         @include medium(15);
-        margin-bottom: 16px;
+        margin-bottom: 0px;
         .notion {
           font-weight: $bold;
         }
       }
-      .subscription-button {
+      .subscription-button-wrapper {
+        position: relative;
+        margin-top: auto;
+        margin-bottom: 40px;
+        .subscription-button {
+          span {
+            margin-right: 43px;
+            @include bold(16);
+          }
+        }
+        .vector-wrapper {
+          position: absolute;
+          top: 10px;
+          z-index: -1;
+        }
+        @include bold(20);
+        text-align: right;
         color: $main;
-        @include bold(15);
       }
     }
   }
