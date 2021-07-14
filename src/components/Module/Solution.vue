@@ -24,7 +24,8 @@
     padding-bottom: 20px;
   }
   @include tablet {
-    padding: 0;
+    padding-left: 0px;
+    padding-right: 12px;
   }
   @include flex($dir: row, $justify: space-between);
   .solution-title {
@@ -34,14 +35,23 @@
       width: 100%;
       @include medium(32);
       margin-top: 6px;
+      margin-bottom: 8px;
+    }
+    @include tablet{
+      width: 100%;
+      @include medium(41);
+      padding-bottom: 20px;
     }
   }
   .solution-content {
     width: 412px;
     @include medium(16);
     @include mobile {
-      @include medium(16);
+      @include medium(12);
       padding-bottom: 16px;
+    }
+    @include tablet{
+      @include medium(16);
     }
   }
 }

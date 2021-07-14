@@ -24,10 +24,18 @@
       margin-left: 56px;
     }
     @include tablet {
+      width: 100%;
       padding: 24px 0px;
+      padding-left: 12px;
+      iframe{
+        width: 100%;
+        object-fit: cover;
+      }
     }
     @include mobile {
       width: 100%;
+      height: 300px;
+      object-fit: cover;
       padding: 24px 0px;
       
     }

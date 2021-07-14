@@ -42,7 +42,7 @@
           <Slide
             v-for="news in newsList"
             :key="news.id"
-            @click="toNewsPage(news.id)"
+            @click="router.push(`/main/news?q=${id}`)"
           >
             <div class="news-item hover-pointer">
               <div class="item-date">
@@ -78,7 +78,7 @@ const newsList = ref([])
 const newsListSliced = computed(() => newsList.value.slice(0, 7))
 
 const toNewsPage = (id) => {
-  router.push(`/main/news?q=${id}`)
+  router.push(`/main/news?q=${id}`);
 }
 
 onMounted(async () => {
@@ -109,7 +109,7 @@ onMounted(async () => {
       height: 200px;
     }
     @include mobile {
-      height: 150px;
+      height: 130px;
     }
     .news-item {
       @include flex($dir: column, $justify: space-between);

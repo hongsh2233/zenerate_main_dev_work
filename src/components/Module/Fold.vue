@@ -121,6 +121,9 @@ const currentComponent = computed(() => {
   @include tablet {
     height: 100%;
   }
+  @include mobile{
+    height: 680px;
+  }
   .fold-item {
     height: 100%;
     transition: all 0.5s ease;
@@ -164,7 +167,7 @@ const currentComponent = computed(() => {
           @include bold(24);
         }
         @include mobile {
-          @include bold(15);
+          @include bold(14);
         }
       }
       .title-number {
@@ -176,7 +179,7 @@ const currentComponent = computed(() => {
           @include bold(32);
         }
         @include mobile {
-          @include bold(24);
+          @include bold(14);
         }
       }
       .title-text {
@@ -206,7 +209,7 @@ const currentComponent = computed(() => {
       width: 100%;
       padding: 12px;
       @include absolute(left 0 top 200px);
-      height: 450px;
+      height: 500px;
     }
 
     &.program .item-header .header-item.active {
@@ -268,8 +271,9 @@ const currentComponent = computed(() => {
         flex: 1;
         margin-left: 85px;
         @include mobile {
-          margin-right: 8px;
+          margin-right: 16px;
           margin-left: 16px;
+          margin-bottom: 10px;
         }
         @include tablet {
           margin-left: 16px;
@@ -320,8 +324,9 @@ const currentComponent = computed(() => {
         color: white;
         @include medium(24);
         @include mobile {
-          @include medium(15);
+          @include medium(12);
           margin-left: 16px;
+          margin-right: 16px;
         }
         @include tablet {
           margin-left: 16px;
@@ -346,7 +351,8 @@ const currentComponent = computed(() => {
         @include flex;
         margin-left: 85px;
         @include mobile {
-          margin-left: 24px;
+          margin-left: 16px;
+          margin-right: 16px;
         }
         @include tablet {
           margin-left: 16px;
@@ -357,8 +363,8 @@ const currentComponent = computed(() => {
           color: white;
           margin-bottom: 24px;
           @include mobile {
-            @include bold(15);
-            width: 160px;
+            @include bold(12);
+            width: 100px;
           }
         }
         .item-work {
@@ -366,7 +372,8 @@ const currentComponent = computed(() => {
           color: white;
           @include medium(24);
           @include mobile {
-            @include medium(15);
+            text-align: right;
+            @include medium(12);
           }
         }
       }
@@ -386,7 +393,7 @@ const currentComponent = computed(() => {
         margin-bottom: 8px;
         color: white;
         @include mobile {
-          @include bold(15);
+          @include bold(14);
         }
       }
       .news-date {
@@ -394,14 +401,14 @@ const currentComponent = computed(() => {
         margin-bottom: 24px;
         @include medium(16);
         @include mobile {
-          @include medium(15);
+          @include medium(14);
         }
       }
       .news-content {
         color: white;
         @include medium(20);
         @include mobile {
-          @include medium(15);
+          @include medium(12);
         }
       }
     }
@@ -426,7 +433,7 @@ const currentComponent = computed(() => {
           @include bold(28);
           margin-bottom: 32px;
           @include mobile {
-            @include bold(17);
+            @include bold(16);
             margin-bottom: 16px;
           }
         }
@@ -434,7 +441,7 @@ const currentComponent = computed(() => {
           @include medium(24);
           margin-bottom: 16px;
           @include mobile {
-            @include bold(15);
+            @include bold(14);
             margin-bottom: 8px;
           }
         }
@@ -442,7 +449,7 @@ const currentComponent = computed(() => {
           @include medium(20);
           margin-bottom: 20px;
           @include mobile {
-            @include medium(15);
+            @include medium(12);
             margin-bottom: 16px;
           }
         }
@@ -473,7 +480,7 @@ const currentComponent = computed(() => {
           @include bold(32);
           line-height: 60px;
           @include mobile {
-            @include bold(32);
+            @include bold(28);
           }
         }
       }
@@ -485,7 +492,7 @@ const currentComponent = computed(() => {
         p {
           @include medium(20);
           @include mobile {
-            @include bold(20);
+            @include bold(14);
           }
         }
       }
@@ -507,7 +514,7 @@ const currentComponent = computed(() => {
           background: #d6e4ff;
           color: $main;
           margin-right: 20px;
-          @include bold(16);
+          @include bold(14);
         }
         .vector-wrapper {
           z-index: 10;

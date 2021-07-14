@@ -95,7 +95,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 250px;
     }
     @include mobile {
-      height: auto;
+      height: 160px;
     }
   }
   .team {
@@ -144,7 +144,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 980px;
     }
     @include mobile {
-      height: 610px;
+      height: auto;
     }
   }
   .monthly {
@@ -177,7 +177,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 588px;
     }
     @include tablet {
-      height: 400px;
+      height: auto;
     }
     @include mobile {
       height: 480px;
@@ -204,7 +204,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 160px;
     }
     @include mobile {
-      height: 200px;
+      height: 230px;
     }
   }
   .career {

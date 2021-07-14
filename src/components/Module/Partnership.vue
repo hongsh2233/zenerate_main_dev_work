@@ -2,7 +2,7 @@
   <div class="module-partnership-wrapper module-item-wrapper">
     <div class="partnership-inner">
       <div
-        class="partnership-contact caption-small hover-pointer"
+        class="partnership-caption caption-small hover-pointer"
         @click="router.push('/main/contact')"
       >
         {{ $t('module.partnership.caption') }}
@@ -31,15 +31,12 @@ const router = useRouter()
 .partnership-inner {
   width: 100%;
   height: 100%;
-
-  @include desktop {
+  @include tablet{
+    padding-right: 12px;
   }
-  @include tablet {
+  .partnership-caption{
+    line-height: 40px;
   }
-  @include mobile {
-    margin-bottom: 40px;
-  }
-
   .partnership-title {
     @include desktop {
       @include bold(28);
@@ -63,7 +60,8 @@ const router = useRouter()
       @include medium(16);
     }
     @include mobile {
-      @include medium(16);
+      @include medium(12);
+      margin-bottom: 12px;
     }
     .click {
       font-weight: $bold;

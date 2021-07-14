@@ -31,10 +31,13 @@ const { locale } = useI18n()
   }
   @include tablet {
     padding-left: 12px;
+    height: 200px;
   }
   .explanation-title {
     margin-bottom: 12px;
     .title-text {
+      display: inline;
+      @include bold(40);
       @include desktop {
         display: inline;
         @include bold(40);
@@ -44,7 +47,8 @@ const { locale } = useI18n()
         }
       }
       @include tablet {
-        @include bold(40);
+        display: inline;
+        @include medium(40);
         padding-right: 3px;
         &.en {
           font-size: 28px;

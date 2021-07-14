@@ -84,7 +84,7 @@ const toggleNewsLetterModal = (flag) => {
       height: 40px;
     }
     @include mobile {
-      height: 28px;
+      height: 40px;
     }
   }
   .monthly-title {
@@ -194,7 +194,7 @@ const toggleNewsLetterModal = (flag) => {
     }
     @include mobile {
       .subscription-title {
-        @include medium(15);
+        @include medium(12);
         margin-bottom: 0px;
         .notion {
           font-weight: $bold;
@@ -209,7 +209,7 @@ const toggleNewsLetterModal = (flag) => {
             position: relative;
             z-index: 100;
             margin-right: 43px;
-            @include bold(16);
+            @include bold(14);
           }
         }
         .vector-wrapper {

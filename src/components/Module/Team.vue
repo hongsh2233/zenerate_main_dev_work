@@ -62,11 +62,14 @@ const router = useRouter()
     }
     .title-date {
       margin-bottom: 4px;
+      color: rgba($black-1, 0.4);
+      @include vertical-center;
       @include desktop {
         @include medium(12);
-        color: rgba($black-1, 0.4);
         height: 48px;
-        @include vertical-center;
+      }
+      @include mobile{
+        @include medium(12);
       }
     }
     .title-content {
@@ -75,14 +78,13 @@ const router = useRouter()
         @include medium(16);
       }
       @include mobile {
-        @include medium(15);
+        @include medium(12);
         margin-bottom: 24px;
       }
     }
   }
   .team-image {
     grid-area: image;
-    height: 100%;
     background-position-x: center;
     background-position-y: top;
     background-size: cover;
@@ -93,8 +95,9 @@ const router = useRouter()
     @include tablet {
       height: 360px;
     }
-    @include mobile {
-      height: 360px;
+    @include mobile {      
+      height: 250px;
+      object-fit: cover;
       margin-bottom: 16px;
     }
   }

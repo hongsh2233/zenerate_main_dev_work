@@ -11,7 +11,7 @@
         <span>{{ $t('module.career.contents[0]') }} </span>
       </div>
       <div class="contact-link">
-        <button @click="router.push('/main/contact')">
+        <button @click="router.push('/main/career')">
           {{ $t('module.career.button') }}
         </button>
         <div class="vector-wrapper">
@@ -21,7 +21,11 @@
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter();
+
+</script>
 <style lang="scss" scoped>
 @import '../../assets/scss/variables.scss';
 .module-career-inner {
@@ -31,17 +35,24 @@
   padding-left: 56px;
   @include tablet {
     padding: 0;
+    padding-left: 12px;
   }
   @include mobile {
     margin-top: 40px;
     padding: 0;
     margin-bottom: 40px;
   }
-
+  .career-caption{
+    line-height: 40px;
+  }
   .career-title {
     @include desktop {
       @include bold(28);
       margin-bottom: 32px;
+    }
+    @include mobile {
+      @include bold(14);
+      margin-bottom: 8px;
     }
   }
   .career-content {
@@ -54,7 +65,7 @@
       margin-bottom: 28px;
     }
     @include mobile {
-      @include medium(16);
+      @include medium(12);
       margin-bottom: 24px;
     }
   }
@@ -67,6 +78,9 @@
       color: $main;
       margin-right: 40px;
       @include bold(16);
+      @include mobile{
+        @include bold(14);
+      }
     }
     .vector-wrapper {
       z-index: 10;

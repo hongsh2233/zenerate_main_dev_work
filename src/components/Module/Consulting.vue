@@ -84,9 +84,6 @@ onBeforeUnmount(() => {
   }
   .explanation-consulting {
     margin-bottom: 12px;
-    @include mobile {
-      margin-bottom: 32px;
-    }
     .consulting-caption {
       line-height: 40px;
     }
@@ -134,7 +131,7 @@ onBeforeUnmount(() => {
           @include bold(16);
         }
         @include mobile {
-          @include bold(16);
+          @include bold(14);
         }
       }
       .image-explanation-content {

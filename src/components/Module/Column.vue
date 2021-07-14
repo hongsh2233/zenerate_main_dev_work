@@ -147,7 +147,8 @@ onMounted(async () => {
         @include bold(32);
       }
       @include mobile {
-        @include bold(24);
+        margin-bottom: 24px;
+        @include bold(20);
       }
     }
     .title-detail {
@@ -158,7 +159,7 @@ onMounted(async () => {
         @include medium(16);
       }
       @include mobile {
-        @include medium(16);
+        @include medium(12);
       }
     }
   }
@@ -194,7 +195,7 @@ onMounted(async () => {
           overflow: hidden;
           @include medium(16);
           @include mobile {
-            @include medium(14);
+            @include medium(12);
           }
           margin-bottom: 4px;
         }
