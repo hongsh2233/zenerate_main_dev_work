@@ -31,14 +31,14 @@
       }"
     >
       <div class="second-background">
-        <!-- <video
+        <video
           autoplay="autoplay"
           muted="muted"
           loop="loop"
           src="/video/scroll_background.mp4"
           alt=""
-        /> -->
-        <img src="/video/scroll_background_2.webp" />
+        />
+        <!-- <img src="/video/scroll_background_2.webp" /> -->
       </div>
       <div class="second-first-text">
         <div
@@ -216,6 +216,9 @@ onMounted(() => {
 .module-scroll-wrapper {
   height: 4000px;
   width: 100%;
+  @include tablet{
+    height: 4200px;
+  }
   .scroll-first {
     @include fixed(top 0 left 0);
     width: 100vw;
@@ -278,14 +281,14 @@ onMounted(() => {
       z-index: 0;
       width: 100%;
       height: 100%;
-      // video {
-      //   width: 100%;
-      // }
-      img {
-        height: 100%;
+      video {
         width: 100%;
-        object-fit: cover;
       }
+      // img {
+      //   height: 100%;
+      //   width: 100%;
+      //   object-fit: cover;
+      // }
       @include tablet {
         video {
           height: 100vh;
@@ -293,9 +296,13 @@ onMounted(() => {
         }
       }
       @include mobile {
-        img {
-          height: 100%;
-          width: 100%;
+        // img {
+        //   height: 100%;
+        //   width: 100%;
+        //   object-fit: cover;
+        // }
+        video {
+          height: 100vh;
           object-fit: cover;
         }
       }

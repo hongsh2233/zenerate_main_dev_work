@@ -28,9 +28,9 @@
     width: 216px;
     @include bold(28);
     @include mobile{
-      width: 60%;
+      width: 100%;
       @include medium(32);
-      margin-bottom: 16px;
+      margin-top: 6px;
     }
   }
   .solution-content {

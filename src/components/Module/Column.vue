@@ -77,6 +77,9 @@ onMounted(async () => {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  .title-caption{
+    line-height: 40px;
+  }
   @include flex($dir: column);
   @include desktop {
   }
@@ -91,9 +94,9 @@ onMounted(async () => {
     width: 100%;
     overflow: hidden;
     margin-bottom: 24px;
-    text-align: center;
+    text-align: left;
     .thumb {
-      margin: 24px auto 0px auto;
+      margin: 12px auto 0px auto;
       width: 100%;
       object-fit: contain;
       @include desktop {
@@ -105,8 +108,8 @@ onMounted(async () => {
         height: 412px;
       }
       @include mobile {
-        max-height: 426px;
-        height: 426px;
+        max-height: 400px;
+        
       }
     }
   }

@@ -44,8 +44,8 @@ const { locale } = useI18n()
         }
       }
       @include tablet {
-        @include medium(36);
-        padding-right: 28px;
+        @include medium(40);
+        padding-right: 3px;
         &.en {
           font-size: 28px;
         }

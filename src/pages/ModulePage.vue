@@ -78,7 +78,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 1048px;
     }
     @include tablet {
-      height: 1200px;
+      height: auto;
     }
     @include mobile {
       height: auto;
@@ -92,7 +92,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       padding: 0px 56px;
     }
     @include tablet {
-      height: auto;
+      height: 250px;
     }
     @include mobile {
       height: auto;
@@ -104,7 +104,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 559px;
     }
     @include tablet {
-      height: 750px;
+      height: auto;
     }
     @include mobile {
       height: auto;
@@ -117,10 +117,10 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 608px;
     }
     @include tablet {
-      height: auto;
+      height: 700px;
     }
     @include mobile {
-      height: auto;
+      height: 480px;
     }
   }
   .explanation {
@@ -129,7 +129,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 250px;
     }
     @include tablet {
-      height: 400px;
+      height: auto;
     }
     @include mobile {
       height: auto;
@@ -153,7 +153,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 369px;
     }
     @include tablet {
-      height: 400px;
+      height: auto;
     }
     @include mobile {
       height: auto;
@@ -180,7 +180,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 400px;
     }
     @include mobile {
-      height: 520px;
+      height: 480px;
     }
   }
   .youtube {
@@ -204,13 +204,16 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 160px;
     }
     @include mobile {
-      height: 190px;
+      height: 200px;
     }
   }
   .career {
     grid-area: career;
     @include desktop {
       height: 304px;
+    }
+    @include mobile {
+      height: 260px;
     }
   }
   .footer {
@@ -242,40 +245,32 @@ import Scroll from '/Components/Module/Scroll.vue'
   }
   @include tablet {
     grid-template-areas:
-      'column column column column news news news explanation explanation explanation'
-      'column column column column news news news consulting consulting consulting'
-      'column column column column news news news team team team'
-      'monthly monthly monthly monthly news news news team team team'
+      'column column column column column explanation explanation explanation explanation explanation'
+      'column column column column column consulting consulting consulting consulting consulting'
+      'column column column column column team team team team team'
+      'monthly monthly monthly monthly monthly team team team team team'
+      'news news news news news news news news news news'
       'fold fold fold fold fold fold fold fold fold fold'
-      'program program program program solution solution solution solution solution solution'
-      'program program program program youtube youtube youtube youtube youtube youtube'
-      'partnership partnership partnership partnership youtube youtube youtube youtube youtube youtube'
-      'partnership partnership partnership partnership career career career career career career'
+      'partnership partnership partnership partnership partnership program program program program program'
+      'partnership partnership partnership partnership partnership career career career career career'
+      'solution solution solution solution solution solution solution solution solution solution'
+      'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
       'footer footer footer footer footer footer footer footer footer footer';
-    // 'column column column column column explanation explanation explanation explanation explanation'
-    // 'column column column column column team team team team team'
-    // 'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
-    // 'news news news news news news news news news news'
-    // 'fold fold fold fold fold fold fold fold fold fold'
-    // 'monthly monthly monthly monthly monthly partnership partnership partnership partnership partnership'
-    // 'program program program program program program program program program program'
-    // 'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
-    // 'footer footer footer footer footer footer footer footer footer footer';
   }
   @include mobile {
     grid-template-areas:
       'column column column column column column column column column column'
       'explanation explanation explanation explanation explanation explanation explanation explanation explanation explanation'
+      'program program program program program program program program program  program'
       'consulting consulting consulting consulting consulting consulting consulting consulting consulting consulting'
-      'team team team team team team team team team team'
+      'solution solution solution solution solution solution solution solution solution solution'
       'news news news news news news news news news news'
       'fold fold fold fold fold fold fold fold fold fold'
+      'team team team team team team team team team team'
       'monthly monthly monthly monthly monthly monthly monthly monthly monthly monthly'
-      'program program program program program program program program program  program'
       'partnership partnership partnership partnership partnership partnership partnership partnership partnership partnership'
-      'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
-      'solution solution solution solution solution solution solution solution solution solution'
       'career career career career career career career career career career'
+      'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
       'footer footer footer footer footer footer footer footer footer footer';
   }
 }

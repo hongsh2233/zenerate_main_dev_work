@@ -5,7 +5,6 @@
         <span class="consulting-caption caption-small">
           {{ $t('module.explanation.services.caption') }}
         </span>
-        <div class="spacer hidden-desktop hidden-tablet"></div>
         <span class="consulting-content" :class="{ en: locale === 'en' }">
           {{ $t('module.explanation.services.summary') }}
         </span>
@@ -74,10 +73,16 @@ onBeforeUnmount(() => {
     padding-left: 12px;
     margin-bottom: 24px;
   }
+  @include mobile{
+    padding-bottom: 20px;
+  }
   .explanation-consulting {
     margin-bottom: 12px;
     @include mobile {
       margin-bottom: 32px;
+    }
+    .consulting-caption{
+      line-height: 40px;
     }
     .consulting-content {
       @include desktop {

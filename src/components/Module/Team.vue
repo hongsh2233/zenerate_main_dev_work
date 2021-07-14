@@ -31,7 +31,6 @@ const router = useRouter()
   width: 100%;
   height: 100%;
   display: grid;
-
   @include desktop {
     grid-template-areas:
       'title'
@@ -53,7 +52,7 @@ const router = useRouter()
   .team-title {
     grid-area: title;
     @include tablet {
-      height: 302px;
+      height: auto;
       margin-top: auto;
     }
     .title-caption {

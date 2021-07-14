@@ -118,6 +118,9 @@ const currentComponent = computed(() => {
   padding-top: 24px;
   @include relative;
   @include flex();
+  @include tablet{
+    height: 100%;
+  }
   .fold-item {
     height: 100%;
     transition: all 0.5s ease;
@@ -197,7 +200,7 @@ const currentComponent = computed(() => {
       width: 100%;
       padding: 24px;
       @include absolute(left 0 top 304px);
-      height: 600px;
+      height: 580px;
     }
     @include mobile {
       width: 100%;
@@ -220,6 +223,8 @@ const currentComponent = computed(() => {
       @include bold(20);
       @include tablet {
         margin-top: 24px;
+        margin-left: 48px;
+        width: 100%;
       }
       @include mobile {
         @include bold(14);
@@ -249,6 +254,8 @@ const currentComponent = computed(() => {
       width: 100%;
       @include tablet {
         margin-top: 60px;
+        padding-left: 48px;
+        width: 100%;
       }
       @include mobile {
         margin-top: 30px;
@@ -262,6 +269,9 @@ const currentComponent = computed(() => {
         margin-left: 85px;
         @include mobile {
           margin-right: 8px;
+          margin-left: 16px;
+        }
+        @include tablet{
           margin-left: 16px;
         }
         .left-title {
@@ -300,6 +310,9 @@ const currentComponent = computed(() => {
     }
     .timeline {
       margin-top: 80px;
+      @include tablet{
+        width: 100%;
+      }
       .timeline-item {
         margin-left: 85px;
         margin-bottom: 4px;
@@ -310,7 +323,9 @@ const currentComponent = computed(() => {
           @include medium(15);
           margin-left: 16px;
         }
-
+        @include tablet{
+          margin-left: 16px;
+        }
         .item-date {
           margin-right: 12px;
           width: 120px;
@@ -332,6 +347,9 @@ const currentComponent = computed(() => {
         margin-left: 85px;
         @include mobile{
           margin-left: 24px;
+        }
+        @include tablet{
+          margin-left: 16px;
         }
         .item-desc {
           width: 220px;
@@ -360,6 +378,9 @@ const currentComponent = computed(() => {
         padding-right: 24px;
         margin-left: 16px;
       }
+      @include tablet{
+          margin-left: 16px;
+        }
       .news-title {
         @include bold(28);
         margin-bottom: 8px;
@@ -393,6 +414,10 @@ const currentComponent = computed(() => {
         margin-left: 16px;
         width: 100%;
       }
+      @include tablet{
+          margin-left: 16px;
+          width: 100%;
+        }
       color: $navy;
       .program-block {
         width: 100%;
@@ -435,6 +460,9 @@ const currentComponent = computed(() => {
       width: 100%;
       @include mobile{
         margin-left: 16px;
+      }
+      @include tablet{
+        margin-left: 24px;
       }
       .contact-title {
         margin-bottom: 32px;

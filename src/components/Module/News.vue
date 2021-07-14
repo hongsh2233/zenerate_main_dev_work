@@ -91,6 +91,9 @@ onMounted(async () => {
 .news-inner {
   width: 100%;
   height: 100%;
+  @include tablet{
+    margin-top: 32px;
+  }
   .news-caption {
     margin-bottom: 12px;
     @include desktop {

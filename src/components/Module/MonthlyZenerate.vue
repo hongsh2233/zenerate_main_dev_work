@@ -37,20 +37,7 @@
             }}</span>
           </div>
           <div class="vector-wrapper">
-            <svg
-              width="413"
-              height="28"
-              viewBox="0 0 413 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0.5 27H412L385.423 1"
-                stroke="#4747FF"
-                stroke-linecap="square"
-                stroke-linejoin="round"
-              />
-            </svg>
+            <div class="arrow-right"></div>
           </div>
         </div>
       </div>
@@ -89,14 +76,14 @@ const toggleNewsLetterModal = (flag) => {
     padding-right: 12px;
   }
   @include mobile {
-    padding-top: 40px;
+    padding-top: 0px;
   }
   .monthly-caption {
     @include desktop {
       padding-bottom: 4px;
       height: 40px;
     }
-    @include mobile{
+    @include mobile {
       height: 28px;
     }
   }
@@ -127,13 +114,32 @@ const toggleNewsLetterModal = (flag) => {
         margin-top: auto;
         .subscription-button {
           span {
+            position: relative;
+            z-index: 100;
             margin-right: 43px;
           }
         }
         .vector-wrapper {
+          z-index: 10;
+          width: 100%;
           position: absolute;
-          top: 10px;
-          z-index: -1;
+          top: 15px;
+          .arrow-right {
+            width: 100%;
+            height: 5px;
+            border-top: 1px solid $main;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            transform: rotate(180deg);
+            &::after {
+              content: '';
+              display: block;
+              width: 1px;
+              height: 45px;
+              background-color: $main;
+              transform: rotate(-45deg) translate(15px, 4px);
+            }
+          }
         }
         @include bold(20);
         text-align: right;
@@ -143,13 +149,47 @@ const toggleNewsLetterModal = (flag) => {
     @include tablet {
       .subscription-title {
         @include medium(24);
-        margin-bottom: 24px;
+        margin-bottom: 16px;
         .notion {
           font-weight: $bold;
         }
       }
-      .subscription-button {
-        @include bold(16);
+      .subscription-button-wrapper {
+        position: relative;
+        margin-top: auto;
+        .subscription-button {
+          span {
+            position: relative;
+            z-index: 100;
+            margin-right: 43px;
+            @include bold(16);
+          }
+        }
+        .vector-wrapper {
+          z-index: 10;
+          width: 100%;
+          position: absolute;
+          top: 15px;
+          .arrow-right {
+            width: 100%;
+            height: 5px;
+            border-top: 1px solid $main;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            transform: rotate(180deg);
+            &::after {
+              content: '';
+              display: block;
+              width: 1px;
+              height: 45px;
+              background-color: $main;
+              transform: rotate(-45deg) translate(15px, 4px);
+            }
+          }
+        }
+        @include bold(20);
+        text-align: right;
+        color: $main;
       }
     }
     @include mobile {
@@ -166,14 +206,34 @@ const toggleNewsLetterModal = (flag) => {
         margin-bottom: 40px;
         .subscription-button {
           span {
+            position: relative;
+            z-index: 100;
             margin-right: 43px;
             @include bold(16);
           }
         }
         .vector-wrapper {
+          z-index: 10;
+          width: 100%;
           position: absolute;
-          top: 10px;
-          z-index: -1;
+          top: 15px;
+          .arrow-right {
+            z-index: 20;
+            width: 100%;
+            height: 5px;
+            border-top: 1px solid $main;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            transform: rotate(180deg);
+            &::after {
+              content: '';
+              display: block;
+              width: 1px;
+              height: 45px;
+              background-color: $main;
+              transform: rotate(-45deg) translate(15px, 4px);
+            }
+          }
         }
         @include bold(20);
         text-align: right;
