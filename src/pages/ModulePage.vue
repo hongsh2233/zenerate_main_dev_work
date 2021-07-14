@@ -64,6 +64,7 @@ import Scroll from '/Components/Module/Scroll.vue'
   padding: 0px 4px;
   @include tablet {
     grid-template-columns: repeat(10, minmax(0px, 1fr));
+    margin-bottom: 24px;
   }
   @include mobile {
     margin-bottom: 44px;

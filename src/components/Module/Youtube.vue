@@ -27,6 +27,7 @@
       width: 100%;
       padding: 24px 0px;
       padding-left: 12px;
+      padding-bottom: 90px;
       iframe{
         width: 100%;
         object-fit: cover;
