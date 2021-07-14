@@ -57,7 +57,7 @@ import Scroll from '/Components/Module/Scroll.vue'
 }
 .module-grid {
   margin-bottom: 88px;
-  
+
   /** grid setting */
   display: grid;
   grid-template-columns: repeat(11, minmax(0px, 1fr));
@@ -117,7 +117,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 608px;
     }
     @include tablet {
-      height: 700px;
+      height: 608px;
     }
     @include mobile {
       height: 480px;
@@ -165,7 +165,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 343px;
     }
     @include tablet {
-      height: 372px;
+      height: 328px;
     }
     @include mobile {
       height: auto;
@@ -253,8 +253,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       'fold fold fold fold fold fold fold fold fold fold'
       'partnership partnership partnership partnership partnership program program program program program'
       'partnership partnership partnership partnership partnership career career career career career'
-      'solution solution solution solution solution solution solution solution solution solution'
-      'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
+      'solution solution solution solution solution youtube youtube youtube youtube youtube'
       'footer footer footer footer footer footer footer footer footer footer';
   }
   @include mobile {

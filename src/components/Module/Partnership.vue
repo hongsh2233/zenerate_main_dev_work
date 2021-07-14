@@ -35,23 +35,18 @@ const router = useRouter()
   @include desktop {
   }
   @include tablet {
-    padding-top: 48px;
-    padding-left: 12px;
   }
   @include mobile {
     margin-bottom: 40px;
   }
-  .partnership-contact {
-    height: 40px;
-    width: 80px;
-  }
+
   .partnership-title {
     @include desktop {
       @include bold(28);
       margin-bottom: 32px;
     }
     @include tablet {
-      @include medium(50);
+      @include medium(40);
       margin-bottom: 24px;
     }
     @include mobile {
@@ -61,11 +56,11 @@ const router = useRouter()
   }
   .partnership-content {
     @include desktop {
-      @include medium(16);
+      @include medium(20);
       margin-bottom: 54px;
     }
     @include tablet {
-      @include medium(20);
+      @include medium(16);
     }
     @include mobile {
       @include medium(16);
@@ -79,7 +74,7 @@ const router = useRouter()
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     .partner-image {
-      width: 136px;
+      width: 100%;
     }
   }
 }

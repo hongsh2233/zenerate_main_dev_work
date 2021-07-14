@@ -145,7 +145,7 @@ onMounted(async () => {
           padding-right: 24px;
         }
         @include tablet {
-          font-size: 20px;
+          font-size: 16px;
           margin-top: auto;
         }
         @include mobile {

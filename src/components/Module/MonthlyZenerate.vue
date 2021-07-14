@@ -94,7 +94,7 @@ const toggleNewsLetterModal = (flag) => {
       margin-bottom: 28px;
     }
     @include tablet {
-      @include medium(50);
+      @include medium(40);
       margin-bottom: 24px;
     }
     @include mobile {
@@ -148,7 +148,7 @@ const toggleNewsLetterModal = (flag) => {
     }
     @include tablet {
       .subscription-title {
-        @include medium(24);
+        @include medium(16);
         margin-bottom: 16px;
         .notion {
           font-weight: $bold;

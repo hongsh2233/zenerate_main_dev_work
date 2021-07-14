@@ -29,15 +29,15 @@
   height: 100%;
   padding: 0px;
   padding-left: 56px;
+  @include tablet {
+    padding: 0;
+  }
   @include mobile {
     margin-top: 40px;
     padding: 0;
     margin-bottom: 40px;
   }
-  .career-caption {
-    height: 40px;
-    width: 40px;
-  }
+
   .career-title {
     @include desktop {
       @include bold(28);
@@ -46,10 +46,14 @@
   }
   .career-content {
     @include desktop {
+      @include medium(20);
+      margin-bottom: 28px;
+    }
+    @include tablet {
       @include medium(16);
       margin-bottom: 28px;
     }
-    @include mobile{
+    @include mobile {
       @include medium(16);
       margin-bottom: 24px;
     }

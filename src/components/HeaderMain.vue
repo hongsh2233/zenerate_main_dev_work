@@ -66,24 +66,23 @@
         </div>
       </div>
       <div class="header-buttons-wrapper">
-        <button class="button-lang" @click="setLocale(locale)">
-          <span>{{ t('header.langButton') }}</span>
-          <svg
-            width="122"
-            height="28"
-            viewBox="0 0 122 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="hidden-mobile hidden-tablet"
+        <div class="button-lang-wrapper">
+          <button
+            class="button-lang"
+            @click="setLocale('en')"
+            :class="{ active: locale === 'en' }"
           >
-            <path
-              d="M1 27H121L94.3114 1"
-              stroke="#4747FF"
-              stroke-linecap="square"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
+            <span>ENG</span>
+          </button>
+          <div class="horizontal-spacer"></div>
+          <button
+            class="button-lang"
+            @click="setLocale('ko')"
+            :class="{ active: locale === 'ko' }"
+          >
+            <span>KOR</span>
+          </button>
+        </div>
         <button class="button-menu hidden-desktop" @click="toggleDrawer">
           <i class="material-icons">
             {{ props.showDrawer ? 'close' : 'menu' }}
@@ -108,7 +107,7 @@ const toggleDrawer = () => {
 }
 
 const setLocale = (loc) => {
-  locale.value = loc === 'ko' ? 'en' : 'ko'
+  locale.value = loc
 }
 
 const isMenuHovered = ref(false)
@@ -181,7 +180,7 @@ const router = useRouter()
       padding: 16px 0px;
       .navigation-main {
         @include flex($justify: space-between);
-        
+
         .navigation-main-item {
           width: 152px;
           height: 36px;
@@ -210,45 +209,41 @@ const router = useRouter()
       }
     }
     .header-buttons-wrapper {
-      margin: auto 0px;
-      @include flex;
       position: relative;
       align-items: center;
-      .button-lang {
-        color: $main;
-        border-radius: 30px;
-        @include desktop {
-          width: 84px;
-          height: 35px;
-          margin-right: 20px;
-          span {
-            @include bold(20);
+      margin: auto 12px;
+      padding: 16px 0px;
+      @include center-center;
+      .button-lang-wrapper {
+        @include flex;
+        .button-lang {
+          color: $main;
+          border-radius: 30px;
+          @include center-center;
+          @include desktop {
+            span {
+              @include medium(20);
+              padding-bottom: 6px;
+            }
           }
-        }
-        @include tablet {
-          width: 72px;
-          height: 29px;
-          margin-right: 12px;
-          span {
-            @include bold(18);
-            padding-bottom: 3px;
+          @include tablet {
+            span {
+              @include medium(18);
+              padding-bottom: 3px;
+            }
           }
-        }
-        @include mobile {
-          width: 64px;
-          height: 25px;
-          margin-right: 8px;
-          span {
-            @include bold(14);
-            padding-bottom: 3px;
+          @include mobile {
+            span {
+              @include medium(14);
+              padding-bottom: 3px;
+            }
+          }
+          &.active span {
+            font-weight: bold;
           }
         }
       }
-      svg{
-        position: absolute;
-        right:0;
-        bottom:0;
-      }
+
       .button-menu {
         background: transparent;
         i {

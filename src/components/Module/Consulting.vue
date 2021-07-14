@@ -12,7 +12,9 @@
       <div class="image-wrapper" :class="{ inactive: currentImage !== 1 }">
         <img :src="`/img/main_service_1.png`" />
         <div class="image-explanation">
-          <div class="image-explanation-title">{{ $t('module.explanation.services.title[0]') }}</div>
+          <div class="image-explanation-title">
+            {{ $t('module.explanation.services.title[0]') }}
+          </div>
           <div class="image-explanation-content">
             {{ $t('module.explanation.services.content[0]') }}
           </div>
@@ -21,7 +23,9 @@
       <div class="image-wrapper" :class="{ inactive: currentImage !== 2 }">
         <img :src="`/img/main_service_2.png`" />
         <div class="image-explanation">
-          <div class="image-explanation-title">{{ $t('module.explanation.services.title[1]') }}</div>
+          <div class="image-explanation-title">
+            {{ $t('module.explanation.services.title[1]') }}
+          </div>
           <div class="image-explanation-content">
             {{ $t('module.explanation.services.content[1]') }}
           </div>
@@ -30,7 +34,9 @@
       <div class="image-wrapper" :class="{ inactive: currentImage !== 3 }">
         <img :src="`/img/main_service_3.png`" />
         <div class="image-explanation">
-          <div class="image-explanation-title">{{ $t('module.explanation.services.title[2]') }}</div>
+          <div class="image-explanation-title">
+            {{ $t('module.explanation.services.title[2]') }}
+          </div>
           <div class="image-explanation-content">
             {{ $t('module.explanation.services.content[2]') }}
           </div>
@@ -73,7 +79,7 @@ onBeforeUnmount(() => {
     padding-left: 12px;
     margin-bottom: 24px;
   }
-  @include mobile{
+  @include mobile {
     padding-bottom: 20px;
   }
   .explanation-consulting {
@@ -81,7 +87,7 @@ onBeforeUnmount(() => {
     @include mobile {
       margin-bottom: 32px;
     }
-    .consulting-caption{
+    .consulting-caption {
       line-height: 40px;
     }
     .consulting-content {
@@ -89,13 +95,13 @@ onBeforeUnmount(() => {
         display: none;
       }
       @include tablet {
-        @include medium(20);
+        @include medium(14);
         &.en {
           font-size: 16px;
         }
       }
       @include mobile {
-        @include medium(15);
+        @include medium(12);
       }
     }
   }
@@ -107,9 +113,12 @@ onBeforeUnmount(() => {
       position: absolute;
       top: 40px;
     }
-    @include mobile{
+    @include tablet {
+      padding: 0px 8px;
+    }
+    @include mobile {
       margin-right: 10px;
-      &:last-child{
+      &:last-child {
         margin-right: 0px;
       }
     }
@@ -120,14 +129,20 @@ onBeforeUnmount(() => {
     .image-explanation {
       .image-explanation-title {
         @include bold(20);
-        margin-bottom: 16px;
-        @include mobile{
+        margin-bottom: 4px;
+        @include tablet {
+          @include bold(16);
+        }
+        @include mobile {
           @include bold(16);
         }
       }
       .image-explanation-content {
         @include medium(20);
-        @include mobile{
+        @include tablet {
+          @include medium(14);
+        }
+        @include mobile {
           @include medium(12);
         }
       }

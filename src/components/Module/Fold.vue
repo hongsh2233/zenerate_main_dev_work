@@ -118,7 +118,7 @@ const currentComponent = computed(() => {
   padding-top: 24px;
   @include relative;
   @include flex();
-  @include tablet{
+  @include tablet {
     height: 100%;
   }
   .fold-item {
@@ -252,9 +252,9 @@ const currentComponent = computed(() => {
     .item-content {
       padding-left: 16px;
       width: 100%;
+      margin-top: 60px;
       @include tablet {
-        margin-top: 60px;
-        padding-left: 48px;
+        padding: 0px 48px;
         width: 100%;
       }
       @include mobile {
@@ -271,7 +271,7 @@ const currentComponent = computed(() => {
           margin-right: 8px;
           margin-left: 16px;
         }
-        @include tablet{
+        @include tablet {
           margin-left: 16px;
         }
         .left-title {
@@ -310,7 +310,7 @@ const currentComponent = computed(() => {
     }
     .timeline {
       margin-top: 80px;
-      @include tablet{
+      @include tablet {
         width: 100%;
       }
       .timeline-item {
@@ -323,7 +323,7 @@ const currentComponent = computed(() => {
           @include medium(15);
           margin-left: 16px;
         }
-        @include tablet{
+        @include tablet {
           margin-left: 16px;
         }
         .item-date {
@@ -345,10 +345,10 @@ const currentComponent = computed(() => {
       .team-item {
         @include flex;
         margin-left: 85px;
-        @include mobile{
+        @include mobile {
           margin-left: 24px;
         }
-        @include tablet{
+        @include tablet {
           margin-left: 16px;
         }
         .item-desc {
@@ -378,9 +378,9 @@ const currentComponent = computed(() => {
         padding-right: 24px;
         margin-left: 16px;
       }
-      @include tablet{
-          margin-left: 16px;
-        }
+      @include tablet {
+        margin-left: 16px;
+      }
       .news-title {
         @include bold(28);
         margin-bottom: 8px;
@@ -414,10 +414,10 @@ const currentComponent = computed(() => {
         margin-left: 16px;
         width: 100%;
       }
-      @include tablet{
-          margin-left: 16px;
-          width: 100%;
-        }
+      @include tablet {
+        margin-left: 16px;
+        width: 100%;
+      }
       color: $navy;
       .program-block {
         width: 100%;
@@ -458,10 +458,10 @@ const currentComponent = computed(() => {
       color: $main;
       margin-left: 85px;
       width: 100%;
-      @include mobile{
+      @include mobile {
         margin-left: 16px;
       }
-      @include tablet{
+      @include tablet {
         margin-left: 24px;
       }
       .contact-title {
@@ -470,7 +470,7 @@ const currentComponent = computed(() => {
           margin-bottom: 16px;
         }
         p {
-          @include bold(40);
+          @include bold(32);
           line-height: 60px;
           @include mobile {
             @include bold(32);
@@ -493,7 +493,7 @@ const currentComponent = computed(() => {
         text-align: end;
         width: 100%;
         position: relative;
-        @include desktop{
+        @include desktop {
           width: 556px;
         }
         @include mobile {
@@ -531,8 +531,7 @@ const currentComponent = computed(() => {
               transform: rotate(-45deg) translate(15px, 4px);
             }
           }
-          @include mobile{
-            
+          @include mobile {
           }
         }
       }

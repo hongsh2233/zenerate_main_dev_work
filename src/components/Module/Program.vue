@@ -28,10 +28,7 @@ const router = useRouter()
   @include mobile {
     margin-bottom: 40px;
   }
-  .program-caption {
-    height: 40px;
-    width: 100px;
-  }
+
   .program-title {
     @include desktop {
       @include bold(40);
@@ -39,7 +36,7 @@ const router = useRouter()
       margin-bottom: 40px;
     }
     @include tablet {
-      @include medium(50);
+      @include medium(40);
       margin-bottom: 24px;
     }
     @include mobile {
@@ -51,7 +48,7 @@ const router = useRouter()
     p {
       margin: 0;
       padding: 0;
-      @include medium(20);
+      @include medium(16);
       @include mobile {
         @include medium(16);
       }

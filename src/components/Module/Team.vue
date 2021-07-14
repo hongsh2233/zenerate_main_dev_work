@@ -58,8 +58,10 @@ const router = useRouter()
     .title-caption {
       height: 40px;
       @include vertical-center;
+      margin-bottom: 4px;
     }
     .title-date {
+      margin-bottom: 4px;
       @include desktop {
         @include medium(12);
         color: rgba($black-1, 0.4);
@@ -70,7 +72,7 @@ const router = useRouter()
     .title-content {
       @include medium(16);
       @include tablet {
-        @include medium(20);
+        @include medium(16);
       }
       @include mobile {
         @include medium(15);

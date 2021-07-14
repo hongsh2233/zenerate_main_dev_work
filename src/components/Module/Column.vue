@@ -120,7 +120,7 @@ onMounted(async () => {
     }
     @include tablet {
       margin-bottom: 16px;
-      height: 418px;
+      height: 360px;
     }
     @include mobile {
       margin-bottom: 36px;
@@ -144,7 +144,7 @@ onMounted(async () => {
         @include bold(28);
       }
       @include tablet {
-        @include bold(40);
+        @include bold(32);
       }
       @include mobile {
         @include bold(24);
@@ -155,10 +155,10 @@ onMounted(async () => {
         @include medium(16);
       }
       @include tablet {
-        @include medium(20);
+        @include medium(16);
       }
       @include mobile {
-        @include medium(20);
+        @include medium(16);
       }
     }
   }
