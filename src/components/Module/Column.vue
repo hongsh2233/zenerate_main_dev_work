@@ -105,7 +105,7 @@ onMounted(async () => {
       }
       @include tablet {
         max-height: 412px;
-        height: 412px;
+        height: auto;
       }
       @include mobile {
         max-height: 400px;
@@ -144,7 +144,7 @@ onMounted(async () => {
         @include bold(28);
       }
       @include tablet {
-        @include bold(32);
+        @include bold(28);
       }
       @include mobile {
         margin-bottom: 24px;

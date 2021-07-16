@@ -1,10 +1,7 @@
 <template>
   <section class="section-career">
     <div class="career-title-wrapper">
-      <div
-        class="career-title hover-pointer"
-        @click="() => ((targetYear = -1), (nowId = -1))"
-      >
+      <div class="career-title">
         <span>{{ $t('main.career.title') }}</span>
       </div>
       <div class="career-title-explanation">
@@ -12,7 +9,7 @@
         지원을 기다립니다!
       </div>
     </div>
-      <CareerList></CareerList>
+    <CareerList></CareerList>
   </section>
 </template>
 <script lang="ts" setup>
@@ -39,30 +36,55 @@ const scrollTop = () => {
   .career-title-wrapper {
     @include flex($dir: column);
     margin-bottom: 48px;
+    @include tablet {
+      margin-bottom: 32px;
+    }
+    @include mobile {
+      margin-bottom: 32px;
+    }
     .career-title {
       margin-bottom: 20px;
-      span{
+      span {
         @include bold(40);
         line-height: 60px;
       }
-    }
-    .career-title-explanation{
-        color: rgba($black-1, 0.4);
-    }
-    .career-category-wrapper {
-      @include center-center;
-      button {
-        @include bold(16);
-        line-height: 40px;
-        background-color: rgba($grey-3, 0.5);
-        padding: 4px 20px;
-        margin-right: 28px;
-        border-radius: 100px;
-        &:hover {
-          background-color: $grey-3;
+      @include tablet {
+        span {
+          @include bold(32);
         }
+        margin-bottom: 20px;
+      }
+      @include mobile {
+        span {
+          @include bold(32);
+        }
+        margin-bottom: 20px;
       }
     }
+    .career-title-explanation {
+      color: rgba($black-1, 0.4);
+      @include medium(20);
+      @include tablet {
+        @include medium(16);
+      }
+      @include mobile {
+        @include medium(14);
+      }
+    }
+    // .career-category-wrapper {
+    //   @include center-center;
+    //   button {
+    //     @include bold(16);
+    //     line-height: 40px;
+    //     background-color: rgba($grey-3, 0.5);
+    //     padding: 4px 20px;
+    //     margin-right: 28px;
+    //     border-radius: 100px;
+    //     &:hover {
+    //       background-color: $grey-3;
+    //     }
+    //   }
+    // }
   }
 }
 </style>

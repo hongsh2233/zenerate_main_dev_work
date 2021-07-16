@@ -52,39 +52,74 @@ const toggleServiceTab = (tab) => {
   padding-top: 64px;
   .service-container {
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 160px;
     text-align: center;
+    @include mobile{  
+      margin-bottom: 100px;
+    }
     &:first-child {
-      margin-bottom: 292px;
+      margin-bottom: 252px;
+      @include mobile{
+        margin-bottom: 100px;
+      }
     }
     .service-caption {
       @include bold(20);
       line-height: 48px;
+      @include mobile{
+        line-height: 40px;
+      }
     }
     .service-title {
       @include bold(40);
       line-height: 60px;
       margin-bottom: 40px;
+      @include tablet{
+        @include bold(32);
+        margin-bottom: 30px;
+      }
+      @include mobile{
+        @include bold(28);
+        margin-bottom: 30px;
+      }
     }
     .service-content {
       @include medium(20);
       margin-bottom: 40px;
+      @include tablet{
+        @include medium(16);
+        margin-bottom: 30px;
+      }
+      @include mobile{
+        @include medium(14);
+        margin-bottom: 30px;
+      }
     }
     .service-image{
       @include flex($justify: center);
+      img{
+        width: 100%;
+        object-fit: contain;
+      }
     }
     .service-image-3{
       img{
-        width: 230px;
-        margin: 0px 30px;
+        width: calc(100% / 3);
+        @include mobile{
+          width: calc(100% / 3);
+          margin: 0px;
+        }
       }  
     }
     .service-image-intro {
       width: 100%;
       position: absolute;
       left: 0;
-      top: 100px;
+      top: 150px;
       z-index: -1;
+      @include mobile{
+        top: 150px;
+      }
     }
   }
 }

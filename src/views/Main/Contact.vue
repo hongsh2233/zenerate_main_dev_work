@@ -154,26 +154,47 @@ const sendEmail = async () => {
       .contact-title {
         width: 100%;
         margin-bottom: 28px;
-        p {
-          @include bold(50);
-          color: $main;
+        p:first-child {
+          text-align: center;
+          @include bold(32);
+          line-height: 60px;
+          margin-bottom: 20px;
+        }
+        p:last-child {
+          text-align: center;
+          @include medium(18);
+          line-height: 40px;
+          color: rgba($black-1, 0.4);
+          margin-bottom: 40px;
         }
       }
       .contact-form {
+        margin: 0 auto;
         width: 100%;
+        max-width: 700px;
       }
     }
     @include mobile {
       .contact-title {
         width: 100%;
         margin-bottom: 28px;
-        p {
+        p:first-child {
+          text-align: center;
           @include bold(32);
-          color: $main;
+          margin-bottom: 20px;
+        }
+        p:last-child {
+          text-align: center;
+          @include medium(16);
+          line-height: 40px;
+          color: rgba($black-1, 0.4);
+          margin-bottom: 20px;
         }
       }
       .contact-form {
+        margin: 0 auto;
         width: 100%;
+        max-width: 380px;
       }
     }
   }
@@ -188,6 +209,9 @@ const sendEmail = async () => {
     @include medium(16);
     color: rgba($black-1, 0.4);
     margin-bottom: 12px;
+    @include mobile{
+      @include medium(14);
+    }
   }
   input {
     border-radius: 8px;
@@ -199,6 +223,9 @@ const sendEmail = async () => {
     padding: 1px 12px;
     &:focus{
       border: 1px solid $main;
+    }
+    @include mobile{
+      @include medium(16);
     }
   }
   input::placeholder {
@@ -216,6 +243,9 @@ const sendEmail = async () => {
     @include medium(16);
     color: rgba($black-1, 0.4);
     margin-bottom: 12px;
+    @include mobile{
+      @include medium(14);
+    }
   }
   textarea {
     border-radius: 8px;
@@ -227,11 +257,9 @@ const sendEmail = async () => {
     &:focus{
       border: 1px solid $main;
     }
-  }
-  textarea::placeholder {
-    color: $main;
-    font-weight: $medium;
-    font-size: 18px;
+    @include mobile{
+      @include medium(16);
+    }
   }
 }
 .contact-send-wrapper{
@@ -248,10 +276,16 @@ const sendEmail = async () => {
     @include bold(16);
     line-height: 40px;
     color: $main;
+    @include mobile{
+      @include bold(14);
+    }
   }
   svg{
     position:absolute;
     bottom: 0;
+    @include mobile{
+      bottom: -5px;
+    }
   }
 }
 }

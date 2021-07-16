@@ -138,7 +138,7 @@
         <span>{{ $t('about.timeline.title[2]') }}</span>
       </div>
       <div class="timeline-item-wrapper">
-        <div class="timeline-spacer-wrapper">
+        <div class="timeline-spacer-wrapper hidden-mobile">
           <div class="timeline-start">
             <p>2018</p>
             <p>2019</p>
@@ -147,7 +147,7 @@
           <div class="timeline-spacer"></div>
           <div class="timeline-end">2021</div>
         </div>
-        <div class="timeline-left-wrapper">
+        <div class="timeline-left-wrapper hidden-mobile">
           <div
             class="timeline-item left"
             v-for="(item, i) in leftItem"
@@ -169,7 +169,7 @@
             </div>
           </div>
         </div>
-        <div class="timeline-right-wrapper">
+        <div class="timeline-right-wrapper hidden-mobile">
           <div
             class="timeline-item right"
             v-for="(item, i) in rightItem"
@@ -192,26 +192,33 @@
             </div>
           </div>
         </div>
-
-        <div
-          class="timeline-item hidden-desktop"
-          v-for="(item, i) in timelineItem"
-          :key="i"
-          :class="{
-            'timeline-item left': i % 2,
-            'timeline-item right': !(i % 2),
-            active: item.active,
-          }"
-        >
-          <div class="content">
-            <div class="item-year">{{ item.year }}</div>
-            <p
-              v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
-              :key="idx"
+        <div class="timeline-item-mobile-wrapper hidden-desktop hidden-tablet">
+          <div
+            class="timeline-item"
+            v-for="(item, i) in timelineItem"
+            :key="i"
+            :class="{
+              'timeline-item left': i % 2,
+              'timeline-item right': !(i % 2),
+              active: item.active,
+            }"
+          >
+            <div
+              class="content"
+              data-aos="zoom-in-up"
+              data-aos-offset="0"
+              data-aos-duration="300"
+              data-aos-once="false"
             >
-              {{ line }}
-            </p>
-            <i class="material-icons">{{ item.icon }}</i>
+              <div class="item-year">{{ item.year }}</div>
+              <p
+                v-for="(line, idx) in locale == 'ko' ? item.kr : item.en"
+                :key="idx"
+              >
+                {{ line }}
+              </p>
+              <i class="material-icons">{{ item.icon }}</i>
+            </div>
           </div>
         </div>
       </div>
@@ -223,17 +230,20 @@ import { useI18n } from 'vue-i18n'
 import { ref, computed } from 'vue'
 const { locale } = useI18n()
 import timelineItem from '/Constants/timeline'
-const leftItem = ref(computed(()=>{
-  return timelineItem.filter((item, index)=>{
-    return index%2===1;
-  });
-}));
-const rightItem = ref(computed(()=>{
-  return timelineItem.filter((item, index)=>{
-    return index%2===0;
-  });
-}));
-
+const leftItem = ref(
+  computed(() => {
+    return timelineItem.filter((item, index) => {
+      return index % 2 === 1
+    })
+  })
+)
+const rightItem = ref(
+  computed(() => {
+    return timelineItem.filter((item, index) => {
+      return index % 2 === 0
+    })
+  })
+)
 </script>
 <style lang="scss" scoped>
 @import '../../assets/scss/variables.scss';
@@ -245,14 +255,20 @@ const rightItem = ref(computed(()=>{
   .about-animation-wrapper {
     width: 100%;
     img {
-      max-width: 100%;
-      width: 1166px;
-      height: 640px;
+      width: 100%;
+      object-fit: contain;
+    }
+    @include mobile {
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
     }
   }
   .about-wrapper {
     text-align: center;
-    margin-bottom: 120px;
+    margin-bottom: 140px;
     .caption-large {
       @include bold(16);
       line-height: 40px;
@@ -266,6 +282,18 @@ const rightItem = ref(computed(()=>{
         @include bold(40);
         line-height: 60px;
       }
+      @include mobile {
+        margin-bottom: 40px;
+        @include flex($justify: center);
+        flex-wrap: wrap;
+        @include bold(24);
+      }
+      @include tablet {
+        @include flex($justify: center);
+        flex-wrap: wrap;
+        @include bold(32);
+        line-height: 60px;
+      }
       .colored {
         font-weight: $bold;
         color: $main;
@@ -276,14 +304,15 @@ const rightItem = ref(computed(()=>{
     width: 100%;
     margin: 0 auto;
     @include desktop {
-      padding: 56px 0px;
+      padding: 56px 0px 140px 0px;
       width: 496px;
     }
     @include tablet {
-      padding: 32px 56px;
+      padding: 56px 56px 140px 56px;
     }
     @include mobile {
       padding: 24px 48px;
+      margin-bottom: 96px;
     }
 
     .overview-title {
@@ -294,12 +323,11 @@ const rightItem = ref(computed(()=>{
         flex-wrap: wrap;
       }
       @include tablet {
-        @include flex;
+        @include flex($justify: center);
         flex-wrap: wrap;
       }
       span {
         @include tablet {
-          width: 100%;
           @include bold(32);
         }
         @include mobile {
@@ -321,6 +349,9 @@ const rightItem = ref(computed(()=>{
       @include tablet {
         width: 80%;
       }
+      @include mobile {
+        width: 100%;
+      }
       margin: 0px auto;
       text-align: center;
       margin-bottom: 32px;
@@ -334,11 +365,14 @@ const rightItem = ref(computed(()=>{
         }
         @include tablet {
           margin-bottom: 4px;
-          @include medium(24);
+          @include medium(16);
         }
         @include mobile {
           margin-bottom: 4px;
           @include medium(14);
+          &:last-child {
+            padding-top: 14px;
+          }
         }
       }
     }
@@ -349,6 +383,15 @@ const rightItem = ref(computed(()=>{
     }
     .mission-content-wrapper {
       @include flex($justify: center);
+      @include tablet {
+        width: 80%;
+        margin: 0 auto;
+        @include flex($justify: space-around);
+      }
+      @include mobile {
+        width: 100%;
+        @include flex($justify: space-around);
+      }
       .mission-content {
         width: 216px;
         margin: 0 30px;
@@ -361,6 +404,24 @@ const rightItem = ref(computed(()=>{
         .mission-content-down {
           padding-top: 40px;
         }
+        @include tablet {
+          width: 160px;
+          margin: 0;
+          @include medium(16);
+        }
+        @include mobile {
+          width: 110px;
+          margin: 0;
+          @include medium(14);
+          .mission-content-up {
+            padding-bottom: 30px;
+            border-bottom: solid 1px $main;
+            color: rgba($black-1, 0.4);
+          }
+          .mission-content-down {
+            padding-top: 30px;
+          }
+        }
       }
     }
   }
@@ -368,15 +429,43 @@ const rightItem = ref(computed(()=>{
     .tech-content-wrapper {
       width: 733px;
       margin: 0 auto;
+      @include tablet {
+        width: 80%;
+      }
+      @include mobile {
+        width: 100%;
+      }
       .tech-content {
         @include flex();
         margin-bottom: 48px;
+        @include tablet {
+          width: 100%;
+        }
+        @include mobile {
+          width: 100%;
+        }
         img {
           width: 124px;
           margin-right: 28px;
+          @include tablet {
+            width: 124px;
+            object-fit: contain;
+            margin-right: 24px;
+          }
+          @include mobile {
+            width: 100px;
+            object-fit: contain;
+            margin-right: 24px;
+          }
         }
         .content-block {
           text-align: left;
+          @include tablet {
+            width: calc(100% - 148px);
+          }
+          @include mobile {
+            width: calc(100% - 124px);
+          }
           .tech-content-title {
             @include bold(28);
             margin-bottom: 12px;
@@ -384,35 +473,98 @@ const rightItem = ref(computed(()=>{
           .tech-content-content {
             @include medium(16);
           }
+          @include tablet {
+            .tech-content-title {
+              @include bold(20);
+              margin-bottom: 8px;
+            }
+            .tech-content-content {
+              @include medium(16);
+            }
+          }
+          @include mobile {
+            .tech-content-title {
+              @include bold(14);
+              margin-bottom: 8px;
+            }
+            .tech-content-content {
+              @include medium(12);
+            }
+          }
         }
       }
     }
   }
   .about-partner-wrapper {
+    @include tablet {
+      width: 80%;
+      margin: 0 auto 140px auto;
+    }
     .partner-title {
       span {
-        margin: 0px 5px;
+        margin-right: 10px;
+        &:nth-child(2){
+          margin-right: 0px;
+        }
       }
     }
     .partner-explanation {
       @include medium(20);
       margin-bottom: 56px;
+      @include tablet {
+        @include medium(16);
+      }
+      @include mobile {
+        @include medium(14);
+        margin-bottom: 32px;
+      }
     }
     .partner-content-wrapper {
       .partner-content {
         margin-bottom: 40px;
+
         .partner-content-title {
           @include bold(16);
           line-height: 40px;
           background-color: $grey-3;
           border-radius: 60px;
           width: 140px;
-          margin: 0 auto;
+          margin: 0 auto 12px auto;
+          @include tablet {
+            margin-bottom: 12px;
+            @include bold(14);
+            line-height: 32px;
+          }
+          @include mobile {
+            margin-bottom: 12px;
+            @include bold(14);
+            line-height: 32px;
+          }
         }
         .partner-image-group {
+          div {
+            @include tablet {
+              display: inline;
+            }
+            @include mobile {
+              display: inline;
+            }
+            img {
+              width: 164px;
+              margin: 0px 10px;
+              @include mobile {
+                width: 124px;
+                margin: 0px 10px;
+              }
+            }
+          }
           img {
             width: 164px;
             margin: 0px 10px;
+            @include mobile {
+              width: 124px;
+              margin: 0px 10px;
+            }
           }
         }
       }
@@ -422,28 +574,46 @@ const rightItem = ref(computed(()=>{
     @include relative;
     width: 100%;
     padding: 0px 24px;
-    padding-top: 108px;
+    padding-top: 0;
     margin-bottom: 108px;
+    @include tablet {
+      width: 80%;
+      margin: 0 auto 108px auto;
+    }
     @include mobile {
       padding: 0px 4px;
     }
     .timeline-title {
+      @include tablet {
+        margin-bottom: 60px;
+      }
       span {
-        margin: 0 5px;
+        margin-right: 10px;
+      }
+      span:nth-child(2){
+        margin: 0;
+      }
+      @include desktop{
+        span:nth-child(1){
+          width: 100%;
+        }
       }
     }
     .timeline-item-wrapper {
       position: relative;
       @include flex($justify: space-around);
+      @include tablet {
+      }
       .timeline-spacer-wrapper {
         @include absolute(top 0 left 50%);
-        display: grid;
-        grid-template-rows: 284px 1fr 84px;
+        @include flex($dir: column);
         width: 96px;
         height: calc(100% + 50px);
         transform: translateX(-50%);
         .timeline-start {
           @include flex($dir: column, $justify: space-around);
+          height: 200px;
+          margin-bottom: 10px;
           @include mobile {
             display: none;
           }
@@ -456,11 +626,18 @@ const rightItem = ref(computed(()=>{
             &:last-child {
               color: #8097ff;
             }
+            @include tablet {
+              @include bold(32);
+            }
           }
         }
         .timeline-spacer {
           border-right: 1.5px solid $main;
           transform: translateX(-50%);
+          margin: 0 auto;
+          width: 1px;
+          height: 100%;
+          flex: 1;
           @include mobile {
             display: none;
           }
@@ -472,35 +649,42 @@ const rightItem = ref(computed(()=>{
             border-right: 1.5px solid $main;
             width: 100%;
             height: 50px;
-            transform: translate(31px, -50%) rotate(45deg);
+            transform: translate(18px, 11%) rotate(45deg);
+            @include tablet{
+              height: 30px;
+              transform: translate(10px, 11%) rotate(45deg);
+            }
           }
         }
         .timeline-end {
           color: $main;
           padding-top: 24px;
           @include bold(40);
+          @include tablet {
+            @include bold(32);
+          }
           @include mobile {
             display: none;
           }
         }
       }
-      .timeline-right-wrapper {
-        padding-top: 40px;
+      .timeline-left-wrapper {
+        @include desktop{
+          padding-top: 60px;
+        }
+        @include tablet{
+          padding-top: 80px;
+        }
+        
       }
       .timeline-left-wrapper,
       .timeline-right-wrapper {
         .timeline-item {
-          // padding: 10px 40px;
           position: relative;
-          background-color: inherit;
-          @include mobile {
-            width: 100%;
-          }
           .content {
             padding: 12px 12px;
             margin-bottom: 44px;
             width: 288px;
-            // max-width: 288px;
             padding-top: 0px;
             position: relative;
             border-radius: 12px;
@@ -515,54 +699,41 @@ const rightItem = ref(computed(()=>{
               @include medium(16);
             }
             @include tablet {
-              width: 264px;
+              width: 200px;
               p {
                 @include medium(14);
-              }
-            }
-            @include mobile {
-              width: 248px;
-              p {
-                @include medium(13);
               }
             }
           }
 
           &.left {
-            .content{
+            .content {
               .item-year {
                 text-align: right;
               }
-              p{
+              p {
                 text-align: right;
               }
             }
             &.content {
               margin-left: auto;
               padding-left: 64px;
-              
             }
-            
+
             @include tablet {
               padding-right: 32px;
               &::before {
                 width: 32px;
               }
             }
-            @include mobile {
-              padding: 16px 0px;
-            }
           }
 
           &.right {
-            @include mobile {
-              left: 5%;
-            }
-            .content{
+            .content {
               .item-year {
                 text-align: left;
               }
-              p{
+              p {
                 text-align: left;
               }
             }
@@ -571,7 +742,6 @@ const rightItem = ref(computed(()=>{
             }
             & .content {
               margin-right: auto;
-              
             }
             padding-left: 60px;
             @include tablet {
@@ -580,8 +750,38 @@ const rightItem = ref(computed(()=>{
                 width: 32px;
               }
             }
-            @include mobile {
-              padding: 16px 0px;
+          }
+        }
+      }
+      @include mobile {
+        .timeline-item-mobile-wrapper {
+          .timeline-item {
+            position: relative;
+            .content {
+              width: 248px;
+              height: 100%;
+              padding: 16px;
+              border-radius: 12px;
+              margin-bottom: 20px;
+              @include elevation-box-grey;
+              .item-year {
+                color: rgba($black-1, 0.4);
+                @include medium(10);
+              }
+              p {
+                @include medium(12);
+              }
+              i {
+                margin-top: 6px;
+                color: rgba($main, 0.4);
+              }
+            }
+            &.left {
+              position: relative;
+              left: 20%;
+            }
+            &.right {
+              left: -20%;
             }
           }
         }

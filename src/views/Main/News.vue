@@ -91,19 +91,44 @@ onMounted(async () => {
   .news-title-wrapper {
     @include flex();
     margin-bottom: 48px;
+    @include tablet{
+      margin-bottom: 24px;
+    }
+    @include mobile{
+      display: block;
+      margin-bottom: 24px;
+    }
     .news-title {
       margin-right: 71px;
       span:first-child {
         @include bold(40);
         margin-right: 10px;
+        @include tablet{
+          @include bold(32);
+        }
+        @include mobile{
+          @include bold(32);
+        }
       }
       span:last-child {
         @include bold(40);
         color: $main;
+        @include tablet{
+          @include bold(32);
+        }
+        @include mobile{
+          @include bold(32);
+        }
+      }
+      @include mobile{
+        margin-bottom: 16px;
       }
     }
     .news-year-wrapper {
       @include center-center;
+      @include mobile{
+        justify-content: flex-start;
+      }
       button {
         @include bold(16);
         line-height: 40px;
@@ -113,6 +138,14 @@ onMounted(async () => {
         border-radius: 100px;
         &:hover{  
           background-color: $grey-3;
+        }
+        @include mobile{
+          @include bold(12);
+          line-height: 32px;
+        }
+        @include tablet{
+          @include bold(12);
+          line-height: 32px;
         }
       }
     }
@@ -131,6 +164,8 @@ onMounted(async () => {
       padding-bottom: 20px;
       @include flex($dir: column);
       @include mobile {
+        padding-bottom: 10px;
+        height: 120px;
       }
       &.fake {
         height: 0px;
@@ -153,11 +188,22 @@ onMounted(async () => {
           color: $main;
           padding-top: 40px;
           margin-bottom: 16px;
+          @include tablet{
+            @include medium(12);
+          }
+          @include mobile{
+            @include medium(12);
+          }
         }
         .content-title {
           @include medium(20);
           line-height: 40px;
-
+          @include tablet{
+            @include medium(18);
+          }
+          @include mobile{
+            @include medium(16);
+          }
           &:hover {
             color: $main;
             .arrow-right {
@@ -182,101 +228,14 @@ onMounted(async () => {
               background-color: $grey-3;
               transform: rotate(-45deg) translate(15px, 4px);
             }
+            @include tablet{
+              margin-top: 15px;
+            }
+            @include mobile{
+              margin-top: 15px;
+            }
           }
         }
-      }
-    }
-  }
-  .news-modal-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba($black, 0.6);
-    z-index: 1001;
-  }
-  .modal-item {
-    position: fixed;
-    left: 0;
-    top: 0;
-    overflow-y: auto;
-    z-index: 1002;
-    width: 100%;
-    height: 100%;
-    background: $main;
-    padding: 32px 40px;
-
-    @include desktop {
-      width: 498px;
-    }
-    .item-button {
-      margin-bottom: 80px;
-      button {
-        margin-left: auto;
-        background: transparent;
-        @include vertical-center;
-        text-align: center;
-        width: 48px;
-        height: 48px;
-        i {
-          color: white;
-          font-size: 48px;
-        }
-      }
-    }
-    .item-title {
-      color: $white;
-      margin-bottom: 32px;
-      border-top: solid 2px white;
-      border-bottom: solid 2px white;
-      padding: 12px 0px;
-      span {
-        @include bold(28);
-        @include mobile {
-          font-size: 20px;
-        }
-      }
-    }
-    .item-date {
-      margin-bottom: 16px;
-      text-align: right;
-      p {
-        @include medium(16);
-        @include mobile {
-          font-size: 12px;
-        }
-        color: white;
-      }
-    }
-    .item-content {
-      margin-bottom: 80px;
-      p {
-        @include medium(24);
-        @include mobile {
-          font-size: 16px;
-        }
-        color: white;
-      }
-    }
-    .item-links {
-      .link-title {
-        @include bold(28);
-        @include mobile {
-          font-size: 20px;
-        }
-        color: $white;
-        margin-bottom: 12px;
-      }
-      .link-content {
-        @include medium(20);
-        @include mobile {
-          font-size: 14px;
-        }
-        color: white;
-        word-break: break-all;
-        text-decoration: underline;
-        display: block;
       }
     }
   }

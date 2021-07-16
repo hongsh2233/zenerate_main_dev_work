@@ -78,7 +78,7 @@
           <button
             class="button-lang"
             @click="setLocale('ko')"
-            :class="{ active: locale === 'ko' }"
+            :class="{ active: locale != 'en' }"
           >
             <span>KOR</span>
           </button>

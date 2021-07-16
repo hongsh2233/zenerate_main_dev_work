@@ -11,43 +11,43 @@
       </div>
       <div class="content-item">
         <div class="content-item-title">주요 업무</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>
             2021년 하반기 미국에서 오픈 할 실시간 웹서비스의 백엔드 설계 및
             개발을 담당합니다.
           </li>
           <li>계산 엔진의 성능을 모니터링하고 개선합니다.</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">자격 조건</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>나이 / 성별 / 학력 / 전공 무관</li>
           <li>웹서비스 개발 및 운영 경력이 있으신 분</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">필수 사항</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>git을 사용한 협업 경험이 있는 분</li>
           <li>MySQL, PostgreSQL 등 RDBMS 사용 경험이 있는 분</li>
           <li>node.js 사용 경험이 있는 분</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">우대 사항</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>aws를 활용한 개발 및 운영 경험이 있으면 좋습니다.</li>
           <li>빌드/테스트/배포 자동화 경험이 있으면 좋습니다.</li>
           <li>
             python 사용경험 및 멀티스레드/멀티프로세스에 대한 이해를 갖추신
             분이면 좋습니다.
           </li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">이렇게 일해요</div>
-        <div class="content-item-content">
+        <div class="content-item-content content-item-content-nolist">
           <div class="caption-large">기술 스택</div>
           <p>
             Vue.js 3, Vite, CSS, HTML, Node.js, Express, Python, Typescript,
@@ -61,19 +61,19 @@
       </div>
       <div class="content-item">
         <div class="content-item-title">지원 절차</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>간편지원 > 3일 이내 인터뷰 진행 > 1주일 이내 최종 합격 통지</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">근무조건 및 업무환경</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>정규직</li>
           <li>휴가 17일</li>
           <li>선택적 근로 시간제</li>
           <li>점심 식사 제공</li>
           <li>8월 중 사무실 강남으로 이전 예정</li>
-        </div>
+        </ul>
       </div>
       <button
         class="back-button"
@@ -107,32 +107,32 @@
       </div>
       <div class="content-item">
         <div class="content-item-title">주요 업무</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>웹페이지 UI 컴포넌트 구현</li>
           <li>웹페이지 로직 개발 및 성능 개선</li>
           <li>WebGL 기반 2D/3D 데이터 시각화</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">자격 조건</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>나이 / 성별 / 학력 / 전공 무관</li>
           <li>웹서비스 개발 및 운영 경력이 있으신 분</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">필수 사항</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>JavaScript의 이해도가 높은 분</li>
           <li>HTML5, CSS3을 이용, 웹 표준 준수한 프로젝트 경험이 있는 분</li>
           <li>React, Vue 등 웹 프레임워크를 활용한 개발 경험이 있는 분</li>
           <li>Rest API에 대한 전반적인 이해가 있는 분</li>
           <li>Git을 활용한 형상관리 및 협업 경험이 있는 분</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">우대 사항</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>
             Vue.js 또는 React.js 와 같은 프론트엔드 프레임워크를 사용해 완결된
             웹 서비스 개발 경험이 있으신 분
@@ -140,11 +140,11 @@
           <li>TypeScript 개발 경험이 있으신 분</li>
           <li>새로운 기술에 대한 호기심이 많고, 빠르게 습득할 수 있는 분</li>
           <li>협업과 의사소통이 원활한 분</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">이렇게 일해요</div>
-        <div class="content-item-content">
+        <div class="content-item-content content-item-content-nolist">
           <div class="caption-large">기술 스택</div>
           <p>Vue.js 3, Vite, CSS, HTML, Node.js, Express, Python, Typescript</p>
           <div class="caption-large">개발 환경</div>
@@ -155,19 +155,19 @@
       </div>
       <div class="content-item">
         <div class="content-item-title">지원 절차</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>간편지원 > 3일 이내 인터뷰 진행 > 1주일 이내 최종 합격 통지</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">근무조건 및 업무환경</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>정규직 (수습기간 3개월, 수습기간내 4대보험+월급 100%지급)</li>
           <li>휴가 17일</li>
           <li>선택적 근로 시간제</li>
           <li>점심 식사 제공</li>
           <li>현재 사무실 태릉입구역 3분거리, 8월 내 강남으로 이전 예정</li>
-        </div>
+        </ul>
       </div>
       <button
         class="back-button"
@@ -201,25 +201,25 @@
       </div>
       <div class="content-item">
         <div class="content-item-title">주요 업무</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>
             부동산 개발에 관한 데이터 처리 (geospatial data, 거래내역 데이터
             등등)
           </li>
           <li>분석 모델 기획/개발</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">자격 조건</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>나이 / 성별 / 학력 / 전공 무관</li>
           <li>분석 모델 기획 및 개발 경력이 있으신 분</li>
           <li>Python 을 활용한 데이터 분석 경험이 있으신 분</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">이렇게 일해요</div>
-        <div class="content-item-content">
+        <div class="content-item-content content-item-content-nolist">
           <div class="caption-large">기술 스택</div>
           <p>Vue.js 3, Vite, CSS, HTML, Node.js, Express, Python, Typescript</p>
           <div class="caption-large">개발 환경</div>
@@ -230,19 +230,19 @@
       </div>
       <div class="content-item">
         <div class="content-item-title">지원 절차</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>간편지원 > 3일 이내 인터뷰 진행 > 1주일 이내 최종 합격 통지</li>
-        </div>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">근무조건 및 업무환경</div>
-        <div class="content-item-content">
+        <ul class="content-item-content">
           <li>정규직 (수습기간 3개월, 수습기간내 4대보험+월급 100%지급)</li>
           <li>휴가 17일</li>
           <li>선택적 근로 시간제</li>
           <li>점심 식사 제공</li>
           <li>현재 사무실 태릉입구역 3분거리, 8월 내 강남으로 이전 예정</li>
-        </div>
+        </ul>
       </div>
       <button
         class="back-button"
@@ -297,36 +297,103 @@ console.log(props.careerId)
   .image-wrapper {
     width: 100%;
     margin-bottom: 40px;
+    @include tablet {
+      margin-bottom: 30px;
+    }
+    @include mobile {
+      margin-bottom: 20px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
   .career-content-title {
     @include flex($justify: space-between);
     padding-bottom: 40px;
     border-bottom: solid 1px $grey-3;
     margin-bottom: 40px;
+    @include tablet{
+      padding-bottom: 30px;
+    }
+    @include mobile{
+      padding-bottom: 30px;
+    }
     span {
       @include bold(40);
       line-height: 60px;
+      @include tablet {
+        @include bold(32);
+      }
+      @include mobile {
+        @include bold(28);
+      }
     }
     button {
+      margin: auto 0;
       color: white;
       width: 144px;
       height: 48px;
       border-radius: 100px;
       background-color: $main;
+      @include tablet {
+        width: 100px;
+        height: 40px;
+        @include medium(14);
+      }
+      @include mobile {
+        width: 80px;
+        height: 40px;
+        @include medium(12);
+      }
     }
   }
   .content-item {
     .content-item-title {
       @include bold(20);
       margin-bottom: 10px;
+      @include tablet {
+        @include bold(16);
+      }
+      @include mobile {
+        @include bold(14);
+      }
     }
     .content-item-content {
+      list-style-type: disc;
+      margin-left: 28px;
       margin-bottom: 40px;
       @include medium(16);
       color: rgba($black-1, 0.7);
       .caption-large {
         @include bold(16);
         line-height: 40px;
+        @include tablet {
+          @include bold(14);
+        }
+        @include mobile {
+          @include bold(12);
+        }
+      }
+      @include tablet {
+        @include medium(14);
+      }
+      @include mobile {
+        @include medium(12);
+      }
+    }
+    .content-item-content-nolist {
+      margin-left: 0px;
+      @include tablet {
+        p{
+          margin-bottom: 12px;
+        }
+      }
+      @include mobile {
+        p{
+          margin-bottom: 12px;
+        }
       }
     }
   }
@@ -340,6 +407,12 @@ console.log(props.careerId)
     color: $main;
     svg {
       position: absolute;
+    }
+    @include tablet{
+      @include bold(14);
+    }
+    @include mobile{
+      @include bold(14);
     }
   }
 }

@@ -94,10 +94,11 @@ const router = useRouter()
     }
     @include tablet {
       height: 360px;
+      object-fit: contain;
     }
     @include mobile {      
       height: 250px;
-      object-fit: cover;
+      object-fit: contain;
       margin-bottom: 16px;
     }
   }

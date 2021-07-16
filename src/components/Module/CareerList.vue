@@ -71,7 +71,12 @@ const scrollTop = () => {
       .item-title {
         @include medium(20);
         line-height: 40px;
-
+        @include tablet{
+          @include medium(18);
+        }
+        @include mobile{
+          @include medium(18);
+        }
         &:hover {
           color: $main;
           .arrow-right {
@@ -88,6 +93,12 @@ const scrollTop = () => {
           margin-top: 20px;
           margin-bottom: 30px;
           transform: rotate(180deg);
+          @include tablet{
+            margin-top: 15px;
+          }
+          @include mobile{
+            margin-top: 15px;
+          }
           &::after {
             content: '';
             display: block;

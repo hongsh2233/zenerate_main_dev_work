@@ -1,7 +1,7 @@
 <template>
   <div class="module-career-wrapper module-item-wrapper">
     <div class="module-career-inner">
-      <div class="career-caption caption-small hover-pointer">
+      <div class="career-caption caption-small">
         {{ $t('module.career.caption') }}
       </div>
       <div class="career-title">

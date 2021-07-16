@@ -187,19 +187,19 @@ onMounted(() => {
     const scrollY = $evt.currentTarget.scrollY
     console.log(scrollY)
     opacity.value = {
-      first: lerp(0, 0, 0, 800, scrollY),
-      second: lerp(800, 1300, 3100, 3400, scrollY),
-      secondFirstFirst: lerp(800, 1300, 1900, 2100, scrollY),
-      secondFirstSecond: lerp(1300, 1800, 1900, 2100, scrollY),
-      secondSecondFirst: lerp(2100, 2600, 3100, 3400, scrollY),
-      secondSecondSecond: lerp(2600, 3000, 3100, 3400, scrollY),
+      first: lerp(0, 0, 0, 700, scrollY),
+      second: lerp(700, 1100, 3100, 3400, scrollY),
+      secondFirstFirst: lerp(700, 1100, 1800, 2000, scrollY),
+      secondFirstSecond: lerp(1100, 1500, 1800, 2000, scrollY),
+      secondSecondFirst: lerp(2000, 2400, 3100, 3400, scrollY),
+      secondSecondSecond: lerp(2400, 2800, 3100, 3400, scrollY),
       vector: setVectorOpacity(scrollY),
     }
     transform.value = {
-      secondFirstFirst: makeTranslate(800, 1300, scrollY),
-      secondFirstSecond: makeTranslate(1300, 1900, scrollY),
-      secondSecondFirst: makeTranslate(2100, 2600, scrollY),
-      secondSecondSecond: makeTranslate(2600, 3100, scrollY),
+      secondFirstFirst: makeTranslate(700, 1100, scrollY),
+      secondFirstSecond: makeTranslate(1100, 1500, scrollY),
+      secondSecondFirst: makeTranslate(2000, 2400, scrollY),
+      secondSecondSecond: makeTranslate(2400, 2800, scrollY),
     }
     vectorColor.value = setVectorColor(scrollY)
     if (scrollY <= 3400) {
@@ -216,9 +216,6 @@ onMounted(() => {
 .module-scroll-wrapper {
   height: 4000px;
   width: 100%;
-  @include tablet{
-    height: 4200px;
-  }
   .scroll-first {
     @include fixed(top 0 left 0);
     width: 100vw;
@@ -283,6 +280,8 @@ onMounted(() => {
       height: 100%;
       video {
         width: 100%;
+        height: 100vh;
+        object-fit: cover;
       }
       // img {
       //   height: 100%;

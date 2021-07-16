@@ -46,7 +46,9 @@
           <span>Before</span>
           <span
             class="hover-pointer"
-            @click=";[(nowId = props.newsList[nowIdx - 1].id), scrollTopSmooth()]"
+            @click="
+              ;[(nowId = props.newsList[nowIdx - 1].id), scrollTopSmooth()]
+            "
             >{{
               locale === 'ko'
                 ? props.newsList[nowIdx - 1].content_kr.title
@@ -58,7 +60,9 @@
           <span>Next</span>
           <span
             class="hover-pointer"
-            @click=";[(nowId = props.newsList[nowIdx + 1].id), scrollTopSmooth()]"
+            @click="
+              ;[(nowId = props.newsList[nowIdx + 1].id), scrollTopSmooth()]
+            "
             >{{
               locale === 'ko'
                 ? props.newsList[nowIdx + 1].content_kr.title
@@ -138,31 +142,72 @@ console.log('AAA', nowIdx)
 <style lang="scss" scoped>
 @import '../../assets/scss/variables.scss';
 .news-content-wrapper {
+  @include mobile {
+    padding-top: 20px;
+  }
   .item-title {
     @include bold(40);
     line-height: 60px;
     margin-bottom: 10px;
+    @include tablet {
+      @include bold(32);
+      line-height: 52px;
+    }
+    @include mobile {
+      @include bold(28);
+    }
   }
   .item-date {
     @include medium(16);
     color: rgba($black-1, 0.4);
     margin-bottom: 40px;
+    @include tablet {
+      @include medium(14);
+      margin-bottom: 30px;
+    }
+    @include mobile {
+      @include medium(14);
+      margin-bottom: 30px;
+    }
   }
   .item-content {
     @include medium(18);
     line-height: 40px;
     margin-bottom: 60px;
+    @include tablet {
+      @include medium(16);
+    }
+    @include mobile {
+      @include medium(14);
+    }
   }
   .item-links {
     margin-bottom: 95px;
+    @include tablet{
+      margin-bottom: 50px;
+    }
+    @include mobile{
+      margin-bottom: 40px;
+    }
     .link-title {
       @include bold(16);
       line-height: 40px;
       margin-bottom: 8px;
+      @include tablet {
+        @include bold(14);
+        margin-bottom: 4px;
+      }
+      @include mobile {
+        @include bold(14);
+        margin-bottom: 4px;
+      }
     }
     .link-content-wrapper {
       @include medium(12);
       line-height: 28px;
+      @include mobile {
+        @include medium(12);
+      }
     }
   }
   .prev-news,
@@ -174,6 +219,12 @@ console.log('AAA', nowIdx)
     span {
       @include vertical-center;
       @include medium(16);
+      @include tablet{
+        @include medium(14);
+      }
+      @include mobile{
+        @include medium(14);
+      }
     }
   }
   .prev-news {
@@ -183,6 +234,12 @@ console.log('AAA', nowIdx)
     @include center-center;
     margin: 48px auto 6px auto;
     @include bold(16);
+    @include tablet{
+      @include bold(14);
+    }
+    @include mobile{
+      @include bold(14);
+    }
     span {
       padding-bottom: 5px;
     }

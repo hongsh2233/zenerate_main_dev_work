@@ -59,7 +59,7 @@
       </div>
       <div class="footer-text mail">
         <span>{{ $t('footer.question[0]') }}</span>
-        <a href="mailto:help@zenerate.ai">{{ $t('footer.question[1]') }}</a>
+        <a href="mailto:help@zenerate.ai">help@zenerate.ai</a>
       </div>
       <div class="footer-text address">
         <span>{{ $t('footer.address[0]') }}</span>

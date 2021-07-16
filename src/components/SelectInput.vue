@@ -84,11 +84,14 @@ watch(showDropdown, (v) => {
 @import '../assets/scss/variables.scss';
 .input-select-wrapper {
   margin-bottom: 60px;
-  width: 508px;
+  width: 100%;
   p{
     @include medium(16);
     color: rgba($black-1, 0.4);
     margin-bottom: 12px;
+    @include mobile{
+      @include medium(14);
+    }
   }
   .input-select-container {
     height: 43px;
@@ -111,6 +114,9 @@ watch(showDropdown, (v) => {
       justify-content: space-between;
       span {
         @include medium(18);
+        @include mobile{
+          @include medium(14);
+        }
       }
       i {
         color: rgba(196, 196, 196, 0.6);
@@ -128,6 +134,9 @@ watch(showDropdown, (v) => {
       width: 100%;
       @include medium(18);
       padding: 6px 12px;
+      @include mobile{
+        @include medium(14);
+      }
       &:hover {
         background-color: $main;
         color: $white;

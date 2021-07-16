@@ -166,7 +166,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 343px;
     }
     @include tablet {
-      height: 328px;
+      height: auto;
     }
     @include mobile {
       height: auto;

@@ -29,12 +29,9 @@
             }}</router-link>
           </div>
           <div class="left-link hover-pointer">
-            <a
-              @click="toggleDrawer(false)"
-              href="https://www.notion.so/zenerate/c220ca929c9c4f6982c8aca8696e2c86"
-              target="_blank"
-              >{{ $t('menu.career') }}</a
-            >
+            <router-link @click="toggleDrawer(false)" to="/main/career">{{
+              $t('menu.career')
+            }}</router-link>
           </div>
           <div class="left-link hover-pointer">
             <router-link @click="toggleDrawer(false)" to="/main/contact">{{
@@ -77,7 +74,7 @@ const toggleDrawer = (flag) => {
 }
 </script>
 <style lang="scss" scoped>
-@import "../assets/scss/variables.scss";
+@import '../assets/scss/variables.scss';
 .section-menu {
   position: fixed;
   top: 0;

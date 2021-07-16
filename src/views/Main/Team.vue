@@ -226,6 +226,7 @@ const filteredMember = computed(() => {
         text-align: center;
         margin-bottom: 28px;
         padding: 24px;
+        border-radius: 24px;
         // @include border-set(2px, #dcdcdc, 24px);
         @include desktop {
           width: 380px;
@@ -233,12 +234,12 @@ const filteredMember = computed(() => {
         }
 
         @include tablet {
-          width: 300px;
-          height: 300px;
+          width: 310px;
+          height: 310px;
         }
         @include mobile {
-          width: 240px;
-          height: 240px;
+          width: 270px;
+          height: 270px;
         }
         &.fake {
           height: 0px;
@@ -255,8 +256,8 @@ const filteredMember = computed(() => {
           }
 
           @include tablet {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
           }
           @include mobile {
             width: 124px;
@@ -279,6 +280,9 @@ const filteredMember = computed(() => {
           @include medium(15);
           color: rgba($black, 0.5);
             margin-bottom: 20px;
+          @include tablet{
+            margin-bottom: 8px;
+          }
           @include mobile {
             font-size: 11px;
             margin-bottom: 8px;

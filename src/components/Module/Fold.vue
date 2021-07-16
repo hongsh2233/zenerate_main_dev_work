@@ -381,6 +381,9 @@ const currentComponent = computed(() => {
     .news {
       margin-left: 85px;
       padding-right: 48px;
+      @include desktop{
+        width: auto;
+      }
       @include mobile {
         padding-right: 24px;
         margin-left: 16px;
