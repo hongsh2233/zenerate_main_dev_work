@@ -1,5 +1,8 @@
 <template>
-  <div class="module-career-wrapper module-item-wrapper">
+  <div
+    class="module-career-wrapper module-item-wrapper"
+    v-show="locale !== 'en'"
+  >
     <div class="module-career-inner">
       <div class="career-caption caption-small">
         {{ $t('module.career.caption') }}
@@ -23,8 +26,9 @@
 </template>
 <script setup>
 import { useRouter } from 'vue-router'
-const router = useRouter();
-
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
+const router = useRouter()
 </script>
 <style lang="scss" scoped>
 @import '../../assets/scss/variables.scss';
@@ -42,7 +46,7 @@ const router = useRouter();
     padding: 0;
     margin-bottom: 40px;
   }
-  .career-caption{
+  .career-caption {
     line-height: 40px;
   }
   .career-title {
@@ -78,7 +82,7 @@ const router = useRouter();
       color: $main;
       margin-right: 40px;
       @include bold(16);
-      @include mobile{
+      @include mobile {
         @include bold(14);
       }
     }

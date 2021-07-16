@@ -1,9 +1,7 @@
 <template>
   <section class="section-main-service">
     <div class="service-container-wrapper">
-      <div class="service-container">
-        <div class="service-caption caption-large">Our Service</div>
-        <div class="service-title">{{ $t('main.service.title[0]') }}</div>
+      <div class="service-container header">
         <div class="service-content">
           <p>{{ $t('main.service.content[0]') }}</p>
           <p>{{ $t('main.service.content[1]') }}</p>
@@ -11,6 +9,16 @@
         </div>
         <div class="service-image">
           <img class="service-image-intro" src="/img/service_intro.png" />
+        </div>
+      </div>
+      <div class="service-container" v-if="locale === 'en'">
+        <div class="service-caption caption-large">Web Solution</div>
+        <div class="service-title">{{ $t('main.service.title[2]') }}</div>
+        <div class="service-content">{{ $t('main.service.content[4]') }}</div>
+        <div class="service-image service-image-3">
+          <img src="/img/service_web.png" />
+          <img src="/img/service_consulting_1.png" />
+          <img src="/img/service_consulting_2.png" />
         </div>
       </div>
       <div class="service-container">
@@ -21,7 +29,7 @@
           <img src="/img/service_consulting_screenshot.png" />
         </div>
       </div>
-      <div class="service-container">
+      <div class="service-container" v-if="locale !== 'en'">
         <div class="service-caption caption-large">Web Solution</div>
         <div class="service-title">{{ $t('main.service.title[2]') }}</div>
         <div class="service-content">{{ $t('main.service.content[4]') }}</div>
@@ -54,19 +62,20 @@ const toggleServiceTab = (tab) => {
     position: relative;
     margin-bottom: 160px;
     text-align: center;
-    @include mobile{  
+
+    @include mobile {
       margin-bottom: 100px;
     }
     &:first-child {
       margin-bottom: 252px;
-      @include mobile{
+      @include mobile {
         margin-bottom: 100px;
       }
     }
     .service-caption {
       @include bold(20);
       line-height: 48px;
-      @include mobile{
+      @include mobile {
         line-height: 40px;
       }
     }
@@ -74,11 +83,11 @@ const toggleServiceTab = (tab) => {
       @include bold(40);
       line-height: 60px;
       margin-bottom: 40px;
-      @include tablet{
+      @include tablet {
         @include bold(32);
         margin-bottom: 30px;
       }
-      @include mobile{
+      @include mobile {
         @include bold(28);
         margin-bottom: 30px;
       }
@@ -86,30 +95,30 @@ const toggleServiceTab = (tab) => {
     .service-content {
       @include medium(20);
       margin-bottom: 40px;
-      @include tablet{
+      @include tablet {
         @include medium(16);
         margin-bottom: 30px;
       }
-      @include mobile{
+      @include mobile {
         @include medium(14);
         margin-bottom: 30px;
       }
     }
-    .service-image{
+    .service-image {
       @include flex($justify: center);
-      img{
+      img {
         width: 100%;
         object-fit: contain;
       }
     }
-    .service-image-3{
-      img{
+    .service-image-3 {
+      img {
         width: calc(100% / 3);
-        @include mobile{
+        @include mobile {
           width: calc(100% / 3);
           margin: 0px;
         }
-      }  
+      }
     }
     .service-image-intro {
       width: 100%;
@@ -117,8 +126,29 @@ const toggleServiceTab = (tab) => {
       left: 0;
       top: 150px;
       z-index: -1;
-      @include mobile{
+      @include mobile {
         top: 150px;
+      }
+    }
+
+    &.header {
+      margin-top: 24px;
+      margin-bottom: 316px;
+      .service-title {
+        font-style: italic;
+        @include bold(32);
+        line-height: 60px;
+        margin-bottom: 12px;
+        @include tablet {
+          @include bold(28);
+        }
+        @include mobile {
+          @include bold(24);
+        }
+      }
+      .service-content {
+        font-style: italic;
+        padding-top: 80px;
       }
     }
   }

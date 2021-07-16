@@ -1,5 +1,5 @@
 <template>
-  <div class="career-list-wrapper">
+  <div class="career-list-wrapper" v-if="locale != 'en'">
     <transition name="fade" mode="out-in">
       <CareerContent
         v-if="careerId != -1"
@@ -10,7 +10,7 @@
     <transition name="fade" mode="out-in">
       <div class="career-list" v-if="careerId === -1">
         <div class="career-item">
-          <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+          <!-- <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div> -->
           <div
             class="item-title hover-pointer"
             @click=";[(careerId = 0), scrollTop()]"
@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="career-item">
-          <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+          <!-- <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div> -->
           <div
             class="item-title hover-pointer"
             @click=";[(careerId = 1), scrollTop()]"
@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="career-item">
-          <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+          <!-- <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div> -->
           <div
             class="item-title hover-pointer"
             @click=";[(careerId = 2), scrollTop()]"
@@ -45,6 +45,8 @@
 </template>
 <script setup>
 import CareerContent from './CareerContent.vue'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
 import { ref } from 'vue'
 const careerId = ref(-1)
 console.log(careerId.value)
@@ -71,10 +73,10 @@ const scrollTop = () => {
       .item-title {
         @include medium(20);
         line-height: 40px;
-        @include tablet{
+        @include tablet {
           @include medium(18);
         }
-        @include mobile{
+        @include mobile {
           @include medium(18);
         }
         &:hover {
@@ -93,10 +95,10 @@ const scrollTop = () => {
           margin-top: 20px;
           margin-bottom: 30px;
           transform: rotate(180deg);
-          @include tablet{
+          @include tablet {
             margin-top: 15px;
           }
-          @include mobile{
+          @include mobile {
             margin-top: 15px;
           }
           &::after {

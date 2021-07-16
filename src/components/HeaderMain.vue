@@ -37,6 +37,7 @@
           </div>
           <div
             class="navigation-main-item hover-pointer"
+            v-if="locale != 'en'"
             @click="router.push('/main/career')"
             @mouseover="setMenuHovered(false)"
           >
@@ -50,7 +51,7 @@
             {{ $t('menu.contact') }}
           </div>
         </div>
-        <div class="navigation-sub" v-show="isMenuHovered">
+        <!-- <div class="navigation-sub" v-show="isMenuHovered">
           <div
             class="navigation-sub-item hover-pointer"
             @click="router.push('/main/about')"
@@ -63,7 +64,7 @@
           >
             {{ $t('menu.team') }}
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="header-buttons-wrapper">
         <div class="button-lang-wrapper">

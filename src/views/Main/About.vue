@@ -34,6 +34,9 @@
             <p>{{ $t(`about.mission.content[${4 * i - 4}]`) }}</p>
             <p>{{ $t(`about.mission.content[${4 * i - 3}]`) }}</p>
           </div>
+          <div class="mission-content-arrow">
+            <i class="material-icons">arrow_downward</i>
+          </div>
           <div class="mission-content-down">
             <p>{{ $t(`about.mission.content[${4 * i - 2}]`) }}</p>
             <p>{{ $t(`about.mission.content[${4 * i - 1}]`) }}</p>
@@ -224,10 +227,99 @@
       </div>
     </div>
   </div>
+  <div class="section-team">
+    <div class="team-contents">
+      <div class="contents-title">{{ $t('main.team.title') }}</div>
+      <div
+        class="team-image"
+        :style="{ 'background-image': `url('/img/team_${currentTab}.jpg')` }"
+      ></div>
+      <div class="contents-tab-wrapper">
+        <div
+          class="contents-tab hover-pointer"
+          :class="{ active: currentTab === 'all' }"
+          @click="toggleTab('all')"
+        >
+          {{ $t('main.team.menu.zenerate') }}
+        </div>
+        <div class="horizontal-spacer"></div>
+        <div
+          class="contents-tab hover-pointer"
+          :class="{ active: currentTab === 'marketing' }"
+          @click="toggleTab('marketing')"
+        >
+          {{ $t('main.team.menu.marketing') }}
+        </div>
+        <div class="horizontal-spacer"></div>
+        <div
+          class="contents-tab hover-pointer"
+          :class="{ active: currentTab === 'product' }"
+          @click="toggleTab('product')"
+        >
+          {{ $t('main.team.menu.product') }}
+        </div>
+        <div class="horizontal-spacer"></div>
+        <div
+          class="contents-tab hover-pointer"
+          :class="{ active: currentTab === 'it' }"
+          @click="toggleTab('it')"
+        >
+          {{ $t('main.team.menu.it') }}
+        </div>
+      </div>
+      <div class="contents-item-wrapper">
+        <transition-group name="fade">
+          <div
+            class="contents-item"
+            v-for="(member, idx) in filteredMember"
+            :key="idx"
+          >
+            <div class="item-image noselect">
+              <img :src="`/img/people/${member.img}.gif`" :alt="member.name" />
+            </div>
+            <div class="item-name">{{ $t(member.name) }}</div>
+            <div class="item-desc">{{ $t(member.title) }}</div>
+            <div class="item-icons plain">
+              <a
+                :href="member.linkedin"
+                class="icon-linkedin"
+                v-if="member.linkedin"
+              >
+                <img src="/img/logo_linkedin.svg" alt="" />
+              </a>
+              <a :href="member.github" class="icon-github" v-if="member.github">
+                <img src="/img/logo_github.svg" alt="" />
+              </a>
+            </div>
+            <div class="item-icons hovered">
+              <a
+                :href="member.linkedin"
+                class="icon-linkedin"
+                v-if="member.linkedin"
+              >
+                <img src="/img/logo_linkedin_white.svg" alt="" />
+              </a>
+              <a :href="member.github" class="icon-github" v-if="member.github">
+                <img src="/img/logo_github_white.svg" alt="" />
+              </a>
+            </div>
+            <div class="item-covered">
+              <span>{{ $t(member.comment) }}</span>
+            </div>
+          </div>
+        </transition-group>
+        <div class="contents-item fake"></div>
+        <div class="contents-item fake"></div>
+        <div class="contents-item fake"></div>
+        <div class="contents-item fake"></div>
+        <div class="contents-item fake"></div>
+      </div>
+    </div>
+  </div>
 </template>
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
-import { ref, computed } from 'vue'
+import { ref, computed, reactive } from 'vue'
 const { locale } = useI18n()
 import timelineItem from '/Constants/timeline'
 const leftItem = ref(
@@ -244,6 +336,79 @@ const rightItem = ref(
     })
   })
 )
+
+const currentTab = ref('all')
+const toggleTab = (idx) => {
+  currentTab.value = idx
+}
+
+const memberList = reactive([
+  {
+    name: 'main.team.name.sbj',
+    title: 'main.team.job.sbj',
+    comment: 'main.team.comment.sbj',
+    img: 'sbj',
+    team: 'product',
+    linkedin: 'https://www.linkedin.com/in/bongjai-shin-0bb85346/',
+  },
+  {
+    name: 'main.team.name.jgh',
+    title: 'main.team.job.jgh',
+    comment: 'main.team.comment.jgh',
+    img: 'jgh',
+    team: 'it',
+    linkedin: 'https://www.linkedin.com/in/gahye-jeong-phd-300859132',
+  },
+  {
+    name: 'main.team.name.lh',
+    title: 'main.team.job.lh',
+    comment: 'main.team.comment.lh',
+    img: 'lh',
+    team: 'it',
+  },
+  {
+    name: 'main.team.name.kyj',
+    title: 'main.team.job.kyj',
+    comment: 'main.team.comment.kyj',
+    img: 'kyj',
+    team: 'product',
+  },
+  {
+    name: 'main.team.name.ysh',
+    title: 'main.team.job.ysh',
+    comment: 'main.team.comment.ysh',
+    img: 'ysh',
+    team: 'it',
+  },
+  {
+    name: 'main.team.name.obg',
+    title: 'main.team.job.obg',
+    comment: 'main.team.comment.obg',
+    img: 'obg',
+    team: 'it',
+    linkedin: 'https://www.linkedin.com/in/beomgyo-oh-abb9201a5/',
+    // github: 'https://github.com/Coldsewoo/',
+  },
+  {
+    name: 'main.team.name.lsh',
+    title: 'main.team.job.lsh',
+    comment: 'main.team.comment.lsh',
+    img: 'lsh',
+    team: 'product',
+  },
+  {
+    name: 'main.team.name.swj',
+    title: 'main.team.job.swj',
+    comment: 'main.team.comment.swj',
+    img: 'swj',
+    team: 'marketing',
+  },
+])
+
+const filteredMember = computed(() => {
+  if (currentTab.value === 'all') return memberList
+  return memberList.filter((f) => f.team === currentTab.value)
+})
 </script>
 <style lang="scss" scoped>
 @import '../../assets/scss/variables.scss';
@@ -397,12 +562,18 @@ const rightItem = ref(
         margin: 0 30px;
         @include medium(20);
         .mission-content-up {
-          padding-bottom: 40px;
-          border-bottom: solid 1px $main;
+          padding-bottom: 24px;
           color: rgba($black-1, 0.4);
         }
+        .mission-content-arrow {
+          font-size: 24px;
+          font-weight: 200;
+          transform: scaleY(1.15);
+          color: $main;
+        }
         .mission-content-down {
-          padding-top: 40px;
+          // font-weight: $bold;
+          padding-top: 24px;
         }
         @include tablet {
           width: 160px;
@@ -503,7 +674,7 @@ const rightItem = ref(
     .partner-title {
       span {
         margin-right: 10px;
-        &:nth-child(2){
+        &:nth-child(2) {
           margin-right: 0px;
         }
       }
@@ -590,11 +761,11 @@ const rightItem = ref(
       span {
         margin-right: 10px;
       }
-      span:nth-child(2){
+      span:nth-child(2) {
         margin: 0;
       }
-      @include desktop{
-        span:nth-child(1){
+      @include desktop {
+        span:nth-child(1) {
           width: 100%;
         }
       }
@@ -650,7 +821,7 @@ const rightItem = ref(
             width: 100%;
             height: 50px;
             transform: translate(18px, 11%) rotate(45deg);
-            @include tablet{
+            @include tablet {
               height: 30px;
               transform: translate(10px, 11%) rotate(45deg);
             }
@@ -669,13 +840,12 @@ const rightItem = ref(
         }
       }
       .timeline-left-wrapper {
-        @include desktop{
+        @include desktop {
           padding-top: 60px;
         }
-        @include tablet{
+        @include tablet {
           padding-top: 80px;
         }
-        
       }
       .timeline-left-wrapper,
       .timeline-right-wrapper {
@@ -783,6 +953,188 @@ const rightItem = ref(
             &.right {
               left: -20%;
             }
+          }
+        }
+      }
+    }
+  }
+}
+.section-team {
+  padding: 24px 0px 80px 0px;
+  .team-image {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 24px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    @include desktop {
+      height: 500px;
+    }
+    @include tablet {
+      height: 380px;
+    }
+    @include mobile {
+      height: 240px;
+    }
+  }
+  .team-contents {
+    .contents-title {
+      @include bold(40);
+      margin-bottom: 32px;
+      text-align: center;
+      @include tablet {
+        @include bold(32);
+      }
+      @include mobile {
+        @include bold(24);
+      }
+    }
+    .contents-tab-wrapper {
+      margin-bottom: 40px;
+      @include flex;
+      .contents-tab {
+        width: 100px;
+        text-align: center;
+        @include medium(15);
+        &.active {
+          font-weight: $bold;
+          border-bottom: solid 4px $main;
+          padding-bottom: 8px;
+        }
+        @include mobile {
+          width: 60px;
+          font-size: 12px;
+        }
+      }
+      .horizontal-spacer {
+        width: 1px;
+        height: 24px;
+        background-color: $black;
+        margin: 0px 16px;
+        @include mobile {
+          margin: 0px 8px;
+        }
+      }
+    }
+    .contents-item-wrapper {
+      @include flex($justify: space-evenly);
+      border-radius: 24px;
+      .contents-item {
+        @include relative;
+        background-color: #fafafa;
+        text-align: center;
+        margin-bottom: 28px;
+        padding: 24px;
+        border-radius: 24px;
+        // @include border-set(2px, #dcdcdc, 24px);
+        @include desktop {
+          width: 380px;
+          height: 380px;
+        }
+
+        @include tablet {
+          width: 310px;
+          height: 310px;
+        }
+        @include mobile {
+          width: 270px;
+          height: 270px;
+        }
+        &.fake {
+          height: 0px;
+          border: none;
+          margin: 0;
+          padding: 0;
+        }
+        .item-image {
+          margin: 0px auto;
+          margin-bottom: 8px;
+          @include desktop {
+            width: 200px;
+            height: 200px;
+          }
+
+          @include tablet {
+            width: 150px;
+            height: 150px;
+          }
+          @include mobile {
+            width: 124px;
+            height: 124px;
+            margin-bottom: 4px;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .item-name {
+          @include bold(24);
+          margin-bottom: 8px;
+          @include mobile {
+            font-size: 16px;
+          }
+        }
+        .item-desc {
+          @include medium(15);
+          color: rgba($black, 0.5);
+          margin-bottom: 20px;
+          @include tablet {
+            margin-bottom: 8px;
+          }
+          @include mobile {
+            font-size: 11px;
+            margin-bottom: 8px;
+          }
+        }
+        .item-covered {
+          @include absolute(left 0 top 0);
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+          background: rgba($black, 0.4);
+          z-index: 4;
+          padding: 0px 48px;
+          @include vertical-center;
+          @include medium(24);
+          color: $white;
+          @include mobile {
+            font-size: 18px;
+          }
+        }
+        .item-icons {
+          @include relative;
+          z-index: 5;
+          a {
+            img {
+              width: 32px;
+              height: 32px;
+              @include mobile {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+        }
+        .plain {
+          display: block;
+        }
+        .hovered {
+          display: none;
+        }
+        .item-covered {
+          opacity: 0;
+        }
+        &:hover {
+          .plain {
+            display: none;
+          }
+          .hovered {
+            display: block;
+          }
+          .item-covered {
+            opacity: 1;
           }
         }
       }

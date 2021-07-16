@@ -28,7 +28,7 @@
               $t('menu.service')
             }}</router-link>
           </div>
-          <div class="left-link hover-pointer">
+          <div class="left-link hover-pointer" v-if="locale != 'en'">
             <router-link @click="toggleDrawer(false)" to="/main/career">{{
               $t('menu.career')
             }}</router-link>
@@ -39,26 +39,26 @@
             }}</router-link>
           </div>
         </div>
-        <div class="item-right">
+        <!-- <div class="item-right">
           <div class="right-link hover-pointer">
             <router-link @click="toggleDrawer(false)" to="/main/about">{{
               $t('menu.timeline')
             }}</router-link>
           </div>
-          <!-- <div class="right-link hover-pointer">
+          <div class="right-link hover-pointer">
             <router-link @click="toggleDrawer(false)" to="/main/timeline">{{
               $t('menu.timeline')
             }}</router-link>
-          </div> -->
+          </div>
           <div class="right-link hover-pointer">
             <router-link @click="toggleDrawer(false)" to="/main/team">{{
               $t('menu.team')
             }}</router-link>
           </div>
-          <!-- <div class="right-link hover-pointer">
+          <div class="right-link hover-pointer">
             <a href="">공시</a>
-          </div> -->
-        </div>
+          </div>
+        </div> -->
       </div>
       <Footer />
     </div>
@@ -68,6 +68,8 @@
 // @ts-ignore
 import Footer from '/Components/Footer.vue'
 import { defineEmit } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t, locale } = useI18n()
 const emit = defineEmit(['toggleDrawer'])
 const toggleDrawer = (flag) => {
   emit('toggleDrawer', flag)
