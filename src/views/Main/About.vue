@@ -3,10 +3,10 @@
     <div class="about-animation-wrapper">
       <img src="/img/zenerate.webp" alt="" />
     </div>
-    <div class="about-overview-wrapper about-wrapper">
+    <div class="about-overview-wrapper about-wrapper" :class="{ en: locale === 'en' }">
       <div class="overview-title about-title">
-        <span class="colored" v-if="locale === 'en'">Zenerate</span>
-        <span>&nbsp;{{ $t('about.allPossibilities') }}&nbsp;</span>
+        <!-- <span class="colored" v-if="locale === 'en'">Zenerate</span> -->
+        <span class="colored" v-if="locale === 'en'">{{ $t('about.allPossibilities') }}</span>
         <span class="colored" v-if="locale === 'ko'"
           >제너레잇<span>하다.</span></span
         >
@@ -18,7 +18,7 @@
         <p>
           {{ $t('about.comment[1]') }}
         </p>
-        <p>
+        <p :class="{ en: locale === 'en' }">
           {{ $t('about.comment[2]') }}
         </p>
       </div>
@@ -134,7 +134,7 @@
     <div class="about-timeline-wrapper about-wrapper">
       <div class="timeline-title about-title">
         <span>{{ $t('about.timeline.title[0]') }}</span>
-        <span class="colored">{{ $t('about.timeline.title[1]') }}</span>
+        <span class="colored" :class="{ en: locale === 'en' }">{{ $t('about.timeline.title[1]') }}</span>
         <span>{{ $t('about.timeline.title[2]') }}</span>
       </div>
       <div class="timeline-item-wrapper">
@@ -306,6 +306,9 @@ const rightItem = ref(
     @include desktop {
       padding: 56px 0px 140px 0px;
       width: 496px;
+      &.en{
+        width: 650px;
+      }
     }
     @include tablet {
       padding: 56px 56px 140px 56px;
@@ -358,6 +361,11 @@ const rightItem = ref(
       p {
         &:last-child {
           padding-top: 24px;
+        }
+        &.en{
+          &:last-child {
+            padding-top: 0px;
+          }
         }
         @include desktop {
           margin-bottom: 8px;
@@ -592,6 +600,9 @@ const rightItem = ref(
       }
       span:nth-child(2){
         margin: 0;
+        &.en{
+          margin-right: 10px;
+        }
       }
       @include desktop{
         span:nth-child(1){

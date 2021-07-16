@@ -14,7 +14,7 @@
       <div class="first-image">
         <img src="/video/scroll_building.gif" alt="" />
       </div>
-      <div class="first-text">
+      <div class="first-text" v-if="locale != 'en'">
         <p>가능한 모든 대안을</p>
         <p>
           생성하여
@@ -22,6 +22,14 @@
           >을
         </p>
         <p>추천해드립니다.</p>
+      </div>
+      <div class="first-text" v-else>
+        <p>Zenerate finds</p>
+        <p>
+          <span class="typing-text">{{ typingEn }}</span><br>
+          building design solutions
+        </p>
+        <p> for real estate development.</p>
       </div>
     </div>
     <div
@@ -38,9 +46,8 @@
           src="/video/scroll_background.mp4"
           alt=""
         />
-        <!-- <img src="/video/scroll_background_2.webp" /> -->
       </div>
-      <div class="second-first-text">
+      <div class="second-first-text" v-if="locale != 'en'">
         <div
           class="second-first-first"
           :style="{
@@ -61,7 +68,28 @@
           <p>평균 12%의 추가 개발 수익을 발생시키고 있습니다.</p>
         </div>
       </div>
-      <div class="second-second-text">
+      <div class="second-first-text" v-else>
+        <div
+          class="second-first-first"
+          :style="{
+            opacity: opacity.secondFirstFirst,
+            transform: `translateY(${transform.secondFirstFirst}px)`,
+          }"
+        >
+          <p>With Zenerate’s AI technology,</p>
+          <p>we do the complex math for you to help you maximize your ROI.</p>
+        </div>
+        <div
+          class="second-first-second"
+          :style="{
+            opacity: opacity.secondFirstSecond,
+            transform: `translateY(${transform.secondFirstSecond}px)`,
+          }"
+        >
+          <p>Our clients have seen revenues increase by 12% on average.</p>
+        </div>
+      </div>
+      <div class="second-second-text" v-if="locale != 'en'">
         <div
           class="second-second-first"
           :style="{
@@ -84,6 +112,31 @@
           <p>
             다양한 변수를 고려한 최적화를 통해 기존의 상식을 깨트리는 인사이트를
             제공합니다.
+          </p>
+        </div>
+      </div>
+      <div class="second-second-text" v-else>
+        <div
+          class="second-second-first"
+          :style="{
+            opacity: opacity.secondSecondFirst,
+            transform: `translateY(${transform.secondSecondFirst}px)`,
+          }"
+        >
+          <p>Zenerate is disrupting </p>
+          <p>the real estate development industry.</p>
+        </div>
+        <div
+          class="second-second-second"
+          :style="{
+            opacity: opacity.secondSecondSecond,
+            transform: `translateY(${transform.secondSecondSecond}px)`,
+          }"
+        >
+          <p>Zenerate leads the way by providing data-driven insights</p>
+          <p>based on multiple key variables produced by </p>
+          <p>
+            our innovative architectural design automation and AI technology.
           </p>
         </div>
       </div>
@@ -114,6 +167,8 @@
 
 <script setup>
 import { ref, onMounted, registerRuntimeCompiler } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
 const opacity = ref({
   first: 1,
   second: 0,
@@ -132,6 +187,8 @@ const transform = ref({
 const vectorColor = ref('#4747FF')
 const typing = ref('')
 const typingLetter = ['최', '고', '의', ' ', '안']
+const typingEn = ref('')
+const typingLetterEn = ['t','h','e',' ','m','o','s','t',' ', 'p','r','o','f','i','t','a','b','l','e']
 const isVisible = ref('block')
 
 function setVectorColor(scrollY) {
@@ -182,6 +239,12 @@ onMounted(() => {
       clearInterval(startTyping)
     }
   }, 500)
+  let startTypingEn = setInterval(() => {
+    typingEn.value += typingLetterEn[typingEn.value.length]
+    if (typingEn.value.length > typingLetterEn.length-1) {
+      clearInterval(startTypingEn)
+    }
+  }, 300)
 
   window.addEventListener('scroll', ($evt) => {
     const scrollY = $evt.currentTarget.scrollY
@@ -262,6 +325,9 @@ onMounted(() => {
       }
       @include mobile {
         p {
+          @include bold(20);
+        }
+        span{
           @include bold(20);
         }
       }
