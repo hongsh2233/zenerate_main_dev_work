@@ -226,9 +226,9 @@
       ]
     },
     "solution": {
-      "title": "Why Zenerate's solution special",
+      "title": "What makes Zenerate unique?",
       "contents": [
-        "제너레잇의 솔루션은 부동산 개발 초기 사업성 검토시 조건에 맞는 수백만 가지 건물 형태, 내부 구성, 상품 구성을 생성하고 실제 가격을 반영 후 평가하여 최고의 수익안을 제시합니다."
+        "Zenerate provides all possible design alternatives considering site, massing, floor height, view, and more, to maximize profits for you."
       ]
     },
     "career": {
@@ -242,7 +242,7 @@
   },
   "main": {
     "service": {
-      "title": ["차별화된 제너레잇의 AI 솔루션", "Building Design AI Solutions", "프롭핏 초기 사업성 검토 솔루션"],
+      "title": ["차별화된 제너레잇의 AI 솔루션", "Building Design AI Solutions", "Early Stage Planning Tool"],
       "types": {
         "web": "Web Solution",
         "consulting": "Consulting Service"
@@ -333,7 +333,7 @@
   "menu": {
     "ourCompany": "Our Company",
     "news": "News",
-    "service": "Service",
+    "service": "Services",
     "contact": "Contact",
     "intro": "Introduction",
     "timeline": "Timeline",
@@ -341,11 +341,50 @@
     "career": "Careers"
   },
   "about": {
-    "allPossibilities": "All Possibilities",
+    "allPossibilities": "We generate all possibilities.",
     "comment": [
-      "By converting design issues into mathematical and algorithmic problems, Zenerate finds the most optimized solution.",
-      "Zenerate disrupts real estate development industries with our AI solutions."
-    ]
+      "By converting design issues into mathematical and algorithmic problems,",
+      "Zenerate finds the most optimized, profitable solution for you.",
+      ""
+    ],
+    "mission": {
+      "title": "We believe there is a better, more profitable way to approach real estate development to improve decision-making for developers and stakeholders.",
+      "content": [
+        "디자인과 수익성의", "통합적 분석 결여",
+        "AI 기술을 활용한", "최적화 디자인",
+        "최고 수익안을", "찾는 방법의 제한",
+        "개발 수익 극대화", "최소 3% ~ 최대 25%",
+        "공간별 차등없는", "가격으로 매출 산정",
+        "데이터 분석을 통한", "정확한 대안 제공"
+      ]
+    },
+    "tech": {
+      "title": "Zenerate's AI solution examines the profitability of real estate projects",
+      "content": [
+        {
+          "caption": "Consulting Service",
+          "title": "쉽고 빠른 초기 사업성 검토",
+          "content": "대지에 적합한 다양한 빌딩 디자인 대안을 생성하여, 쉽고 빠른 사업성 검토가 가능합니다."
+        },
+        {
+          "caption": "Consulting Service",
+          "title": "수익 극대화 빌딩 디자인 생성",
+          "content": "수백만가지 건물 형태, 크기, 구성, 향, 조망 등을 고려한 수익 극대화 대안을 제공합니다."
+        },
+        {
+          "caption": "Web Solution",
+          "title": "가격 예측",
+          "content": "실거래가 데이터에 기반하여 지역, 향, 조망, 건물 유형 등을 고려한 적정 분양가를 예측합니다."
+        }
+      ]
+    },
+    "partner": {
+      "title": ["Zenerate's Partners", "",""],
+      "content": ["We have partnered with top-tier firms; real estate developers, investment firms, design firms and general contractors.", "Companies", "Investors"]
+    },
+    "timeline": {
+      "title": ["Zenerate is leading " ,"the way","in generative design"]
+    }
   },
   "newsletter": {
     "title": "Sign up to subscribe Zenerate Newsletter!",

@@ -106,14 +106,14 @@ export default [
   },
   {
     kr: ['신영그룹 컨설팅 계약 체결'],
-    en: ['Contract with ~~~'],
+    en: ['Selected for US Startup Voucher'],
     active: false,
     icon: 'emoji_events',
     year: 2021,
   },
   {
     kr: ['스타트업 해외진출 바우처 선정'],
-    en: ['Selected for Startup ~~~ Voucher'],
+    en: ['Signed Consulting Contract with ShinYoung'],
     active: false,
     icon: 'emoji_events',
     year: 2021,
