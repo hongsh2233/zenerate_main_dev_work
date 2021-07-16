@@ -29,7 +29,7 @@
   }
   @include flex($dir: row, $justify: space-between);
   .solution-title {
-    width: 216px;
+    width: 228px;
     @include bold(28);
     @include mobile {
       width: 100%;

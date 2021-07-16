@@ -3,10 +3,15 @@
     <div class="about-animation-wrapper">
       <img src="/img/zenerate.webp" alt="" />
     </div>
-    <div class="about-overview-wrapper about-wrapper" :class="{ en: locale === 'en' }">
+    <div
+      class="about-overview-wrapper about-wrapper"
+      :class="{ en: locale === 'en' }"
+    >
       <div class="overview-title about-title">
         <!-- <span class="colored" v-if="locale === 'en'">Zenerate</span> -->
-        <span class="colored" v-if="locale === 'en'">{{ $t('about.allPossibilities') }}</span>
+        <span class="colored" v-if="locale === 'en'">{{
+          $t('about.allPossibilities')
+        }}</span>
         <span class="colored" v-if="locale === 'ko'"
           >제너레잇<span>하다.</span></span
         >
@@ -137,7 +142,9 @@
     <div class="about-timeline-wrapper about-wrapper">
       <div class="timeline-title about-title">
         <span>{{ $t('about.timeline.title[0]') }}</span>
-        <span class="colored" :class="{ en: locale === 'en' }">{{ $t('about.timeline.title[1]') }}</span>
+        <span class="colored" :class="{ en: locale === 'en' }">{{
+          $t('about.timeline.title[1]')
+        }}</span>
         <span>{{ $t('about.timeline.title[2]') }}</span>
       </div>
       <div class="timeline-item-wrapper">
@@ -463,6 +470,13 @@ const filteredMember = computed(() => {
         font-weight: $bold;
         color: $main;
       }
+      &.tech-title {
+        @include desktop {
+          width: 70%;
+          margin: 0px auto;
+          margin-bottom: 40px;
+        }
+      }
     }
   }
   .about-overview-wrapper {
@@ -471,7 +485,7 @@ const filteredMember = computed(() => {
     @include desktop {
       padding: 56px 0px 140px 0px;
       width: 496px;
-      &.en{
+      &.en {
         width: 650px;
       }
     }
@@ -527,7 +541,7 @@ const filteredMember = computed(() => {
         &:last-child {
           padding-top: 24px;
         }
-        &.en{
+        &.en {
           &:last-child {
             padding-top: 0px;
           }
@@ -771,7 +785,7 @@ const filteredMember = computed(() => {
       }
       span:nth-child(2) {
         margin: 0;
-        &.en{
+        &.en {
           margin-right: 10px;
         }
       }
