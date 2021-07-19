@@ -582,10 +582,13 @@ const filteredMember = computed(() => {
       .mission-content {
         width: 216px;
         margin: 0 30px;
+        // @include flex($dir: column);
         @include medium(20);
         .mission-content-up {
+          height: 130px;
           padding-bottom: 24px;
           color: rgba($black-1, 0.4);
+          @include vertical-center;
         }
         .mission-content-arrow {
           font-size: 24px;
@@ -596,6 +599,7 @@ const filteredMember = computed(() => {
         .mission-content-down {
           // font-weight: $bold;
           padding-top: 24px;
+          @include vertical-center;
         }
         @include tablet {
           width: 160px;
@@ -603,13 +607,13 @@ const filteredMember = computed(() => {
           @include medium(16);
         }
         @include mobile {
-          width: 110px;
+          width: 120px;
           margin: 0;
           @include medium(14);
           .mission-content-up {
             padding-bottom: 30px;
-            border-bottom: solid 1px $main;
             color: rgba($black-1, 0.4);
+            
           }
           .mission-content-down {
             padding-top: 30px;
@@ -620,7 +624,7 @@ const filteredMember = computed(() => {
   }
   .about-tech-wrapper {
     .tech-content-wrapper {
-      width: 733px;
+      width: 768px;
       margin: 0 auto;
       @include tablet {
         width: 80%;
@@ -640,6 +644,7 @@ const filteredMember = computed(() => {
         img {
           width: 124px;
           margin-right: 28px;
+          object-fit: contain;
           @include tablet {
             width: 124px;
             object-fit: contain;
@@ -653,6 +658,7 @@ const filteredMember = computed(() => {
         }
         .content-block {
           text-align: left;
+          width: calc(100% - 152px);
           @include tablet {
             width: calc(100% - 148px);
           }
@@ -866,7 +872,7 @@ const filteredMember = computed(() => {
       }
       .timeline-left-wrapper {
         @include desktop {
-          padding-top: 60px;
+          padding-top: 70px;
         }
         @include tablet {
           padding-top: 80px;
@@ -878,7 +884,7 @@ const filteredMember = computed(() => {
           position: relative;
           .content {
             padding: 12px 12px;
-            margin-bottom: 44px;
+            margin-bottom: 45px;
             width: 288px;
             padding-top: 0px;
             position: relative;
