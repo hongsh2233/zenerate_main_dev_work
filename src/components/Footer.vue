@@ -21,7 +21,7 @@
           />
         </svg>
       </a>
-      <a href="https://www.facebook.com/zenerate/" class="hover-pointer"
+      <a href="https://zenerate.medium.com/" class="hover-pointer"
         ><svg
           width="20"
           height="20"
@@ -35,7 +35,7 @@
           />
         </svg>
       </a>
-      <a href="https://zenerate.medium.com/" class="hover-pointer"
+      <a href="https://www.facebook.com/zenerate/" class="hover-pointer"
         ><svg
           width="20"
           height="20"
