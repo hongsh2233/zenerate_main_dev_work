@@ -121,7 +121,7 @@ const currentComponent = computed(() => {
   @include tablet {
     height: 100%;
   }
-  @include mobile{
+  @include mobile {
     height: 680px;
   }
   .fold-item {
@@ -183,9 +183,9 @@ const currentComponent = computed(() => {
         }
       }
       .title-text {
-        writing-mode: vertical-rl;
-        text-orientation: sideways;
-        transform: rotate(180deg);
+        @include prefix(writing-mode, vertical-rl);
+        @include prefix(text-orientation, sideways);
+        @include prefix(transform, rotate(180deg));
         @include vertical-center;
         @include desktop {
           padding-top: 36px;
@@ -381,7 +381,7 @@ const currentComponent = computed(() => {
     .news {
       margin-left: 85px;
       padding-right: 48px;
-      @include desktop{
+      @include desktop {
         width: auto;
       }
       @include mobile {

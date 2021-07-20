@@ -121,7 +121,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 608px;
     }
     @include mobile {
-      height: 480px;
+      height: auto;
     }
   }
   .explanation {
@@ -181,7 +181,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: auto;
     }
     @include mobile {
-      height: 480px;
+      height: auto;
     }
   }
   .youtube {
