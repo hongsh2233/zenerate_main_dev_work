@@ -19,7 +19,11 @@
           </p>
         </div>
       </div>
-      <div class="section section-hero" data-percentage="75">
+      <div
+        class="section section-hero"
+        data-percentage="75"
+        data-centered="false"
+      >
         <div class="hero-wrapper">
           <p>COMPANY CULTURE AND VALUES</p>
           <div>

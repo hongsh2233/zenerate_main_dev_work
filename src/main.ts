@@ -17,5 +17,6 @@ import 'sweetalert2/src/sweetalert2.scss'
 import 'vue-slider-component/theme/default.css'
 import 'vue3-carousel/dist/carousel.css'
 import 'aos/dist/aos.css'
+import 'fullpage.js/dist/fullpage.min.css'
 
 createApp(App).use(Router).use(i18n).use(Store.original).mount('#app')
