@@ -418,7 +418,7 @@ const filteredMember = computed(() => {
 })
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .section-about {
   padding: 80px 0px;
   @include mobile {

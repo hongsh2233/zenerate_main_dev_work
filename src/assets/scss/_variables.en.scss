@@ -1,0 +1,23 @@
+@mixin en-mobile {
+  @media only screen and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin en-desktop {
+  @media only screen and (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+.hidden-en-desktop {
+  @include en-desktop {
+    display: none !important;
+  }
+}
+
+.hidden-en-mobile {
+  @include en-mobile {
+    display: none !important;
+  }
+}

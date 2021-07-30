@@ -140,7 +140,7 @@ console.log('NNN', nowNews)
 console.log('AAA', nowIdx)
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .news-content-wrapper {
   @include mobile {
     padding-top: 20px;

@@ -1,7 +1,7 @@
 <template>
   <div class="header-wrapper">
     <div class="header-inner">
-      <div class="header-logo hover-pointer" @click="router.push('/')">
+      <div class="header-logo hover-pointer" @click="router.push('/kr')">
         <img
           class="logo hidden-tablet hidden-mobile"
           src="/img/logo_color.png"
@@ -16,21 +16,21 @@
         <div class="navigation-main">
           <div
             class="navigation-main-item hover-pointer"
-            @click="router.push('/main/about')"
+            @click="router.push('/kr/main/about')"
             @mouseover="setMenuHovered(true)"
           >
             {{ $t('menu.ourCompany') }}
           </div>
           <div
             class="navigation-main-item hover-pointer"
-            @click="router.push('/main/news')"
+            @click="router.push('/kr/main/news')"
             @mouseover="setMenuHovered(false)"
           >
             {{ $t('menu.news') }}
           </div>
           <div
             class="navigation-main-item hover-pointer"
-            @click="router.push('/main/service')"
+            @click="router.push('/kr/main/service')"
             @mouseover="setMenuHovered(false)"
           >
             {{ $t('menu.service') }}
@@ -38,14 +38,14 @@
           <div
             class="navigation-main-item hover-pointer"
             v-if="locale != 'en'"
-            @click="router.push('/main/career')"
+            @click="router.push('/kr/main/career')"
             @mouseover="setMenuHovered(false)"
           >
             {{ $t('menu.career') }}
           </div>
           <div
             class="navigation-main-item hover-pointer"
-            @click="router.push('/main/contact')"
+            @click="router.push('/kr/main/contact')"
             @mouseover="setMenuHovered(false)"
           >
             {{ $t('menu.contact') }}
@@ -54,13 +54,13 @@
         <!-- <div class="navigation-sub" v-show="isMenuHovered">
           <div
             class="navigation-sub-item hover-pointer"
-            @click="router.push('/main/about')"
+            @click="router.push('/kr/main/about')"
           >
             {{ $t('menu.timeline') }}
           </div>
           <div
             class="navigation-sub-item hover-pointer"
-            @click="router.push('/main/team')"
+            @click="router.push('/kr/main/team')"
           >
             {{ $t('menu.team') }}
           </div>
@@ -120,7 +120,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-@import '../assets/scss/variables.scss';
+
 .header-wrapper {
   position: fixed;
   top: 0;

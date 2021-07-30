@@ -1,14 +1,13 @@
 import { defineModule } from 'direct-vuex'
 import { moduleActionContext, moduleGetterContext } from '/Store/index'
-import { RootMutationTypes, RootActionTypes } from './rootTypes'
+import { RootMutationTypes, RootActionTypes, state } from './rootTypes'
 import type { rootState, Getters } from './rootTypes'
 import ApiService from '/Services/api'
+import FullPage from '/Utils/fullpage'
 
 const rootStore = defineModule({
   namespaced: true,
-  state: (): rootState => {
-    return {}
-  },
+  state: (): rootState => state,
   getters: {},
   mutations: {},
   actions: {},

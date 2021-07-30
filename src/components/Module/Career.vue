@@ -14,7 +14,7 @@
         <span>{{ $t('module.career.contents[0]') }} </span>
       </div>
       <div class="contact-link">
-        <button @click="router.push('/main/career')">
+        <button @click="router.push('/kr/main/career')">
           {{ $t('module.career.button') }}
         </button>
         <div class="vector-wrapper">
@@ -31,7 +31,7 @@ const { locale } = useI18n()
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .module-career-inner {
   width: 100%;
   height: 100%;

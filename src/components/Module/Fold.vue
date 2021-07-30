@@ -110,7 +110,7 @@ const currentComponent = computed(() => {
 })
 </script>
 <style lang="scss">
-@import '../../assets/scss/variables.scss';
+
 .fold-inner {
   overflow: hidden;
   width: 100%;

@@ -1,3 +1,4 @@
+import FullPage from '/Utils/fullpage'
 import {
   moduleActionContext,
   rootActionContext,
@@ -7,9 +8,13 @@ import {
 
 /*------------ STATE -------------*/
 
-export type rootState = {}
+export type rootState = {
+  FullPage: FullPage
+}
 
-export const state: rootState = {}
+export const state: rootState = {
+  FullPage: new FullPage(),
+}
 
 /*------------ GETTERS -------------*/
 
@@ -17,18 +22,8 @@ export type Getters = {}
 
 /*------------ MUTATIONS -------------*/
 
-export enum RootMutationTypes {
-  LOGIN = 'LOGIN',
-  LOGOUT = 'LOGOUT',
-  SET_PROJECTS = 'SET_PROJECTS',
-  SET_USER = 'SET_USER',
-}
+export enum RootMutationTypes {}
 
 /* ----------- ACTIONS ---------------*/
 
-export enum RootActionTypes {
-  LOGIN = 'LOGIN',
-  LOGOUT = 'LOGOUT',
-  GET_USER = 'GET_USER',
-  GET_PROJECT_LIST = 'GET_PROJECT_LIST',
-}
+export enum RootActionTypes {}

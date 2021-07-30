@@ -55,7 +55,7 @@ const scrollTop = () => {
 }
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .career-list-wrapper {
   .career-list {
     @include flex($dir: column, $justify: space-between);

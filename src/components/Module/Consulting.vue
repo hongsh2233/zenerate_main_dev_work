@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
 })
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .consulting-inner {
   width: 100%;
   height: 100%;

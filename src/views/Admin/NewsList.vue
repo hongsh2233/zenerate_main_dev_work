@@ -1,7 +1,7 @@
 <template>
   <section class="section-news-list">
     <div class="news-create">
-      <button @click="router.push('/main/admin/edit')"><span>NEW</span></button>
+      <button @click="router.push('/kr/main/admin/edit')"><span>NEW</span></button>
     </div>
     <table class="news-list-wrapper">
       <tr class="news-list-header">
@@ -19,7 +19,7 @@
         <td class="news-list-column action">
           <button
             class="edit"
-            @click="router.push(`/main/admin/edit/${news.id}`)"
+            @click="router.push(`/kr/main/admin/edit/${news.id}`)"
           >
             <i class="material-icons">edit</i>
           </button>
@@ -70,7 +70,7 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+
 .section-news-list {
   width: 100%;
   padding: 56px 24px;

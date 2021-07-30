@@ -121,7 +121,7 @@ const sendEmail = async () => {
 }
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .section-main-contact {
   width: 100%;
   padding: 80px 0px;

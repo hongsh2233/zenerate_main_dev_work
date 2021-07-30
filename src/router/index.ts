@@ -14,16 +14,18 @@ import Career from '/Views/Main/Career.vue'
 // import NewsList from "/Views/Admin/NewsList.vue"
 // import NewsEdit from "/Views/Admin/NewsEdit.vue"
 
+import ENRoute from './EN'
 
 const routes: RouteRecordRaw[] = [
+  ENRoute,
   {
-    path: '/',
+    path: '/kr',
     name: 'ModuleLayout',
     component: ModuleLayout,
     children: [],
   },
   {
-    path: '/main',
+    path: '/kr/main',
     name: 'MainLayout',
     component: MainLayout,
     children: [

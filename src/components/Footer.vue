@@ -73,7 +73,7 @@
 </template>
 <script lang="ts" scoped></script>
 <style lang="scss" scoped>
-@import '../assets/scss/variables.scss';
+
 .section-footer {
   border-top: solid 1px rgba(196, 196, 196, 0.3);
   padding: 62px 0px;

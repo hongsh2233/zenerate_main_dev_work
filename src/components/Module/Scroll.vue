@@ -275,7 +275,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .module-scroll-wrapper {
   height: 4000px;
   width: 100%;

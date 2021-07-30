@@ -4,7 +4,7 @@ $black-1: #161616;
 
 $grey: #c4c4c4;
 $grey-2: #616161;
-$grey-3: #E5E5E5;
+$grey-3: #e5e5e5;
 $white: #ffffff;
 $white-2: #f8f8f8;
 
@@ -24,7 +24,9 @@ $gradient-blue: linear-gradient(180deg, #7575ff 0%, #3330ff 100%), #3330ff;
 /*--------- FONT ---------*/
 
 $bold: 700;
-$medium: 400;
+$medium: 500;
+$regular: 400;
+$semi-bold: 600;
 
 @mixin font-set($font-size, $font-weight) {
   font-size: $font-size;
@@ -32,12 +34,17 @@ $medium: 400;
   line-height: calc(#{$font-size} + 12px);
 }
 
-@mixin bold($font-size) {
-  @include font-set(#{$font-size}px, $bold);
+@mixin regular($font-size) {
+  @include font-set(#{$font-size}px, $regular);
 }
-
 @mixin medium($font-size) {
   @include font-set(#{$font-size}px, $medium);
+}
+@mixin semi-bold($font-size) {
+  @include font-set(#{$font-size}px, $semi-bold);
+}
+@mixin bold($font-size) {
+  @include font-set(#{$font-size}px, $bold);
 }
 
 /*--------- MIXINS ---------*/

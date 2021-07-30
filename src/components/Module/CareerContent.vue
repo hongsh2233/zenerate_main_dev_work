@@ -292,7 +292,7 @@ const goToApply = () => {
 console.log(props.careerId)
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .career-content {
   .image-wrapper {
     width: 100%;

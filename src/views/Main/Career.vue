@@ -26,7 +26,7 @@ const scrollTop = () => {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .section-career {
   padding: 80px 0px;
   @include desktop {

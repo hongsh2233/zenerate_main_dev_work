@@ -54,7 +54,7 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
-@import "../assets/scss/variables.scss";
+
 .layout-main {
   margin: 0px;
   width: 100%;

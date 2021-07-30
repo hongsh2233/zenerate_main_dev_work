@@ -3,7 +3,7 @@
     <div class="partnership-inner">
       <div
         class="partnership-caption caption-small hover-pointer"
-        @click="router.push('/main/contact')"
+        @click="router.push('/kr/main/contact')"
       >
         {{ $t('module.partnership.caption') }}
       </div>
@@ -27,7 +27,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .partnership-inner {
   width: 100%;
   height: 100%;

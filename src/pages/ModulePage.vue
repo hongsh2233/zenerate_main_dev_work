@@ -50,7 +50,7 @@ import Scroll from '/Components/Module/Scroll.vue'
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/variables.scss';
+
 /** layout setting */
 .module-scroll {
   width: 100%;

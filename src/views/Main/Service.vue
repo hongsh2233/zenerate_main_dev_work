@@ -55,7 +55,7 @@ const toggleServiceTab = (tab) => {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .service-container-wrapper {
   padding-top: 64px;
   .service-container {

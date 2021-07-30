@@ -1,6 +1,6 @@
 <template>
   <div class="input-select-wrapper">
-    <p>{{ $t('main.contact.form.purpose') }}</p>
+    <p>{{ props.title || $t('main.contact.form.purpose') }}</p>
     <div class="input-select-container">
       <input type="text" class="dummy" ref="dummy" />
 
@@ -12,7 +12,9 @@
           }"
           >{{
             props.selected
-              ? $t(props.selected.label)
+              ? props.skipTranslate
+                ? props.selected.label
+                : $t(props.selected.label)
               : props.placeholder || 'Select'
           }}</span
         >
@@ -28,7 +30,7 @@
             @click="onSelect(item)"
             :key="idx"
           >
-            <span>{{ $t(item.label) }}</span>
+            <span>{{ props.skipTranslate ? item.label : $t(item.label) }}</span>
           </div>
         </div>
       </transition>
@@ -37,7 +39,8 @@
 </template>
 <script lang="ts" setup>
 import { ref, watch, defineProps, defineEmit } from 'vue'
-
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const props = defineProps({
   placeholder: {
     type: String,
@@ -52,6 +55,16 @@ const props = defineProps({
   selected: {
     type: Object,
     required: false,
+  },
+  title: {
+    type: String,
+    required: false,
+  },
+  skipTranslate: {
+    type: Boolean,
+    default() {
+      return false
+    },
   },
 })
 
@@ -81,15 +94,14 @@ watch(showDropdown, (v) => {
 })
 </script>
 <style lang="scss" scoped>
-@import '../assets/scss/variables.scss';
 .input-select-wrapper {
   margin-bottom: 60px;
   width: 100%;
-  p{
+  p {
     @include medium(16);
     color: rgba($black-1, 0.4);
     margin-bottom: 12px;
-    @include mobile{
+    @include mobile {
       @include medium(14);
     }
   }
@@ -109,18 +121,19 @@ watch(showDropdown, (v) => {
     }
     .input-select {
       width: 100%;
-      padding: 5px 12px 5px;
+      padding: 0px 12px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
       span {
         @include medium(18);
-        @include mobile{
+        @include mobile {
           @include medium(14);
         }
       }
       i {
         color: rgba(196, 196, 196, 0.6);
-        font-size: 30px;
+        font-size: 32px;
       }
     }
   }
@@ -134,7 +147,7 @@ watch(showDropdown, (v) => {
       width: 100%;
       @include medium(18);
       padding: 6px 12px;
-      @include mobile{
+      @include mobile {
         @include medium(14);
       }
       &:hover {

@@ -31,7 +31,7 @@
         </p>
       </div>
       <div class="contact-link">
-        <button @click="router.push('/main/contact')">
+        <button @click="router.push('/kr/main/contact')">
           {{ $t('module.fold.contact.contents.contact.button') }}
         </button>
         <div class="vector-wrapper">

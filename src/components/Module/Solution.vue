@@ -12,7 +12,7 @@
 </template>
 <script setup></script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .solution-inner {
   width: 100%;
   height: 100%;

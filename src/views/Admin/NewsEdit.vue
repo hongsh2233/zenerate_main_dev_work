@@ -142,13 +142,13 @@ const postNews = async (id) => {
     console.log('new article')
     await ApiService.CREATE_NEWS(SerializedForm)
     Swal.fire('New article posted').then(() => {
-      router.push('/main/admin')
+      router.push('/kr/main/admin')
     })
   } else {
     console.log(SerializedForm)
     await ApiService.MODIFY_NEWS(id, SerializedForm)
     Swal.fire(`Article ${id} modified`).then(() => {
-      router.push('/main/admin')
+      router.push('/kr/main/admin')
     })
   }
 }
@@ -162,7 +162,7 @@ const openCancelModal = () => {
     showConfirmButton: true,
     showCancelButton: true,
   }).then((res) => {
-    if (res.isConfirmed) router.push('/main/admin')
+    if (res.isConfirmed) router.push('/kr/main/admin')
     else {
       // do nothing
     }
@@ -186,7 +186,7 @@ onMounted(async () => {
 })
 </script>
 <style lang="scss" scoped>
-@import "../../assets/scss/variables.scss";
+
 .section-news-edit {
   width: 100%;
   margin: 32px 0px;

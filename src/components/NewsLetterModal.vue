@@ -102,7 +102,7 @@ const submit = async () => {
 }
 </script>
 <style lang="scss" scoped>
-@import "../assets/scss/variables.scss";
+
 .newsletter-modal-wrapper {
   position: fixed;
   z-index: 1059;

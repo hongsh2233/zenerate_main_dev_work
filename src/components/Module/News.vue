@@ -3,7 +3,7 @@
     <div class="news-inner">
       <div
         class="news-caption caption-large hover-pointer"
-        @click="router.push('/main/news')"
+        @click="router.push('/kr/main/news')"
       >
         {{ $t('module.news.caption') }}
       </div>
@@ -42,7 +42,7 @@
           <Slide
             v-for="news in newsList"
             :key="news.id"
-            @click="router.push(`/main/news?q=${id}`)"
+            @click="router.push(`/kr/main/news?q=${id}`)"
           >
             <div class="news-item hover-pointer">
               <div class="item-date">
@@ -78,7 +78,7 @@ const newsList = ref([])
 const newsListSliced = computed(() => newsList.value.slice(0, 7))
 
 const toNewsPage = (id) => {
-  router.push(`/main/news?q=${id}`);
+  router.push(`/kr/main/news?q=${id}`);
 }
 
 onMounted(async () => {
@@ -87,7 +87,7 @@ onMounted(async () => {
 })
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .news-inner {
   width: 100%;
   height: 100%;

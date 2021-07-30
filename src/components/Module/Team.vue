@@ -4,7 +4,7 @@
       <div class="team-title">
         <div
           class="title-caption caption-large hover-pointer"
-          @click="router.push('/main/team')"
+          @click="router.push('/kr/main/team')"
         >
           <span>{{ $t('module.team.caption') }}</span>
         </div>
@@ -25,7 +25,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .team-inner {
   padding-top: 24px;
   width: 100%;

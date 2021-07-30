@@ -3,7 +3,7 @@
     <div class="program-inner">
       <div
         class="program-caption caption-small hover-pointer"
-        @click="router.push('/main/service')"
+        @click="router.push('/kr/main/service')"
       >
         {{ $t('module.program.caption') }}
       </div>
@@ -21,7 +21,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-@import '../../assets/scss/variables.scss';
+
 .program-inner {
   width: 100%;
   height: 100%;

@@ -17,12 +17,9 @@ export default defineConfig({
       scopeBehaviour: 'local',
     },
     preprocessorOptions: {
-      // scss: {
-      //   additionalData: `@import "${resolve(
-      //     __dirname,
-      //     'src'
-      //   )}/assets/scss/variables.scss";`,
-      // },
+      scss: {
+        additionalData: `@import "src/assets/scss/variables.scss";@import "src/assets/scss/variables.en.scss";`,
+      },
     },
   },
   resolve: {

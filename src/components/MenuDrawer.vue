@@ -76,7 +76,7 @@ const toggleDrawer = (flag) => {
 }
 </script>
 <style lang="scss" scoped>
-@import '../assets/scss/variables.scss';
+
 .section-menu {
   position: fixed;
   top: 0;
