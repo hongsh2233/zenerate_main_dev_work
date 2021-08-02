@@ -65,6 +65,10 @@ $semi-bold: 600;
   @include prefix(align-items, center);
   @include prefix(justify-content, center);
 }
+@mixin center-vertical() {
+  @include prefix(display, flex);
+  @include prefix(align-items, center);
+}
 
 @mixin flex($justify: flex-start, $dir: row, $wrap: wrap) {
   @include prefix(display, flex);

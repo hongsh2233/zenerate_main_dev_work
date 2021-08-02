@@ -25,6 +25,10 @@ onBeforeRouteUpdate(() => {
 })
 </script>
 <style lang="scss">
+.layout-en {
+  overflow-x: hidden;
+}
+
 .layout-en,
 .layout-en * {
   font-family: 'Montserrat', sans-serif !important;

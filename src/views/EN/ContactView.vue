@@ -12,14 +12,14 @@
           <p>Your Company</p>
           <input type="text" v-model="contactForm.company" />
         </div>
-      </div>
-      <div class="label-text">
-        <p>Name</p>
-        <input type="text" v-model="contactForm.name" />
-      </div>
-      <div class="label-text">
-        <p>Email Address</p>
-        <input type="text" v-model="contactForm.email" />
+        <div class="label-text">
+          <p>Name</p>
+          <input type="text" v-model="contactForm.name" />
+        </div>
+        <div class="label-text">
+          <p>Email Address</p>
+          <input type="text" v-model="contactForm.email" />
+        </div>
       </div>
       <div class="form-right">
         <SelectInput
@@ -35,10 +35,8 @@
           <textarea v-model="contactForm.message" rows="7" />
         </div>
       </div>
-      <div class="contact-send-wrapper">
-        <div class="contact-send hover-pointer" @click="sendEmail">
-          <span>Send</span>
-        </div>
+      <div class="form-send-wrapper">
+        <button class="form-send hover-pointer" @click="sendEmail">Send</button>
       </div>
     </div>
   </section>
@@ -120,6 +118,69 @@ const sendEmail = async () => {
       span {
         @include bold(40);
         color: white;
+      }
+    }
+  }
+  .contact-form-wrapper {
+    max-width: 1600px;
+    padding-top: 52px;
+    margin: 0px auto;
+    margin-bottom: 80px;
+    @include flex;
+    .form-left {
+      flex: 1;
+      margin-right: 64px;
+    }
+    .form-right {
+      flex: 1;
+    }
+    .label-text {
+      width: 100%;
+      margin-bottom: 32px;
+      p {
+        @include regular(16);
+        color: rgba($black-1, 0.4);
+        margin-bottom: 12px;
+      }
+      input {
+        width: 100%;
+        height: 48px;
+        @include border-set(1px, rgba($grey, 0.6), 6px);
+        @include center-vertical();
+        padding: 0px 12px;
+        @include regular(16);
+        color: $black-1;
+        &::placeholder {
+          color: rgba($black-1, 0.4);
+        }
+        &:focus {
+          border-color: $main;
+          border-width: 2px;
+        }
+      }
+    }
+    .label-textarea {
+      width: 100%;
+      margin-bottom: 32px;
+      p {
+        @include regular(16);
+        color: rgba($black-1, 0.4);
+        margin-bottom: 12px;
+      }
+      textarea {
+        width: 100%;
+        height: 172px;
+        @include border-set(1px, rgba($grey, 0.6), 6px);
+      }
+    }
+    .form-send-wrapper {
+      width: 100%;
+      text-align: right;
+      margin-top: 36px;
+      button {
+        width: 130px;
+        height: 40px;
+        @include border-set(1px, rgba($grey, 0.6), 6px);
       }
     }
   }

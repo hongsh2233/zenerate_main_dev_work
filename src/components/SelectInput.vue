@@ -8,7 +8,7 @@
         <span
           :class="{
             selected: props.selected,
-            placholder: !props.selected,
+            placeholder: !props.selected,
           }"
           >{{
             props.selected
@@ -95,7 +95,7 @@ watch(showDropdown, (v) => {
 </script>
 <style lang="scss" scoped>
 .input-select-wrapper {
-  margin-bottom: 60px;
+  margin-bottom: 36px;
   width: 100%;
   p {
     @include medium(16);
@@ -130,6 +130,9 @@ watch(showDropdown, (v) => {
         @include mobile {
           @include medium(14);
         }
+        &.placeholder {
+          color: rgba($black-1, 0.4);
+        }
       }
       i {
         color: rgba(196, 196, 196, 0.6);
@@ -151,8 +154,7 @@ watch(showDropdown, (v) => {
         @include medium(14);
       }
       &:hover {
-        background-color: $main;
-        color: $white;
+        color: $main;
       }
     }
   }
