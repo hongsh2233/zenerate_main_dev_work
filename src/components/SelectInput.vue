@@ -106,8 +106,8 @@ watch(showDropdown, (v) => {
     }
   }
   .input-select-container {
-    height: 43px;
-    border-radius: 8px;
+    height: 48px;
+    border-radius: 6px;
     width: calc(100% + 2px);
     border: 1px solid rgba(196, 196, 196, 0.6);
     margin-bottom: 16px;
@@ -121,6 +121,7 @@ watch(showDropdown, (v) => {
     }
     .input-select {
       width: 100%;
+      height: 100%;
       padding: 0px 12px;
       display: flex;
       align-items: center;
@@ -142,14 +143,14 @@ watch(showDropdown, (v) => {
   }
   .input-select-dropdown {
     border: solid 1px rgba(196, 196, 196, 0.6);
-    border-radius: 0px 0px 8px 8px;
+    border-radius: 0px 0px 6px 6px;
     width: calc(100% + 2px);
-    @include absolute(left -2px top 41px);
+    @include absolute(left -1px top 42px);
     background: $white;
     .input-select-dropdown-item {
       width: 100%;
       @include medium(18);
-      padding: 6px 12px;
+      padding: 8px 12px;
       @include mobile {
         @include medium(14);
       }

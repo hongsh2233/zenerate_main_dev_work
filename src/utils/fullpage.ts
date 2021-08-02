@@ -1,6 +1,8 @@
 // @ts-ignore
-import 'fullpage.js/vendors/scrolloverflow'
+import '/Libraries/fullpage/parallax/fullpage.parallax.min'
+import '/Libraries/fullpage/parallax/fullpage.parallax.min'
 import '/Libraries/fullpage/offsetSections/fullpage.offsetSections.min'
+import fullpageKeys from '/Config/fullpage'
 import fullpage from 'fullpage.js/dist/fullpage.extensions.min'
 
 const defaultOption: Partial<FullPageJsOptions> = {
@@ -10,14 +12,11 @@ const defaultOption: Partial<FullPageJsOptions> = {
   scrollOverflowReset: true,
   parallax: true,
   offsetSections: true,
+  ...fullpageKeys,
 }
 
 export default class FullPage {
-  private static readonly licenseKey = 'CE108429-34644C5A-BD3748C3-5A35CACF'
-  private _options: FullPageJsOptions & {
-    licenseKey: string
-    offsetSectionsKey: string
-  }
+  private _options: FullPageJsOptions
   private _container: string
   public _fp: FullPageJs
 
@@ -38,8 +37,6 @@ export default class FullPage {
     this._options = {
       ...defaultOption,
       ...options,
-      licenseKey: FullPage.licenseKey,
-      offsetSectionsKey: 'AC42F439-E9094621-9D793064-0A1F4D1A',
     }
     console.log(this._options)
     this._fp = fullpage(this._container, this._options)

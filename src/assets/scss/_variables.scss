@@ -103,9 +103,10 @@ $semi-bold: 600;
   $type,
   $duration: 300ms,
   $timing-function: ease,
-  $delay: 0s
+  $delay: 0s,
+  $repeat: infinite,
 ) {
-  transition: $type $duration $timing-function;
+  transition: $type $duration $timing-function $repeat;
   -moz-transition-duration: $duration;
   -webkit-transition-duration: $duration;
   -o-transition-duration: $duration;
