@@ -1,5 +1,6 @@
 // @ts-ignore
-import '/Libraries/fullpage/parallax/fullpage.parallax.min'
+import 'fullpage.js/vendors/scrolloverflow.min'
+import '/Libraries/fullpage/scrollOverflowReset/fullpage.scrollOverflowReset.min'
 import '/Libraries/fullpage/parallax/fullpage.parallax.min'
 import '/Libraries/fullpage/offsetSections/fullpage.offsetSections.min'
 import fullpageKeys from '/Config/fullpage'
