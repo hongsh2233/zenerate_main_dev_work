@@ -21,3 +21,26 @@
     display: none !important;
   }
 }
+.technology-arrow {
+  height: 100px;
+  width: 100%;
+  margin-bottom: 20px;
+  @include center-center;
+  align-items: flex-end;
+  animation: move-up-down 2s ease-in-out infinite;
+  svg {
+    height: 80px;
+  }
+}
+/*************** keyframes ***************/
+@keyframes move-up-down {
+  0% {
+    padding-bottom: 10px;
+  }
+  50% {
+    padding-bottom: 0px;
+  }
+  100% {
+    padding-bottom: 10px;
+  }
+}
