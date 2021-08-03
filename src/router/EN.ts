@@ -7,6 +7,7 @@ import ContactView from '/Views/EN/ContactView.vue'
 import LandingView from '/Views/EN/LandingView.vue'
 import PricingView from '/Views/EN/PricingView.vue'
 import ServiceView from '/Views/EN/ServiceView.vue'
+import CareerContent from '/src/components/EN/CareerContent.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -27,6 +28,13 @@ const ENRoute: RouteRecordRaw = {
       path: '/career',
       name: 'en-career',
       component: CareerView,
+      children: [],
+    },
+    {
+      path: '/career/:id',
+      name: 'en-detail',
+      component: CareerContent,
+      props: true,
     },
     {
       path: '/contact',
