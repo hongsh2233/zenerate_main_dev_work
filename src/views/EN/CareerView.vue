@@ -50,11 +50,26 @@
             share their point of view with respect to every aspect of our
             product: from design & UX to business and deep-tech.) Come join us!
           </p>
+          <div class="technology-arrow">
+            <svg
+              width="27"
+              height="83"
+              viewBox="0 0 27 83"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.999994 1L0.999996 82L26 55.3114"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
         </div>
       </div>
 
       <div
-        class="section section-content fp-auto-height fp-scrollable"
+        class="section section-content fp-auto-height"
         data-centered="true"
         data-percentage="100"
       >
@@ -62,20 +77,15 @@
           <div class="list-title">
             <p>We’re Hiring!</p>
           </div>
-          <CareerContent
-            v-if="careerId !== -1"
-            @onSelect="(v) => (careerId = v)"
-            :careerId="careerId"
-          ></CareerContent>
-          <div class="list-wrapper" v-else>
+          <div class="list-wrapper">
             <div class="list-image">
               <img src="" data-src="/img/career_img.jpg" alt="" />
             </div>
             <div class="list-items">
-              <div class="career-list" v-if="careerId === -1">
+              <div class="career-list">
                 <div class="career-item">
                   <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
-                  <div class="item-title hover-pointer" @click="careerId = 0">
+                  <div class="item-title hover-pointer" @click="[router.push(`/career/strategic-account-executive`) ]">
                     STRATEGIC ACCOUNT EXECUTIVE
                     <div class="arrow-right"></div>
                   </div>
@@ -84,7 +94,7 @@
                   <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
                   <div
                     class="item-title hover-pointer"
-                    @click=";[(careerId = 1)]"
+                    @click="[router.push(`/career/business-development-manager`) ]"
                   >
                     BUSINESS DEVELOPMENT MANAGER
                     <div class="arrow-right"></div>
@@ -94,7 +104,7 @@
                   <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
                   <div
                     class="item-title hover-pointer"
-                    @click=";[(careerId = 2)]"
+                    @click="[router.push(`/career/business-development-marketing-intern`) ]"
                   >
                     BUSINESS DEVELOPMENT & MARKETING INTERN
                     <div class="arrow-right"></div>
@@ -105,6 +115,9 @@
           </div>
         </div>
       </div>
+      <div class="section section-footer fp-auto-height">
+      <Footer></Footer>
+    </div>
     </div>
   </section>
 </template>
@@ -112,7 +125,10 @@
 import Store from '/Store/index'
 import CareerContent from '/src/components/EN/CareerContent.vue'
 import { computed, onMounted, ref } from 'vue'
-
+import { useRouter } from 'vue-router'
+const router = useRouter()
+// @ts-ignore
+import Footer from '/Components/EN/Footer.vue'
 const careerId = ref(-1)
 // console.log(careerId.value)
 const scrollTop = () => {
@@ -123,19 +139,19 @@ const fp = computed(() => Store.state.root.FullPage)
 onMounted(() => {
   fp.value.init('#fullpage', {
     scrollOverflow: true,
-    anchors: ['firstPage', 'secondPage', 'thirdPage'],
+
     // normalScrollElements: '.section-content'
   })
 })
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .section-main {
   background-image: url('/en/img/career_main.jpg');
   background-size: cover;
 
   .main-wrapper {
     // height: 100%;
-    padding-top: 100px;
+    padding-top: 350px;
     padding-left: 96px;
     padding-right: 96px;
     // font-family: Montserrat;
@@ -165,12 +181,15 @@ onMounted(() => {
       width: 545px;
     }
     .technology-arrow {
-      // box-sizing: content-box;
-      width: calc(100%);
-      position: fixed;
+      height: 100px;
+      width: 100%;
+      margin-bottom: 20px;
       margin-top: 200px;
-      @include center-center();
+      @include center-center;
+      align-items: flex-end;
+      animation: move-up-down 2s ease-in-out infinite;
       svg {
+        height: 80px;
         stroke: white;
       }
     }
@@ -183,7 +202,7 @@ onMounted(() => {
   .hero-wrapper {
     height: 750px;
     // height: calc(100% - 100px);
-    padding-top: 100px;
+    padding-top: 160px;
     padding-left: 96px;
     color: white;
     width: 1600px;
@@ -212,6 +231,19 @@ onMounted(() => {
         padding-top: 24px;
       }
     }
+    .technology-arrow {
+      height: 100px;
+      width: 100%;
+      margin-bottom: 20px;
+      margin-top: 100px;
+      @include center-center;
+      align-items: flex-end;
+      animation: move-up-down 2s ease-in-out infinite;
+      svg {
+        height: 80px;
+        stroke: white;
+      }
+    }
   }
 }
 .section-content {
@@ -219,7 +251,7 @@ onMounted(() => {
     // padding-top: 24px;
     transition: padding 0.5s ease;
     height: 100%;
-    min-height: 840px;
+    min-height: 100vh;
     padding: 24px 96px 0px 96px;
     width: 1600px;
     margin: auto;
@@ -286,10 +318,11 @@ onMounted(() => {
         }
       }
     }
-    &.active .content-list-wrapper {
-      height: 100%;
-      padding-top: 100px;
-    }
+    
   }
+  &.active  .content-list-wrapper {
+      height: 100%;
+      padding-top: 150px;
+    }
 }
 </style>

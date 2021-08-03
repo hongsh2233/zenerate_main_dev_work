@@ -1,7 +1,7 @@
 <template>
   <div class="career-content-wrapper">
     <!-- STRATEGIC ACCOUNT EXECUTIVE -->
-    <div class="career-content" v-if="props.careerId === 0">
+    <div class="career-content" v-if="$route.params.id==='strategic-account-executive'">
       <div class="career-content-title">
         <span>STRATEGIC ACCOUNT EXECUTIVE</span>
         <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
@@ -100,7 +100,7 @@
 
       <button
         class="back-button"
-        @click=";[(nowId = -1), onSelect(nowId), scrollTop()]"
+        @click=";[router.push('/career')]"
       >
         <span>BACK</span>
         <svg
@@ -120,7 +120,7 @@
       </button>
     </div>
     <!-- BUSINESS DEVELOPMENT MANAGER -->
-    <div class="career-content" v-if="props.careerId === 1">
+    <div class="career-content" v-if="$route.params.id==='business-development-manager'">
       <div class="career-content-title">
         <span>BUSINESS DEVELOPMENT MANAGER</span>
         <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
@@ -228,7 +228,7 @@
         </ul>
       </div>
 
-      <button class="back-button" @click=";[(nowId = -1), onSelect(nowId)]">
+      <button class="back-button" @click=";[router.push('/career')]">
         <span>BACK</span>
         <svg
           width="122"
@@ -247,7 +247,7 @@
       </button>
     </div>
     <!-- BUSINESS DEVELOPMENT & MARKETING INTERN -->
-    <div class="career-content" v-if="props.careerId === 2">
+    <div class="career-content" v-if="$route.params.id==='business-development-marketing-intern'">
       <div class="career-content-title">
         <span>BUSINESS DEVELOPMENT & MARKETING INTERN</span>
         <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
@@ -344,7 +344,7 @@
           <li>Send resume and cover to sjoo@zenerate.ai</li>
         </ul>
       </div>
-      <button class="back-button hover-pointer" @click=";[(nowId = -1), onSelect(nowId)]">
+      <button class="back-button hover-pointer" @click=";[router.push('/career')]">
         <a href="#firstPage"> <span>BACK</span></a>
         <svg
           width="122"
@@ -369,12 +369,14 @@
 import { ref, defineEmit, defineProps, onMounted, computed } from 'vue'
 import Store from '/Store/index'
 const fp = computed(() => Store.state.root.FullPage)
-
+import { useRouter } from 'vue-router'
+const router = useRouter()
 onMounted(() => {
-  fp.value.init('#fullpage', {
-    scrollOverflow: true,
-    anchors: ['firstPage', 'secondPage', 'thirdPage'],
-  })
+  fp.value.destroy();
+  // fp.value.init('#fullpage', {
+  //   // scrollOverflow: true,
+    
+  // })
 })
 const emit = defineEmit(['onSelect'])
 const onSelect = (value) => {
@@ -382,8 +384,9 @@ const onSelect = (value) => {
   emit('onSelect', value)
 }
 const props = defineProps({
-  careerId: {
-    type: Number,
+  id: {
+    type: String,
+    required: false,
   },
 })
 const scrollTop = () => {
@@ -399,9 +402,9 @@ const goToApply = () => {
 <style lang="scss" scoped>
 .career-content-wrapper {
   height: 100%;
-  width: 100%;
+  width: 1600px;
   margin: auto;
-  padding-bottom: 100px;
+  padding: 200px 96px 100px;
   .career-content {
     // .image-wrapper {
     //   width: 100%;
