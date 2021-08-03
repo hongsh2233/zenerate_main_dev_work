@@ -8,7 +8,6 @@
         </section>
       </transition>
     </router-view>
-    <Footer />
   </div>
 </template>
 <script lang="ts" setup>
@@ -16,7 +15,6 @@
 import Header from '/Components/EN/Header.vue'
 //@ts-ignore
 import Footer from '/Components/EN/Footer.vue'
-
 </script>
 <style lang="scss">
 .layout-en {
@@ -25,7 +23,7 @@ import Footer from '/Components/EN/Footer.vue'
 
 .layout-en,
 .layout-en * {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Roboto', sans-serif !important;
   line-height: 125% !important;
   letter-spacing: -0.015em !important;
 }

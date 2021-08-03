@@ -30,7 +30,14 @@
           </p>
         </div>
         <div class="technology-content">
-          <div class="content-item">
+          <div
+            class="content-item"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-offset="-500"
+            data-aos-duration="1000"
+            data-aos-anchor-placement="top-center"
+          >
             <div class="item-problem">
               <p>Lack of integrated design and profitability analysis</p>
             </div>
@@ -41,7 +48,14 @@
               <span> Optimal design using <strong>AI technology</strong> </span>
             </div>
           </div>
-          <div class="content-item">
+          <div
+            class="content-item"
+            data-aos="fade-up"
+            data-aos-delay="1500"
+            data-aos-offset="-500"
+            data-aos-duration="1000"
+            data-aos-anchor-placement="top-center"
+          >
             <div class="item-problem">
               <p>Limitations in finding the best ROI</p>
             </div>
@@ -54,7 +68,14 @@
               </span>
             </div>
           </div>
-          <div class="content-item">
+          <div
+            class="content-item"
+            data-aos="fade-up"
+            data-aos-delay="2500"
+            data-aos-offset="-500"
+            data-aos-duration="1000"
+            data-aos-anchor-placement="top-center"
+          >
             <div class="item-problem">
               <p>Single rental price applied to revenue projection</p>
             </div>
@@ -70,20 +91,7 @@
           </div>
         </div>
         <div class="arrow-bottom">
-          <svg
-            width="27"
-            height="83"
-            viewBox="0 0 27 83"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.999994 1L0.999996 82L26 55.3114"
-              stroke="black"
-              stroke-linecap="square"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <Arrow />
         </div>
       </div>
     </div>
@@ -118,20 +126,7 @@
           </div>
         </div>
         <div class="arrow-bottom">
-          <svg
-            width="27"
-            height="83"
-            viewBox="0 0 27 83"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.999994 1L0.999996 82L26 55.3114"
-              stroke="black"
-              stroke-linecap="square"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <Arrow />
         </div>
       </div>
     </div>
@@ -160,6 +155,8 @@ import Store from '/Store/index'
 const fullpage = computed(() => Store.state.root.FullPage)
 // @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
+// @ts-ignore
+import Arrow from '/Components/EN/Arrow.vue'
 onMounted(() => {
   fullpage.value.init('#fullpage-service', {
     // parallax: false,
@@ -179,7 +176,8 @@ onMounted(() => {
   height: 100%;
   background-image: url('/en/img/service_building.jpg');
   background-size: cover;
-  background-position: center 100px;
+  background-position: center;
+  background-repeat: no-repeat;
   .inner-hero {
     @include vertical-center;
     padding-left: 100px;
@@ -334,18 +332,6 @@ onMounted(() => {
         }
       }
     }
-  }
-}
-
-.arrow-bottom {
-  height: 100px;
-  width: 100%;
-  margin-bottom: 20px;
-  @include center-center;
-  align-items: flex-end;
-  animation: move-up-down 2s ease-in-out infinite;
-  svg {
-    height: 80px;
   }
 }
 </style>

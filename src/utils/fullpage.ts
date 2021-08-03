@@ -16,6 +16,14 @@ const defaultOption: Partial<FullPageJsOptions> = {
   ...fullpageKeys,
 }
 
+const afterLoad = (): void => {
+  document
+    .querySelectorAll('.section.active .aos-init')
+    .forEach((doc: HTMLElement) => {
+      doc.classList.add('aos-animate')
+    })
+}
+
 export default class FullPage {
   private _options: FullPageJsOptions
   private _container: string
@@ -38,6 +46,7 @@ export default class FullPage {
     this._options = {
       ...defaultOption,
       ...options,
+      afterLoad,
     }
     console.log(this._options)
     this._fp = fullpage(this._container, this._options)

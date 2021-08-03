@@ -1,5 +1,5 @@
 <template>
-  <div class="header-wrapper">
+  <div class="header-wrapper" id="header">
     <div class="header-inner">
       <div
         class="header-logo hover-pointer"

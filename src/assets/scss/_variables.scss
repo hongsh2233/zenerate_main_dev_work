@@ -27,6 +27,7 @@ $bold: 700;
 $medium: 500;
 $regular: 400;
 $semi-bold: 600;
+$light: 300;
 
 @mixin font-set($font-size, $font-weight) {
   font-size: $font-size;
@@ -104,7 +105,7 @@ $semi-bold: 600;
   $duration: 300ms,
   $timing-function: ease,
   $delay: 0s,
-  $repeat: infinite,
+  $repeat: infinite
 ) {
   transition: $type $duration $timing-function $repeat;
   -moz-transition-duration: $duration;

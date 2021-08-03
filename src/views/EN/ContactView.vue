@@ -190,7 +190,9 @@ const sendEmail = async () => {
 }
 
 onMounted(() => {
-  fullpage.value.destroy()
+  if (fullpage.value) {
+    fullpage.value.destroy()
+  }
   const route = useRoute()
   if (route.query && route.query.from === 'demo') {
     contactForm.purpose.value = {
