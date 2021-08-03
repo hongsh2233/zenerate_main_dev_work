@@ -6,7 +6,7 @@
           <p class="main-title">Career</p>
           <div class="main-sub-title">
             <span>Your future with</span>
-            <img src="" data-src="/img/logo.png" alt="" />
+            <img src="" data-src="/img/logo.webp" alt="" />
           </div>
           <p class="main-content">
             ​Join Zenerate as we innovate architectural planning and improve
@@ -38,7 +38,7 @@
           <p class="hero-title">COMPANY CULTURE AND VALUES</p>
           <div class="hero-sub-title">
             <span>Your life with</span>
-            <img src="" data-src="/img/logo.png" alt="" />
+            <img src="" data-src="/img/logo.webp" alt="" />
           </div>
           <p class="hero-content">
             At Zenerate, placeholder (our unique group of professionals come
@@ -79,13 +79,18 @@
           </div>
           <div class="list-wrapper">
             <div class="list-image">
-              <img src="" data-src="/img/career_img.jpg" alt="" />
+              <img src="" data-src='/en/img/career_content.webp' alt="" />
             </div>
             <div class="list-items">
               <div class="career-list">
                 <div class="career-item">
                   <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
-                  <div class="item-title hover-pointer" @click="[router.push(`/career/strategic-account-executive`) ]">
+                  <div
+                    class="item-title hover-pointer"
+                    @click="
+                      ;[router.push(`/career/strategic-account-executive`)]
+                    "
+                  >
                     STRATEGIC ACCOUNT EXECUTIVE
                     <div class="arrow-right"></div>
                   </div>
@@ -94,7 +99,9 @@
                   <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
                   <div
                     class="item-title hover-pointer"
-                    @click="[router.push(`/career/business-development-manager`) ]"
+                    @click="
+                      ;[router.push(`/career/business-development-manager`)]
+                    "
                   >
                     BUSINESS DEVELOPMENT MANAGER
                     <div class="arrow-right"></div>
@@ -104,7 +111,13 @@
                   <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
                   <div
                     class="item-title hover-pointer"
-                    @click="[router.push(`/career/business-development-marketing-intern`) ]"
+                    @click="
+                      ;[
+                        router.push(
+                          `/career/business-development-marketing-intern`
+                        ),
+                      ]
+                    "
                   >
                     BUSINESS DEVELOPMENT & MARKETING INTERN
                     <div class="arrow-right"></div>
@@ -116,8 +129,8 @@
         </div>
       </div>
       <div class="section section-footer fp-auto-height">
-      <Footer></Footer>
-    </div>
+        <Footer></Footer>
+      </div>
     </div>
   </section>
 </template>
@@ -146,8 +159,19 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .section-main {
-  background-image: url('/en/img/career_main.jpg');
+  background-image: url('/en/img/career_main.webp');
   background-size: cover;
+
+  &::before {
+    content: '';
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000;
+  }
 
   .main-wrapper {
     // height: 100%;
@@ -196,9 +220,18 @@ onMounted(() => {
   }
 }
 .section-hero {
-  background-image: url('/en/img/career_hero.jpg');
+  background-image: url('/en/img/career_hero.webp');
   background-size: cover;
-
+  &::before {
+    content: '';
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000;
+  }
   .hero-wrapper {
     height: 750px;
     // height: calc(100% - 100px);
@@ -318,11 +351,10 @@ onMounted(() => {
         }
       }
     }
-    
   }
-  &.active  .content-list-wrapper {
-      height: 100%;
-      padding-top: 150px;
-    }
+  &.active .content-list-wrapper {
+    height: 100%;
+    padding-top: 150px;
+  }
 }
 </style>
