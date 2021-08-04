@@ -62,13 +62,18 @@
         </div>
       </div>
     </div>
+    <div class="section section-footer fp-auto-height">
+      <Footer />
+    </div>
   </section>
 </template>
 <script lang="ts" setup>
 import { onMounted, computed } from 'vue'
 import Store from '/Store/index'
-
 import { useRouter } from 'vue-router'
+
+// @ts-ignore
+import Footer from '/Components/EN/Footer.vue'
 
 const fullpage = computed(() => Store.state.root.FullPage)
 const router = useRouter()

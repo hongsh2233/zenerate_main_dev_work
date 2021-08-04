@@ -76,6 +76,9 @@
         </button>
       </div>
     </div>
+    <div class="section section-footer fp-auto-height">
+      <Footer />
+    </div>
   </section>
 </template>
 <script lang="ts" setup>
@@ -84,6 +87,8 @@ import Store from '/Store/index'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import { useRoute } from 'vue-router'
+// @ts-ignore
+import Footer from '/Components/EN/Footer.vue'
 
 const fullpage = computed(() => Store.state.root.FullPage)
 

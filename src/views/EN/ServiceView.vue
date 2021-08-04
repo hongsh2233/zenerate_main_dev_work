@@ -141,7 +141,19 @@
           <div class="why-image image-penpoint"></div>
           <div class="why-image image-laptop"></div>
         </div>
-        <div class="why-content-wrapper">CONTENTS...</div>
+        <div class="why-content-wrapper">
+          <div class="why-content">
+            <img data-src="/en/img/service_why.png" src="" alt="" />
+            <div class="why-content-text">
+              <div class="text-title">USC Village Residential Project</div>
+              <div class="text-content">
+                Read to learn how Zenerate CEO Bongjai Shin collaborated with
+                the USC housing team to transform and streamline the
+                architectural design process.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="section section-footer fp-auto-height">
@@ -329,6 +341,32 @@ onMounted(() => {
         p {
           color: $white;
           @include semi-bold(24);
+        }
+      }
+    }
+    .why-content-wrapper{
+      margin: auto;
+      .why-content{
+        @include flex($justify: center);
+        // padding-top: 60px;
+        width: 1600px;
+        margin: auto;
+        img{
+          height: 300px;
+          margin-right: 100px;
+        }
+        .why-content-text{
+          @include vertical-center;
+          .text-title{
+              @include bold(24);
+              text-align: center;
+              padding-bottom: 30px;
+          }
+          .text-content{
+              @include bold(24);
+              text-align: center;
+              width: 648px;
+          }
         }
       }
     }
