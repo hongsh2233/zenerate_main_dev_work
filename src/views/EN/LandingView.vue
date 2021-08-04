@@ -52,7 +52,66 @@
       </div>
     </div>
     <div class="section section-instant-search">
-      
+      <div class="section-inner inner-instant-search">
+        <div class="instant-search-image">
+          <!-- <img src="/en/img/landing_instant_map1.png" alt="" /> -->
+          <img src="/en/img/landing_instant_map2.png" alt="" />
+        </div>
+        <div class="instant-search-contents">
+          <div class="content-heading">
+            <p>Searching areas for your next building development project?</p>
+          </div>
+          <div class="content-phrase">
+            <p>
+              Use <strong>Instant Search</strong> for a site feasibility report
+              generated within seconds:
+            </p>
+            <p>1. Type in your site address</p>
+            <p>2. Click on a site</p>
+            <button @click="router.push('/contact')">LEARN MORE</button>
+          </div>
+        </div>
+        <div class="arrow-bottom">
+          <Arrow></Arrow>
+        </div>
+      </div>
+    </div>
+    <div class="section section-market-insight">
+      <div class="section-inner inner-market-insight">
+        <div class="market-insight-image">
+          <img src="/en/img/landing_market_insight.png" alt="" />
+        </div>
+        <div class="market-insight-contents">
+          <div class="content-heading">
+            <p>We help you quickly assess your site feasibility</p>
+          </div>
+          <div class="content-phrase">
+            <p><strong>Market Insights & Map Layers</strong></p>
+            <p>Customize your map layers to view</p>
+            <p>planning, geospatial and development data</p>
+            <p>and select the best development site for your project.</p>
+            <p>Click on a site for diverse market insights</p>
+            <p>about the location of interest along with financial data.</p>
+            <button @click="router.push('/contact')">Learn more</button>
+          </div>
+        </div>
+        <div class="arrow-bottom">
+          <Arrow></Arrow>
+        </div>
+      </div>
+      <div class="market-insight-background"></div>
+    </div>
+    <div class="section section-generation">
+      <div class="section-inner inner-generation"></div>
+    </div>
+    <div class="section section-compare">
+      <div class="section-inner inner-compare"></div>
+    </div>
+    <div class="section section-addtional">
+      <div class="section-inner inner-additional"></div>
+    </div>
+    <div class="section section-partners">
+      <div class="section-inner inner-partners"></div>
     </div>
     <div class="section section-footer fp-auto-height">
       <Footer />
@@ -65,7 +124,8 @@ import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Footer from '/Components/EN/Footer.vue'
 // @ts-ignore
 import Arrow from '/Components/EN/Arrow.vue'
-
+import { useRouter } from 'vue-router'
+const router = useRouter()
 import Store from '/Store/index'
 const fullpage = computed(() => Store.state.root.FullPage)
 onMounted(() => {
@@ -181,6 +241,129 @@ onBeforeUnmount(() => {
     margin-bottom: 120px;
     justify-content: flex-end;
     padding-right: 20px;
+  }
+}
+.section-instant-search {
+  .inner-instant-search {
+    position: relative;
+    .instant-search-image {
+      position: absolute;
+      background-image: url('/en/img/landing_instant_map1.png');
+      background-size: cover;
+      background-position: center;
+      height: calc(100% - 250px);
+      width: 750px;
+      bottom: 0px;
+      img {
+        position: absolute;
+        width: 450px;
+        transform: translateY(10%) translateX(27%);
+      }
+    }
+    .instant-search-contents {
+      flex: 1;
+      margin-left: auto;
+      @include vertical-center;
+      align-items: flex-end;
+      // text-align: right;
+      width: 421px;
+      .content-heading {
+        p {
+          @include bold(24);
+        }
+        margin-bottom: 40px;
+      }
+      .content-phrase {
+        @include regular(18);
+        p {
+          margin-bottom: 40px;
+          &:last-child {
+            margin-bottom: 48px;
+          }
+        }
+        button {
+          background-color: $main;
+          color: white;
+          @include regular(18);
+          width: 200px;
+          padding: 12px 20px;
+          border-radius: 5px;
+        }
+      }
+    }
+    .arrow-bottom {
+      margin-bottom: 120px;
+      justify-content: flex-end;
+      padding-right: 20px;
+    }
+  }
+}
+.section-market-insight {
+  // position: relative;
+  .market-insight-background {
+    background-image: url('/en/img/landing_map.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include absolute(left 0 top 0);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+  }
+  .inner-market-insight {
+    z-index: 1;
+    // position: relative;
+    padding-top: 200px;
+    .market-insight-image {
+      position: absolute;
+      right: 0px;
+      img {
+        width: 750px;
+      }
+    }
+    .market-insight-contents {
+      flex: 1;
+      margin-right: auto;
+      @include vertical-center;
+      align-items: flex-end;
+      // text-align: right;
+      width: 421px;
+      .content-heading {
+        p {
+          @include bold(24);
+        }
+        margin-bottom: 40px;
+      }
+      .content-phrase {
+        @include regular(18);
+        p {
+          margin-bottom: 10px;
+          &:nth-child(1) {
+            margin-bottom: 48px;
+          }
+          &:nth-child(4) {
+            margin-bottom: 48px;
+          }
+          &:nth-child(6) {
+            margin-bottom: 48px;
+          }
+        }
+        button {
+          background-color: white;
+          border: $main 1px solid;
+          color: $main;
+          @include regular(15);
+          width: 130px;
+          padding: 12px 20px;
+          border-radius: 5px;
+        }
+      }
+    }
+    .arrow-bottom {
+      margin-bottom: 120px;
+      justify-content: flex-end;
+      padding-right: 20px;
+    }
   }
 }
 </style>

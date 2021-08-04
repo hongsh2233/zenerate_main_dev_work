@@ -345,15 +345,18 @@ onMounted(() => {
       }
     }
     .why-content-wrapper{
+      margin: auto;
       .why-content{
-        @include flex($justify: space-around);
-        padding-top: 45px;
+        @include flex($justify: center);
+        // padding-top: 60px;
         width: 1600px;
         margin: auto;
         img{
-          height: 206px;
+          height: 300px;
+          margin-right: 100px;
         }
         .why-content-text{
+          @include vertical-center;
           .text-title{
               @include bold(24);
               text-align: center;
