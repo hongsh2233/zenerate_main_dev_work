@@ -1,64 +1,60 @@
 <template>
-  <section class="section-pricing">
-    <div class="pricing-wrapper">
-      <div class="pricing-title">Pricing</div>
-      <div class="pricing-subtitle">Subscription Plans</div>
-      <div class="pricing-content-wrapper">
-        <div class="pricing-content">
-          <h1 class="content-title">BASIC</h1>
-          <div class="content-pricing">Coming Soon</div>
-          <ul class="content-detail">
-            <li>
-              Parcel, Zoning code, Demographic data with comparing
-              functionbetween different area.
-            </li>
-            <li>
-              2D map layers including zoning, building height, opportunity zone
-              etc.
-            </li>
-            <li>
-              AI Engine providing 1000+ alternatives Architectural Drawing with
-              detailed design & 3D modeling for feasibility study for each
-              development project
-            </li>
-            <li>
-              CAD File / solution analysis excel file (including project
-              summary, rent analysis, cash flow analysis) download.
-            </li>
-          </ul>
-        </div>
-        <div class="pricing-content">
-          <h1 class="content-title">PREMIUM</h1>
-          <div class="content-pricing">Coming Soon</div>
-          <ul class="content-detail">
-            <li>Everything in basic plan</li>
-            <li>
-              Zenerate™ AI Engine providing 50,000+ alternatives Architectural
-              Drawing with detailed design & 3D modeling for feasibility study
-              for each development project
-            </li>
-            <li>Parking and Retail layout</li>
-            <li>
-              Zenerate™ AI Engine predicting rent price based on data for
-              residential units.
-            </li>
-          </ul>
-        </div>
-        <div class="pricing-content">
-          <h1 class="content-title">CONSULTING</h1>
-          <div
-            class="content-pricing hover-pointer"
-            @click="router.push(`/contact`)"
-          >
-            Contact Us
+  <section id="fullpage-pricing">
+    <div class="section section-pricing">
+      <div class="section-inner inner-pricing">
+        <div class="pricing-wrapper">
+          <div class="pricing-title">PRICING</div>
+          <div class="pricing-subtitle">Subscription Plans</div>
+          <div class="pricing-content-wrapper">
+            <div class="pricing-content">
+              <p class="content-title">BASIC</p>
+              <ul class="content-detail">
+                <li>
+                  Parcel, Zoning code, Demographic data with comparing function
+                  between different area.
+                </li>
+                <li>
+                  2D map layers including zoning, building height, opportunity
+                  zone etc.
+                </li>
+                <li>
+                  AI Engine providing 1000+ alternatives Architectural Drawing
+                  with detailed design & 3D modeling for feasibility study for
+                  each development project
+                </li>
+                <li>
+                  CAD File / solution analysis excel file (including project
+                  summary, rent analysis, cash flow analysis) download.
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-content">
+              <p class="content-title">PREMIUM</p>
+              <ul class="content-detail">
+                <li>Everything in basic plan</li>
+                <li>
+                  Zenerate™ AI Engine providing 50,000+ alternatives
+                  Architectural Drawing with detailed design & 3D modeling for
+                  feasibility study for each development project
+                </li>
+                <li>Parking and Retail layout</li>
+                <li>
+                  Zenerate™ AI Engine predicting rent price based on data for
+                  residential units.
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-content">
+              <p class="content-title">CONSULTING</p>
+              <ul class="content-detail">
+                <li>Everything in premium plan</li>
+                <li>
+                  Customize service depending on customer's requirement
+                  including design details, construction limitation, cash flow
+                </li>
+              </ul>
+            </div>
           </div>
-          <ul class="content-detail">
-            <li>Everything in premium plan</li>
-            <li>
-              Customize service depending on customer's requirement including
-              design details, construction limitation, cash flow
-            </li>
-          </ul>
         </div>
       </div>
     </div>
@@ -83,56 +79,49 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .section-pricing {
-  background-image: url('/en/img/pricing_placeholder.webp');
+  .inner-pricing {
+    height: fit-content;
+  }
   background-size: cover;
   background-position: center;
-
-  height: 100vh;
-  min-height: 100%;
-  &::before {
-    content: '';
-    opacity: 0.6;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: #ffffff;
-  }
+  height: content-fit;
   .pricing-wrapper {
     height: 100%;
-    width: 1600px;
+    width: 100%;
     position: relative;
-    margin: auto;
-    padding: 100px 96px;
+    margin: 40px auto;
+    padding: 0px 60px;
     .pricing-title {
-      padding-top: 70px;
+      padding-top: 48px;
       text-align: center;
-      @include bold(16);
+      @include medium(18);
       line-height: 40px;
-      color: $main;
+      color: $cr-main-blue;
     }
     .pricing-subtitle {
       text-align: center;
-      @include bold(26);
+      @include medium(26);
       line-height: 40px;
     }
     .pricing-content-wrapper {
-      padding-top: 48px;
-      @include flex($justify: space-around);
+      padding-top: 24px;
+      height: calc(100% - 128px - 60px);
+      @include flex($justify: space-between);
       .pricing-content {
-        width: 420px;
-        height: 500px;
-        box-shadow: 1px 1px 10px 0px rgba($black-1, 0.2);
+        width: 300px;
+        min-height: 600px;
+        height: 100%;
+        padding: 20px 10px;
+        overflow-y: scroll;
+        @include elevation-2;
         border-radius: 20px;
         background-color: white;
-        &:hover {
-          box-shadow: 0 0 0 3px $main;
-        }
         .content-title {
           text-align: center;
-          @include bold(18);
-          margin: 24px 0;
+          @include bold(16);
+          line-height: 40px;
+          color: $cr-main-blue;
+          margin-bottom: 24px;
         }
         .content-pricing {
           text-align: center;
@@ -141,12 +130,13 @@ onMounted(() => {
           @include bold(32);
         }
         .content-detail {
-          padding: 0px 30px;
+          padding: 0px 8px 0px 24px;
+          margin: auto 0px;
           li {
-            text-align: center;
-            padding: 20px 0px;
-            @include medium(14);
-            border-bottom: 1px solid rgba($black-1, 0.2);
+            list-style: disc;
+            text-align: left;
+            margin-bottom: 20px;
+            @include regular(14);
           }
         }
       }

@@ -1,1 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.section-inner {
+  margin: 0px auto;
+  height: 100vh;
+  padding-top: 100px;
+  @include flex($dir: column);
+  @include relative;
+  @include container;
+}
+
+.hidden-en-desktop {
+  @include en-desktop {
+    display: none !important;
+  }
+}
+
+.hidden-en-mobile {
+  @include en-mobile {
+    display: none !important;
+  }
+}
+.arrow-bottom {
+  z-index: 2;
+  height: 49px;
+  padding-top: 10px;
+  animation: move-up-down 2s ease-in-out infinite;
+  svg {
+    height: 39px;
+    width: 14px;
+  }
+}
+.button-1 {
+  @include button-1;
+}
+.button-2 {
+  @include button-2;
+}
+// .button-3 {
+//   @include button-3;
+// }
+
+.iScrollVerticalScrollbar {
+  width: 6px !important;
+}

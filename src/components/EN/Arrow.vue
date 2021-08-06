@@ -1,7 +1,7 @@
 <template>
   <svg
-    width="27"
-    height="83"
+    width="14"
+    height="39"
     viewBox="0 0 27 83"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -11,6 +11,7 @@
       :stroke="props.color"
       stroke-linecap="square"
       stroke-linejoin="round"
+      stroke-width="2"
     />
   </svg>
 </template>

@@ -1,29 +1,42 @@
 <template>
   <div class="section-footer">
     <div class="footer-wrapper">
-      <div class="footer-locations">
-        <div class="footer-location location-title">
-          <p class="title">Locations:</p>
+      <div class="footer-inner">
+        <div class="footer-contents-wrapper">
+          <div class="footer-locations">
+            <div class="footer-location location-title">
+              <p class="title">Locations</p>
+            </div>
+
+            <div class="footer-location location-international">
+              <div class="location-title">
+                <p class="title">International</p>
+              </div>
+              <div class="location-content">
+                <p class="content">Seoul, Olympic-ro 362, 5F</p>
+                <p class="content">Songpa-gu, Seoul</p>
+              </div>
+            </div>
+            <div class="footer-location location-headquarters">
+              <div class="location-title">
+                <p class="title">Headquarters</p>
+              </div>
+              <div class="location-content">
+                <p class="content">Los Angeles, 555 West 5th Street</p>
+                <p class="content">Los Angeles, California</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-contact">
+            <p class="contact">
+              <strong>Contacts </strong>
+            </p>
+            <p class="contact">
+              <a href="mailto:help@zenerate.ai">help@zenerate.ai</a>
+            </p>
+          </div>
         </div>
-        <div class="footer-location location-headquarters">
-          <p class="title">Headquarters</p>
-          <p class="content">Los Angeles</p>
-          <p class="content">555 West 5th Street</p>
-          <p class="content">Los Angeles, California</p>
-        </div>
-        <div class="footer-location location-international">
-          <p class="title">International</p>
-          <p class="content">Seoul</p>
-          <p class="content">Olympic-ro 362, 5F</p>
-          <p class="content">Songpa-gu, Seoul</p>
-        </div>
-      </div>
-      <div class="footer-add">
         <p class="copyright">© Zenerate, Inc. 2021. All rights reserved</p>
-        <p class="contact">
-          <strong>Contact : </strong
-          ><a href="mailto:help@zenerate.ai">help@zenerate.ai</a>
-        </p>
       </div>
     </div>
   </div>
@@ -31,37 +44,62 @@
 <script lang="ts" setup></script>
 <style lang="scss" scoped>
 .section-footer {
-  margin: 0px 24px;
-  padding-top: 20px;
-  padding-bottom: 96px;
-  border-top: solid 1px rgba($black, 0.5);
+  height: 476px;
+  padding-top: 80px;
+  padding-bottom: 32px;
+  background-color: #fafafa;
   .footer-wrapper {
-    @include flex($justify: space-between);
-    .footer-locations {
-      flex: 1;
-      @include flex;
-      .footer-location {
-        width: 180px;
-        margin-right: 60px;
+    @include container;
+    padding-top: 0 !important;
+    .footer-inner {
+      padding: 0px 60px;
+      .footer-contents-wrapper {
+        margin-bottom: 80px;
+        @include flex;
+        .footer-locations {
+          width: 700px;
+          .footer-location {
+            margin-right: 60px;
+            @include flex;
+            &:last-child p.title {
+              margin-bottom: 0;
+            }
+          }
+          .footer-add {
+            width: 400px;
+          }
+          p.title {
+            @include bold(16);
+            width: 100px;
+            margin-right: 100px;
+            margin-bottom: 72px;
+            color: $cr-text-grey;
+          }
+          p.content {
+            @include regular(16);
+            color: $cr-fields-description;
+          }
+        }
+        .footer-contact {
+          flex: 1;
+          p {
+            @include bold(16);
+            line-height: 24px;
+            margin-bottom: 24px;
+            color: $cr-text-grey;
+          }
+          a {
+            @include regular(16);
+            line-height: 24px;
+            color: $cr-fields-description;
+          }
+        }
       }
-      .footer-add {
-        width: 400px;
-      }
-      p.title {
-        @include bold(15);
-        margin-bottom: 24px;
-      }
-      p.content {
-        @include regular(15);
-        margin-bottom: 4px;
-      }
-    }
-    .footer-add {
-      text-align: right;
-      p,
-      a {
-        @include regular(15);
-        margin-bottom: 4px;
+      .copyright {
+        width: 100%;
+        text-align: center;
+        @include regular(16);
+        color: rgba($cr-fields-description, 0.8);
       }
     }
   }

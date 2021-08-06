@@ -3,7 +3,6 @@
     <p>{{ props.title || $t('main.contact.form.purpose') }}</p>
     <div class="input-select-container">
       <input type="text" class="dummy" ref="dummy" />
-
       <div class="input-select hover-pointer" @click="toggleDropDown()">
         <span
           :class="{
@@ -34,6 +33,9 @@
           </div>
         </div>
       </transition>
+      <div class="input-select-error" :class="{ active: isInvalid }">
+        Please Select!
+      </div>
     </div>
   </div>
 </template>
@@ -69,20 +71,19 @@ const props = defineProps({
 })
 
 const emit = defineEmit(['onSelect'])
+const isInvalid = ref(false)
 
 const onSelect = (value) => {
-  console.log(value)
   emit('onSelect', value)
   toggleDropDown(false)
 }
 
 const showDropdown = ref(false)
 const toggleDropDown = (flag) => {
-  if (flag != null) {
-    showDropdown.value = flag
-  } else {
-    showDropdown.value = !showDropdown.value
-  }
+  showDropdown.value = flag == null ? !showDropdown.value : flag
+  if (!showDropdown.value) {
+    if (!props.selected) isInvalid.value = true
+  } else isInvalid.value = false
 }
 
 const dummy = ref<HTMLInputElement>(null)
@@ -95,18 +96,18 @@ watch(showDropdown, (v) => {
 </script>
 <style lang="scss" scoped>
 .input-select-wrapper {
-  margin-bottom: 36px;
+  margin-bottom: 40px;
   width: 100%;
   p {
-    @include medium(16);
-    color: rgba($black-1, 0.4);
-    margin-bottom: 12px;
+    @include regular(16);
+    color: rgba($cr-text-grey, 1);
+    margin-bottom: 8px;
     @include mobile {
       @include medium(14);
     }
   }
   .input-select-container {
-    height: 48px;
+    height: 42px;
     border-radius: 6px;
     width: calc(100% + 2px);
     border: 1px solid rgba(196, 196, 196, 0.6);
@@ -132,7 +133,7 @@ watch(showDropdown, (v) => {
           @include medium(14);
         }
         &.placeholder {
-          color: rgba($black-1, 0.4);
+          color: $bt-secondary-stroke-disabled;
         }
       }
       i {
@@ -145,18 +146,27 @@ watch(showDropdown, (v) => {
     border: solid 1px rgba(196, 196, 196, 0.6);
     border-radius: 0px 0px 6px 6px;
     width: calc(100% + 2px);
-    @include absolute(left -1px top 42px);
+    @include absolute(left -1px top 36px);
     background: $white;
     .input-select-dropdown-item {
       width: 100%;
       @include medium(18);
-      padding: 8px 12px;
+      padding: 4px 12px;
       @include mobile {
         @include medium(14);
       }
       &:hover {
         color: $main;
       }
+    }
+  }
+  .input-select-error {
+    width: 100%;
+    @include regular(12);
+    color: transparent;
+    text-align: right;
+    &.active {
+      color: #ff8686;
     }
   }
 }

@@ -2,39 +2,25 @@
   <section class="section-careers">
     <div id="fullpage">
       <div class="section section-main">
-        <div class="main-wrapper">
-          <p class="main-title">Career</p>
-          <div class="main-sub-title">
-            <span>Your future with</span>
-            <img src="" data-src="/img/logo.webp" alt="" />
-          </div>
-          <p class="main-content">
-            ​Join Zenerate as we innovate architectural planning and improve
-            living standards for your communities.
-          </p>
-          <div class="technology-arrow">
-            <svg
-              width="27"
-              height="83"
-              viewBox="0 0 27 83"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0.999994 1L0.999996 82L26 55.3114"
-                stroke-linecap="square"
-                stroke-linejoin="round"
-              />
-            </svg>
+        <div class="section-inner main-wrapper">
+          <div class="inner-main">
+            <div class="main-sub-title">
+              <span>Build your life with</span>
+              <img src="/img/logo.webp" alt="" />
+            </div>
+            <p class="main-content">
+              ​Join Zenerate as we innovate architectural planning and improve
+              living standards for your communities.
+            </p>
           </div>
         </div>
       </div>
-      <div
-        class="section section-hero fp-auto-height"
+      <!-- <div
+        class="section section-hero"
         data-centered="true"
         data-percentage="75"
       >
-        <div class="hero-wrapper">
+        <div class="section-inner hero-wrapper">
           <p class="hero-title">COMPANY CULTURE AND VALUES</p>
           <div class="hero-sub-title">
             <span>Your life with</span>
@@ -66,61 +52,56 @@
             </svg>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div
-        class="section section-content fp-auto-height"
-        data-centered="true"
-        data-percentage="100"
-      >
-        <div class="content-list-wrapper">
-          <div class="list-title">
-            <p>We’re Hiring!</p>
-          </div>
-          <div class="list-wrapper">
-            <div class="list-image">
-              <img src="" data-src='/en/img/career_content.webp' alt="" />
+      <div class="section section-content">
+        <div class="content-list-wrapper section-inner">
+          <div class="inner-content-list">
+            <div class="list-title">
+              <p>We’re Hiring!</p>
             </div>
-            <div class="list-items">
-              <div class="career-list">
-                <div class="career-item">
-                  <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
-                  <div
-                    class="item-title hover-pointer"
-                    @click="
-                      ;[router.push(`/career/strategic-account-executive`)]
-                    "
-                  >
-                    STRATEGIC ACCOUNT EXECUTIVE
-                    <div class="arrow-right"></div>
+            <div class="list-wrapper">
+              <div class="list-image">
+                <img src="/en/img/career_content.webp" alt="" />
+              </div>
+              <div class="list-items">
+                <div class="career-list">
+                  <div class="career-item">
+                    <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+                    <div
+                      class="item-title hover-pointer"
+                      @click="
+                        ;[router.push(`/career/strategic-account-executive`)]
+                      "
+                    >
+                      STRATEGIC ACCOUNT EXECUTIVE
+                    </div>
                   </div>
-                </div>
-                <div class="career-item">
-                  <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
-                  <div
-                    class="item-title hover-pointer"
-                    @click="
-                      ;[router.push(`/career/business-development-manager`)]
-                    "
-                  >
-                    BUSINESS DEVELOPMENT MANAGER
-                    <div class="arrow-right"></div>
+                  <div class="career-item">
+                    <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+                    <div
+                      class="item-title hover-pointer"
+                      @click="
+                        ;[router.push(`/career/business-development-manager`)]
+                      "
+                    >
+                      BUSINESS DEVELOPMENT MANAGER
+                    </div>
                   </div>
-                </div>
-                <div class="career-item">
-                  <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
-                  <div
-                    class="item-title hover-pointer"
-                    @click="
-                      ;[
-                        router.push(
-                          `/career/business-development-marketing-intern`
-                        ),
-                      ]
-                    "
-                  >
-                    BUSINESS DEVELOPMENT & MARKETING INTERN
-                    <div class="arrow-right"></div>
+                  <div class="career-item">
+                    <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+                    <div
+                      class="item-title hover-pointer"
+                      @click="
+                        ;[
+                          router.push(
+                            `/career/business-development-marketing-intern`
+                          ),
+                        ]
+                      "
+                    >
+                      BUSINESS DEVELOPMENT & MARKETING INTERN
+                    </div>
                   </div>
                 </div>
               </div>
@@ -150,38 +131,25 @@ const scrollTop = () => {
 const fp = computed(() => Store.state.root.FullPage)
 
 onMounted(() => {
-  fp.value.init('#fullpage', {
-    scrollOverflow: true,
-
-    // normalScrollElements: '.section-content'
-  })
+  fp.value.destroy()
 })
 </script>
 <style lang="scss" scoped>
+#fullpage {
+  overflow: hidden;
+}
 .section-main {
   background-image: url('/en/img/career_main.webp');
   background-size: cover;
-
-  &::before {
-    content: '';
-    opacity: 0.5;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: #000;
+  background-position: top;
+  .inner-main {
+    padding: 0px 60px;
   }
 
   .main-wrapper {
-    // height: 100%;
-    padding-top: 350px;
-    padding-left: 96px;
-    padding-right: 96px;
-    // font-family: Montserrat;
+    @include vertical-center;
+    height: 450px;
     color: white;
-    width: 100%;
-    max-width: 1600px;
     margin: 0 auto;
     position: relative;
     .main-title {
@@ -192,159 +160,121 @@ onMounted(() => {
     .main-sub-title {
       @include flex($dir: row);
       span {
-        @include medium(28);
+        @include regular(28);
         margin-right: 10px;
+        line-height: 50px;
       }
       img {
-        height: 36px;
+        height: 50px;
       }
     }
     .main-content {
       padding-top: 48px;
-      @include medium(18);
+      @include regular(21);
       width: 545px;
-    }
-    .technology-arrow {
-      height: 100px;
-      width: 100%;
-      margin-bottom: 20px;
-      margin-top: 200px;
-      @include center-center;
-      align-items: flex-end;
-      animation: move-up-down 2s ease-in-out infinite;
-      svg {
-        height: 80px;
-        stroke: white;
-      }
     }
   }
 }
-.section-hero {
-  background-image: url('/en/img/career_hero.webp');
-  background-size: cover;
-  &::before {
-    content: '';
-    opacity: 0.5;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: #000;
-  }
-  .hero-wrapper {
-    height: 750px;
-    // height: calc(100% - 100px);
-    padding-top: 160px;
-    padding-left: 96px;
-    color: white;
-    width: 1600px;
-    margin: auto;
-    @include vertical-center();
-    .hero-title {
-      @include bold(36);
-      font-weight: 500;
-      line-height: 40px;
-    }
-    .hero-sub-title {
-      @include flex($dir: row);
-      span {
-        @include medium(28);
-        margin-right: 10px;
-      }
-      img {
-        height: 36px;
-      }
-    }
-    .hero-content {
-      padding-top: 48px;
-      @include medium(18);
-      width: 545px;
-      &:last-child {
-        padding-top: 24px;
-      }
-    }
-    .technology-arrow {
-      height: 100px;
-      width: 100%;
-      margin-bottom: 20px;
-      margin-top: 100px;
-      @include center-center;
-      align-items: flex-end;
-      animation: move-up-down 2s ease-in-out infinite;
-      svg {
-        height: 80px;
-        stroke: white;
-      }
-    }
-  }
-}
+// .section-hero {
+//   background-image: url('/en/img/career_hero.webp');
+//   background-size: cover;
+
+//   .hero-wrapper {
+//     // height: calc(100% - 100px);
+//     padding-top: 160px;
+//     color: white;
+//     margin: auto;
+//     @include vertical-center();
+//     .hero-title {
+//       @include bold(36);
+//       text-align: center;
+//       font-weight: 500;
+//       line-height: 40px;
+//     }
+//     .hero-sub-title {
+//       @include flex($dir: row);
+//       span {
+//         @include regular(28);
+//         line-height: 50px;
+//         margin-right: 10px;
+//       }
+//       img {
+//         height: 50px;
+//       }
+//     }
+//     .hero-content {
+//       padding-top: 48px;
+//       @include medium(18);
+//       width: 545px;
+//       &:last-child {
+//         padding-top: 24px;
+//       }
+//     }
+//     .technology-arrow {
+//       height: 100px;
+//       width: 100%;
+//       margin-bottom: 20px;
+//       margin-top: 100px;
+//       @include center-center;
+//       align-items: flex-end;
+//       animation: move-up-down 2s ease-in-out infinite;
+//       svg {
+//         height: 80px;
+//         stroke: white;
+//       }
+//     }
+//   }
+// }
 .section-content {
+  &.active .content-list-wrapper .list-title {
+    padding-top: 160px;
+  }
   .content-list-wrapper {
-    // padding-top: 24px;
-    transition: padding 0.5s ease;
+    padding-top: 0px;
+    margin-bottom: 72px;
     height: 100%;
-    min-height: 100vh;
-    padding: 24px 96px 0px 96px;
-    width: 1600px;
-    margin: auto;
+    .inner-content-list {
+      padding: 0px 60px;
+    }
     .list-title {
-      @include bold(40);
-      padding-bottom: 50px;
+      transition: padding 0.5s ease;
+      margin-top: 100px;
+      text-align: center;
+      @include bold(32);
+      margin-bottom: 48px;
     }
     .list-wrapper {
       @include flex($justify: space-between);
       .list-image {
+        margin: auto 0px;
+        margin-right: 80px;
         img {
-          width: 600px;
+          width: 400px;
         }
       }
       .list-items {
-        width: calc(100% - 700px);
+        flex: 1;
         .career-list {
           @include flex($dir: column, $justify: space-between);
           .career-item {
             height: 130px;
             padding-bottom: 20px;
             .item-date {
-              @include medium(12);
+              @include regular(16);
               @include vertical-center;
-              height: 40px;
-              color: rgba($black-1, 0.4);
+              line-height: 40px;
+              color: $cr-text-grey;
               padding-top: 40px;
-              margin-bottom: 16px;
             }
             .item-title {
-              @include medium(20);
+              @include medium(24);
               line-height: 40px;
-              @include tablet {
-                @include medium(18);
-              }
-              @include mobile {
-                @include medium(18);
-              }
+              // 무슨 컬러?
+              color: #161616;
+              border-bottom: solid 1px $cr-text-light-grey;
               &:hover {
-                color: $main;
-                .arrow-right {
-                  border-top-color: $main;
-                  &::after {
-                    background-color: $main;
-                  }
-                }
-              }
-              .arrow-right {
-                width: 100%;
-                height: 5px;
-                border-top: 1px solid $grey-3;
-                margin-top: 20px;
-                margin-bottom: 30px;
-                transform: rotate(180deg);
-                @include tablet {
-                  margin-top: 15px;
-                }
-                @include mobile {
-                  margin-top: 15px;
-                }
+                color: $cr-main-blue;
+                border-bottom-color: $cr-main-blue;
               }
             }
           }
@@ -352,9 +282,9 @@ onMounted(() => {
       }
     }
   }
-  &.active .content-list-wrapper {
-    height: 100%;
-    padding-top: 150px;
-  }
+  // &.active .content-list-wrapper {
+  //   height: 100%;
+  //   padding-top: 150px;
+  // }
 }
 </style>

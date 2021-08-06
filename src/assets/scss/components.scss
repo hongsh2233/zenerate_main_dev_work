@@ -120,3 +120,59 @@
 // .iScrollVerticalScrollbar {
 //   display: none;
 // }
+
+#fp-nav.fp-left {
+  left: calc((100vw - 1200px) / 2);
+}
+#fp-nav ul li {
+  width: 20px;
+  height: auto;
+  margin: 0;
+  margin-bottom: 10px;
+  @include flex($dir: column);
+  &:hover {
+  }
+  a {
+    * {
+      margin: 0 !important;
+    }
+    span {
+      position: static;
+      transition: all ease-in-out 0.5s;
+      width: 15px;
+      height: 15px;
+      background-color: white;
+      border: solid 1px $cr-progress-stroke;
+      color: transparent;
+      &:last-child {
+        display: none;
+      }
+    }
+    &:hover span {
+      width: 15px;
+      height: 15px;
+    }
+    &.active {
+      span {
+        height: 40px;
+        border-radius: 10px !important;
+        background-color: $cr-progress-fill;
+      }
+    }
+  }
+}
+#fp-nav ul li:hover a span,
+.fp-slidesNav ul li:hover a span {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+}
+
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span {
+  width: 15px;
+  height: 40px;
+  margin: 0;
+}

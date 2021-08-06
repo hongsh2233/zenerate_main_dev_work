@@ -9,10 +9,12 @@ import fullpage from 'fullpage.js/dist/fullpage.extensions.min'
 const defaultOption: Partial<FullPageJsOptions> = {
   responsiveWidth: 1280,
   responsiveHeight: 760,
-  // scrollOverflow: true,
-  scrollOverflowReset: true,
+  scrollOverflow: true,
+  // scrollOverflowReset: true,
   parallax: true,
   offsetSections: true,
+  navigation: true,
+  navigationPosition: 'left',
   ...fullpageKeys,
 }
 

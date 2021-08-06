@@ -7,7 +7,7 @@
       >
         <img src="/img/logo_color.png" alt="" class="logo" />
       </div>
-      <div class="header-navigation-wrapper hidden-en-mobile">
+      <div class="header-navigation-wrapper only-en-desktop">
         <router-link
           v-for="(route, idx) in routes"
           :key="idx"
@@ -17,7 +17,7 @@
           >{{ route.title }}
         </router-link>
       </div>
-      <div class="header-demo-wrapper hidden-en-mobile">
+      <div class="header-demo-wrapper only-en-desktop">
         <router-link
           class="demo-link"
           :to="{
@@ -30,13 +30,16 @@
         </router-link>
       </div>
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
-        <span class="material-icons">menu</span>
+        <MenuIcon @toggle="toggleDrawer" />
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { defineEmit, defineProps, ref } from 'vue'
+// @ts-ignore
+import MenuIcon from '/Components/EN/Icons/menu.vue'
+
 const props = defineProps({
   showDrawer: Boolean,
 })
@@ -79,24 +82,31 @@ const routes = [
   z-index: 1000;
   background: $white;
   @include en-desktop {
-    height: 101px;
+    height: 80px;
+  }
+  @include en-tablet {
+    height: 65px;
   }
   @include en-mobile {
-    height: 49px;
+    height: 50px;
   }
   .header-inner {
     height: 100%;
-    width: 100%;
+    margin: 0px auto;
     @include flex($justify: space-between);
-    @include en-desktop {
-      padding: 0px 40px;
-    }
-    @include en-mobile {
-      padding: 0px 28px;
-    }
+    @include container;
+    padding: 0 !important;
     .header-logo {
       margin: auto 0px;
-      width: 124px;
+      @include en-desktop {
+        width: 124px;
+      }
+      @include en-tablet {
+        width: 106px;
+      }
+      @include en-mobile {
+        width: 80px;
+      }
       .logo {
         width: 100%;
       }
@@ -105,19 +115,18 @@ const routes = [
       flex: 1;
       text-align: right;
       margin: auto 0px;
-      @include flex($justify: flex-start);
-      margin-left: 72px;
+      @include flex($justify: flex-end);
       .navigation-link {
-        margin-right: 24px;
-        @include semi-bold(16);
+        margin-left: 56px;
+        @include button-gnb;
       }
     }
     .header-demo-wrapper {
+      @include button-2;
       margin: auto 0px;
-      margin-left: 48px;
+      margin-left: 64px;
       .demo-link {
-        color: $main;
-        @include semi-bold(16);
+        @include bold(14);
       }
     }
     .header-drawer-wrapper {

@@ -47,6 +47,9 @@ $light: 300;
 @mixin bold($font-size) {
   @include font-set(#{$font-size}px, $bold);
 }
+@mixin light($font-size) {
+  @include font-set(#{$font-size}px, $light);
+}
 
 /*--------- MIXINS ---------*/
 

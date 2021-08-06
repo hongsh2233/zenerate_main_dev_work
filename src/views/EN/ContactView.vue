@@ -3,56 +3,68 @@
     <div class="contact-hero-wrapper">
       <!-- <img src="/en/img/contact_hero.jpg" alt="" /> -->
       <div class="hero-text-wrapper">
-        <span>We'd love to hear from you</span>
+        <p class="title">Contact Us</p>
+        <p class="text">We'd love to hear from you</p>
       </div>
-    </div>
-    <div class="contact-form-wrapper">
-      <div class="form-left">
-        <div class="label-text">
-          <p class="label-title">Your Company</p>
-          <input
-            type="text"
-            v-model="contactForm.company.value"
-            @blur="(v) => validation('company')"
-          />
-          <p class="label-error" v-show="contactForm.company.valid === false">
-            Please Enter!
-          </p>
+      <div class="contact-form-wrapper">
+        <div class="form-text">
+          <div class="form-left">
+            <div class="label-text">
+              <p class="label-title">Your Company</p>
+              <input
+                type="text"
+                v-model="contactForm.company.value"
+                @blur="(v) => validation('company')"
+              />
+              <p
+                class="label-error"
+                :class="{ active: contactForm.company.valid === false }"
+              >
+                Please Enter!
+              </p>
+            </div>
+            <div class="label-text">
+              <p class="label-title">Name</p>
+              <input
+                type="text"
+                v-model="contactForm.name.value"
+                @blur="(v) => validation('name')"
+              />
+              <p
+                class="label-error"
+                :class="{ active: contactForm.name.valid === false }"
+              >
+                Please Enter!
+              </p>
+            </div>
+          </div>
+          <div class="form-right">
+            <SelectInput
+              placeholder="Select"
+              :items="items"
+              title="Inqueries"
+              :skipTranslate="true"
+              :selected="contactForm.purpose.value"
+              @onSelect="
+                (v) => ((contactForm.purpose.value = v), validation('purpose'))
+              "
+            />
+            <div class="label-text">
+              <p class="label-title">Email Address</p>
+              <input
+                type="text"
+                v-model="contactForm.email.value"
+                @blur="(v) => validation('email')"
+              />
+              <p
+                class="label-error"
+                :class="{ active: contactForm.email.valid === false }"
+              >
+                Please Enter Valid Email Address!
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="label-text">
-          <p class="label-title">Name</p>
-          <input
-            type="text"
-            v-model="contactForm.name.value"
-            @blur="(v) => validation('name')"
-          />
-          <p class="label-error" v-show="contactForm.name.valid === false">
-            Please Enter!
-          </p>
-        </div>
-        <div class="label-text">
-          <p class="label-title">Email Address</p>
-          <input
-            type="text"
-            v-model="contactForm.email.value"
-            @blur="(v) => validation('email')"
-          />
-          <p class="label-error" v-show="contactForm.email.valid === false">
-            Please Enter Valid Email Address!
-          </p>
-        </div>
-      </div>
-      <div class="form-right">
-        <SelectInput
-          placeholder="Select"
-          :items="items"
-          title="Inqueries"
-          :skipTranslate="true"
-          :selected="contactForm.purpose.value"
-          @onSelect="
-            (v) => ((contactForm.purpose.value = v), validation('purpose'))
-          "
-        />
         <div class="label-textarea">
           <p class="label-title">Message</p>
           <textarea
@@ -60,20 +72,23 @@
             rows="7"
             @blur="(v) => validation('message')"
           />
-          <p class="label-error" v-show="contactForm.message.valid === false">
-            Please Enter!
+          <p
+            class="label-error"
+            :class="{ active: contactForm.message.valid === false }"
+          >
+            active Please Enter!
           </p>
         </div>
-      </div>
-      <div class="form-send-wrapper">
-        <div class="dummy" ref="dummy"></div>
-        <button
-          class="form-send hover-pointer"
-          :class="{ 'mail-sent': sendEmailStatus }"
-          @click="sendEmail"
-        >
-          {{ sendEmailStatus ? 'SENT' : 'SEND' }}
-        </button>
+        <div class="form-send-wrapper">
+          <div class="dummy" ref="dummy"></div>
+          <button
+            class="form-send hover-pointer"
+            :class="{ disabled: sendEmailStatus }"
+            @click="sendEmail"
+          >
+            {{ sendEmailStatus ? 'DONE' : 'SUBMIT' }}
+          </button>
+        </div>
       </div>
     </div>
     <div class="section section-footer fp-auto-height">
@@ -210,10 +225,10 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .section-contact {
+  @include relative;
   .contact-hero-wrapper {
     @include relative;
-    width: 100vw;
-    height: 75vh;
+    height: 555px;
     padding-top: 100px;
     background-image: url('/en/img/contact_hero.jpg');
     background-size: cover;
@@ -222,35 +237,47 @@ onMounted(() => {
       width: 100%;
     }
     .hero-text-wrapper {
-      @include absolute(bottom 48px);
-      left: max(calc((100vw - 1600px) / 2), 48px);
-      margin: 0px auto;
-      span {
-        @include bold(40);
+      @include container;
+      padding-top: 40px !important;
+      p {
         color: white;
+        &.title {
+          @include medium(36);
+        }
+        &.text {
+          @include regular(24);
+        }
       }
     }
   }
   .contact-form-wrapper {
-    width: min(1600px, calc(100vw - 96px));
     padding-top: 52px;
-    margin: 0px auto;
-    margin-bottom: 80px;
-    @include flex;
-    .form-left {
-      flex: 1;
-      margin-right: 64px;
-    }
-    .form-right {
-      flex: 1;
+    width: 840px;
+    @include absolute(top 260px);
+    height: 500px;
+    overflow-y: scroll;
+    background-color: $white;
+    @include elevation-4;
+    border-radius: 20px;
+    padding: 32px 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    .form-text {
+      @include flex;
+      .form-left {
+        flex: 1;
+        margin-right: 64px;
+      }
+      .form-right {
+        flex: 1;
+      }
     }
     .label-text {
       width: 100%;
-      margin-bottom: 32px;
-
+      margin-bottom: 16px;
       input {
         width: 100%;
-        height: 48px;
+        height: 42px;
         @include border-set(1px, rgba($grey, 0.6), 6px);
         @include center-vertical();
         padding: 0px 12px;
@@ -260,7 +287,6 @@ onMounted(() => {
           color: rgba($black-1, 0.4);
         }
         &:focus {
-          border-color: $main;
           border-width: 2px;
         }
       }
@@ -268,10 +294,9 @@ onMounted(() => {
     .label-textarea {
       width: 100%;
       margin-bottom: 32px;
-
       textarea {
         width: 100%;
-        height: 158px;
+        height: 84px;
         @include border-set(1px, rgba($grey, 0.6), 6px);
         padding: 4px 12px;
         @include regular(16);
@@ -280,7 +305,6 @@ onMounted(() => {
           color: rgba($black-1, 0.4);
         }
         &:focus {
-          border-color: $main;
           border-width: 2px;
         }
       }
@@ -289,38 +313,34 @@ onMounted(() => {
     .label-textarea {
       .label-title {
         @include regular(16);
-        color: rgba($black-1, 0.4);
-        margin-bottom: 12px;
+        color: rgba($cr-text-grey, 1);
+        margin-bottom: 8px;
       }
       .label-error {
         width: 100%;
-        margin-top: 8px;
-        @include regular(16);
-        color: $main;
+        @include regular(12);
+        color: transparent;
         text-align: right;
+        &.active {
+          color: #ff8686;
+        }
       }
     }
     .form-send-wrapper {
       width: 100%;
-      text-align: right;
-      margin-top: 36px;
+      text-align: center;
       button {
-        width: 130px;
-        height: 40px;
+        margin: 0px auto;
+        @include button-3;
         @include border-set(1px, rgba($grey, 0.6), 6px);
-        @include medium(15);
-        &:hover {
-          border-color: $main;
-          background-color: $main;
-          color: $white;
-        }
-        &.mail-sent {
-          color: $white;
-          background-color: $grey;
-          pointer-events: none;
-        }
       }
     }
+    input::placeholder {
+      color: $bt-secondary-stroke-disabled;
+    }
+  }
+  .section-footer {
+    margin-top: 280px;
   }
 }
 </style>
