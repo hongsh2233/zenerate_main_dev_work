@@ -399,9 +399,9 @@ $bt-secondary-etc: #f6f5ff;
 
 /*************** buttons ***************/
 
-@mixin button-default-1 {
-  width: 240px;
-  height: 60px;
+@mixin button-default-1($width, $height) {
+  width: $width;
+  height: $height;
   border-radius: 10px;
   background: $bt-primary-bg-gradient;
   transition: all ease-in-out 0.5s;
@@ -412,27 +412,25 @@ $bt-secondary-etc: #f6f5ff;
   @include center-center;
 }
 
-@mixin button-hover-1 {
-  @include button-default-1;
+@mixin button-hover-1($width, $height) {
+  @include button-default-1($width, $height);
   transform: scale(1.05);
   @include elevation-3;
 }
 
-@mixin button-pressed-1 {
-  @include button-hover-1;
+@mixin button-pressed-1($width, $height) {
+  @include button-hover-1($width, $height);
   @include elevation-1;
 }
 
-@mixin button-disabled-1 {
-  @include button-default-1;
+@mixin button-disabled-1($width, $height) {
+  @include button-default-1($width, $height);
   @include elevation-1;
   background: $bt-secondary-bg-disabled;
 }
 
-@mixin button-default-2 {
-  @include button-default-1;
-  width: 150px;
-  height: 50px;
+@mixin button-default-2($width, $height) {
+  @include button-default-1($width, $height);
   background: $white;
   border-radius: 0px;
   border-bottom: 1px solid $bt-primary-bg-default;
@@ -440,46 +438,40 @@ $bt-secondary-etc: #f6f5ff;
   letter-spacing: 0;
 }
 
-@mixin button-hover-2 {
-  @include button-default-2;
+@mixin button-hover-2($width, $height) {
+  @include button-default-2($width, $height);
   @include border-set(1px, $bt-primary-bg-default, 10px);
-  width: 150px;
-  height: 50px;
   @include elevation-3;
 }
 
-@mixin button-pressed-2 {
-  @include button-hover-2;
-  width: 150px;
-  height: 50px;
+@mixin button-pressed-2($width, $height) {
+  @include button-hover-2($width, $height);
   @include elevation-1;
 }
-@mixin button-disabled-2 {
-  @include button-default-2;
-  width: 150px;
-  height: 50px;
+@mixin button-disabled-2($width, $height) {
+  @include button-default-2($width, $height);
   @include border-set(1px, $bt-secondary-stroke-disabled, 10px);
   color: $bt-secondary-text-disabled;
   @include elevation-1;
 }
 
-@mixin button-default-3 {
-  @include button-default-1;
+@mixin button-default-3($width, $height) {
+  @include button-default-1($width, $height);
   background: $bt-secondary-bg-default;
 }
 
-@mixin button-hover-3 {
-  @include button-hover-1;
+@mixin button-hover-3($width, $height) {
+  @include button-hover-1($width, $height);
   background: $bt-secondary-bg-hover;
 }
 
-@mixin button-pressed-3 {
-  @include button-pressed-1;
+@mixin button-pressed-3($width, $height) {
+  @include button-pressed-1($width, $height);
   background: $bt-primary-bg-default;
 }
 
-@mixin button-disabled-3 {
-  @include button-disabled-1;
+@mixin button-disabled-3($width, $height) {
+  @include button-disabled-1($width, $height);
   background: $bt-primary-bg-default;
 }
 
@@ -505,45 +497,45 @@ $bt-secondary-etc: #f6f5ff;
   color: $cr-text-light-grey;
 }
 
-@mixin button-1 {
-  @include button-default-1;
+@mixin button-1($width: 240px, $height: 60px) {
+  @include button-default-1($width, $height);
   &:hover {
-    @include button-hover-1;
+    @include button-hover-1($width, $height);
     cursor: pointer;
   }
   &:active {
-    @include button-pressed-1;
+    @include button-pressed-1($width, $height);
   }
   &.disabled {
-    @include button-disabled-1;
+    @include button-disabled-1($width, $height);
   }
 }
 
-@mixin button-2 {
-  @include button-default-2;
+@mixin button-2($width: 150px, $height: 50px)  {
+  @include button-default-2($width, $height) ;
   &:hover {
-    @include button-hover-2;
+    @include button-hover-2($width, $height);
     cursor: pointer;
   }
   &:active {
-    @include button-pressed-2;
+    @include button-pressed-2($width, $height);
   }
   &.disabled {
-    @include button-disabled-2;
+    @include button-disabled-2($width, $height);
   }
 }
 
-@mixin button-3 {
-  @include button-default-3;
+@mixin button-3($width: 240px, $height: 60px) {
+  @include button-default-3($width, $height);
   &:hover {
-    @include button-hover-3;
+    @include button-hover-3($width, $height);
     cursor: pointer;
   }
   &:active {
-    @include button-pressed-3;
+    @include button-pressed-3($width, $height);
   }
   &.disabled {
-    @include button-disabled-3;
+    @include button-disabled-3($width, $height);
   }
 }
 

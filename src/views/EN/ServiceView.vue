@@ -38,7 +38,7 @@
               data-aos="fade-up"
               data-aos-delay="500"
               data-aos-offset="-500"
-              data-aos-duration="1000"
+              data-aos-duration="750"
               data-aos-anchor-placement="top-center"
             >
               <div class="item-problem">
@@ -58,9 +58,9 @@
             <div
               class="content-item"
               data-aos="fade-up"
-              data-aos-delay="1500"
+              data-aos-delay="1250"
               data-aos-offset="-500"
-              data-aos-duration="1000"
+              data-aos-duration="750"
               data-aos-anchor-placement="top-center"
             >
               <div class="item-problem">
@@ -78,9 +78,9 @@
             <div
               class="content-item"
               data-aos="fade-up"
-              data-aos-delay="2500"
+              data-aos-delay="2000"
               data-aos-offset="-500"
-              data-aos-duration="1000"
+              data-aos-duration="7500"
               data-aos-anchor-placement="top-center"
             >
               <div class="item-problem">

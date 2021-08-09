@@ -72,12 +72,6 @@
             rows="7"
             @blur="(v) => validation('message')"
           />
-          <p
-            class="label-error"
-            :class="{ active: contactForm.message.valid === false }"
-          >
-            active Please Enter!
-          </p>
         </div>
         <div class="form-send-wrapper">
           <div class="dummy" ref="dummy"></div>
@@ -259,7 +253,7 @@ onMounted(() => {
     background-color: $white;
     @include elevation-4;
     border-radius: 20px;
-    padding: 32px 40px;
+    padding: 32px 36px;
     left: 50%;
     transform: translateX(-50%);
     .form-text {
@@ -293,7 +287,7 @@ onMounted(() => {
     }
     .label-textarea {
       width: 100%;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       textarea {
         width: 100%;
         height: 84px;
@@ -331,7 +325,8 @@ onMounted(() => {
       text-align: center;
       button {
         margin: 0px auto;
-        @include button-3;
+        @include button-3(150px, 50px);
+
         @include border-set(1px, rgba($grey, 0.6), 6px);
       }
     }

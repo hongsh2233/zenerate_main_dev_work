@@ -7,7 +7,7 @@ import fullpageKeys from '/Config/fullpage'
 import fullpage from 'fullpage.js/dist/fullpage.extensions.min'
 
 const defaultOption: Partial<FullPageJsOptions> = {
-  responsiveWidth: 1280,
+  responsiveWidth: 1200,
   responsiveHeight: 760,
   scrollOverflow: true,
   // scrollOverflowReset: true,

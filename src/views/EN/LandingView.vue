@@ -1,6 +1,6 @@
 <template>
   <div id="fullpage">
-    <div class="section section-landing">
+    <div class="section section-landing fp-auto-height-responsive">
       <div class="section-inner inner-landing">
         <div class="landing-contents">
           <div class="content-heading">
@@ -15,9 +15,7 @@
               maximize your success
             </p>
           </div>
-          <div class="content-justyourcuriosity">
-            <p>No credit card needed. Just your curiosity.</p>
-          </div>
+          <div class="content-justyourcuriosity"></div>
           <div class="content-button">
             <button>LEARN MORE</button>
           </div>
@@ -31,61 +29,29 @@
         <img src="/en/img/about_mission_back.png" alt="" />
       </div>
     </div>
-    <div class="section section-engine">
+    <div class="section section-engine fp-auto-height-responsive">
       <div class="section-inner inner-engine">
-        <div class="engine-wrapper">
-          <div class="engine-title">
-            <p>Our Zenerate™ Engine</p>
-          </div>
-          <div class="engine-description">
-            <p>
-              Our design automation software combines AI + Human Intelligence to
-              search millions of possibilities,
-            </p>
-            <p>
-              delivering fast & easy feasibility studies and optimized
-              profitability.
-            </p>
-          </div>
-          <div class="engine-items-wrapper">
-            <div class="engine-item">
-              <div class="item-image-wrapper">
-                <img src="/en/img/landing_engine_ai.png" alt="" />
-              </div>
-              div.item-
-            </div>
-            <div class="engine-item"></div>
-            <div class="engine-item"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section section-instant-search">
-      <div class="section-inner inner-instant-search">
-        <div class="engine-image">
-          <img src="/en/img/landing_seraching_areas.png" alt="" />
-        </div>
         <div class="engine-contents">
           <div class="content-heading">
-            <p>Searching areas of your</p>
-            <p>next building development project?</p>
+            <p>Out Zenerate™ Engine</p>
           </div>
           <div class="content-instruction">
+            <p>Our design automation software combines</p>
             <p>
-              Use <span>Instant Search</span> for a site feasibility report
-              generated within seconds.
+              <span>AI + Human Intelligence</span> to search millions of
+              possibilities,
             </p>
+            <p>delivering <span>fast & easy feasibility studies</span></p>
+            <p>and <span>optimized profitability.</span></p>
           </div>
-          <div class="content-numbering">
-            <p>1. Type in your site address</p>
-            <p>2. Click on a site</p>
-          </div>
-          <div class="content-button">LEARN MORE</div>
+        </div>
+        <div class="engine-image">
+          <img src="/en/img/landing_engine.gif" alt="" />
         </div>
       </div>
     </div>
 
-    <div class="section section-market-insight">
+    <div class="section section-market-insight fp-auto-height-responsive">
       <div class="section-inner inner-market-insight">
         <div class="market-insight-wrapper">
           <div class="market-insight-contents">
@@ -118,7 +84,7 @@
         </div>
       </div>
     </div>
-    <div class="section section-generation">
+    <div class="section section-generation fp-auto-height-responsive">
       <div class="section-inner inner-generation">
         <div class="generation-contents">
           <div class="content-left">
@@ -135,7 +101,7 @@
               />
             </div>
           </div>
-          <div class="content-right">
+          <div class="content-right fp-auto-height-responsive">
             <div class="content-heading">
               <p>
                 Need to boost your project profitability and in a time crunch?
@@ -155,7 +121,7 @@
         </div>
       </div>
     </div>
-    <div class="section section-compare">
+    <div class="section section-compare fp-auto-height-responsive">
       <div class="section-inner inner-compare">
         <div class="compare-contents">
           <div class="compare-text">
@@ -175,7 +141,7 @@
         </div>
       </div>
     </div>
-    <div class="section section-partners fp-auto-height">
+    <div class="section section-partners fp-auto-height fp-auto-height-responsive">
       <div class="partners-title">
         <p>We’re excited to help you</p>
         <p>
@@ -330,15 +296,15 @@ onBeforeUnmount(() => {
     @include absolute(right 80px bottom 56px);
   }
 }
-.section-instant-search {
+.section-engine {
   .section-inner {
     padding-left: 60px;
     @include flex();
     .engine-image {
-      width: 500px;
-      height: 440px;
+      width: 460px;
+      height: 400px;
       margin: auto 0px;
-      margin-right: 100px;
+      margin-left: auto;
       @include elevation-2;
       border-radius: 6px;
       img {
@@ -499,7 +465,7 @@ onBeforeUnmount(() => {
 .section-partners {
   .section-inner {
     padding-top: 0;
-    height:auto;
+    height: auto;
   }
 
   .partners-title {
@@ -522,7 +488,7 @@ onBeforeUnmount(() => {
   .partners-text-wrapper {
     margin: 96px auto;
     .partners-text {
-      width: 550px;
+      max-width: 600px;
       margin: 0px auto;
       text-align: center;
       p {
@@ -535,6 +501,7 @@ onBeforeUnmount(() => {
     @include flex($justify: space-between);
     .partners-item {
       margin-bottom: 40px;
+      width: 200px;
       .item-logo {
         width: 200px;
         margin: 0px auto;

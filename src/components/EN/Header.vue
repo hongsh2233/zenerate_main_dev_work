@@ -95,7 +95,15 @@ const routes = [
     margin: 0px auto;
     @include flex($justify: space-between);
     @include container;
-    padding: 0 !important;
+    @include en-desktop {
+      padding: 0 !important;
+    }
+    @include en-tablet {
+      padding: 0px 10px !important;
+    }
+    @include en-mobile {
+      padding: 0px 10px !important;
+    }
     .header-logo {
       margin: auto 0px;
       @include en-desktop {

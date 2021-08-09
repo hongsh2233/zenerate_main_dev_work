@@ -40,7 +40,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, watch, defineProps, defineEmit } from 'vue'
+import { ref, watch, defineProps, defineEmit, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 const props = defineProps({
@@ -87,6 +87,12 @@ const toggleDropDown = (flag) => {
 }
 
 const dummy = ref<HTMLInputElement>(null)
+const selected = computed(() => props.selected)
+
+watch(selected, (v) => {
+  if (!v) isInvalid.value = true
+  else isInvalid.value = false
+})
 
 watch(showDropdown, (v) => {
   if (v) {

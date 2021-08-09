@@ -9,48 +9,33 @@
             <div class="pricing-content">
               <p class="content-title">BASIC</p>
               <ul class="content-detail">
-                <li>
-                  Parcel, Zoning code, Demographic data with comparing function
-                  between different area.
-                </li>
-                <li>
-                  2D map layers including zoning, building height, opportunity
-                  zone etc.
-                </li>
-                <li>
-                  AI Engine providing 1000+ alternatives Architectural Drawing
-                  with detailed design & 3D modeling for feasibility study for
-                  each development project
-                </li>
-                <li>
-                  CAD File / solution analysis excel file (including project
-                  summary, rent analysis, cash flow analysis) download.
-                </li>
+                <li>Parcel, Zoning code, Demographic data</li>
+                <li>2D map layers</li>
+                <li>AI Engine providing 1000+ design alts</li>
+                <li>CAD File / solution analysis excel file</li>
               </ul>
             </div>
             <div class="pricing-content">
               <p class="content-title">PREMIUM</p>
               <ul class="content-detail">
-                <li>Everything in basic plan</li>
-                <li>
-                  Zenerate™ AI Engine providing 50,000+ alternatives
-                  Architectural Drawing with detailed design & 3D modeling for
-                  feasibility study for each development project
-                </li>
-                <li>Parking and Retail layout</li>
-                <li>
-                  Zenerate™ AI Engine predicting rent price based on data for
-                  residential units.
-                </li>
+                <li>Parcel, Zoning code, Demographic data</li>
+                <li>2D map layers</li>
+                <li>AI Engine providing 50000+ design alts</li>
+                <li>Parking & Retail Floor Plan</li>
+                <li>Zenerate™ AI Engine predicting rent price</li>
               </ul>
             </div>
             <div class="pricing-content">
               <p class="content-title">CONSULTING</p>
               <ul class="content-detail">
-                <li>Everything in premium plan</li>
+                <li>Parcel, Zoning code, Demographic data</li>
+                <li>2D map layers</li>
+                <li>AI Engine providing 50000+ design alts</li>
+                <li>Parking & Retail Floor Plan</li>
+                <li>Zenerate™ AI Engine predicting rent price</li>
                 <li>
-                  Customize service depending on customer's requirement
-                  including design details, construction limitation, cash flow
+                  Customize everything -- design details, construction
+                  limitation, cash flow.
                 </li>
               </ul>
             </div>
