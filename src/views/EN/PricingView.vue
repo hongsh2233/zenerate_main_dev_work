@@ -7,35 +7,42 @@
           <div class="pricing-subtitle">Subscription Plans</div>
           <div class="pricing-content-wrapper">
             <div class="pricing-content">
-              <p class="content-title">BASIC</p>
+              <p class="content-title">BASIC (Online only)</p>
               <ul class="content-detail">
-                <li>Parcel, Zoning code, Demographic data</li>
-                <li>2D map layers</li>
-                <li>AI Engine providing 1000+ design alts</li>
-                <li>CAD File / solution analysis excel file</li>
+                <li>2D Map Layers</li>
+                <li>CAD Files</li>
+                <li>Solution Analysis Spreadsheets</li>
+                <li>Zenerate™ AI Engine: 1000+ Design Alternatives</li>
               </ul>
             </div>
             <div class="pricing-content">
-              <p class="content-title">PREMIUM</p>
+              <p class="content-title">ESSENTIAL (Online only)</p>
               <ul class="content-detail">
-                <li>Parcel, Zoning code, Demographic data</li>
-                <li>2D map layers</li>
-                <li>AI Engine providing 50000+ design alts</li>
-                <li>Parking & Retail Floor Plan</li>
-                <li>Zenerate™ AI Engine predicting rent price</li>
-              </ul>
-            </div>
-            <div class="pricing-content">
-              <p class="content-title">CONSULTING</p>
-              <ul class="content-detail">
-                <li>Parcel, Zoning code, Demographic data</li>
-                <li>2D map layers</li>
-                <li>AI Engine providing 50000+ design alts</li>
-                <li>Parking & Retail Floor Plan</li>
-                <li>Zenerate™ AI Engine predicting rent price</li>
+                <li>2D Map Layers</li>
+                <li>CAD Files</li>
+                <li>Solution Analysis Spreadsheets</li>
+                <li>Parking & Retail Floor Plans</li>
                 <li>
-                  Customize everything -- design details, construction
-                  limitation, cash flow.
+                  Zenerate™ AI Engine: 50,000+ Design Alternatives, Rent Price
+                  Forecasts
+                </li>
+              </ul>
+            </div>
+            <div class="pricing-content">
+              <p class="content-title">ALL ACCESS (Online + Consulting)</p>
+              <ul class="content-detail">
+                <li>2D Map Layers</li>
+                <li>CAD Files</li>
+                <li>Solution Analysis Spreadsheets</li>
+                <li>Parking & Retail Floor Plans</li>
+                <li>Parking & Commercial Floor Plans</li>
+                <li>
+                  Zenerate™ AI Engine: 50,000+ Design Alternatives, Rent Price
+                  Forecasts
+                </li>
+                <li>
+                  Fully Customizable: Design Details, Construction Constraints,
+                  Cash Flow Projections
                 </li>
               </ul>
             </div>
@@ -120,7 +127,7 @@ onMounted(() => {
           li {
             list-style: disc;
             text-align: left;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             @include regular(14);
           }
         }

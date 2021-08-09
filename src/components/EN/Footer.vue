@@ -64,20 +64,48 @@
             &:last-child p.title {
               margin-bottom: 0;
             }
-          }
-          .footer-add {
-            width: 400px;
-          }
-          p.title {
-            @include bold(16);
-            width: 100px;
-            margin-right: 100px;
-            margin-bottom: 72px;
-            color: $cr-text-grey;
-          }
-          p.content {
-            @include regular(16);
-            color: $cr-fields-description;
+            @include en-tablet {
+              margin-bottom: 32px;
+            }
+            @include en-mobile {
+              margin-bottom: 32px;
+            }
+            .footer-add {
+              width: 400px;
+            }
+            p.title {
+              @include bold(16);
+              width: 100px;
+              margin-right: 100px;
+              margin-bottom: 72px;
+              color: $cr-text-grey;
+            }
+            p.content {
+              @include regular(16);
+              color: $cr-fields-description;
+            }
+            @include en-tablet {
+              p.title {
+                margin-bottom: 12px;
+              }
+              &.location-title {
+                margin-bottom: 0;
+                p.title {
+                  margin-bottom: 8px;
+                }
+              }
+            }
+            @include en-mobile {
+              p.title {
+                margin-bottom: 12px;
+              }
+              &.location-title {
+                margin-bottom: 0;
+                p.title {
+                  margin-bottom: 8px;
+                }
+              }
+            }
           }
         }
         .footer-contact {
@@ -93,6 +121,12 @@
             line-height: 24px;
             color: $cr-fields-description;
           }
+          @include en-tablet {
+            margin-top: 24px;
+          }
+          @include en-mobile {
+            margin-top: 24px;
+          }
         }
       }
       .copyright {
@@ -102,6 +136,12 @@
         color: rgba($cr-fields-description, 0.8);
       }
     }
+  }
+  @include en-tablet {
+    height: auto;
+  }
+  @include en-mobile {
+    height: auto;
   }
 }
 </style>

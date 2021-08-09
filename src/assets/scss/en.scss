@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+.section {
+  @include en-tablet {
+    margin-bottom: 80px;
+  }
+  @include en-mobile {
+    margin-bottom: 40px;
+  }
+}
+
 .section-inner {
   margin: 0px auto;
   height: 100vh;
@@ -42,4 +51,124 @@
 
 .iScrollVerticalScrollbar {
   width: 6px !important;
+}
+
+.inner-contents {
+  @include en-desktop {
+    padding-left: 60px;
+  }
+  @include en-tablet {
+    padding-left: 0px;
+    text-align: center;
+    height: fit-content;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  @include en-mobile {
+    padding-left: 0px;
+    text-align: center;
+    height: fit-content;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+.content-heading {
+  p {
+    @include regular(32);
+    strong {
+      font-weight: $bold;
+    }
+    span {
+      color: $cr-main-blue;
+      font-weight: $bold;
+    }
+    line-height: 40px;
+  }
+  @include en-tablet {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin: 0px auto;
+    margin-bottom: 16px;
+    p {
+      font-size: 28px;
+    }
+  }
+  @include en-mobile {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 16px;
+    p {
+      font-size: 24px;
+    }
+  }
+  margin-bottom: 16px;
+}
+
+.content-text {
+  p {
+    font-weight: $regular;
+    span {
+      font-weight: $bold;
+      color: rgba($cr-main-blue, 0.8);
+    }
+  }
+  @include en-desktop {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  @include en-tablet {
+    margin: 0px auto;
+    width: 100%;
+    font-size: 22px;
+    line-height: 30px;
+  }
+  @include en-mobile {
+    margin: 0px auto;
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  margin-bottom: 40px;
+}
+
+.content-phrase {
+  color: $cr-text-light-grey;
+  p {
+    @include regular(18);
+    span {
+      font-weight: $bold;
+    }
+  }
+  @include en-tablet {
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+.content-numbering {
+  margin: 0px auto;
+  p {
+    @include regular(18);
+    color: $cr-text-grey;
+    line-height: 24px;
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.content-button {
+  @include button-1;
+  @include en-tablet {
+    margin: 0px auto;
+  }
+  @include en-mobile {
+    margin: 0px auto;
+  }
 }

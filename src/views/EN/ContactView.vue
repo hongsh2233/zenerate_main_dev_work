@@ -6,23 +6,14 @@
         <p class="title">Contact Us</p>
         <p class="text">We'd love to hear from you</p>
       </div>
-      <div class="contact-form-wrapper">
+      <div class="contact-form-wrapper" :class="{ done: sendEmailStatus }">
+        <transition name="fade">
+          <div class="contact-form-success" v-if="sendEmailStatus">
+            <p>Successfully submitted!</p>
+          </div>
+        </transition>
         <div class="form-text">
           <div class="form-left">
-            <div class="label-text">
-              <p class="label-title">Your Company</p>
-              <input
-                type="text"
-                v-model="contactForm.company.value"
-                @blur="(v) => validation('company')"
-              />
-              <p
-                class="label-error"
-                :class="{ active: contactForm.company.valid === false }"
-              >
-                Please Enter!
-              </p>
-            </div>
             <div class="label-text">
               <p class="label-title">Name</p>
               <input
@@ -33,6 +24,20 @@
               <p
                 class="label-error"
                 :class="{ active: contactForm.name.valid === false }"
+              >
+                Please Enter!
+              </p>
+            </div>
+            <div class="label-text">
+              <p class="label-title">Company</p>
+              <input
+                type="text"
+                v-model="contactForm.company.value"
+                @blur="(v) => validation('company')"
+              />
+              <p
+                class="label-error"
+                :class="{ active: contactForm.company.valid === false }"
               >
                 Please Enter!
               </p>
@@ -144,7 +149,7 @@ const items: Item[] = [
     label: 'Other',
   },
 ]
-const sendEmailStatus = ref(false)
+const sendEmailStatus = ref(true)
 
 const contactForm = reactive({
   company: {
@@ -249,13 +254,27 @@ onMounted(() => {
     width: 840px;
     @include absolute(top 260px);
     height: 500px;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: $white;
     @include elevation-4;
     border-radius: 20px;
     padding: 32px 36px;
     left: 50%;
     transform: translateX(-50%);
+    .contact-form-success {
+      @include absolute(left 0 top 0);
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      @include center-center;
+      z-index: 1000;
+      border: solid 2px $cr-main-blue;
+      border-radius: 18px;
+      p {
+        @include medium(32);
+        color: $cr-main-blue;
+      }
+    }
     .form-text {
       @include flex;
       .form-left {

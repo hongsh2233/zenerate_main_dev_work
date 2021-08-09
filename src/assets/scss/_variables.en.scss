@@ -167,7 +167,7 @@ $breakpoint-480: 480px;
     padding: 0px 10px;
   }
   @include en-mobile {
-    width: 480px;
+    width: 100%;
     padding: 0px 10px;
   }
 }
@@ -189,7 +189,7 @@ $breakpoint-480: 480px;
     padding: 0px 10px;
   }
   @include en-mobile {
-    width: 480px;
+    width: 100%;
     padding: 0px 10px;
   }
 }

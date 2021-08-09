@@ -1,15 +1,17 @@
 <template>
   <div id="fullpage-about">
-    <div class="section section-story">
+    <div class="section section-story fp-auto-height-responsive">
       <div class="section-inner inner-story">
         <div class="inner-contents">
           <div class="story-contents">
-            <p class="story-title">OUR STORY</p>
-            <div class="story-content">
+            <div class="content-heading">
+              <p class="story-title"><strong>OUR STORY</strong></p>
+            </div>
+            <div class="story-content content-text">
               <p>Zenerate is a tech company</p>
               <p>founded by Harvard and Caltech graduates.</p>
             </div>
-            <div class="story-content">
+            <div class="story-content content-text">
               <p>
                 Our primary goal is to provide profitable solutions that will
                 change traditional building designs lacking the financials. We
@@ -17,7 +19,7 @@
                 it can be applied to various building design problems.
               </p>
             </div>
-            <div class="story-content">
+            <div class="story-content content-text">
               <p>
                 Zenerate is at the forefront of disrupting real estate
                 development, seeking to improve the quality of urban
@@ -31,15 +33,17 @@
         </div>
       </div>
     </div>
-    <div class="section section-mission">
+    <div class="section section-mission fp-auto-height-responsive">
       <div class="section-inner inner-mission">
         <div class="inner-contents">
           <div class="mission-image">
             <img src="/en/img/about_mission.png" alt="" />
           </div>
           <div class="mission-contents">
-            <div class="mission-title">OUR MISSION</div>
-            <div class="mission-content">
+            <div class="content-heading">
+              <p class="mission-title"><strong>OUR MISSION</strong></p>
+            </div>
+            <div class="mission-content content-text">
               <p>
                 <strong
                   >We believe there is a faster, smarter, better way</strong
@@ -83,7 +87,6 @@ onMounted(() => {
   }
   .inner-contents {
     height: content-fit;
-    padding-left: 60px;
     margin: auto 0px;
     @include flex;
     .story-image {
@@ -94,13 +97,20 @@ onMounted(() => {
         width: 100%;
         height: 100%;
       }
+      @include en-tablet {
+        @include absolute(right 0 bottom 0);
+        opacity: 0.2;
+      }
+      @include en-mobile {
+        @include absolute(right 0 bottom 0);
+        opacity: 0.2;
+      }
     }
     .story-contents {
       flex: 1;
       margin-right: 40px;
       @include vertical-center;
       .story-title {
-        @include bold(30);
         margin-bottom: 40px;
       }
       .story-content {
@@ -108,6 +118,20 @@ onMounted(() => {
         p {
           @include light(24);
         }
+      }
+      @include en-tablet {
+        @include relative;
+        z-index: 1;
+        flex: none;
+        width: 100%;
+        margin-right: 0;
+      }
+      @include en-mobile {
+        @include relative;
+        z-index: 1;
+        flex: none;
+        width: 100%;
+        margin-right: 0;
       }
     }
   }
@@ -120,12 +144,13 @@ onMounted(() => {
 .section-mission {
   .inner-mission {
     margin: 0px auto;
-    padding-right: 100px;
+    @include en-desktop {
+      padding-right: 100px;
+    }
   }
   .inner-contents {
     height: content-fit;
     margin: auto 0px;
-    padding-left: 60px;
     @include flex;
     .mission-contents {
       flex: 1;
@@ -134,7 +159,6 @@ onMounted(() => {
       margin-left: auto;
       text-align: right;
       .mission-title {
-        @include bold(24);
         margin-bottom: 40px;
       }
       .mission-content {
@@ -145,6 +169,24 @@ onMounted(() => {
           }
         }
       }
+      @include en-tablet {
+        @include relative;
+        z-index: 1;
+        flex: none;
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+        padding-bottom: 80px;
+      }
+      @include en-mobile {
+        @include relative;
+        z-index: 1;
+        flex: none;
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+        padding-bottom: 80px;
+      }
     }
     .mission-image {
       width: 450px;
@@ -153,6 +195,17 @@ onMounted(() => {
       img {
         width: 100%;
         height: 100%;
+      }
+      @include en-tablet {
+        @include absolute(left 0 bottom 50%);
+        transform: translateY(50%);
+        opacity: 0.2;
+        margin: 0;
+      }
+      @include en-mobile {
+        @include absolute(right 0 bottom 60px);
+        opacity: 0.2;
+        margin: 0;
       }
     }
     .mission-background {

@@ -100,9 +100,11 @@ const routes = [
     }
     @include en-tablet {
       padding: 0px 10px !important;
+      width: 100%;
     }
     @include en-mobile {
       padding: 0px 10px !important;
+      width: 100%;
     }
     .header-logo {
       margin: auto 0px;

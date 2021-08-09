@@ -2,7 +2,7 @@
   <div id="fullpage">
     <div class="section section-landing fp-auto-height-responsive">
       <div class="section-inner inner-landing">
-        <div class="landing-contents">
+        <div class="inner-contents landing-contents">
           <div class="content-heading">
             <p>Introducing the only</p>
             <p><strong>AI-powered architectural design</strong> technology</p>
@@ -20,7 +20,7 @@
             <button>LEARN MORE</button>
           </div>
         </div>
-        <div class="arrow-bottom">
+        <div class="arrow-bottom only-en-desktop">
           <Arrow />
         </div>
       </div>
@@ -31,35 +31,37 @@
     </div>
     <div class="section section-engine fp-auto-height-responsive">
       <div class="section-inner inner-engine">
-        <div class="engine-contents">
-          <div class="content-heading">
-            <p>Out Zenerate™ Engine</p>
+        <div class="inner-contents">
+          <div class="engine-contents">
+            <div class="content-heading">
+              <p><strong>Our Zenerate™ Engine</strong></p>
+            </div>
+            <div class="content-text">
+              <p>Our design automation software combines</p>
+              <p>
+                <span>AI + Human Intelligence</span> to search millions of
+                possibilities,
+              </p>
+              <p>delivering <span>fast & easy feasibility studies</span></p>
+              <p>and <span>optimized profitability.</span></p>
+            </div>
           </div>
-          <div class="content-instruction">
-            <p>Our design automation software combines</p>
-            <p>
-              <span>AI + Human Intelligence</span> to search millions of
-              possibilities,
-            </p>
-            <p>delivering <span>fast & easy feasibility studies</span></p>
-            <p>and <span>optimized profitability.</span></p>
+          <div class="engine-image">
+            <img src="/en/img/landing_engine.gif" alt="" />
           </div>
-        </div>
-        <div class="engine-image">
-          <img src="/en/img/landing_engine.gif" alt="" />
         </div>
       </div>
     </div>
 
     <div class="section section-market-insight fp-auto-height-responsive">
       <div class="section-inner inner-market-insight">
-        <div class="market-insight-wrapper">
+        <div class="inner-contents market-insight-wrapper">
           <div class="market-insight-contents">
             <div class="content-heading">
-              <p>We help you quickly</p>
-              <p>assess your site feasibility</p>
+              <p><strong>We help you quickly</strong></p>
+              <p><strong>assess your site feasibility</strong></p>
             </div>
-            <div class="content-instruction">
+            <div class="content-text">
               <p><span>Market Insights & Map Layers</span></p>
             </div>
             <div class="content-numbering">
@@ -86,8 +88,8 @@
     </div>
     <div class="section section-generation fp-auto-height-responsive">
       <div class="section-inner inner-generation">
-        <div class="generation-contents">
-          <div class="content-left">
+        <div class="inner-contents generation-contents">
+          <div class="content-left only-en-desktop">
             <div class="left-img">
               <img
                 class="img-generation"
@@ -104,13 +106,16 @@
           <div class="content-right fp-auto-height-responsive">
             <div class="content-heading">
               <p>
-                Need to boost your project profitability and in a time crunch?
+                <strong
+                  >Need to boost your project profitability and in a time
+                  crunch?</strong
+                >
               </p>
             </div>
-            <div class="content-instruction">
+            <div class="content-text">
               <p>Let our AI tech <span>Zenerate™</span> do the work for you</p>
             </div>
-            <div class="content-instruction">
+            <div class="content-text">
               <p>
                 Our customers have seen revenues increase
                 <span>up to 12% on average</span>
@@ -118,20 +123,34 @@
               </p>
             </div>
           </div>
+          <div class="content-left hidden-en-desktop">
+            <div class="left-img">
+              <img
+                class="img-generation"
+                src="/en/img/landing_generation_mode.png"
+                alt=""
+              />
+              <img
+                class="img-map"
+                src="/en/img/landing_projects_in_map.png"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="section section-compare fp-auto-height-responsive">
       <div class="section-inner inner-compare">
-        <div class="compare-contents">
+        <div class="inner-contents compare-contents">
           <div class="compare-text">
-            <div class="text-heading">
-              <p>Compare & pick your best solution</p>
+            <div class="content-heading">
+              <p><strong>Compare & pick your best solution</strong></p>
             </div>
-            <div class="text-content">
+            <div class="content-text">
               <p>
-                Or go with the most optimized, profitable solution generated
-                byour powerful AI engine
+                Or go with the most optimized, profitable solution generated by
+                our powerful AI engine
               </p>
             </div>
           </div>
@@ -141,7 +160,9 @@
         </div>
       </div>
     </div>
-    <div class="section section-partners fp-auto-height fp-auto-height-responsive">
+    <div
+      class="section section-partners fp-auto-height fp-auto-height-responsive"
+    >
       <div class="partners-title">
         <p>We’re excited to help you</p>
         <p>
@@ -149,29 +170,37 @@
         </p>
       </div>
       <div class="section-inner inner-partners">
-        <div class="partners-text-wrapper">
-          <div class="partners-text">
-            <p>
-              Join developers, architects, property owners, investors, and
-              planners who trust Zenerate with their projects.
-            </p>
-          </div>
-        </div>
-        <div class="partners-list">
-          <div
-            class="partners-item"
-            v-for="(item, idx) in PartnersList"
-            :key="idx"
-          >
-            <div
-              class="item-logo"
-              :style="{
-                'background-image': `url('/logo/logo_${item.key}.png')`,
-              }"
-            ></div>
-            <div class="item-description">
-              {{ item.description }}
+        <div class="inner-contents">
+          <div class="partners-text-wrapper">
+            <div class="content-text">
+              <p>
+                Join developers, architects, property owners, investors, and
+                planners who trust Zenerate with their projects.
+              </p>
             </div>
+          </div>
+          <div class="partners-list">
+            <div
+              class="partners-item"
+              v-for="(item, idx) in PartnersList"
+              :key="idx"
+            >
+              <div
+                class="item-logo"
+                :style="{
+                  'background-image': `url('/logo/logo_${item.key}.png')`,
+                }"
+              ></div>
+              <div class="item-description">
+                {{ item.description }}
+              </div>
+            </div>
+            <div class="partners-item fake"></div>
+            <div class="partners-item fake"></div>
+            <div class="partners-item fake"></div>
+            <div class="partners-item fake"></div>
+            <div class="partners-item fake"></div>
+            <div class="partners-item fake"></div>
           </div>
         </div>
       </div>
@@ -199,38 +228,6 @@ onBeforeUnmount(() => {
 })
 </script>
 <style lang="scss" scoped>
-.content-heading {
-  p {
-    @include bold(28);
-    line-height: 40px;
-  }
-  margin-bottom: 16px;
-}
-.content-instruction {
-  @include regular(22);
-  line-height: 30px;
-  span {
-    @include bold(22);
-    color: rgba($cr-main-blue, 0.8);
-  }
-  margin-bottom: 40px;
-}
-.content-numbering {
-  margin-bottom: 48px;
-  p {
-    @include regular(18);
-    color: $cr-text-grey;
-    line-height: 24px;
-    margin-bottom: 24px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-.content-button {
-  @include button-1;
-}
-
 .section-landing {
   .landing-background {
     background-image: url('/en/img/BG.png');
@@ -255,40 +252,32 @@ onBeforeUnmount(() => {
   .landing-contents {
     @include relative;
     z-index: 2;
-    padding: 0px 60px;
     @include vertical-center;
     flex: 1;
     .content-heading {
-      p {
-        @include regular(32);
-        strong {
-          font-weight: $bold;
-          font-size: 34px;
-        }
-        span {
-          color: $main;
-          font-weight: $bold;
-        }
-      }
       margin-bottom: 64px;
     }
     .content-phrase {
       color: $cr-text-light-grey;
-      p {
-        @include regular(18);
-        span {
-          @include bold(18);
-        }
+      margin-bottom: 24px;
+      @include en-tablet {
+        max-width: 60%;
+        margin: 0px auto;
+        margin-bottom: 40px;
+      }
+      @include en-mobile {
+        max-width: 60%;
+        margin: 0px auto;
+        margin-bottom: 40px;
       }
     }
-    .content-justyourcuriosity {
-      color: $cr-text-light-grey;
-      @include regular(18);
-      margin-bottom: 24px;
-    }
+
     .content-button {
       button {
         @include button-1;
+      }
+      @include en-tablet {
+        margin: 0px auto;
       }
     }
   }
@@ -298,24 +287,51 @@ onBeforeUnmount(() => {
 }
 .section-engine {
   .section-inner {
-    padding-left: 60px;
-    @include flex();
-    .engine-image {
-      width: 460px;
-      height: 400px;
+    .inner-contents {
+      @include flex();
+      width: 100%;
       margin: auto 0px;
-      margin-left: auto;
-      @include elevation-2;
-      border-radius: 6px;
-      img {
-        width: 100%;
-        height: 100%;
+      .engine-image {
+        width: 460px;
+        height: 400px;
+        margin: auto 0px;
+        margin-left: auto;
+        @include elevation-2;
+        border-radius: 6px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        @include en-tablet {
+          width: 400px;
+          height: 320px;
+          margin-left: 0;
+          margin: 0px auto;
+        }
+        @include en-mobile {
+          width: 400px;
+          height: 320px;
+          margin-left: 0;
+          margin: 0px auto;
+        }
       }
-    }
-    .engine-contents {
-      flex: 1;
-      @include vertical-center;
-      text-align: left;
+      .engine-contents {
+        flex: 1;
+        @include vertical-center;
+        text-align: left;
+        @include en-tablet {
+          width: 100%;
+          text-align: center;
+          flex: none;
+          margin-bottom: 56px;
+        }
+        @include en-mobile {
+          width: 100%;
+          text-align: center;
+          flex: none;
+          margin-bottom: 56px;
+        }
+      }
     }
   }
 }
@@ -329,7 +345,6 @@ onBeforeUnmount(() => {
     @include flex($justify: space-between);
   }
   .inner-market-insight {
-    padding-left: 80px;
     z-index: 1;
     @include flex;
     .market-insight-contents {
@@ -340,14 +355,30 @@ onBeforeUnmount(() => {
       align-items: flex-start;
       // text-align: right;
       width: 380px;
+      @include en-tablet {
+        // margin-right: 0;
+        width: 100%;
+        margin-bottom: 80px;
+      }
+      @include en-mobile {
+        // margin-right: 0;
+        width: 100%;
+        margin-bottom: 80px;
+      }
       .content-heading {
-        p {
-          @include bold(24);
+        margin-bottom: 24px;
+      }
+      .content-text {
+        @include en-tablet {
+          // margin-right: 0;
+          margin-bottom: 40px;
         }
-        margin-bottom: 40px;
+        @include en-mobile {
+          // margin-right: 0;
+          margin-bottom: 40px;
+        }
       }
       .content-phrase {
-        @include regular(18);
         p {
           margin-bottom: 10px;
           &:nth-child(1) {
@@ -360,14 +391,13 @@ onBeforeUnmount(() => {
             margin-bottom: 48px;
           }
         }
-        button {
-          background-color: white;
-          border: $main 1px solid;
-          color: $main;
-          @include regular(15);
-          width: 130px;
-          padding: 12px 20px;
-          border-radius: 5px;
+      }
+      button {
+        @include en-tablet {
+          margin: 0px auto;
+        }
+        @include en-mobile {
+          margin: 0px auto;
         }
       }
     }
@@ -380,6 +410,9 @@ onBeforeUnmount(() => {
         width: 100%;
         height: 100%;
       }
+      @include en-tablet {
+        margin: auto;
+      }
     }
   }
 }
@@ -387,7 +420,7 @@ onBeforeUnmount(() => {
   .generation-contents {
     width: 100%;
     height: 100%;
-    padding-left: 60px;
+    margin: auto 0px;
     @include flex;
     .content-left {
       margin: auto 0px;
@@ -411,17 +444,28 @@ onBeforeUnmount(() => {
           height: 100%;
         }
       }
+      @include en-tablet {
+        margin: 0px auto;
+      }
+      @include en-mobile {
+        width: 100%;
+      }
     }
     .content-right {
       margin: auto 0px;
       width: 488px;
       @include vertical-center;
-      text-align: left;
       .content-heading {
         margin-bottom: 36px;
       }
-      .content-instruction {
+      .content-text {
         margin-bottom: 24px;
+      }
+      @include en-tablet {
+        width: 100%;
+      }
+      @include en-mobile {
+        width: 100%;
       }
     }
   }
@@ -429,14 +473,22 @@ onBeforeUnmount(() => {
 
 .section-compare {
   .compare-contents {
-    flex: 1;
     @include flex;
-    padding-left: 60px;
+    margin: auto 0px;
     .compare-image {
+      max-width: 465px;
       @include vertical-center;
       img {
-        max-width: 465px;
         @include elevation-2;
+        width: 100%;
+      }
+      @include en-tablet {
+        margin: 0px auto;
+        max-width: 90%;
+      }
+      @include en-mobile {
+        margin: 0px auto;
+        max-width: 90%;
       }
     }
     .compare-text {
@@ -453,10 +505,17 @@ onBeforeUnmount(() => {
           @include regular(22);
         }
       }
-      .arrow-bottom {
-        margin-top: 96px;
-        margin-bottom: 0px;
-        justify-content: flex-end;
+      @include en-tablet {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 48px;
+      }
+      @include en-mobile {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 48px;
       }
     }
   }
@@ -469,30 +528,46 @@ onBeforeUnmount(() => {
   }
 
   .partners-title {
-    height: 240px;
     margin-top: 100px;
-    @include vertical-center;
-    background-image: url('/en/img/service_ourservices.png');
-    background-size: cover;
-    background-origin: center center;
-    background-position: center;
-    background-repeat: no-repeat;
+    @include relative;
     text-align: center;
+    @include vertical-center;
+    height: 260px;
+    &::before {
+      @include absolute(left 0 top 0 right 0 bottom 0);
+      background-image: url('/en/img/service_ourservices.png');
+      background-size: cover;
+      background-origin: center center;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+      content: '';
+    }
     p {
       @include medium(32);
+      position: relative;
       span {
         color: #006dff;
+      }
+    }
+    @include en-tablet {
+      p {
+        font-size: 28px;
+      }
+    }
+    @include en-mobile {
+      p {
+        font-size: 28px;
       }
     }
   }
   .partners-text-wrapper {
     margin: 96px auto;
-    .partners-text {
+    .content-text {
       max-width: 600px;
       margin: 0px auto;
       text-align: center;
       p {
-        @include regular(22);
         color: $cr-text-dark-grey;
       }
     }
@@ -502,6 +577,7 @@ onBeforeUnmount(() => {
     .partners-item {
       margin-bottom: 40px;
       width: 200px;
+      max-width: 100%;
       .item-logo {
         width: 200px;
         margin: 0px auto;
@@ -514,7 +590,16 @@ onBeforeUnmount(() => {
       .item-description {
         width: 100%;
         text-align: center;
-        @include regular(12);
+        @include regular(14);
+      }
+      &.fake {
+        height: 0px;
+        margin: 0;
+        padding: 0;
+      }
+      @include en-mobile {
+        margin: 0px auto;
+        margin-bottom: 32px;
       }
     }
   }
