@@ -1,7 +1,9 @@
 <template>
   <div class="layout-en">
     <Header @toggleDrawer="toggleDrawer" :showDrawer="showDrawer"></Header>
-    <Drawer v-if="showDrawer" @close="toggleDrawer" />
+    <transition name="fade">
+      <Drawer v-if="showDrawer" @close="toggleDrawer" />
+    </transition>
     <router-view v-slot="{ Component }">
       <transition name="fade">
         <section class="section-en">

@@ -30,7 +30,7 @@
         </router-link>
       </div>
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
-        <MenuIcon @toggle="toggleDrawer" />
+          <MenuIcon @toggle="toggleDrawer" />
       </div>
     </div>
   </div>
@@ -142,6 +142,8 @@ const routes = [
       padding: 12px;
       padding-right: 0px;
       height: 100%;
+      position: absolute;
+      right: 20px;
       @include center-center;
       span {
         @include medium(28);
