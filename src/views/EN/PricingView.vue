@@ -4,28 +4,15 @@
       <div class="section-inner inner-pricing">
         <div class="pricing-wrapper">
           <div class="pricing-title">PRICING</div>
-          <div
-            class="pricing-subtitle"
-            data-aos="fade-up"
-            data-aos-duration="500"
-            data-aos-offset="-500"
-          >
-            Subscription Plans
-          </div>
-          <div
-            class="pricing-content-wrapper"
-            data-aos="fade-up"
-            data-aos-delay="500"
-            data-aos-offset="-500"
-            data-aos-duration="500"
-          >
+          <div class="pricing-subtitle">Subscription Plans</div>
+          <div class="pricing-content-wrapper">
             <div class="pricing-content">
               <div class="content-title">
                 <p>BASIC</p>
                 <p>(Online only)</p>
               </div>
               <ul class="content-detail">
-                <li>Zenerate™ AI Engine: 1000+ Design Alternatives</li>
+                <li>Instant Feasibility Alternatives</li>
                 <li>2D Map Layers</li>
                 <li>CAD Files</li>
                 <li>Solution Analysis Spreadsheets</li>

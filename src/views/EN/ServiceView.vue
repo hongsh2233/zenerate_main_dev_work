@@ -24,7 +24,14 @@
     </div> -->
     <div class="section section-technology fp-auto-height-responsive">
       <div class="section-inner">
-        <div class="inner-contents inner-technology">
+        <div
+          class="inner-contents inner-technology"
+          data-aos="fade-up"
+          data-aos-delay="0"
+          data-aos-offset="-1500"
+          data-aos-duration="300"
+          data-aos-anchor-placement="top-center"
+        >
           <div class="technology-header">
             <p class="header-title">OUR SERVICES</p>
             <p class="header-content">
@@ -33,14 +40,7 @@
             </p>
           </div>
           <div class="technology-content">
-            <div
-              class="content-item"
-              data-aos="fade-up"
-              data-aos-delay="0"
-              data-aos-offset="-1500"
-              data-aos-duration="500"
-              data-aos-anchor-placement="top-center"
-            >
+            <div class="content-item">
               <div class="item-problem">
                 <span
                   >Lack of integrated design and profitability analysis</span
@@ -55,14 +55,7 @@
                 </span>
               </div>
             </div>
-            <div
-              class="content-item"
-              data-aos="fade-up"
-              data-aos-delay="500"
-              data-aos-offset="-1500"
-              data-aos-duration="500"
-              data-aos-anchor-placement="top-center"
-            >
+            <div class="content-item">
               <div class="item-problem">
                 <span
                   >Hard to maximize returns due to limited time and inputs</span
@@ -78,14 +71,7 @@
                 </span>
               </div>
             </div>
-            <div
-              class="content-item"
-              data-aos="fade-up"
-              data-aos-delay="1000"
-              data-aos-offset="-1500"
-              data-aos-duration="500"
-              data-aos-anchor-placement="top-center"
-            >
+            <div class="content-item">
               <div class="item-problem">
                 <span
                   >Lack of pricing diversity applied to revenue projection</span
@@ -109,40 +95,38 @@
       <div class="section-inner inner-services">
         <div class="service-content-wrapper">
           <div
-            class="service-web service-content"
             data-aos="fade-up"
-            data-aos-duration="500"
-            data-aos-anchor-placement="bottom-bottom"
+            data-aos-delay="0"
+            data-aos-offset="-1500"
+            data-aos-duration="300"
+            data-aos-anchor-placement="top-center"
+            class="service-content-wrapper"
           >
-            <p class="content-title">WEB PLATFORM</p>
-            <div class="content-image">
-              <img src="/en/img/service_web.png" alt="" />
+            <div class="service-web service-content">
+              <p class="content-title">WEB PLATFORM</p>
+              <div class="content-image">
+                <img src="/en/img/service_web.png" alt="" />
+              </div>
+              <div class="content-explanation">
+                <p class="exp-title">Fast Web Platform for Everyday Use</p>
+                <p class="exp-content">
+                  Just type in your site address and get instant site
+                  feasibility results.
+                </p>
+              </div>
             </div>
-            <div class="content-explanation">
-              <p class="exp-title">Fast Web Platform for Everyday Use</p>
-              <p class="exp-content">
-                Just type in your site address and get instant site feasibility
-                results.
-              </p>
-            </div>
-          </div>
-          <div
-            class="service-consulting service-content"
-            data-aos="fade-up"
-            data-aos-delay="500"
-            data-aos-duration="500"
-            data-aos-anchor-placement="center-bottom"
-          >
-            <p class="content-title">CONSULTING SERVICE</p>
-            <div class="content-image">
-              <img src="/en/img/service_consulting.png" alt="" />
-            </div>
-            <div class="content-explanation">
-              <p class="exp-title">Customized, Deep, Complex Service</p>
-              <p class="exp-content">
-                Zenerate partners with major companies to improve profitability
-                of early-stage real estate development projects.
-              </p>
+            <div class="service-consulting service-content">
+              <p class="content-title">CONSULTING SERVICE</p>
+              <div class="content-image">
+                <img src="/en/img/service_consulting.png" alt="" />
+              </div>
+              <div class="content-explanation">
+                <p class="exp-title">Customized, Deep, Complex Service</p>
+                <p class="exp-content">
+                  Zenerate partners with major companies to improve
+                  profitability of early-stage real estate development projects.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -378,7 +362,6 @@ onMounted(() => {
             max-width: 100%;
             height: 100%;
           }
-        
         }
         .content-explanation {
           .exp-title {

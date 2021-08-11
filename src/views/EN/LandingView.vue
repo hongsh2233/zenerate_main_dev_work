@@ -2,39 +2,27 @@
   <div id="fullpage">
     <div class="section section-landing fp-auto-height-responsive">
       <div class="section-inner inner-landing">
-        <div class="inner-contents landing-contents">
+        <div
+          class="inner-contents landing-contents"
+          data-aos="fade-up"
+          data-aos-offset="-1500"
+          data-aos-duration="300"
+        >
           <div></div>
-          <div
-            class="content-heading"
-            data-aos="fade-up"
-            data-aos-offset="-1500"
-            data-aos-duration="500"
-          >
+          <div class="content-heading">
             <p>Introducing the only</p>
             <p><strong>AI-powered architectural design</strong> technology</p>
             <p>that boosts real estate development profitability</p>
             <p>from <span>3% to 26%</span></p>
           </div>
-          <div
-            class="content-phrase"
-            data-aos="fade-up"
-            data-aos-delay="500"
-            data-aos-offset="-1500"
-            data-aos-duration="500"
-          >
+          <div class="content-phrase">
             <p>
               <span>Zenerate™</span> all possibilities of building design to
               maximize your success
             </p>
           </div>
           <div class="content-justyourcuriosity"></div>
-          <div
-            class="content-button"
-            data-aos="fade-up"
-            data-aos-delay="1000"
-            data-aos-offset="-1500"
-            data-aos-duration="500"
-          >
+          <div class="content-button">
             <button @click="toContactForm">LEARN MORE</button>
           </div>
         </div>
@@ -49,23 +37,17 @@
     </div>
     <div class="section section-engine fp-auto-height-responsive">
       <div class="section-inner inner-engine">
-        <div class="inner-contents">
+        <div
+          class="inner-contents"
+          data-aos="fade-up"
+          data-aos-offset="-200"
+          data-aos-duration="300"
+        >
           <div class="engine-contents">
-            <div
-              class="content-heading"
-              data-aos="fade-up"
-              data-aos-offset="-200"
-              data-aos-duration="500"
-            >
+            <div class="content-heading">
               <p><strong>Our Zenerate™ Engine</strong></p>
             </div>
-            <div
-              class="content-text"
-              data-aos="fade-up"
-              data-aos-delay="500"
-              data-aos-offset="-200"
-              data-aos-duration="500"
-            >
+            <div class="content-text">
               <p>Our design automation software combines</p>
               <p>
                 <span>AI + Data Science</span> to search millions of
@@ -78,29 +60,25 @@
           <div class="engine-image only-en-desktop">
             <img src="/en/img/landing_engine.gif" alt="" />
           </div>
-          <div
-            class="engine-image hidden-en-desktop"
-            data-aos="fade-up"
-            data-aos-delay="1000"
-            data-aos-offset="-200"
-            data-aos-duration="500"
-          >
+          <div class="engine-image hidden-en-desktop">
             <img src="/en/img/landing_engine.gif" alt="" />
           </div>
         </div>
       </div>
+      <div class="landing-background-wave">
+        <img src="/en/img/about_mission_back.png" alt="" />
+      </div>
     </div>
 
-    <div class="section section-market-insight fp-auto-height-responsive">
-      <div class="section-inner inner-market-insight">
-        <div class="inner-contents market-insight-wrapper">
-          <div
-            class="market-insight-image only-en-desktop"
-            data-aos="fade-up"
-            data-aos-offset="-200"
-            data-aos-duration="500"
-            data-aos-anchor-placement="bottom-bottom"
-          >
+    <div class="section section-instant-search fp-auto-height-responsive">
+      <div class="section-inner inner-instant-search">
+        <div
+          class="inner-contents instant-search-wrapper"
+          data-aos="fade-up"
+          data-aos-offset="-200"
+          data-aos-duration="300"
+        >
+          <div class="instant-search-image only-en-desktop">
             <img
               class="outer"
               src="/en/img/landing_instant_search_map.png"
@@ -112,15 +90,8 @@
               alt=""
             />
           </div>
-          <div class="market-insight-contents">
-            <div
-              class="content-inner"
-              style="margin-bottom: 32px"
-              data-aos="fade-up"
-              data-aos-delay="500"
-              data-aos-offset="-200"
-              data-aos-duration="500"
-            >
+          <div class="instant-search-contents">
+            <div class="content-inner" style="margin-bottom: 32px">
               <div class="content-heading">
                 <p><strong>Searching areas for your</strong></p>
                 <p><strong>next building development project?</strong></p>
@@ -138,25 +109,11 @@
                 </p>
               </div>
             </div>
-            <button
-              data-aos="fade-up"
-              data-aos-delay="1000"
-              data-aos-offset="-200"
-              data-aos-duration="500"
-              data-aos-anchor-placement="bottom-bottom"
-              class="button-1"
-              @click="toContactForm"
-            >
+            <button data-aos="fade-up" class="button-1" @click="toContactForm">
               Learn more
             </button>
           </div>
-          <div
-            class="market-insight-image hidden-en-desktop"
-            data-aos="fade-up"
-            data-aos-delay="1500"
-            data-aos-offset="-200"
-            data-aos-duration="500"
-          >
+          <div class="instant-search-image hidden-en-desktop">
             <img
               class="outer"
               src="/en/img/landing_instant_search_map.png"
@@ -170,16 +127,17 @@
           </div>
         </div>
       </div>
+      <div class="background-image"></div>
     </div>
     <div class="section section-generation fp-auto-height-responsive">
-      <div class="section-inner inner-generation">
+      <div
+        class="section-inner inner-generation"
+        data-aos="fade-up"
+        data-aos-offset="-200"
+        data-aos-duration="300"
+      >
         <div class="inner-contents generation-contents">
-          <div
-            class="content-left only-en-desktop"
-            data-aos="fade-up"
-            data-aos-offset="-200"
-            data-aos-duration="500"
-          >
+          <div class="content-left only-en-desktop">
             <div class="left-img">
               <img
                 class="img-generation"
@@ -193,13 +151,7 @@
               />
             </div>
           </div>
-          <div
-            class="content-right"
-            data-aos="fade-up"
-            data-aos-delay="500"
-            data-aos-offset="-200"
-            data-aos-duration="500"
-          >
+          <div class="content-right">
             <div class="content-heading">
               <p>
                 <strong
@@ -219,13 +171,7 @@
               </p>
             </div>
           </div>
-          <div
-            class="content-left hidden-en-desktop"
-            data-aos="fade-up"
-            data-aos-delay="1000"
-            data-aos-offset="-200"
-            data-aos-duration="500"
-          >
+          <div class="content-left hidden-en-desktop">
             <div class="left-img">
               <img
                 class="img-generation"
@@ -244,14 +190,13 @@
     </div>
     <div class="section section-compare fp-auto-height-responsive">
       <div class="section-inner inner-compare">
-        <div class="inner-contents compare-contents">
-          <div
-            class="compare-text"
-            data-aos="fade-up"
-            data-aos-delay="500"
-            data-aos-offset="-200"
-            data-aos-duration="500"
-          >
+        <div
+          class="inner-contents compare-contents"
+          data-aos="fade-up"
+          data-aos-offset="-200"
+          data-aos-duration="300"
+        >
+          <div class="compare-text">
             <div class="content-heading">
               <p><strong>Compare & pick your best solution</strong></p>
             </div>
@@ -262,26 +207,17 @@
               </p>
             </div>
           </div>
-          <div
-            class="compare-image only-en-desktop"
-            data-aos="fade-up"
-            data-aos-offset="-200"
-            data-aos-duration="500"
-          >
+          <div class="compare-image only-en-desktop">
             <img src="/en/img/landing_compare.png" alt="" />
           </div>
-          <div
-            class="compare-image hidden-en-desktop"
-            data-aos="fade-up"
-            data-aos-delay="1000"
-            data-aos-offset="-200"
-            data-aos-duration="500"
-          >
+          <div class="compare-image hidden-en-desktop">
             <img src="/en/img/landing_compare.png" alt="" />
           </div>
         </div>
       </div>
+      <div class="background-image"></div>
     </div>
+
     <div
       class="section section-partners fp-auto-height fp-auto-height-responsive"
     >
@@ -303,7 +239,7 @@
           </div>
           <div class="partners-list">
             <div
-              class="partners-item"
+              class="partners-item hover-pointer"
               v-for="(item, idx) in PartnersList"
               :key="idx"
             >
@@ -361,6 +297,20 @@ const toContactForm = () => {
 }
 </script>
 <style lang="scss" scoped>
+.section-instant-search,
+.section-compare {
+  .background-image {
+    background-image: url('/en/img/landing_map.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include absolute(left 0 top 0);
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+  }
+}
+
 .section-landing {
   .landing-background {
     background-image: url('/en/img/landing_buildings.gif');
@@ -379,8 +329,8 @@ const toContactForm = () => {
     img {
       width: 100%;
       transform: translateY(-25%);
-      opacity: 0.2;
-      filter: grayscale(50%);
+      opacity: 0.5;
+      filter: grayscale(100%);
     }
   }
   .landing-contents {
@@ -424,14 +374,14 @@ const toContactForm = () => {
   }
 }
 .section-engine {
+  background: $cr-text-black;
   .section-inner {
     .inner-contents {
       @include flex();
       width: 100%;
       margin: auto 0px;
       .engine-image {
-        width: 480px;
-        height: 400px;
+        width: 520px;
         margin: auto 0px;
         margin-left: auto;
         @include elevation-2;
@@ -458,6 +408,10 @@ const toContactForm = () => {
         @include vertical-center;
         .content-heading {
           margin-bottom: 32px;
+          color: $white;
+        }
+        .content-text {
+          color: $white;
         }
         text-align: left;
         @include en-tablet {
@@ -475,20 +429,32 @@ const toContactForm = () => {
       }
     }
   }
+  .landing-background-wave {
+    width: 100%;
+    height: 100%;
+    @include absolute(left 0 top 50%);
+    z-index: 1;
+    img {
+      width: 100%;
+      transform: translateY(-25%);
+      opacity: 0.3;
+      filter: grayscale(100%);
+    }
+  }
 }
-.section-market-insight {
+.section-instant-search {
   // position: relative;
-  .market-insight-wrapper {
+  .instant-search-wrapper {
     @include vertical-center;
     width: 100%;
     height: fit-content;
     margin: auto 0px;
     @include flex($justify: space-between);
   }
-  .inner-market-insight {
+  .inner-instant-search {
     z-index: 1;
     @include flex;
-    .market-insight-contents {
+    .instant-search-contents {
       // flex: 1;
       // @include vertical-center;
       align-items: flex-start;
@@ -541,7 +507,7 @@ const toContactForm = () => {
         margin-top: 48px;
       }
     }
-    .market-insight-image {
+    .instant-search-image {
       margin: auto 0px;
       width: 500px;
       height: 333px;
@@ -687,13 +653,13 @@ const toContactForm = () => {
     height: 260px;
     &::before {
       @include absolute(left 0 top 0 right 0 bottom 0);
-      background-image: url('/en/img/service_ourservices.png');
       background-size: cover;
       background-origin: center center;
       background-position: center;
       background-repeat: no-repeat;
       opacity: 0.5;
       content: '';
+      background-color: #f4f4f4;
     }
     p {
       @include medium(32);
@@ -714,7 +680,8 @@ const toContactForm = () => {
     }
   }
   .partners-text-wrapper {
-    margin: 96px auto;
+    padding: 96px 0px;
+
     .content-text {
       max-width: 600px;
       margin: 0px auto;
@@ -729,20 +696,28 @@ const toContactForm = () => {
     .partners-item {
       margin-bottom: 40px;
       width: 200px;
+      height: 84px;
+      @include center-center;
       max-width: 100%;
+      @include relative;
       .item-logo {
         width: 200px;
-        margin: 0px auto;
+        margin: auto;
         height: 60px;
-        margin-bottom: 24px;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
       }
       .item-description {
+        @include absolute(top 0 left 0);
         width: 100%;
+        height: 100%;
         text-align: center;
-        @include regular(14);
+        visibility: hidden;
+        color: $cr-main-blue;
+        background-color: rgba($white, 0.7);
+        text-align: center;
+        @include center-center;
       }
       &.fake {
         height: 0px;
@@ -752,6 +727,14 @@ const toContactForm = () => {
       @include en-mobile {
         margin: 0px auto;
         margin-bottom: 40px;
+      }
+      &:hover {
+        .item-logo {
+          opacity: 0.5;
+        }
+        .item-description {
+          visibility: visible;
+        }
       }
     }
     margin-bottom: 80px;

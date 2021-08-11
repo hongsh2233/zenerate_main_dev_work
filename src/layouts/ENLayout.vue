@@ -5,11 +5,11 @@
       <Drawer v-if="showDrawer" @close="toggleDrawer" />
     </transition>
     <router-view v-slot="{ Component }">
-      <transition name="fade">
-        <section class="section-en">
+      <section class="section-en">
+        <transition name="fade">
           <component :is="Component" />
-        </section>
-      </transition>
+        </transition>
+      </section>
     </router-view>
   </div>
 </template>
