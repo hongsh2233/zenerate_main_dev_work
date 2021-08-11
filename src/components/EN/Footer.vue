@@ -7,25 +7,27 @@
             <div class="footer-location location-title">
               <p class="title">Locations</p>
             </div>
-
-            <div class="footer-location location-international">
-              <div class="location-title">
-                <p class="title">International</p>
-              </div>
-              <div class="location-content">
-                <p class="content">Seoul, Olympic-ro 362, 5F</p>
-                <p class="content">Songpa-gu, Seoul</p>
-              </div>
-            </div>
             <div class="footer-location location-headquarters">
               <div class="location-title">
                 <p class="title">Headquarters</p>
               </div>
               <div class="location-content">
-                <p class="content">Los Angeles, 555 West 5th Street</p>
-                <p class="content">Los Angeles, California</p>
+                <p class="content">Los Angeles</p>
+                <p class="content">555 West 5th Street 35F</p>
+                <p class="content">Los Angeles, CA 90013</p>
               </div>
             </div>
+            <div class="footer-location location-international">
+              <div class="location-title">
+                <p class="title">International</p>
+              </div>
+              <div class="location-content">
+                <p class="content">Seoul</p>
+                <p class="content">Olympic-ro 362, 5F</p>
+                <p class="content">Songpa-gu, Seoul 05544</p>
+              </div>
+            </div>
+            
           </div>
           <div class="footer-contact">
             <p class="contact">

@@ -16,42 +16,44 @@
                 <li>2D Map Layers</li>
                 <li>CAD Files</li>
                 <li>Solution Analysis Spreadsheets</li>
+                <li>Residential Floor Plans</li>
               </ul>
             </div>
             <div class="pricing-content">
               <div class="content-title">
-                <p>ESSENTIAL</p>
+                <p>PREMIUM</p>
                 <p>(Online only)</p>
               </div>
               <ul class="content-detail">
                 <li>
-                  Zenerate™ AI Engine: 50,000+ Design Alternatives, Rent Price
-                  Forecasts
+                  Zenerate™ AI Engine: 1,000 ~ 50,000+ Design Alternatives
                 </li>
+                <li>Rent/Sale Price Estimates</li>
                 <li>2D Map Layers</li>
                 <li>CAD Files</li>
                 <li>Solution Analysis Spreadsheets</li>
-                <li>Parking & Retail Floor Plans</li>
+                <li>Parking & Commercial Floor Plans</li>
+                <li>Parking & Residential Floor Plans</li>
+                <li>Cash Flow Projections</li>
               </ul>
             </div>
             <div class="pricing-content">
               <div class="content-title">
-                <p>ALL ACCESS</p>
-                <p>(Online + Consulting)</p>
+                <p>CONSULTING</p>
+                <p>(Report + Web Access)</p>
               </div>
               <ul class="content-detail">
                 <li>
-                  Zenerate™ AI Engine: 50,000+ Design Alternatives, Rent Price
-                  Forecasts
+                  Zenerate™ AI Engine: 50,000+ Design Alternatives
                 </li>
+                <li>Rent/Sale Price Estimates</li>
                 <li>2D Map Layers</li>
                 <li>CAD Files</li>
                 <li>Solution Analysis Spreadsheets</li>
-                <li>Parking & Retail Floor Plans</li>
                 <li>Parking & Commercial Floor Plans</li>
+                <li>Parking & Residential Floor Plans</li>
                 <li>
-                  Fully Customizable: Design Details, Construction Constraints,
-                  Cash Flow Projections
+                  Fully Customizable: Design Details, Construction Constraints, Cash Flow Projections
                 </li>
               </ul>
             </div>
