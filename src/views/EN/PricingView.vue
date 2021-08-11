@@ -4,42 +4,64 @@
       <div class="section-inner inner-pricing">
         <div class="pricing-wrapper">
           <div class="pricing-title">PRICING</div>
-          <div class="pricing-subtitle">Subscription Plans</div>
-          <div class="pricing-content-wrapper">
+          <div
+            class="pricing-subtitle"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-offset="-500"
+          >
+            Subscription Plans
+          </div>
+          <div
+            class="pricing-content-wrapper"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-offset="-500"
+            data-aos-duration="500"
+          >
             <div class="pricing-content">
-              <p class="content-title">BASIC (Online only)</p>
+              <div class="content-title">
+                <p>BASIC</p>
+                <p>(Online only)</p>
+              </div>
               <ul class="content-detail">
+                <li>Zenerate™ AI Engine: 1000+ Design Alternatives</li>
                 <li>2D Map Layers</li>
                 <li>CAD Files</li>
                 <li>Solution Analysis Spreadsheets</li>
-                <li>Zenerate™ AI Engine: 1000+ Design Alternatives</li>
               </ul>
             </div>
             <div class="pricing-content">
-              <p class="content-title">ESSENTIAL (Online only)</p>
+              <div class="content-title">
+                <p>ESSENTIAL</p>
+                <p>(Online only)</p>
+              </div>
               <ul class="content-detail">
-                <li>2D Map Layers</li>
-                <li>CAD Files</li>
-                <li>Solution Analysis Spreadsheets</li>
-                <li>Parking & Retail Floor Plans</li>
                 <li>
                   Zenerate™ AI Engine: 50,000+ Design Alternatives, Rent Price
                   Forecasts
                 </li>
+                <li>2D Map Layers</li>
+                <li>CAD Files</li>
+                <li>Solution Analysis Spreadsheets</li>
+                <li>Parking & Retail Floor Plans</li>
               </ul>
             </div>
             <div class="pricing-content">
-              <p class="content-title">ALL ACCESS (Online + Consulting)</p>
+              <div class="content-title">
+                <p>ALL ACCESS</p>
+                <p>(Online + Consulting)</p>
+              </div>
               <ul class="content-detail">
+                <li>
+                  Zenerate™ AI Engine: 50,000+ Design Alternatives, Rent Price
+                  Forecasts
+                </li>
                 <li>2D Map Layers</li>
                 <li>CAD Files</li>
                 <li>Solution Analysis Spreadsheets</li>
                 <li>Parking & Retail Floor Plans</li>
                 <li>Parking & Commercial Floor Plans</li>
-                <li>
-                  Zenerate™ AI Engine: 50,000+ Design Alternatives, Rent Price
-                  Forecasts
-                </li>
                 <li>
                   Fully Customizable: Design Details, Construction Constraints,
                   Cash Flow Projections
@@ -70,6 +92,9 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
+.section {
+  background-color: #fafafc;
+}
 .section-pricing {
   .inner-pricing {
     height: fit-content;
@@ -88,12 +113,19 @@ onMounted(() => {
       text-align: center;
       @include medium(18);
       line-height: 40px;
-      color: $cr-main-blue;
+      color: #7a87f9;
+      @include en-tablet {
+        padding-top: 0;
+      }
+      @include en-mobile {
+        padding-top: 0;
+      }
     }
     .pricing-subtitle {
       text-align: center;
       @include medium(26);
       line-height: 40px;
+      margin-bottom: 30px;
     }
     .pricing-content-wrapper {
       padding-top: 24px;
@@ -101,7 +133,7 @@ onMounted(() => {
       @include flex($justify: space-between);
       .pricing-content {
         width: 300px;
-        min-height: 600px;
+        min-height: 550px;
         height: 100%;
         padding: 20px 10px;
         overflow-y: scroll;
@@ -111,9 +143,11 @@ onMounted(() => {
         .content-title {
           text-align: center;
           @include bold(16);
-          line-height: 40px;
           color: $cr-main-blue;
           margin-bottom: 24px;
+          p:first-child {
+            font-size: 22px;
+          }
         }
         .content-pricing {
           text-align: center;
@@ -122,7 +156,7 @@ onMounted(() => {
           @include bold(32);
         }
         .content-detail {
-          padding: 0px 8px 0px 24px;
+          padding: 0px 16px 0px 28px;
           margin: auto 0px;
           li {
             list-style: disc;
@@ -130,6 +164,14 @@ onMounted(() => {
             margin-bottom: 12px;
             @include regular(14);
           }
+        }
+        @include en-tablet {
+          margin: 0px auto;
+          margin-bottom: 48px;
+        }
+        @include en-mobile {
+          margin: 0px auto;
+          margin-bottom: 48px;
         }
       }
     }

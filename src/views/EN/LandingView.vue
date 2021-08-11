@@ -3,21 +3,39 @@
     <div class="section section-landing fp-auto-height-responsive">
       <div class="section-inner inner-landing">
         <div class="inner-contents landing-contents">
-          <div class="content-heading">
+          <div></div>
+          <div
+            class="content-heading"
+            data-aos="fade-up"
+            data-aos-offset="-1500"
+            data-aos-duration="500"
+          >
             <p>Introducing the only</p>
             <p><strong>AI-powered architectural design</strong> technology</p>
-            <p>that boosts real estate project profitability</p>
+            <p>that boosts real estate development profitability</p>
             <p>from <span>3% to 26%</span></p>
           </div>
-          <div class="content-phrase">
+          <div
+            class="content-phrase"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-offset="-1500"
+            data-aos-duration="500"
+          >
             <p>
               <span>Zenerate™</span> all possibilities of building design to
               maximize your success
             </p>
           </div>
           <div class="content-justyourcuriosity"></div>
-          <div class="content-button">
-            <button>LEARN MORE</button>
+          <div
+            class="content-button"
+            data-aos="fade-up"
+            data-aos-delay="1000"
+            data-aos-offset="-1500"
+            data-aos-duration="500"
+          >
+            <button @click="toContactForm">LEARN MORE</button>
           </div>
         </div>
         <div class="arrow-bottom only-en-desktop">
@@ -33,20 +51,40 @@
       <div class="section-inner inner-engine">
         <div class="inner-contents">
           <div class="engine-contents">
-            <div class="content-heading">
+            <div
+              class="content-heading"
+              data-aos="fade-up"
+              data-aos-offset="-200"
+              data-aos-duration="500"
+            >
               <p><strong>Our Zenerate™ Engine</strong></p>
             </div>
-            <div class="content-text">
+            <div
+              class="content-text"
+              data-aos="fade-up"
+              data-aos-delay="500"
+              data-aos-offset="-200"
+              data-aos-duration="500"
+            >
               <p>Our design automation software combines</p>
               <p>
-                <span>AI + Human Intelligence</span> to search millions of
+                <span>AI + Data Science</span> to search millions of
                 possibilities,
               </p>
               <p>delivering <span>fast & easy feasibility studies</span></p>
               <p>and <span>optimized profitability.</span></p>
             </div>
           </div>
-          <div class="engine-image">
+          <div class="engine-image only-en-desktop">
+            <img src="/en/img/landing_engine.gif" alt="" />
+          </div>
+          <div
+            class="engine-image hidden-en-desktop"
+            data-aos="fade-up"
+            data-aos-delay="1000"
+            data-aos-offset="-200"
+            data-aos-duration="500"
+          >
             <img src="/en/img/landing_engine.gif" alt="" />
           </div>
         </div>
@@ -56,32 +94,79 @@
     <div class="section section-market-insight fp-auto-height-responsive">
       <div class="section-inner inner-market-insight">
         <div class="inner-contents market-insight-wrapper">
-          <div class="market-insight-contents">
-            <div class="content-heading">
-              <p><strong>We help you quickly</strong></p>
-              <p><strong>assess your site feasibility</strong></p>
-            </div>
-            <div class="content-text">
-              <p><span>Market Insights & Map Layers</span></p>
-            </div>
-            <div class="content-numbering">
-              <p>
-                1. Customize your map layers to view planning, geospatial and
-                development data and select the best development site for your
-                project.
-              </p>
-              <p>
-                2. Click on a site for diverse market insights about the
-                location of interest along with financial data.
-              </p>
-
-              <button class="button-1" @click="router.push('/contact')">
-                Learn more
-              </button>
-            </div>
+          <div
+            class="market-insight-image only-en-desktop"
+            data-aos="fade-up"
+            data-aos-offset="-200"
+            data-aos-duration="500"
+            data-aos-anchor-placement="bottom-bottom"
+          >
+            <img
+              class="outer"
+              src="/en/img/landing_instant_search_map.png"
+              alt=""
+            />
+            <img
+              class="inner"
+              src="/en/img/landing_instant_search_inner.png"
+              alt=""
+            />
           </div>
-          <div class="market-insight-image">
-            <img src="/en/img/landing_market_insight.png" alt="" />
+          <div class="market-insight-contents">
+            <div
+              class="content-inner"
+              style="margin-bottom: 32px"
+              data-aos="fade-up"
+              data-aos-delay="500"
+              data-aos-offset="-200"
+              data-aos-duration="500"
+            >
+              <div class="content-heading">
+                <p><strong>Searching areas for your</strong></p>
+                <p><strong>next building development project?</strong></p>
+              </div>
+              <div class="content-text">
+                <p>
+                  Use <span>Instant Search</span> for a site feasibility report
+                  generated within seconds.
+                </p>
+              </div>
+              <div class="content-numbering">
+                <p>1. Type in your site address or click on a site.</p>
+                <p>
+                  2. Verify the instant result for a possible development plan.
+                </p>
+              </div>
+            </div>
+            <button
+              data-aos="fade-up"
+              data-aos-delay="1000"
+              data-aos-offset="-200"
+              data-aos-duration="500"
+              data-aos-anchor-placement="bottom-bottom"
+              class="button-1"
+              @click="toContactForm"
+            >
+              Learn more
+            </button>
+          </div>
+          <div
+            class="market-insight-image hidden-en-desktop"
+            data-aos="fade-up"
+            data-aos-delay="1500"
+            data-aos-offset="-200"
+            data-aos-duration="500"
+          >
+            <img
+              class="outer"
+              src="/en/img/landing_instant_search_map.png"
+              alt=""
+            />
+            <img
+              class="inner"
+              src="/en/img/landing_instant_search_inner.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -89,7 +174,12 @@
     <div class="section section-generation fp-auto-height-responsive">
       <div class="section-inner inner-generation">
         <div class="inner-contents generation-contents">
-          <div class="content-left only-en-desktop">
+          <div
+            class="content-left only-en-desktop"
+            data-aos="fade-up"
+            data-aos-offset="-200"
+            data-aos-duration="500"
+          >
             <div class="left-img">
               <img
                 class="img-generation"
@@ -103,7 +193,13 @@
               />
             </div>
           </div>
-          <div class="content-right fp-auto-height-responsive">
+          <div
+            class="content-right"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-offset="-200"
+            data-aos-duration="500"
+          >
             <div class="content-heading">
               <p>
                 <strong
@@ -119,11 +215,17 @@
               <p>
                 Our customers have seen revenues increase
                 <span>up to 12% on average</span>
-                compared to manual calculations.
+                compared to how things have been done by human.
               </p>
             </div>
           </div>
-          <div class="content-left hidden-en-desktop">
+          <div
+            class="content-left hidden-en-desktop"
+            data-aos="fade-up"
+            data-aos-delay="1000"
+            data-aos-offset="-200"
+            data-aos-duration="500"
+          >
             <div class="left-img">
               <img
                 class="img-generation"
@@ -143,7 +245,13 @@
     <div class="section section-compare fp-auto-height-responsive">
       <div class="section-inner inner-compare">
         <div class="inner-contents compare-contents">
-          <div class="compare-text">
+          <div
+            class="compare-text"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-offset="-200"
+            data-aos-duration="500"
+          >
             <div class="content-heading">
               <p><strong>Compare & pick your best solution</strong></p>
             </div>
@@ -154,7 +262,21 @@
               </p>
             </div>
           </div>
-          <div class="compare-image">
+          <div
+            class="compare-image only-en-desktop"
+            data-aos="fade-up"
+            data-aos-offset="-200"
+            data-aos-duration="500"
+          >
+            <img src="/en/img/landing_compare.png" alt="" />
+          </div>
+          <div
+            class="compare-image hidden-en-desktop"
+            data-aos="fade-up"
+            data-aos-delay="1000"
+            data-aos-offset="-200"
+            data-aos-duration="500"
+          >
             <img src="/en/img/landing_compare.png" alt="" />
           </div>
         </div>
@@ -217,6 +339,7 @@ import Arrow from '/Components/EN/Arrow.vue'
 
 //misc
 import PartnersList from '/Constants/partners'
+import { useRouter } from 'vue-router'
 
 import Store from '/Store/index'
 const fullpage = computed(() => Store.state.root.FullPage)
@@ -226,11 +349,21 @@ onMounted(() => {
 onBeforeUnmount(() => {
   fullpage.value.destroy()
 })
+
+const router = useRouter()
+const toContactForm = () => {
+  router.push({
+    name: 'en-contact',
+    query: {
+      from: 'demo',
+    },
+  })
+}
 </script>
 <style lang="scss" scoped>
 .section-landing {
   .landing-background {
-    background-image: url('/en/img/BG.png');
+    background-image: url('/en/img/landing_buildings.gif');
     background-size: cover;
     background-repeat: no-repeat;
     @include absolute(left 0 top 0);
@@ -246,7 +379,8 @@ onBeforeUnmount(() => {
     img {
       width: 100%;
       transform: translateY(-25%);
-      opacity: 0.5;
+      opacity: 0.2;
+      filter: grayscale(50%);
     }
   }
   .landing-contents {
@@ -256,9 +390,13 @@ onBeforeUnmount(() => {
     flex: 1;
     .content-heading {
       margin-bottom: 64px;
+      color: $white;
+      p span {
+        color: #cbd0fe;
+      }
     }
     .content-phrase {
-      color: $cr-text-light-grey;
+      color: $white;
       margin-bottom: 24px;
       @include en-tablet {
         max-width: 60%;
@@ -292,7 +430,7 @@ onBeforeUnmount(() => {
       width: 100%;
       margin: auto 0px;
       .engine-image {
-        width: 460px;
+        width: 480px;
         height: 400px;
         margin: auto 0px;
         margin-left: auto;
@@ -318,6 +456,9 @@ onBeforeUnmount(() => {
       .engine-contents {
         flex: 1;
         @include vertical-center;
+        .content-heading {
+          margin-bottom: 32px;
+        }
         text-align: left;
         @include en-tablet {
           width: 100%;
@@ -349,12 +490,10 @@ onBeforeUnmount(() => {
     @include flex;
     .market-insight-contents {
       // flex: 1;
-      margin-right: 160px;
-      margin-right: auto;
       // @include vertical-center;
       align-items: flex-start;
       // text-align: right;
-      width: 380px;
+      width: 524px;
       @include en-tablet {
         // margin-right: 0;
         width: 100%;
@@ -399,18 +538,30 @@ onBeforeUnmount(() => {
         @include en-mobile {
           margin: 0px auto;
         }
+        margin-top: 48px;
       }
     }
     .market-insight-image {
       margin: auto 0px;
       width: 500px;
       height: 333px;
-      img {
+      @include relative;
+      margin-right: 64px;
+      .outer {
         @include elevation-2;
         width: 100%;
         height: 100%;
       }
+      .inner {
+        @include absolute(top 50% left 50%);
+        width: 256px;
+        height: 221px;
+        transform: translate(-50%, -50%);
+      }
       @include en-tablet {
+        margin: auto;
+      }
+      @include en-mobile {
         margin: auto;
       }
     }
@@ -449,6 +600,7 @@ onBeforeUnmount(() => {
       }
       @include en-mobile {
         width: 100%;
+        margin: 0px auto;
       }
     }
     .content-right {
@@ -476,7 +628,7 @@ onBeforeUnmount(() => {
     @include flex;
     margin: auto 0px;
     .compare-image {
-      max-width: 465px;
+      max-width: 540px;
       @include vertical-center;
       img {
         @include elevation-2;
@@ -493,7 +645,7 @@ onBeforeUnmount(() => {
     }
     .compare-text {
       width: 492px;
-      margin-right: 88px;
+      margin-right: 44px;
       @include vertical-center;
       text-align: left;
       .text-heading {
@@ -599,9 +751,10 @@ onBeforeUnmount(() => {
       }
       @include en-mobile {
         margin: 0px auto;
-        margin-bottom: 32px;
+        margin-bottom: 40px;
       }
     }
+    margin-bottom: 80px;
   }
 }
 </style>

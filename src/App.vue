@@ -8,9 +8,11 @@ import AOS from 'aos'
 
 onMounted(() => {
   AOS.init()
-  document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
-    doc.classList.remove('aos-animate')
-  })
+  setTimeout(() => {
+    document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
+      doc.classList.remove('aos-animate')
+    })
+  }, 0)
 })
 </script>
 

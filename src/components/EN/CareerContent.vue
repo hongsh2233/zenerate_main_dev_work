@@ -1,8 +1,8 @@
 <template>
-  <div class="career-content-wrapper">
+  <div class="section career-content-wrapper">
     <!-- STRATEGIC ACCOUNT EXECUTIVE -->
     <div
-      class="career-content"
+      class="section-inner career-content"
       v-if="$route.params.id === 'strategic-account-executive'"
     >
       <div class="career-content-title">
@@ -121,7 +121,7 @@
     </div>
     <!-- BUSINESS DEVELOPMENT MANAGER -->
     <div
-      class="career-content"
+      class="section-inner career-content"
       v-if="$route.params.id === 'business-development-manager'"
     >
       <div class="career-content-title">
@@ -251,7 +251,7 @@
     </div>
     <!-- BUSINESS DEVELOPMENT & MARKETING INTERN -->
     <div
-      class="career-content"
+      class="section-inner career-content"
       v-if="$route.params.id === 'business-development-marketing-intern'"
     >
       <div class="career-content-title">
@@ -409,11 +409,14 @@ const goToApply = () => {
 }
 </script>
 <style lang="scss" scoped>
+.section-inner {
+  height: auto !important;
+  padding-bottom: 80px !important;
+}
 .career-content-wrapper {
   height: 100%;
-  width: 1600px;
+  max-width: 1600px;
   margin: auto;
-  padding: 200px 96px 100px;
   .career-content {
     // .image-wrapper {
     //   width: 100%;

@@ -22,9 +22,9 @@
         </div>
       </div>
     </div> -->
-    <div class="section section-technology">
+    <div class="section section-technology fp-auto-height-responsive">
       <div class="section-inner">
-        <div class="inner-technology">
+        <div class="inner-contents inner-technology">
           <div class="technology-header">
             <p class="header-title">OUR SERVICES</p>
             <p class="header-content">
@@ -36,9 +36,9 @@
             <div
               class="content-item"
               data-aos="fade-up"
-              data-aos-delay="500"
-              data-aos-offset="-500"
-              data-aos-duration="750"
+              data-aos-delay="0"
+              data-aos-offset="-1500"
+              data-aos-duration="500"
               data-aos-anchor-placement="top-center"
             >
               <div class="item-problem">
@@ -58,33 +58,38 @@
             <div
               class="content-item"
               data-aos="fade-up"
-              data-aos-delay="1250"
-              data-aos-offset="-500"
-              data-aos-duration="750"
+              data-aos-delay="500"
+              data-aos-offset="-1500"
+              data-aos-duration="500"
               data-aos-anchor-placement="top-center"
             >
               <div class="item-problem">
-                <span>Limitations in finding the best ROI</span>
+                <span
+                  >Hard to maximize returns due to limited time and inputs</span
+                >
               </div>
               <div class="item-arrow">
                 <img src="/en/img/service_arrow_icon.svg" alt="" />
               </div>
               <div class="item-solution">
                 <span>
-                  <strong>Maximized development returns from</strong> 3% to 26%
+                  <strong>Project ROI boost</strong> from 3% to 26%, from
+                  quickly generated options
                 </span>
               </div>
             </div>
             <div
               class="content-item"
               data-aos="fade-up"
-              data-aos-delay="2000"
-              data-aos-offset="-500"
-              data-aos-duration="7500"
+              data-aos-delay="1000"
+              data-aos-offset="-1500"
+              data-aos-duration="500"
               data-aos-anchor-placement="top-center"
             >
               <div class="item-problem">
-                <span>Single rental price applied to revenue projection</span>
+                <span
+                  >Lack of pricing diversity applied to revenue projection</span
+                >
               </div>
               <div class="item-arrow">
                 <img src="/en/img/service_arrow_icon.svg" alt="" />
@@ -100,10 +105,15 @@
         </div>
       </div>
     </div>
-    <div class="section section-services">
+    <div class="section section-services fp-auto-height-responsive">
       <div class="section-inner inner-services">
         <div class="service-content-wrapper">
-          <div class="service-web service-content">
+          <div
+            class="service-web service-content"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-anchor-placement="bottom-bottom"
+          >
             <p class="content-title">WEB PLATFORM</p>
             <div class="content-image">
               <img src="/en/img/service_web.png" alt="" />
@@ -116,7 +126,13 @@
               </p>
             </div>
           </div>
-          <div class="service-consulting service-content">
+          <div
+            class="service-consulting service-content"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-duration="500"
+            data-aos-anchor-placement="center-bottom"
+          >
             <p class="content-title">CONSULTING SERVICE</p>
             <div class="content-image">
               <img src="/en/img/service_consulting.png" alt="" />
@@ -132,12 +148,10 @@
         </div>
       </div>
     </div>
-    <div class="section section-why">
+    <div class="section section-why fp-auto-height-responsive">
       <div class="why-hero-wrapper">
         <div class="why-image-wrapper">
-          <div class="why-image image-skyscrapers"></div>
-          <div class="why-image image-penpoint"></div>
-          <div class="why-image image-laptop"></div>
+          <div class="why-image image-case"></div>
         </div>
         <div class="why-text">
           <div class="text-inner">
@@ -151,11 +165,16 @@
           <div class="why-content">
             <img data-src="/en/img/service_why.png" src="" alt="" />
             <div class="why-content-text">
-              <div class="text-title">USC Village Residential Project</div>
+              <div class="text-title">USC Village Student Housing Project</div>
               <div class="text-content">
-                <span class="hover-pointer">Read</span> to learn how Zenerate CEO Bongjai Shin
-                collaborated with the USC housing team to transform and
-                streamline the architectural design process.
+                <a
+                  href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
+                  target="_blank"
+                  >Read</a
+                >
+                to learn how Zenerate CEO Bongjai Shin collaborated with the USC
+                housing team to transform and streamline the architectural
+                design process.
               </div>
             </div>
           </div>
@@ -218,8 +237,8 @@ onMounted(() => {
 }
 
 .section-technology {
+  margin-bottom: 0;
   .inner-technology {
-    padding: 0px 60px;
     margin: auto 0px;
   }
   .technology-header {
@@ -235,12 +254,17 @@ onMounted(() => {
     .header-content {
       @include regular(26);
     }
+    @include en-tablet {
+      height: 120px;
+    }
+    @include en-mobile {
+      height: 120px;
+    }
   }
   .technology-content {
     margin: 0px auto;
     // padding-top: 48px;
     .content-item {
-      padding-top: 24px;
       @include flex($justify: space-between);
       height: 108px;
       margin-bottom: 32px;
@@ -249,6 +273,7 @@ onMounted(() => {
         width: 340px;
         height: 108px;
         border-radius: 30px;
+        @include elevation-2;
         @include center-center;
         text-align: center;
         span {
@@ -273,11 +298,54 @@ onMounted(() => {
           color: $white;
         }
       }
+      @include en-mobile {
+        padding-top: 32px;
+        display: block;
+        height: auto;
+        margin: 0px auto;
+        padding-bottom: 32px;
+
+        .item-problem,
+        .item-arrow,
+        .item-solution {
+          margin: 0px auto;
+          padding: 0px 32px;
+          max-width: 320px;
+        }
+        .item-arrow {
+          margin-top: 32px;
+          margin-bottom: 32px;
+          transform: rotate(90deg) translateX(-16px);
+        }
+      }
+      @include en-tablet {
+        padding-top: 32px;
+        display: block;
+        height: auto;
+        margin: 0px auto;
+        padding-bottom: 32px;
+        .item-problem,
+        .item-arrow,
+        .item-solution {
+          margin: 0px auto;
+          padding: 0px 32px;
+          max-width: 320px;
+        }
+        .item-arrow {
+          margin-top: 32px;
+          margin-bottom: 32px;
+          transform: rotate(90deg) translateX(-16px) scaleX(0.8);
+        }
+      }
     }
   }
 }
 
 .section-services {
+  background: #fafafc;
+  ::v-deep(.fp-bg) {
+    background-color: #fafafc !important;
+  }
   .inner-services {
     @include flex($dir: column);
     max-width: 1280px;
@@ -300,7 +368,8 @@ onMounted(() => {
         }
         .content-image {
           height: 272px;
-          width: 400px;
+          width: 440px;
+          max-width: 100%;
           margin: 0px auto;
           margin-bottom: 40px;
           @include elevation-2;
@@ -309,6 +378,7 @@ onMounted(() => {
             max-width: 100%;
             height: 100%;
           }
+        
         }
         .content-explanation {
           .exp-title {
@@ -321,6 +391,20 @@ onMounted(() => {
           }
         }
       }
+      @include en-tablet {
+        display: block;
+        .service-content {
+          margin: 0px auto;
+          margin-bottom: 48px;
+        }
+      }
+      @include en-mobile {
+        display: block;
+        .service-content {
+          margin: 0px auto;
+          margin-bottom: 48px;
+        }
+      }
     }
   }
 }
@@ -328,15 +412,15 @@ onMounted(() => {
 .section-why {
   @include relative;
   .why-hero-wrapper {
-    $y: calc(100px);
+    $y: calc(80px);
     @include absolute(left 0);
     top: $y;
-    height: 25vh;
+    height: 250px;
     @include flex();
     width: 100%;
     .why-image-wrapper {
       flex: 1;
-      height: 25vh;
+      height: 250px;
       width: 100%;
       @include absolute(left 0 top 0);
       background-size: cover;
@@ -344,29 +428,19 @@ onMounted(() => {
       height: 100%;
       @include flex;
       .why-image {
-        &.image-skyscrapers {
+        &.image-case {
           height: 100%;
           flex: 1;
-          background-image: url('/en/img/service_skyscrapers.jpg');
-          background-size: cover;
-        }
-        &.image-penpoint {
-          height: 100%;
-          flex: 1;
-          background-image: url('/en/img/service_penpoint.jpg');
-          background-size: cover;
-        }
-        &.image-laptop {
-          height: 100%;
-          flex: 1;
-          background-image: url('/en/img/service_laptop.jpg');
+          background-image: url('/en/img/service_case.png');
           background-size: cover;
         }
       }
     }
     .why-text {
       @include container-no-top-padding;
-      margin: auto !important;
+      margin: 0px auto !important;
+      margin-top: auto !important;
+      margin-bottom: 40px !important;
       z-index: 1;
       .text-inner {
         padding: 0px 60px;
@@ -379,18 +453,31 @@ onMounted(() => {
   }
   .inner-why {
     height: 100%;
-    padding-top: 25vh !important;
+    padding-top: 330px !important;
+    @include en-tablet {
+      padding-top: 400px !important;
+    }
+    @include en-mobile {
+      padding-top: 400px !important;
+    }
   }
   .why-content-wrapper {
     margin: auto;
-    margin-top: 25vh;
     padding: 0px 60px;
+    @include en-tablet {
+      width: 100%;
+      padding: 0;
+    }
+    @include en-mobile {
+      width: 100%;
+      padding: 0;
+    }
     .why-content {
       @include flex($justify: center);
       // padding-top: 60px;
       margin: auto;
       img {
-        height: 300px;
+        width: 400px;
       }
       .why-content-text {
         @include vertical-center;
@@ -406,12 +493,36 @@ onMounted(() => {
         .text-content {
           @include regular(24);
           text-align: center;
-          span {
+          a {
             text-decoration: underline;
           }
         }
       }
+      @include en-tablet {
+        padding: 0;
+        display: block;
+        text-align: center;
+        img {
+          margin-bottom: 48px;
+          max-width: 100%;
+        }
+      }
+      @include en-mobile {
+        padding: 0;
+        display: block;
+        text-align: center;
+        img {
+          margin-bottom: 48px;
+          max-width: 100%;
+        }
+      }
     }
+  }
+  @include en-tablet {
+    padding-bottom: 80px;
+  }
+  @include en-mobile {
+    padding-bottom: 40px;
   }
 }
 </style>

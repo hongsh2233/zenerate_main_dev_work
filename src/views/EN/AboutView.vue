@@ -81,6 +81,9 @@ onMounted(() => {
 })
 </script>
 <style lang="scss" scoped>
+.section {
+  background-color: #fafafc; 
+}
 .section-story {
   .inner-story {
     margin: 0px auto;

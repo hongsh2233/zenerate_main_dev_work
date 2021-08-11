@@ -33,7 +33,10 @@
           </div>
         </div>
       </transition>
-      <div class="input-select-error" :class="{ active: isInvalid }">
+      <div
+        class="input-select-error"
+        :class="{ active: props.valid === false }"
+      >
         Please Select!
       </div>
     </div>
@@ -67,6 +70,10 @@ const props = defineProps({
     default() {
       return false
     },
+  },
+  valid: {
+    type: Boolean,
+    required: false,
   },
 })
 

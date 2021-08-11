@@ -67,7 +67,10 @@
               <div class="list-items">
                 <div class="career-list">
                   <div class="career-item">
-                    <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+                    <div class="item-date">
+                      Posted
+                      {{ formatDistanceToNowStrict(posted, { addSuffix: true }) }}
+                    </div>
                     <div
                       class="item-title hover-pointer"
                       @click="
@@ -78,7 +81,10 @@
                     </div>
                   </div>
                   <div class="career-item">
-                    <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+                    <div class="item-date">
+                      Posted
+                      {{ formatDistanceToNowStrict(posted, { addSuffix: true }) }}
+                    </div>
                     <div
                       class="item-title hover-pointer"
                       @click="
@@ -89,7 +95,10 @@
                     </div>
                   </div>
                   <div class="career-item">
-                    <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div>
+                    <div class="item-date">
+                      Posted
+                      {{ formatDistanceToNowStrict(posted, { addSuffix: true }) }}
+                    </div>
                     <div
                       class="item-title hover-pointer"
                       @click="
@@ -123,6 +132,10 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 // @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
+import { formatDistanceToNowStrict } from 'date-fns'
+const posted = new Date(2021, 7, 10)
+const today = new Date()
+
 const careerId = ref(-1)
 // console.log(careerId.value)
 const scrollTop = () => {
@@ -139,11 +152,27 @@ onMounted(() => {
   overflow: hidden;
 }
 .section-main {
-  background-image: url('/en/img/career_main.webp');
+  background-image: url('/en/img/career_main.png');
   background-size: cover;
   background-position: top;
   .inner-main {
     padding: 0px 60px;
+    @include en-tablet {
+      padding: 0px 24px;
+      max-width: 100%;
+      text-align: center;
+      .main-sub-title {
+        justify-content: center;
+      }
+    }
+    @include en-mobile {
+      padding: 0 24px;
+      max-width: 100%;
+      text-align: center;
+      .main-sub-title {
+        justify-content: center;
+      }
+    }
   }
 
   .main-wrapper {
@@ -235,6 +264,12 @@ onMounted(() => {
     height: 100%;
     .inner-content-list {
       padding: 0px 60px;
+      @include en-tablet {
+        padding: 0px 24px;
+      }
+      @include en-mobile {
+        padding: 0px 24px;
+      }
     }
     .list-title {
       transition: padding 0.5s ease;
@@ -245,11 +280,27 @@ onMounted(() => {
     }
     .list-wrapper {
       @include flex($justify: space-between);
+      @include en-tablet {
+        justify-content: center;
+        .list-image {
+          margin-right: 0;
+          width: 100%;
+          text-align: center;
+        }
+      }
+      @include en-mobile {
+        justify-content: center;
+        .list-image {
+          margin-right: 0;
+          width: 100%;
+          text-align: center;
+        }
+      }
       .list-image {
-        margin: auto 0px;
         margin-right: 80px;
         img {
           width: 400px;
+          max-width: 100%;
         }
       }
       .list-items {
@@ -257,14 +308,12 @@ onMounted(() => {
         .career-list {
           @include flex($dir: column, $justify: space-between);
           .career-item {
-            height: 130px;
-            padding-bottom: 20px;
+            margin-bottom: 32px;
             .item-date {
               @include regular(16);
               @include vertical-center;
               line-height: 40px;
               color: $cr-text-grey;
-              padding-top: 40px;
             }
             .item-title {
               @include medium(24);

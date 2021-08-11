@@ -476,10 +476,36 @@ $bt-secondary-etc: #f6f5ff;
 }
 
 @mixin button-default-gnb {
-  @include medium(20);
+  @include medium(14);
   line-height: 40px;
   color: $cr-text-black;
   letter-spacing: 0 !important;
+}
+
+@mixin button-default-4($width, $height) {
+  @include button-default-1($width, $height);
+  background: $white;
+  color: $cr-main-blue;
+  border: solid 1px $cr-main-blue;
+}
+
+@mixin button-hover-4($width, $height) {
+  @include button-hover-1($width, $height);
+  color: $cr-main-blue;
+  background: $white;
+  transform: none;
+}
+
+@mixin button-pressed-4($width, $height) {
+  @include button-pressed-1($width, $height);
+  color: $cr-main-blue;
+  background: $white;
+  transform: none;
+}
+
+@mixin button-disabled-4($width, $height) {
+  @include button-disabled-1($width, $height);
+  background: $bt-primary-bg-default;
 }
 
 @mixin button-hover-gnb {
@@ -536,6 +562,20 @@ $bt-secondary-etc: #f6f5ff;
   }
   &.disabled {
     @include button-disabled-3($width, $height);
+  }
+}
+
+@mixin button-4($width: 240px, $height: 60px) {
+  @include button-default-4($width, $height);
+  &:hover {
+    @include button-hover-4($width, $height);
+    cursor: pointer;
+  }
+  &:active {
+    @include button-pressed-4($width, $height);
+  }
+  &.disabled {
+    @include button-disabled-4($width, $height);
   }
 }
 

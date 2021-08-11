@@ -1,7 +1,9 @@
 <template>
   <div class="layout-en">
     <Header @toggleDrawer="toggleDrawer" :showDrawer="showDrawer"></Header>
-    <Drawer v-if="showDrawer" @close="toggleDrawer" />
+    <transition name="fade">
+      <Drawer v-if="showDrawer" @close="toggleDrawer" />
+    </transition>
     <router-view v-slot="{ Component }">
       <transition name="fade">
         <section class="section-en">
@@ -23,7 +25,6 @@ import { ref } from 'vue'
 const showDrawer = ref(false)
 const toggleDrawer = (flag = undefined) => {
   showDrawer.value = flag == null ? !showDrawer.value : flag
-
   if (showDrawer.value) {
     const scrollY = window.scrollY
     document.body.style.position = 'fixed'

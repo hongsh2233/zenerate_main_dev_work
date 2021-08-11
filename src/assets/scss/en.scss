@@ -2,20 +2,39 @@
 
 .section {
   @include en-tablet {
-    margin-bottom: 80px;
+    &:first-child {
+      margin-top: 40px;
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
   }
   @include en-mobile {
-    margin-bottom: 40px;
+    &:first-child {
+      margin-top: 20px;
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
   }
-}
-
-.section-inner {
-  margin: 0px auto;
-  height: 100vh;
-  padding-top: 100px;
-  @include flex($dir: column);
-  @include relative;
-  @include container;
+  .section-inner {
+    margin: 0px auto;
+    height: 100vh;
+    padding-top: 100px;
+    @include flex($dir: column);
+    @include relative;
+    @include container;
+    @include en-tablet {
+      height: auto;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    @include en-mobile {
+      height: auto;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
 }
 
 .hidden-en-desktop {

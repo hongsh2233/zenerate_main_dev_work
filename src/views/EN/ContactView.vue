@@ -9,7 +9,35 @@
       <div class="contact-form-wrapper" :class="{ done: sendEmailStatus }">
         <transition name="fade">
           <div class="contact-form-success" v-if="sendEmailStatus">
-            <p>Successfully submitted!</p>
+            <div class="contact-form-inner">
+              <img
+                data-aos="fade-up"
+                data-aos-offset="-1500"
+                data-aos-duration="500"
+                data-aos-anchor-placement="bottom-bottom"
+                src="/en/img/contact_submit_done.png"
+                alt=""
+              />
+              <div
+                class="inner-content"
+                data-aos="fade-up"
+                data-aos-offset="-1500"
+                data-aos-delay="500"
+                data-aos-duration="500"
+                data-aos-anchor-placement="bottom-bottom"
+              >
+                <p class="content-heading">Successfully submitted!</p>
+                <p class="content-text">
+                  We've received your message and will get back to you soon.
+                </p>
+                <button
+                  class="content-button"
+                  @click="router.push({ name: 'en-landing' })"
+                >
+                  Go to Home
+                </button>
+              </div>
+            </div>
           </div>
         </transition>
         <div class="form-text">
@@ -50,6 +78,7 @@
               title="Inqueries"
               :skipTranslate="true"
               :selected="contactForm.purpose.value"
+              :valid="contactForm.purpose.valid"
               @onSelect="
                 (v) => ((contactForm.purpose.value = v), validation('purpose'))
               "
@@ -100,7 +129,7 @@ import { reactive, ref, onMounted, computed } from 'vue'
 import Store from '/Store/index'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 // @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
 
@@ -149,7 +178,7 @@ const items: Item[] = [
     label: 'Other',
   },
 ]
-const sendEmailStatus = ref(true)
+const sendEmailStatus = ref(false)
 
 const contactForm = reactive({
   company: {
@@ -183,6 +212,36 @@ const validation = (item: string) => {
   contactForm[item].valid = contactForm[item].validator(contactForm[item].value)
 }
 
+const resetForm = () => {
+  Object.assign(contactForm, {
+    company: {
+      value: '',
+      validator: Validation.string,
+      valid: null,
+    },
+    name: {
+      value: '',
+      validator: Validation.string,
+      valid: null,
+    },
+    email: {
+      value: '',
+      validator: Validation.email,
+      valid: null,
+    },
+    purpose: {
+      value: null,
+      validator: (v) => true,
+      valid: null,
+    },
+    message: {
+      value: '',
+      validator: Validation.string,
+      valid: null,
+    },
+  })
+}
+
 const dummy = ref(null)
 
 const sendEmail = async () => {
@@ -205,8 +264,10 @@ const sendEmail = async () => {
 
   if (!isValid) return
   await ApiService.SEND_EMAIL(form)
+  resetForm()
   sendEmailStatus.value = true
 }
+const router = useRouter()
 
 onMounted(() => {
   if (fullpage.value) {
@@ -229,11 +290,17 @@ onMounted(() => {
     @include relative;
     height: 555px;
     padding-top: 100px;
-    background-image: url('/en/img/contact_hero.jpg');
+    background-image: url('/en/img/contact_hero.png');
     background-size: cover;
     background-origin: center center;
     img {
       width: 100%;
+    }
+    @include en-tablet {
+      margin-bottom: 540px;
+    }
+    @include en-mobile {
+      margin-bottom: 540px;
     }
     .hero-text-wrapper {
       @include container;
@@ -247,6 +314,15 @@ onMounted(() => {
           @include regular(24);
         }
       }
+      @include en-tablet-big {
+        width: 940px;
+      }
+      @include en-tablet-small {
+        width: 620px;
+      }
+      @include en-mobile {
+        width: calc(100% - 20px);
+      }
     }
   }
   .contact-form-wrapper {
@@ -256,23 +332,53 @@ onMounted(() => {
     height: 500px;
     overflow-y: auto;
     background-color: $white;
-    @include elevation-4;
+    @include elevation-1;
     border-radius: 20px;
     padding: 32px 36px;
     left: 50%;
     transform: translateX(-50%);
+    @include en-tablet-big {
+      width: 940px;
+      height: auto;
+    }
+    @include en-tablet-small {
+      width: 620px;
+      height: auto;
+    }
+    @include en-mobile {
+      width: calc(100% - 20px);
+      height: auto;
+    }
     .contact-form-success {
       @include absolute(left 0 top 0);
       width: 100%;
+      overflow: hidden;
       height: 100%;
       background-color: $white;
       @include center-center;
       z-index: 1000;
-      border: solid 2px $cr-main-blue;
       border-radius: 18px;
-      p {
-        @include medium(32);
-        color: $cr-main-blue;
+
+      .contact-form-inner {
+        text-align: center;
+        img {
+          width: 120px;
+          height: 120px;
+          margin-bottom: 30px;
+        }
+        .content-heading {
+          @include medium(32);
+          color: $cr-text-black;
+        }
+        .content-text {
+          @include medium(24);
+          color: $cr-text-grey;
+        }
+        button {
+          margin: 0px auto;
+          margin-top: 30px;
+          @include button-4;
+        }
       }
     }
     .form-text {
@@ -283,6 +389,26 @@ onMounted(() => {
       }
       .form-right {
         flex: 1;
+      }
+      @include en-tablet {
+        display: block;
+        .form-left {
+          margin-right: 0px;
+          flex: none;
+        }
+        .form-right {
+          flex: none;
+        }
+      }
+      @include en-mobile {
+        display: block;
+        .form-left {
+          margin-right: 0px;
+          flex: none;
+        }
+        .form-right {
+          flex: none;
+        }
       }
     }
     .label-text {
@@ -302,6 +428,12 @@ onMounted(() => {
         &:focus {
           border-width: 2px;
         }
+      }
+      @include en-tablet {
+        margin-bottom: 8px;
+      }
+      @include en-mobile {
+        margin-bottom: 8px;
       }
     }
     .label-textarea {
