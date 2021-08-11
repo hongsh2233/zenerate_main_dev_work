@@ -75,7 +75,7 @@
             <SelectInput
               placeholder="Select"
               :items="items"
-              title="Inqueries"
+              title="Inquiries"
               :skipTranslate="true"
               :selected="contactForm.purpose.value"
               :valid="contactForm.purpose.valid"
