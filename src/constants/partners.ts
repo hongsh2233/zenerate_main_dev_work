@@ -21,7 +21,7 @@ export default [
   },
   {
     key: 'hoban',
-    description: 'Top-tier construction company',
+    description: 'Top-tier Construction Company',
   },
   {
     key: 'planh',
@@ -29,7 +29,7 @@ export default [
   },
   {
     key: 'bluepoint',
-    description: 'Korea’s #1 accelerator',
+    description: 'Korea’s #1 Accelerator',
   },
   {
     key: 'krypton',

@@ -22,17 +22,12 @@
         </div>
       </div>
       <div class="header-demo-wrapper">
-        <router-link
+        <a
           class="demo-link"
-          @click="close"
-          :to="{
-            name: 'en-contact',
-            query: {
-              from: 'demo',
-            },
-          }"
-          >REQUEST A DEMO
-        </router-link>
+          href="https://mailchi.mp/zenerate/zenerate-beta-test-signup"
+          target="_blank"
+          >Join Beta
+        </a>
       </div>
     </div>
   </div>
@@ -90,7 +85,7 @@ const close = () => {
   .drawer-wrapper {
     @include fixed(top 0 right -2px);
     width: 420px;
-    height: 100vh;
+    height: 100%;
     background-color: $white;
     z-index: 2;
     padding: 32px 30px;
@@ -121,9 +116,9 @@ const close = () => {
     .header-demo-wrapper {
       position: absolute;
       @include bold(14);
-      width: 150px;
+      width: 100px;
       text-align: center;
-      bottom: 48px;
+      bottom: 128px;
       right: 30px;
       line-height: 50px;
       color: $cr-main-blue;

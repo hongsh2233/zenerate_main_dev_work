@@ -69,7 +69,9 @@
                   <div class="career-item">
                     <div class="item-date">
                       Posted
-                      {{ formatDistanceToNowStrict(posted, { addSuffix: true }) }}
+                      {{
+                        formatDistanceToNowStrict(posted, { addSuffix: true })
+                      }}
                     </div>
                     <div
                       class="item-title hover-pointer"
@@ -83,7 +85,9 @@
                   <div class="career-item">
                     <div class="item-date">
                       Posted
-                      {{ formatDistanceToNowStrict(posted, { addSuffix: true }) }}
+                      {{
+                        formatDistanceToNowStrict(posted, { addSuffix: true })
+                      }}
                     </div>
                     <div
                       class="item-title hover-pointer"
@@ -97,7 +101,9 @@
                   <div class="career-item">
                     <div class="item-date">
                       Posted
-                      {{ formatDistanceToNowStrict(posted, { addSuffix: true }) }}
+                      {{
+                        formatDistanceToNowStrict(posted, { addSuffix: true })
+                      }}
                     </div>
                     <div
                       class="item-title hover-pointer"
@@ -201,6 +207,12 @@ onMounted(() => {
       padding-top: 48px;
       @include regular(21);
       width: 545px;
+      @include en-tablet {
+        max-width: 100%;
+      }
+      @include en-mobile {
+        max-width: 100%;
+      }
     }
   }
 }

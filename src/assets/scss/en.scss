@@ -23,6 +23,7 @@
     padding-top: 100px;
     @include flex($dir: column);
     @include relative;
+    z-index: 1;
     @include container;
     @include en-tablet {
       height: auto;
@@ -133,7 +134,7 @@
     font-weight: $regular;
     span {
       font-weight: $bold;
-      color: rgba($cr-main-blue, 0.8);
+      color: rgba(82, 110, 255, 0.92);
     }
   }
   @include en-desktop {
@@ -173,8 +174,8 @@
 .content-numbering {
   margin: 0px auto;
   p {
-    @include regular(18);
-    color: $cr-text-grey;
+    @include regular(20);
+    color: $cr-text-dark-grey;
     line-height: 24px;
     margin-bottom: 24px;
     &:last-child {

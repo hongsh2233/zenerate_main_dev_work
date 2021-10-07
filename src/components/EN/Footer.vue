@@ -13,7 +13,7 @@
               </div>
               <div class="location-content">
                 <p class="content">Los Angeles</p>
-                <p class="content">555 West 5th Street 35F</p>
+                <p class="content">555 West 5th Street, 35F</p>
                 <p class="content">Los Angeles, CA 90013</p>
               </div>
             </div>
@@ -27,11 +27,10 @@
                 <p class="content">Songpa-gu, Seoul 05544</p>
               </div>
             </div>
-            
           </div>
           <div class="footer-contact">
             <p class="contact">
-              <strong>Contacts </strong>
+              <strong>Contact</strong>
             </p>
             <p class="contact">
               <a href="mailto:help@zenerate.ai">help@zenerate.ai</a>
@@ -99,7 +98,7 @@
             }
             @include en-mobile {
               p.title {
-                margin-bottom: 12px;
+                margin-bottom: 0px;
               }
               &.location-title {
                 margin-bottom: 0;
@@ -128,6 +127,9 @@
           }
           @include en-mobile {
             margin-top: 24px;
+            p {
+              margin-bottom: 0;
+            }
           }
         }
       }

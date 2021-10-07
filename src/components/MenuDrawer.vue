@@ -14,27 +14,27 @@
       <div class="menu-item">
         <div class="item-left">
           <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/about">{{
+            <router-link @click="toggleDrawer(false)" to="/kr/main/about">{{
               $t('menu.ourCompany')
             }}</router-link>
           </div>
           <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/news">{{
+            <router-link @click="toggleDrawer(false)" to="/kr/main/news">{{
               $t('menu.news')
             }}</router-link>
           </div>
           <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/service">{{
+            <router-link @click="toggleDrawer(false)" to="/kr/main/service">{{
               $t('menu.service')
             }}</router-link>
           </div>
           <div class="left-link hover-pointer" v-if="locale != 'en'">
-            <router-link @click="toggleDrawer(false)" to="/main/career">{{
+            <router-link @click="toggleDrawer(false)" to="/kr/main/career">{{
               $t('menu.career')
             }}</router-link>
           </div>
           <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/main/contact">{{
+            <router-link @click="toggleDrawer(false)" to="/kr/main/contact">{{
               $t('menu.contact')
             }}</router-link>
           </div>

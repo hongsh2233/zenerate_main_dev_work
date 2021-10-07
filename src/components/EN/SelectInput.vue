@@ -33,6 +33,12 @@
           </div>
         </div>
       </transition>
+      <div
+        class="input-select-error"
+        :class="{ active: props.valid === false }"
+      >
+        Please Select!
+      </div>
     </div>
   </div>
 </template>
@@ -72,6 +78,7 @@ const props = defineProps({
 })
 
 const emit = defineEmit(['onSelect'])
+const isInvalid = ref(false)
 
 const onSelect = (value) => {
   emit('onSelect', value)
@@ -81,10 +88,18 @@ const onSelect = (value) => {
 const showDropdown = ref(false)
 const toggleDropDown = (flag) => {
   showDropdown.value = flag == null ? !showDropdown.value : flag
+  if (!showDropdown.value) {
+    if (!props.selected) isInvalid.value = true
+  } else isInvalid.value = false
 }
 
 const dummy = ref<HTMLInputElement>(null)
 const selected = computed(() => props.selected)
+
+watch(selected, (v) => {
+  if (!v) isInvalid.value = true
+  else isInvalid.value = false
+})
 
 watch(showDropdown, (v) => {
   if (v) {

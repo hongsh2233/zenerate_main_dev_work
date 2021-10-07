@@ -2,7 +2,13 @@
   <section id="fullpage-pricing">
     <div class="section section-pricing">
       <div class="section-inner inner-pricing">
-        <div class="pricing-wrapper">
+        <div
+          class="pricing-wrapper"
+          data-aos="fade-up"
+          data-aos-delay="0"
+          data-aos-offset="-1500"
+          data-aos-duration="300"
+        >
           <div class="pricing-title">PRICING</div>
           <div class="pricing-subtitle">Subscription Plans</div>
           <div class="pricing-content-wrapper">
@@ -43,9 +49,7 @@
                 <p>(Report + Web Access)</p>
               </div>
               <ul class="content-detail">
-                <li>
-                  Zenerate™ AI Engine: 50,000+ Design Alternatives
-                </li>
+                <li>Zenerate™ AI Engine: 50,000+ Design Alternatives</li>
                 <li>Rent/Sale Price Estimates</li>
                 <li>2D Map Layers</li>
                 <li>CAD Files</li>
@@ -53,7 +57,8 @@
                 <li>Parking & Commercial Floor Plans</li>
                 <li>Parking & Residential Floor Plans</li>
                 <li>
-                  Fully Customizable: Design Details, Construction Constraints, Cash Flow Projections
+                  Fully Customizable: Design Details, Construction Constraints,
+                  Cash Flow Projections
                 </li>
               </ul>
             </div>

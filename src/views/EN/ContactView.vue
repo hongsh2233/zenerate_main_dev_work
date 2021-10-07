@@ -147,12 +147,6 @@ type Item = {
 
 const items: Item[] = [
   {
-    id: 0,
-    value: 'demo',
-    label: 'Request a Demo',
-  },
-
-  {
     id: 1,
     value: 'invest',
     label: 'Investments',
@@ -274,13 +268,6 @@ onMounted(() => {
     fullpage.value.destroy()
   }
   const route = useRoute()
-  if (route.query && route.query.from === 'demo') {
-    contactForm.purpose.value = {
-      id: 0,
-      value: 'demo',
-      label: 'Request a Demo',
-    }
-  }
 })
 </script>
 <style lang="scss" scoped>

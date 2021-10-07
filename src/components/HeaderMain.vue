@@ -67,7 +67,7 @@
         </div> -->
       </div>
       <div class="header-buttons-wrapper">
-        <div class="button-lang-wrapper">
+        <!-- <div class="button-lang-wrapper">
           <button
             class="button-lang"
             @click="setLocale('en')"
@@ -83,7 +83,7 @@
           >
             <span>KOR</span>
           </button>
-        </div>
+        </div> -->
         <button class="button-menu hidden-desktop" @click="toggleDrawer">
           <i class="material-icons">
             {{ props.showDrawer ? 'close' : 'menu' }}
@@ -120,7 +120,6 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-
 .header-wrapper {
   position: fixed;
   top: 0;

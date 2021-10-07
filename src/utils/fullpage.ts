@@ -9,9 +9,9 @@ import fullpage from 'fullpage.js/dist/fullpage.extensions.min'
 const defaultOption: Partial<FullPageJsOptions> = {
   responsiveWidth: 1200,
   responsiveHeight: 760,
-  scrollOverflow: true,
+  // scrollOverflow: true,
   // scrollOverflowReset: true,
-  parallax: true,
+  // parallax: true,
   offsetSections: true,
   navigation: true,
   navigationPosition: 'left',
@@ -19,11 +19,23 @@ const defaultOption: Partial<FullPageJsOptions> = {
 }
 
 const afterLoad = (): void => {
-  document
-    .querySelectorAll('.section.active .aos-init')
-    .forEach((doc: HTMLElement) => {
+  // setTimeout(() => {
+  const a = document.querySelectorAll('.section.active .aos-init')
+
+  if (!a.length) {
+    setTimeout(() => {
+      document
+        .querySelectorAll('.section.active .aos-init')
+        .forEach((doc: HTMLElement) => {
+          doc.classList.add('aos-animate')
+        })
+    }, 100)
+  } else {
+    a.forEach((doc: HTMLElement) => {
       doc.classList.add('aos-animate')
     })
+  }
+  // }, 0)
 }
 
 export default class FullPage {

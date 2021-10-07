@@ -23,14 +23,13 @@ const userLanguage = window.navigator.language.substring(0, 2)
 
 const i18n = createI18n({
   legacy: false,
-  locale: localStorage.getItem('language') || userLanguage || 'ko',
+  locale: 'ko',
   fallbackLocale: 'ko',
   messages: resources,
   globalInjection: true,
   // @ts-ignore
-  datetimeFormats
+  datetimeFormats,
 })
-
 
 export default i18n
 

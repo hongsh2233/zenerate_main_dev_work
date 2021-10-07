@@ -82,7 +82,7 @@
               </div>
               <div class="item-solution">
                 <span>
-                  <strong>Various rental prices</strong> considering height,
+                  <strong>Rent prices</strong> considering height,
                   views, bedroom type, layout, etc.
                 </span>
               </div>
@@ -386,6 +386,7 @@ onMounted(() => {
         .service-content {
           margin: 0px auto;
           margin-bottom: 48px;
+          width: 100%;
         }
       }
     }
@@ -479,6 +480,12 @@ onMounted(() => {
           a {
             text-decoration: underline;
           }
+        }
+        @include en-tablet {
+          margin: 0px auto;
+        }
+        @include en-mobile {
+          margin: 0px auto;
         }
       }
       @include en-tablet {

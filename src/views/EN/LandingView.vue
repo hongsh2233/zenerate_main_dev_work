@@ -10,20 +10,24 @@
         >
           <div></div>
           <div class="content-heading">
-            <p>Introducing the only</p>
-            <p><strong>AI-powered architectural design</strong> technology</p>
+            <p>Zenerate™</p>
+            <p>
+              The only <strong>AI-powered architectural design</strong>
+              technology
+            </p>
             <p>that boosts real estate development profitability</p>
             <p>from <span>3% to 26%</span></p>
           </div>
           <div class="content-phrase">
-            <p>
-              <span>Zenerate™</span> all possibilities of building design to
-              maximize your success
-            </p>
+            <p>All building design possibilities. Maximum success.</p>
           </div>
           <div class="content-justyourcuriosity"></div>
           <div class="content-button">
-            <button @click="toContactForm">LEARN MORE</button>
+            <a
+              href="https://mailchi.mp/zenerate/zenerate-beta-test-signup"
+              target="_blank"
+              >JOIN BETA</a
+            >
           </div>
         </div>
         <div class="arrow-bottom only-en-desktop">
@@ -45,13 +49,13 @@
         >
           <div class="engine-contents">
             <div class="content-heading">
-              <p><strong>Our Zenerate™ Engine</strong></p>
+              <p><strong>The Zenerate™ Engine</strong></p>
             </div>
             <div class="content-text">
               <p>Our design automation software combines</p>
               <p>
-                <span>AI + Data Science</span> to search millions of
-                possibilities,
+                AI + Data Science to search
+                <span>millions</span> of possibilities,
               </p>
               <p>delivering <span>fast & easy feasibility studies</span></p>
               <p>and <span>optimized profitability.</span></p>
@@ -93,24 +97,24 @@
           <div class="instant-search-contents">
             <div class="content-inner" style="margin-bottom: 32px">
               <div class="content-heading">
-                <p><strong>Searching areas for your</strong></p>
-                <p><strong>next building development project?</strong></p>
+                <p><strong>Scouting sites for your</strong></p>
+                <p><strong>next development project?</strong></p>
               </div>
               <div class="content-text">
                 <p>
-                  Use <span>Instant Search</span> for a site feasibility report
-                  generated within seconds.
+                  Use <span>Instant Search</span> to generate a feasible option
+                  for any site <span>within seconds</span>.
                 </p>
               </div>
               <div class="content-numbering">
                 <p>1. Type in your site address or click on a site.</p>
                 <p>
-                  2. Verify the instant result for a possible development plan.
+                  2. Verify the instant result through the Zenerate platform.
                 </p>
               </div>
             </div>
             <button data-aos="fade-up" class="button-1" @click="toContactForm">
-              Learn more
+              LEARN MORE
             </button>
           </div>
           <div class="instant-search-image hidden-en-desktop">
@@ -155,19 +159,21 @@
             <div class="content-heading">
               <p>
                 <strong
-                  >Need to boost your project profitability and in a time
+                  >Need to boost your project's profit metrics in a time
                   crunch?</strong
                 >
               </p>
             </div>
             <div class="content-text">
-              <p>Let our AI tech <span>Zenerate™</span> do the work for you</p>
+              <p>
+                Our AI-based <span>Zenerate™</span> Engine does the optimization
+                work for you.
+              </p>
             </div>
             <div class="content-text">
               <p>
-                Our customers have seen revenues increase
-                <span>up to 12% on average</span>
-                compared to how things have been done by human.
+                Zenerate™ solutions have increased real customer revenue by an
+                <span>average of 12%</span>, compared to non-AI methods.
               </p>
             </div>
           </div>
@@ -198,7 +204,11 @@
         >
           <div class="compare-text">
             <div class="content-heading">
-              <p><strong>Compare & pick your best solution</strong></p>
+              <p>
+                <strong
+                  >Use our platform to compare & pick the best solution
+                </strong>
+              </p>
             </div>
             <div class="content-text">
               <p>
@@ -218,9 +228,7 @@
       <div class="background-image"></div>
     </div>
 
-    <div
-      class="section section-partners fp-auto-height fp-auto-height-responsive"
-    >
+    <div class="section section-partners fp-auto-height-responsive">
       <div class="partners-title">
         <p>We’re excited to help you</p>
         <p>
@@ -262,6 +270,8 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="section section-footer fp-auto-height">
       <Footer />
     </div>
   </div>
@@ -290,9 +300,6 @@ const router = useRouter()
 const toContactForm = () => {
   router.push({
     name: 'en-contact',
-    query: {
-      from: 'demo',
-    },
   })
 }
 </script>
@@ -307,19 +314,32 @@ const toContactForm = () => {
     z-index: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.1;
+    opacity: 0.07;
   }
 }
 
 .section-landing {
+  .section-inner {
+    z-index: 2;
+  }
   .landing-background {
     background-image: url('/en/img/landing_buildings.gif');
     background-size: cover;
     background-repeat: no-repeat;
+
     @include absolute(left 0 top 0);
     z-index: 0;
     width: 100%;
     height: 100%;
+    @include en-desktop {
+      background-position-x: min(calc(100vw - 1280px), 0.001px);
+    }
+    @include en-tablet-small {
+      background-position-x: calc(100vw - 960px);
+    }
+    @include en-mobile {
+      background-position-x: calc(100vw - 960px);
+    }
   }
   .landing-background-wave {
     width: 100%;
@@ -361,7 +381,7 @@ const toContactForm = () => {
     }
 
     .content-button {
-      button {
+      a {
         @include button-1;
       }
       @include en-tablet {
@@ -374,7 +394,7 @@ const toContactForm = () => {
   }
 }
 .section-engine {
-  background: $cr-text-black;
+  background: rgba(0, 0, 5, 0.88);
   .section-inner {
     .inner-contents {
       @include flex();
@@ -389,6 +409,7 @@ const toContactForm = () => {
         img {
           width: 100%;
           height: 100%;
+          border-radius: 6px;
         }
         @include en-tablet {
           width: 400px;
@@ -520,8 +541,8 @@ const toContactForm = () => {
       }
       .inner {
         @include absolute(top 50% left 50%);
-        width: 256px;
-        height: 221px;
+        width: 312px;
+        height: 260px;
         transform: translate(-50%, -50%);
       }
       @include en-tablet {
@@ -614,6 +635,9 @@ const toContactForm = () => {
       margin-right: 44px;
       @include vertical-center;
       text-align: left;
+      .content-heading {
+        margin-bottom: 32px;
+      }
       .text-heading {
         @include bold(28);
         margin-bottom: 64px;
@@ -665,12 +689,17 @@ const toContactForm = () => {
       @include medium(32);
       position: relative;
       span {
-        color: #006dff;
+        color: rgba(82, 110, 255, 0.92);
       }
+    }
+    @include en-desktop {
+      padding-left: 60px;
     }
     @include en-tablet {
       p {
         font-size: 28px;
+        max-width: 70%;
+        margin: 0px auto;
       }
     }
     @include en-mobile {
@@ -683,12 +712,30 @@ const toContactForm = () => {
     padding: 96px 0px;
 
     .content-text {
-      max-width: 600px;
+      max-width: 900px;
       margin: 0px auto;
       text-align: center;
       p {
-        color: $cr-text-dark-grey;
+        @include medium(30);
+        position: relative;
+        span {
+          color: rgba(82, 110, 255, 0.92);
+        }
       }
+      @include en-tablet {
+        max-width: 70%;
+        p {
+          font-size: 26px;
+        }
+      }
+      @include en-mobile {
+        p {
+          font-size: 26px;
+        }
+      }
+      // p {
+      //   color: $cr-text-dark-grey;
+      // }
     }
   }
   .partners-list {

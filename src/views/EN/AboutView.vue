@@ -13,17 +13,12 @@
             </div>
             <div class="story-content content-text">
               <p>
-                Our primary goal is to provide profitable solutions that will
-                change traditional building designs lacking the financials. We
-                strive to make design sustainable and practical using AI so that
-                it can be applied to various building design problems.
-              </p>
-            </div>
-            <div class="story-content content-text">
-              <p>
-                Zenerate is at the forefront of disrupting real estate
-                development, seeking to improve the quality of urban
-                development.
+                We're a team of architects, software engineers, and AI
+                developers driven to provide building solutions that position
+                properties into successful operations for various stakeholders.
+                Our design automation software combines AI + Data Science to
+                search millions of possibilities, delivering fast & easy
+                feasibility studies and optimized profitability.
               </p>
             </div>
           </div>
@@ -82,7 +77,7 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .section {
-  background-color: #fafafc; 
+  background-color: #fafafc;
 }
 .section-story {
   .inner-story {

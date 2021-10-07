@@ -18,19 +18,15 @@
         </router-link>
       </div>
       <div class="header-demo-wrapper only-en-desktop">
-        <router-link
+        <a
           class="demo-link"
-          :to="{
-            name: 'en-contact',
-            query: {
-              from: 'demo',
-            },
-          }"
-          >REQUEST A DEMO
-        </router-link>
+          href="https://mailchi.mp/zenerate/zenerate-beta-test-signup"
+          target="_blank"
+          >Join Beta
+        </a>
       </div>
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
-          <MenuIcon @toggle="toggleDrawer" />
+        <MenuIcon @toggle="toggleDrawer" />
       </div>
     </div>
   </div>
@@ -133,7 +129,7 @@ const routes = [
       }
     }
     .header-demo-wrapper {
-      @include button-2;
+      @include button-2($width: 104px, $height: 42px);
       margin: auto 0px;
       margin-left: 64px;
       .demo-link {
