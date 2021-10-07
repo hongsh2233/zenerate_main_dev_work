@@ -1096,6 +1096,7 @@ const filteredMember = computed(() => {
         @include desktop {
           width: 380px;
           height: 380px;
+          // @include vertical-center();
         }
 
         @include tablet {
@@ -1103,6 +1104,7 @@ const filteredMember = computed(() => {
           height: 310px;
         }
         @include mobile {
+          @include vertical-center();
           width: 270px;
           height: 270px;
         }
@@ -1115,22 +1117,25 @@ const filteredMember = computed(() => {
         .item-image {
           margin: 0px auto;
           margin-bottom: 8px;
+
           @include desktop {
             width: 124px;
             height: 124px;
+            margin-top: 38px;
             margin-bottom: 16px;
           }
 
           @include tablet {
             width: 124px;
             height: 124px;
-            margin-bottom: 16px;
+            margin-top: 8px;
+            margin-bottom: 4px;
           }
 
           @include mobile {
             width: 124px;
             height: 124px;
-            margin-bottom: 16px;
+            margin-bottom: 4px;
           }
 
           img {

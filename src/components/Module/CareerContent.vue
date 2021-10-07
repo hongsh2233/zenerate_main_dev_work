@@ -72,7 +72,6 @@
           <li>휴가 17일</li>
           <li>선택적 근로 시간제</li>
           <li>점심 식사 제공</li>
-          <li>8월 중 사무실 강남으로 이전 예정</li>
         </ul>
       </div>
       <button
@@ -162,11 +161,10 @@
       <div class="content-item">
         <div class="content-item-title">근무조건 및 업무환경</div>
         <ul class="content-item-content">
-          <li>정규직 (수습기간 3개월, 수습기간내 4대보험+월급 100%지급)</li>
+          <li>정규직</li>
           <li>휴가 17일</li>
           <li>선택적 근로 시간제</li>
           <li>점심 식사 제공</li>
-          <li>현재 사무실 태릉입구역 3분거리, 8월 내 강남으로 이전 예정</li>
         </ul>
       </div>
       <button
@@ -237,11 +235,84 @@
       <div class="content-item">
         <div class="content-item-title">근무조건 및 업무환경</div>
         <ul class="content-item-content">
-          <li>정규직 (수습기간 3개월, 수습기간내 4대보험+월급 100%지급)</li>
+          <li>정규직</li>
           <li>휴가 17일</li>
           <li>선택적 근로 시간제</li>
           <li>점심 식사 제공</li>
-          <li>현재 사무실 태릉입구역 3분거리, 8월 내 강남으로 이전 예정</li>
+        </ul>
+      </div>
+      <button
+        class="back-button"
+        @click=";[(nowId = -1), scrollTop(), onSelect(nowId)]"
+      >
+        <span>BACK</span>
+        <svg
+          width="122"
+          height="28"
+          viewBox="0 0 122 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M121 27H0.999997L27.6886 1"
+            stroke="#4747FF"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+    <!-- Management Support -->
+    <div class="career-content" v-if="props.careerId === 3">
+      <div class="image-wrapper">
+        <img src="/img/career.png" alt="career" />
+      </div>
+      <div class="career-content-title">
+        <span>경영 지원</span>
+        <!-- <button @click="goToApply">지원하기</button> -->
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">주요 업무</div>
+        <ul class="content-item-content">
+          <li>재무, 회계 관련 업무 총괄</li>
+          <li>정부지원사업 자금 및 일정 관리</li>
+          <li>인사 채용 및 직원 관리 관련 업무</li>
+          <li>기타 경영지원 전반</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">자격 조건</div>
+        <ul class="content-item-content">
+          <li>기업에서 경영지원 관련 업무 경험</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">필수 사항</div>
+        <ul class="content-item-content">
+          <li>워드, 엑셀, 한컴을 이용하여 업무를 수행한 경험이 있으신 분</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">우대 사항</div>
+        <ul class="content-item-content">
+          <li>경영지원 부서 경력 3년 이상</li>
+          <li>꼼꼼하고 체계적이며 의사소통이 원활하신 분</li>
+          <li>문서 작업(워드, 엑셀, 한컴)이 뛰어나신 분</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">지원 절차</div>
+        <ul class="content-item-content">
+          <li>help@zenerate.ai 이메일로 이력서 제출</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">근무조건 및 업무환경</div>
+        <ul class="content-item-content">
+          <li>정규직</li>
+          <li>휴가 17일</li>
+          <li>선택적 근로 시간제</li>
+          <li>점심 식사 제공</li>
         </ul>
       </div>
       <button
@@ -292,7 +363,6 @@ const goToApply = () => {
 console.log(props.careerId)
 </script>
 <style lang="scss" scoped>
-
 .career-content {
   .image-wrapper {
     width: 100%;
@@ -314,10 +384,10 @@ console.log(props.careerId)
     padding-bottom: 40px;
     border-bottom: solid 1px $grey-3;
     margin-bottom: 40px;
-    @include tablet{
+    @include tablet {
       padding-bottom: 30px;
     }
-    @include mobile{
+    @include mobile {
       padding-bottom: 30px;
     }
     span {
@@ -386,12 +456,12 @@ console.log(props.careerId)
     .content-item-content-nolist {
       margin-left: 0px;
       @include tablet {
-        p{
+        p {
           margin-bottom: 12px;
         }
       }
       @include mobile {
-        p{
+        p {
           margin-bottom: 12px;
         }
       }
@@ -408,10 +478,10 @@ console.log(props.careerId)
     svg {
       position: absolute;
     }
-    @include tablet{
+    @include tablet {
       @include bold(14);
     }
-    @include mobile{
+    @include mobile {
       @include bold(14);
     }
   }

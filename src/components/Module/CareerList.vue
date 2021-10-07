@@ -39,6 +39,16 @@
             <div class="arrow-right"></div>
           </div>
         </div>
+        <div class="career-item">
+          <!-- <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div> -->
+          <div
+            class="item-title hover-pointer"
+            @click=";[(careerId = 3), scrollTop()]"
+          >
+            경영 지원
+            <div class="arrow-right"></div>
+          </div>
+        </div>
       </div>
     </transition>
   </div>
@@ -55,7 +65,6 @@ const scrollTop = () => {
 }
 </script>
 <style lang="scss" scoped>
-
 .career-list-wrapper {
   .career-list {
     @include flex($dir: column, $justify: space-between);
