@@ -234,7 +234,7 @@
       </div>
     </div>
   </div>
-  <div class="section-team">
+  <div class="section-team" id="team">
     <div class="team-contents">
       <div class="contents-title">{{ $t('main.team.title') }}</div>
       <div
@@ -404,11 +404,46 @@ const memberList = reactive([
     team: 'product',
   },
   {
-    name: 'main.team.name.swj',
-    title: 'main.team.job.swj',
-    comment: 'main.team.comment.swj',
-    img: 'swj',
+    name: 'main.team.name.kdh',
+    title: 'main.team.job.kdh',
+    comment: 'main.team.comment.kdh',
+    img: 'kdh',
+    team: 'product',
+  },
+  {
+    name: 'main.team.name.bsh',
+    title: 'main.team.job.bsh',
+    comment: 'main.team.comment.bsh',
+    img: 'bsh',
+    team: 'it',
+  },
+  {
+    name: 'main.team.name.psm',
+    title: 'main.team.job.psm',
+    comment: 'main.team.comment.psm',
+    img: 'psm',
     team: 'marketing',
+  },
+  {
+    name: 'main.team.name.ngsa',
+    title: 'main.team.job.ngsa',
+    comment: 'main.team.comment.ngsa',
+    img: 'ngsa',
+    team: 'it',
+  },
+  {
+    name: 'main.team.name.psj',
+    title: 'main.team.job.psj',
+    comment: 'main.team.comment.psj',
+    img: 'psj',
+    team: 'product',
+  },
+  {
+    name: 'main.team.name.ksh',
+    title: 'main.team.job.ksh',
+    comment: 'main.team.comment.ksh',
+    img: 'ksh',
+    team: 'product',
   },
 ])
 
@@ -418,9 +453,9 @@ const filteredMember = computed(() => {
 })
 </script>
 <style lang="scss" scoped>
-
 .section-about {
-  padding: 80px 0px;
+  padding: 80px 0px 0px;
+
   @include mobile {
     padding: 40px 0px;
   }
@@ -613,7 +648,6 @@ const filteredMember = computed(() => {
           .mission-content-up {
             padding-bottom: 30px;
             color: rgba($black-1, 0.4);
-            
           }
           .mission-content-down {
             padding-top: 30px;
@@ -991,7 +1025,7 @@ const filteredMember = computed(() => {
   }
 }
 .section-team {
-  padding: 24px 0px 80px 0px;
+  padding: 104px 0px 80px 0px;
   .team-image {
     width: 100%;
     overflow: hidden;
@@ -1082,19 +1116,23 @@ const filteredMember = computed(() => {
           margin: 0px auto;
           margin-bottom: 8px;
           @include desktop {
-            width: 200px;
-            height: 200px;
+            width: 124px;
+            height: 124px;
+            margin-bottom: 16px;
           }
 
           @include tablet {
-            width: 150px;
-            height: 150px;
+            width: 124px;
+            height: 124px;
+            margin-bottom: 16px;
           }
+
           @include mobile {
             width: 124px;
             height: 124px;
-            margin-bottom: 4px;
+            margin-bottom: 16px;
           }
+
           img {
             width: 100%;
             height: 100%;

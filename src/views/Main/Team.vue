@@ -151,11 +151,46 @@ const memberList = reactive([
     team: 'product',
   },
   {
-    name: 'main.team.name.swj',
-    title: 'main.team.job.swj',
-    comment: 'main.team.comment.swj',
-    img: 'swj',
+    name: 'main.team.name.kdh',
+    title: 'main.team.job.kdh',
+    comment: 'main.team.comment.kdh',
+    img: 'kdh',
+    team: 'product',
+  },
+  {
+    name: 'main.team.name.bsh',
+    title: 'main.team.job.bsh',
+    comment: 'main.team.comment.bsh',
+    img: 'bsh',
+    team: 'it',
+  },
+  {
+    name: 'main.team.name.psm',
+    title: 'main.team.job.psm',
+    comment: 'main.team.comment.psm',
+    img: 'psm',
     team: 'marketing',
+  },
+  {
+    name: 'main.team.name.ngsa',
+    title: 'main.team.job.ngsa',
+    comment: 'main.team.comment.ngsa',
+    img: 'ngsa',
+    team: 'it',
+  },
+  {
+    name: 'main.team.name.bsj',
+    title: 'main.team.job.bsj',
+    comment: 'main.team.comment.bsj',
+    img: 'bsj',
+    team: 'product',
+  },
+  {
+    name: 'main.team.name.ksh',
+    title: 'main.team.job.ksh',
+    comment: 'main.team.comment.ksh',
+    img: 'ksh',
+    team: 'product',
   },
 ])
 
@@ -165,7 +200,6 @@ const filteredMember = computed(() => {
 })
 </script>
 <style lang="scss" scoped>
-
 .section-team {
   padding: 24px 0px 80px 0px;
   .team-image {
@@ -279,8 +313,8 @@ const filteredMember = computed(() => {
         .item-desc {
           @include medium(15);
           color: rgba($black, 0.5);
-            margin-bottom: 20px;
-          @include tablet{
+          margin-bottom: 20px;
+          @include tablet {
             margin-bottom: 8px;
           }
           @include mobile {

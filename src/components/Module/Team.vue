@@ -2,11 +2,10 @@
   <div class="module-team-wrapper module-item-wrapper">
     <div class="team-inner">
       <div class="team-title">
-        <div
-          class="title-caption caption-large hover-pointer"
-          @click="router.push('/kr/main/team')"
-        >
-          <span>{{ $t('module.team.caption') }}</span>
+        <div class="title-caption caption-large hover-pointer">
+          <router-link :to="{ name: 'About', hash: '#team' }">
+            <span>{{ $t('module.team.caption') }}</span>
+          </router-link>
         </div>
         <div class="title-date">2017 - 2021</div>
         <div class="title-content">
@@ -25,12 +24,12 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-
 .team-inner {
   padding-top: 24px;
   width: 100%;
   height: 100%;
   display: grid;
+  cursor: default;
   @include desktop {
     grid-template-areas:
       'title'
@@ -68,7 +67,7 @@ const router = useRouter()
         @include medium(12);
         height: 48px;
       }
-      @include mobile{
+      @include mobile {
         @include medium(12);
       }
     }
@@ -96,7 +95,7 @@ const router = useRouter()
       height: 360px;
       object-fit: contain;
     }
-    @include mobile {      
+    @include mobile {
       height: 250px;
       object-fit: contain;
       margin-bottom: 16px;

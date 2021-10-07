@@ -30,29 +30,29 @@
           <textarea v-model="contactForm.message" rows="7" />
         </div>
         <div class="contact-send-wrapper">
-        <div class="contact-send hover-pointer" @click="sendEmail">
-          <span>{{
-            $t(
-              sendEmailStatus
-                ? 'main.contact.form.sent'
-                : 'main.contact.form.send'
-            )
-          }}</span>
-          <svg
-            width="146"
-            height="28"
-            viewBox="0 0 146 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0.5 27H145.5L118.923 1"
-              stroke="#4747FF"
-              stroke-linecap="square"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
+          <div class="contact-send hover-pointer" @click="sendEmail">
+            <span>{{
+              $t(
+                sendEmailStatus
+                  ? 'main.contact.form.sent'
+                  : 'main.contact.form.send'
+              )
+            }}</span>
+            <svg
+              width="146"
+              height="28"
+              viewBox="0 0 146 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.5 27H145.5L118.923 1"
+                stroke="#4747FF"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -121,7 +121,6 @@ const sendEmail = async () => {
 }
 </script>
 <style lang="scss" scoped>
-
 .section-main-contact {
   width: 100%;
   padding: 80px 0px;
@@ -209,7 +208,7 @@ const sendEmail = async () => {
     @include medium(16);
     color: rgba($black-1, 0.4);
     margin-bottom: 12px;
-    @include mobile{
+    @include mobile {
       @include medium(14);
     }
   }
@@ -221,10 +220,10 @@ const sendEmail = async () => {
     font-size: 18px;
     line-height: 1.25;
     padding: 1px 12px;
-    &:focus{
+    &:focus {
       border: 1px solid $main;
     }
-    @include mobile{
+    @include mobile {
       @include medium(16);
     }
   }
@@ -232,7 +231,7 @@ const sendEmail = async () => {
     color: $main;
     font-weight: $medium;
   }
-  &:focus{
+  &:focus {
     background-color: red;
   }
 }
@@ -243,7 +242,7 @@ const sendEmail = async () => {
     @include medium(16);
     color: rgba($black-1, 0.4);
     margin-bottom: 12px;
-    @include mobile{
+    @include mobile {
       @include medium(14);
     }
   }
@@ -254,40 +253,39 @@ const sendEmail = async () => {
     border: 1px solid rgba(196, 196, 196, 0.6);
     padding: 6px 12px 5px 12px;
     width: 100%;
-    &:focus{
+    &:focus {
       border: 1px solid $main;
     }
-    @include mobile{
+    @include mobile {
       @include medium(16);
     }
   }
 }
-.contact-send-wrapper{
+.contact-send-wrapper {
   margin-bottom: 60px;
   position: relative;
   .contact-send {
-  width: 145px;
-  margin-top: 8px;
-  position: absolute;
-  right: 0;
-  @include flex($dir: column);
-  text-align: center;
-  span {
-    @include bold(16);
-    line-height: 40px;
-    color: $main;
-    @include mobile{
-      @include bold(14);
+    width: 145px;
+    margin-top: 8px;
+    position: absolute;
+    right: 0;
+    @include flex($dir: column);
+    text-align: center;
+    span {
+      @include bold(16);
+      line-height: 40px;
+      color: $main;
+      @include mobile {
+        @include bold(14);
+      }
     }
-  }
-  svg{
-    position:absolute;
-    bottom: 0;
-    @include mobile{
-      bottom: -5px;
+    svg {
+      position: absolute;
+      bottom: 0;
+      @include mobile {
+        bottom: -5px;
+      }
     }
   }
 }
-}
-
 </style>

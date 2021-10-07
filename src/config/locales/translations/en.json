@@ -242,7 +242,11 @@
   },
   "main": {
     "service": {
-      "title": ["차별화된 제너레잇의 AI 솔루션", "Building Design AI Solutions", "Early Stage Planning Tool"],
+      "title": [
+        "차별화된 제너레잇의 AI 솔루션",
+        "Building Design AI Solutions",
+        "Early Stage Planning Tool"
+      ],
       "types": {
         "web": "Web Solution",
         "consulting": "Consulting Service"
@@ -252,7 +256,9 @@
         "consulting": "Consulting"
       },
       "content": [
-        "By providing millions of building design alternatives with algorithms,", "users can easily examine profitability of their projects.","",
+        "By providing millions of building design alternatives with algorithms,",
+        "users can easily examine profitability of their projects.",
+        "",
         "Zenerate provides all possible design alternatives considering site, massing, floor height, view, etc., and maximize profits of the client’s project.",
         "Based on actual transaction data,  our A.I. model learns how the price is decided in relation to  area, floor, height, view, etc.. Then, it will price every single space properly in a new project."
       ],
@@ -306,7 +312,12 @@
         "ysh": "Sang-Hoon Yu",
         "obg": "Beomgyo Oh",
         "lsh": "Sinhoo Lee",
-        "swj": "Woojeong Song"
+        "kdh": "Daehong Kim",
+        "bsh": "Suhyun Bae",
+        "psm": "Sumin Park",
+        "ngsa": "Suna Namgung",
+        "psj": "Sangjun Park",
+        "ksh": "Seonghoon Kim"
       },
       "job": {
         "sbj": "CEO, Architectural Designer",
@@ -316,7 +327,12 @@
         "ysh": "AI Developer",
         "obg": "Web Developer",
         "lsh": "Computational Designer",
-        "swj": "Graphic Designer"
+        "kdh": "Computational Designer",
+        "bsh": "Backend Engineer",
+        "psm": "Graphic Designer",
+        "ngsa": "Web Developer Intern",
+        "psj": "Computational Designer",
+        "ksh": "Computational Designer"
       },
       "comment": {
         "sbj": "It all depends on how we look at it",
@@ -326,7 +342,12 @@
         "ysh": "Likes: dogs, math and Python",
         "obg": "From Inspiration to Realization",
         "lsh": "Connect Architecture and Codes",
-        "swj": "Make it simple, but significant"
+        "kdh": "Manuscripts don't burn",
+        "bsh": "Divide and conquer",
+        "psm": "Design the values",
+        "ngsa": "Clear and Concise",
+        "psj": "Step by step",
+        "ksh": "Think Different"
       }
     }
   },
@@ -350,12 +371,18 @@
     "mission": {
       "title": "We believe there is a better, more profitable way to approach real estate development to improve decision-making for developers and stakeholders.",
       "content": [
-        "Lack of an integrated analysis of design and profitability", "",
-        "Optimal design", "using AI technology",
-        "Limitations in", "finding the best ROI",
-        "Maximized development", "returns from 3% to 25%",
-        "Sales projections without differentiated space variables", "",
-        "Accurate alternatives", "derived from cross-data analysis"
+        "Lack of an integrated analysis of design and profitability",
+        "",
+        "Optimal design",
+        "using AI technology",
+        "Limitations in",
+        "finding the best ROI",
+        "Maximized development",
+        "returns from 3% to 25%",
+        "Sales projections without differentiated space variables",
+        "",
+        "Accurate alternatives",
+        "derived from cross-data analysis"
       ]
     },
     "tech": {
@@ -379,11 +406,15 @@
       ]
     },
     "partner": {
-      "title": ["Zenerate's Partners", "",""],
-      "content": ["We have partnered with top-tier firms; real estate developers, investment firms, design firms and general contractors.", "Companies", "Investors"]
+      "title": ["Zenerate's Partners", "", ""],
+      "content": [
+        "We have partnered with top-tier firms; real estate developers, investment firms, design firms and general contractors.",
+        "Companies",
+        "Investors"
+      ]
     },
     "timeline": {
-      "title": ["Zenerate is leading " ,"the way","in generative design"]
+      "title": ["Zenerate is leading ", "the way", "in generative design"]
     }
   },
   "newsletter": {
