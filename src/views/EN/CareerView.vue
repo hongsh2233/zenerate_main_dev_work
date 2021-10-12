@@ -139,7 +139,7 @@ const router = useRouter()
 // @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
 import { formatDistanceToNowStrict } from 'date-fns'
-const posted = new Date(2021, 7, 10)
+const posted = new Date(2021, 10, 12)
 const today = new Date()
 
 const careerId = ref(-1)

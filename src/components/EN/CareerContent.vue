@@ -97,7 +97,7 @@
       <div class="content-item">
         <div class="content-item-title">How to apply</div>
         <ul class="content-item-content">
-          <li>Send resume and cover to sjoo@zenerate.ai</li>
+          <li>Send resume and cover to apply@zenerate.ai</li>
         </ul>
       </div>
 
@@ -227,7 +227,7 @@
       <div class="content-item">
         <div class="content-item-title">How to apply</div>
         <ul class="content-item-content">
-          <li>Send resume and cover to sjoo@zenerate.ai</li>
+          <li>Send resume and cover to apply@zenerate.ai</li>
         </ul>
       </div>
 
@@ -347,7 +347,7 @@
       <div class="content-item">
         <div class="content-item-title">How to apply</div>
         <ul class="content-item-content">
-          <li>Send resume and cover to sjoo@zenerate.ai</li>
+          <li>Send resume and cover to apply@zenerate.ai</li>
         </ul>
       </div>
       <button
