@@ -76,10 +76,50 @@
                     <div
                       class="item-title hover-pointer"
                       @click="
+                        ;[
+                          router.push(
+                            `/career/architect-architectural-designer`
+                          ),
+                        ]
+                      "
+                    >
+                      Architect / Architectural Designer (Full-time)
+                    </div>
+                  </div>
+                  <div class="career-item">
+                    <div class="item-date">
+                      Posted
+                      {{
+                        formatDistanceToNowStrict(posted, { addSuffix: true })
+                      }}
+                    </div>
+                    <div
+                      class="item-title hover-pointer"
+                      @click="
+                        ;[
+                          router.push(
+                            `/career/project-analyst-real-estate-development`
+                          ),
+                        ]
+                      "
+                    >
+                      Project Analyst, Real Estate Development (Part-time)
+                    </div>
+                  </div>
+                  <div class="career-item">
+                    <div class="item-date">
+                      Posted
+                      {{
+                        formatDistanceToNowStrict(posted, { addSuffix: true })
+                      }}
+                    </div>
+                    <div
+                      class="item-title hover-pointer"
+                      @click="
                         ;[router.push(`/career/strategic-account-executive`)]
                       "
                     >
-                      STRATEGIC ACCOUNT EXECUTIVE
+                      Strategic Account Executive (Full-time)
                     </div>
                   </div>
                   <div class="career-item">
@@ -95,7 +135,7 @@
                         ;[router.push(`/career/business-development-manager`)]
                       "
                     >
-                      BUSINESS DEVELOPMENT MANAGER
+                      Business Development Manager (Full-time)
                     </div>
                   </div>
                   <div class="career-item">
@@ -115,7 +155,7 @@
                         ]
                       "
                     >
-                      BUSINESS DEVELOPMENT & MARKETING INTERN
+                      Business Development & Marketing Intern (Full-time)
                     </div>
                   </div>
                 </div>
@@ -139,7 +179,7 @@ const router = useRouter()
 // @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
 import { formatDistanceToNowStrict } from 'date-fns'
-const posted = new Date(2021, 10, 12)
+const posted = new Date(2021, 9, 17)
 const today = new Date()
 
 const careerId = ref(-1)
@@ -309,7 +349,7 @@ onMounted(() => {
         }
       }
       .list-image {
-        margin-right: 80px;
+        margin-right: 70px;
         img {
           width: 400px;
           max-width: 100%;

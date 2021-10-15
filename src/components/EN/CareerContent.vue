@@ -1,12 +1,12 @@
 <template>
   <div class="section career-content-wrapper">
-    <!-- STRATEGIC ACCOUNT EXECUTIVE -->
+    <!-- Strategic Account Executive (Full-time) -->
     <div
       class="section-inner career-content"
       v-if="$route.params.id === 'strategic-account-executive'"
     >
       <div class="career-content-title">
-        <span>STRATEGIC ACCOUNT EXECUTIVE</span>
+        <span>Strategic Account Executive (Full-time)</span>
         <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
       </div>
       <div class="content-item">
@@ -119,13 +119,13 @@
         </svg>
       </button>
     </div>
-    <!-- BUSINESS DEVELOPMENT MANAGER -->
+    <!-- Business Development Manager (Full-time) -->
     <div
       class="section-inner career-content"
       v-if="$route.params.id === 'business-development-manager'"
     >
       <div class="career-content-title">
-        <span>BUSINESS DEVELOPMENT MANAGER</span>
+        <span>Business Development Manager (Full-time)</span>
         <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
       </div>
       <div class="content-item">
@@ -249,13 +249,13 @@
         </svg>
       </button>
     </div>
-    <!-- BUSINESS DEVELOPMENT & MARKETING INTERN -->
+    <!-- Business Development & Marketing Intern (Full-time) -->
     <div
       class="section-inner career-content"
       v-if="$route.params.id === 'business-development-marketing-intern'"
     >
       <div class="career-content-title">
-        <span>BUSINESS DEVELOPMENT & MARKETING INTERN</span>
+        <span>Business Development & Marketing Intern (Full-time)</span>
         <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
       </div>
       <div class="content-item">
@@ -348,6 +348,343 @@
         <div class="content-item-title">How to apply</div>
         <ul class="content-item-content">
           <li>Send resume and cover to apply@zenerate.ai</li>
+        </ul>
+      </div>
+      <button
+        class="back-button hover-pointer"
+        @click=";[router.push('/career')]"
+      >
+        <a href="#firstPage"> <span>BACK</span></a>
+        <svg
+          width="122"
+          height="28"
+          viewBox="0 0 122 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M121 27H0.999997L27.6886 1"
+            stroke="#4747FF"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+    <!-- Architect / Architectural Designer (Full-time)-->
+    <div
+      class="section-inner career-content"
+      v-if="$route.params.id === 'architect-architectural-designer'"
+    >
+      <div class="career-content-title">
+        <span>Architect / Architectural Designer (Full-time)</span>
+        <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
+      </div>
+      <div class="content-item">
+        <div class="conent-message">
+          Zenerate has received multiple awards and funding to grow across the
+          world. We are now looking for an enthusiastic
+          <strong>full-time Architect / Architectural Designer</strong> to
+          immediately join our new <strong>Downtown Los Angeles</strong> office
+          as we’re expanding our operations in the States. We hope you’ll join
+          our fast-growing, innovative company!
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Zenerate™ is</div>
+        <ul class="content-item-content">
+          <li>
+            a real estate generative design company that pairs feasible building
+            design with market-based profit metrics.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Our innovative solution</div>
+        <ul class="content-item-content">
+          <li>
+            We provide a web platform and consulting service to serve all
+            commercial and multi-family building types. Our design automation
+            software combines AI and Data Science to search millions of
+            possibilities, delivering fast and easy feasibility studies and
+            maximized profitability.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Who we are</div>
+        <ul class="content-item-content">
+          <li>
+            We are a team of architects, software engineers and AI developers
+            driven to provide building solutions that position properties into
+            successful operations for various stakeholders. We go above and
+            beyond to ensure that our world-class solution helps our customers
+            reach and surpass their real estate development goals.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Who we serve</div>
+        <ul class="content-item-content">
+          <li>
+            We collaborate with customers who need an integrated design and
+            profitability analysis; maximized profit returns based on quickly
+            generated options; a quick assessment to check viability of a site
+            or property to transform, reconfigure, or adaptively reuse; and/or
+            thoughtfully-planned out developments that benefit stakeholders.
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-item">
+        <div class="content-item-title">Key Responsibilities</div>
+        <ul class="content-item-content">
+          <li>
+            Demonstrate understanding of the real estate development industry
+            and multifamily housing
+          </li>
+          <li>Conduct zoning and building code research</li>
+          <li>
+            Represent Zenerate with professional courtesy and enthusiasm to all
+            customers and stakeholders
+          </li>
+          <li>
+            Assist with developing product and service for real estate
+            developers and project managers
+          </li>
+          <li>
+            Channel the customer voice and feedback to the internal team to
+            influence the product roadmap
+          </li>
+          <li>
+            Manage cross-functional communication with internal operations
+          </li>
+          <li>
+            Regularly report to and communicate with managerial team located
+            internationally
+          </li>
+          <li>
+            Attend and present at industry events, partnered with customer
+            success to improve our onboarding and sales model
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Qualifications</div>
+        <ul class="content-item-content">
+          <li>
+            A minimum of 5 to 8 years of experience in multifamily housing
+            projects
+          </li>
+          <li>
+            Excellent understanding of Building Code, Land use, Zoning,
+            Accessibility, etc.
+          </li>
+          <li>
+            Ability to search and analyze Zoning regulations in the Los Angeles
+            area
+          </li>
+          <li>
+            Ability to meet clients/customers and present our products in person
+          </li>
+          <li>
+            Business development experience and salesmanship with a
+            results-oriented attitude
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Ideal</div>
+        <ul class="content-item-content">
+          <li>Licensed in California</li>
+          <li>Public speaking experience</li>
+          <li>Experience working with real estate developers</li>
+          <li>Strong project management and presentation skills</li>
+          <li>
+            Detail-oriented problem solver who enjoys researching and learning
+            ongoing real estate trends
+          </li>
+          <li>
+            Technical expertise with Excel and design software: Rhino, Revit,
+            AutoCAD, Adobe Creative Suite, SketchUp
+          </li>
+          <li>Available to start immediately in November 2021</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Salary</div>
+        <ul class="content-item-content">
+          <li>Compensation will be commensurate with experience</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">How to apply</div>
+        <ul class="content-item-content">
+          <li>
+            Please send your resume (PDF) and work samples to apply@zenerate.ai
+          </li>
+          <li>
+            A cover letter is optional: can be used to describe salary
+            requirements and interests
+          </li>
+        </ul>
+      </div>
+      <button
+        class="back-button hover-pointer"
+        @click=";[router.push('/career')]"
+      >
+        <a href="#firstPage"> <span>BACK</span></a>
+        <svg
+          width="122"
+          height="28"
+          viewBox="0 0 122 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M121 27H0.999997L27.6886 1"
+            stroke="#4747FF"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+    <!-- Project Analyst, Real Estate Development (Part-time)-->
+    <div
+      class="section-inner career-content"
+      v-if="$route.params.id === 'project-analyst-real-estate-development'"
+    >
+      <div class="career-content-title">
+        <span>Project Analyst, Real Estate Development (Part-time)</span>
+        <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
+      </div>
+
+      <div class="content-item">
+        <div class="conent-message">
+          Zenerate has received multiple awards and funding to grow across the
+          world. We are now looking for a motivated
+          <strong>Part-time Project Analyst, Real Estate Development</strong> to
+          immediately join our new <strong>Downtown Los Angeles</strong> office
+          as we’re expanding our operations in the States. We hope you’ll join
+          our fast-growing, innovative company!
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Zenerate™ is</div>
+        <ul class="content-item-content">
+          <li>
+            a real estate generative design company that pairs feasible building
+            design with market-based profit metrics.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Our innovative solution</div>
+        <ul class="content-item-content">
+          <li>
+            We provide a web platform and consulting service to serve all
+            commercial and multi-family building types. Our design automation
+            software combines AI and Data Science to search millions of
+            possibilities, delivering fast and easy feasibility studies and
+            optimized profitability.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Who we are</div>
+        <ul class="content-item-content">
+          <li>
+            We are a team of architects, software engineers and AI developers
+            driven to provide building solutions that position properties into
+            successful operations for various stakeholders. We go above and
+            beyond to ensure that our world-class solution helps our customers
+            reach and surpass their real estate development goals.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Who we serve</div>
+        <ul class="content-item-content">
+          <li>
+            We collaborate with customers who need an integrated design and
+            profitability analysis; maximized profit returns based on quickly
+            generated options; a quick assessment to check viability of a site
+            or property to transform, reconfigure, or adaptively reuse; and/or
+            thoughtfully-planned out developments that benefit stakeholders.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Key Responsibilities</div>
+        <ul class="content-item-content">
+          <li>
+            Demonstrate understanding of the real estate development industry
+          </li>
+          <li>
+            Assist with developing product and service for real estate
+            developers and project managers
+          </li>
+          <li>
+            Regularly report to and communicate with managerial team located
+            internationally
+          </li>
+          <li>
+            Search, analyze, and report Zoning regulations in the Los Angeles
+            area for successful product development
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Qualifications</div>
+        <ul class="content-item-content">
+          <li>
+            A minimum of 1-2 years of experience in real estate development
+            (multifamily housing projects)
+          </li>
+          <li>
+            Excellent understanding of Building Code, Land use, Zoning,
+            Accessibility, etc.
+          </li>
+          <li>
+            Strong quantitative, financial analysis and modeling, MS Excel
+            skills are required
+          </li>
+          <li>Exceptional time management and prioritization skills</li>
+          <li>
+            Excellent communication, written and interpersonal skills at all
+            levels
+          </li>
+          <li>
+            Must be able to work well in groups but also independently to manage
+            and own tasks
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Ideal</div>
+        <ul class="content-item-content">
+          <li>Architect licensed in California</li>
+          <li>Experience working with real estate developers</li>
+          <li>Available to start immediately in November 2021</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Salary</div>
+        <ul class="content-item-content">
+          <li>Compensation will be commensurate with experience</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">How to apply</div>
+        <ul class="content-item-content">
+          <li>
+            Please send your resume (PDF) and work samples to apply@zenerate.ai
+          </li>
+          <li>
+            A cover letter is optional: can be used to describe salary
+            requirements and interests
+          </li>
         </ul>
       </div>
       <button
@@ -474,6 +811,20 @@ const goToApply = () => {
       }
     }
     .content-item {
+      .conent-message {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 40px;
+        color: rgba($black-1, 0.9);
+        @include medium(18);
+        @include tablet {
+          @include medium(14);
+        }
+        @include mobile {
+          @include medium(12);
+        }
+      }
+
       .content-item-title {
         @include bold(20);
         margin-bottom: 10px;
