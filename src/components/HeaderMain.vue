@@ -137,9 +137,9 @@ const router = useRouter()
     height: 49px;
   }
   .header-inner {
+    @include flex($justify: space-between);
     height: 100%;
     margin: 0px auto;
-    @include flex($justify: space-between);
     @include desktop {
       width: 1280px;
       padding: 0px 56px;
@@ -151,7 +151,7 @@ const router = useRouter()
       padding: 0px 28px;
     }
     .header-logo {
-      margin: auto 0px;
+      margin: auto 12px;
       @include desktop {
         width: 180px;
         .logo {
@@ -172,20 +172,20 @@ const router = useRouter()
       }
     }
     .header-navigation-wrapper {
+      @include relative;
       flex: 1;
       height: 70px;
-      @include relative;
       margin: 6px 48px;
-      margin: auto 48px;
+      margin: auto 0px auto 48px;
       padding: 16px 0px;
       .navigation-main {
         @include flex($justify: space-between);
 
         .navigation-main-item {
-          width: 152px;
-          height: 36px;
           @include bold(20);
           @include flex($justify: center);
+          width: 152px;
+          height: 36px;
           align-items: center;
           border-bottom: solid 2px transparent;
           &:hover {
@@ -198,10 +198,10 @@ const router = useRouter()
         @include absolute(top 58px);
         background: white;
         .navigation-sub-item {
+          @include medium(14);
           margin-right: 24px;
           // width: 60px;
           height: 20px;
-          @include medium(14);
           &:hover {
             font-weight: $bold;
           }
@@ -209,17 +209,17 @@ const router = useRouter()
       }
     }
     .header-buttons-wrapper {
+      @include center-center;
       position: relative;
       align-items: center;
       margin: auto 12px;
       padding: 16px 0px;
-      @include center-center;
       .button-lang-wrapper {
         @include flex;
         .button-lang {
+          @include center-center;
           color: $main;
           border-radius: 30px;
-          @include center-center;
           @include desktop {
             span {
               @include medium(20);

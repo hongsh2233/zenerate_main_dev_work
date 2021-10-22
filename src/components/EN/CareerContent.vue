@@ -119,15 +119,71 @@
         </svg>
       </button>
     </div>
-    <!-- Business Development Manager (Full-time) -->
+    <!-- Head of Sales  (Full-time) -->
     <div
       class="section-inner career-content"
-      v-if="$route.params.id === 'business-development-manager'"
+      v-if="$route.params.id === 'head-of-sales'"
     >
       <div class="career-content-title">
-        <span>Business Development Manager (Full-time)</span>
+        <span>Head of Sales (Full-time)</span>
         <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
       </div>
+      <div class="content-item">
+        <div class="content-message">
+          Zenerate has received multiple awards and funding to grow across the
+          world. We are now looking for an enthusiastic
+          <strong>full-time Head of Sales</strong> to immediately join our new
+          <strong>Downtown Los Angeles</strong> office as we’re expanding our
+          operations in the States. We hope you’ll join our fast-growing,
+          innovative company!
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">About Zenerate</div>
+        <ul class="content-item-content">
+          <li>
+            We are a real estate generative design company that pairs feasible
+            building design with market-based profit metrics.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Our innovative solution</div>
+        <ul class="content-item-content">
+          <li>
+            We provide a web platform and consulting service to serve all
+            commercial and multi-family building types. Our design automation
+            software combines AI and Data Science to search millions of
+            possibilities, delivering fast and easy feasibility studies and
+            maximized profitability.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Who we are</div>
+        <ul class="content-item-content">
+          <li>
+            We are a team of architects, software engineers and AI developers
+            driven to provide building solutions that position properties into
+            successful operations for various stakeholders. We go above and
+            beyond to ensure that our world-class solution helps our customers
+            reach and surpass their real estate development goals.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">Who we serve</div>
+        <ul class="content-item-content">
+          <li>
+            We collaborate with customers who need an integrated design and
+            profitability analysis; maximized profit returns based on quickly
+            generated options; a quick assessment to check viability of a site
+            or property to transform, reconfigure, or adaptively reuse; and/or
+            thoughtfully-planned out developments that benefit stakeholders.
+          </li>
+        </ul>
+      </div>
+
       <div class="content-item">
         <div class="content-item-title">Key Responsibilities</div>
         <ul class="content-item-content">
@@ -137,22 +193,22 @@
           </li>
           <li>
             Own the entire sales process for your dedicated book of business,
-            from developing sales strategy to building the pipeline of deals.
+            from developing sales strategy to building the pipeline of deals
           </li>
-          <li>Channel the customer voice to the Product team (Korea).</li>
+          <li>Channel the customer voice to the Product team (Korea)</li>
           <li>Sign your first paid accounts with Zenerate customers</li>
           <li>
             Establish a strong pipeline of prospects with projected revenues and
-            timelines.
+            timelines
           </li>
           <li>
             Attend industry events, partnered with customer success to improve
             our onboarding and support model, and provided customer feedback to
-            influence the product roadmap.
+            influence the product roadmap
           </li>
           <li>
             Provide feedback and support to improve our sales process and
-            strategy, to scale Zenerate to a billion-dollar business.
+            strategy, to scale Zenerate to a billion-dollar business
           </li>
           <li>
             Work with account executive and team to launch additional regions
@@ -160,17 +216,17 @@
           </li>
           <li>
             Maintain sales support materials including sales presentations,
-            portfolio images and case studies..
+            portfolio images and case studies
           </li>
           <li>
             Write and review proposals for accurate content and consistent
             language and formatting to ensure the highest quality of proposal is
-            submitted to the client.
+            submitted to the client
           </li>
         </ul>
       </div>
       <div class="content-item">
-        <div class="content-item-title">Requirements</div>
+        <div class="content-item-title">Qualifications</div>
         <ul class="content-item-content">
           <li>
             Entrepreneurial team player, quick to adapt to changing situations
@@ -180,8 +236,8 @@
             surpassing sales quotas
           </li>
           <li>
-            Minimum 5 years of SaaS / Software sales experience from
-            multinational companies
+            Minimum 5 years of SaaS / Software sales experience in commercial
+            real estate or architecture-related industries
           </li>
           <li>
             Strong listener with excellent presentation and closure skills
@@ -211,28 +267,43 @@
             Experience in related industries: PropTech, real estate development,
             urban planning, construction, architecture
           </li>
+          <li>
+            Understanding of Building Code, Land use, Zoning, Accessibility,
+            etc.
+          </li>
+          <li>
+            Ability to search and analyze Zoning regulations in the Los Angeles
+            area
+          </li>
+          <li>Available to start in November 2021</li>
         </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">Company benefits</div>
         <ul class="content-item-content">
-          <li>Flexible work hours after the first 90-day period</li>
+          <li>Flexible work hours</li>
           <li>Professional development learning stipend</li>
-          <li>Daily lunch stipend</li>
-          <li>Cell phone reimbursement</li>
-          <li>Travel reimbursement</li>
           <li>Health and wellness perks</li>
         </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">How to apply</div>
         <ul class="content-item-content">
-          <li>Send resume and cover to apply@zenerate.ai</li>
+          <li>
+            Please send your resume (PDF) and work samples if available to
+            apply@zenerate.ai
+          </li>
+          <li>
+            A cover letter is optional: can be used to describe salary
+            requirements and interests
+          </li>
         </ul>
       </div>
-
-      <button class="back-button" @click=";[router.push('/career')]">
-        <span>BACK</span>
+      <button
+        class="back-button hover-pointer"
+        @click=";[router.push('/career')]"
+      >
+        <a href="#firstPage"> <span>BACK</span></a>
         <svg
           width="122"
           height="28"
@@ -381,7 +452,7 @@
         <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
       </div>
       <div class="content-item">
-        <div class="conent-message">
+        <div class="content-message">
           Zenerate has received multiple awards and funding to grow across the
           world. We are now looking for an enthusiastic
           <strong>full-time Architect / Architectural Designer</strong> to
@@ -391,11 +462,11 @@
         </div>
       </div>
       <div class="content-item">
-        <div class="content-item-title">Zenerate™ is</div>
+        <div class="content-item-title">About Zenerate</div>
         <ul class="content-item-content">
           <li>
-            a real estate generative design company that pairs feasible building
-            design with market-based profit metrics.
+            We are a real estate generative design company that pairs feasible
+            building design with market-based profit metrics.
           </li>
         </ul>
       </div>
@@ -561,7 +632,7 @@
       </div>
 
       <div class="content-item">
-        <div class="conent-message">
+        <div class="content-message">
           Zenerate has received multiple awards and funding to grow across the
           world. We are now looking for a motivated
           <strong>Part-time Project Analyst, Real Estate Development</strong> to
@@ -571,11 +642,11 @@
         </div>
       </div>
       <div class="content-item">
-        <div class="content-item-title">Zenerate™ is</div>
+        <div class="content-item-title">About Zenerate</div>
         <ul class="content-item-content">
           <li>
-            a real estate generative design company that pairs feasible building
-            design with market-based profit metrics.
+            We are a real estate generative design company that pairs feasible
+            building design with market-based profit metrics.
           </li>
         </ul>
       </div>
@@ -811,7 +882,7 @@ const goToApply = () => {
       }
     }
     .content-item {
-      .conent-message {
+      .content-message {
         margin-left: 10px;
         margin-right: 10px;
         margin-bottom: 40px;

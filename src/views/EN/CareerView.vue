@@ -15,44 +15,6 @@
           </div>
         </div>
       </div>
-      <!-- <div
-        class="section section-hero"
-        data-centered="true"
-        data-percentage="75"
-      >
-        <div class="section-inner hero-wrapper">
-          <p class="hero-title">COMPANY CULTURE AND VALUES</p>
-          <div class="hero-sub-title">
-            <span>Your life with</span>
-            <img src="" data-src="/img/logo.webp" alt="" />
-          </div>
-          <p class="hero-content">
-            At Zenerate, placeholder (our unique group of professionals come
-            together from a variety of different disciplines to solve
-            significant pains in real estate planning.
-          </p>
-          <p class="hero-content">
-            We’re looking for the best people in their field, and expect them to
-            share their point of view with respect to every aspect of our
-            product: from design & UX to business and deep-tech.) Come join us!
-          </p>
-          <div class="technology-arrow">
-            <svg
-              width="27"
-              height="83"
-              viewBox="0 0 27 83"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0.999994 1L0.999996 82L26 55.3114"
-                stroke-linecap="square"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-        </div>
-      </div> -->
 
       <div class="section section-content">
         <div class="content-list-wrapper section-inner">
@@ -66,6 +28,22 @@
               </div>
               <div class="list-items">
                 <div class="career-list">
+                  <div class="career-item">
+                    <div class="item-date">
+                      Posted
+                      {{
+                        formatDistanceToNowStrict(new Date(2021, 9, 23), {
+                          addSuffix: true,
+                        })
+                      }}
+                    </div>
+                    <div
+                      class="item-title hover-pointer"
+                      @click=";[router.push(`/career/head-of-sales`)]"
+                    >
+                      Head of Sales (Full-time)
+                    </div>
+                  </div>
                   <div class="career-item">
                     <div class="item-date">
                       Posted
@@ -122,22 +100,7 @@
                       Strategic Account Executive (Full-time)
                     </div>
                   </div>
-                  <div class="career-item">
-                    <div class="item-date">
-                      Posted
-                      {{
-                        formatDistanceToNowStrict(posted, { addSuffix: true })
-                      }}
-                    </div>
-                    <div
-                      class="item-title hover-pointer"
-                      @click="
-                        ;[router.push(`/career/business-development-manager`)]
-                      "
-                    >
-                      Business Development Manager (Full-time)
-                    </div>
-                  </div>
+
                   <div class="career-item">
                     <div class="item-date">
                       Posted
