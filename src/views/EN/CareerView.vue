@@ -32,6 +32,38 @@
                     <div class="item-date">
                       Posted
                       {{
+                        formatDistanceToNowStrict(new Date(2021, 9, 28), {
+                          addSuffix: true,
+                        })
+                      }}
+                    </div>
+                    <div
+                      class="item-title hover-pointer"
+                      @click=";[router.push(`/career/head-of-marketing`)]"
+                    >
+                      Head of Marketing, B2B SaaS (Full-time)
+                    </div>
+                  </div>
+                  <div class="career-item">
+                    <div class="item-date">
+                      Posted
+                      {{
+                        formatDistanceToNowStrict(new Date(2021, 9, 28), {
+                          addSuffix: true,
+                        })
+                      }}
+                    </div>
+                    <div
+                      class="item-title hover-pointer"
+                      @click=";[router.push(`/career/graphic-designer`)]"
+                    >
+                      Mid-level Graphic Designer (Full-time)
+                    </div>
+                  </div>
+                  <div class="career-item">
+                    <div class="item-date">
+                      Posted
+                      {{
                         formatDistanceToNowStrict(new Date(2021, 9, 23), {
                           addSuffix: true,
                         })
