@@ -115,6 +115,10 @@ onMounted(() => {
         margin-bottom: 32px;
         p {
           @include light(24);
+
+          @include en-mobile {
+            font-size: 22px;
+          }
         }
       }
       @include en-tablet {
@@ -164,6 +168,12 @@ onMounted(() => {
           @include light(24);
           strong {
             @include regular(24);
+          }
+          @include en-mobile {
+            font-size: 20px;
+             strong {
+              @include regular(23);
+            }
           }
         }
       }

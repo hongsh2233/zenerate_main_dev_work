@@ -24,9 +24,9 @@
           <div class="content-justyourcuriosity"></div>
           <div class="content-button">
             <a
-              href="https://mailchi.mp/zenerate/zenerate-beta-test-signup"
+              href="https://app.zenerate.ai"
               target="_blank"
-              >JOIN BETA</a
+              >GO EXPLORE</a
             >
           </div>
         </div>
@@ -85,14 +85,10 @@
           <div class="instant-search-image only-en-desktop">
             <img
               class="outer"
-              src="/en/img/landing_instant_search_map.png"
+              src="/en/img/landing_instant_search_start.png"
               alt=""
             />
-            <img
-              class="inner"
-              src="/en/img/landing_instant_search_inner.png"
-              alt=""
-            />
+         
           </div>
           <div class="instant-search-contents">
             <div class="content-inner" style="margin-bottom: 32px">
@@ -120,15 +116,10 @@
           <div class="instant-search-image hidden-en-desktop">
             <img
               class="outer"
-              src="/en/img/landing_instant_search_map.png"
+              src="/en/img/landing_instant_search_start.png"
               alt=""
             />
-            <img
-              class="inner"
-              src="/en/img/landing_instant_search_inner.png"
-              alt=""
-            />
-          </div>
+                    </div>
         </div>
       </div>
       <div class="background-image"></div>
@@ -143,14 +134,9 @@
         <div class="inner-contents generation-contents">
           <div class="content-left only-en-desktop">
             <div class="left-img">
-              <img
-                class="img-generation"
-                src="/en/img/landing_generation_mode.png"
-                alt=""
-              />
-              <img
+                        <img
                 class="img-map"
-                src="/en/img/landing_projects_in_map.png"
+                src="/en/img/landing_profit.gif"
                 alt=""
               />
             </div>
@@ -179,14 +165,10 @@
           </div>
           <div class="content-left hidden-en-desktop">
             <div class="left-img">
-              <img
-                class="img-generation"
-                src="/en/img/landing_generation_mode.png"
-                alt=""
-              />
+           
               <img
                 class="img-map"
-                src="/en/img/landing_projects_in_map.png"
+                src="/en/img/landing_profit.gif"
                 alt=""
               />
             </div>
@@ -218,10 +200,10 @@
             </div>
           </div>
           <div class="compare-image only-en-desktop">
-            <img src="/en/img/landing_compare.png" alt="" />
+            <img src="/en/img/landing_compare_likes.png" alt="" />
           </div>
           <div class="compare-image hidden-en-desktop">
-            <img src="/en/img/landing_compare.png" alt="" />
+            <img src="/en/img/landing_compare_likes.png" alt="" />
           </div>
         </div>
       </div>
@@ -254,7 +236,7 @@
               <div
                 class="item-logo"
                 :style="{
-                  'background-image': `url('/logo/logo_${item.key}.png')`,
+                  'backgroundImage': `url('/logo/logo_${item.key}.png')`,
                 }"
               ></div>
               <div class="item-description">
@@ -278,12 +260,9 @@
 </template>
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
-// @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
-// @ts-ignore
 import Arrow from '/Components/EN/Arrow.vue'
 
-//misc
 import PartnersList from '/Constants/partners'
 import { useRouter } from 'vue-router'
 
@@ -464,30 +443,24 @@ const toContactForm = () => {
   }
 }
 .section-instant-search {
-  // position: relative;
   .instant-search-wrapper {
     @include vertical-center;
-    width: 100%;
+    @include flex($justify: space-between);
+       width: 100%;
     height: fit-content;
     margin: auto 0px;
-    @include flex($justify: space-between);
   }
   .inner-instant-search {
     z-index: 1;
     @include flex;
     .instant-search-contents {
-      // flex: 1;
-      // @include vertical-center;
       align-items: flex-start;
-      // text-align: right;
       width: 524px;
       @include en-tablet {
-        // margin-right: 0;
         width: 100%;
         margin-bottom: 80px;
       }
       @include en-mobile {
-        // margin-right: 0;
         width: 100%;
         margin-bottom: 80px;
       }
@@ -529,26 +502,22 @@ const toContactForm = () => {
       }
     }
     .instant-search-image {
-      margin: auto 0px;
-      width: 500px;
-      height: 333px;
       @include relative;
-      margin-right: 64px;
+      margin: auto 0px;
+      width: 530px;
+      margin-right: 34px;
       .outer {
-        @include elevation-2;
+        @include elevation-4;
         width: 100%;
         height: 100%;
       }
-      .inner {
-        @include absolute(top 50% left 50%);
-        width: 312px;
-        height: 260px;
-        transform: translate(-50%, -50%);
-      }
+    
       @include en-tablet {
+        max-width: 90%;
         margin: auto;
       }
       @include en-mobile {
+        max-width: 90%;
         margin: auto;
       }
     }
@@ -561,31 +530,36 @@ const toContactForm = () => {
     margin: auto 0px;
     @include flex;
     .content-left {
+      @include vertical-center;
       margin: auto 0px;
       width: 536px;
+      height: 100%;
       margin-right: 40px;
-      height: 355px;
-      @include vertical-center;
       .left-img {
-        width: 100%;
-        height: 100%;
         @include relative;
-        .img-generation {
-          @include absolute(right 0 bottom 0);
-          z-index: 1;
-          width: 340px;
-          height: 270px;
-        }
+        @include flex($justify: center);
+        width: 100%;
+        height: auto;
+     
+      
         .img-map {
-          @include absolute(top 0 left 0);
-          width: 433px;
-          height: 100%;
+          @include elevation-4;
+          width: 530px;
+          height: auto;
+          
+          @include en-mobile {
+          width: 100%;
+          max-width: 90%;
+          margin: 0px auto;
+        }
         }
       }
       @include en-tablet {
+ 
         margin: 0px auto;
       }
       @include en-mobile {
+  
         width: 100%;
         margin: 0px auto;
       }
@@ -613,12 +587,15 @@ const toContactForm = () => {
 .section-compare {
   .compare-contents {
     @include flex;
+    width: 100%;
+    height: auto;
     margin: auto 0px;
     .compare-image {
-      max-width: 540px;
       @include vertical-center;
+      width: 100%;
+      max-width: 540px;
       img {
-        @include elevation-2;
+        @include elevation-4;
         width: 100%;
       }
       @include en-tablet {
@@ -704,7 +681,7 @@ const toContactForm = () => {
     }
     @include en-mobile {
       p {
-        font-size: 28px;
+        font-size: 26px;
       }
     }
   }

@@ -309,6 +309,7 @@ onMounted(() => {
       }
       @include en-mobile {
         width: calc(100% - 20px);
+        padding: 0px 20px;
       }
     }
   }
@@ -333,7 +334,7 @@ onMounted(() => {
       height: auto;
     }
     @include en-mobile {
-      width: calc(100% - 20px);
+      width: calc(100% - 30px);
       height: auto;
     }
     .contact-form-success {

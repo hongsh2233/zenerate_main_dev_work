@@ -139,6 +139,10 @@
         @include regular(16);
         color: rgba($cr-fields-description, 0.8);
       }
+
+      @include en-mobile {
+        padding: 0px 20px;
+      }
     }
   }
   @include en-tablet {

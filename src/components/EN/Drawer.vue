@@ -2,10 +2,16 @@
   <div class="drawer-wrapper">
     <div class="drawer-dimmer" @click="close"></div>
     <div class="drawer-wrapper">
-      <div class="drawer-logo">
-        <img src="/img/logo_color.png" alt="" />
-        <CloseButton @close="close" />
-      </div>
+      <div class="drawer-logo hover-pointer" @click="router.push({ name: 'en-landing' })">
+         <img
+          class="logo hidden-tablet hidden-mobile"
+          src="/img/logo_color.png"
+          alt=""
+        />
+        <div class="logo hidden-desktop"></div>
+        <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="" /> -->
+        <i class="material-icons icon-close" @click="close" >close</i>
+          </div>
       <div class="drawer-items-wrapper">
         <div class="header-navigation-wrapper hidden-en-desktop">
           <div class="navgation-link-wrapper">
@@ -91,13 +97,20 @@ const close = () => {
     padding: 32px 30px;
     @include en-mobile {
       width: 70%;
+      padding: 11px 19px;
     }
     .drawer-logo {
-      width: 100%;
-      height: 24px;
       @include flex($justify: space-between);
+      align-items: flex-start;
+      width: 100%;
+      height: 28px;
       img {
         height: 100%;
+      }
+
+      .icon-close{
+        color: $cr-main-core;
+        font-size: 28px;
       }
     }
     .drawer-items-wrapper {

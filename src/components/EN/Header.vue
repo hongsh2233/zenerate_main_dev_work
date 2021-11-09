@@ -5,7 +5,12 @@
         class="header-logo hover-pointer"
         @click="router.push({ name: 'en-landing' })"
       >
-        <img src="/img/logo_color.png" alt="" class="logo" />
+         <img
+          class="logo hidden-tablet hidden-mobile"
+          src="/img/logo_color.png"
+          alt="logo"
+        />
+        <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" />
       </div>
       <div class="header-navigation-wrapper only-en-desktop">
         <router-link
@@ -33,7 +38,7 @@
 </template>
 <script lang="ts" setup>
 import { defineEmit, defineProps, ref } from 'vue'
-// @ts-ignore
+
 import MenuIcon from '/Components/EN/Icons/menu.vue'
 
 const props = defineProps({
@@ -104,17 +109,25 @@ const routes = [
     }
     .header-logo {
       margin: auto 0px;
-      @include en-desktop {
-        width: 124px;
+      @include desktop {
+        width: 180px;
+        .logo {
+          width: 100%;
+        }
       }
-      @include en-tablet {
-        width: 106px;
+      @include tablet {
+        width: 160px;
+        .logo {
+          width: 24px;
+          margin: 6px 0px 2px 6px;      
+        }
       }
-      @include en-mobile {
-        width: 80px;
-      }
-      .logo {
-        width: 100%;
+      @include mobile {
+        width: 120px;
+        .logo {
+          width: 18px;
+          margin: 6px 0px 2px 6px;
+        }
       }
     }
     .header-navigation-wrapper {

@@ -101,7 +101,7 @@ onMounted(() => {
     width: 100%;
     position: relative;
     margin: 40px auto;
-    padding: 0px 60px;
+    padding: 0px 33px 0px 40px;
     .pricing-title {
       padding-top: 48px;
       text-align: center;
@@ -116,24 +116,27 @@ onMounted(() => {
       }
     }
     .pricing-subtitle {
-      text-align: center;
       @include medium(26);
+      text-align: center;
       line-height: 40px;
       margin-bottom: 30px;
     }
     .pricing-content-wrapper {
+      @include flex($justify: space-between);
       padding-top: 24px;
       height: calc(100% - 128px - 60px);
-      @include flex($justify: space-between);
       .pricing-content {
-        width: 300px;
-        min-height: 550px;
-        height: 100%;
-        padding: 20px 10px;
-        overflow-y: scroll;
         @include elevation-2;
+        width: 320px;
+        height: 520px;
+        padding: 20px 10px 20px 20px;
         border-radius: 20px;
         background-color: white;
+
+        @include en-mobile {
+          height: 100%;
+          padding: 20px 10px;
+        }
         .content-title {
           text-align: center;
           @include bold(16);

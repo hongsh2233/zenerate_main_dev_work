@@ -1,5 +1,8 @@
 <template>
-  <div
+<div class="icon-menu hover-pointer" @click="toggle()">
+  <i class="icon-menu-inner material-icons">menu</i>
+</div>
+  <!-- <div
     class="icon-menu hover-pointer"
     :style="{ width: `${props.width}px`, height: `${props.height}px` }"
     @click="toggle"
@@ -9,7 +12,7 @@
       <div class="menu menu-2" :style="{ height: `${barHeight}px` }"></div>
       <div class="menu menu-3" :style="{ height: `${barHeight}px` }"></div>
     </div>
-  </div>
+  </div> -->
 </template>
 <script lang="ts" setup>
 import { defineProps, defineEmit, computed } from 'vue'
@@ -36,11 +39,13 @@ const barHeight = computed(() => {
 </script>
 <style lang="scss" scoped>
 .icon-menu-inner {
+  @include flex($dir: column);
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   padding: 25% 12.5%;
-  @include flex($dir: column);
-  justify-content: space-between;
+  color: $cr-main-core;
+  font-size: 28px;
   .menu {
     width: 100%;
     &:last-child {
@@ -49,6 +54,7 @@ const barHeight = computed(() => {
     background-color: $cr-text-black;
     transition: width 0.3s ease;
     margin-left: auto;
+
   }
   &:hover {
     .menu-3 {
