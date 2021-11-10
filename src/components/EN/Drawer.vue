@@ -30,9 +30,9 @@
       <div class="header-demo-wrapper">
         <a
           class="demo-link"
-          href="https://mailchi.mp/zenerate/zenerate-beta-test-signup"
+          href="https://app.zenerate.ai"
           target="_blank"
-          >Join Beta
+          >Join App
         </a>
       </div>
     </div>
