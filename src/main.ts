@@ -1,6 +1,7 @@
 // import devtools from '@vue/devtools'
 // devtools.connect()
 import { createApp } from 'vue'
+import VueGtag from 'vue-gtag'
 import i18n from '/Config/locales/i18n'
 import App from './App.vue'
 import Router from './router'
@@ -15,4 +16,13 @@ import '/Assets/scss/components.scss'
 import '/Assets/scss/timeline.scss'
 import '/Assets/scss/en.scss'
 
-createApp(App).use(Router).use(i18n).use(Store.original).mount('#app')
+createApp(App)
+  .use(Router)
+  .use(i18n)
+  .use(Store.original)
+  .use(
+    VueGtag,
+    { config: { id: 'UA-212995971-1', params: { send_page_view: false } } },
+    Router
+  )
+  .mount('#app')
