@@ -22,7 +22,11 @@ createApp(App)
   .use(Store.original)
   .use(
     VueGtag,
-    { config: { id: 'UA-212995971-1', params: { send_page_view: false } } },
+    {
+      appName: 'Zenerate',
+      pageTrackerScreenviewEnabled: true,
+      config: { id: 'UA-212995971-1', params: { send_page_view: false } },
+    },
     Router
   )
   .mount('#app')
