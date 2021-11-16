@@ -23,7 +23,7 @@ createApp(App)
   .use(
     VueGtag,
     {
-      appName: 'Zenerate',
+      appName: 'My Website',
       pageTrackerScreenviewEnabled: true,
       config: { id: 'UA-212995971-1', params: { send_page_view: false } },
     },
