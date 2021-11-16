@@ -6,3 +6,4 @@ User-agent: Storebot-Google
 Allow: /
 Disallow: /api
 Disallow: /main/admin
+Sitemap: /sitemap.xml
