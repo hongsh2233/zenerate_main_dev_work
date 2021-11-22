@@ -1,7 +1,7 @@
 <template>
-  <section class="section-careers">
-    <div id="fullpage">
-      <div class="section section-main">
+  <div id="fullpage">
+    <section class="section section-careers">
+      <div class="section-main">
         <div class="section-inner main-wrapper">
           <div class="inner-main">
             <div class="main-sub-title">
@@ -162,8 +162,8 @@
       <div class="section section-footer fp-auto-height">
         <Footer></Footer>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 <script lang="ts" setup>
 import Store from '/Store/index'
