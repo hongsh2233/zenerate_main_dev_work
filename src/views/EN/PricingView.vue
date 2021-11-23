@@ -10,7 +10,51 @@
           data-aos-duration="300"
         >
           <div class="pricing-title">PRICING</div>
-          <div class="pricing-subtitle">Subscription Plans</div>
+          <div class="service-wrapper">
+            <h2 class="service-title">Web Service</h2>
+            <div class="plan-list-wrapper">
+              <h5 class="list-title">SUBSCRIPTION PLANS</h5>
+              <ul class="price-plan-list">
+                <li
+                  v-for="(item, idx) in pricing_plan"
+                  :class="{ selected: item.key === selectedPricingPlan }"
+                  @click="selectPricingPlan(item.key)"
+                >
+                  <span class="plan-title">{{ item.name }}</span>
+                  <span class="plan-pricing">{{ item.pricing }}</span>
+                </li>
+              </ul>
+
+              <ul class="price-plan-detail">
+                <li
+                  v-for="(item, idx) in PRICE_PLAN_CONTENT"
+                  :key="idx"
+                  :class="{
+                    'upgrade-plan':
+                      selectedPricingPlan !== 'visitor' &&
+                      item.level === pricing_plan[selectedPricingPlan].level,
+                    'not-allowed-plan':
+                      item.level > pricing_plan[selectedPricingPlan].level,
+                  }"
+                >
+                  <i
+                    class="material-icons"
+                    :class="{
+                      'possible-plan':
+                        item.level <= pricing_plan[selectedPricingPlan].level,
+                    }"
+                    >{{
+                      item.level > pricing_plan[selectedPricingPlan].level
+                        ? 'close'
+                        : 'check'
+                    }}</i
+                  >
+                  <span>{{ item.content }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="pricing-subtitle">Subscription Plans</div>
           <div class="pricing-content-wrapper">
             <div class="pricing-content">
               <div class="content-title">
@@ -62,7 +106,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -72,11 +116,10 @@
   </section>
 </template>
 <script lang="ts" setup>
-import { onMounted, computed } from 'vue'
+import { onMounted, computed, ref } from 'vue'
 import Store from '/Store/index'
 import { useRouter } from 'vue-router'
-
-// @ts-ignore
+import { PRICE_PLAN_CONTENT, PRICING_PLAN_NAME } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
 
 const fullpage = computed(() => Store.state.root.FullPage)
@@ -84,10 +127,45 @@ const router = useRouter()
 onMounted(() => {
   fullpage.value.destroy()
 })
+
+const pricing_plan = ref({
+  visitor: {
+    key: 'visitor',
+    name: 'VISITOR',
+    pricing: 'FREE',
+    level: 1,
+  },
+  basic: {
+    key: 'basic',
+    name: 'BASIC',
+    pricing: 'TO BE DECIDED',
+    level: 2,
+  },
+  premium: {
+    key: 'premium',
+    name: 'PREMIUM',
+    pricing: 'TO BE DECIDED',
+    level: 3,
+  },
+})
+
+const selectedPricingPlan = ref('basic')
+const selectPricingPlan = (item) => {
+  Object.keys(pricing_plan.value).forEach((v) => {
+    if (v === item) {
+      selectedPricingPlan.value = item
+    }
+  })
+}
 </script>
 <style lang="scss" scoped>
 .section {
-  background-color: #fafafc;
+  // background-color: #fafafc;
+  background: linear-gradient(
+    270deg,
+    rgba(116, 113, 255, 0.5) 0%,
+    rgba(95, 148, 255, 0.5) 100%
+  );
 }
 .section-pricing {
   .inner-pricing {
@@ -169,6 +247,167 @@ onMounted(() => {
         @include en-mobile {
           margin: 0px auto;
           margin-bottom: 48px;
+        }
+      }
+    }
+  }
+}
+
+.service-wrapper {
+  @include relative();
+  @include vertical-center();
+  align-items: center;
+  width: 540px;
+  height: auto;
+
+  .service-title {
+    @include semi-bold(20);
+    width: 340px;
+    line-height: 80px;
+    margin: 0px 0px 28px;
+    color: $white;
+    background: linear-gradient(
+      270deg,
+      rgba(116, 113, 255, 0.6) 0%,
+      rgba(95, 148, 255, 0.6) 100%
+    );
+    box-shadow: inset 0px 2px 15px #ffffff;
+    border-radius: 40px;
+    text-align: center;
+  }
+
+  .plan-list-wrapper {
+    @include vertical-center();
+    width: 100%;
+    height: auto;
+    background-color: white;
+    box-shadow: 0px 6px 12px 5px rgba(200, 203, 218, 0.5);
+    border-radius: 40px;
+
+    .list-title {
+      @include semi-bold(16);
+      margin: 0px;
+      line-height: 60px;
+      color: rgba($text-darken, 0.3);
+      text-align: center;
+    }
+
+    .price-plan-list {
+      @include flex();
+      align-items: center;
+      width: 100%;
+      height: 132px;
+      margin-bottom: 8px;
+      box-shadow: 0px 2px 4px 3px rgba(201, 200, 255, 0.4);
+
+      li {
+        @include vertical-center();
+        align-items: center;
+        width: calc(100% / 3);
+        height: 100%;
+
+        .plan-title {
+          @include bold(16);
+          color: rgba($text-darken, 0.7);
+        }
+
+        .plan-pricing {
+          @include semi-bold(14);
+          color: rgba($text-darken, 0.3);
+        }
+
+        &:hover {
+          background-color: rgba(92, 109, 255, 0.1);
+        }
+
+        &.selected {
+          background-color: rgba(92, 109, 255, 0.1);
+
+          .plan-title {
+            color: #4848ff;
+          }
+        }
+      }
+    }
+    .price-plan-detail {
+      @include vertical-center();
+      width: 100%;
+      height: 348px;
+      padding-left: 44px;
+      margin: 40px 0px 50px;
+      border-radius: 10px;
+      list-style-type: disc;
+
+      li {
+        @include flex();
+        @include semi-bold(16);
+        flex-wrap: nowrap;
+        align-items: center;
+        color: rgba($text-darken, 0.7);
+        line-height: 20px;
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+
+        i {
+          margin-right: 24px;
+          font-size: 20px;
+          color: rgba($text-darken, 0.3);
+
+          &.possible-plan {
+            color: #4848ff;
+          }
+        }
+
+        span {
+          @include medium(16);
+          color: rgba($text-darken, 0.7);
+
+          &::before {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            margin: -2px 10px 0 0;
+            vertical-align: middle;
+            background-color: rgba($text-darken, 0.7);
+            border: none;
+            border-radius: 50%;
+            content: '';
+          }
+        }
+
+        &.aleady-allowed-plan {
+          i {
+            color: $cr-main-blue;
+          }
+          span {
+            color: $cr-main-blue;
+            &::before {
+              background-color: $cr-main-blue;
+            }
+          }
+        }
+        &.not-allowed-plan {
+          i {
+            color: rgba($text-darken, 0.3);
+          }
+
+          span {
+            color: rgba($text-darken, 0.3);
+            &::before {
+              background-color: rgba($text-darken, 0.3);
+            }
+          }
+        }
+
+        &.upgrade-plan {
+          span {
+            color: #4848ff;
+
+            &::before {
+              background-color: #4848ff;
+            }
+          }
         }
       }
     }
