@@ -10,6 +10,13 @@ export const PRICE_PLAN_CONTENT = [
   { content: 'Download CAD file(.dxf)', level: 3 },
 ]
 
+export const CONSULT_PLAN_CONTENT = [
+  { content: 'Market insights and analysis', level: 3 },
+  { content: 'Zoning code analysis and explore diverse scenarios', level: 3 },
+  { content: 'Generate up to 50,000 options', level: 3 },
+  { content: 'Recommend top 3 options including the highest return', level: 3 },
+]
+
 export enum PRICING_PLAN_NAME {
   VISITOR = 'visitor',
   BASIC = 'basic',

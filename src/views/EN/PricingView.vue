@@ -9,7 +9,6 @@
           data-aos-offset="-1500"
           data-aos-duration="300"
         >
-          <div class="pricing-title">PRICING</div>
           <div class="service-wrapper">
             <h2 class="service-title">Web Service</h2>
             <div class="plan-list-wrapper">
@@ -20,7 +19,15 @@
                   :class="{ selected: item.key === selectedPricingPlan }"
                   @click="selectPricingPlan(item.key)"
                 >
-                  <span class="plan-title">{{ item.name }}</span>
+                  <div class="plan-title-wrapper">
+                    <div
+                      class="check-wrapper"
+                      v-if="item.key === selectedPricingPlan"
+                    >
+                      <i class="material-icons">check</i>
+                    </div>
+                    <span class="plan-title">{{ item.name }}</span>
+                  </div>
                   <span class="plan-pricing">{{ item.pricing }}</span>
                 </li>
               </ul>
@@ -52,6 +59,40 @@
                   <span>{{ item.content }}</span>
                 </li>
               </ul>
+            </div>
+          </div>
+          <div class="service-wrapper consulting-wrapper">
+            <h2 class="service-title">Consulting Service</h2>
+            <div class="consulting-plan-list-wrapper">
+              <span class="plan-title"
+                >Provide a Written Report Including;</span
+              >
+              <ul class="consulting-plan-detail">
+                <li v-for="(item, idx) in CONSULT_PLAN_CONTENT" :key="idx">
+                  <i class="material-icons possible-plan">check</i>
+                  <span>{{ item.content }}</span>
+                </li>
+              </ul>
+              <div class="access-wrapper">
+                <div class="access-content">
+                  <span class="acess-title">
+                    Provide access to web platform to review generated options
+                  </span>
+                  <div class="access-list">
+                    <i class="material-icons possible-plan">add</i>
+                    <p>
+                      Plus, explore and filter up to
+                      <span class="text-core">50,000 Options</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-wrapper">
+                <span class="contact-title"
+                  >EMAIL US FOR CONSULTING INQUIRIES</span
+                >
+                <span class="contact-email">project@zenerate.ai</span>
+              </div>
             </div>
           </div>
           <!-- <div class="pricing-subtitle">Subscription Plans</div>
@@ -119,7 +160,7 @@
 import { onMounted, computed, ref } from 'vue'
 import Store from '/Store/index'
 import { useRouter } from 'vue-router'
-import { PRICE_PLAN_CONTENT, PRICING_PLAN_NAME } from '/Constants/pricePlan'
+import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
 
 const fullpage = computed(() => Store.state.root.FullPage)
@@ -160,12 +201,7 @@ const selectPricingPlan = (item) => {
 </script>
 <style lang="scss" scoped>
 .section {
-  // background-color: #fafafc;
-  background: linear-gradient(
-    270deg,
-    rgba(116, 113, 255, 0.5) 0%,
-    rgba(95, 148, 255, 0.5) 100%
-  );
+  background-color: #fafafc;
 }
 .section-pricing {
   .inner-pricing {
@@ -175,23 +211,21 @@ const selectPricingPlan = (item) => {
   background-position: center;
   height: content-fit;
   .pricing-wrapper {
+    @include flex($justify: space-between);
+    align-items: center;
     height: 100%;
     width: 100%;
     position: relative;
     margin: 40px auto;
-    padding: 0px 33px 0px 40px;
-    .pricing-title {
-      padding-top: 48px;
-      text-align: center;
-      @include medium(18);
-      line-height: 40px;
-      color: #7a87f9;
-      @include en-tablet {
-        padding-top: 0;
-      }
-      @include en-mobile {
-        padding-top: 0;
-      }
+
+    @include en-tablet {
+      flex-direction: column;
+      padding: 0px 10px;
+    }
+
+    @include en-mobile {
+      flex-direction: column;
+      padding: 0px 10px;
     }
     .pricing-subtitle {
       @include medium(26);
@@ -257,22 +291,15 @@ const selectPricingPlan = (item) => {
   @include relative();
   @include vertical-center();
   align-items: center;
-  width: 540px;
+  max-width: 540px;
+  margin: 0px 0px 60px;
   height: auto;
 
   .service-title {
-    @include semi-bold(20);
+    @include bold(24);
     width: 340px;
-    line-height: 80px;
-    margin: 0px 0px 28px;
-    color: $white;
-    background: linear-gradient(
-      270deg,
-      rgba(116, 113, 255, 0.6) 0%,
-      rgba(95, 148, 255, 0.6) 100%
-    );
-    box-shadow: inset 0px 2px 15px #ffffff;
-    border-radius: 40px;
+    margin: 0px 0px 40px;
+    color: #191919;
     text-align: center;
   }
 
@@ -281,11 +308,11 @@ const selectPricingPlan = (item) => {
     width: 100%;
     height: auto;
     background-color: white;
-    box-shadow: 0px 6px 12px 5px rgba(200, 203, 218, 0.5);
-    border-radius: 40px;
+    box-shadow: 0px 4px 8px rgba(142, 141, 208, 0.16);
+    border-radius: 6px;
 
     .list-title {
-      @include semi-bold(16);
+      @include bold(16);
       margin: 0px;
       line-height: 60px;
       color: rgba($text-darken, 0.3);
@@ -296,32 +323,49 @@ const selectPricingPlan = (item) => {
       @include flex();
       align-items: center;
       width: 100%;
-      height: 132px;
       margin-bottom: 8px;
-      box-shadow: 0px 2px 4px 3px rgba(201, 200, 255, 0.4);
 
       li {
         @include vertical-center();
         align-items: center;
         width: calc(100% / 3);
-        height: 100%;
+        padding: 20px 14px;
+        border-bottom: 2px solid rgba(196, 196, 196, 0.4);
 
-        .plan-title {
-          @include bold(16);
-          color: rgba($text-darken, 0.7);
+        .plan-title-wrapper {
+          @include relative();
+          .check-wrapper {
+            @include absolute(top 3px left -26px);
+            @include vertical-center();
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #c2f9de;
+
+            i {
+              @include bold(14);
+              color: #12bf6c;
+            }
+          }
+          .plan-title {
+            @include bold(16);
+            color: rgba($text-darken, 0.7);
+          }
         }
 
         .plan-pricing {
           @include semi-bold(14);
           color: rgba($text-darken, 0.3);
+          text-align: center;
         }
 
         &:hover {
-          background-color: rgba(92, 109, 255, 0.1);
+          border-bottom: 2px solid #4848ff;
         }
 
         &.selected {
-          background-color: rgba(92, 109, 255, 0.1);
+          border-bottom: 2px solid #4848ff;
 
           .plan-title {
             color: #4848ff;
@@ -332,17 +376,22 @@ const selectPricingPlan = (item) => {
     .price-plan-detail {
       @include vertical-center();
       width: 100%;
-      height: 348px;
-      padding-left: 44px;
+      min-height: 348px;
+      padding: 0px 80px;
       margin: 40px 0px 50px;
-      border-radius: 10px;
-      list-style-type: disc;
+
+      @include en-tablet {
+        padding: 0px 80px;
+      }
+      @include en-mobile {
+        padding: 0px 30px;
+      }
 
       li {
         @include flex();
         @include semi-bold(16);
         flex-wrap: nowrap;
-        align-items: center;
+        align-items: flex-start;
         color: rgba($text-darken, 0.7);
         line-height: 20px;
         &:not(:last-child) {
@@ -351,6 +400,7 @@ const selectPricingPlan = (item) => {
 
         i {
           margin-right: 24px;
+          margin-top: 3px;
           font-size: 20px;
           color: rgba($text-darken, 0.3);
 
@@ -362,18 +412,6 @@ const selectPricingPlan = (item) => {
         span {
           @include medium(16);
           color: rgba($text-darken, 0.7);
-
-          &::before {
-            display: inline-block;
-            width: 5px;
-            height: 5px;
-            margin: -2px 10px 0 0;
-            vertical-align: middle;
-            background-color: rgba($text-darken, 0.7);
-            border: none;
-            border-radius: 50%;
-            content: '';
-          }
         }
 
         &.aleady-allowed-plan {
@@ -410,6 +448,142 @@ const selectPricingPlan = (item) => {
           }
         }
       }
+    }
+  }
+}
+
+.consulting-wrapper {
+  .consulting-plan-list-wrapper {
+    @include vertical-center();
+    width: 100%;
+    height: auto;
+    padding: 60px 0px;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(142, 141, 208, 0.16);
+
+    .plan-title {
+      @include bold(16);
+      color: $text-darken;
+      margin-bottom: 24px;
+      padding: 0px 40px;
+    }
+    .consulting-plan-detail {
+      @include vertical-center();
+      width: 100%;
+      margin-bottom: 40px;
+      padding: 0px 40px;
+
+      @include en-tablet {
+        padding: 0px 40px;
+      }
+      @include en-mobile {
+        padding: 0px 30px;
+      }
+
+      li {
+        @include flex();
+        @include semi-bold(16);
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        color: rgba($text-darken, 0.7);
+        line-height: 20px;
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+
+        i {
+          margin-right: 24px;
+          margin-top: 3px;
+          font-size: 20px;
+          color: rgba($text-darken, 0.3);
+
+          &.possible-plan {
+            color: #4848ff;
+          }
+        }
+
+        span {
+          @include medium(16);
+          color: rgba($text-darken, 0.7);
+        }
+
+        &.aleady-allowed-plan {
+          i {
+            color: $cr-main-blue;
+          }
+          span {
+            color: $cr-main-blue;
+            &::before {
+              background-color: $cr-main-blue;
+            }
+          }
+        }
+      }
+    }
+  }
+  .access-wrapper {
+    @include flex();
+    align-items: center;
+    width: 100%;
+    margin-bottom: 48px;
+    padding: 24px 40px;
+    background: rgba(72, 72, 255, 0.05);
+
+    .access-content {
+      .acess-title {
+        @include bold(16);
+        margin-bottom: 10px;
+        color: $text-darken;
+        text-align: center;
+      }
+      .access-list {
+        @include flex();
+        @include medium(16);
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        color: rgba($text-darken, 0.7);
+        line-height: 20px;
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+
+        i {
+          margin-right: 24px;
+          margin-top: 3px;
+          font-size: 24px;
+          color: rgba($text-darken, 0.3);
+
+          &.possible-plan {
+            color: #4848ff;
+          }
+        }
+
+        p {
+          @include medium(16);
+          color: rgba($text-darken, 0.7);
+          .text-core {
+            color: #4848ff;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-wrapper {
+    @include vertical-center();
+    align-items: center;
+    padding: 0px 40px;
+
+    .contact-title {
+      @include bold(16);
+      color: rgba($text-darken, 0.3);
+      text-align: center;
+    }
+    .contact-email {
+      @include bold(18);
+      text-decoration-line: underline;
+      color: rgba(72, 72, 255, 0.8);
     }
   }
 }
