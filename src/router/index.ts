@@ -96,7 +96,7 @@ const router = createRouter({
       return { el: to.hash }
     }
     // always scroll to top
-    return { top: 0 }
+    return { top: 0, left: 0 }
   },
 })
 

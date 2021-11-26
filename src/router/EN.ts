@@ -3,11 +3,13 @@ import ENLayout from '/Layouts/ENLayout.vue'
 
 import AboutView from '/Views/EN/AboutView.vue'
 import CareerView from '/Views/EN/CareerView.vue'
+import CareerContent from '/src/components/EN/CareerContent.vue'
 import ContactView from '/Views/EN/ContactView.vue'
 import LandingView from '/Views/EN/LandingView.vue'
 import PricingView from '/Views/EN/PricingView.vue'
 import ServiceView from '/Views/EN/ServiceView.vue'
-import CareerContent from '/src/components/EN/CareerContent.vue'
+import TermsAndConditionsView from '/Views/EN/TermsAndConditionsView.vue'
+import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -50,6 +52,16 @@ const ENRoute: RouteRecordRaw = {
       path: '/services',
       name: 'en-services',
       component: ServiceView,
+    },
+    {
+      path: '/terms-and-conditions',
+      name: 'en-terms-and-conditions',
+      component: TermsAndConditionsView,
+    },
+    {
+      path: '/privacy-policy',
+      name: 'en-privacy-policy',
+      component: PrivacyPolicyView,
     },
   ],
 }
