@@ -134,7 +134,7 @@ const router = useRouter()
     height: 61px;
   }
   @include mobile {
-    height: 49px;
+    height: 50px;
   }
   .header-inner {
     @include flex($justify: space-between);
@@ -162,12 +162,15 @@ const router = useRouter()
         width: 24px;
         .logo {
           width: 100%;
+          margin: 6px 0px 6px 6px;
         }
       }
       @include mobile {
-        width: 18px;
+        width: 180px;
+        height: 40px;
+        margin: 6px 0px 2px 12px;
         .logo {
-          width: 100%;
+          width: 18px;
         }
       }
     }
@@ -214,6 +217,9 @@ const router = useRouter()
       align-items: center;
       margin: auto 12px;
       padding: 16px 0px;
+      @include mobile {
+        padding: 4px 0px 0px;
+      }
       .button-lang-wrapper {
         @include flex;
         .button-lang {

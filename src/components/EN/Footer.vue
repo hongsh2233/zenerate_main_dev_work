@@ -92,6 +92,9 @@
 <script lang="ts" setup></script>
 <style lang="scss" scoped>
 .section-footer {
+  background-color: #fafafc;
+  padding-top: 52px;
+  padding-bottom: 48px;
   .footer-wrapper {
     @include container;
     padding-top: 0 !important;
