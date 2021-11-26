@@ -5,7 +5,7 @@
         class="header-logo hover-pointer"
         @click="router.push({ name: 'en-landing' })"
       >
-         <img
+        <img
           class="logo hidden-tablet hidden-mobile"
           src="/img/logo_color.png"
           alt="logo"
@@ -23,10 +23,7 @@
         </router-link>
       </div>
       <div class="header-demo-wrapper only-en-desktop">
-        <a
-          class="demo-link"
-          href="https://app.zenerate.ai"
-          target="_blank"
+        <a class="demo-link" href="https://app.zenerate.ai" target="_blank"
           >Join App
         </a>
       </div>
@@ -119,7 +116,7 @@ const routes = [
         width: 160px;
         .logo {
           width: 24px;
-          margin: 6px 0px 2px 6px;      
+          margin: 6px 0px 2px 6px;
         }
       }
       @include mobile {

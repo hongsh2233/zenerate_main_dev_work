@@ -171,7 +171,7 @@ onMounted(() => {
           }
           @include en-mobile {
             font-size: 20px;
-             strong {
+            strong {
               @include regular(23);
             }
           }

@@ -388,6 +388,19 @@
         </div>
       </div>
 
+      <i class="scroll-to-top" @click="($evt) => scollToTop()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="#000000"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path
+            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+          />
+        </svg>
+      </i>
+
       <div class="section section-footer fp-auto-height-responsive">
         <Footer></Footer>
       </div>
@@ -404,6 +417,11 @@ const fullpage = computed(() => Store.state.root.FullPage)
 onMounted(() => {
   fullpage.value.destroy()
 })
+
+const scollToTop = () => {
+  const el = document.querySelector('.inner-contents')
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 </script>
 <style lang="scss" scoped>
 #fullpage {
@@ -422,6 +440,27 @@ onMounted(() => {
     @include en-mobile {
       padding: 0 24px;
       max-width: 100%;
+    }
+  }
+}
+
+.scroll-to-top {
+  @include fixed(bottom 24px right 32px);
+  cursor: pointer;
+  z-index: 9;
+
+  svg {
+    width: 40px;
+    height: 40px;
+
+    fill: $text-darken;
+  }
+
+  @include en-mobile {
+    @include fixed(bottom 14px right 18px);
+    svg {
+      width: 32px;
+      height: 32px;
     }
   }
 }

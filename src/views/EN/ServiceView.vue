@@ -24,14 +24,7 @@
     </div> -->
     <div class="section section-technology fp-auto-height-responsive">
       <div class="section-inner">
-        <div
-          class="inner-contents inner-technology"
-          data-aos="fade-up"
-          data-aos-delay="0"
-          data-aos-offset="-1500"
-          data-aos-duration="300"
-          data-aos-anchor-placement="top-center"
-        >
+        <div class="inner-contents inner-technology">
           <div class="technology-header">
             <p class="header-title">OUR SERVICES</p>
             <p class="header-content">
@@ -82,8 +75,8 @@
               </div>
               <div class="item-solution">
                 <span>
-                  <strong>Rent prices</strong> considering height,
-                  views, bedroom type, layout, etc.
+                  <strong>Rent prices</strong> considering height, views,
+                  bedroom type, layout, etc.
                 </span>
               </div>
             </div>
@@ -94,14 +87,7 @@
     <div class="section section-services fp-auto-height-responsive">
       <div class="section-inner inner-services">
         <div class="service-content-wrapper">
-          <div
-            data-aos="fade-up"
-            data-aos-delay="0"
-            data-aos-offset="-1500"
-            data-aos-duration="300"
-            data-aos-anchor-placement="top-center"
-            class="service-content-wrapper"
-          >
+          <div class="service-content-wrapper">
             <div class="service-web service-content">
               <p class="content-title">WEB PLATFORM</p>
               <div class="content-image">
@@ -486,6 +472,13 @@ onMounted(() => {
         }
         @include en-mobile {
           margin: 0px auto;
+          .text-title {
+            @include medium(20);
+            margin-bottom: 16px;
+          }
+          .text-content {
+            @include regular(18);
+          }
         }
       }
       @include en-tablet {

@@ -23,11 +23,7 @@
           </div>
           <div class="content-justyourcuriosity"></div>
           <div class="content-button">
-            <a
-              href="https://app.zenerate.ai"
-              target="_blank"
-              >GO EXPLORE</a
-            >
+            <a href="https://app.zenerate.ai" target="_blank">GO EXPLORE</a>
           </div>
         </div>
         <div class="arrow-bottom only-en-desktop">
@@ -88,7 +84,6 @@
               src="/en/img/landing_instant_search_start.png"
               alt=""
             />
-         
           </div>
           <div class="instant-search-contents">
             <div class="content-inner" style="margin-bottom: 32px">
@@ -119,7 +114,7 @@
               src="/en/img/landing_instant_search_start.png"
               alt=""
             />
-                    </div>
+          </div>
         </div>
       </div>
       <div class="background-image"></div>
@@ -134,11 +129,7 @@
         <div class="inner-contents generation-contents">
           <div class="content-left only-en-desktop">
             <div class="left-img">
-                        <img
-                class="img-map"
-                src="/en/img/landing_profit.gif"
-                alt=""
-              />
+              <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
             </div>
           </div>
           <div class="content-right">
@@ -165,12 +156,7 @@
           </div>
           <div class="content-left hidden-en-desktop">
             <div class="left-img">
-           
-              <img
-                class="img-map"
-                src="/en/img/landing_profit.gif"
-                alt=""
-              />
+              <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
             </div>
           </div>
         </div>
@@ -236,7 +222,7 @@
               <div
                 class="item-logo"
                 :style="{
-                  'backgroundImage': `url('/logo/logo_${item.key}.png')`,
+                  backgroundImage: `url('/logo/logo_${item.key}.png')`,
                 }"
               ></div>
               <div class="item-description">
@@ -294,6 +280,10 @@ const toContactForm = () => {
     width: 100%;
     height: 100%;
     opacity: 0.07;
+
+    @include en-mobile {
+      max-height: 850px;
+    }
   }
 }
 
@@ -310,19 +300,21 @@ const toContactForm = () => {
     z-index: 0;
     width: 100%;
     height: 100%;
+
     @include en-desktop {
       background-position-x: min(calc(100vw - 1280px), 0.001px);
     }
     @include en-tablet-small {
       background-position-x: calc(100vw - 960px);
+      max-height: 720px;
     }
     @include en-mobile {
       background-position-x: calc(100vw - 960px);
+      max-height: 720px;
     }
   }
   .landing-background-wave {
     width: 100%;
-    height: 100%;
     @include absolute(left 0 top 50%);
     z-index: 1;
     img {
@@ -431,7 +423,7 @@ const toContactForm = () => {
   }
   .landing-background-wave {
     width: 100%;
-    height: 100%;
+
     @include absolute(left 0 top 50%);
     z-index: 1;
     img {
@@ -446,7 +438,7 @@ const toContactForm = () => {
   .instant-search-wrapper {
     @include vertical-center;
     @include flex($justify: space-between);
-       width: 100%;
+    width: 100%;
     height: fit-content;
     margin: auto 0px;
   }
@@ -511,7 +503,7 @@ const toContactForm = () => {
         width: 100%;
         height: 100%;
       }
-    
+
       @include en-tablet {
         max-width: 90%;
         margin: auto;
@@ -540,26 +532,23 @@ const toContactForm = () => {
         @include flex($justify: center);
         width: 100%;
         height: auto;
-     
-      
+
         .img-map {
           @include elevation-4;
           width: 530px;
           height: auto;
-          
+
           @include en-mobile {
-          width: 100%;
-          max-width: 90%;
-          margin: 0px auto;
-        }
+            width: 100%;
+            max-width: 90%;
+            margin: 0px auto;
+          }
         }
       }
       @include en-tablet {
- 
         margin: 0px auto;
       }
       @include en-mobile {
-  
         width: 100%;
         margin: 0px auto;
       }

@@ -38,10 +38,10 @@
           </div>
         </div>
         <div class="term-wrapper">
-          <a href="/terms-and-conditions" target="_self" class="term"
+          <a @click="router.push('/terms-and-conditions')" class="term"
             >Terms and Conditions</a
           >
-          <a href="/privacy-policy" target="_self" class="term"
+          <a @click="router.push('/privacy-policy')" class="term"
             >Privacy Policy</a
           >
           <div class="sns-wrapper">
@@ -89,12 +89,15 @@
     </div>
   </div>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+</script>
 <style lang="scss" scoped>
 .section-footer {
   background-color: #fafafc;
   padding-top: 52px;
-  padding-bottom: 48px;
+  padding-bottom: 28px;
   .footer-wrapper {
     @include container;
     padding-top: 0 !important;
@@ -287,6 +290,7 @@
           @include regular(16);
           text-align: center;
           color: rgba($cr-fields-description, 0.8);
+          cursor: pointer;
           z-index: 9;
 
           &:first-child {

@@ -1,128 +1,132 @@
 <template>
-  <section class="section-contact">
-    <div class="contact-hero-wrapper">
-      <!-- <img src="/en/img/contact_hero.jpg" alt="" /> -->
-      <div class="hero-text-wrapper">
-        <p class="title">Contact Us</p>
-        <p class="text">We'd love to hear from you</p>
-      </div>
-      <div class="contact-form-wrapper" :class="{ done: sendEmailStatus }">
-        <transition name="fade">
-          <div class="contact-form-success" v-if="sendEmailStatus">
-            <div class="contact-form-inner">
-              <img
-                data-aos="fade-up"
-                data-aos-offset="-1500"
-                data-aos-duration="500"
-                data-aos-anchor-placement="bottom-bottom"
-                src="/en/img/contact_submit_done.png"
-                alt=""
-              />
-              <div
-                class="inner-content"
-                data-aos="fade-up"
-                data-aos-offset="-1500"
-                data-aos-delay="500"
-                data-aos-duration="500"
-                data-aos-anchor-placement="bottom-bottom"
-              >
-                <p class="content-heading">Successfully submitted!</p>
-                <p class="content-text">
-                  We've received your message and will get back to you soon.
-                </p>
-                <button
-                  class="content-button"
-                  @click="router.push({ name: 'en-landing' })"
+  <div id="fullpage-contact">
+    <section class="section-contact">
+      <div class="contact-hero-wrapper">
+        <!-- <img src="/en/img/contact_hero.jpg" alt="" /> -->
+        <div class="hero-text-wrapper">
+          <p class="title">Contact Us</p>
+          <p class="text">We'd love to hear from you</p>
+        </div>
+        <div class="contact-form-wrapper" :class="{ done: sendEmailStatus }">
+          <transition name="fade">
+            <div class="contact-form-success" v-if="sendEmailStatus">
+              <div class="contact-form-inner">
+                <img
+                  data-aos="fade-up"
+                  data-aos-offset="-1500"
+                  data-aos-duration="500"
+                  data-aos-anchor-placement="bottom-bottom"
+                  src="/en/img/contact_submit_done.png"
+                  alt=""
+                />
+                <div
+                  class="inner-content"
+                  data-aos="fade-up"
+                  data-aos-offset="-1500"
+                  data-aos-delay="500"
+                  data-aos-duration="500"
+                  data-aos-anchor-placement="bottom-bottom"
                 >
-                  Go to Home
-                </button>
+                  <p class="content-heading">Successfully submitted!</p>
+                  <p class="content-text">
+                    We've received your message and will get back to you soon.
+                  </p>
+                  <button
+                    class="content-button"
+                    @click="router.push({ name: 'en-landing' })"
+                  >
+                    Go to Home
+                  </button>
+                </div>
+              </div>
+            </div>
+          </transition>
+          <div class="form-text">
+            <div class="form-left">
+              <div class="label-text">
+                <p class="label-title">Name</p>
+                <input
+                  type="text"
+                  v-model="contactForm.name.value"
+                  @blur="(v) => validation('name')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.name.valid === false }"
+                >
+                  Please Enter!
+                </p>
+              </div>
+              <div class="label-text">
+                <p class="label-title">Company</p>
+                <input
+                  type="text"
+                  v-model="contactForm.company.value"
+                  @blur="(v) => validation('company')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.company.valid === false }"
+                >
+                  Please Enter!
+                </p>
+              </div>
+            </div>
+            <div class="form-right">
+              <SelectInput
+                placeholder="Select"
+                :items="items"
+                title="Inquiries"
+                :skipTranslate="true"
+                :selected="contactForm.purpose.value"
+                :valid="contactForm.purpose.valid"
+                @onSelect="
+                  (v) => (
+                    (contactForm.purpose.value = v), validation('purpose')
+                  )
+                "
+              />
+              <div class="label-text">
+                <p class="label-title">Email Address</p>
+                <input
+                  type="text"
+                  v-model="contactForm.email.value"
+                  @blur="(v) => validation('email')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.email.valid === false }"
+                >
+                  Please Enter Valid Email Address!
+                </p>
               </div>
             </div>
           </div>
-        </transition>
-        <div class="form-text">
-          <div class="form-left">
-            <div class="label-text">
-              <p class="label-title">Name</p>
-              <input
-                type="text"
-                v-model="contactForm.name.value"
-                @blur="(v) => validation('name')"
-              />
-              <p
-                class="label-error"
-                :class="{ active: contactForm.name.valid === false }"
-              >
-                Please Enter!
-              </p>
-            </div>
-            <div class="label-text">
-              <p class="label-title">Company</p>
-              <input
-                type="text"
-                v-model="contactForm.company.value"
-                @blur="(v) => validation('company')"
-              />
-              <p
-                class="label-error"
-                :class="{ active: contactForm.company.valid === false }"
-              >
-                Please Enter!
-              </p>
-            </div>
-          </div>
-          <div class="form-right">
-            <SelectInput
-              placeholder="Select"
-              :items="items"
-              title="Inquiries"
-              :skipTranslate="true"
-              :selected="contactForm.purpose.value"
-              :valid="contactForm.purpose.valid"
-              @onSelect="
-                (v) => ((contactForm.purpose.value = v), validation('purpose'))
-              "
+          <div class="label-textarea">
+            <p class="label-title">Message</p>
+            <textarea
+              v-model="contactForm.message.value"
+              rows="7"
+              @blur="(v) => validation('message')"
             />
-            <div class="label-text">
-              <p class="label-title">Email Address</p>
-              <input
-                type="text"
-                v-model="contactForm.email.value"
-                @blur="(v) => validation('email')"
-              />
-              <p
-                class="label-error"
-                :class="{ active: contactForm.email.valid === false }"
-              >
-                Please Enter Valid Email Address!
-              </p>
-            </div>
           </div>
-        </div>
-        <div class="label-textarea">
-          <p class="label-title">Message</p>
-          <textarea
-            v-model="contactForm.message.value"
-            rows="7"
-            @blur="(v) => validation('message')"
-          />
-        </div>
-        <div class="form-send-wrapper">
-          <div class="dummy" ref="dummy"></div>
-          <button
-            class="form-send hover-pointer"
-            :class="{ disabled: sendEmailStatus }"
-            @click="sendEmail"
-          >
-            {{ sendEmailStatus ? 'DONE' : 'SUBMIT' }}
-          </button>
+          <div class="form-send-wrapper">
+            <div class="dummy" ref="dummy"></div>
+            <button
+              class="form-send hover-pointer"
+              :class="{ disabled: sendEmailStatus }"
+              @click="sendEmail"
+            >
+              {{ sendEmailStatus ? 'DONE' : 'SUBMIT' }}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="section section-footer fp-auto-height">
-      <Footer />
-    </div>
-  </section>
+      <div class="section section-footer fp-auto-height">
+        <Footer />
+      </div>
+    </section>
+  </div>
 </template>
 <script lang="ts" setup>
 import { reactive, ref, onMounted, computed } from 'vue'
@@ -267,12 +271,13 @@ onMounted(() => {
   if (fullpage.value) {
     fullpage.value.destroy()
   }
-  const route = useRoute()
 })
 </script>
 <style lang="scss" scoped>
 .section-contact {
   @include relative;
+  width: 100%;
+  height: 100%;
   .contact-hero-wrapper {
     @include relative;
     height: 555px;

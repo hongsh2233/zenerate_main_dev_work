@@ -1,5 +1,5 @@
 <template>
-  <div id="fullpage">
+  <div id="fullpage-career">
     <section class="section section-careers">
       <div class="section-main">
         <div class="section-inner main-wrapper">
