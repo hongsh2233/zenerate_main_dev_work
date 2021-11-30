@@ -1,5 +1,5 @@
 <template>
-  <div id="fullpage">
+  <div id="fullpage-private">
     <div class="section section-privacy-policy">
       <div class="section-inner">
         <div class="inner-contents">

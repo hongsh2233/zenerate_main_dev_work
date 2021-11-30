@@ -1,5 +1,5 @@
 <template>
-  <div id="fullpage">
+  <div id="fullpage-terms">
     <div class="section section-terms-and-condition">
       <div class="section-inner">
         <div class="inner-contents">
