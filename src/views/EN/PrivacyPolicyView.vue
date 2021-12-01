@@ -424,14 +424,14 @@ const scollToTop = () => {
 }
 </script>
 <style lang="scss" scoped>
-#fullpage {
+#fullpage-private {
   overflow: hidden;
-
   .section-inner {
     @include flex;
     position: relative;
     height: 100%;
     padding: 0px 60px;
+    cursor: default;
 
     @include en-tablet {
       padding: 0px 24px;

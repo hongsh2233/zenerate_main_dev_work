@@ -53,8 +53,8 @@
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="32px"
-                  height="32px"
+                  width="28px"
+                  height="28px"
                   viewBox="0 0 20 20"
                   version="1.1"
                 >
@@ -68,8 +68,8 @@
               </a>
               <a href="https://www.facebook.com/zenerate/" class="hover-pointer"
                 ><svg
-                  width="32"
-                  height="32"
+                  width="28px"
+                  height="28px"
                   viewBox="0 0 20 20"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -140,6 +140,7 @@ const router = useRouter()
 
           .footer-location {
             @include flex;
+            cursor: default;
             &:last-child p.title {
               margin-bottom: 0;
             }
@@ -220,6 +221,7 @@ const router = useRouter()
             line-height: 24px;
             margin-bottom: 24px;
             color: $cr-text-grey;
+            cursor: default;
           }
           a {
             @include regular(16);
@@ -250,10 +252,11 @@ const router = useRouter()
       }
 
       .sns-wrapper {
-        @include absolute(bottom -10px left 0px);
+        @include absolute(bottom -2px left 0px);
         @include flex($justify: space-between);
-        align-items: flex-start;
+        align-items: flex-end;
         width: 100%;
+        cursor: default;
 
         .copyright {
           @include regular(16);
@@ -262,14 +265,19 @@ const router = useRouter()
 
         .footer-sns {
           @include flex($justify: space-between);
-          width: 96px;
+          width: 80px;
+          margin-right: 10px;
+          svg {
+            cursor: pointer;
+          }
         }
 
         @include en-tablet {
-          bottom: -34px;
+          bottom: -24px;
         }
         @include en-mobile {
           flex-direction: column;
+          align-items: flex-start;
           top: 20px;
           height: 100px;
           .copyright {

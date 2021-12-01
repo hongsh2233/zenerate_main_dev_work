@@ -212,10 +212,10 @@ onMounted(() => {
     margin: auto 0px;
   }
   .technology-header {
+    @include flex($dir: column, $justify: center);
     height: 220px;
     width: 100%;
     text-align: center;
-    @include flex($dir: column, $justify: center);
 
     .header-title {
       @include bold(16);
@@ -225,10 +225,12 @@ onMounted(() => {
       @include regular(26);
     }
     @include en-tablet {
+      width: 400px;
       height: 120px;
+      margin: 0 auto;
     }
     @include en-mobile {
-      height: 120px;
+      height: auto;
     }
   }
   .technology-content {
@@ -280,7 +282,7 @@ onMounted(() => {
         .item-solution {
           margin: 0px auto;
           padding: 0px 32px;
-          max-width: 320px;
+          max-width: 290px;
         }
         .item-arrow {
           margin-top: 32px;
@@ -417,6 +419,10 @@ onMounted(() => {
         p {
           color: $white;
           @include semi-bold(24);
+        }
+
+        @include en-mobile {
+          padding: 10px 20px;
         }
       }
     }

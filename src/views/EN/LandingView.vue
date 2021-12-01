@@ -2,12 +2,10 @@
   <div id="fullpage">
     <div class="section section-landing fp-auto-height-responsive">
       <div class="section-inner inner-landing">
-        <div
-          class="inner-contents landing-contents"
-          data-aos="fade-up"
+        <div class="inner-contents landing-contents">
+          <!-- data-aos="fade-up"
           data-aos-offset="-1500"
-          data-aos-duration="300"
-        >
+          data-aos-duration="300" -->
           <div></div>
           <div class="content-heading">
             <p>Zenerate™</p>
@@ -37,12 +35,10 @@
     </div>
     <div class="section section-engine fp-auto-height-responsive">
       <div class="section-inner inner-engine">
-        <div
-          class="inner-contents"
-          data-aos="fade-up"
+        <div class="inner-contents">
+          <!-- data-aos="fade-up"
           data-aos-offset="-200"
-          data-aos-duration="300"
-        >
+          data-aos-duration="300" -->
           <div class="engine-contents">
             <div class="content-heading">
               <p><strong>The Zenerate™ Engine</strong></p>
@@ -72,12 +68,7 @@
 
     <div class="section section-instant-search fp-auto-height-responsive">
       <div class="section-inner inner-instant-search">
-        <div
-          class="inner-contents instant-search-wrapper"
-          data-aos="fade-up"
-          data-aos-offset="-200"
-          data-aos-duration="300"
-        >
+        <div class="inner-contents instant-search-wrapper">
           <div class="instant-search-image only-en-desktop">
             <img
               class="outer"
@@ -104,9 +95,7 @@
                 </p>
               </div>
             </div>
-            <button data-aos="fade-up" class="button-1" @click="toContactForm">
-              LEARN MORE
-            </button>
+            <button class="button-1" @click="toContactForm">LEARN MORE</button>
           </div>
           <div class="instant-search-image hidden-en-desktop">
             <img
@@ -120,12 +109,7 @@
       <div class="background-image"></div>
     </div>
     <div class="section section-generation fp-auto-height-responsive">
-      <div
-        class="section-inner inner-generation"
-        data-aos="fade-up"
-        data-aos-offset="-200"
-        data-aos-duration="300"
-      >
+      <div class="section-inner inner-generation">
         <div class="inner-contents generation-contents">
           <div class="content-left only-en-desktop">
             <div class="left-img">
@@ -164,12 +148,7 @@
     </div>
     <div class="section section-compare fp-auto-height-responsive">
       <div class="section-inner inner-compare">
-        <div
-          class="inner-contents compare-contents"
-          data-aos="fade-up"
-          data-aos-offset="-200"
-          data-aos-duration="300"
-        >
+        <div class="inner-contents compare-contents">
           <div class="compare-text">
             <div class="content-heading">
               <p>
@@ -636,11 +615,12 @@ const toContactForm = () => {
   }
 
   .partners-title {
-    margin-top: 100px;
     @include relative;
-    text-align: center;
     @include vertical-center;
     height: 260px;
+    margin-top: 100px;
+    padding: 0px 20px;
+    text-align: center;
     &::before {
       @include absolute(left 0 top 0 right 0 bottom 0);
       background-size: cover;
@@ -670,7 +650,7 @@ const toContactForm = () => {
     }
     @include en-mobile {
       p {
-        font-size: 26px;
+        font-size: 24px;
       }
     }
   }
@@ -696,7 +676,7 @@ const toContactForm = () => {
       }
       @include en-mobile {
         p {
-          font-size: 26px;
+          font-size: 22px;
         }
       }
       // p {
@@ -706,6 +686,8 @@ const toContactForm = () => {
   }
   .partners-list {
     @include flex($justify: space-between);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     .partners-item {
       margin-bottom: 40px;
       width: 200px;
@@ -751,6 +733,34 @@ const toContactForm = () => {
       }
     }
     margin-bottom: 80px;
+
+    @include en-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      .partners-item {
+        width: auto;
+      }
+
+      @media (orientation: landscape) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @include en-mobile {
+      // max-width: 320px;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 auto;
+
+      .partners-item {
+        width: auto;
+        max-width: 200px;
+        min-width: 140px;
+
+        .item-logo {
+          width: 100%;
+          background-size: contain;
+        }
+      }
+    }
   }
 }
 </style>

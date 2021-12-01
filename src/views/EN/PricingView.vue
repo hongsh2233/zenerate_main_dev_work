@@ -163,6 +163,7 @@ const selectPricingPlan = (item) => {
   background-size: cover;
   background-position: center;
   height: content-fit;
+  cursor: default;
 
   .pricing-title {
     margin: 20px 0px 60px;

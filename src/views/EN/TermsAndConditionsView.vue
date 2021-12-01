@@ -835,7 +835,7 @@ const scollToTop = () => {
 }
 </script>
 <style lang="scss" scoped>
-#fullpage {
+#fullpage-terms {
   overflow: hidden;
 
   .section-inner {
@@ -843,6 +843,7 @@ const scollToTop = () => {
     position: relative;
     height: 100%;
     padding: 0px 60px 180px;
+    cursor: default;
 
     @include en-tablet {
       padding: 0px 24px;
@@ -854,6 +855,7 @@ const scollToTop = () => {
     }
   }
 }
+
 .scroll-to-top {
   @include fixed(bottom 24px right 32px);
   cursor: pointer;
@@ -943,6 +945,7 @@ ol {
     margin: 0px 20px 4px 20px;
     color: #707070;
     text-align: left;
+    cursor: pointer;
 
     @include en-mobile {
       @include regular(14);

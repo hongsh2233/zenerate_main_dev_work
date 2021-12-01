@@ -210,8 +210,13 @@ onMounted(() => {
       padding: 0 24px;
       max-width: 100%;
       text-align: center;
+
       .main-sub-title {
         justify-content: center;
+
+        span {
+          @include regular(30);
+        }
       }
     }
   }
@@ -239,68 +244,19 @@ onMounted(() => {
       }
     }
     .main-content {
-      padding-top: 48px;
       @include regular(21);
+      padding-top: 48px;
       width: 545px;
       @include en-tablet {
         max-width: 100%;
       }
       @include en-mobile {
+        @include regular(18);
         max-width: 100%;
       }
     }
   }
 }
-// .section-hero {
-//   background-image: url('/en/img/career_hero.webp');
-//   background-size: cover;
-
-//   .hero-wrapper {
-//     // height: calc(100% - 100px);
-//     padding-top: 160px;
-//     color: white;
-//     margin: auto;
-//     @include vertical-center();
-//     .hero-title {
-//       @include bold(36);
-//       text-align: center;
-//       font-weight: 500;
-//       line-height: 40px;
-//     }
-//     .hero-sub-title {
-//       @include flex($dir: row);
-//       span {
-//         @include regular(28);
-//         line-height: 50px;
-//         margin-right: 10px;
-//       }
-//       img {
-//         height: 50px;
-//       }
-//     }
-//     .hero-content {
-//       padding-top: 48px;
-//       @include medium(18);
-//       width: 545px;
-//       &:last-child {
-//         padding-top: 24px;
-//       }
-//     }
-//     .technology-arrow {
-//       height: 100px;
-//       width: 100%;
-//       margin-bottom: 20px;
-//       margin-top: 100px;
-//       @include center-center;
-//       align-items: flex-end;
-//       animation: move-up-down 2s ease-in-out infinite;
-//       svg {
-//         height: 80px;
-//         stroke: white;
-//       }
-//     }
-//   }
-// }
 .section-content {
   &.active .content-list-wrapper .list-title {
     padding-top: 160px;
@@ -324,6 +280,10 @@ onMounted(() => {
       text-align: center;
       @include bold(32);
       margin-bottom: 48px;
+
+      @include en-mobile {
+        @include bold(28);
+      }
     }
     .list-wrapper {
       @include flex($justify: space-between);
@@ -372,15 +332,15 @@ onMounted(() => {
                 color: $cr-main-blue;
                 border-bottom-color: $cr-main-blue;
               }
+
+              @include en-mobile {
+                @include medium(16);
+              }
             }
           }
         }
       }
     }
   }
-  // &.active .content-list-wrapper {
-  //   height: 100%;
-  //   padding-top: 150px;
-  // }
 }
 </style>
