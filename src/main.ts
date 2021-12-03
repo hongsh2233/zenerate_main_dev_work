@@ -1,7 +1,7 @@
 // import devtools from '@vue/devtools'
 // devtools.connect()
 import { createApp } from 'vue'
-import VueGtag from 'vue-gtag'
+import VueGtag from 'vue-gtag-next'
 import i18n from '/Config/locales/i18n'
 import App from './App.vue'
 import Router from './router'
@@ -20,13 +20,10 @@ createApp(App)
   .use(Router)
   .use(i18n)
   .use(Store.original)
-  .use(
-    VueGtag,
-    {
-      appName: 'My Website',
-      pageTrackerScreenviewEnabled: true,
-      config: { id: 'UA-212995971-1', params: { send_page_view: false } },
-    },
-    Router
-  )
+  .use(VueGtag, {
+    property: [
+      { id: 'UA-212995971-1', default: true },
+      { id: 'UA-214276888-1' },
+    ],
+  })
   .mount('#app')

@@ -22,7 +22,7 @@
           >{{ route.title }}
         </router-link>
       </div>
-      <div class="header-demo-wrapper only-en-desktop">
+      <div class="header-demo-wrapper only-en-desktop" @click="goToApp()">
         <a class="demo-link" href="https://app.zenerate.ai" target="_blank"
           >Join App
         </a>
@@ -45,6 +45,15 @@ const props = defineProps({
 const emit = defineEmit(['toggleDrawer'])
 const toggleDrawer = () => {
   emit('toggleDrawer', !props.showDrawer)
+}
+
+import { useGtag } from 'vue-gtag-next'
+const { event } = useGtag()
+const goToApp = () => {
+  event('generate_lead', {
+    event_category: 'engagement',
+    event_label: '(not yet)',
+  })
 }
 
 // routes

@@ -20,7 +20,7 @@
             <p>All building design possibilities. Maximum success.</p>
           </div>
           <div class="content-justyourcuriosity"></div>
-          <div class="content-button">
+          <div class="content-button" @click="goToApp()">
             <a href="https://app.zenerate.ai" target="_blank">GO EXPLORE</a>
           </div>
         </div>
@@ -239,6 +239,15 @@ onMounted(() => {
 onBeforeUnmount(() => {
   fullpage.value.destroy()
 })
+
+import { useGtag } from 'vue-gtag-next'
+const { event } = useGtag()
+const goToApp = () => {
+  event('generate_lead', {
+    event_category: 'engagement',
+    event_label: '(not yet)',
+  })
+}
 
 const router = useRouter()
 const toContactForm = () => {

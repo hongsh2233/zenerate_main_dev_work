@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import type { RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { trackRouter } from 'vue-gtag-next'
 import ModuleLayout from '/Layouts/ModuleLayout.vue'
 import MainLayout from '/Layouts/MainLayout.vue'
 
@@ -98,6 +98,10 @@ const router = createRouter({
     // always scroll to top
     return { top: 0, left: 0 }
   },
+})
+
+trackRouter(router, {
+  useScreenview: true,
 })
 
 export default router
