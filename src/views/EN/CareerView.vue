@@ -187,6 +187,27 @@ const fp = computed(() => Store.state.root.FullPage)
 onMounted(() => {
   fp.value.destroy()
 })
+
+import { useMeta } from 'vue-meta'
+const { meta } = useMeta({
+  title: 'Career | Zenerate',
+  description:
+    'Join Zenerate to work with the most passionate and intelligent team in the world.',
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://zenerate.ai/career' }],
+  og: {
+    url: 'https://zenerate.ai/',
+    type: 'website',
+    title: 'Career Us | Zenerate',
+    description: `Join Zenerate to work with the most passionate and intelligent team in the world.`,
+    tags: 'zenerate',
+    keywords: 'zenerate',
+    image: 'https://zenerate.ai/img/logo_og.png',
+  },
+  twitter: {
+    title: 'Career Us | Zenerate',
+  },
+})
 </script>
 <style lang="scss" scoped>
 #fullpage {

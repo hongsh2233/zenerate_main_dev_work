@@ -171,6 +171,27 @@ onMounted(() => {
     // navigation: false,
   })
 })
+
+import { useMeta } from 'vue-meta'
+const { meta } = useMeta({
+  title: 'Services | Zenerate',
+  description:
+    'Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. ',
+  htmlAttrs: { lang: 'en', amp: false },
+  link: [{ rel: 'canonical', href: 'https://zenerate.ai/services' }],
+  og: {
+    url: 'https://zenerate.ai/',
+    type: 'website',
+    title: 'Pricing | Zenerate',
+    description: `Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. `,
+    tags: 'zenerate',
+    keywords: 'zenerate',
+    image: 'https://zenerate.ai/img/logo_og.png',
+  },
+  twitter: {
+    title: 'Services | Zenerate',
+  },
+})
 </script>
 <style lang="scss" scoped>
 .section-hero {

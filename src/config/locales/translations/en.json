@@ -82,7 +82,12 @@
             ]
           },
           "team": {
-            "desc": ["Our Team", "Product Team", "IT Team", "Marketing Team"],
+            "desc": [
+              "Our Team",
+              "Product Team",
+              "SW Development Team",
+              "Marketing Team"
+            ],
             "work": [
               "",
               "Architectural Designer Computational Designer",
@@ -302,7 +307,7 @@
         "zenerate": "Zenerate",
         "marketing": "Marketing",
         "product": "Product",
-        "it": "IT"
+        "it": "SW Development"
       },
       "name": {
         "sbj": "Bongjai Shin",

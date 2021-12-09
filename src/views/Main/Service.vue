@@ -52,10 +52,30 @@ const serviceTab = ref('consulting')
 const toggleServiceTab = (tab) => {
   serviceTab.value = tab
 }
+
+import { useMeta } from 'vue-meta'
+const { meta } = useMeta({
+  title: '서비스 | 제너레잇',
+  description:
+    '컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.',
+  htmlAttrs: { lang: 'ko', amp: false },
+  link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/service' }],
+  og: {
+    url: 'https://zenerate.ai/kr',
+    type: 'website',
+    title: '서비스 | 제너레잇',
+    description: `컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.`,
+    tags: '제너레잇',
+    keywords: '제너레잇',
+    image: 'https://zenerate.ai/img/logo_og.png',
+  },
+  twitter: {
+    title: '서비스 | 제너레잇',
+  },
+})
 </script>
 
 <style lang="scss" scoped>
-
 .service-container-wrapper {
   padding-top: 64px;
   .service-container {

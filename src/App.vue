@@ -1,10 +1,42 @@
 <template>
+  <metainfo>
+    <template v-slot:title="{ metainfo }">{{
+      metainfo.title ? `${metainfo.title}` : `Zenerate`
+    }}</template>
+
+    <template v-slot:description="{ metainfo }">{{
+      metainfo.description
+    }}</template>
+  </metainfo>
   <router-view></router-view>
 </template>
 
 <script lang="ts" name="App" setup>
 import { watch, onMounted } from 'vue'
+import { useMeta } from 'vue-meta'
 import AOS from 'aos'
+
+const { meta } = useMeta({
+  title: 'Zenerate | Real-time Feasibility Studies for Real Estate Development',
+  description:
+    'Zenerate is a proptech company providing building design AI solutions that boost real estate development profitability up to 26%.',
+  htmlAttrs: { lang: 'en', amp: false },
+  link: [{ rel: 'canonical', href: 'https://zenerate.ai' }],
+  og: {
+    url: 'https://zenerate.ai/',
+    type: 'website',
+    title:
+      'Zenerate | Real-time Feasibility Studies for Real Estate Development',
+    description: `Zenerate is a proptech company providing building design AI solutions that boost real estate development profitability up to 26%.`,
+    tags: 'zenerate',
+    keywords: 'zenerate',
+    image: 'https://zenerate.ai/img/logo_og.png',
+  },
+  twitter: {
+    title:
+      'Zenerate | Real-time Feasibility Studies for Real Estate Development',
+  },
+})
 
 onMounted(() => {
   AOS.init()

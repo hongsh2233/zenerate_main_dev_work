@@ -149,6 +149,27 @@ const selectPricingPlan = (item) => {
     }
   })
 }
+
+import { useMeta } from 'vue-meta'
+const { meta } = useMeta({
+  title: 'Pricing | Zenerate',
+  description:
+    'Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.',
+  htmlAttrs: { lang: 'en', amp: false },
+  link: [{ rel: 'canonical', href: 'https://zenerate.ai/pricing' }],
+  og: {
+    url: 'https://zenerate.ai/',
+    type: 'website',
+    title: 'Pricing | Zenerate',
+    description: `Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.`,
+    tags: 'zenerate',
+    keywords: 'zenerate',
+    image: 'https://zenerate.ai/img/logo_og.png',
+  },
+  twitter: {
+    title: 'Pricing | Zenerate',
+  },
+})
 </script>
 <style lang="scss" scoped>
 .section {

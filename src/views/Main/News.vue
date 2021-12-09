@@ -1,7 +1,10 @@
 <template>
   <section class="section-news">
     <div class="news-title-wrapper">
-      <div class="news-title hover-pointer" @click="() => ((targetYear = -1), (nowId = -1))">
+      <div
+        class="news-title hover-pointer"
+        @click="() => ((targetYear = -1), (nowId = -1))"
+      >
         <span>{{ $t('main.news.title[0]') }}</span>
         <span>{{ $t('main.news.title[1]') }}</span>
       </div>
@@ -19,29 +22,30 @@
       />
     </transition>
     <transition name="fade" mode="out-in">
-    <div class="news-items-wrapper" v-if="nowId === -1">
-      <div
-        class="news-item"
-        :class="{ active: currentNews && currentNews.id === news.id }"
-        v-for="news in filteredNews"
-        :key="news.id"
-      >
-        <div class="item-content">
-          <div class="content-date">{{ $d(new Date(news.date), 'short') }}</div>
-          <div
-            class="content-title hover-pointer"
-            @click="[scrollTop(), nowId = news.id]"
-          >
-            {{
-              locale === 'ko' ? news.content_kr.title : news.content_en.title
-            }}
-            <div class="arrow-right"></div>
+      <div class="news-items-wrapper" v-if="nowId === -1">
+        <div
+          class="news-item"
+          :class="{ active: currentNews && currentNews.id === news.id }"
+          v-for="news in filteredNews"
+          :key="news.id"
+        >
+          <div class="item-content">
+            <div class="content-date">
+              {{ $d(new Date(news.date), 'short') }}
+            </div>
+            <div
+              class="content-title hover-pointer"
+              @click=";[scrollTop(), (nowId = news.id)]"
+            >
+              {{
+                locale === 'ko' ? news.content_kr.title : news.content_en.title
+              }}
+              <div class="arrow-right"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </transition>
-    
   </section>
 </template>
 <script lang="ts" setup>
@@ -61,10 +65,9 @@ const filteredNews = computed(() => {
         (news) => new Date(news.date).getFullYear() === targetYear.value
       )
 })
-const scrollTop = ()=>{
-  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-} 
-
+const scrollTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+}
 
 const currentNews = ref(null)
 
@@ -76,12 +79,31 @@ onMounted(async () => {
   newsList.value = getNewsListRes.data.body.data
   // debugger
   if (route.query.q && !isNaN(+route.query.q)) {
-    nowId.value = Number(route.query.q);
+    nowId.value = Number(route.query.q)
   }
+})
+
+import { useMeta } from 'vue-meta'
+const { meta } = useMeta({
+  title: '새소식 | 제너레잇',
+  description: '제너레잇의 최신 소식을 확인하세요.',
+  htmlAttrs: { lang: 'ko', amp: false },
+  link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/news' }],
+  og: {
+    url: 'https://zenerate.ai/kr',
+    type: 'website',
+    title: '새소식 | 제너레잇',
+    description: `제너레잇의 최신 소식을 확인하세요.`,
+    tags: '제너레잇',
+    keywords: '제너레잇',
+    image: 'https://zenerate.ai/img/logo_og.png',
+  },
+  twitter: {
+    title: '새소식 | 제너레잇',
+  },
 })
 </script>
 <style lang="scss" scoped>
-
 .section-news {
   padding: 80px 0px;
   @include desktop {
@@ -91,10 +113,10 @@ onMounted(async () => {
   .news-title-wrapper {
     @include flex();
     margin-bottom: 48px;
-    @include tablet{
+    @include tablet {
       margin-bottom: 24px;
     }
-    @include mobile{
+    @include mobile {
       display: block;
       margin-bottom: 24px;
     }
@@ -103,30 +125,30 @@ onMounted(async () => {
       span:first-child {
         @include bold(40);
         margin-right: 10px;
-        @include tablet{
+        @include tablet {
           @include bold(32);
         }
-        @include mobile{
+        @include mobile {
           @include bold(32);
         }
       }
       span:last-child {
         @include bold(40);
         color: $main;
-        @include tablet{
+        @include tablet {
           @include bold(32);
         }
-        @include mobile{
+        @include mobile {
           @include bold(32);
         }
       }
-      @include mobile{
+      @include mobile {
         margin-bottom: 16px;
       }
     }
     .news-year-wrapper {
       @include center-center;
-      @include mobile{
+      @include mobile {
         justify-content: flex-start;
       }
       button {
@@ -136,14 +158,14 @@ onMounted(async () => {
         padding: 4px 20px;
         margin-right: 28px;
         border-radius: 100px;
-        &:hover{  
+        &:hover {
           background-color: $grey-3;
         }
-        @include mobile{
+        @include mobile {
           @include bold(12);
           line-height: 32px;
         }
-        @include tablet{
+        @include tablet {
           @include bold(12);
           line-height: 32px;
         }
@@ -188,20 +210,20 @@ onMounted(async () => {
           color: $main;
           padding-top: 40px;
           margin-bottom: 16px;
-          @include tablet{
+          @include tablet {
             @include medium(12);
           }
-          @include mobile{
+          @include mobile {
             @include medium(12);
           }
         }
         .content-title {
           @include medium(20);
           line-height: 40px;
-          @include tablet{
+          @include tablet {
             @include medium(18);
           }
-          @include mobile{
+          @include mobile {
             @include medium(16);
           }
           &:hover {
@@ -228,10 +250,10 @@ onMounted(async () => {
               background-color: $grey-3;
               transform: rotate(-45deg) translate(15px, 4px);
             }
-            @include tablet{
+            @include tablet {
               margin-top: 15px;
             }
-            @include mobile{
+            @include mobile {
               margin-top: 15px;
             }
           }

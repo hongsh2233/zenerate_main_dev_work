@@ -1,6 +1,7 @@
 // import devtools from '@vue/devtools'
 // devtools.connect()
 import { createApp } from 'vue'
+import { createMetaManager, defaultConfig } from 'vue-meta'
 import VueGtag from 'vue-gtag-next'
 import i18n from '/Config/locales/i18n'
 import App from './App.vue'
@@ -26,4 +27,10 @@ createApp(App)
       { id: 'UA-214276888-1' },
     ],
   })
+  .use(
+    createMetaManager(false, {
+      ...defaultConfig,
+      meta: { tag: 'meta', nameless: true },
+    })
+  )
   .mount('#app')

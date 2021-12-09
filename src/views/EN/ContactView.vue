@@ -106,7 +106,7 @@
             <p class="label-title">Message</p>
             <textarea
               v-model="contactForm.message.value"
-              rows="7"
+              :rows="7"
               @blur="(v) => validation('message')"
             />
           </div>
@@ -271,6 +271,26 @@ onMounted(() => {
   if (fullpage.value) {
     fullpage.value.destroy()
   }
+})
+
+import { useMeta } from 'vue-meta'
+const { meta } = useMeta({
+  title: 'Contact Us | Zenerate',
+  description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://zenerate.ai/contact' }],
+  og: {
+    url: 'https://zenerate.ai/',
+    type: 'website',
+    title: 'Contact Us | Zenerate',
+    description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
+    tags: 'zenerate',
+    keywords: 'zenerate',
+    image: 'https://zenerate.ai/img/logo_og.png',
+  },
+  twitter: {
+    title: 'Contact Us | Zenerate',
+  },
 })
 </script>
 <style lang="scss" scoped>

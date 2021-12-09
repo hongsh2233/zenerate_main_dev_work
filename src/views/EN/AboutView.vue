@@ -68,6 +68,28 @@ import Arrow from '/Components/EN/Arrow.vue'
 // @ts-ignore
 import CloseIcon from '/Components/EN/Icons/close.vue'
 
+import { useMeta } from 'vue-meta'
+
+const { meta } = useMeta({
+  title: 'About | Zenerate',
+  description:
+    'Zenerate is a team of architects, AI developers, software engineers and computational designers who are passionate about innovating the architecture and real estate development industries for better built environment.  ',
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://zenerate.ai/about' }],
+  // og: {
+  //   url: baseUrl,
+  //   type: 'website',
+  //   title,
+  //   description,
+  //   tags,
+  //   keywords: tags,
+  //   image: baseUrl + logoPng,
+  // },
+  // twitter: {
+  //   title,
+  // },
+})
+
 onMounted(() => {
   fullpage.value.init('#fullpage-about', {
     // parallax: false,
