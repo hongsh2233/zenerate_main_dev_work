@@ -125,10 +125,10 @@ const { meta } = useMeta({
   title: '문의 | 제너레잇',
   description:
     '사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.',
-  htmlAttrs: { lang: 'ko', amp: false },
+  htmlAttrs: { lang: 'ko' },
   link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/contact' }],
   og: {
-    url: 'https://zenerate.ai/kr',
+    url: 'https://zenerate.ai/kr/main/contact',
     type: 'website',
     title: '문의 | 제너레잇',
     description: `사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.`,

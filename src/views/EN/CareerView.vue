@@ -196,7 +196,7 @@ const { meta } = useMeta({
   htmlAttrs: { lang: 'en' },
   link: [{ rel: 'canonical', href: 'https://zenerate.ai/career' }],
   og: {
-    url: 'https://zenerate.ai/',
+    url: 'https://zenerate.ai/career',
     type: 'website',
     title: 'Career Us | Zenerate',
     description: `Join Zenerate to work with the most passionate and intelligent team in the world.`,

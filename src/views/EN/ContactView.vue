@@ -280,7 +280,7 @@ const { meta } = useMeta({
   htmlAttrs: { lang: 'en' },
   link: [{ rel: 'canonical', href: 'https://zenerate.ai/contact' }],
   og: {
-    url: 'https://zenerate.ai/',
+    url: 'https://zenerate.ai/contact',
     type: 'website',
     title: 'Contact Us | Zenerate',
     description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,

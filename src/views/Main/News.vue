@@ -87,10 +87,10 @@ import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: '새소식 | 제너레잇',
   description: '제너레잇의 최신 소식을 확인하세요.',
-  htmlAttrs: { lang: 'ko', amp: false },
+  htmlAttrs: { lang: 'ko' },
   link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/news' }],
   og: {
-    url: 'https://zenerate.ai/kr',
+    url: 'https://zenerate.ai/kr/main/news',
     type: 'website',
     title: '새소식 | 제너레잇',
     description: `제너레잇의 최신 소식을 확인하세요.`,
