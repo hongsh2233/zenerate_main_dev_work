@@ -155,10 +155,17 @@ const { meta } = useMeta({
   title: 'Pricing | Zenerate',
   description:
     'Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.',
-  htmlAttrs: { lang: 'en', amp: false },
+  htmlAttrs: { lang: 'en' },
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.',
+    },
+  ],
   link: [{ rel: 'canonical', href: 'https://zenerate.ai/pricing' }],
   og: {
-    url: 'https://zenerate.ai/',
+    url: 'https://zenerate.ai/pricing',
     type: 'website',
     title: 'Pricing | Zenerate',
     description: `Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.`,
