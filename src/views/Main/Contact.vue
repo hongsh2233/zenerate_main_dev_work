@@ -126,6 +126,13 @@ const { meta } = useMeta({
   description:
     '사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.',
   htmlAttrs: { lang: 'ko' },
+  meta: [
+    {
+      name: 'description',
+      content:
+        '사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.',
+    },
+  ],
   link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/contact' }],
   og: {
     url: 'https://zenerate.ai/kr/main/contact',

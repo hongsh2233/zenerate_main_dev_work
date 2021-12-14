@@ -88,6 +88,12 @@ const { meta } = useMeta({
   title: '새소식 | 제너레잇',
   description: '제너레잇의 최신 소식을 확인하세요.',
   htmlAttrs: { lang: 'ko' },
+  meta: [
+    {
+      name: 'description',
+      content: '제너레잇의 최신 소식을 확인하세요.',
+    },
+  ],
   link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/news' }],
   og: {
     url: 'https://zenerate.ai/kr/main/news',

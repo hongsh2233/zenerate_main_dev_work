@@ -57,14 +57,21 @@ import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: '서비스 | 제너레잇',
   description:
-    '컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.',
+    '제너레잇은 컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.',
+  meta: [
+    {
+      name: 'description',
+      content:
+        '제너레잇은 컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.',
+    },
+  ],
   htmlAttrs: { lang: 'ko' },
   link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/service' }],
   og: {
     url: 'https://zenerate.ai/kr/main/service',
     type: 'website',
     title: '서비스 | 제너레잇',
-    description: `컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.`,
+    description: `제너레잇은 컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.`,
     tags: '제너레잇',
     keywords: '제너레잇',
     image: 'https://zenerate.ai/img/logo_og.png',

@@ -178,6 +178,13 @@ const { meta } = useMeta({
   description:
     'Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. ',
   htmlAttrs: { lang: 'en' },
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. ',
+    },
+  ],
   link: [{ rel: 'canonical', href: 'https://zenerate.ai/services' }],
   og: {
     url: 'https://zenerate.ai/services',
