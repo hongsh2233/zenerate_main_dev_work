@@ -18,7 +18,7 @@ import AOS from 'aos'
 
 const { meta } = useMeta({
   title: 'Zenerate | Real-time Feasibility Studies for Real Estate Development',
-  htmlAttrs: { lang: 'en', amp: true },
+  htmlAttrs: { lang: 'en' },
   link: [{ rel: 'canonical', href: 'https://zenerate.ai' }],
   description:
     'Zenerate is a proptech company providing building design AI solutions that boost real estate development profitability up to 26%.',
