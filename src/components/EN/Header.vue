@@ -41,7 +41,7 @@
         </a>
       </div>
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
-        <MenuIcon @toggle="toggleDrawer" />
+        <MenuIcon @toggle="toggleDrawer" :showDrawer="showDrawer" />
       </div>
     </div>
   </div>
@@ -145,7 +145,7 @@ const routes = [
       margin: auto 0px;
       z-index: 9999;
       @include desktop {
-        width: 170px;
+        width: 160px;
         .logo {
           width: 100%;
         }
@@ -188,7 +188,7 @@ const routes = [
         }
 
         &.router-link-active {
-          font-weight: 700;
+          font-weight: 600;
           color: $text-darken;
         }
 

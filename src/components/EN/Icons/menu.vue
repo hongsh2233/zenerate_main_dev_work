@@ -31,13 +31,13 @@ const props = defineProps({
       return 24
     },
   },
+  showDrawer: Boolean,
 })
 const emit = defineEmit(['toggle'])
 const toggle = () => {
   emit('toggle', null)
-  showDrawer.value = !showDrawer.value
 }
-const showDrawer = ref(false)
+const showDrawer = computed(() => props.showDrawer)
 
 const barHeight = computed(() => {
   return Math.floor((props.height / 2 / 12) * 2)

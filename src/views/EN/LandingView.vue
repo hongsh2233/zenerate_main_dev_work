@@ -227,7 +227,6 @@
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Footer from '/Components/EN/Footer.vue'
 import Arrow from '/Components/EN/Arrow.vue'
-
 import PartnersList from '/Constants/partners'
 import { useRouter } from 'vue-router'
 

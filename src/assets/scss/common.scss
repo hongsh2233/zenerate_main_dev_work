@@ -55,16 +55,6 @@ html {
   font-weight: $medium;
   letter-spacing: 0;
   line-height: 1.25;
-
-  @include en-desktop {
-    width: calc(100vw - 8px);
-  }
-  @include en-tablet {
-    width: 100vw;
-  }
-  @include en-mobile {
-    width: 100vw;
-  }
 }
 
 * {

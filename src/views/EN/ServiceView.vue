@@ -3,10 +3,17 @@
     <div class="section section-pricing">
       <div class="section-inner inner-pricing">
         <div class="pricing-wrapper">
-          <h2 class="pricing-title"><strong>Our Services</strong></h2>
+          <div class="title-wrapper">
+            <h2>Our Services</h2>
+            <div class="divider"></div>
+          </div>
+
           <div class="pricing-contents">
             <div class="service-wrapper">
-              <h2 class="service-title">Web Service</h2>
+              <h2 class="service-title">WEB</h2>
+              <h5 class="service-subtitle">
+                Fast Web Platform for Everyday Use
+              </h5>
               <div class="plan-list-wrapper">
                 <h5 class="list-title">SUBSCRIPTION PLANS</h5>
                 <ul class="price-plan-list">
@@ -58,7 +65,10 @@
               </div>
             </div>
             <div class="service-wrapper consulting-wrapper">
-              <h2 class="service-title">Consulting Service</h2>
+              <h2 class="service-title">CONSULTING</h2>
+              <h5 class="service-subtitle">
+                Customized, Deep, Complex Service
+              </h5>
               <div class="consulting-plan-list-wrapper">
                 <span class="plan-title"
                   >Provide a Written Report Including;</span
@@ -71,7 +81,7 @@
                 </ul>
                 <div class="access-wrapper">
                   <div class="access-content">
-                    <span class="acess-title">
+                    <span class="access-title">
                       Provide access to web platform to review generated options
                     </span>
                     <div class="access-list">
@@ -186,34 +196,53 @@ const { meta } = useMeta({
 }
 .section-pricing {
   .inner-pricing {
-    height: fit-content;
+    width: 100%;
+    height: 100%;
+    padding: 160px 0px;
+
+    @include en-tablet {
+      padding: 140px 0px;
+    }
+    @include en-mobile {
+      padding: 100px 0px;
+    }
   }
   background-size: cover;
   background-position: center;
-  height: content-fit;
+
   cursor: default;
 
-  .pricing-title {
-    margin: 20px 0px 60px;
-    font-weight: 700;
-    color: #4747ff;
+  .title-wrapper {
+    @include flex($dir: column);
+    align-items: center;
+    margin: 0px 0px 80px;
 
-    @include en-tablet {
-      margin-top: 0px;
+    h2 {
+      @include semi-bold(36);
+      color: $text-darken;
+      margin: 0px 0px 30px;
+
+      @include en-mobile {
+        @include semi-bold(24);
+      }
     }
 
-    @include en-mobile {
-      margin-top: 0px;
+    .divider {
+      width: 56px;
+      height: 2px;
+      border-radius: 5px;
+      margin: 0px 0px 40px;
+      background-color: $text-darken;
     }
   }
 
   .pricing-wrapper {
     @include flex($justify: center);
-    padding: 40px 0px;
+    margin: 0px auto;
   }
   .pricing-contents {
-    @include flex($justify: space-between);
-    align-items: center;
+    @include flex($justify: space-around);
+
     height: 100%;
     width: 100%;
     position: relative;
@@ -221,11 +250,13 @@ const { meta } = useMeta({
 
     @include en-tablet {
       flex-direction: column;
+      align-items: center;
       padding: 0px 10px;
     }
 
     @include en-mobile {
       flex-direction: column;
+      align-items: center;
       padding: 0px 10px;
     }
     .pricing-subtitle {
@@ -239,12 +270,12 @@ const { meta } = useMeta({
       padding-top: 24px;
       height: calc(100% - 128px - 60px);
       .pricing-content {
-        @include elevation-2;
         width: 320px;
         height: 520px;
         padding: 20px 10px 20px 20px;
         border-radius: 20px;
         background-color: white;
+        box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
 
         @include en-mobile {
           height: 100%;
@@ -252,7 +283,7 @@ const { meta } = useMeta({
         }
         .content-title {
           text-align: center;
-          @include bold(16);
+          @include semi-bold(16);
           color: $main-blue;
           margin-bottom: 24px;
           p:first-child {
@@ -263,7 +294,7 @@ const { meta } = useMeta({
           text-align: center;
           margin-bottom: 12px;
           color: $main;
-          @include bold(32);
+          @include semi-bold(32);
         }
         .content-detail {
           padding: 0px 16px 0px 28px;
@@ -272,7 +303,7 @@ const { meta } = useMeta({
             list-style: disc;
             text-align: left;
             margin-bottom: 12px;
-            @include regular(14);
+            @include regular(13);
           }
         }
         @include en-tablet {
@@ -291,30 +322,55 @@ const { meta } = useMeta({
 .service-wrapper {
   @include relative();
   @include vertical-center();
+  justify-content: flex-start;
   align-items: center;
   max-width: 540px;
   width: 100%;
   margin: 0px 0px 60px;
   height: auto;
 
-  @include en-tablet {
+  &:last-child {
+    margin-top: 80px;
   }
 
   @include en-mobile {
     width: 100%;
+    justify-content: center;
     min-width: 280px;
     max-width: 360px;
+
+    &:last-child {
+      margin-top: 0px;
+    }
   }
 
   .service-title {
-    @include bold(24);
-    width: 340px;
+    @include semi-bold(20);
+    width: 212px;
+    height: 64px;
+    margin: 0px 0px 40px;
+    background-color: $main-core;
+    box-shadow: 4px 4px 20px rgba(72, 72, 255, 0.3);
+    border-radius: 42px;
+    color: $white;
+    line-height: 64px;
+    text-align: center;
+    @include en-mobile {
+      @include semi-bold(20);
+      width: 212px;
+      height: 64px;
+      line-height: 64px;
+    }
+  }
+
+  .service-subtitle {
+    @include regular(24);
     margin: 0px 0px 40px;
     color: #191919;
     text-align: center;
     @include en-mobile {
-      @include bold(20);
-      width: 100%;
+      @include regular(20);
+      width: 200px;
     }
   }
 
@@ -328,13 +384,13 @@ const { meta } = useMeta({
     border-radius: 6px;
 
     .list-title {
-      @include bold(16);
+      @include semi-bold(16);
       margin: 0px;
       line-height: 60px;
       color: rgba($text-darken, 0.3);
       text-align: center;
       @include en-mobile {
-        @include bold(14);
+        @include semi-bold(13);
         padding: 20px 0px;
         border-bottom: 1px solid rgba(196, 196, 196, 0.4);
       }
@@ -365,20 +421,24 @@ const { meta } = useMeta({
             background: #c2f9de;
 
             i {
-              @include bold(14);
+              @include semi-bold(14);
               color: #12bf6c;
             }
           }
           .plan-title {
-            @include bold(16);
+            @include semi-bold(16);
             color: rgba($text-darken, 0.7);
           }
         }
 
         .plan-pricing {
-          @include semi-bold(14);
+          @include semi-bold(13);
           color: rgba($text-darken, 0.3);
           text-align: center;
+
+          @include en-mobile {
+            @include medium(13);
+          }
         }
 
         &:hover {
@@ -452,7 +512,7 @@ const { meta } = useMeta({
       }
       @include en-mobile {
         padding: 0px 8%;
-        margin: 30px 0px;
+        margin: 0px 0px;
 
         li {
           &:not(:last-child) {
@@ -464,14 +524,14 @@ const { meta } = useMeta({
           }
 
           span {
-            @include medium(14);
+            @include regular(13);
           }
         }
       }
 
       li {
         @include flex();
-        @include semi-bold(16);
+        @include regular(16);
         flex-wrap: nowrap;
         align-items: flex-start;
         color: $text-darken;
@@ -492,7 +552,7 @@ const { meta } = useMeta({
         }
 
         span {
-          @include medium(16);
+          @include regular(16);
           color: $text-darken;
         }
 
@@ -553,7 +613,7 @@ const { meta } = useMeta({
     }
 
     .plan-title {
-      @include bold(16);
+      @include semi-bold(16);
       color: $text-darken;
       margin-bottom: 24px;
       padding: 0px 60px;
@@ -561,7 +621,7 @@ const { meta } = useMeta({
       @include en-tablet {
       }
       @include en-mobile {
-        @include bold(14);
+        @include semi-bold(13);
         padding: 0px 8%;
         margin-bottom: 18px;
       }
@@ -581,7 +641,7 @@ const { meta } = useMeta({
 
       li {
         @include flex();
-        @include semi-bold(16);
+        @include regular(16);
         flex-wrap: nowrap;
         align-items: flex-start;
         color: $text-darken;
@@ -590,7 +650,7 @@ const { meta } = useMeta({
           margin-bottom: 12px;
         }
         @include en-mobile {
-          @include semi-bold(14);
+          @include regular(13);
           &:not(:last-child) {
             margin-bottom: 10px;
           }
@@ -608,10 +668,10 @@ const { meta } = useMeta({
         }
 
         span {
-          @include medium(16);
+          @include regular(16);
           color: $text-darken;
           @include en-mobile {
-            @include medium(14);
+            @include regular(13);
           }
         }
 
@@ -651,22 +711,21 @@ const { meta } = useMeta({
         padding: 8%;
       }
 
-      .acess-title {
-        @include bold(16);
+      .access-title {
+        @include semi-bold(15);
         margin-bottom: 10px;
         color: $text-darken;
         text-align: center;
-        @include en-tablet {
-        }
+
         @include en-mobile {
-          @include bold(14);
+          @include semi-bold(14);
           min-width: 250px;
           text-align: left;
         }
       }
       .access-list {
         @include flex();
-        @include medium(16);
+        @include regular(16);
         flex-wrap: nowrap;
         align-items: flex-start;
         color: rgba($text-darken, 0.7);
@@ -693,11 +752,11 @@ const { meta } = useMeta({
             color: #4848ff;
           }
           @include en-mobile {
-            @include medium(14);
+            @include medium(13);
           }
         }
         @include en-mobile {
-          @include medium(14);
+          @include medium(13);
         }
       }
     }
@@ -709,19 +768,19 @@ const { meta } = useMeta({
     padding: 0px 40px;
 
     .contact-title {
-      @include bold(16);
+      @include semi-bold(16);
       color: rgba($text-darken, 0.3);
       text-align: center;
       @include en-mobile {
-        @include bold(14);
+        @include semi-bold(14);
       }
     }
     .contact-email {
-      @include bold(18);
+      @include semi-bold(18);
       text-decoration-line: underline;
       color: rgba(72, 72, 255, 0.8);
       @include en-mobile {
-        @include bold(14);
+        @include semi-bold(14);
       }
     }
 

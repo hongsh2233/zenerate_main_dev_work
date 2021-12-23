@@ -1,27 +1,25 @@
 <template>
-  <div id="fullpage-case-studies">
-    <div class="section section-why fp-auto-height-responsive">
-      <div class="why-hero-wrapper">
-        <div class="why-image-wrapper">
-          <div class="why-image image-case"></div>
+  <section id="fullpage-case-studies">
+    <div class="section section-case-studies">
+      <div class="section-inner inner-case-studies">
+        <div class="title-wrapper">
+          <h2>Case Studies</h2>
+          <div class="divider"></div>
+          <h5>
+            Zenerate's AI solution examines
+            <strong>the profitability</strong> of real estate projects
+          </h5>
         </div>
-        <div class="why-text">
-          <div class="text-inner">
-            <p>Zenerate's AI solution examines</p>
-            <p>the profitability of real estate projects</p>
-          </div>
-        </div>
-      </div>
-      <div class="section-inner inner-why">
-        <div class="why-content-wrapper">
-          <div class="why-content">
+
+        <div class="case-wrapper">
+          <div class="case">
             <img
               data-src="/en/img/service_why.png"
               src="/en/img/service_why.png"
-              alt=""
+              alt="USC Village Residential Project"
             />
-            <div class="why-content-text">
-              <div class="text-title">USC Village Student Housing Project</div>
+            <div class="text-wrapper">
+              <div class="text-title">USC Village Residential Project</div>
               <div class="text-content">
                 <a
                   href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
@@ -32,6 +30,38 @@
                 housing team to transform and streamline the architectural
                 design process.
               </div>
+              <a
+                class="download"
+                href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
+                target="_blank"
+                >Download PDF <i class="material-icons"> east </i></a
+              >
+            </div>
+          </div>
+          <div class="case">
+            <img
+              data-src="/en/img/service_why.png"
+              src="/en/img/service_why.png"
+              alt="USC Village Residential Project"
+            />
+            <div class="text-wrapper">
+              <div class="text-title">USC Village Residential Project</div>
+              <div class="text-content">
+                <a
+                  href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
+                  target="_blank"
+                  >Read</a
+                >
+                to learn how Zenerate CEO Bongjai Shin collaborated with the USC
+                housing team to transform and streamline the architectural
+                design process.
+              </div>
+              <a
+                class="download"
+                href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
+                target="_blank"
+                >Download PDF <i class="material-icons"> east </i></a
+              >
             </div>
           </div>
         </div>
@@ -40,7 +70,7 @@
     <div class="section section-footer fp-auto-height">
       <Footer></Footer>
     </div>
-  </div>
+  </section>
 </template>
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
@@ -88,350 +118,161 @@ const { meta } = useMeta({
 })
 </script>
 <style lang="scss" scoped>
-#fullpage-case-studies {
+.section-case-studies {
   @include relative;
   width: 100%;
   height: 100%;
-}
-.section-hero {
-  width: 100%;
-  height: 100%;
-  @include relative;
-  background-image: url('/en/img/service_building.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  .inner-hero {
-    @include vertical-center;
-  }
-  .hero-title {
-    margin-bottom: 32px;
-    @include flex;
-    span {
-      @include bold(28);
-      line-height: 40px;
-      color: white;
-      margin-right: 2px;
-      margin-left: -3px;
-    }
-    img {
-      height: 44px;
-    }
-  }
-  p {
-    max-width: 600px;
-    @include regular(20);
-    line-height: 26px;
-    color: white;
-  }
-}
 
-.section-technology {
-  margin-bottom: 0;
-  .inner-technology {
-    margin: auto 0px;
-  }
-  .technology-header {
-    @include flex($dir: column, $justify: center);
-    height: 220px;
-    width: 100%;
-    text-align: center;
-
-    .header-title {
-      @include bold(16);
-      color: $main;
-    }
-    .header-content {
-      @include regular(26);
-    }
-    @include en-tablet {
-      width: 400px;
-      height: 120px;
-      margin: 0 auto;
-    }
-    @include en-mobile {
-      height: auto;
-    }
-  }
-  .technology-content {
-    margin: 0px auto;
-    // padding-top: 48px;
-    .content-item {
-      @include flex($justify: space-between);
-      height: 108px;
-      margin-bottom: 32px;
-      .item-problem {
-        padding: 0px 64px;
-        width: 340px;
-        height: 108px;
-        border-radius: 30px;
-        @include elevation-2;
-        @include center-center;
-        text-align: center;
-        span {
-          @include regular(18);
-          color: $main-blue;
-        }
-      }
-      .item-arrow {
-        text-align: center;
-        margin: auto 0px;
-      }
-      .item-solution {
-        padding: 0px 64px;
-        width: 340px;
-        height: 108px;
-        @include center-center;
-        border-radius: 30px;
-        background-color: $main-blue;
-        text-align: center;
-        span {
-          @include regular(18);
-          color: $white;
-        }
-      }
-      @include en-mobile {
-        padding-top: 32px;
-        display: block;
-        height: auto;
-        margin: 0px auto;
-        padding-bottom: 32px;
-
-        .item-problem,
-        .item-arrow,
-        .item-solution {
-          margin: 0px auto;
-          padding: 0px 32px;
-          max-width: 290px;
-        }
-        .item-arrow {
-          margin-top: 32px;
-          margin-bottom: 32px;
-          transform: rotate(90deg) translateX(-16px);
-        }
-      }
-      @include en-tablet {
-        padding-top: 32px;
-        display: block;
-        height: auto;
-        margin: 0px auto;
-        padding-bottom: 32px;
-        .item-problem,
-        .item-arrow,
-        .item-solution {
-          margin: 0px auto;
-          padding: 0px 32px;
-          max-width: 320px;
-        }
-        .item-arrow {
-          margin-top: 32px;
-          margin-bottom: 32px;
-          transform: rotate(90deg) translateX(-16px) scaleX(0.8);
-        }
-      }
-    }
-  }
-}
-
-.section-services {
-  background: #fafafc;
-  ::v-deep(.fp-bg) {
-    background-color: #fafafc !important;
-  }
-  .inner-services {
+  .inner-case-studies {
     @include flex($dir: column);
-    max-width: 1280px;
+    align-items: center;
     width: 100%;
     height: 100%;
-    margin: 0px auto;
-    @include center-center;
-    .service-content-wrapper {
-      width: 100%;
-      flex: 1;
-      @include center-center;
-      justify-content: space-around;
-      .service-content {
-        width: 460px;
-        text-align: center;
-        .content-title {
-          @include semi-bold(18);
-          color: $main;
-          margin-bottom: 40px;
-        }
-        .content-image {
-          height: 272px;
-          width: 440px;
-          max-width: 100%;
-          margin: 0px auto;
-          margin-bottom: 40px;
-          @include elevation-2;
-          border-radius: 20px;
-          img {
-            max-width: 100%;
-            height: 100%;
-          }
-        }
-        .content-explanation {
-          .exp-title {
-            @include medium(20);
-            margin-bottom: 24px;
-          }
-          .exp-content {
-            @include regular(18);
-            letter-spacing: -0.015em;
-          }
-        }
-      }
+    padding: 160px 0px;
+
+    @include en-tablet {
+      padding: 140px 0px;
+    }
+    @include en-mobile {
+      padding: 100px 0px;
+    }
+
+    .title-wrapper {
+      @include flex($dir: column);
+      align-items: center;
+      margin-bottom: 80px;
+
       @include en-tablet {
-        display: block;
-        .service-content {
-          margin: 0px auto;
-          margin-bottom: 48px;
-        }
+        max-width: 540px;
+        margin-bottom: 60px;
+        text-align: center;
       }
-      @include en-mobile {
-        display: block;
-        .service-content {
-          margin: 0px auto;
-          margin-bottom: 48px;
-          width: 100%;
-        }
-      }
-    }
-  }
-}
 
-.section-why {
-  @include relative;
-  .why-hero-wrapper {
-    $y: calc(80px);
-    @include absolute(left 0);
-    top: $y;
-    height: 250px;
-    @include flex();
-    width: 100%;
-    .why-image-wrapper {
-      flex: 1;
-      height: 250px;
-      width: 100%;
-      @include absolute(left 0 top 0);
-      background-size: cover;
-      background-origin: center;
-      height: 100%;
-      @include flex;
-      .why-image {
-        &.image-case {
-          height: 100%;
-          flex: 1;
-          background-image: url('/en/img/service_case.png');
-          background-size: cover;
+      @include en-mobile {
+        max-width: 360px;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+
+      h2 {
+        @include bold(36);
+        color: $text-darken;
+        margin: 0px 0px 30px;
+        @include en-mobile {
+          @include bold(24);
+        }
+      }
+
+      .divider {
+        width: 56px;
+        height: 2px;
+        border-radius: 5px;
+        margin: 0px 0px 40px;
+        background-color: $text-darken;
+      }
+
+      h5 {
+        @include regular(24);
+        color: $text-darken;
+        margin: 0px;
+        @include en-mobile {
+          @include regular(18);
+          width: 222px;
+          text-align: center;
         }
       }
     }
-    .why-text {
-      @include container-no-top-padding;
-      margin: 0px auto !important;
-      margin-top: auto !important;
-      margin-bottom: 40px !important;
-      z-index: 1;
-      .text-inner {
-        padding: 0px 60px;
-        p {
-          color: $white;
-          @include semi-bold(24);
+
+    .case-wrapper {
+      @include flex($justify: space-around);
+      height: 100%;
+      width: 100%;
+      position: relative;
+      margin: 0px auto;
+
+      @include en-tablet {
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 20px;
+      }
+
+      @include en-mobile {
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 20px;
+      }
+
+      .case {
+        width: 100%;
+        max-width: 540px;
+        height: 520px;
+        padding: 20px 10px 20px 20px;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
+
+        img {
+          width: 100%;
+          height: 212px;
+          object-fit: cover;
+        }
+
+        &:last-child {
+          margin-top: 80px;
         }
 
         @include en-mobile {
-          padding: 10px 20px;
-        }
-      }
-    }
-  }
-  .inner-why {
-    height: 100%;
-    padding-top: 330px !important;
-    @include en-tablet {
-      padding-top: 400px !important;
-    }
-    @include en-mobile {
-      padding-top: 400px !important;
-    }
-  }
-  .why-content-wrapper {
-    margin: auto;
-    padding: 0px 60px;
-    @include en-tablet {
-      width: 100%;
-      padding: 0;
-    }
-    @include en-mobile {
-      width: 100%;
-      padding: 0;
-    }
-    .why-content {
-      @include flex($justify: center);
-      // padding-top: 60px;
-      margin: auto;
-      img {
-        width: 400px;
-      }
-      .why-content-text {
-        @include vertical-center;
-        margin-left: 40px;
-        flex: 1;
-        .text-title {
-          @include medium(24);
-          text-align: center;
-          text-decoration: underline;
-          line-height: 40px;
-          margin-bottom: 64px;
-        }
-        .text-content {
-          @include regular(24);
-          text-align: center;
-          a {
-            text-decoration: underline;
+          max-width: 360px;
+          height: 100%;
+          padding: 20px 10px;
+
+          &:last-child {
+            margin-top: 0px;
           }
         }
-        @include en-tablet {
-          margin: 0px auto;
-        }
-        @include en-mobile {
-          margin: 0px auto;
+
+        .text-wrapper {
+          padding: 36px 40px;
+
+          @include en-mobile {
+            padding: 28px 18px;
+          }
           .text-title {
-            @include medium(20);
-            margin-bottom: 16px;
+            @include semi-bold(21);
+            color: $text-darken;
+            margin-bottom: 28px;
+            @include en-mobile {
+              @include semi-bold(16);
+              margin-bottom: 20px;
+            }
           }
           .text-content {
-            @include regular(18);
+            @include regular(17);
+            margin-bottom: 24px;
+
+            @include en-mobile {
+              @include regular(14);
+              margin-bottom: 16px;
+            }
+
+            a {
+              text-decoration: underline;
+            }
+          }
+
+          .download {
+            @include medium(17);
+            color: $main-core;
+
+            i {
+              @include medium(16);
+              margin-left: 10px;
+              line-height: 16px;
+            }
           }
         }
       }
-      @include en-tablet {
-        padding: 0;
-        display: block;
-        text-align: center;
-        img {
-          margin-bottom: 48px;
-          max-width: 100%;
-        }
-      }
-      @include en-mobile {
-        padding: 0;
-        display: block;
-        text-align: center;
-        img {
-          margin-bottom: 48px;
-          max-width: 100%;
-        }
-      }
     }
-  }
-  @include en-tablet {
-    padding-bottom: 80px;
-  }
-  @include en-mobile {
-    padding-bottom: 40px;
   }
 }
 </style>
