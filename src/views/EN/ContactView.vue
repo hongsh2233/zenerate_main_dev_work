@@ -387,11 +387,11 @@ const { meta } = useMeta({
         }
         .content-heading {
           @include medium(32);
-          color: $cr-text-black;
+          color: $black;
         }
         .content-text {
           @include medium(24);
-          color: $cr-text-grey;
+          color: $text-grey;
         }
         button {
           margin: 0px auto;
@@ -477,7 +477,7 @@ const { meta } = useMeta({
     .label-textarea {
       .label-title {
         @include regular(16);
-        color: rgba($cr-text-grey, 1);
+        color: rgba($text-grey, 1);
         margin-bottom: 8px;
       }
       .label-error {

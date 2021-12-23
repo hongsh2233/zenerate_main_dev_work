@@ -352,15 +352,20 @@ $breakpoint-480: 480px;
   line-height: 16px;
 }
 
+/*************** mew colors ***************/
+$text-darken: #000729;
+$text-darken-5: rgba(#000729, 0.5);
+
 /*************** colors ***************/
-$cr-main-blue: #5c6dff;
-$cr-main-core: #4848ff;
-$cr-bg-white: #ffffff;
-$cr-footer: #f4f3fe;
-$cr-text-black: #202835;
-$cr-text-dark-grey: #333333;
-$cr-text-grey: #707070;
-$cr-text-light-grey: #888b9a;
+$main-blue: #5c6dff;
+$main-core: #4848ff;
+$white: #ffffff;
+$black: #202835;
+$footer: #f4f3fe;
+$text-darkgrey: #333333;
+$text-grey: #707070;
+$text-lightgrey: #888b9a;
+
 $cr-fields-form: #ffffff;
 $cr-fields-text: #202835;
 $cr-fields-description: #aaaaaa;
@@ -478,27 +483,27 @@ $bt-secondary-etc: #f6f5ff;
 @mixin button-default-gnb {
   @include medium(14);
   line-height: 40px;
-  color: $cr-text-black;
+  color: $black;
   letter-spacing: 0 !important;
 }
 
 @mixin button-default-4($width, $height) {
   @include button-default-1($width, $height);
   background: $white;
-  color: $cr-main-blue;
-  border: solid 1px $cr-main-blue;
+  color: $main-blue;
+  border: solid 1px $main-blue;
 }
 
 @mixin button-hover-4($width, $height) {
   @include button-hover-1($width, $height);
-  color: $cr-main-blue;
+  color: $main-blue;
   background: $white;
   transform: none;
 }
 
 @mixin button-pressed-4($width, $height) {
   @include button-pressed-1($width, $height);
-  color: $cr-main-blue;
+  color: $main-blue;
   background: $white;
   transform: none;
 }
@@ -510,17 +515,17 @@ $bt-secondary-etc: #f6f5ff;
 
 @mixin button-hover-gnb {
   @include button-default-gnb;
-  color: $cr-main-blue;
+  color: $main-blue;
 }
 
 @mixin button-pressed-gnb {
   @include button-default-gnb;
-  color: $cr-main-blue;
+  color: $main-blue;
 }
 
 @mixin button-disabled-gnb {
   @include button-default-gnb;
-  color: $cr-text-light-grey;
+  color: $text-lightgrey;
 }
 
 @mixin button-1($width: 240px, $height: 60px) {
@@ -537,8 +542,8 @@ $bt-secondary-etc: #f6f5ff;
   }
 }
 
-@mixin button-2($width: 150px, $height: 50px)  {
-  @include button-default-2($width, $height) ;
+@mixin button-2($width: 150px, $height: 50px) {
+  @include button-default-2($width, $height);
   &:hover {
     @include button-hover-2($width, $height);
     cursor: pointer;

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap');
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import './variables.scss';
 
 * {
@@ -54,6 +55,16 @@ html {
   font-weight: $medium;
   letter-spacing: 0;
   line-height: 1.25;
+
+  @include en-desktop {
+    width: calc(100vw - 8px);
+  }
+  @include en-tablet {
+    width: 100vw;
+  }
+  @include en-mobile {
+    width: 100vw;
+  }
 }
 
 * {

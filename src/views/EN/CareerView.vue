@@ -348,17 +348,17 @@ const { meta } = useMeta({
               @include regular(16);
               @include vertical-center;
               line-height: 40px;
-              color: $cr-text-grey;
+              color: $text-grey;
             }
             .item-title {
               @include medium(24);
               line-height: 40px;
               // 무슨 컬러?
               color: #161616;
-              border-bottom: solid 1px $cr-text-light-grey;
+              border-bottom: solid 1px $text-lightgrey;
               &:hover {
-                color: $cr-main-blue;
-                border-bottom-color: $cr-main-blue;
+                color: $main-blue;
+                border-bottom-color: $main-blue;
               }
 
               @include en-mobile {

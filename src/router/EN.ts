@@ -2,11 +2,11 @@ import type { RouteRecordRaw } from 'vue-router'
 import ENLayout from '/Layouts/ENLayout.vue'
 
 import AboutView from '/Views/EN/AboutView.vue'
+import CaseStudiesView from '../views/EN/CaseStudiesView.vue'
 import CareerView from '/Views/EN/CareerView.vue'
 import CareerContent from '/src/components/EN/CareerContent.vue'
 import ContactView from '/Views/EN/ContactView.vue'
 import LandingView from '/Views/EN/LandingView.vue'
-import PricingView from '/Views/EN/PricingView.vue'
 import ServiceView from '/Views/EN/ServiceView.vue'
 import TermsAndConditionsView from '/Views/EN/TermsAndConditionsView.vue'
 import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
@@ -27,6 +27,17 @@ const ENRoute: RouteRecordRaw = {
       component: AboutView,
     },
     {
+      path: '/case-studies',
+      name: 'en-case-studies',
+      component: CaseStudiesView,
+    },
+
+    {
+      path: '/services',
+      name: 'en-services',
+      component: ServiceView,
+    },
+    {
       path: '/career',
       name: 'en-career',
       component: CareerView,
@@ -43,16 +54,7 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-contact',
       component: ContactView,
     },
-    {
-      path: '/pricing',
-      name: 'en-pricing',
-      component: PricingView,
-    },
-    {
-      path: '/services',
-      name: 'en-services',
-      component: ServiceView,
-    },
+
     {
       path: '/terms-and-conditions',
       name: 'en-terms-and-conditions',

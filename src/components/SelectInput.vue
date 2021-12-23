@@ -98,7 +98,7 @@ watch(showDropdown, (v) => {
   width: 100%;
   p {
     @include regular(16);
-    color: rgba($cr-text-grey, 1);
+    color: rgba($text-grey, 1);
     margin-bottom: 8px;
   }
   .input-select-container {

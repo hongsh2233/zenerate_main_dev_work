@@ -689,7 +689,7 @@ const toContactForm = () => {
         }
       }
       // p {
-      //   color: $cr-text-dark-grey;
+      //   color: $text-darkgrey;
       // }
     }
   }
@@ -718,7 +718,7 @@ const toContactForm = () => {
         height: 100%;
         text-align: center;
         visibility: hidden;
-        color: $cr-main-blue;
+        color: $main-blue;
         background-color: rgba($white, 0.7);
         text-align: center;
         @include center-center;

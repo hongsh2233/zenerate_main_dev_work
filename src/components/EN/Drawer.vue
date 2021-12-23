@@ -2,16 +2,6 @@
   <div class="drawer-wrapper">
     <div class="drawer-dimmer" @click="close"></div>
     <div class="drawer-wrapper">
-      <div class="drawer-logo hover-pointer" @click="router.push({ name: 'en-landing' })">
-         <img
-          class="logo hidden-tablet hidden-mobile"
-          src="/img/logo_color.png"
-          alt=""
-        />
-        <div class="logo hidden-desktop"></div>
-        <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="" /> -->
-        <i class="material-icons icon-close" @click="close" >close</i>
-          </div>
       <div class="drawer-items-wrapper">
         <div class="header-navigation-wrapper hidden-en-desktop">
           <div class="navgation-link-wrapper">
@@ -24,16 +14,26 @@
               @click="close"
               >{{ route.title }}
             </router-link>
+            <a
+              class="demo-link navigation-link"
+              href="https://app.zenerate.ai"
+              target="_blank"
+              >JOIN APP
+              <i class="material-icons"> east </i>
+            </a>
+          </div>
+          <div class="info-wrapper">
+            <button type="button" class="lang-button" @click="goToKrPage()">
+              <i class="material-icons"> language </i>
+
+              <span> zenerate.ai/kr </span>
+              <i class="material-icons"> east </i>
+            </button>
+            <span class="copyright"
+              >© Zenerate, Inc. 2021. All rights reserved</span
+            >
           </div>
         </div>
-      </div>
-      <div class="header-demo-wrapper">
-        <a
-          class="demo-link"
-          href="https://app.zenerate.ai"
-          target="_blank"
-          >Join App
-        </a>
       </div>
     </div>
   </div>
@@ -41,24 +41,29 @@
 <script lang="ts" setup>
 import { defineProps, defineEmit } from 'vue'
 import { useRouter } from 'vue-router'
-// @ts-ignore
-import CloseButton from '/Components/EN/Icons/close.vue'
+
+const props = defineProps({
+  showDrawer: Boolean,
+})
 
 const router = useRouter()
-// routes
 const routes = [
   {
     title: 'ABOUT',
     to: 'en-about',
   },
   {
-    title: 'SERVICES',
-    to: 'en-services',
+    title: 'CASE STUDIES',
+    to: 'en-case-studies',
   },
   {
-    title: 'PRICING',
-    to: 'en-pricing',
+    title: 'SERVICE',
+    to: 'en-services',
   },
+  // {
+  //   title: 'PRICING',
+  //   to: 'en-pricing',
+  // },
   {
     title: 'CAREERS',
     to: 'en-career',
@@ -68,9 +73,10 @@ const routes = [
     to: 'en-contact',
   },
 ]
-const props = defineProps({
-  showDrawer: Boolean,
-})
+
+const goToKrPage = () => {
+  window.open('https://zenerate.ai/kr', '_blank')
+}
 
 const emit = defineEmit(['close'])
 const close = () => {
@@ -80,62 +86,115 @@ const close = () => {
 <style lang="scss" scoped>
 .drawer-wrapper {
   @include relative;
-  z-index: 9998;
+  z-index: 999;
   .drawer-dimmer {
     @include fixed(left 0 top 0);
     width: 100vw;
     height: 100vh;
-    background: rgba($cr-text-dark-grey, 0.6);
+    background: rgba($text-darkgrey, 0.6);
     z-index: 1;
   }
   .drawer-wrapper {
     @include fixed(top 0 right -2px);
-    width: 420px;
+    @include flex($dir: column, $justify: flex-end);
+    width: calc(100% + 8px);
     height: 100%;
     background-color: $white;
     z-index: 2;
-    padding: 32px 30px;
-    @include en-mobile {
-      width: 70%;
-      padding: 11px 19px;
-    }
+
     .drawer-logo {
       @include flex($justify: space-between);
       align-items: flex-start;
       width: 100%;
-      height: 28px;
+      height: 76px;
+
+      @include en-mobile {
+        height: 64px;
+      }
+
       img {
         height: 100%;
       }
 
-      .icon-close{
-        color: $cr-main-core;
+      .icon-close {
+        color: $text-grey;
         font-size: 28px;
       }
     }
     .drawer-items-wrapper {
-      padding: 0px 0px;
-      .navgation-link-wrapper {
-        padding-top: 33px;
-        @include flex($dir: column);
-        .navigation-link {
-          @include medium(14);
-          line-height: 40px;
-          padding: 8px 0px;
-          border-bottom: 1px solid $cr-footer;
+      height: calc(100% - 76px);
+      padding: 0px;
+
+      @include en-mobile {
+        height: calc(100% - 64px);
+      }
+      .header-navigation-wrapper {
+        @include flex($dir: column, $justify: space-between);
+        height: 100%;
+        flex-wrap: nowrap;
+        .navgation-link-wrapper {
+          @include flex($dir: column);
+
+          .navigation-link {
+            @include medium(18);
+            line-height: 40px;
+            border-bottom: 1px solid $footer;
+            padding: 16px 48px;
+
+            @include en-mobile {
+              padding: 10px 28px;
+            }
+
+            &:first-child {
+              border-top: 1px solid $footer;
+            }
+
+            &.demo-link {
+              @include flex();
+              align-items: center;
+              font-weight: 700;
+              color: $main-core;
+              i {
+                @include bold(18);
+                margin: 0px 0px 3px 14px;
+              }
+            }
+          }
+        }
+
+        .info-wrapper {
+          @include flex($dir: column);
+          padding: 0px 48px 40px;
+
+          @include en-mobile {
+            padding: 0px 24px 24px;
+          }
+
+          .lang-button {
+            @include flex($justify: space-between);
+            @include bold(18);
+            align-items: center;
+            width: 214px;
+            height: 28px;
+            margin-bottom: 28px;
+            padding: 0px;
+            color: $text-darken-5;
+
+            i:last-child {
+              @include bold(18);
+            }
+
+            @include en-mobile {
+              margin-bottom: 16px;
+            }
+          }
+
+          .copyright {
+            @include regular(14);
+            color: #808394;
+          }
         }
       }
-    }
-    .header-demo-wrapper {
-      position: absolute;
-      @include bold(14);
-      width: 100px;
-      text-align: center;
-      bottom: 128px;
-      right: 30px;
-      line-height: 50px;
-      color: $cr-main-blue;
-      border-bottom: solid 1px $cr-main-blue;
     }
   }
 }

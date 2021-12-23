@@ -102,7 +102,7 @@
       font-weight: $bold;
     }
     span {
-      color: $cr-main-blue;
+      color: $main-blue;
       font-weight: $bold;
     }
     line-height: 40px;
@@ -157,7 +157,7 @@
 }
 
 .content-phrase {
-  color: $cr-text-light-grey;
+  color: $text-lightgrey;
   p {
     @include regular(18);
     span {
@@ -175,7 +175,7 @@
   margin: 0px auto;
   p {
     @include regular(20);
-    color: $cr-text-dark-grey;
+    color: $text-darkgrey;
     line-height: 24px;
     margin-bottom: 24px;
     &:last-child {
