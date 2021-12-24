@@ -465,15 +465,15 @@ const { meta } = useMeta({
         '제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/about' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/about' }],
   og: {
-    url: 'https://zenerate.ai/kr/main/about',
+    url: 'https://www.zenerate.ai/kr/main/about',
     type: 'website',
     title: '회사소개 | 제너레잇',
     description: `제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.`,
     tags: '제너레잇',
     keywords: '제너레잇',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title: '회사소개 | 제너레잇',

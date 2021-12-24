@@ -75,7 +75,7 @@ const routes = [
 ]
 
 const goToKrPage = () => {
-  window.open('https://zenerate.ai/kr', '_blank')
+  window.open('https://www.zenerate.ai/kr', '_blank')
 }
 
 const emit = defineEmit(['close'])

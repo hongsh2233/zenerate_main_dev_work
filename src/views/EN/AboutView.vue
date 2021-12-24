@@ -82,7 +82,7 @@ const { meta } = useMeta({
         'Zenerate is a team of architects, AI developers, software engineers and computational designers who are passionate about innovating the architecture and real estate development industries for better built environment.  ',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/about' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/about' }],
 })
 
 onMounted(() => {

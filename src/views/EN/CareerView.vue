@@ -201,15 +201,15 @@ const { meta } = useMeta({
         'Join Zenerate to work with the most passionate and intelligent team in the world.',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/career' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/career' }],
   og: {
-    url: 'https://zenerate.ai/career',
+    url: 'https://www.zenerate.ai/career',
     type: 'website',
     title: 'Career Us | Zenerate',
     description: `Join Zenerate to work with the most passionate and intelligent team in the world.`,
     tags: 'zenerate',
     keywords: 'zenerate',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title: 'Career Us | Zenerate',

@@ -28,7 +28,7 @@
           <a
             v-show="showLang"
             @click="() => toggleLang(false)"
-            href="https://zenerate.ai/kr"
+            href="https://www.zenerate.ai/kr"
             target="_blank"
           >
             한국어</a

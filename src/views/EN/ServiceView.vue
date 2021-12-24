@@ -45,6 +45,7 @@
                         item.level === pricing_plan[selectedPricingPlan].level,
                       'not-allowed-plan':
                         item.level > pricing_plan[selectedPricingPlan].level,
+                      download: idx === 7,
                     }"
                   >
                     <i
@@ -162,7 +163,7 @@ const selectPricingPlan = (item) => {
 
 import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
-  title: 'Pricing | Zenerate',
+  title: 'Service | Zenerate',
   description:
     'Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.',
   htmlAttrs: { lang: 'en' },
@@ -173,18 +174,18 @@ const { meta } = useMeta({
         'Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/pricing' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/services' }],
   og: {
-    url: 'https://zenerate.ai/pricing',
+    url: 'https://www.zenerate.ai/services',
     type: 'website',
-    title: 'Pricing | Zenerate',
+    title: 'Service | Zenerate',
     description: `Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.`,
     tags: 'zenerate',
     keywords: 'zenerate',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
-    title: 'Pricing | Zenerate',
+    title: 'Service | Zenerate',
   },
 })
 </script>
@@ -192,38 +193,48 @@ const { meta } = useMeta({
 .section {
   @include relative;
   height: 100%;
-  background-color: #fafafc;
 }
 .section-pricing {
+  background-image: url('/en/img/background_wave.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   .inner-pricing {
     width: 100%;
     height: 100%;
     padding: 160px 0px;
-
     @include en-tablet {
-      padding: 140px 0px;
+      padding: 132px 0px;
     }
     @include en-mobile {
-      padding: 100px 0px;
+      padding: 98px 0px;
     }
   }
   background-size: cover;
   background-position: center;
-
   cursor: default;
 
   .title-wrapper {
     @include flex($dir: column);
     align-items: center;
-    margin: 0px 0px 80px;
+    margin-bottom: 60px;
+
+    @include en-tablet {
+      max-width: 540px;
+      text-align: center;
+    }
+
+    @include en-mobile {
+      max-width: 360px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
 
     h2 {
-      @include semi-bold(36);
+      @include bold(36);
       color: $text-darken;
       margin: 0px 0px 30px;
-
       @include en-mobile {
-        @include semi-bold(24);
+        @include bold(24);
       }
     }
 
@@ -231,18 +242,32 @@ const { meta } = useMeta({
       width: 56px;
       height: 2px;
       border-radius: 5px;
-      margin: 0px 0px 40px;
       background-color: $text-darken;
+    }
+
+    h5 {
+      @include regular(24);
+      color: $text-darken;
+      margin: 0px;
+
+      @include en-tablet {
+        width: 440px;
+      }
+      @include en-mobile {
+        @include regular(14);
+        width: 173px;
+        text-align: center;
+      }
     }
   }
 
   .pricing-wrapper {
     @include flex($justify: center);
+    flex-direction: column;
     margin: 0px auto;
   }
   .pricing-contents {
     @include flex($justify: space-around);
-
     height: 100%;
     width: 100%;
     position: relative;
@@ -326,11 +351,17 @@ const { meta } = useMeta({
   align-items: center;
   max-width: 540px;
   width: 100%;
-  margin: 0px 0px 60px;
+  margin: 0px;
   height: auto;
 
   &:last-child {
-    margin-top: 80px;
+    margin: 80px 0px 0px 60px;
+  }
+
+  @include en-tablet {
+    &:last-child {
+      margin: 60px 0px 0px;
+    }
   }
 
   @include en-mobile {
@@ -338,9 +369,10 @@ const { meta } = useMeta({
     justify-content: center;
     min-width: 280px;
     max-width: 360px;
+    margin: 0px 0px 40px;
 
     &:last-child {
-      margin-top: 0px;
+      margin: 0px;
     }
   }
 
@@ -356,10 +388,11 @@ const { meta } = useMeta({
     line-height: 64px;
     text-align: center;
     @include en-mobile {
-      @include semi-bold(20);
-      width: 212px;
-      height: 64px;
-      line-height: 64px;
+      @include bold(14);
+      width: 124px;
+      height: 36px;
+      margin: 0px 0px 24px;
+      line-height: 36px;
     }
   }
 
@@ -369,8 +402,8 @@ const { meta } = useMeta({
     color: #191919;
     text-align: center;
     @include en-mobile {
-      @include regular(20);
-      width: 200px;
+      @include regular(14);
+      margin: 0px 0px 24px;
     }
   }
 
@@ -380,17 +413,17 @@ const { meta } = useMeta({
     height: auto;
     min-height: 568px;
     background-color: white;
-    box-shadow: 0px 4px 8px rgba(142, 141, 208, 0.16);
-    border-radius: 6px;
+    box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
+    border-radius: 20px;
 
     .list-title {
-      @include semi-bold(16);
+      @include bold(16);
       margin: 0px;
       line-height: 60px;
       color: rgba($text-darken, 0.3);
       text-align: center;
       @include en-mobile {
-        @include semi-bold(13);
+        @include bold(14);
         padding: 20px 0px;
         border-bottom: 1px solid rgba(196, 196, 196, 0.4);
       }
@@ -426,7 +459,7 @@ const { meta } = useMeta({
             }
           }
           .plan-title {
-            @include semi-bold(16);
+            @include bold(16);
             color: rgba($text-darken, 0.7);
           }
         }
@@ -486,6 +519,7 @@ const { meta } = useMeta({
           &.selected {
             border-bottom: 1px solid rgba(196, 196, 196, 0.4);
             border-left: 2px solid #4848ff;
+            background: rgba(72, 72, 255, 0.05);
 
             .check-wrapper {
               top: 0px;
@@ -504,14 +538,14 @@ const { meta } = useMeta({
       @include vertical-center();
       width: 100%;
       min-height: 348px;
-      padding: 0px 60px;
+      padding: 0px 59px;
       margin: 20px 0px 30px;
 
       @include en-tablet {
         padding: 0px 40px;
       }
       @include en-mobile {
-        padding: 0px 8%;
+        padding: 30px 8%;
         margin: 0px 0px;
 
         li {
@@ -589,24 +623,38 @@ const { meta } = useMeta({
             }
           }
         }
+
+        @include en-mobile {
+          &.download {
+            span {
+              width: 166px;
+            }
+          }
+        }
       }
     }
   }
 }
 
 .consulting-wrapper {
+  margin-left: 68px;
+
+  @include en-tablet {
+    margin-left: 0px;
+  }
+  @include en-mobile {
+    margin-left: 0px;
+  }
   .consulting-plan-list-wrapper {
     @include vertical-center();
     width: 100%;
     height: auto;
     min-height: 568px;
     padding: 40px 0px;
-    border-radius: 6px;
+    border-radius: 20px;
     background-color: white;
     box-shadow: 0px 4px 8px rgba(142, 141, 208, 0.16);
 
-    @include en-tablet {
-    }
     @include en-mobile {
       min-width: 272px;
       padding: 28px 0px;
@@ -721,6 +769,7 @@ const { meta } = useMeta({
           @include semi-bold(14);
           min-width: 250px;
           text-align: left;
+          line-height: 16.5px;
         }
       }
       .access-list {
@@ -728,7 +777,7 @@ const { meta } = useMeta({
         @include regular(16);
         flex-wrap: nowrap;
         align-items: flex-start;
-        color: rgba($text-darken, 0.7);
+        color: $text-darken;
         line-height: 20px;
         &:not(:last-child) {
           margin-bottom: 12px;
@@ -747,7 +796,7 @@ const { meta } = useMeta({
 
         p {
           @include medium(16);
-          color: rgba($text-darken, 0.7);
+          color: $text-darken;
           .text-core {
             color: #4848ff;
           }
@@ -785,7 +834,8 @@ const { meta } = useMeta({
     }
 
     @include en-mobile {
-      padding: 0px 22%;
+      width: 260px;
+      margin: 0 auto;
     }
   }
 }

@@ -98,27 +98,31 @@ const router = useRouter()
   background-color: #fafafc;
   padding-top: 52px;
   padding-bottom: 28px;
-  height: 476px !important;
+  height: 420px !important;
 
+  @include en-tablet {
+    height: 560px !important;
+  }
   @include en-mobile {
-    height: 532px !important;
+    height: 580px !important;
   }
 
   .footer-wrapper {
     background-color: #fafafc;
     width: 100%;
-    height: 476px !important;
+    height: 420px !important;
     margin: auto 0px;
     padding: 0px 100px;
 
     @include en-tablet {
       width: 100%;
+      height: 560px !important;
       margin-right: 50px;
       padding: 0px 48px;
     }
     @include en-mobile {
       width: 100%;
-      height: 532px !important;
+      height: 580px !important;
       margin-right: 0px;
       padding: 0px 24px;
     }

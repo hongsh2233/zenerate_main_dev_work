@@ -19,18 +19,18 @@ import AOS from 'aos'
 const { meta } = useMeta({
   title: 'Zenerate | Real-time Feasibility Studies for Real Estate Development',
   htmlAttrs: { lang: 'en' },
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai' }],
   description:
     'Zenerate is a proptech company providing building design AI solutions that boost real estate development profitability up to 26%.',
   og: {
-    url: 'https://zenerate.ai/',
+    url: 'https://www.zenerate.ai/',
     type: 'website',
     title:
       'Zenerate | Real-time Feasibility Studies for Real Estate Development',
     description: `Zenerate is a proptech company providing building design AI solutions that boost real estate development profitability up to 26%.`,
     tags: 'zenerate',
     keywords: 'zenerate',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title:

@@ -2,66 +2,70 @@
   <section id="fullpage-case-studies">
     <div class="section section-case-studies">
       <div class="section-inner inner-case-studies">
-        <div class="title-wrapper">
-          <h2>Case Studies</h2>
-          <div class="divider"></div>
-          <h5>
-            Zenerate's AI solution examines
-            <strong>the profitability</strong> of real estate projects
-          </h5>
-        </div>
-
-        <div class="case-wrapper">
-          <div class="case">
-            <img
-              data-src="/en/img/service_why.png"
-              src="/en/img/service_why.png"
-              alt="USC Village Residential Project"
-            />
-            <div class="text-wrapper">
-              <div class="text-title">USC Village Residential Project</div>
-              <div class="text-content">
-                <a
-                  href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
-                  target="_blank"
-                  >Read</a
-                >
-                to learn how Zenerate CEO Bongjai Shin collaborated with the USC
-                housing team to transform and streamline the architectural
-                design process.
-              </div>
-              <a
-                class="download"
-                href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
-                target="_blank"
-                >Download PDF <i class="material-icons"> east </i></a
+        <div class="case-studies-wrapper">
+          <div class="title-wrapper">
+            <h2>Case Studies</h2>
+            <div class="divider"></div>
+            <h5 class="hidden-mobile">
+              Zenerate's AI solution examines
+              <span
+                ><strong>the profitability</strong> of real estate
+                projects</span
               >
-            </div>
+            </h5>
+            <h5 class="hidden-desktop hidden-tablet">
+              Zenerate's AI solution examines
+              <strong>the profitability</strong> of real estate projects
+            </h5>
           </div>
-          <div class="case">
-            <img
-              data-src="/en/img/service_why.png"
-              src="/en/img/service_why.png"
-              alt="USC Village Residential Project"
-            />
-            <div class="text-wrapper">
-              <div class="text-title">USC Village Residential Project</div>
-              <div class="text-content">
+
+          <div class="case-wrapper">
+            <div class="case">
+              <video
+                src="/en/case_study_highrise.mp4"
+                width="540px"
+                height="540px"
+                loop
+                autoplay
+                muted
+              ></video>
+
+              <div class="text-wrapper">
+                <p class="text-title">High-rise Residential Condominium</p>
+                <p class="text-content">
+                  Read Zenerate’s case study project about high-rise residential
+                  condominium in Seoul to learn more about our surprising
+                  insights!
+                </p>
                 <a
+                  class="download"
+                  download="Case_Study_Zenerate"
+                  href="/en/file/case_studies_zenerate.pdf"
+                  target="_blank"
+                  >Download PDF <i class="material-icons"> east </i></a
+                >
+              </div>
+            </div>
+            <div class="case">
+              <img
+                data-src="/en/img/service_why.png"
+                src="/en/img/service_why.png"
+                alt="USC Village Residential Project"
+              />
+              <div class="text-wrapper">
+                <p class="text-title">USC Village Residential Project</p>
+                <p class="text-content">
+                  Read to learn how CEO Benji Shin<br />
+                  collaborated with the USC housing team to transform and
+                  streamline the architectural design process.
+                </p>
+                <a
+                  class="download"
                   href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
                   target="_blank"
-                  >Read</a
+                  >Download PDF <i class="material-icons"> east </i></a
                 >
-                to learn how Zenerate CEO Bongjai Shin collaborated with the USC
-                housing team to transform and streamline the architectural
-                design process.
               </div>
-              <a
-                class="download"
-                href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
-                target="_blank"
-                >Download PDF <i class="material-icons"> east </i></a
-              >
             </div>
           </div>
         </div>
@@ -91,7 +95,7 @@ onMounted(() => {
 
 import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
-  title: 'Services | Zenerate',
+  title: 'Case Studies | Zenerate',
   description:
     'Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. ',
   htmlAttrs: { lang: 'en' },
@@ -102,18 +106,18 @@ const { meta } = useMeta({
         'Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. ',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/services' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/case-studies' }],
   og: {
-    url: 'https://zenerate.ai/services',
+    url: 'https://www.zenerate.ai/case-studies',
     type: 'website',
-    title: 'Pricing | Zenerate',
+    title: 'Case Studies | Zenerate',
     description: `Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. `,
     tags: 'zenerate',
     keywords: 'zenerate',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
-    title: 'Services | Zenerate',
+    title: 'Case Studies | Zenerate',
   },
 })
 </script>
@@ -122,19 +126,29 @@ const { meta } = useMeta({
   @include relative;
   width: 100%;
   height: 100%;
+  background-image: url('/en/img/background_wave.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 
   .inner-case-studies {
     @include flex($dir: column);
     align-items: center;
     width: 100%;
     height: 100%;
+    margin: 0 auto;
     padding: 160px 0px;
 
     @include en-tablet {
-      padding: 140px 0px;
+      padding: 132px 0px;
     }
     @include en-mobile {
-      padding: 100px 0px;
+      padding: 98px 0px;
+    }
+
+    .case-studies-wrapper {
+      @include flex($justify: space-around);
+      flex-direction: column;
+      margin: 0px auto;
     }
 
     .title-wrapper {
@@ -175,9 +189,13 @@ const { meta } = useMeta({
         @include regular(24);
         color: $text-darken;
         margin: 0px;
+
+        @include en-tablet {
+          width: 440px;
+        }
         @include en-mobile {
-          @include regular(18);
-          width: 222px;
+          @include regular(14);
+          width: 173px;
           text-align: center;
         }
       }
@@ -185,8 +203,8 @@ const { meta } = useMeta({
 
     .case-wrapper {
       @include flex($justify: space-around);
-      height: 100%;
       width: 100%;
+      height: 100%;
       position: relative;
       margin: 0px auto;
 
@@ -199,48 +217,103 @@ const { meta } = useMeta({
       @include en-mobile {
         flex-direction: column;
         align-items: center;
-        padding: 0px 20px;
+        padding: 0px 16px;
       }
 
       .case {
-        width: 100%;
-        max-width: 540px;
-        height: 520px;
-        padding: 20px 10px 20px 20px;
+        @include relative();
+        @include vertical-center();
+        justify-content: flex-start;
+        align-items: center;
+        width: 540px;
+        height: 600px;
         border-radius: 20px;
         background-color: white;
         box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
 
         img {
           width: 100%;
-          height: 212px;
+          height: 360px;
           object-fit: cover;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+        }
+
+        video {
+          width: 100%;
+          height: 360px;
+          object-fit: cover;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
         }
 
         &:last-child {
           margin-top: 80px;
+          margin-left: 68px;
         }
 
-        @include en-mobile {
-          max-width: 360px;
-          height: 100%;
-          padding: 20px 10px;
-
+        @include en-tablet {
           &:last-child {
-            margin-top: 0px;
+            margin-top: 60px;
+            margin-left: 0px;
           }
         }
 
+        @include en-mobile {
+          max-width: 280px;
+          height: 100%;
+
+          &:last-child {
+            margin-top: 32px;
+            margin-left: 0px;
+          }
+
+          img {
+            width: 100%;
+            height: 212px;
+            object-fit: cover;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+          }
+
+          video {
+            width: 100%;
+            height: 212px;
+            object-fit: cover;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+          }
+        }
+
+        &:first-child {
+          .text-wrapper {
+            padding: 30px 140px 30px 40px;
+
+            @include en-mobile {
+              padding: 28px 20px;
+
+              .text-title {
+                word-break: break-all;
+                max-width: 223px;
+                height: 28px;
+                overflow-x: hidden;
+                overflow-y: hidden;
+              }
+            }
+          }
+        }
         .text-wrapper {
-          padding: 36px 40px;
+          width: 100%;
+          padding: 30px 70px 30px 40px;
 
           @include en-mobile {
-            padding: 28px 18px;
+            padding: 28px 20px;
           }
           .text-title {
             @include semi-bold(21);
             color: $text-darken;
             margin-bottom: 28px;
+
             @include en-mobile {
               @include semi-bold(16);
               margin-bottom: 20px;
@@ -249,10 +322,13 @@ const { meta } = useMeta({
           .text-content {
             @include regular(17);
             margin-bottom: 24px;
+            line-height: 21.2px;
 
             @include en-mobile {
               @include regular(14);
               margin-bottom: 16px;
+              line-height: 17.5px;
+              width: 240px;
             }
 
             a {

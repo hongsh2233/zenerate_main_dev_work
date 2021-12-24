@@ -284,15 +284,15 @@ const { meta } = useMeta({
       content: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/contact' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/contact' }],
   og: {
-    url: 'https://zenerate.ai/contact',
+    url: 'https://www.zenerate.ai/contact',
     type: 'website',
     title: 'Contact Us | Zenerate',
     description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
     tags: 'zenerate',
     keywords: 'zenerate',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title: 'Contact Us | Zenerate',

@@ -222,14 +222,26 @@ textarea {
   @include desktop {
     display: none !important;
   }
+
+  @include en-desktop {
+    display: none !important;
+  }
 }
 .hidden-tablet {
   @include tablet {
     display: none !important;
   }
+
+  @include en-tablet {
+    display: none !important;
+  }
 }
 .hidden-mobile {
   @include mobile {
+    display: none !important;
+  }
+
+  @include en-mobile {
     display: none !important;
   }
 }

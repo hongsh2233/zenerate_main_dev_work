@@ -38,15 +38,15 @@ const { meta } = useMeta({
         '글로벌 프롭테크 스타트업 제너레잇과 부동산개발 산업을 함께 바꾸어 나갈 열정적인 인재를 채용합니다.',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/career' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/career' }],
   og: {
-    url: 'https://zenerate.ai/kr/main/career',
+    url: 'https://www.zenerate.ai/kr/main/career',
     type: 'website',
     title: '채용 | 제너레잇',
     description: `글로벌 프롭테크 스타트업 제너레잇과 부동산개발 산업을 함께 바꾸어 나갈 열정적인 인재를 채용합니다.`,
     tags: '제너레잇',
     keywords: '제너레잇',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title: '채용 | 제너레잇',
