@@ -3,53 +3,169 @@
     <div class="section section-story fp-auto-height-responsive">
       <div class="section-inner inner-story">
         <div class="inner-contents">
-          <div class="story-contents">
-            <div class="content-heading">
-              <p class="story-title"><strong>OUR STORY</strong></p>
+          <div class="person-wrapper hidden-tablet hidden-mobile">
+            <div class="mission-image">
+              <img src="/en/img/about_benji_shin.png" alt="" />
             </div>
-            <div class="story-content content-text">
-              <p>Zenerate is a tech company</p>
-              <p>founded by Harvard and Caltech graduates.</p>
+            <p class="person-name">BENJI SHIN</p>
+            <p class="person-desc">
+              <span>CEO</span>
+              <span>ARCHITECT</span>
+              <span>CO-FOUNDER </span>
+            </p>
+          </div>
+          <div class="mission-contents">
+            <div class="title-wrapper">
+              <h2>ABOUT US</h2>
+              <div class="divider"></div>
             </div>
-            <div class="story-content content-text">
+            <div class="mission-content content-text">
               <p>
-                We're a team of architects, software engineers, and AI
-                developers driven to provide building solutions that position
-                properties into successful operations for various stakeholders.
-                Our design automation software combines AI + Data Science to
-                search millions of possibilities, delivering fast & easy
-                feasibility studies and optimized profitability.
+                Zenerate is a tech company<br />founded by Harvard and Caltech
+                graduates.
+              </p>
+              <p>
+                Our primary goal is to provide profitable solutions
+                <strong>
+                  that will change traditional building designs lacking the
+                  financials.
+                </strong>
+              </p>
+
+              <p class="hidden-desktop">
+                We strive to make design practical using AI so that it can be
+                applied to various building design problems.
+              </p>
+              <p class="hidden-desktop">
+                Zenerate is at the forefront of transforming real estate
+                development,
+                <strong
+                  >seeking to improve the quality of urban development.
+                </strong>
+                <br />for developers and stakeholders.
               </p>
             </div>
-          </div>
-          <div class="story-image">
-            <img src="/en/img/about_story.png" alt="" />
           </div>
         </div>
       </div>
     </div>
-    <div class="section section-mission fp-auto-height-responsive">
-      <div class="section-inner inner-mission">
+    <div
+      class="
+        section section-story
+        fp-auto-height-responsive
+        hidden-tablet hidden-mobile
+      "
+    >
+      <div class="section-inner inner-story">
         <div class="inner-contents">
-          <div class="mission-image">
-            <img src="/en/img/about_mission.png" alt="" />
+          <div class="person-wrapper">
+            <div class="mission-image">
+              <img src="/en/img/about_jamie_jeong.png" alt="" />
+            </div>
+            <p class="person-name">JAMIE JEONG</p>
+            <p class="person-desc">
+              <span>CTO</span>
+              <span>AI DEVELOPER</span>
+              <span>CO-FOUNDER </span>
+            </p>
           </div>
           <div class="mission-contents">
-            <div class="content-heading">
-              <p class="mission-title"><strong>OUR MISSION</strong></p>
+            <div class="title-wrapper">
+              <h2>ABOUT US</h2>
+              <div class="divider"></div>
+            </div>
+
+            <div class="mission-content content-text">
+              <p>
+                We strive to make design practical using AI so that it can be
+                applied to various building design problems.
+              </p>
+              <p>
+                Zenerate is at the forefront of transforming real estate
+                development,
+                <strong
+                  >seeking to improve the quality of urban development.
+                </strong>
+                <br />for developers and stakeholders.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-story fp-auto-height-responsive">
+      <div class="section-inner inner-story">
+        <div class="inner-contents">
+          <div class="mission-contents">
+            <div class="title-wrapper">
+              <h2>OUR MISSION</h2>
+              <div class="divider"></div>
             </div>
             <div class="mission-content content-text">
               <p>
                 <strong
                   >We believe there is a faster, smarter, better way</strong
                 >
+                <br />
+                <strong>to approach real estate development</strong>
+                <br />to improve feasibility and decision-making <br />for
+                developers and stakeholders.
               </p>
-              <p><strong>to approach real estate development</strong></p>
-              <p>to improve feasibility and decision-making</p>
-              <p>for developers and stakeholders.</p>
             </div>
           </div>
+          <div class="person-wrapper hidden-tablet hidden-mobile">
+            <div class="mission-image">
+              <img src="/en/img/about_hak_lee.png" alt="" />
+            </div>
+
+            <p class="person-name">HAK LEE</p>
+            <p class="person-desc">
+              <span>SOFTWARE ENGINEER</span>
+              <span>CO-FOUNDER </span>
+            </p>
+          </div>
         </div>
+      </div>
+    </div>
+    <div
+      class="
+        section section-person-wrapper
+        hidden-desktop
+        fp-auto-height-responsive
+      "
+    >
+      <div class="person-wrapper">
+        <div class="person-image">
+          <img src="/en/img/about_benji_shin.png" alt="" />
+        </div>
+        <p class="person-name">BENJI SHIN</p>
+        <p class="person-desc">
+          <span>CEO</span>
+          <span>ARCHITECT</span>
+          <span>CO-FOUNDER </span>
+        </p>
+      </div>
+      <div class="person-wrapper">
+        <div class="person-image">
+          <img src="/en/img/about_jamie_jeong.png" alt="" />
+        </div>
+        <p class="person-name">JAMIE JEONG</p>
+        <p class="person-desc">
+          <span>CTO</span>
+          <span>AI DEVELOPER</span>
+          <span>CO-FOUNDER </span>
+        </p>
+      </div>
+      <div class="person-wrapper">
+        <div class="person-image">
+          <img src="/en/img/about_jamie_jeong.png" alt="" />
+        </div>
+        <p class="person-name">JAMIE JEONG</p>
+        <p class="person-desc">
+          <span>CTO</span>
+          <span>AI DEVELOPER</span>
+          <span>CO-FOUNDER </span>
+        </p>
       </div>
     </div>
     <div class="section section-footer fp-auto-height">
@@ -96,72 +212,31 @@ onMounted(() => {
 .section {
   background-color: #fafafc;
 }
-.section-story {
-  .inner-story {
-    margin: 0px auto;
-  }
-  .inner-contents {
-    height: content-fit;
-    margin: auto 0px;
-    @include flex;
-    .story-image {
-      width: 322px;
-      height: 322px;
-      margin-top: 100px;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-      @include en-tablet {
-        @include absolute(right 0 bottom 0);
-        opacity: 0.2;
-      }
-      @include en-mobile {
-        @include absolute(right 0 bottom 0);
-        opacity: 0.2;
-      }
-    }
-    .story-contents {
-      flex: 1;
-      margin-right: 40px;
-      @include vertical-center;
-      .story-title {
-        margin-bottom: 40px;
-      }
-      .story-content {
-        margin-bottom: 32px;
-        p {
-          @include light(24);
 
-          @include en-mobile {
-            font-size: 22px;
-          }
+.person-wrapper {
+  @include vertical-center();
+  width: 50%;
+  margin-bottom: 100px;
+
+  .person-name {
+    @include bold(18);
+  }
+  .person-desc {
+    span {
+      @include regular(14);
+      color: $text-darken;
+
+      &:not(:first-child) {
+        &::before {
+          content: '\00B7';
+          padding: 0px 6px;
         }
       }
-      @include en-tablet {
-        @include relative;
-        z-index: 1;
-        flex: none;
-        width: 100%;
-        margin-right: 0;
-      }
-      @include en-mobile {
-        @include relative;
-        z-index: 1;
-        flex: none;
-        width: 100%;
-        margin-right: 0;
-      }
     }
   }
-  .arrow-bottom {
-    justify-content: flex-start;
-    padding-left: 24px;
-    margin-bottom: 80px;
-  }
 }
-.section-mission {
-  .inner-mission {
+.section-story {
+  .inner-story {
     margin: 0px auto;
     @include en-desktop {
       padding-right: 100px;
@@ -171,6 +246,7 @@ onMounted(() => {
     height: content-fit;
     margin: auto 0px;
     @include flex;
+
     .mission-contents {
       flex: 1;
       @include vertical-center;
@@ -180,16 +256,53 @@ onMounted(() => {
       .mission-title {
         margin-bottom: 40px;
       }
+
+      .title-wrapper {
+        @include flex($dir: column);
+        align-items: flex-start;
+        margin-bottom: 80px;
+
+        @include en-tablet {
+          max-width: 540px;
+          margin-bottom: 60px;
+          text-align: center;
+        }
+
+        @include en-mobile {
+          max-width: 360px;
+          margin-bottom: 32px;
+          text-align: center;
+        }
+
+        h2 {
+          @include bold(30);
+          color: $text-darken;
+          margin: 0px 0px 60px;
+          @include en-mobile {
+            @include bold(24);
+            margin: 0px 0px 30px;
+          }
+        }
+
+        .divider {
+          width: 56px;
+          height: 2px;
+          border-radius: 5px;
+          background-color: $text-darken;
+        }
+      }
       .mission-content {
+        text-align: left;
         p {
-          @include light(24);
+          @include light(20);
+          margin-bottom: 24px;
           strong {
-            @include regular(24);
+            @include medium(20);
           }
           @include en-mobile {
-            font-size: 20px;
+            font-size: 14px;
             strong {
-              @include regular(23);
+              @include medium(14);
             }
           }
         }
@@ -213,13 +326,15 @@ onMounted(() => {
         padding-bottom: 80px;
       }
     }
+
     .mission-image {
-      width: 450px;
-      height: 388px;
-      margin-top: 100px;
+      width: 560px;
+      height: 560px;
+
       img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
       }
       @include en-tablet {
         @include absolute(left 0 bottom 50%);
@@ -240,6 +355,21 @@ onMounted(() => {
       img {
         width: 100%;
       }
+    }
+  }
+}
+
+.section-person {
+  @include vertical-center();
+
+  .person-image {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
     }
   }
 }

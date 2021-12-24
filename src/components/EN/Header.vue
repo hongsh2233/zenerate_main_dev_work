@@ -3,7 +3,7 @@
     <div class="header-inner">
       <div
         class="header-logo hover-pointer"
-        @click="router.push({ name: 'en-landing' })"
+        @click="router.push({ name: 'en-landing' }) && toggleDrawer(false)"
       >
         <img class="logo" src="/img/logo_color.png" alt="logo" />
         <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" /> -->
@@ -27,7 +27,6 @@
           <span v-show="showLang">/</span>
           <a
             v-show="showLang"
-            @click="() => toggleLang(false)"
             href="https://www.zenerate.ai/kr"
             target="_blank"
           >
@@ -56,8 +55,8 @@ const props = defineProps({
 })
 
 const emit = defineEmit(['toggleDrawer'])
-const toggleDrawer = () => {
-  emit('toggleDrawer', !props.showDrawer)
+const toggleDrawer = (flag?: boolean) => {
+  emit('toggleDrawer', flag)
 }
 
 const showLang = ref(false)

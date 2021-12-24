@@ -63,7 +63,7 @@
                   class="download"
                   href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
                   target="_blank"
-                  >Download PDF <i class="material-icons"> east </i></a
+                  >Read this Article <i class="material-icons"> east </i></a
                 >
               </div>
             </div>

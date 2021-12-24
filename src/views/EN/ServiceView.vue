@@ -270,6 +270,7 @@ const { meta } = useMeta({
     @include flex($justify: space-around);
     height: 100%;
     width: 100%;
+    flex-wrap: nowrap;
     position: relative;
     margin: 0px auto;
 
