@@ -44,11 +44,18 @@
   }
 }
 
+.hidden-en-tablet {
+  @include en-tablet {
+    display: none !important;
+  }
+}
+
 .hidden-en-mobile {
   @include en-mobile {
     display: none !important;
   }
 }
+
 .arrow-bottom {
   z-index: 2;
   height: 49px;

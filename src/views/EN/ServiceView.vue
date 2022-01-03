@@ -9,7 +9,15 @@
           </div>
 
           <div class="pricing-contents">
-            <div class="service-wrapper">
+            <div
+              class="service-wrapper"
+              data-aos="zoom-in-up"
+              data-aos-offset="0"
+              data-aos-delay="300"
+              data-aos-duration="500"
+              data-aos-once="true"
+              data-aos-mirror="false"
+            >
               <h2 class="service-title">WEB</h2>
               <h5 class="service-subtitle">
                 Fast Web Platform for Everyday Use
@@ -65,7 +73,15 @@
                 </ul>
               </div>
             </div>
-            <div class="service-wrapper consulting-wrapper">
+            <div
+              class="service-wrapper consulting-wrapper"
+              data-aos="zoom-in-up"
+              data-aos-offset="0"
+              data-aos-delay="500"
+              data-aos-duration="500"
+              data-aos-once="true"
+              data-aos-mirror="false"
+            >
               <h2 class="service-title">CONSULTING</h2>
               <h5 class="service-subtitle">
                 Customized, Deep, Complex Service
@@ -129,6 +145,12 @@ onMounted(() => {
   //   offsetSections: false,
   //   navigation: false,
   // })
+
+  setTimeout(() => {
+    document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
+      doc.classList.add('aos-animate')
+    })
+  }, 0)
 })
 
 const pricing_plan = ref({

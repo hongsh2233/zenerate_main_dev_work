@@ -168,12 +168,14 @@ const routes = [
       @include flex($justify: flex-start);
       align-items: center;
       flex: 1;
-      text-align: right;
+      flex-wrap: nowrap;
+      text-align: center;
       margin: auto 0px;
       .navigation-link {
         @include regular(16);
         margin-left: 34px;
         font-size: 16px;
+        line-height: 20px;
         color: $text-darken-5;
         transition: color ease-in-out 0.2s;
 
@@ -234,6 +236,8 @@ const routes = [
               height: 26px;
               margin-left: 8px;
               font-size: 15px;
+              line-height: 27px;
+
               &:hover {
                 transition: color ease-in-out 0.2s;
                 color: $main-blue;

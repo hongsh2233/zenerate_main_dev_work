@@ -46,8 +46,8 @@
             <div class="content-text">
               <p>Our design automation software combines</p>
               <p>
-                AI + Data Science to search
-                <span>millions</span> of possibilities,
+                <span> AI + Data Science</span><br />
+                to search millions of possibilities,
               </p>
               <p>delivering <span>fast & easy feasibility studies</span></p>
               <p>and <span>optimized profitability.</span></p>
@@ -313,19 +313,33 @@ const toContactForm = () => {
   }
   .landing-contents {
     @include relative;
-    z-index: 2;
     @include vertical-center;
+    z-index: 2;
     flex: 1;
     .content-heading {
-      margin-bottom: 64px;
+      margin-bottom: 28px;
       color: $white;
+      p {
+        @include en-desktop {
+          @include regular(40);
+        }
+
+        @include en-tablet {
+          @include regular(32);
+        }
+
+        @include en-mobile {
+          @include regular(28);
+        }
+      }
       p span {
         color: #cbd0fe;
       }
     }
     .content-phrase {
+      @include regular(18);
       color: $white;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       @include en-tablet {
         max-width: 60%;
         margin: 0px auto;
@@ -388,8 +402,28 @@ const toContactForm = () => {
         .content-heading {
           margin-bottom: 32px;
           color: $white;
+          p {
+            @include en-desktop {
+              strong {
+                @include bold(40);
+              }
+            }
+
+            @include en-tablet {
+              strong {
+                @include bold(32);
+              }
+            }
+
+            @include en-mobile {
+              strong {
+                @include bold(28);
+              }
+            }
+          }
         }
         .content-text {
+          @include regular(24);
           color: $white;
         }
         text-align: left;
@@ -445,6 +479,11 @@ const toContactForm = () => {
       }
       .content-heading {
         margin-bottom: 24px;
+        p {
+          strong {
+            @include bold(28);
+          }
+        }
       }
       .content-text {
         @include en-tablet {
@@ -546,6 +585,11 @@ const toContactForm = () => {
       @include vertical-center;
       .content-heading {
         margin-bottom: 36px;
+        p {
+          strong {
+            @include bold(28);
+          }
+        }
       }
       .content-text {
         margin-bottom: 24px;
@@ -584,12 +628,17 @@ const toContactForm = () => {
       }
     }
     .compare-text {
+      @include vertical-center;
       width: 492px;
       margin-right: 44px;
-      @include vertical-center;
       text-align: left;
       .content-heading {
         margin-bottom: 32px;
+        p {
+          strong {
+            @include bold(28);
+          }
+        }
       }
       .text-heading {
         @include bold(28);
@@ -625,7 +674,8 @@ const toContactForm = () => {
   .partners-title {
     @include relative;
     @include vertical-center;
-    height: 260px;
+    justify-content: flex-end;
+    height: 200px;
     margin-top: 100px;
     padding: 0px 20px;
     text-align: center;
@@ -637,10 +687,9 @@ const toContactForm = () => {
       background-repeat: no-repeat;
       opacity: 0.5;
       content: '';
-      background-color: #f4f4f4;
     }
     p {
-      @include medium(32);
+      @include semi-bold(32);
       position: relative;
       span {
         color: rgba(82, 110, 255, 0.92);
@@ -663,14 +712,14 @@ const toContactForm = () => {
     }
   }
   .partners-text-wrapper {
-    padding: 96px 0px;
+    padding: 68px 0px 96px;
 
     .content-text {
       max-width: 900px;
       margin: 0px auto;
       text-align: center;
       p {
-        @include medium(30);
+        @include regular(22);
         position: relative;
         span {
           color: rgba(82, 110, 255, 0.92);
@@ -679,7 +728,7 @@ const toContactForm = () => {
       @include en-tablet {
         max-width: 70%;
         p {
-          font-size: 26px;
+          font-size: 20px;
         }
       }
       @include en-mobile {
@@ -697,12 +746,17 @@ const toContactForm = () => {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     .partners-item {
+      @include center-center;
+      @include relative;
       margin-bottom: 40px;
       width: 200px;
-      height: 84px;
-      @include center-center;
+      height: 134px;
       max-width: 100%;
-      @include relative;
+
+      @include en-mobile {
+        margin: 0px auto;
+        margin-bottom: 0px;
+      }
       .item-logo {
         width: 200px;
         margin: auto;
@@ -727,10 +781,7 @@ const toContactForm = () => {
         margin: 0;
         padding: 0;
       }
-      @include en-mobile {
-        margin: 0px auto;
-        margin-bottom: 40px;
-      }
+
       &:hover {
         .item-logo {
           opacity: 0.5;

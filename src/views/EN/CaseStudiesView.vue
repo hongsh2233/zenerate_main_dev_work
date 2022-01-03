@@ -20,7 +20,15 @@
           </div>
 
           <div class="case-wrapper">
-            <div class="case">
+            <div
+              class="case aos"
+              data-aos="zoom-in-up"
+              data-aos-offset="0"
+              data-aos-delay="300"
+              data-aos-duration="600"
+              data-aos-once="true"
+              data-aos-mirror="false"
+            >
               <video
                 src="/en/case_study_highrise.mp4"
                 width="540px"
@@ -46,7 +54,15 @@
                 >
               </div>
             </div>
-            <div class="case">
+            <div
+              class="case"
+              data-aos="zoom-in-up"
+              data-aos-offset="0"
+              data-aos-delay="500"
+              data-aos-duration="600"
+              data-aos-once="true"
+              data-aos-mirror="false"
+            >
               <img
                 data-src="/en/img/service_why.png"
                 src="/en/img/service_why.png"
@@ -79,6 +95,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
+import AOS from 'aos'
 const fullpage = computed(() => Store.state.root.FullPage)
 // @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
@@ -86,11 +103,12 @@ import Footer from '/Components/EN/Footer.vue'
 import Arrow from '/Components/EN/Arrow.vue'
 onMounted(() => {
   fullpage.value.destroy()
-  // fullpage.value.init('#fullpage-case-studies', {
-  //   // parallax: false,
-  //   offsetSections: false,
-  //   // navigation: false,
-  // })
+
+  setTimeout(() => {
+    document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
+      doc.classList.add('aos-animate')
+    })
+  }, 0)
 })
 
 import { useMeta } from 'vue-meta'

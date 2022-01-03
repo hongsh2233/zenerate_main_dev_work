@@ -98,10 +98,10 @@ const router = useRouter()
   background-color: #fafafc;
   padding-top: 52px;
   padding-bottom: 28px;
-  height: 420px !important;
+  height: 500px !important;
 
   @include en-tablet {
-    height: 560px !important;
+    height: 580px !important;
   }
   @include en-mobile {
     height: 580px !important;
@@ -110,13 +110,13 @@ const router = useRouter()
   .footer-wrapper {
     background-color: #fafafc;
     width: 100%;
-    height: 420px !important;
+    height: 500px !important;
     margin: auto 0px;
     padding: 0px 100px;
 
     @include en-tablet {
       width: 100%;
-      height: 560px !important;
+      height: 580px !important;
       margin-right: 50px;
       padding: 0px 48px;
     }
@@ -141,16 +141,23 @@ const router = useRouter()
         }
         .footer-locations {
           @include flex();
+
           margin-right: 120px;
-          // padding-right: 130px;
+          margin-bottom: 40px;
 
           @include en-tablet {
-            margin-right: 20px;
+            width: 100%;
+            margin-right: 0px;
+            margin-bottom: 40px;
             padding-right: 0px;
+            border-bottom: 1px solid rgba(22, 22, 22, 0.5);
           }
           @include en-mobile {
+            width: 100%;
             margin-right: 0px;
+            margin-bottom: 32px;
             padding-right: 0px;
+            border-bottom: 1px solid rgba(22, 22, 22, 0.5);
           }
 
           .footer-location {
@@ -160,7 +167,7 @@ const router = useRouter()
               margin-bottom: 0;
             }
             @include en-tablet {
-              margin-bottom: 32px;
+              margin-bottom: 40px;
             }
             @include en-mobile {
               @include flex();
@@ -208,13 +215,13 @@ const router = useRouter()
                 @include bold(14);
                 width: 70px;
                 margin-bottom: 0px;
-                margin-right: 35px;
+                margin-right: 24px;
               }
               &.location-title {
                 margin-bottom: 0;
                 p.title {
                   margin-bottom: 8px;
-                  margin-right: 35px;
+                  margin-right: 24px;
                 }
               }
               p.content {
@@ -256,7 +263,7 @@ const router = useRouter()
             .contact-title {
               @include bold(14);
               width: 70px;
-              margin-right: 35px;
+              margin-right: 24px;
             }
             p {
               @include regular(14);
