@@ -360,7 +360,7 @@ $text-darken-5: rgba(#000729, 0.5);
 $main-blue: #5c6dff;
 $main-core: #4848ff;
 $white: #ffffff;
-$black: #202835;
+$black: #161616;
 $footer: #f4f3fe;
 $text-darkgrey: #333333;
 $text-grey: #707070;
@@ -396,10 +396,13 @@ $bt-secondary-etc: #f6f5ff;
   box-shadow: 0px 4px 8px rgba(142, 141, 208, 0.16);
 }
 @mixin elevation-3 {
-  box-shadow: 0px 8px 16px rgba(142, 141, 208, 0.12);
+  box-shadow: 0px 8px 16px rgba(142, 141, 208, 0.25);
 }
 @mixin elevation-4 {
   box-shadow: 0px 16px 24px rgba(142, 141, 208, 0.12);
+}
+@mixin elevation-5 {
+  box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
 }
 
 /*************** buttons ***************/

@@ -1,6 +1,6 @@
 <template>
   <div id="fullpage-contact">
-    <section class="section-contact">
+    <section class="section section-contact fp-auto-height-responsive">
       <div class="contact-hero-wrapper">
         <!-- <img src="/en/img/contact_hero.jpg" alt="" /> -->
         <div class="hero-text-wrapper">
@@ -134,13 +134,16 @@ import Store from '/Store/index'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import { useRoute, useRouter } from 'vue-router'
-// @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
+import SelectInput from '/Components/SelectInput.vue'
 
 const fullpage = computed(() => Store.state.root.FullPage)
 
-// @ts-ignore
-import SelectInput from '/Components/SelectInput.vue'
+onMounted(() => {
+  if (fullpage.value) {
+    fullpage.value.destroy()
+  }
+})
 
 type Item = {
   id: number
@@ -266,12 +269,6 @@ const sendEmail = async () => {
   sendEmailStatus.value = true
 }
 const router = useRouter()
-
-onMounted(() => {
-  if (fullpage.value) {
-    fullpage.value.destroy()
-  }
-})
 
 import { useMeta } from 'vue-meta'
 const { meta } = useMeta({

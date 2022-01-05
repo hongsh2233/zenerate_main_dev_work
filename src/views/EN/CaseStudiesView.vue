@@ -1,6 +1,6 @@
 <template>
   <section id="fullpage-case-studies">
-    <div class="section section-case-studies">
+    <div class="section section-case-studies fp-auto-height-responsive">
       <div class="section-inner inner-case-studies">
         <div class="case-studies-wrapper">
           <div class="title-wrapper">
@@ -23,11 +23,10 @@
             <div
               class="case aos"
               data-aos="zoom-in-up"
-              data-aos-offset="0"
+              data-aos-offset="-1500"
               data-aos-delay="300"
               data-aos-duration="600"
-              data-aos-once="true"
-              data-aos-mirror="false"
+              data-aos-anchor-placement="top-bottom"
             >
               <video
                 src="/en/case_study_highrise.mp4"
@@ -57,11 +56,10 @@
             <div
               class="case"
               data-aos="zoom-in-up"
-              data-aos-offset="0"
+              data-aos-offset="-1500"
               data-aos-delay="500"
               data-aos-duration="600"
-              data-aos-once="true"
-              data-aos-mirror="false"
+              data-aos-anchor-placement="top-bottom"
             >
               <img
                 data-src="/en/img/service_why.png"
@@ -96,19 +94,18 @@
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
 import AOS from 'aos'
-const fullpage = computed(() => Store.state.root.FullPage)
-// @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
-// @ts-ignore
 import Arrow from '/Components/EN/Arrow.vue'
+
+const fullpage = computed(() => Store.state.root.FullPage)
 onMounted(() => {
   fullpage.value.destroy()
 
-  setTimeout(() => {
-    document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
-      doc.classList.add('aos-animate')
-    })
-  }, 0)
+  // setTimeout(() => {
+  //   document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
+  //     doc.classList.add('aos-animate')
+  //   })
+  // }, 0)
 })
 
 import { useMeta } from 'vue-meta'

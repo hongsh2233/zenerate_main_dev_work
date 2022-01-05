@@ -1,9 +1,15 @@
 <template>
   <div id="fullpage-career">
-    <section class="section section-careers">
+    <section class="section section-careers fp-auto-height-responsive">
       <div class="section-main">
         <div class="section-inner main-wrapper">
-          <div class="inner-main">
+          <div
+            class="inner-main"
+            data-aos="fade-up"
+            data-aos-offset="-1500"
+            data-aos-duration="500"
+            data-aos-anchor-placement="top-center"
+          >
             <div class="main-sub-title">
               <span>Build your life with</span>
               <img src="/img/logo.webp" alt="" />
@@ -182,10 +188,12 @@ const careerId = ref(-1)
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 }
-const fp = computed(() => Store.state.root.FullPage)
+const fullpage = computed(() => Store.state.root.FullPage)
 
 onMounted(() => {
-  fp.value.destroy()
+  if (fullpage.value) {
+    fullpage.value.destroy()
+  }
 })
 
 import { useMeta } from 'vue-meta'
@@ -233,9 +241,12 @@ const { meta } = useMeta({
       .main-sub-title {
         justify-content: center;
       }
+      .main-content {
+        margin: 0px auto;
+      }
     }
     @include en-mobile {
-      padding: 0 24px;
+      padding: 0px 24px;
       max-width: 100%;
       text-align: center;
 

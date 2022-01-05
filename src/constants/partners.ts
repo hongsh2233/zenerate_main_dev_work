@@ -39,4 +39,8 @@ export default [
     key: 'mdm',
     description: 'Top-tier Real Estate Developer, Korea',
   },
+  {
+    key: 'hdc',
+    description: 'Top-tier Real Estate Developer, Korea',
+  },
 ]

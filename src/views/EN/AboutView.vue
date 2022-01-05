@@ -2,7 +2,14 @@
   <section id="fullpage-about">
     <div class="section section-story story-wrapper fp-auto-height-responsive">
       <div class="inner-contents">
-        <div class="person-wrapper hidden-en-tablet hidden-en-mobile">
+        <div
+          class="person-wrapper hidden-en-tablet hidden-en-mobile"
+          data-aos="fade-right"
+          data-aos-offset="0"
+          data-aos-duration="600"
+          data-aos-delay="400"
+          data-aos-anchor-placement="center-bottom"
+        >
           <div class="mission-image">
             <img
               src="/en/img/about_benji_shin.png"
@@ -16,7 +23,14 @@
             <span>CO-FOUNDER </span>
           </p>
         </div>
-        <div class="mission-contents">
+        <div
+          class="mission-contents"
+          data-aos="fade-up"
+          data-aos-offset="0"
+          data-aos-duration="600"
+          data-aos-delay="0"
+          data-aos-anchor-placement="center-bottom"
+        >
           <div class="title-wrapper">
             <h2>ABOUT US</h2>
             <div class="divider"></div>
@@ -107,7 +121,14 @@
       "
     >
       <div class="inner-contents">
-        <div class="person-wrapper">
+        <div
+          class="person-wrapper"
+          data-aos="fade-right"
+          data-aos-offset="0"
+          data-aos-duration="600"
+          data-aos-delay="400"
+          data-aos-anchor-placement="center-bottom"
+        >
           <div class="mission-image">
             <img
               src="/en/img/about_jamie_jeong.png"
@@ -121,7 +142,14 @@
             <span>CO-FOUNDER </span>
           </p>
         </div>
-        <div class="mission-contents">
+        <div
+          class="mission-contents"
+          data-aos="fade-up"
+          data-aos-offset="0"
+          data-aos-duration="600"
+          data-aos-delay="0"
+          data-aos-anchor-placement="bottom-bottom"
+        >
           <div class="title-wrapper">
             <h2>ABOUT US</h2>
             <div class="divider"></div>
@@ -149,7 +177,14 @@
       class="section section-story-3 story-wrapper fp-auto-height-responsive"
     >
       <div class="inner-contents">
-        <div class="mission-contents">
+        <div
+          class="mission-contents"
+          data-aos="fade-up"
+          data-aos-offset="0"
+          data-aos-duration="600"
+          data-aos-delay="0"
+          data-aos-anchor-placement="bottom-bottom"
+        >
           <div class="title-wrapper">
             <h2>OUR MISSION</h2>
             <div class="divider"></div>
@@ -178,7 +213,14 @@
             </p>
           </div>
         </div>
-        <div class="person-wrapper hidden-en-tablet hidden-en-mobile">
+        <div
+          class="person-wrapper hidden-en-tablet hidden-en-mobile"
+          data-aos="fade-left"
+          data-aos-offset="0"
+          data-aos-duration="800"
+          data-aos-delay="400"
+          data-aos-anchor-placement="center-bottom"
+        >
           <div class="mission-image">
             <img src="/en/img/about_hak_lee.png" alt="co-founder hak lee" />
           </div>
@@ -195,7 +237,14 @@
     <div
       class="section-person-wrapper hidden-en-desktop fp-auto-height-responsive"
     >
-      <div class="person-wrapper">
+      <div
+        class="person-wrapper"
+        data-aos="fade-up"
+        data-aos-offset="0"
+        data-aos-duration="800"
+        data-aos-delay="300"
+        data-aos-anchor-placement="center-bottom"
+      >
         <div class="person-image">
           <img src="/en/img/about_benji_shin.png" alt="co-founder benji shin" />
         </div>
@@ -206,7 +255,14 @@
           <span>CO-FOUNDER </span>
         </p>
       </div>
-      <div class="person-wrapper">
+      <div
+        class="person-wrapper"
+        data-aos="fade-up"
+        data-aos-offset="0"
+        data-aos-duration="800"
+        data-aos-delay="300"
+        data-aos-anchor-placement="center-bottom"
+      >
         <div class="person-image">
           <img
             src="/en/img/about_jamie_jeong.png"
@@ -220,7 +276,14 @@
           <span>CO-FOUNDER </span>
         </p>
       </div>
-      <div class="person-wrapper">
+      <div
+        class="person-wrapper"
+        data-aos="fade-up"
+        data-aos-offset="0"
+        data-aos-duration="600"
+        data-aos-delay="300"
+        data-aos-anchor-placement="center-bottom"
+      >
         <div class="person-image">
           <img src="/en/img/about_hak_lee.png" alt="co-founder hak lee" />
         </div>
@@ -242,6 +305,7 @@ import Store from '/Store/index'
 import Footer from '/Components/EN/Footer.vue'
 import Arrow from '/Components/EN/Arrow.vue'
 import CloseIcon from '/Components/EN/Icons/close.vue'
+import AOS from 'aos'
 
 import { useMeta } from 'vue-meta'
 

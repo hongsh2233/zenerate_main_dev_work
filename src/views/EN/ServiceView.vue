@@ -1,6 +1,6 @@
 <template>
   <section id="fullpage-pricing">
-    <div class="section section-pricing">
+    <div class="section section-pricing fp-auto-height-responsive">
       <div class="section-inner inner-pricing">
         <div class="pricing-wrapper">
           <div class="title-wrapper">
@@ -12,11 +12,10 @@
             <div
               class="service-wrapper"
               data-aos="zoom-in-up"
-              data-aos-offset="0"
+              data-aos-offset="-1500"
               data-aos-delay="300"
-              data-aos-duration="500"
-              data-aos-once="true"
-              data-aos-mirror="false"
+              data-aos-duration="600"
+              data-aos-anchor-placement="top-bottom"
             >
               <h2 class="service-title">WEB</h2>
               <h5 class="service-subtitle">
@@ -76,11 +75,10 @@
             <div
               class="service-wrapper consulting-wrapper"
               data-aos="zoom-in-up"
-              data-aos-offset="0"
+              data-aos-offset="-1500"
               data-aos-delay="500"
-              data-aos-duration="500"
-              data-aos-once="true"
-              data-aos-mirror="false"
+              data-aos-duration="600"
+              data-aos-anchor-placement="top-bottom"
             >
               <h2 class="service-title">CONSULTING</h2>
               <h5 class="service-subtitle">
@@ -130,11 +128,12 @@
   </section>
 </template>
 <script lang="ts" setup>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
 import Store from '/Store/index'
 import { useRouter } from 'vue-router'
 import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
+import AOS from 'aos'
 
 const fullpage = computed(() => Store.state.root.FullPage)
 const router = useRouter()
@@ -146,11 +145,11 @@ onMounted(() => {
   //   navigation: false,
   // })
 
-  setTimeout(() => {
-    document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
-      doc.classList.add('aos-animate')
-    })
-  }, 0)
+  // setTimeout(() => {
+  //   document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
+  //     doc.classList.add('aos-animate')
+  //   })
+  // }, 0)
 })
 
 const pricing_plan = ref({
@@ -391,7 +390,7 @@ const { meta } = useMeta({
     width: 100%;
     justify-content: center;
     min-width: 280px;
-    max-width: 360px;
+    max-width: 320px;
     margin: 0px 0px 40px;
 
     &:last-child {
@@ -676,7 +675,7 @@ const { meta } = useMeta({
     padding: 40px 0px;
     border-radius: 20px;
     background-color: white;
-    box-shadow: 0px 4px 8px rgba(142, 141, 208, 0.16);
+    box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
 
     @include en-mobile {
       min-width: 272px;
