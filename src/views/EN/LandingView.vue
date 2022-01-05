@@ -5,9 +5,10 @@
         <div
           class="inner-contents landing-contents"
           data-aos="fade-up"
-          data-aos-offset="00"
-          data-aos-delay="100"
-          data-aos-duration="400"
+          data-aos-offset="-1500"
+          data-aos-delay="300"
+          data-aos-duration="600"
+          data-aos-anchor-placement="top-bottom"
         >
           <div class="content-heading">
             <p>Zenerate™</p>
@@ -38,7 +39,7 @@
             <a href="https://app.zenerate.ai" target="_blank">GO EXPLORE</a>
           </div>
         </div>
-        <div class="arrow-bottom only-en-desktop">
+        <div class="arrow-bottom">
           <Arrow />
         </div>
       </div>
@@ -53,10 +54,10 @@
           <div
             class="engine-contents"
             data-aos="fade-up"
-            data-aos-offset="-200"
-            data-aos-delay="200"
-            data-aos-duration="500"
-            data-aos-anchor-placement="bottom-bottom"
+            data-aos-offset="-1500"
+            data-aos-delay="500"
+            data-aos-duration="600"
+            data-aos-anchor-placement="top-bottom"
           >
             <div class="content-heading">
               <p>
@@ -131,17 +132,17 @@
                 <div class="content-inner">
                   <p class="content-number">ONE</p>
                   <p class="content-numbering-text">
-                    Type in your site address or click on a site.
+                    Type in your site address<br />
+                    or click on a site.
                   </p>
                 </div>
                 <div class="content-inner">
                   <p class="content-number">TWO</p>
                   <p class="content-numbering-text">
-                    Verify the instant result through platform.
+                    Verify the instant result<br />
+                    through platform.
                   </p>
                 </div>
-
-                <p></p>
               </div>
             </div>
             <!-- <button
@@ -175,7 +176,7 @@
           <Arrow />
         </div>
       </div>
-      <div class="background-image">
+      <div class="background-image background-map">
         <div
           class="instant-search-image only-en-desktop"
           data-aos="fade-up"
@@ -271,7 +272,8 @@
             <div class="content-heading">
               <p>
                 <strong
-                  >Use our platform to compare & pick the best solution
+                  >Use our platform to&nbsp;<span>compare&nbsp;</span>
+                  <span>& pick&nbsp;</span>the best solution
                 </strong>
               </p>
             </div>
@@ -279,7 +281,7 @@
               <p>
                 Or go with the most optimized,<br />
                 profitable solution generated<br />
-                by our powerful AI engine
+                by our powerful AI engine.
               </p>
             </div>
           </div>
@@ -358,8 +360,8 @@
             <div class="partners-item fake"></div>
           </div>
         </div>
-        <div class="background-image"></div>
       </div>
+      <div class="background-image background-map"></div>
     </div>
     <div class="section section-footer fp-auto-height">
       <Footer />
@@ -410,9 +412,6 @@ const toContactForm = () => {
 }
 
 .background-image {
-  // background-image: url('/en/img/landing_map.jpg');
-  // background-size: cover;
-  // background-repeat: no-repeat;
   @include absolute(left 0 top 0);
   width: 100%;
   height: 100%;
@@ -423,6 +422,15 @@ const toContactForm = () => {
     background-size: contain;
     background-repeat: no-repeat;
     background-position-y: center;
+  }
+
+  &.background-map {
+    @include en-desktop {
+      background-image: url('/en/img/landing_map.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   @include en-mobile {
@@ -572,6 +580,11 @@ const toContactForm = () => {
 .section-engine {
   // background: rgba(0, 0, 5, 0.88);
   .section-inner {
+    @include en-desktop {
+      max-width: 80%;
+      min-width: 1200px;
+      width: 100%;
+    }
     @include en-tablet {
       padding-bottom: 50px;
     }
@@ -671,13 +684,13 @@ const toContactForm = () => {
           width: 100%;
           text-align: center;
           flex: none;
-          margin-bottom: 56px;
+          margin-bottom: 60px;
         }
         @include en-mobile {
           width: 100%;
           text-align: center;
           flex: none;
-          margin-bottom: 56px;
+          margin-bottom: 32px;
         }
       }
     }
@@ -697,19 +710,24 @@ const toContactForm = () => {
 }
 .section-instant-search {
   .section-inner {
+    @include en-desktop {
+      max-width: 80%;
+      min-width: 1200px;
+      width: 100%;
+    }
     @include en-tablet {
-      padding: 50px 10px 50px;
+      padding: 70px 10px 50px;
     }
 
     @include en-mobile {
-      padding: 40px 10px 40px;
+      padding: 60px 10px 40px;
     }
   }
   .instant-search-wrapper {
     @include vertical-center;
     @include flex($justify: space-between);
     width: 100%;
-    height: fit-content;
+    height: auto;
     margin: auto 0px;
 
     @include en-desktop {
@@ -738,15 +756,21 @@ const toContactForm = () => {
       }
       @include en-tablet {
         width: 100%;
-        margin-bottom: 80px;
+        margin-bottom: 60px;
 
         .content-heading {
           margin-bottom: 40px;
         }
+
+        .content-text {
+          p {
+            display: inline-block;
+          }
+        }
       }
       @include en-mobile {
         width: 100%;
-        margin-bottom: 80px;
+        margin-bottom: 36px;
 
         .content-heading {
           margin-bottom: 36px;
@@ -775,14 +799,21 @@ const toContactForm = () => {
           align-items: flex-start;
         }
         .content-inner {
-          @include vertical-center();
+          @include relative;
+          @include flex();
           align-items: center;
 
           @include en-desktop {
             @include flex();
           }
 
+          @include en-tablet {
+            @include flex();
+          }
+
           @include en-mobile {
+            margin-left: 34%;
+
             &:first-child {
               margin-bottom: 30px;
             }
@@ -805,7 +836,12 @@ const toContactForm = () => {
             @include en-desktop {
               margin-right: 40px;
             }
+            @include en-tablet {
+              margin-right: 40px;
+              margin-bottom: 0px;
+            }
             @include en-mobile {
+              @include absolute(top -5px left -85%);
               margin-bottom: 20px;
             }
           }
@@ -817,10 +853,18 @@ const toContactForm = () => {
               max-width: 243px;
             }
 
+            @include en-tablet {
+              @include regular(14);
+              width: 180px;
+              line-height: 17.5px;
+              text-align: left;
+            }
+
             @include en-mobile {
-              @include regular(16);
-              max-width: 200px;
-              line-height: 20px;
+              @include regular(14);
+              width: 170px;
+              line-height: 17.5px;
+              text-align: left;
             }
           }
         }
@@ -865,17 +909,19 @@ const toContactForm = () => {
     .instant-search-image {
       @include flex($justify: center);
       @include relative;
-      margin: auto 0px;
-      width: 100%;
+      @include elevation-5;
+      margin: 0px;
+      width: auto;
       margin-right: 34px;
+      border-radius: 10px;
       .outer {
-        @include elevation-5;
         width: auto;
         height: 264px;
+        border-radius: 10px;
 
         @include en-mobile {
-          width: fit-content;
-          margin: 0px auto;
+          width: auto;
+          margin: 0px;
         }
       }
 
@@ -884,7 +930,7 @@ const toContactForm = () => {
         margin: auto;
       }
       @include en-mobile {
-        width: 100%;
+        width: auto;
         margin: 0px auto;
         overflow-x: hidden;
       }
@@ -892,18 +938,34 @@ const toContactForm = () => {
   }
 
   .background-image {
+    &.background-map {
+      @include en-tablet {
+        background-image: url('/en/img/landing_map.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      @include en-mobile {
+        background-image: url('/en/img/landing_map.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
     .instant-search-image {
       position: absolute;
-      top: 27%;
-      left: 0px;
-      width: 100%;
+      top: 50%;
+      left: 50%;
+      width: auto;
       height: auto;
+      transform: translate(-110%, -43%);
 
       .outer {
         @include elevation-5;
         object-fit: cover;
         object-position: right;
-        width: 558px;
+        width: auto;
         height: 500px;
         border-radius: 10px;
 
@@ -918,12 +980,17 @@ const toContactForm = () => {
 }
 .section-generation {
   .section-inner {
+    @include en-desktop {
+      max-width: 80%;
+      min-width: 1200px;
+      width: 100%;
+    }
     @include en-tablet {
-      padding: 50px 10px 50px;
+      padding: 70px 10px 50px;
     }
 
     @include en-mobile {
-      padding: 40px 10px 40px;
+      padding: 60px 10px 40px;
     }
   }
   .generation-contents {
@@ -935,25 +1002,26 @@ const toContactForm = () => {
 
     .content-left {
       @include vertical-center;
-      margin: auto 0px;
-      width: 536px;
+      @include elevation-5;
+      width: auto;
       height: 100%;
-      margin-right: 40px;
+      margin: auto 0px auto 0px;
+      border-radius: 10px;
+      overflow-x: hidden;
       .left-img {
         @include relative;
         @include flex($justify: center);
-        @include elevation-5;
-        width: fit-content;
+        width: auto;
         height: auto;
         margin: auto;
-        overflow-x: hidden;
 
         .img-map {
           width: auto;
           height: 264px;
+          border-radius: 10px;
 
           @include en-mobile {
-            width: fit-content;
+            width: auto;
             margin: 0px auto;
             margin-left: 6px;
           }
@@ -985,6 +1053,7 @@ const toContactForm = () => {
       }
       @include en-tablet {
         width: 100%;
+        margin-bottom: 36px;
         .content-text {
           p:last-child {
             max-width: 268px;
@@ -994,6 +1063,7 @@ const toContactForm = () => {
       }
       @include en-mobile {
         width: 100%;
+        margin-bottom: 12px;
 
         .content-heading {
           p {
@@ -1005,6 +1075,11 @@ const toContactForm = () => {
             max-width: 268px;
             margin: auto;
           }
+          p {
+            span {
+              font-weight: 600;
+            }
+          }
         }
       }
     }
@@ -1013,19 +1088,22 @@ const toContactForm = () => {
   .background-image {
     .content-left {
       position: absolute;
-      top: 27%;
-      left: 0px;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      height: auto;
+      transform: translate(-110%, -43%);
       .left-img {
         @include relative;
         @include flex($justify: center);
-        width: 100%;
+        width: auto;
         height: auto;
 
         .img-map {
           @include elevation-5;
           object-fit: cover;
           object-position: right;
-          width: 558px;
+          width: auto;
           height: 500px;
           border-radius: 10px;
 
@@ -1041,13 +1119,21 @@ const toContactForm = () => {
 }
 
 .section-compare {
+  .inner-contents {
+    padding-left: 0px;
+  }
   .section-inner {
+    @include en-desktop {
+      max-width: 80%;
+      min-width: 1200px;
+      width: 100%;
+    }
     @include en-tablet {
-      padding: 50px 10px 100px;
+      padding: 70px 10px 100px;
     }
 
     @include en-mobile {
-      padding: 40px 10px 80px;
+      padding: 60px 10px 80px;
     }
   }
   .compare-contents {
@@ -1057,13 +1143,16 @@ const toContactForm = () => {
     margin: auto 0px;
     .compare-image {
       @include vertical-center;
-      width: 100%;
+      @include elevation-5;
+      width: auto;
       max-width: 540px;
       align-items: center;
+      border-radius: 10px;
+
       img {
-        @include elevation-5;
-        width: fit-content;
+        width: auto;
         height: 264px;
+        border-radius: 10px;
       }
       @include en-tablet {
         margin: 0px auto;
@@ -1071,7 +1160,7 @@ const toContactForm = () => {
       }
       @include en-mobile {
         margin: 0px auto;
-        max-width: 90%;
+        overflow-x: hidden;
       }
     }
     .compare-text {
@@ -1083,7 +1172,7 @@ const toContactForm = () => {
         margin-bottom: 32px;
 
         @include en-desktop {
-          max-width: 318px;
+          max-width: 324px;
         }
 
         @include en-tablet {
@@ -1107,14 +1196,14 @@ const toContactForm = () => {
         width: 100%;
         text-align: center;
         margin-right: 0;
-        margin-bottom: 48px;
+        margin-bottom: 60px;
         align-items: center;
       }
       @include en-mobile {
         width: 100%;
         text-align: center;
         margin-right: 0;
-        margin-bottom: 48px;
+        margin-bottom: 36px;
         align-items: center;
       }
     }
@@ -1123,16 +1212,17 @@ const toContactForm = () => {
   .background-image {
     .compare-image {
       position: absolute;
-      top: 27%;
-      right: 0px;
+      top: 50%;
+      right: 50%;
       width: auto;
       height: auto;
+      transform: translate(90%, -43%);
 
       img {
         @include elevation-5;
         object-fit: cover;
         object-position: right;
-        width: 558px;
+        width: auto;
         height: 500px;
         border-radius: 10px;
       }
@@ -1298,7 +1388,7 @@ const toContactForm = () => {
         }
       }
     }
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 
     @include en-tablet {
       grid-template-columns: repeat(2, 1fr);

@@ -110,7 +110,6 @@ const currentComponent = computed(() => {
 })
 </script>
 <style lang="scss">
-
 .fold-inner {
   overflow: hidden;
   width: 100%;
@@ -122,7 +121,7 @@ const currentComponent = computed(() => {
     height: 100%;
   }
   @include mobile {
-    height: 680px;
+    height: 724px;
   }
   .fold-item {
     height: 100%;
@@ -203,13 +202,13 @@ const currentComponent = computed(() => {
       width: 100%;
       padding: 24px;
       @include absolute(left 0 top 304px);
-      height: 580px;
+      height: 640px;
     }
     @include mobile {
       width: 100%;
       padding: 12px;
       @include absolute(left 0 top 200px);
-      height: 500px;
+      height: 510px;
     }
 
     &.program .item-header .header-item.active {

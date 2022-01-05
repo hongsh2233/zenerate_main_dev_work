@@ -11,12 +11,14 @@
             data-aos-anchor-placement="top-center"
           >
             <div class="main-sub-title">
-              <span>Build your life with</span>
-              <img src="/img/logo.webp" alt="" />
+              <p>Build your life <span>with us</span></p>
+              <!-- <img src="/img/logo.webp" alt="" /> -->
             </div>
             <p class="main-content">
-              ​Join Zenerate as we innovate architectural planning and improve
-              living standards for your communities.
+              <span>Join Zenerate as we innovate architectural planning</span>
+              ​<span>and improve</span> ​<span> living standards</span> ​<span
+                >for your communities.</span
+              >
             </p>
           </div>
         </div>
@@ -233,16 +235,25 @@ const { meta } = useMeta({
   background-size: cover;
   background-position: top;
   .inner-main {
-    padding: 0px 60px;
+    padding: 0px 40px;
     @include en-tablet {
-      padding: 0px 24px;
+      padding: 0px 34px;
       max-width: 100%;
       text-align: center;
       .main-sub-title {
         justify-content: center;
+        p {
+          @include regular(36);
+          span {
+            @include semi-bold(36);
+          }
+        }
       }
       .main-content {
+        max-width: 660px;
+        width: 100%;
         margin: 0px auto;
+        line-height: 23px;
       }
     }
     @include en-mobile {
@@ -251,21 +262,35 @@ const { meta } = useMeta({
       text-align: center;
 
       .main-sub-title {
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
 
-        span {
-          @include regular(30);
+        p {
+          @include regular(24);
+          span {
+            @include semi-bold(24);
+          }
         }
+      }
+      .main-content {
+        max-width: 200px;
+        margin: auto;
       }
     }
   }
 
   .main-wrapper {
     @include vertical-center;
+    width: 100%;
     height: 450px;
     color: white;
     margin: 0 auto;
     position: relative;
+
+    @include en-tablet {
+      margin: 0px;
+    }
     .main-title {
       @include bold(36);
       font-weight: 500;
@@ -273,25 +298,41 @@ const { meta } = useMeta({
     }
     .main-sub-title {
       @include flex($dir: row);
-      span {
-        @include regular(28);
+      p {
+        @include regular(40);
         margin-right: 10px;
         line-height: 50px;
+        span {
+          @include semi-bold(40);
+        }
       }
       img {
+        width: 200px;
         height: 50px;
+      }
+
+      @include en-tablet {
+        justify-content: flex-start;
+        align-items: flex-end;
+        span {
+          @include regular(20);
+        }
       }
     }
     .main-content {
-      @include regular(21);
-      padding-top: 48px;
-      width: 545px;
+      @include regular(18);
+      padding-top: 28px;
+      max-width: 600px;
       @include en-tablet {
-        max-width: 100%;
+        max-width: 600px;
+        margin: 0px;
+        text-align: left;
+        span {
+          @include regular(16);
+        }
       }
       @include en-mobile {
-        @include regular(18);
-        max-width: 100%;
+        @include regular(14);
       }
     }
   }

@@ -705,6 +705,7 @@ const { meta } = useMeta({
         }
         img {
           width: 124px;
+          height: 124px;
           margin-right: 28px;
           object-fit: contain;
           @include tablet {
@@ -1041,10 +1042,10 @@ const { meta } = useMeta({
             }
             &.left {
               position: relative;
-              left: 20%;
+              left: 10%;
             }
             &.right {
-              left: -20%;
+              left: -10%;
             }
           }
         }
@@ -1071,6 +1072,9 @@ const { meta } = useMeta({
       height: 240px;
     }
   }
+  @include mobile {
+    padding: 0px 0px 80px 0px;
+  }
   .team-contents {
     .contents-title {
       @include bold(40);
@@ -1084,8 +1088,12 @@ const { meta } = useMeta({
       }
     }
     .contents-tab-wrapper {
+      @include flex();
       margin-bottom: 40px;
-      @include flex;
+
+      @include mobile {
+        justify-content: space-between;
+      }
       .contents-tab {
         width: 100px;
         text-align: center;
@@ -1096,7 +1104,7 @@ const { meta } = useMeta({
           padding-bottom: 8px;
         }
         @include mobile {
-          width: 60px;
+          width: 20%;
           font-size: 12px;
         }
       }

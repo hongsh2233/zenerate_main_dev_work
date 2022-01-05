@@ -1,6 +1,6 @@
 <template>
   <section id="fullpage-case-studies">
-    <div class="section section-case-studies fp-auto-height-responsive">
+    <div class="section section-case-studies">
       <div class="section-inner inner-case-studies">
         <div class="case-studies-wrapper">
           <div class="title-wrapper">
@@ -21,21 +21,14 @@
 
           <div class="case-wrapper">
             <div
-              class="case aos"
-              data-aos="zoom-in-up"
-              data-aos-offset="-1500"
+              class="case"
+              data-aos="fade-up"
+              data-aos-offset="-700"
               data-aos-delay="300"
               data-aos-duration="600"
               data-aos-anchor-placement="top-bottom"
             >
-              <video
-                src="/en/case_study_highrise.mp4"
-                width="540px"
-                height="540px"
-                loop
-                autoplay
-                muted
-              ></video>
+              <img src="/en/case_study_highrise.gif" />
 
               <div class="text-wrapper">
                 <p class="text-title">High-rise Residential Condominium</p>
@@ -55,15 +48,15 @@
             </div>
             <div
               class="case"
-              data-aos="zoom-in-up"
-              data-aos-offset="-1500"
+              data-aos="fade-up"
+              data-aos-offset="-700"
               data-aos-delay="500"
               data-aos-duration="600"
               data-aos-anchor-placement="top-bottom"
             >
               <img
-                data-src="/en/img/service_why.png"
-                src="/en/img/service_why.png"
+                data-src="/en/img/service_why2.jpg"
+                src="/en/img/service_why2.jpg"
                 alt="USC Village Residential Project"
               />
               <div class="text-wrapper">
@@ -100,11 +93,12 @@ import Arrow from '/Components/EN/Arrow.vue'
 const fullpage = computed(() => Store.state.root.FullPage)
 onMounted(() => {
   fullpage.value.destroy()
-
   // setTimeout(() => {
-  //   document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
-  //     doc.classList.add('aos-animate')
-  //   })
+  //   document
+  //     .querySelectorAll('.fp-table.active .aos-init')
+  //     .forEach((doc: HTMLElement) => {
+  //       doc.classList.add('aos-animate')
+  //     })
   // }, 0)
 })
 
@@ -250,6 +244,7 @@ const { meta } = useMeta({
           width: 100%;
           height: 360px;
           object-fit: cover;
+          object-position: top;
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
         }
@@ -260,10 +255,14 @@ const { meta } = useMeta({
           object-fit: cover;
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
+          pointer-events: none;
+        }
+
+        video::-webkit-media-controls-start-playback-button {
+          display: none;
         }
 
         &:last-child {
-          margin-top: 80px;
           margin-left: 68px;
         }
 

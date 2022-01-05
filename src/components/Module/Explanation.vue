@@ -22,7 +22,6 @@ const { locale } = useI18n()
 </script>
 
 <style lang="scss" scoped>
-
 .explanation-inner {
   width: 100%;
   height: 100%;

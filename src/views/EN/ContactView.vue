@@ -312,9 +312,11 @@ const { meta } = useMeta({
       width: 100%;
     }
     @include en-tablet {
+      padding-top: 40px;
       margin-bottom: 540px;
     }
     @include en-mobile {
+      padding-top: 40px;
       margin-bottom: 540px;
     }
     .hero-text-wrapper {
@@ -324,9 +326,22 @@ const { meta } = useMeta({
         color: white;
         &.title {
           @include medium(36);
+
+          @include en-tablet {
+            @include medium(30);
+          }
+          @include en-mobile {
+            @include medium(24);
+          }
         }
         &.text {
           @include regular(24);
+          @include en-tablet {
+            @include regular(20);
+          }
+          @include en-mobile {
+            @include regular(16);
+          }
         }
       }
       @include en-tablet-big {
@@ -354,15 +369,18 @@ const { meta } = useMeta({
     left: 50%;
     transform: translateX(-50%);
     @include en-tablet-big {
+      top: 190px;
       width: 940px;
       height: auto;
     }
     @include en-tablet-small {
+      top: 190px;
       width: 620px;
       height: auto;
     }
     @include en-mobile {
-      width: calc(100% - 30px);
+      top: 168px;
+      width: calc(100% - 40px);
       height: auto;
     }
     .contact-form-success {

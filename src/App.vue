@@ -40,12 +40,12 @@ const { meta } = useMeta({
 const metadata = useActiveMeta()
 
 onMounted(() => {
-  AOS.init({ once: true })
-  // setTimeout(() => {
-  //   document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
-  //     doc.classList.remove('aos-animate')
-  //   })
-  // }, 0)
+  AOS.init()
+  setTimeout(() => {
+    document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
+      doc.classList.remove('aos-animate')
+    })
+  }, 0)
   window.addEventListener('load', AOS.refresh)
 })
 </script>

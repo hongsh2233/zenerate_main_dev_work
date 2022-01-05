@@ -142,13 +142,13 @@ const router = useRouter()
     margin: 0px auto;
     @include desktop {
       width: 1280px;
-      padding: 0px 56px;
+      padding: 0px 50px;
     }
     @include tablet {
-      padding: 0px 32px;
+      padding: 0px 17px;
     }
     @include mobile {
-      padding: 0px 28px;
+      padding: 0px 11px;
     }
     .header-logo {
       margin: auto 12px;
@@ -168,7 +168,7 @@ const router = useRouter()
       @include mobile {
         width: 180px;
         height: 40px;
-        margin: 6px 0px 2px 12px;
+        margin: 12px 0px 2px 20px;
         .logo {
           width: 18px;
         }
@@ -217,6 +217,9 @@ const router = useRouter()
       align-items: center;
       margin: auto 12px;
       padding: 16px 0px;
+      @include tablet {
+        padding: 8px 0px;
+      }
       @include mobile {
         padding: 4px 0px 0px;
       }

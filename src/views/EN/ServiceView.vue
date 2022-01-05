@@ -11,7 +11,7 @@
           <div class="pricing-contents">
             <div
               class="service-wrapper"
-              data-aos="zoom-in-up"
+              data-aos="fade-up"
               data-aos-offset="-1500"
               data-aos-delay="300"
               data-aos-duration="600"
@@ -74,7 +74,7 @@
             </div>
             <div
               class="service-wrapper consulting-wrapper"
-              data-aos="zoom-in-up"
+              data-aos="fade-up"
               data-aos-offset="-1500"
               data-aos-delay="500"
               data-aos-duration="600"
@@ -144,12 +144,6 @@ onMounted(() => {
   //   offsetSections: false,
   //   navigation: false,
   // })
-
-  // setTimeout(() => {
-  //   document.querySelectorAll('.aos-init').forEach((doc: HTMLElement) => {
-  //     doc.classList.add('aos-animate')
-  //   })
-  // }, 0)
 })
 
 const pricing_plan = ref({
@@ -377,7 +371,7 @@ const { meta } = useMeta({
   height: auto;
 
   &:last-child {
-    margin: 80px 0px 0px 60px;
+    margin: 0px 0px 0px 60px;
   }
 
   @include en-tablet {
