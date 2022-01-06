@@ -41,12 +41,11 @@ const toggleDrawer = (flag = undefined) => {
 <style lang="scss">
 .layout-en {
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .layout-en,
 .layout-en * {
-  font-family: 'Roboto', sans-serif !important;
-  // line-height: 125% !important;
-  // letter-spacing: -0.015em;
+  font-family: 'Inter', 'Roboto', sans-serif !important;
 }
 </style>

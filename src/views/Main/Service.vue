@@ -66,15 +66,15 @@ const { meta } = useMeta({
     },
   ],
   htmlAttrs: { lang: 'ko' },
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/service' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/service' }],
   og: {
-    url: 'https://zenerate.ai/kr/main/service',
+    url: 'https://www.zenerate.ai/kr/main/service',
     type: 'website',
     title: '서비스 | 제너레잇',
     description: `제너레잇은 컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.`,
     tags: '제너레잇',
     keywords: '제너레잇',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title: '서비스 | 제너레잇',

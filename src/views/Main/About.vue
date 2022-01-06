@@ -465,15 +465,15 @@ const { meta } = useMeta({
         '제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/about' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/about' }],
   og: {
-    url: 'https://zenerate.ai/kr/main/about',
+    url: 'https://www.zenerate.ai/kr/main/about',
     type: 'website',
     title: '회사소개 | 제너레잇',
     description: `제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.`,
     tags: '제너레잇',
     keywords: '제너레잇',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title: '회사소개 | 제너레잇',
@@ -705,6 +705,7 @@ const { meta } = useMeta({
         }
         img {
           width: 124px;
+          height: 124px;
           margin-right: 28px;
           object-fit: contain;
           @include tablet {
@@ -1041,10 +1042,10 @@ const { meta } = useMeta({
             }
             &.left {
               position: relative;
-              left: 20%;
+              left: 10%;
             }
             &.right {
-              left: -20%;
+              left: -10%;
             }
           }
         }
@@ -1071,6 +1072,9 @@ const { meta } = useMeta({
       height: 240px;
     }
   }
+  @include mobile {
+    padding: 0px 0px 80px 0px;
+  }
   .team-contents {
     .contents-title {
       @include bold(40);
@@ -1084,8 +1088,12 @@ const { meta } = useMeta({
       }
     }
     .contents-tab-wrapper {
+      @include flex();
       margin-bottom: 40px;
-      @include flex;
+
+      @include mobile {
+        justify-content: space-between;
+      }
       .contents-tab {
         width: 100px;
         text-align: center;
@@ -1096,7 +1104,7 @@ const { meta } = useMeta({
           padding-bottom: 8px;
         }
         @include mobile {
-          width: 60px;
+          width: 20%;
           font-size: 12px;
         }
       }

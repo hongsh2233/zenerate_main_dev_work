@@ -1,7 +1,9 @@
 <template>
-<div class="icon-menu hover-pointer" @click="toggle()">
-  <i class="icon-menu-inner material-icons">menu</i>
-</div>
+  <div class="icon-menu hover-pointer" @click="toggle()">
+    <i class="icon-menu-inner material-icons">{{
+      showDrawer ? 'close' : 'menu'
+    }}</i>
+  </div>
   <!-- <div
     class="icon-menu hover-pointer"
     :style="{ width: `${props.width}px`, height: `${props.height}px` }"
@@ -15,7 +17,7 @@
   </div> -->
 </template>
 <script lang="ts" setup>
-import { defineProps, defineEmit, computed } from 'vue'
+import { computed, ref } from 'vue'
 const props = defineProps({
   width: {
     type: Number,
@@ -29,9 +31,13 @@ const props = defineProps({
       return 24
     },
   },
+  showDrawer: Boolean,
 })
-const emit = defineEmit(['toggle'])
-const toggle = () => emit('toggle', null)
+const emit = defineEmits(['toggle'])
+const toggle = () => {
+  emit('toggle', null)
+}
+const showDrawer = computed(() => props.showDrawer)
 
 const barHeight = computed(() => {
   return Math.floor((props.height / 2 / 12) * 2)
@@ -43,18 +49,23 @@ const barHeight = computed(() => {
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 25% 12.5%;
-  color: $cr-main-core;
+  color: $black;
   font-size: 28px;
+
+  @include en-tablet {
+    padding: 10px 40px;
+  }
+  @include en-mobile {
+    padding: 10px 20px;
+  }
   .menu {
     width: 100%;
     &:last-child {
       margin-bottom: 0;
     }
-    background-color: $cr-text-black;
+    background-color: $black;
     transition: width 0.3s ease;
     margin-left: auto;
-
   }
   &:hover {
     .menu-3 {

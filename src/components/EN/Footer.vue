@@ -45,7 +45,7 @@
             >Privacy Policy</a
           >
           <div class="sns-wrapper">
-            <p class="copyright">©Zenerate, Inc. 2021. All rights reserved</p>
+            <p class="copyright">©Zenerate,Inc. 2021. All rights reserved</p>
             <div class="footer-sns">
               <a
                 href="https://www.linkedin.com/company/zenerate"
@@ -98,44 +98,66 @@ const router = useRouter()
   background-color: #fafafc;
   padding-top: 52px;
   padding-bottom: 28px;
+  height: 500px !important;
+
+  @include en-tablet {
+    height: 580px !important;
+  }
+  @include en-mobile {
+    height: 580px !important;
+  }
+
   .footer-wrapper {
-    @include container;
-    padding-top: 0 !important;
+    background-color: #fafafc;
+    width: 100%;
+    height: 500px !important;
+    margin: auto 0px;
+    padding: 0px 100px;
 
     @include en-tablet {
-      width: auto;
+      width: 100%;
+      height: 580px !important;
       margin-right: 50px;
+      padding: 0px 48px;
     }
     @include en-mobile {
+      width: 100%;
+      height: 580px !important;
       margin-right: 0px;
+      padding: 0px 24px;
     }
     .footer-inner {
-      padding: 0px 0px 0px 60px;
       .footer-contents-wrapper {
-        @include flex();
+        @include flex($justify: space-between);
+        width: 100%;
         margin-bottom: 108px;
 
         @include en-tablet {
-          justify-content: space-between;
           width: 100%;
         }
         @include en-mobile {
-          justify-content: space-between;
           width: 100%;
           margin-bottom: 40px;
         }
         .footer-locations {
           @include flex();
+
           margin-right: 120px;
-          padding-right: 130px;
+          margin-bottom: 40px;
 
           @include en-tablet {
-            margin-right: 20px;
+            width: 100%;
+            margin-right: 0px;
+            margin-bottom: 40px;
             padding-right: 0px;
+            border-bottom: 1px solid rgba(22, 22, 22, 0.5);
           }
           @include en-mobile {
+            width: 100%;
             margin-right: 0px;
+            margin-bottom: 32px;
             padding-right: 0px;
+            border-bottom: 1px solid rgba(22, 22, 22, 0.5);
           }
 
           .footer-location {
@@ -145,7 +167,7 @@ const router = useRouter()
               margin-bottom: 0;
             }
             @include en-tablet {
-              margin-bottom: 32px;
+              margin-bottom: 40px;
             }
             @include en-mobile {
               @include flex();
@@ -162,9 +184,9 @@ const router = useRouter()
             p.title {
               @include bold(16);
               width: 100px;
-              margin-right: 80px;
+              margin-right: 74px;
               margin-bottom: 72px;
-              color: $cr-text-grey;
+              color: $text-grey;
 
               &.main-title {
                 color: #161616;
@@ -178,13 +200,13 @@ const router = useRouter()
             @include en-tablet {
               p.title {
                 margin-bottom: 12px;
-                margin-right: 80px;
+                margin-right: 74px;
               }
               &.location-title {
                 margin-bottom: 0;
                 p.title {
                   margin-bottom: 8px;
-                  margin-right: 80px;
+                  margin-right: 74px;
                 }
               }
             }
@@ -193,13 +215,13 @@ const router = useRouter()
                 @include bold(14);
                 width: 70px;
                 margin-bottom: 0px;
-                margin-right: 8px;
+                margin-right: 24px;
               }
               &.location-title {
                 margin-bottom: 0;
                 p.title {
                   margin-bottom: 8px;
-                  margin-right: 8px;
+                  margin-right: 24px;
                 }
               }
               p.content {
@@ -213,14 +235,14 @@ const router = useRouter()
 
           .contact-title {
             width: 100px;
-            margin-right: 80px;
+            margin-right: 74px;
             color: #161616;
           }
           p {
             @include bold(16);
             line-height: 24px;
             margin-bottom: 24px;
-            color: $cr-text-grey;
+            color: $text-grey;
             cursor: default;
           }
           a {
@@ -232,7 +254,7 @@ const router = useRouter()
           @include en-tablet {
             margin-top: 0px;
             .contact-title {
-              margin-right: 80px;
+              margin-right: 74px;
             }
           }
           @include en-mobile {
@@ -241,11 +263,14 @@ const router = useRouter()
             .contact-title {
               @include bold(14);
               width: 70px;
-              margin-right: 8px;
+              margin-right: 24px;
             }
             p {
               @include regular(14);
               margin-bottom: 0;
+            }
+            a {
+              @include regular(14);
             }
           }
         }
@@ -279,7 +304,7 @@ const router = useRouter()
           flex-direction: column;
           align-items: flex-start;
           top: 20px;
-          height: 100px;
+          height: 116px;
           .copyright {
             @include regular(14);
             margin-bottom: 32px;
@@ -292,7 +317,7 @@ const router = useRouter()
         @include flex($justify: center);
         align-items: center;
         width: 100%;
-        margin-bottom: 88px;
+        margin-bottom: 80px;
         z-index: 9;
         .term {
           @include regular(16);
@@ -314,7 +339,7 @@ const router = useRouter()
           justify-content: flex-start;
           align-items: flex-start;
           margin-bottom: 0px;
-          margin-bottom: 160px;
+          margin-bottom: 112px;
 
           .term {
             @include regular(14);
@@ -324,10 +349,6 @@ const router = useRouter()
             }
           }
         }
-      }
-
-      @include en-mobile {
-        padding: 0px 20px;
       }
     }
   }

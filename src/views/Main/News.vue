@@ -94,15 +94,15 @@ const { meta } = useMeta({
       content: '제너레잇의 최신 소식을 확인하세요.',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/news' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/news' }],
   og: {
-    url: 'https://zenerate.ai/kr/main/news',
+    url: 'https://www.zenerate.ai/kr/main/news',
     type: 'website',
     title: '새소식 | 제너레잇',
     description: `제너레잇의 최신 소식을 확인하세요.`,
     tags: '제너레잇',
     keywords: '제너레잇',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title: '새소식 | 제너레잇',

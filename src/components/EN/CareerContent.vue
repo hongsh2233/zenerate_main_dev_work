@@ -1267,7 +1267,7 @@
 </template>
 
 <script setup>
-import { ref, defineEmit, defineProps, onMounted, computed } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import Store from '/Store/index'
 import CAREERS from '../../constants/careers.ts'
 const fp = computed(() => Store.state.root.FullPage)
@@ -1280,7 +1280,7 @@ onMounted(() => {
 
   // })
 })
-const emit = defineEmit(['onSelect'])
+const emit = defineEmits(['onSelect'])
 const onSelect = (value) => {
   console.log(value)
   emit('onSelect', value)
@@ -1448,7 +1448,7 @@ const goToApply = () => {
     }
 
     .email-highlight {
-      color: $cr-main-core;
+      color: $main-core;
     }
   }
 }

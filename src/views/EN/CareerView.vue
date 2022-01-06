@@ -1,16 +1,24 @@
 <template>
   <div id="fullpage-career">
-    <section class="section section-careers">
+    <section class="section section-careers fp-auto-height-responsive">
       <div class="section-main">
         <div class="section-inner main-wrapper">
-          <div class="inner-main">
+          <div
+            class="inner-main"
+            data-aos="fade-up"
+            data-aos-offset="-1500"
+            data-aos-duration="500"
+            data-aos-anchor-placement="top-center"
+          >
             <div class="main-sub-title">
-              <span>Build your life with</span>
-              <img src="/img/logo.webp" alt="" />
+              <p>Build your life <span>with us</span></p>
+              <!-- <img src="/img/logo.webp" alt="" /> -->
             </div>
             <p class="main-content">
-              ​Join Zenerate as we innovate architectural planning and improve
-              living standards for your communities.
+              <span>Join Zenerate as we innovate architectural planning</span>
+              ​<span>and improve</span> ​<span> living standards</span> ​<span
+                >for your communities.</span
+              >
             </p>
           </div>
         </div>
@@ -182,10 +190,12 @@ const careerId = ref(-1)
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 }
-const fp = computed(() => Store.state.root.FullPage)
+const fullpage = computed(() => Store.state.root.FullPage)
 
 onMounted(() => {
-  fp.value.destroy()
+  if (fullpage.value) {
+    fullpage.value.destroy()
+  }
 })
 
 import { useMeta } from 'vue-meta'
@@ -201,15 +211,15 @@ const { meta } = useMeta({
         'Join Zenerate to work with the most passionate and intelligent team in the world.',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/career' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/career' }],
   og: {
-    url: 'https://zenerate.ai/career',
+    url: 'https://www.zenerate.ai/career',
     type: 'website',
     title: 'Career Us | Zenerate',
     description: `Join Zenerate to work with the most passionate and intelligent team in the world.`,
     tags: 'zenerate',
     keywords: 'zenerate',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title: 'Career Us | Zenerate',
@@ -225,36 +235,62 @@ const { meta } = useMeta({
   background-size: cover;
   background-position: top;
   .inner-main {
-    padding: 0px 60px;
+    padding: 0px 40px;
     @include en-tablet {
-      padding: 0px 24px;
+      padding: 0px 34px;
       max-width: 100%;
       text-align: center;
       .main-sub-title {
         justify-content: center;
+        p {
+          @include regular(36);
+          span {
+            @include semi-bold(36);
+          }
+        }
+      }
+      .main-content {
+        max-width: 660px;
+        width: 100%;
+        margin: 0px auto;
+        line-height: 23px;
       }
     }
     @include en-mobile {
-      padding: 0 24px;
+      padding: 0px 24px;
       max-width: 100%;
       text-align: center;
 
       .main-sub-title {
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
 
-        span {
-          @include regular(30);
+        p {
+          @include regular(24);
+          span {
+            @include semi-bold(24);
+          }
         }
+      }
+      .main-content {
+        max-width: 200px;
+        margin: auto;
       }
     }
   }
 
   .main-wrapper {
     @include vertical-center;
+    width: 100%;
     height: 450px;
     color: white;
     margin: 0 auto;
     position: relative;
+
+    @include en-tablet {
+      margin: 0px;
+    }
     .main-title {
       @include bold(36);
       font-weight: 500;
@@ -262,25 +298,41 @@ const { meta } = useMeta({
     }
     .main-sub-title {
       @include flex($dir: row);
-      span {
-        @include regular(28);
+      p {
+        @include regular(40);
         margin-right: 10px;
         line-height: 50px;
+        span {
+          @include semi-bold(40);
+        }
       }
       img {
+        width: 200px;
         height: 50px;
+      }
+
+      @include en-tablet {
+        justify-content: flex-start;
+        align-items: flex-end;
+        span {
+          @include regular(20);
+        }
       }
     }
     .main-content {
-      @include regular(21);
-      padding-top: 48px;
-      width: 545px;
+      @include regular(18);
+      padding-top: 28px;
+      max-width: 600px;
       @include en-tablet {
-        max-width: 100%;
+        max-width: 600px;
+        margin: 0px;
+        text-align: left;
+        span {
+          @include regular(16);
+        }
       }
       @include en-mobile {
-        @include regular(18);
-        max-width: 100%;
+        @include regular(14);
       }
     }
   }
@@ -348,17 +400,17 @@ const { meta } = useMeta({
               @include regular(16);
               @include vertical-center;
               line-height: 40px;
-              color: $cr-text-grey;
+              color: $text-grey;
             }
             .item-title {
               @include medium(24);
               line-height: 40px;
               // 무슨 컬러?
               color: #161616;
-              border-bottom: solid 1px $cr-text-light-grey;
+              border-bottom: solid 1px $text-lightgrey;
               &:hover {
-                color: $cr-main-blue;
-                border-bottom-color: $cr-main-blue;
+                color: $main-blue;
+                border-bottom-color: $main-blue;
               }
 
               @include en-mobile {

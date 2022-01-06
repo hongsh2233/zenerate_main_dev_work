@@ -3,38 +3,50 @@
     <div class="header-inner">
       <div
         class="header-logo hover-pointer"
-        @click="router.push({ name: 'en-landing' })"
+        @click="router.push({ name: 'en-landing' }) && toggleDrawer(false)"
       >
-        <img
-          class="logo hidden-tablet hidden-mobile"
-          src="/img/logo_color.png"
-          alt="logo"
-        />
-        <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" />
+        <img class="logo" src="/img/logo_color.png" alt="logo" />
+        <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" /> -->
       </div>
       <div class="header-navigation-wrapper only-en-desktop">
         <router-link
           v-for="(route, idx) in routes"
           :key="idx"
           class="navigation-link hover-pointer"
-          :class="route.to"
           :to="{ name: route.to }"
           >{{ route.title }}
         </router-link>
+        <button
+          type="button"
+          class="navigation-link hover-pointer lang-button"
+          :class="{ active: showLang }"
+          @click="() => toggleLang()"
+        >
+          <i class="material-icons"> language </i>
+          <p>ENG</p>
+          <span v-show="showLang">/</span>
+          <a
+            v-show="showLang"
+            href="https://www.zenerate.ai/kr"
+            target="_blank"
+          >
+            한국어</a
+          >
+        </button>
       </div>
       <div class="header-demo-wrapper only-en-desktop" @click="goToApp()">
         <a class="demo-link" href="https://app.zenerate.ai" target="_blank"
-          >Join App
+          >JOIN APP
         </a>
       </div>
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
-        <MenuIcon @toggle="toggleDrawer" />
+        <MenuIcon @toggle="toggleDrawer" :showDrawer="showDrawer" />
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { defineEmit, defineProps, ref } from 'vue'
+import { ref } from 'vue'
 
 import MenuIcon from '/Components/EN/Icons/menu.vue'
 
@@ -42,9 +54,16 @@ const props = defineProps({
   showDrawer: Boolean,
 })
 
-const emit = defineEmit(['toggleDrawer'])
-const toggleDrawer = () => {
-  emit('toggleDrawer', !props.showDrawer)
+const emit = defineEmits(['toggleDrawer'])
+const toggleDrawer = (flag?: boolean) => {
+  emit('toggleDrawer', flag)
+}
+
+const showLang = ref(false)
+const toggleLang = (flag?: boolean) => {
+  const f = flag == null ? !showLang.value : flag
+  showLang.value = f
+  console.log('ttt', flag)
 }
 
 import { useGtag } from 'vue-gtag-next'
@@ -65,13 +84,17 @@ const routes = [
     to: 'en-about',
   },
   {
-    title: 'SERVICES',
-    to: 'en-services',
+    title: 'CASE STUDIES',
+    to: 'en-case-studies',
   },
   {
-    title: 'PRICING',
-    to: 'en-pricing',
+    title: 'SERVICE',
+    to: 'en-services',
   },
+  // {
+  //   title: 'PRICING',
+  //   to: 'en-pricing',
+  // },
   {
     title: 'CAREERS',
     to: 'en-career',
@@ -82,7 +105,7 @@ const routes = [
   },
 ]
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .header-wrapper {
   @include fixed(top 0 left 0);
   width: 100vw;
@@ -92,59 +115,137 @@ const routes = [
     height: 80px;
   }
   @include en-tablet {
-    height: 65px;
+    height: 76px;
   }
   @include en-mobile {
-    height: 50px;
+    height: 64px;
   }
   .header-inner {
-    height: 100%;
-    margin: 0px auto;
     @include flex($justify: space-between);
     @include container;
+    height: 100%;
+
     @include en-desktop {
+      width: auto;
+      margin: 0px 60px;
       padding: 0 !important;
     }
     @include en-tablet {
-      padding: 0px 10px !important;
+      padding: 0px 40px !important;
       width: 100%;
     }
     @include en-mobile {
-      padding: 0px 10px !important;
+      padding: 0px 20px !important;
       width: 100%;
     }
     .header-logo {
+      @include flex();
+      align-items: center;
       margin: auto 0px;
+      z-index: 9999;
       @include desktop {
-        width: 180px;
+        width: 160px;
         .logo {
           width: 100%;
         }
       }
       @include tablet {
-        width: 160px;
+        width: auto;
+        height: 100%;
         .logo {
-          width: 24px;
-          margin: 6px 0px 2px 6px;
+          width: 134px;
         }
       }
       @include mobile {
-        width: 120px;
+        width: auto;
+        height: 100%;
         .logo {
-          width: 18px;
-          margin: 6px 0px 2px 6px;
+          width: 134px;
         }
       }
     }
     .header-navigation-wrapper {
+      @include flex($justify: flex-start);
+      align-items: center;
       flex: 1;
-      text-align: right;
+      flex-wrap: nowrap;
+      text-align: center;
       margin: auto 0px;
-      @include flex($justify: flex-end);
       .navigation-link {
-        margin-left: 56px;
-        @include button-gnb;
-        font-size: 14px;
+        @include regular(16);
+        margin-left: 34px;
+        font-size: 16px;
+        line-height: 20px;
+        color: $text-darken-5;
+        transition: color ease-in-out 0.2s;
+
+        &:first-child {
+          margin-left: 80px;
+        }
+
+        &:not(.lang-button):hover {
+          transition: color ease-in-out 0.2s;
+          color: $text-darken;
+        }
+
+        &.router-link-active {
+          font-weight: 600;
+          color: $text-darken;
+        }
+
+        &.lang-button {
+          @include flex($justify: flex-start);
+          align-items: center;
+          width: 163px;
+          height: 36px;
+
+          &:hover {
+            transition: color ease-in-out 0.2s;
+            color: $text-darken;
+          }
+
+          i {
+            @include regular(22);
+            margin-right: 12px;
+          }
+
+          p {
+            margin-right: 8px;
+          }
+
+          &.active {
+            border-radius: 18px;
+            margin-left: 26px;
+            padding-left: 14px;
+            box-shadow: 0px 0px 20px rgba(211, 210, 242, 0.6);
+            transition: box-shadow ease-in-out 0.2s;
+            transition: color ease-in-out 0.2s;
+
+            &:hover {
+              color: $text-darken-5;
+            }
+
+            p {
+              &:hover {
+                transition: color ease-in-out 0.2s;
+                color: $main-blue;
+              }
+            }
+
+            a {
+              height: 26px;
+              margin-left: 8px;
+              font-size: 15px;
+              line-height: 27px;
+
+              &:hover {
+                transition: color ease-in-out 0.2s;
+                color: $main-blue;
+                font-weight: 500;
+              }
+            }
+          }
+        }
       }
     }
     .header-demo-wrapper {
@@ -152,17 +253,18 @@ const routes = [
       margin: auto 0px;
       margin-left: 64px;
       .demo-link {
-        @include bold(14);
+        @include regular(16);
+        color: $main-core;
       }
     }
     .header-drawer-wrapper {
+      @include center-center;
       margin: auto 0px;
       padding: 12px;
       padding-right: 0px;
       height: 100%;
       position: absolute;
-      right: 20px;
-      @include center-center;
+      right: 0px;
       span {
         @include medium(28);
       }

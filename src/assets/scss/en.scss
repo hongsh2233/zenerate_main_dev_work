@@ -44,19 +44,42 @@
   }
 }
 
+.hidden-en-tablet {
+  @include en-tablet {
+    display: none !important;
+  }
+}
+
 .hidden-en-mobile {
   @include en-mobile {
     display: none !important;
   }
 }
+
 .arrow-bottom {
+  position: absolute;
+  left: 50%;
+  top: 86vh;
+
   z-index: 2;
-  height: 49px;
+  width: auto;
+  height: 90px;
   padding-top: 10px;
   animation: move-up-down 2s ease-in-out infinite;
-  svg {
-    height: 39px;
-    width: 14px;
+
+  @include en-tablet {
+    position: fixed;
+    bottom: 30px;
+    svg {
+      height: 48px;
+    }
+  }
+  @include en-mobile {
+    position: fixed;
+    bottom: 40px;
+    svg {
+      height: 40px;
+    }
   }
 }
 .button-1 {
@@ -97,67 +120,96 @@
 
 .content-heading {
   p {
-    @include regular(32);
+    @include regular(36);
+    line-height: 45px;
     strong {
-      font-weight: $bold;
+      @include bold(36);
+      line-height: 45px;
     }
     span {
-      color: $cr-main-blue;
+      @include bold(36);
+      color: $main-core;
       font-weight: $bold;
     }
-    line-height: 40px;
   }
   @include en-tablet {
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    margin: 0px auto;
-    margin-bottom: 16px;
+    margin: 0px auto 48px;
+
     p {
-      font-size: 28px;
+      font-size: 24px;
+      line-height: 30px;
+      strong {
+        @include bold(24);
+        line-height: 30px;
+      }
+      span {
+        @include bold(24);
+        color: $black;
+      }
     }
+    margin-bottom: 40px;
   }
   @include en-mobile {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 16px;
     p {
       font-size: 24px;
+      line-height: 30px;
+      margin: 0px auto;
+      strong {
+        @include bold(24);
+        line-height: 30px;
+      }
+      span {
+        @include bold(24);
+        color: $black;
+      }
     }
+    margin-bottom: 36px;
   }
-  margin-bottom: 16px;
 }
 
 .content-text {
   p {
     font-weight: $regular;
     span {
-      font-weight: $bold;
-      color: rgba(82, 110, 255, 0.92);
+      font-weight: $semi-bold;
     }
   }
   @include en-desktop {
-    font-size: 22px;
+    font-size: 24px;
     line-height: 30px;
+    p {
+      span {
+        font-weight: $semi-bold;
+        color: $black;
+      }
+    }
   }
   @include en-tablet {
     margin: 0px auto;
     width: 100%;
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 20px;
   }
   @include en-mobile {
     margin: 0px auto;
     width: 100%;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 20px;
+    p {
+      span {
+        font-weight: 400;
+      }
+    }
   }
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .content-phrase {
-  color: $cr-text-light-grey;
+  color: $text-lightgrey;
   p {
     @include regular(18);
     span {
@@ -175,7 +227,7 @@
   margin: 0px auto;
   p {
     @include regular(20);
-    color: $cr-text-dark-grey;
+    color: $text-darkgrey;
     line-height: 24px;
     margin-bottom: 24px;
     &:last-child {

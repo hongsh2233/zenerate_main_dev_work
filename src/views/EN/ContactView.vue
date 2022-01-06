@@ -1,6 +1,6 @@
 <template>
   <div id="fullpage-contact">
-    <section class="section-contact">
+    <section class="section section-contact">
       <div class="contact-hero-wrapper">
         <!-- <img src="/en/img/contact_hero.jpg" alt="" /> -->
         <div class="hero-text-wrapper">
@@ -122,7 +122,7 @@
           </div>
         </div>
       </div>
-      <div class="section section-footer fp-auto-height">
+      <div class="section section-footer">
         <Footer />
       </div>
     </section>
@@ -134,13 +134,16 @@ import Store from '/Store/index'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import { useRoute, useRouter } from 'vue-router'
-// @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
+import SelectInput from '/Components/SelectInput.vue'
 
 const fullpage = computed(() => Store.state.root.FullPage)
 
-// @ts-ignore
-import SelectInput from '/Components/SelectInput.vue'
+onMounted(() => {
+  if (fullpage.value) {
+    fullpage.value.destroy()
+  }
+})
 
 type Item = {
   id: number
@@ -267,12 +270,6 @@ const sendEmail = async () => {
 }
 const router = useRouter()
 
-onMounted(() => {
-  if (fullpage.value) {
-    fullpage.value.destroy()
-  }
-})
-
 import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: 'Contact Us | Zenerate',
@@ -284,15 +281,15 @@ const { meta } = useMeta({
       content: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/contact' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/contact' }],
   og: {
-    url: 'https://zenerate.ai/contact',
+    url: 'https://www.zenerate.ai/contact',
     type: 'website',
     title: 'Contact Us | Zenerate',
     description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
     tags: 'zenerate',
     keywords: 'zenerate',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title: 'Contact Us | Zenerate',
@@ -315,9 +312,11 @@ const { meta } = useMeta({
       width: 100%;
     }
     @include en-tablet {
+      padding-top: 40px;
       margin-bottom: 540px;
     }
     @include en-mobile {
+      padding-top: 40px;
       margin-bottom: 540px;
     }
     .hero-text-wrapper {
@@ -327,9 +326,22 @@ const { meta } = useMeta({
         color: white;
         &.title {
           @include medium(36);
+
+          @include en-tablet {
+            @include medium(30);
+          }
+          @include en-mobile {
+            @include medium(24);
+          }
         }
         &.text {
           @include regular(24);
+          @include en-tablet {
+            @include regular(20);
+          }
+          @include en-mobile {
+            @include regular(16);
+          }
         }
       }
       @include en-tablet-big {
@@ -357,15 +369,18 @@ const { meta } = useMeta({
     left: 50%;
     transform: translateX(-50%);
     @include en-tablet-big {
+      top: 190px;
       width: 940px;
       height: auto;
     }
     @include en-tablet-small {
+      top: 190px;
       width: 620px;
       height: auto;
     }
     @include en-mobile {
-      width: calc(100% - 30px);
+      top: 168px;
+      width: calc(100% - 40px);
       height: auto;
     }
     .contact-form-success {
@@ -387,11 +402,11 @@ const { meta } = useMeta({
         }
         .content-heading {
           @include medium(32);
-          color: $cr-text-black;
+          color: $black;
         }
         .content-text {
           @include medium(24);
-          color: $cr-text-grey;
+          color: $text-grey;
         }
         button {
           margin: 0px auto;
@@ -477,7 +492,7 @@ const { meta } = useMeta({
     .label-textarea {
       .label-title {
         @include regular(16);
-        color: rgba($cr-text-grey, 1);
+        color: rgba($text-grey, 1);
         margin-bottom: 8px;
       }
       .label-error {
@@ -505,7 +520,7 @@ const { meta } = useMeta({
     }
   }
   .section-footer {
-    margin-top: 280px;
+    margin-top: 250px;
   }
 }
 </style>

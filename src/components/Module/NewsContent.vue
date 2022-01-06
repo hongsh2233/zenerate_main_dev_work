@@ -96,7 +96,7 @@
   </div>
 </template>
 <script setup>
-import { ref, watch, defineProps, defineEmit, onMounted, computed } from 'vue'
+import { ref, watch, onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 const props = defineProps({
   newsList: {
@@ -112,7 +112,7 @@ const props = defineProps({
 const { locale } = useI18n()
 const nextId = ref(-1)
 const prevId = ref(-1)
-const emit = defineEmit(['onSelect'])
+const emit = defineEmits(['onSelect'])
 const onSelect = (value) => {
   console.log(value)
   emit('onSelect', value)
@@ -136,11 +136,8 @@ const nowIdx = ref(
     return props.newsList.findIndex((news) => news.id === props.nowId)
   })
 )
-console.log('NNN', nowNews)
-console.log('AAA', nowIdx)
 </script>
 <style lang="scss" scoped>
-
 .news-content-wrapper {
   @include mobile {
     padding-top: 20px;
@@ -183,10 +180,10 @@ console.log('AAA', nowIdx)
   }
   .item-links {
     margin-bottom: 95px;
-    @include tablet{
+    @include tablet {
       margin-bottom: 50px;
     }
-    @include mobile{
+    @include mobile {
       margin-bottom: 40px;
     }
     .link-title {
@@ -219,10 +216,10 @@ console.log('AAA', nowIdx)
     span {
       @include vertical-center;
       @include medium(16);
-      @include tablet{
+      @include tablet {
         @include medium(14);
       }
-      @include mobile{
+      @include mobile {
         @include medium(14);
       }
     }
@@ -234,10 +231,10 @@ console.log('AAA', nowIdx)
     @include center-center;
     margin: 48px auto 6px auto;
     @include bold(16);
-    @include tablet{
+    @include tablet {
       @include bold(14);
     }
-    @include mobile{
+    @include mobile {
       @include bold(14);
     }
     span {

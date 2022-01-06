@@ -67,16 +67,14 @@
 <script lang="ts" setup>
 // @ts-ignore
 import Footer from '/Components/Footer.vue'
-import { defineEmit } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n()
-const emit = defineEmit(['toggleDrawer'])
+const emit = defineEmits(['toggleDrawer'])
 const toggleDrawer = (flag) => {
   emit('toggleDrawer', flag)
 }
 </script>
 <style lang="scss" scoped>
-
 .section-menu {
   position: fixed;
   top: 0;

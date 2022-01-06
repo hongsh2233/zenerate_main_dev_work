@@ -133,15 +133,15 @@ const { meta } = useMeta({
         '사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://zenerate.ai/kr/main/contact' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/contact' }],
   og: {
-    url: 'https://zenerate.ai/kr/main/contact',
+    url: 'https://www.zenerate.ai/kr/main/contact',
     type: 'website',
     title: '문의 | 제너레잇',
     description: `사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.`,
     tags: '제너레잇',
     keywords: '제너레잇',
-    image: 'https://zenerate.ai/img/logo_og.png',
+    image: 'https://www.zenerate.ai/img/logo_og.png',
   },
   twitter: {
     title: '문의 | 제너레잇',

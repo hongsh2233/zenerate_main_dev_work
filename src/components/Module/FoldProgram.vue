@@ -60,7 +60,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { defineEmit, defineProps, ref } from 'vue'
+import { ref } from 'vue'
 const props = defineProps({
   active: Boolean,
   classProp: String,

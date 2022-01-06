@@ -477,8 +477,8 @@
               <p>
                 We care about data privacy and security. Please review our
                 Privacy Policy:
-                <a href="https://zenerate.ai/privacy-policy"
-                  >https://zenerate.ai/privacy-policy</a
+                <a href="https://www.zenerate.ai/privacy-policy"
+                  >https://www.zenerate.ai/privacy-policy</a
                 >. By using the Service, you agree to be bound by our Privacy
                 Policy, which is incorporated into these Terms and Conditions.
                 Please be advised the Service is hosted in the United States. If
