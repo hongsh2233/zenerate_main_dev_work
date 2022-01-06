@@ -25,7 +25,7 @@
         <div class="input-select-dropdown" v-show="showDropdown">
           <div
             class="input-select-dropdown-item hover-pointer"
-            v-for="(item, idx) in props.items"
+            v-for="(item: Item, idx) in props.items"
             @click="onSelect(item)"
             :key="idx"
           >
@@ -43,9 +43,16 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, watch, defineProps, defineEmit, computed } from 'vue'
+import { ref, watch, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
+
+type Item = {
+  id?: number
+  value?: string
+  label?: string
+  ref?: string
+}
 const props = defineProps({
   placeholder: {
     type: String,
@@ -76,8 +83,7 @@ const props = defineProps({
     required: false,
   },
 })
-
-const emit = defineEmit(['onSelect'])
+const emit = defineEmits(['onSelect'])
 const isInvalid = ref(false)
 
 const onSelect = (value) => {
@@ -86,7 +92,7 @@ const onSelect = (value) => {
 }
 
 const showDropdown = ref(false)
-const toggleDropDown = (flag) => {
+const toggleDropDown = (flag?) => {
   showDropdown.value = flag == null ? !showDropdown.value : flag
   if (!showDropdown.value) {
     if (!props.selected) isInvalid.value = true

@@ -21,13 +21,11 @@
 import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n()
 
-import { defineEmit, defineProps } from 'vue'
-
 const props = defineProps({
   showDrawer: Boolean,
 })
 
-const emit = defineEmit(['toggleDrawer'])
+const emit = defineEmits(['toggleDrawer'])
 const toggleDrawer = () => {
   emit('toggleDrawer', !props.showDrawer)
 }
@@ -37,7 +35,6 @@ const setLocale = (loc) => {
 }
 </script>
 <style lang="scss" scoped>
-
 .header-wrapper {
   position: fixed;
   top: 0;

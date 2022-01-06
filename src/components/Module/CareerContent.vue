@@ -340,8 +340,8 @@
 </template>
 
 <script setup>
-import { ref, defineEmit, defineProps, onMounted } from 'vue'
-const emit = defineEmit(['onSelect'])
+import { ref, onMounted } from 'vue'
+const emit = defineEmits(['onSelect'])
 const onSelect = (value) => {
   console.log(value)
   emit('onSelect', value)

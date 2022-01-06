@@ -39,7 +39,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { defineProps, defineEmit } from 'vue'
 import { useRouter } from 'vue-router'
 
 const props = defineProps({
@@ -78,7 +77,7 @@ const goToKrPage = () => {
   window.open('https://www.zenerate.ai/kr', '_blank')
 }
 
-const emit = defineEmit(['close'])
+const emit = defineEmits(['close'])
 const close = () => {
   emit('close', null)
 }

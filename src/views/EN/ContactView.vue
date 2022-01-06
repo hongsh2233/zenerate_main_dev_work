@@ -1,6 +1,6 @@
 <template>
   <div id="fullpage-contact">
-    <section class="section section-contact fp-auto-height-responsive">
+    <section class="section section-contact">
       <div class="contact-hero-wrapper">
         <!-- <img src="/en/img/contact_hero.jpg" alt="" /> -->
         <div class="hero-text-wrapper">
@@ -122,7 +122,7 @@
           </div>
         </div>
       </div>
-      <div class="section section-footer fp-auto-height">
+      <div class="section section-footer">
         <Footer />
       </div>
     </section>
@@ -520,7 +520,7 @@ const { meta } = useMeta({
     }
   }
   .section-footer {
-    margin-top: 280px;
+    margin-top: 250px;
   }
 }
 </style>

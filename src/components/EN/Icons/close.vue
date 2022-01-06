@@ -21,7 +21,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { defineProps, defineEmit, computed } from 'vue'
+import { computed } from 'vue'
 const props = defineProps({
   width: {
     type: Number,
@@ -40,7 +40,7 @@ const props = defineProps({
 const barHeight = computed(() => {
   return Math.floor((props.height / 2 / 12) * 2)
 })
-const emit = defineEmit(['close'])
+const emit = defineEmits(['close'])
 const close = () => emit('close', null)
 </script>
 <style lang="scss" scoped>

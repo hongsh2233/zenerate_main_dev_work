@@ -46,7 +46,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { defineEmit, defineProps, ref } from 'vue'
+import { ref } from 'vue'
 
 import MenuIcon from '/Components/EN/Icons/menu.vue'
 
@@ -54,7 +54,7 @@ const props = defineProps({
   showDrawer: Boolean,
 })
 
-const emit = defineEmit(['toggleDrawer'])
+const emit = defineEmits(['toggleDrawer'])
 const toggleDrawer = (flag?: boolean) => {
   emit('toggleDrawer', flag)
 }

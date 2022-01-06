@@ -17,7 +17,7 @@
   </div> -->
 </template>
 <script lang="ts" setup>
-import { defineProps, defineEmit, computed, ref } from 'vue'
+import { computed, ref } from 'vue'
 const props = defineProps({
   width: {
     type: Number,
@@ -33,7 +33,7 @@ const props = defineProps({
   },
   showDrawer: Boolean,
 })
-const emit = defineEmit(['toggle'])
+const emit = defineEmits(['toggle'])
 const toggle = () => {
   emit('toggle', null)
 }

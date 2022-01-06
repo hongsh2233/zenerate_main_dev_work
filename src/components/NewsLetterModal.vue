@@ -37,12 +37,12 @@
   </Teleport>
 </template>
 <script lang="ts" setup>
-import { defineEmit, ref } from 'vue'
+import { ref } from 'vue'
 import ApiService from '/Services/api'
 import Swal from 'sweetalert2'
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
-const emit = defineEmit(['close'])
+const emit = defineEmits(['close'])
 
 const close = () => {
   emit('close')
@@ -81,7 +81,8 @@ const toggleEmailDesc = () => {
 const submit = async () => {
   console.log(emailForm.value)
   if (!emailForm.value.allow) return
-  const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  const emailRegex =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   console.log(emailRegex.test(emailForm.value.email_address))
   if (!emailRegex.test(emailForm.value.email_address)) return
   ApiService.SUBSCRIBE(emailForm.value).then((res) => {
@@ -102,7 +103,6 @@ const submit = async () => {
 }
 </script>
 <style lang="scss" scoped>
-
 .newsletter-modal-wrapper {
   position: fixed;
   z-index: 1059;
@@ -167,7 +167,7 @@ const submit = async () => {
       padding: 3px 5px;
       text-align: center;
       margin-left: 8px;
-      &:hover{
+      &:hover {
         background-color: rgba($main, 0.1);
       }
     }

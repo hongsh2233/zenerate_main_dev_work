@@ -23,7 +23,7 @@
             <div
               class="case"
               data-aos="fade-up"
-              data-aos-offset="-700"
+              data-aos-offset="-1500"
               data-aos-delay="300"
               data-aos-duration="600"
               data-aos-anchor-placement="top-bottom"
@@ -49,7 +49,7 @@
             <div
               class="case"
               data-aos="fade-up"
-              data-aos-offset="-700"
+              data-aos-offset="-1500"
               data-aos-delay="500"
               data-aos-duration="600"
               data-aos-anchor-placement="top-bottom"
