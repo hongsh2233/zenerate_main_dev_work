@@ -84,7 +84,11 @@ const { meta } = useMeta({
 
 <style lang="scss" scoped>
 .service-container-wrapper {
-  padding-top: 64px;
+  padding-top: 150px;
+
+  @include mobile {
+    // padding-top: 0px;
+  }
   .service-container {
     position: relative;
     margin-bottom: 160px;
@@ -96,7 +100,7 @@ const { meta } = useMeta({
     &:first-child {
       margin-bottom: 252px;
       @include mobile {
-        margin-bottom: 100px;
+        margin-bottom: 110px;
       }
     }
     .service-caption {
@@ -136,6 +140,9 @@ const { meta } = useMeta({
       img {
         width: 100%;
         object-fit: contain;
+        @include mobile {
+          height: 100%;
+        }
       }
     }
     .service-image-3 {
@@ -143,6 +150,7 @@ const { meta } = useMeta({
         width: calc(100% / 3);
         @include mobile {
           width: calc(100% / 3);
+          height: 100%;
           margin: 0px;
         }
       }
@@ -154,7 +162,7 @@ const { meta } = useMeta({
       top: 150px;
       z-index: -1;
       @include mobile {
-        top: 150px;
+        top: 80px;
       }
     }
 
@@ -175,7 +183,7 @@ const { meta } = useMeta({
       }
       .service-content {
         font-style: italic;
-        padding-top: 80px;
+        // padding-top: 80px;
       }
     }
   }

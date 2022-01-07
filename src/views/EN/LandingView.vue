@@ -31,7 +31,7 @@
             class="content-button"
             @click="goToApp()"
             data-aos="zoom-in-down"
-            data-aos-offset="0"
+            data-aos-offset="-1500"
             data-aos-delay="300"
             data-aos-duration="500"
             data-aos-anchor-placement="bottom-bottom"

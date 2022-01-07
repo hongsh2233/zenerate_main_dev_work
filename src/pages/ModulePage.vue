@@ -50,7 +50,6 @@ import Scroll from '/Components/Module/Scroll.vue'
 </script>
 
 <style lang="scss" scoped>
-
 /** layout setting */
 .module-scroll {
   width: 100%;
@@ -214,7 +213,7 @@ import Scroll from '/Components/Module/Scroll.vue'
       height: 304px;
     }
     @include mobile {
-      height: 260px;
+      height: 320px;
     }
   }
   .footer {

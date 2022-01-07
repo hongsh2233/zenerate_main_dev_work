@@ -49,7 +49,7 @@ html {
   scroll-behavior: auto;
   font-weight: normal;
   word-break: keep-all;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   background-color: $white;
   color: $text-darken;
   font-weight: $medium;
