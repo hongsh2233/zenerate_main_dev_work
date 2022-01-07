@@ -82,7 +82,7 @@
             >
               <h2 class="service-title">CONSULTING</h2>
               <h5 class="service-subtitle">
-                Customized, Deep, Complex Service
+                Data-driven & Site-Specific Solutions
               </h5>
               <div class="consulting-plan-list-wrapper">
                 <span class="plan-title"

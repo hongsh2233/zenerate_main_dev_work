@@ -126,8 +126,9 @@ const routes = [
     height: 100%;
 
     @include en-desktop {
+      max-width: 1200px;
       width: auto;
-      margin: 0px 60px;
+      margin: 0px auto;
       padding: 0 !important;
     }
     @include en-tablet {

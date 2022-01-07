@@ -31,7 +31,7 @@
             class="content-button"
             @click="goToApp()"
             data-aos="zoom-in-down"
-            data-aos-offset="100"
+            data-aos-offset="-1500"
             data-aos-delay="300"
             data-aos-duration="500"
             data-aos-anchor-placement="bottom-bottom"
@@ -51,32 +51,35 @@
     <div class="section section-engine fp-auto-height-responsive">
       <div class="section-inner inner-engine">
         <div class="inner-contents">
-          <div
-            class="engine-contents"
-            data-aos="fade-up"
-            data-aos-offset="-1500"
-            data-aos-delay="500"
-            data-aos-duration="600"
-            data-aos-anchor-placement="top-bottom"
-          >
-            <div class="content-heading">
-              <p>
-                <strong>The Zenerate™ <span>Engine</span></strong>
-              </p>
-            </div>
-            <div class="content-text">
-              <p>Our design automation software combines</p>
-              <p>
-                <span> AI + Data Science</span>
-                to search millions of possibilities,
-              </p>
-              <p>
-                delivering <span>fast & easy</span>
-                <span> feasibility studies</span> and
-                <span>optimized profitability.</span>
-              </p>
+          <div class="engine-contents-wrapper">
+            <div
+              class="engine-contents"
+              data-aos="fade-up"
+              data-aos-offset="-500"
+              data-aos-delay="500"
+              data-aos-duration="600"
+              data-aos-anchor-placement="top-bottom"
+            >
+              <div class="content-heading">
+                <p>
+                  <strong>The Zenerate™ <span>Engine</span></strong>
+                </p>
+              </div>
+              <div class="content-text">
+                <p>Our design automation software combines</p>
+                <p>
+                  <span> AI + Data Science</span>
+                  to search millions of possibilities,
+                </p>
+                <p>
+                  delivering <span>fast & easy</span>
+                  <span> feasibility studies</span> and
+                  <span>optimized profitability.</span>
+                </p>
+              </div>
             </div>
           </div>
+
           <div
             class="engine-image only-en-desktop"
             data-aos="fade-up"
@@ -90,7 +93,7 @@
           <div
             class="engine-image hidden-en-desktop"
             data-aos="fade-up"
-            data-aos-offset="2500"
+            data-aos-offset="0"
             data-aos-duration="500"
             data-aos-delay="800"
             data-aos-anchor-placement="center-bottom"
@@ -145,17 +148,6 @@
                 </div>
               </div>
             </div>
-            <!-- <button
-              class="button-1"
-              @click="toContactForm"
-              data-aos="zoom-in-down"
-              data-aos-offset="100"
-              data-aos-delay="500"
-              data-aos-duration="500"
-              data-aos-anchor-placement="bottom-bottom"
-            >
-              LEARN MORE
-            </button> -->
           </div>
           <div
             class="instant-search-image hidden-en-desktop"
@@ -195,35 +187,37 @@
     <div class="section section-generation fp-auto-height-responsive">
       <div class="section-inner inner-generation">
         <div class="inner-contents generation-contents">
-          <div
-            class="content-right"
-            data-aos="fade-up"
-            data-aos-offset="0"
-            data-aos-delay="200"
-            data-aos-duration="500"
-            data-aos-anchor-placement="center-bottom"
-          >
-            <div class="content-heading">
-              <p>
-                <strong
-                  >Need to <span>boost your&nbsp;</span
-                  ><span>project's profit </span> metrics<br />
-                  in a time crunch?</strong
-                >
-              </p>
-            </div>
-            <div class="content-text">
-              <p>
-                Our AI-based <span>Zenerate™ Engine</span><br />
-                does the optimization work for you.
-              </p>
-            </div>
-            <div class="content-text">
-              <p>Zenerate™ solutions have increased&nbsp;</p>
-              <p>
-                real customer revenue by an average of 12%,<br />
-                compared to non-AI methods.
-              </p>
+          <div class="content-right-wrapper">
+            <div
+              class="content-right"
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-delay="200"
+              data-aos-duration="500"
+              data-aos-anchor-placement="center-bottom"
+            >
+              <div class="content-heading">
+                <p>
+                  <strong
+                    >Need to <span>boost your&nbsp;</span
+                    ><span>project's profit </span> metrics<br />
+                    in a time crunch?</strong
+                  >
+                </p>
+              </div>
+              <div class="content-text">
+                <p>
+                  Our AI-based <span>Zenerate™ Engine</span><br />
+                  does the optimization work for you.
+                </p>
+              </div>
+              <div class="content-text">
+                <p>Zenerate™ solutions have increased&nbsp;</p>
+                <p>
+                  real customer revenue by an average of 12%,<br />
+                  compared to non-AI methods.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -261,31 +255,32 @@
     <div class="section section-compare fp-auto-height-responsive">
       <div class="section-inner inner-compare">
         <div class="inner-contents compare-contents">
-          <div
-            class="compare-text"
-            data-aos="fade-up"
-            data-aos-offset="0"
-            data-aos-delay="200"
-            data-aos-duration="500"
-            data-aos-anchor-placement="center-bottom"
-          >
-            <div class="content-heading">
-              <p>
-                <strong
-                  >Use our platform to&nbsp;<span>compare&nbsp;</span>
-                  <span>& pick&nbsp;</span>the best solution
-                </strong>
-              </p>
-            </div>
-            <div class="content-text">
-              <p>
-                Or go with the most optimized,<br />
-                profitable solution generated<br />
-                by our powerful AI engine.
-              </p>
+          <div class="compare-text-wrapper">
+            <div
+              class="compare-text"
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-delay="200"
+              data-aos-duration="500"
+              data-aos-anchor-placement="center-bottom"
+            >
+              <div class="content-heading">
+                <p>
+                  <strong
+                    >Use our platform to&nbsp;<span>compare&nbsp;</span>
+                    <span>& pick&nbsp;</span>the best solution
+                  </strong>
+                </p>
+              </div>
+              <div class="content-text">
+                <p>
+                  Or go with the most optimized,<br />
+                  profitable solution generated<br />
+                  by our powerful AI engine.
+                </p>
+              </div>
             </div>
           </div>
-
           <div
             class="compare-image hidden-en-desktop"
             data-aos="fade-up"
@@ -383,6 +378,13 @@ onMounted(() => {
     // offsetSections: false,
     navigation: false,
   })
+
+  const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+  }
+  window.addEventListener('resize', appHeight)
+  appHeight()
 })
 onBeforeUnmount(() => {
   fullpage.value.destroy()
@@ -416,6 +418,7 @@ const toContactForm = () => {
   width: 100%;
   height: 100%;
   opacity: 1;
+  overflow-x: hidden;
 
   @include en-desktop {
     background-image: url('/en/img/about_background.png');
@@ -449,6 +452,9 @@ const toContactForm = () => {
   }
   .section-inner {
     z-index: 2;
+    @include en-mobile {
+      height: calc(100vh - 20px) !important;
+    }
   }
   .landing-background {
     background-image: url('/en/img/landing_buildings.gif');
@@ -461,7 +467,7 @@ const toContactForm = () => {
     height: 100%;
 
     @include en-desktop {
-      background-position-x: min(calc(100vw - 1280px), 0.001px);
+      background-position-x: min(calc(100vw - 1200px), 0.001px);
     }
     @include en-tablet-small {
       background-position-x: calc(100vw - 960px);
@@ -489,6 +495,7 @@ const toContactForm = () => {
     @include vertical-center;
     z-index: 2;
     flex: 1;
+
     .content-heading {
       margin-bottom: 28px;
       letter-spacing: -0.015em;
@@ -503,7 +510,7 @@ const toContactForm = () => {
       }
       @include en-mobile {
         max-width: 360px;
-        margin: 0px auto 32px;
+        margin: 0px auto 20px;
       }
       p {
         @include en-desktop {
@@ -555,8 +562,9 @@ const toContactForm = () => {
       }
       @include en-mobile {
         max-width: 300px;
-        margin: 0px auto;
-        margin-bottom: 40px;
+        height: 10%;
+        margin: 0px auto auto;
+        margin-bottom: 20px;
         p {
           @include regular(16);
           line-height: 20px;
@@ -598,16 +606,26 @@ const toContactForm = () => {
       width: 100%;
       margin: auto 0px;
 
+      @include en-desktop {
+        padding-left: 120px;
+      }
+
       .engine-image {
         @include elevation-5;
         width: 470px;
+        height: 470px;
         margin: auto 0px;
         margin-left: auto;
         border-radius: 10px;
         img {
           width: 100%;
           height: 100%;
-          border-radius: 6px;
+        }
+        @include en-desktop {
+          position: absolute;
+          top: 50%;
+          right: 50%;
+          transform: translate(112%, -43%);
         }
         @include en-tablet {
           width: 264px;
@@ -620,6 +638,18 @@ const toContactForm = () => {
           height: 264px;
           margin-left: 0;
           margin: 0px auto;
+        }
+      }
+
+      .engine-contents-wrapper {
+        width: 100%;
+        height: auto;
+        @include en-desktop {
+          width: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-120%, -43%);
         }
       }
       .engine-contents {
@@ -732,6 +762,7 @@ const toContactForm = () => {
 
     @include en-desktop {
       justify-content: flex-end;
+      padding-right: 120px;
     }
   }
   .inner-instant-search {
@@ -750,6 +781,10 @@ const toContactForm = () => {
       }
 
       @include en-desktop {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(122%, -50%);
         .content-heading {
           margin-bottom: 32px;
         }
@@ -837,12 +872,20 @@ const toContactForm = () => {
               margin-right: 40px;
             }
             @include en-tablet {
+              @include bold(16);
+              width: 120px;
+              height: 40px;
               margin-right: 40px;
               margin-bottom: 0px;
+              line-height: 40px;
             }
             @include en-mobile {
-              @include absolute(top -5px left -85%);
+              @include absolute(top -2px left -85%);
+              @include bold(16);
+              width: 120px;
+              height: 40px;
               margin-bottom: 20px;
+              line-height: 40px;
             }
           }
           .content-numbering-text {
@@ -938,6 +981,9 @@ const toContactForm = () => {
   }
 
   .background-image {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
     &.background-map {
       @include en-tablet {
         background-image: url('/en/img/landing_map.png');
@@ -959,19 +1005,21 @@ const toContactForm = () => {
       left: 50%;
       width: auto;
       height: auto;
-      transform: translate(-110%, -43%);
+      transform: translate(-90%, -43%);
 
       .outer {
         @include elevation-5;
         object-fit: cover;
         object-position: right;
         width: auto;
-        height: 500px;
+        height: 400px;
+        margin-bottom: 70px;
         border-radius: 10px;
 
         @include en-mobile {
           width: 100%;
           max-width: 90%;
+          height: 500px;
           margin: 0px auto;
         }
       }
@@ -999,6 +1047,10 @@ const toContactForm = () => {
     height: 100%;
     margin: auto 0px;
     justify-content: flex-end;
+
+    @include en-desktop {
+      padding-right: 120px;
+    }
 
     .content-left {
       @include vertical-center;
@@ -1033,6 +1085,19 @@ const toContactForm = () => {
       @include en-mobile {
         width: 100%;
         margin: 0px auto;
+      }
+    }
+
+    .content-right-wrapper {
+      width: 100%;
+      height: auto;
+
+      @include en-desktop {
+        width: auto;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(116%, -50%);
       }
     }
     .content-right {
@@ -1086,13 +1151,16 @@ const toContactForm = () => {
   }
 
   .background-image {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
     .content-left {
       position: absolute;
       top: 50%;
       left: 50%;
       width: auto;
       height: auto;
-      transform: translate(-110%, -43%);
+      transform: translate(-97%, -43%);
       .left-img {
         @include relative;
         @include flex($justify: center);
@@ -1104,12 +1172,14 @@ const toContactForm = () => {
           object-fit: cover;
           object-position: right;
           width: auto;
-          height: 500px;
+          height: 342px;
+          margin-bottom: 72px;
           border-radius: 10px;
 
           @include en-mobile {
             width: 100%;
             max-width: 90%;
+            height: 500px;
             margin: 0px auto;
           }
         }
@@ -1141,6 +1211,9 @@ const toContactForm = () => {
     width: 100%;
     height: auto;
     margin: auto 0px;
+    @include en-desktop {
+      padding-left: 120px;
+    }
     .compare-image {
       @include vertical-center;
       @include elevation-5;
@@ -1161,6 +1234,18 @@ const toContactForm = () => {
       @include en-mobile {
         margin: 0px auto;
         overflow-x: hidden;
+      }
+    }
+
+    .compare-text-wrapper {
+      width: 100%;
+      height: auto;
+      @include en-desktop {
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-108%, -43%);
       }
     }
     .compare-text {
@@ -1210,6 +1295,9 @@ const toContactForm = () => {
   }
 
   .background-image {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
     .compare-image {
       position: absolute;
       top: 50%;
@@ -1223,7 +1311,8 @@ const toContactForm = () => {
         object-fit: cover;
         object-position: right;
         width: auto;
-        height: 500px;
+        height: 374px;
+        margin-bottom: 28px;
         border-radius: 10px;
       }
     }
@@ -1340,13 +1429,13 @@ const toContactForm = () => {
       @include relative;
       margin-bottom: 0px;
       width: 200px;
-      height: 120px;
+      height: 94px;
       max-width: 100%;
       margin: auto;
 
       @include en-mobile {
         width: 140px;
-        height: 80px;
+        height: 86px;
         margin: 0px auto;
         margin-bottom: 0px;
       }
@@ -1358,7 +1447,7 @@ const toContactForm = () => {
         background-repeat: no-repeat;
         background-position: center;
         @include en-mobile {
-          height: 30px;
+          height: 40px;
         }
       }
       .item-description {

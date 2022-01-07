@@ -31,7 +31,6 @@ const { locale } = useI18n()
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-
 .module-career-inner {
   width: 100%;
   height: 100%;
