@@ -235,7 +235,12 @@ const { meta } = useMeta({
   background-size: cover;
   background-position: top;
   .inner-main {
-    padding: 0px 40px;
+    @include en-desktop {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0px 20px;
+    }
     @include en-tablet {
       padding: 0px 34px;
       max-width: 100%;
