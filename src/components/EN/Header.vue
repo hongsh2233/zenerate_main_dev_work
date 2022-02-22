@@ -25,19 +25,15 @@
           <i class="material-icons"> language </i>
           <p>ENG</p>
           <span v-show="showLang">/</span>
-          <a
-            v-show="showLang"
-            href="https://www.zenerate.ai/kr"
-            target="_blank"
-          >
-            한국어</a
+          <router-link v-show="showLang" :to="{ name: 'ModuleLayout' }">
+            한국어</router-link
           >
         </button>
       </div>
       <div class="header-demo-wrapper only-en-desktop" @click="goToApp()">
-        <a class="demo-link" href="https://app.zenerate.ai" target="_blank"
-          >JOIN APP
-        </a>
+        <router-link :to="{ name: 'SignUp' }" class="demo-link"
+          >JOIN APP</router-link
+        >
       </div>
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
         <MenuIcon @toggle="toggleDrawer" :showDrawer="showDrawer" />
@@ -47,6 +43,8 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useGtag } from 'vue-gtag-next'
+import { useRouter } from 'vue-router'
 
 import MenuIcon from '/Components/EN/Icons/menu.vue'
 
@@ -66,7 +64,6 @@ const toggleLang = (flag?: boolean) => {
   console.log('ttt', flag)
 }
 
-import { useGtag } from 'vue-gtag-next'
 const { event } = useGtag()
 const goToApp = () => {
   event('generate_lead', {
@@ -76,7 +73,6 @@ const goToApp = () => {
 }
 
 // routes
-import { useRouter } from 'vue-router'
 const router = useRouter()
 const routes = [
   {

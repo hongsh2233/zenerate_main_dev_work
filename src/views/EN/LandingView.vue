@@ -369,10 +369,11 @@ import Footer from '/Components/EN/Footer.vue'
 import Arrow from '/Components/EN/Arrow.vue'
 import PartnersList from '/Constants/partners'
 import { useRouter } from 'vue-router'
-
+import APIService from '/Services/api'
+import { useGtag } from 'vue-gtag-next'
 import Store from '/Store/index'
 const fullpage = computed(() => Store.state.root.FullPage)
-onMounted(() => {
+onMounted(async () => {
   fullpage.value.init('#fullpage-landing', {
     // parallax: false,
     // offsetSections: false,
@@ -390,7 +391,6 @@ onBeforeUnmount(() => {
   fullpage.value.destroy()
 })
 
-import { useGtag } from 'vue-gtag-next'
 const { event } = useGtag()
 const goToApp = () => {
   event('generate_lead', {

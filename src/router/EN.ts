@@ -10,6 +10,7 @@ import LandingView from '/Views/EN/LandingView.vue'
 import ServiceView from '/Views/EN/ServiceView.vue'
 import TermsAndConditionsView from '/Views/EN/TermsAndConditionsView.vue'
 import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
+import SignUp from '/Views/EN/SignUpView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -54,7 +55,11 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-contact',
       component: ContactView,
     },
-
+    {
+      path: '/signup',
+      name: 'SignUp',
+      component: SignUp,
+    },
     {
       path: '/terms-and-conditions',
       name: 'en-terms-and-conditions',

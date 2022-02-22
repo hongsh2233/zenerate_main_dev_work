@@ -6,19 +6,19 @@ export default {
     return req(apiClient.get('test/hello'))
   },
   SEND_EMAIL(payload) {
-    return req(apiClient.post("/main/email", payload))
+    return req(apiClient.post('/main/email', payload))
   },
   SUBSCRIBE(payload) {
-    return req(apiClient.post("/subscribe", payload))
+    return req(apiClient.post('/subscribe', payload))
   },
   GET_NEWS_LIST() {
-    return req(apiClient.get("/news"))
+    return req(apiClient.get('/news'))
   },
   GET_SINGLE_NEWS(id) {
     return req(apiClient.get(`/news/${id}`))
   },
   CREATE_NEWS(payload) {
-    return req(apiClient.post("/news", payload))
+    return req(apiClient.post('/news', payload))
   },
   MODIFY_NEWS(id, payload) {
     return req(apiClient.put(`/news/${id}`, payload))
@@ -27,6 +27,9 @@ export default {
     return req(apiClient.delete(`/news/${id}`))
   },
   GET_RSS_FEED() {
-    return req(apiClient.get("/blog"))
-  }
+    return req(apiClient.get('/blog'))
+  },
+  XSLX_TEST(payload) {
+    return req(apiClient.post('/xlsx', payload))
+  },
 }
