@@ -1,12 +1,77 @@
 <template>
-  <div id="fullpage-contact">
-    <section class="section section-contact">
-      <div class="contact-hero-wrapper">
-        <div class="hero-text-wrapper">
-          <p class="title">Contact Us</p>
-          <p class="text">We'd love to hear from you</p>
+  <div id="fullpage-signup">
+    <section class="section-signup">
+      <div class="signup-wrapper">
+        <div
+          class="header-logo hover-pointer"
+          @click="router.push({ name: 'en-landing' })"
+        >
+          <img class="logo" src="/img/logo_white.svg" alt="logo" />
         </div>
-        <div class="contact-form-wrapper" :class="{ done: sendEmailStatus }">
+        <div class="signup-header-wrapper">
+          <div class="signup-text-wrapper">
+            <p class="title">
+              <span>The biggest&nbsp;</span><span>game-changer&nbsp;</span>
+              <span>in the&nbsp;</span>real estate industry<br />
+              is almost here.
+            </p>
+            <p class="text">
+              <strong>Zenerate</strong> upwards of 10,000 designs
+              <span>&nbsp;to maximize profit&nbsp;</span
+              ><span> up to 26%&nbsp;</span
+              ><span>while saving weeks worth of time</span>
+            </p>
+          </div>
+          <p class="guide hidden-tablet hidden-mobile">
+            <strong>Sign up</strong> and we’ll send you an email <br />
+            when Zenerate launches!
+          </p>
+          <div class="background-building">
+            <div class="left-building"></div>
+
+            <div class="right-background">
+              <img
+                class="right-squares"
+                src="/en/img/signup_background.svg"
+                alt="signup"
+              />
+              <div class="right-building">
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window hidden-en-mobile"></div>
+                <div class="window hidden-en-mobile"></div>
+                <div class="window hidden-en-mobile"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="go-to-bottom hidden-desktop">
+          <svg
+            width="26"
+            height="54"
+            viewBox="0 0 26 54"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.1855 1.58081V53.1937"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M24.9909 41.396L13.1856 53.1939L1.3877 41.396"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="signup-form-wrapper" :class="{ done: sendEmailStatus }">
           <transition name="fade">
             <div class="contact-form-success" v-if="sendEmailStatus">
               <div class="contact-form-inner">
@@ -40,12 +105,13 @@
               </div>
             </div>
           </transition>
+          <h2 class="form-title">Let me know<br />when Zenerate launches!</h2>
           <div class="form-text">
-            <div class="form-left">
+            <div class="form-row">
               <div class="label-text">
-                <p class="label-title">First Name</p>
                 <input
                   type="text"
+                  placeholder="First name"
                   v-model="contactForm.firstName.value"
                   @blur="(v) => validation('firstName')"
                 />
@@ -57,9 +123,41 @@
                 </p>
               </div>
               <div class="label-text">
-                <p class="label-title">Company</p>
                 <input
                   type="text"
+                  placeholder="Last name"
+                  v-model="contactForm.lastName.value"
+                  @blur="(v) => validation('lastName')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.lastName.valid === false }"
+                >
+                  Please Enter!
+                </p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="label-text">
+                <input
+                  type="text"
+                  placeholder="Email"
+                  v-model="contactForm.email.value"
+                  @blur="(v) => validation('email')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.email.valid === false }"
+                >
+                  Please Enter Valid Email Address!
+                </p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="label-text">
+                <input
+                  type="text"
+                  placeholder="Company"
                   v-model="contactForm.company.value"
                   @blur="(v) => validation('company')"
                 />
@@ -71,25 +169,71 @@
                 </p>
               </div>
             </div>
-            <div class="form-right">
+            <div class="form-row">
               <div class="label-text">
-                <p class="label-title">Last Name</p>
                 <input
                   type="text"
-                  v-model="contactForm.lastName.value"
-                  @blur="(v) => validation('lastName')"
+                  placeholder="City"
+                  v-model="contactForm.company.value"
+                  @blur="(v) => validation('company')"
                 />
                 <p
                   class="label-error"
-                  :class="{ active: contactForm.lastName.valid === false }"
+                  :class="{ active: contactForm.company.valid === false }"
                 >
                   Please Enter!
                 </p>
               </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  placeholder="State / Region"
+                  v-model="contactForm.company.value"
+                  @blur="(v) => validation('company')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.company.valid === false }"
+                >
+                  Please Enter!
+                </p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="label-text">
+                <input
+                  type="text"
+                  placeholder="Country / Region"
+                  v-model="contactForm.company.value"
+                  @blur="(v) => validation('company')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.company.valid === false }"
+                >
+                  Please Enter!
+                </p>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  placeholder="Phone Number"
+                  v-model="contactForm.company.value"
+                  @blur="(v) => validation('company')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.company.valid === false }"
+                >
+                  Please Enter!
+                </p>
+              </div>
+            </div>
+            <div class="form-row">
               <SelectInput
-                placeholder="Select"
+                placeholder="Role"
                 :items="items"
-                title="Inquiries"
+                title="Role"
                 :skipTranslate="true"
                 :selected="contactForm.buildings.value"
                 :valid="contactForm.buildings.valid"
@@ -100,9 +244,9 @@
                 "
               />
               <SelectInput
-                placeholder="Select"
+                placeholder="Buildings"
                 :items="items"
-                title="Inquiries"
+                title="Buildings"
                 :skipTranslate="true"
                 :selected="contactForm.role.value"
                 :valid="contactForm.role.valid"
@@ -110,20 +254,28 @@
                   (v) => ((contactForm.role.value = v), validation('role'))
                 "
               />
+            </div>
+            <div class="form-row promotion">
               <div class="label-text">
-                <p class="label-title">Email Address</p>
                 <input
                   type="text"
-                  v-model="contactForm.email.value"
-                  @blur="(v) => validation('email')"
+                  placeholder="Promotion Code"
+                  v-model="contactForm.company.value"
+                  @blur="(v) => validation('company')"
                 />
                 <p
                   class="label-error"
-                  :class="{ active: contactForm.email.valid === false }"
+                  :class="{ active: contactForm.company.valid === false }"
                 >
-                  Please Enter Valid Email Address!
+                  Please Enter!
                 </p>
               </div>
+            </div>
+
+            <div class="form-promotion-guide">
+              * Promotion code holders will receive exclusive premium access<br />
+              for 14 days upon launch. That’s a $1,000 value for you to use free
+              <br />with no credit card required.
             </div>
           </div>
 
@@ -139,9 +291,9 @@
           </div>
         </div>
       </div>
-      <div class="section section-footer">
+      <!-- <div class="section section-footer">
         <Footer />
-      </div>
+      </div> -->
     </section>
   </div>
 </template>
@@ -153,7 +305,8 @@ import Store from '/Store/index'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import Footer from '/Components/EN/Footer.vue'
-import SelectInput from '/Components/SelectInput.vue'
+import SelectInput from '/Components/EN/SignUpSelectInput.vue'
+import Arrow from '/Components/EN/Arrow.vue'
 
 const fullpage = computed(() => Store.state.root.FullPage)
 
@@ -355,257 +508,424 @@ const sendForm = async () => {
   window.location.href = 'en-landing'
 }
 const router = useRouter()
-
-const { meta } = useMeta({
-  title: 'Contact Us | Zenerate',
-  description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
-  htmlAttrs: { lang: 'en' },
-  meta: [
-    {
-      name: 'description',
-      content: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
-    },
-  ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/contact' }],
-  og: {
-    url: 'https://www.zenerate.ai/contact',
-    type: 'website',
-    title: 'Contact Us | Zenerate',
-    description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
-    tags: 'zenerate',
-    keywords: 'zenerate',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: 'Contact Us | Zenerate',
-  },
-})
 </script>
 <style lang="scss" scoped>
-.section-contact {
+.section-signup {
   @include relative;
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  .contact-hero-wrapper {
+
+  font-family: 'Poppins';
+  .signup-wrapper {
     @include relative;
-    height: 555px;
-    padding-top: 100px;
-    background-image: url('/en/img/contact_hero.png');
-    background-size: cover;
-    background-origin: center center;
-    img {
-      width: 100%;
-    }
+    @include flex();
+    height: 100%;
+    padding-top: 0px;
+
     @include en-tablet {
-      padding-top: 40px;
-      margin-bottom: 540px;
+      flex-direction: column;
     }
     @include en-mobile {
-      padding-top: 40px;
-      margin-bottom: 540px;
+      flex-direction: column;
     }
-    .hero-text-wrapper {
-      @include container;
-      padding-top: 40px !important;
-      p {
-        color: white;
-        &.title {
-          @include medium(36);
 
-          @include en-tablet {
-            @include medium(30);
-          }
-          @include en-mobile {
-            @include medium(24);
-          }
-        }
-        &.text {
-          @include regular(24);
-          @include en-tablet {
-            @include regular(20);
-          }
-          @include en-mobile {
-            @include regular(16);
-          }
-        }
+    .header-logo {
+      @include absolute(top 40px left 43px);
+      width: 150px;
+      z-index: 9999;
+      .logo {
+        width: 100%;
       }
-      @include en-tablet-big {
-        width: 940px;
+
+      @include tablet {
+        width: 150px;
       }
-      @include en-tablet-small {
-        width: 620px;
+
+      @include mobile {
+        @include absolute(top 22px left 20px);
+        width: 130px;
+      }
+    }
+    .signup-header-wrapper {
+      @include relative();
+      width: 50%;
+      height: auto;
+      min-height: 100vh;
+      background-color: #4848ff;
+      min-height: 600px;
+
+      @include en-tablet {
+        width: 100%;
+        height: 100vh;
+        min-height: 400px;
       }
       @include en-mobile {
-        width: calc(100% - 20px);
-        padding: 0px 20px;
+        width: 100%;
+        height: 100vh;
+        min-height: 340px;
+      }
+
+      .guide {
+        @include absolute(bottom 40px left 30px);
+        @include medium(14);
+        width: 276px;
+        height: 58px;
+        color: $white;
+        line-height: 21px;
+        padding: 8px 8px 8px 11px;
+        background: #4848ff;
+        z-index: 99;
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .background-building {
+        @include absolute(top 0px left 0px);
+        @include flex();
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+
+        .left-building {
+          // @include absolute(bottom 0px left 0px);
+          width: 39%;
+          height: 44%;
+          background: #3a2cdf;
+          box-shadow: 0px 8px 16px rgba(142, 141, 208, 0.25);
+        }
+
+        .right-background {
+          @include vertical-center();
+          width: 60%;
+          height: 100%;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          .right-squares {
+            margin: 0px 32px 20px 0px;
+            width: 60%;
+
+            max-width: 242px;
+            @include mobile {
+              width: 50%;
+              height: auto;
+            }
+          }
+          .right-building {
+            @include vertical-center();
+            align-items: flex-end;
+            justify-content: flex-start;
+            width: 100%;
+            height: 64%;
+            background: #3a2cdf;
+            box-shadow: 0px 8px 16px rgba(142, 141, 208, 0.25);
+            padding: 28px 32px 0px 0px;
+            .window {
+              max-width: 242px;
+              min-width: 160px;
+              width: 60%;
+              height: 30px;
+              background: #4848ff;
+              margin-bottom: 23px;
+              @include mobile {
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+
+      .signup-text-wrapper {
+        @include absolute(top 0px left 0px);
+        @include vertical-center();
+
+        height: 100%;
+        padding-left: 43px;
+        z-index: 99;
+
+        @include en-tablet {
+          width: 100%;
+          padding-left: 0px;
+          align-items: center;
+        }
+        @include en-mobile {
+          width: 100%;
+          padding-left: 0px;
+          align-items: center;
+        }
+
+        .title {
+          @include semi-bold(31);
+          max-width: 440px;
+          color: white;
+          line-height: 43px;
+
+          text-align: left;
+          margin: 0px 0px 26px;
+
+          @include en-tablet {
+            @include semi-bold(35);
+            max-width: 550px;
+            text-align: center;
+            line-height: 50px;
+          }
+          @include en-mobile {
+            @include semi-bold(23);
+            max-width: 294px;
+            line-height: 33px;
+            text-align: center;
+            span:nth-child(1) {
+              display: block;
+            }
+          }
+        }
+        .text {
+          @include medium(16);
+          color: white;
+          line-height: 26px;
+          max-width: 295px;
+          text-align: left;
+
+          @include en-tablet {
+            @include medium(15);
+            max-width: 450px;
+            line-height: 23px;
+            text-align: center;
+          }
+          @include en-mobile {
+            @include medium(13);
+            max-width: 300px;
+            line-height: 20px;
+            text-align: center;
+          }
+        }
+
+        @include en-mobile {
+          width: 100%;
+        }
       }
     }
-  }
-  .contact-form-wrapper {
-    padding-top: 52px;
-    width: 840px;
-    @include absolute(top 260px);
-    height: 500px;
-    overflow-y: auto;
-    background-color: $white;
-    @include elevation-1;
-    border-radius: 20px;
-    padding: 32px 36px;
-    left: 50%;
-    transform: translateX(-50%);
-    @include en-tablet-big {
-      top: 190px;
-      width: 940px;
-      height: auto;
+
+    .go-to-bottom {
+      @include absolute(top 100vh left 50%);
+      @include center-center();
+      width: 80px;
+      height: 80px;
+      background-color: #3a2cdf;
+      border-radius: 50%;
+      transform: translate(-50%, -40px);
+      z-index: 9;
+
+      @include en-mobile {
+        width: 62px;
+        height: 62px;
+        transform: translate(-50%, -31px);
+
+        svg {
+          width: 17px;
+        }
+      }
     }
-    @include en-tablet-small {
-      top: 190px;
-      width: 620px;
-      height: auto;
-    }
-    @include en-mobile {
-      top: 168px;
-      width: calc(100% - 40px);
-      height: auto;
-    }
-    .contact-form-success {
-      @include absolute(left 0 top 0);
-      width: 100%;
-      overflow: hidden;
-      height: 100%;
+    .signup-form-wrapper {
+      @include elevation-1;
+      width: 50%;
       background-color: $white;
-      @include center-center;
-      z-index: 1000;
-      border-radius: 18px;
+      padding: 95px 40px;
 
-      .contact-form-inner {
+      @include en-tablet {
+        width: 100%;
+        padding: 120px 40px;
+      }
+      @include en-mobile {
+        width: 100%;
+        padding: 90px 32px;
+      }
+
+      .form-title {
+        @include semi-bold(22);
+        margin: 10px 0px 50px 0px;
         text-align: center;
-        img {
-          width: 120px;
-          height: 120px;
-          margin-bottom: 30px;
-        }
-        .content-heading {
-          @include medium(32);
-          color: $black;
-        }
-        .content-text {
-          @include medium(24);
-          color: $text-grey;
-        }
-        button {
-          margin: 0px auto;
-          margin-top: 30px;
-          @include button-4;
-        }
-      }
-    }
-    .form-text {
-      @include flex;
-      .form-left {
-        flex: 1;
-        margin-right: 64px;
-      }
-      .form-right {
-        flex: 1;
-      }
-      @include en-tablet {
-        display: block;
-        .form-left {
-          margin-right: 0px;
-          flex: none;
-        }
-        .form-right {
-          flex: none;
-        }
-      }
-      @include en-mobile {
-        display: block;
-        .form-left {
-          margin-right: 0px;
-          flex: none;
-        }
-        .form-right {
-          flex: none;
-        }
-      }
-    }
-    .label-text {
-      width: 100%;
-      margin-bottom: 16px;
-      input {
-        width: 100%;
-        height: 42px;
-        @include border-set(1px, rgba($grey, 0.6), 6px);
-        @include center-vertical();
-        padding: 0px 12px;
-        @include regular(16);
-        color: $black-1;
-        &::placeholder {
-          color: rgba($black-1, 0.4);
-        }
-        &:focus {
-          border-width: 2px;
-        }
-      }
-      @include en-tablet {
-        margin-bottom: 8px;
-      }
-      @include en-mobile {
-        margin-bottom: 8px;
-      }
-    }
-    .label-textarea {
-      width: 100%;
-      margin-bottom: 24px;
-      textarea {
-        width: 100%;
-        height: 84px;
-        @include border-set(1px, rgba($grey, 0.6), 6px);
-        padding: 4px 12px;
-        @include regular(16);
-        color: $black-1;
-        &::placeholder {
-          color: rgba($black-1, 0.4);
-        }
-        &:focus {
-          border-width: 2px;
-        }
-      }
-    }
-    .label-text,
-    .label-textarea {
-      .label-title {
-        @include regular(16);
-        color: rgba($text-grey, 1);
-        margin-bottom: 8px;
-      }
-      .label-error {
-        width: 100%;
-        @include regular(12);
-        color: transparent;
-        text-align: right;
-        &.active {
-          color: #ff8686;
-        }
-      }
-    }
-    .form-send-wrapper {
-      width: 100%;
-      text-align: center;
-      button {
-        margin: 0px auto;
-        @include button-3(150px, 50px);
+        line-height: 31px;
 
-        @include border-set(1px, rgba($grey, 0.6), 6px);
+        @include en-tablet {
+          @include semi-bold(26);
+          line-height: 35px;
+        }
+
+        @include en-mobile {
+          @include semi-bold(20);
+          line-height: 28px;
+        }
+      }
+
+      .contact-form-success {
+        @include absolute(left 0 top 0);
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+        background-color: $white;
+        @include center-center;
+        z-index: 1000;
+        border-radius: 18px;
+
+        .contact-form-inner {
+          text-align: center;
+          img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 30px;
+          }
+          .content-heading {
+            @include medium(32);
+            color: $black;
+          }
+          .content-text {
+            @include medium(24);
+            color: $text-grey;
+          }
+          button {
+            margin: 0px auto;
+            margin-top: 30px;
+            @include button-4;
+          }
+        }
+      }
+      .form-text {
+        @include vertical-center();
+        width: 380px;
+        margin: 0px auto;
+
+        .form-promotion-guide {
+          @include medium(10);
+          color: #aaaaaa;
+          line-height: 15px;
+        }
+
+        @include en-tablet {
+          width: 494px;
+        }
+
+        @include en-mobile {
+          width: 100%;
+
+          .form-row:not(:first-child) {
+            flex-wrap: wrap;
+            :nth-child(2) {
+              margin-left: 0px;
+            }
+          }
+        }
+
+        .form-row {
+          @include flex();
+          width: 100%;
+          flex-wrap: nowrap;
+
+          .label-text:nth-child(2) {
+            margin-left: 20px;
+          }
+          .input-select-wrapper:nth-child(2) {
+            margin-left: 20px;
+          }
+
+          &.promotion {
+            width: 50%;
+            @include en-mobile {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .label-text {
+        width: 100%;
+        input {
+          @include medium(13);
+          @include center-vertical();
+          width: 100%;
+          height: 38px;
+          padding: 0px 12px;
+          border: none;
+          border-bottom: 1.5px solid #e5e5e5;
+          color: #161616;
+          &::placeholder {
+            @include medium(13);
+            color: rgba(112, 112, 112, 0.8);
+          }
+          &:focus {
+            border-bottom: 1px solid #c3c8fa;
+          }
+
+          @include en-mobile {
+            height: 30px;
+          }
+        }
+      }
+      .label-textarea {
+        width: 100%;
+        margin-bottom: 24px;
+        textarea {
+          width: 100%;
+          height: 84px;
+          @include border-set(1px, rgba($grey, 0.6), 6px);
+          padding: 4px 12px;
+          @include regular(16);
+          color: $black-1;
+          &::placeholder {
+            color: rgba($black-1, 0.4);
+          }
+          &:focus {
+            border-width: 2px;
+          }
+        }
+      }
+      .label-text,
+      .label-textarea {
+        .label-title {
+          @include regular(16);
+          color: rgba($text-grey, 1);
+          margin-bottom: 8px;
+        }
+        .label-error {
+          width: 100%;
+          @include regular(10);
+          color: transparent;
+          text-align: right;
+          &.active {
+            color: #ff8686;
+          }
+        }
+      }
+      .form-send-wrapper {
+        width: 100%;
+        text-align: center;
+        button {
+          @include semi-bold(14);
+          margin: 0px auto;
+          width: 180px;
+          height: 45px;
+          background: #4848ff;
+          color: #fafafc;
+          border-radius: 5px;
+
+          @include en-tablet {
+            @include semi-bold(16);
+            width: 235px;
+            height: 60px;
+            margin-top: 80px;
+          }
+
+          @include en-mobile {
+            width: 100%;
+            margin-top: 60px;
+          }
+        }
+      }
+      input::placeholder {
+        color: $bt-secondary-stroke-disabled;
       }
     }
-    input::placeholder {
-      color: $bt-secondary-stroke-disabled;
-    }
-  }
-  .section-footer {
-    margin-top: 250px;
   }
 }
 </style>

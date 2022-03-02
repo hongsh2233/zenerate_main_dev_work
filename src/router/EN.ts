@@ -56,7 +56,7 @@ const ENRoute: RouteRecordRaw = {
       component: ContactView,
     },
     {
-      path: '/signup',
+      path: '/pre-launch-signup',
       name: 'SignUp',
       component: SignUp,
     },

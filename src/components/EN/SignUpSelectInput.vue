@@ -1,6 +1,5 @@
 <template>
   <div class="input-select-wrapper">
-    <p>{{ props.title || $t('main.contact.form.purpose') }}</p>
     <div class="input-select-container">
       <input type="text" class="dummy" ref="dummy" />
       <div class="input-select hover-pointer" @click="toggleDropDown()">
@@ -115,7 +114,6 @@ watch(showDropdown, (v) => {
 </script>
 <style lang="scss" scoped>
 .input-select-wrapper {
-  margin-bottom: 40px;
   width: 100%;
   p {
     @include regular(16);
@@ -123,12 +121,17 @@ watch(showDropdown, (v) => {
     margin-bottom: 8px;
   }
   .input-select-container {
-    height: 42px;
-    border-radius: 6px;
-    width: calc(100% + 2px);
-    border: 1px solid rgba(196, 196, 196, 0.6);
-    margin-bottom: 16px;
     @include relative;
+    height: 38px;
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid #e5e5e5;
+    margin-bottom: 16px;
+
+    @include en-mobile {
+      height: 30px;
+    }
+
     .dummy {
       position: absolute;
       width: 0px;
@@ -144,35 +147,43 @@ watch(showDropdown, (v) => {
       align-items: center;
       justify-content: space-between;
       span {
-        @include medium(18);
-        @include mobile {
-          @include medium(14);
-        }
+        @include medium(13);
+
         &.placeholder {
-          color: $bt-secondary-stroke-disabled;
+          @include medium(13);
+          color: rgba(112, 112, 112, 0.8);
         }
       }
       i {
-        color: rgba(196, 196, 196, 0.6);
-        font-size: 32px;
+        @include medium(20);
+        color: rgba(112, 112, 112, 0.8);
       }
     }
   }
   .input-select-dropdown {
-    border: solid 1px rgba(196, 196, 196, 0.6);
-    border-radius: 0px 0px 6px 6px;
-    width: calc(100% + 2px);
-    @include absolute(left -1px top 36px);
+    @include absolute(left 0px top 36px);
+    border: solid 1px #e5e5e5;
+    border-radius: 0px 0px 5px 5px;
+    width: 100%;
     background: $white;
+    z-index: 9;
+
+    @include en-mobile {
+      @include absolute(left 0px top 29px);
+    }
+
     .input-select-dropdown-item {
+      @include medium(12);
       width: 100%;
-      @include medium(18);
       padding: 4px 12px;
-      @include mobile {
-        @include medium(14);
-      }
+      color: rgba(112, 112, 112, 0.8);
+
       &:hover {
-        color: $main;
+        background-color: #f0f0f0;
+      }
+
+      &:active {
+        background-color: #ebedfe;
       }
     }
   }

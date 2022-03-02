@@ -5,7 +5,7 @@
         class="header-logo hover-pointer"
         @click="router.push({ name: 'en-landing' }) && toggleDrawer(false)"
       >
-        <img class="logo" src="/img/logo_color.png" alt="logo" />
+        <img class="logo" src="/img/logo_color.svg" alt="logo" />
         <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" /> -->
       </div>
       <div class="header-navigation-wrapper only-en-desktop">

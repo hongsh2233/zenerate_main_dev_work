@@ -1,6 +1,10 @@
 <template>
   <div class="layout-en">
-    <Header @toggleDrawer="toggleDrawer" :showDrawer="showDrawer"></Header>
+    <Header
+      @toggleDrawer="toggleDrawer"
+      :showDrawer="showDrawer"
+      v-show="path !== '/pre-launch-signup'"
+    ></Header>
     <transition name="fade">
       <Drawer v-if="showDrawer" @close="toggleDrawer" />
     </transition>
@@ -21,7 +25,11 @@ import Footer from '/Components/EN/Footer.vue'
 // @ts-ignore
 import Drawer from '/Components/EN/Drawer.vue'
 
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+const path = computed(() => route.path)
+
 const showDrawer = ref(false)
 const toggleDrawer = (flag = undefined) => {
   showDrawer.value = flag == null ? !showDrawer.value : flag
@@ -46,6 +54,6 @@ const toggleDrawer = (flag = undefined) => {
 
 .layout-en,
 .layout-en * {
-  font-family: 'Inter', 'Roboto', sans-serif !important;
+  font-family: 'Poppins', 'Roboto', sans-serif !important;
 }
 </style>
