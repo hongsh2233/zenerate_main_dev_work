@@ -8,7 +8,7 @@
         >
           <img class="logo" src="/img/logo_white.svg" alt="logo" />
         </div>
-        <div class="signup-header-wrapper">
+        <div class="signup-header-wrapper" :class="{ done: sendEmailStatus }">
           <div class="signup-text-wrapper">
             <p class="title">
               <span>The biggest&nbsp;</span><span>game-changer&nbsp;</span>
@@ -45,7 +45,10 @@
             </div>
           </div>
         </div>
-        <div class="go-to-bottom hidden-desktop">
+        <div
+          class="go-to-bottom hidden-desktop"
+          :class="{ done: sendEmailStatus }"
+        >
           <svg
             width="26"
             height="54"
@@ -71,229 +74,243 @@
             />
           </svg>
         </div>
-        <div class="signup-form-wrapper" :class="{ done: sendEmailStatus }">
-          <transition name="fade">
-            <div class="contact-form-success" v-if="sendEmailStatus">
-              <div class="contact-form-inner">
-                <img
-                  data-aos="fade-up"
-                  data-aos-offset="-1500"
-                  data-aos-duration="500"
-                  data-aos-anchor-placement="bottom-bottom"
-                  src="/en/img/contact_submit_done.png"
-                  alt=""
-                />
-                <div
-                  class="inner-content"
-                  data-aos="fade-up"
-                  data-aos-offset="-1500"
-                  data-aos-delay="500"
-                  data-aos-duration="500"
-                  data-aos-anchor-placement="bottom-bottom"
-                >
-                  <p class="content-heading">Successfully submitted!</p>
-                  <p class="content-text">
-                    We've received your message and will get back to you soon.
-                  </p>
-                  <button
-                    class="content-button"
-                    @click="router.push({ name: 'en-landing' })"
+        <transition name="fade">
+          <div class="signup-form-wrapper" v-if="!sendEmailStatus">
+            <h2 class="form-title">Let me know<br />when Zenerate launches!</h2>
+            <div class="form-text">
+              <div class="form-row">
+                <div class="label-text">
+                  <input
+                    type="text"
+                    placeholder="First name"
+                    v-model="contactForm.firstName.value"
+                    @blur="(v) => validation('firstName')"
+                  />
+                  <p
+                    class="label-error"
+                    :class="{ active: contactForm.firstName.valid === false }"
                   >
-                    Go to Home
-                  </button>
+                    Please Enter!
+                  </p>
+                </div>
+                <div class="label-text">
+                  <input
+                    type="text"
+                    placeholder="Last name"
+                    v-model="contactForm.lastName.value"
+                    @blur="(v) => validation('lastName')"
+                  />
+                  <p
+                    class="label-error"
+                    :class="{ active: contactForm.lastName.valid === false }"
+                  >
+                    Please Enter!
+                  </p>
                 </div>
               </div>
-            </div>
-          </transition>
-          <h2 class="form-title">Let me know<br />when Zenerate launches!</h2>
-          <div class="form-text">
-            <div class="form-row">
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="First name"
-                  v-model="contactForm.firstName.value"
-                  @blur="(v) => validation('firstName')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.firstName.valid === false }"
-                >
-                  Please Enter!
-                </p>
+              <div class="form-row">
+                <div class="label-text email-input">
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    v-model="contactForm.email.value"
+                    @blur="(v) => validation('email')"
+                  />
+                  <p
+                    class="label-error"
+                    :class="{ active: contactForm.email.valid === false }"
+                  >
+                    Please Enter Valid Email Address!
+                  </p>
+                </div>
               </div>
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="Last name"
-                  v-model="contactForm.lastName.value"
-                  @blur="(v) => validation('lastName')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.lastName.valid === false }"
-                >
-                  Please Enter!
-                </p>
+              <div class="form-row">
+                <div class="label-text">
+                  <input
+                    type="text"
+                    placeholder="Company"
+                    v-model="contactForm.company.value"
+                    @blur="(v) => validation('company')"
+                  />
+                  <p
+                    class="label-error"
+                    :class="{ active: contactForm.company.valid === false }"
+                  >
+                    Please Enter!
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="Email"
-                  v-model="contactForm.email.value"
-                  @blur="(v) => validation('email')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.email.valid === false }"
-                >
-                  Please Enter Valid Email Address!
-                </p>
+              <div class="form-row">
+                <div class="label-text">
+                  <input
+                    type="text"
+                    placeholder="City"
+                    v-model="contactForm.city.value"
+                    @blur="(v) => validation('city')"
+                  />
+                  <p
+                    class="label-error"
+                    :class="{ active: contactForm.city.valid === false }"
+                  >
+                    Please Enter!
+                  </p>
+                </div>
+                <div class="label-text">
+                  <input
+                    type="text"
+                    placeholder="State / Region"
+                    v-model="contactForm.state.value"
+                    @blur="(v) => validation('state')"
+                  />
+                  <p
+                    class="label-error"
+                    :class="{ active: contactForm.state.valid === false }"
+                  >
+                    Please Enter!
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="Company"
-                  v-model="contactForm.company.value"
-                  @blur="(v) => validation('company')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.company.valid === false }"
-                >
-                  Please Enter!
-                </p>
+              <div class="form-row">
+                <div class="label-text">
+                  <input
+                    type="text"
+                    placeholder="Country / Region"
+                    v-model="contactForm.country.value"
+                    @blur="(v) => validation('country')"
+                  />
+                  <p
+                    class="label-error"
+                    :class="{ active: contactForm.country.valid === false }"
+                  >
+                    Please Enter!
+                  </p>
+                </div>
+                <div class="label-text">
+                  <input
+                    type="text"
+                    placeholder="Phone Number"
+                    v-model="contactForm.phone.value"
+                    @blur="(v) => validation('phone')"
+                  />
+                  <p
+                    class="label-error"
+                    :class="{ active: contactForm.phone.valid === false }"
+                  >
+                    Please Enter!
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="City"
-                  v-model="contactForm.company.value"
-                  @blur="(v) => validation('company')"
+              <div class="form-row">
+                <SelectInput
+                  placeholder="Role"
+                  :items="roleItems"
+                  title="Role"
+                  :skipTranslate="true"
+                  :selected="contactForm.role.value"
+                  :valid="contactForm.role.valid"
+                  @onSelect="
+                    (v) => ((contactForm.role.value = v), validation('role'))
+                  "
                 />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.company.valid === false }"
-                >
-                  Please Enter!
-                </p>
-              </div>
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="State / Region"
-                  v-model="contactForm.company.value"
-                  @blur="(v) => validation('company')"
+                <SelectInput
+                  placeholder="Buildings"
+                  :items="buildingsItems"
+                  title="Buildings"
+                  :skipTranslate="true"
+                  :selected="contactForm.buildings.value"
+                  :valid="contactForm.buildings.valid"
+                  @onSelect="
+                    (v) => (
+                      (contactForm.buildings.value = v), validation('buildings')
+                    )
+                  "
                 />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.company.valid === false }"
-                >
-                  Please Enter!
-                </p>
               </div>
-            </div>
-            <div class="form-row">
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="Country / Region"
-                  v-model="contactForm.company.value"
-                  @blur="(v) => validation('company')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.company.valid === false }"
-                >
-                  Please Enter!
-                </p>
+              <div class="form-row promotion">
+                <div class="label-text">
+                  <input
+                    type="text"
+                    placeholder="Promotion Code"
+                    v-model="contactForm.promotion.value"
+                    @blur="(v) => validation('promotion')"
+                  />
+                  <p
+                    class="label-error"
+                    :class="{ active: contactForm.promotion.valid === false }"
+                  >
+                    Please enter Valid Code!
+                  </p>
+                </div>
               </div>
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="Phone Number"
-                  v-model="contactForm.company.value"
-                  @blur="(v) => validation('company')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.company.valid === false }"
-                >
-                  Please Enter!
-                </p>
-              </div>
-            </div>
-            <div class="form-row">
-              <SelectInput
-                placeholder="Role"
-                :items="items"
-                title="Role"
-                :skipTranslate="true"
-                :selected="contactForm.buildings.value"
-                :valid="contactForm.buildings.valid"
-                @onSelect="
-                  (v) => (
-                    (contactForm.buildings.value = v), validation('buildings')
-                  )
-                "
-              />
-              <SelectInput
-                placeholder="Buildings"
-                :items="items"
-                title="Buildings"
-                :skipTranslate="true"
-                :selected="contactForm.role.value"
-                :valid="contactForm.role.valid"
-                @onSelect="
-                  (v) => ((contactForm.role.value = v), validation('role'))
-                "
-              />
-            </div>
-            <div class="form-row promotion">
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="Promotion Code"
-                  v-model="contactForm.company.value"
-                  @blur="(v) => validation('company')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.company.valid === false }"
-                >
-                  Please Enter!
-                </p>
-              </div>
+
+              <p class="form-promotion-guide">
+                <span
+                  >* Promotion code holders will receive exclusive&nbsp;</span
+                ><span>premium access&nbsp;</span>
+                <span>for 14 days upon launch.&nbsp;</span>
+                <span>That’s a $1,000 value for you to use free &nbsp;</span
+                ><span>with no credit card required.</span>
+              </p>
             </div>
 
-            <div class="form-promotion-guide">
-              * Promotion code holders will receive exclusive premium access<br />
-              for 14 days upon launch. That’s a $1,000 value for you to use free
-              <br />with no credit card required.
+            <div class="form-send-wrapper">
+              <div class="dummy" ref="dummy"></div>
+              <button
+                class="form-send hover-pointer"
+                :class="{ disabled: sendEmailStatus }"
+                @click="sendForm"
+              >
+                {{ sendEmailStatus ? 'DONE' : 'SUBMIT' }}
+              </button>
             </div>
           </div>
+        </transition>
+        <transition name="fade">
+          <div
+            class="signup-form-wrapper"
+            v-if="sendEmailStatus"
+            data-aos="fade-up"
+            data-aos-offset="-1500"
+            data-aos-delay="500"
+            data-aos-duration="500"
+            data-aos-anchor-placement="bottom-bottom"
+          >
+            <div class="check-wrapper">
+              <div class="circle">
+                <div class="circle-block"></div>
+              </div>
+              <i class="material-icons"> done </i>
+            </div>
+            <p class="thank-title">
+              <span>Thanks</span> <span>for Signing Up!</span>
+            </p>
+            <div class="thank-text">
+              <span class="purpose"
+                >We’ll send you an email once we launch.</span
+              >
+              <p>
+                <span> Until then, please follow us&nbsp;</span>
+                <span>on our LinkedIn Page</span> <br />
+                for more updates, news and insights.
+              </p>
+            </div>
+            <div class="form-send-wrapper">
+              <div class="dummy" ref="dummy"></div>
+              <button class="form-send hover-pointer" @click="goLinkedIn">
+                FOLLOW US
+              </button>
+            </div>
 
-          <div class="form-send-wrapper">
-            <div class="dummy" ref="dummy"></div>
-            <button
-              class="form-send hover-pointer"
-              :class="{ disabled: sendEmailStatus }"
-              @click="sendForm"
-            >
-              {{ sendEmailStatus ? 'DONE' : 'SUBMIT' }}
-            </button>
+            <p class="beta-guide">
+              If you want to check out our beta version
+              <a href="http://app.zenerate.ai">click here.</a>
+            </p>
+            <p class="beta-guide-b">
+              Guides and demos will be provided upon official launch.
+            </p>
           </div>
-        </div>
+        </transition>
       </div>
-      <!-- <div class="section section-footer">
-        <Footer />
-      </div> -->
     </section>
   </div>
 </template>
@@ -306,15 +323,19 @@ import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import Footer from '/Components/EN/Footer.vue'
 import SelectInput from '/Components/EN/SignUpSelectInput.vue'
-import Arrow from '/Components/EN/Arrow.vue'
 
 const fullpage = computed(() => Store.state.root.FullPage)
+const sendEmailStatus = ref(false)
 
 onMounted(() => {
   if (fullpage.value) {
     fullpage.value.destroy()
   }
 })
+
+const goLinkedIn = () => {
+  window.open('http://linkedin.com/company/zenerate', '_blank')
+}
 
 type Item = {
   id: number
@@ -323,26 +344,59 @@ type Item = {
   ref?: string
 }
 
-const items: Item[] = [
+const roleItems: Item[] = [
   {
     id: 1,
-    value: 'invest',
-    label: 'Investments',
+    value: 'real_estate_developer',
+    label: 'Real Estate Developer',
   },
   {
     id: 2,
-    value: 'media',
-    label: 'Media',
+    value: 'architect',
+    label: 'Architect',
   },
   {
     id: 3,
-    value: 'product_service',
-    label: 'Product/Service',
+    value: 'general_contractor',
+    label: 'General Contractor',
   },
   {
     id: 4,
-    value: 'careers',
-    label: 'Careers',
+    value: 'broker',
+    label: 'Broker',
+  },
+  {
+    id: 5,
+    value: 'financial_institution',
+    label: 'Financial Institution',
+  },
+  {
+    id: 6,
+    value: 'other',
+    label: 'Other',
+  },
+]
+
+const buildingsItems: Item[] = [
+  {
+    id: 1,
+    value: 'multifamily',
+    label: 'Multifamily',
+  },
+  {
+    id: 2,
+    value: 'office',
+    label: 'Office',
+  },
+  {
+    id: 3,
+    value: 'hotel',
+    label: 'Hotel',
+  },
+  {
+    id: 4,
+    value: 'industrial',
+    label: 'Industrial',
   },
   {
     id: 5,
@@ -350,7 +404,6 @@ const items: Item[] = [
     label: 'Other',
   },
 ]
-const sendEmailStatus = ref(false)
 
 /*   const temp = {
     firstName: 'aa',
@@ -403,7 +456,7 @@ const contactForm = reactive({
   },
   phone: {
     value: '',
-    validator: Validation.string,
+    validator: Validation.phone,
     valid: null,
   },
   role: {
@@ -416,10 +469,16 @@ const contactForm = reactive({
     validator: (v) => true,
     valid: null,
   },
+  promotion: {
+    value: '',
+    validator: Validation.promotion,
+    valid: true,
+  },
 })
 
 const validation = (item: string) => {
   contactForm[item].valid = contactForm[item].validator(contactForm[item].value)
+  console.log('tt', contactForm[item].validator(contactForm[item].value))
 }
 
 const resetForm = () => {
@@ -461,7 +520,7 @@ const resetForm = () => {
     },
     phone: {
       value: '',
-      validator: Validation.string,
+      validator: Validation.phone,
       valid: null,
     },
     role: {
@@ -473,6 +532,11 @@ const resetForm = () => {
       value: null,
       validator: (v) => true,
       valid: null,
+    },
+    promotion: {
+      value: ' ',
+      validator: Validation.promotion,
+      valid: true,
     },
   })
 }
@@ -489,10 +553,10 @@ const sendForm = async () => {
       contactForm[key].valid = false
       isValid = false
     } else {
-      if (key === 'buildings' || 'role') {
-        form[key] = contactForm[key].value.label
+      if (key === 'buildings' || key === 'role') {
+        form[key] = String(contactForm[key].value.label)
       } else {
-        form[key] = contactForm[key].value
+        form[key] = String(contactForm[key].value)
       }
     }
   }
@@ -501,11 +565,11 @@ const sendForm = async () => {
   console.log('isvalied', isValid)
 
   if (!isValid) return
-  //   await ApiService.XSLX_TEST(form)
+  await ApiService.XSLX_TEST(form)
   resetForm()
   sendEmailStatus.value = true
-  window.open('https://app.zenerate.ai', '_blank')
-  window.location.href = 'en-landing'
+  // window.open('https://app.zenerate.ai', '_blank')
+  // window.location.href = 'en-landing'
 }
 const router = useRouter()
 </script>
@@ -514,8 +578,9 @@ const router = useRouter()
   @include relative;
   width: 100vw;
   height: 100%;
-
   font-family: 'Poppins';
+  letter-spacing: -0.2pt;
+  min-height: 100vh;
   .signup-wrapper {
     @include relative;
     @include flex();
@@ -552,17 +617,22 @@ const router = useRouter()
       height: auto;
       min-height: 100vh;
       background-color: #4848ff;
-      min-height: 600px;
 
       @include en-tablet {
         width: 100%;
-        height: 100vh;
+        height: 93vh;
         min-height: 400px;
+        &.done {
+          display: none;
+        }
       }
       @include en-mobile {
         width: 100%;
-        height: 100vh;
+        height: 93vh;
         min-height: 340px;
+        &.done {
+          display: none;
+        }
       }
 
       .guide {
@@ -640,7 +710,6 @@ const router = useRouter()
       .signup-text-wrapper {
         @include absolute(top 0px left 0px);
         @include vertical-center();
-
         height: 100%;
         padding-left: 43px;
         z-index: 99;
@@ -709,7 +778,7 @@ const router = useRouter()
     }
 
     .go-to-bottom {
-      @include absolute(top 100vh left 50%);
+      @include absolute(top 93vh left 50%);
       @include center-center();
       width: 80px;
       height: 80px;
@@ -717,6 +786,9 @@ const router = useRouter()
       border-radius: 50%;
       transform: translate(-50%, -40px);
       z-index: 9;
+      &.done {
+        display: none;
+      }
 
       @include en-mobile {
         width: 62px;
@@ -730,22 +802,77 @@ const router = useRouter()
     }
     .signup-form-wrapper {
       @include elevation-1;
+      @include vertical-center();
       width: 50%;
       background-color: $white;
-      padding: 95px 40px;
+      padding: 0px;
+      min-height: 100vh;
 
       @include en-tablet {
         width: 100%;
-        padding: 120px 40px;
+        padding: 80px 40px 0px;
+        min-height: calc(100vh + 44px);
       }
       @include en-mobile {
         width: 100%;
-        padding: 90px 32px;
+        padding: 44px 32px 0px;
+        min-height: calc(100vh + 44px);
+      }
+
+      .check-wrapper {
+        @include relative;
+        @include center-center;
+        margin-bottom: 50px;
+
+        @include en-mobile {
+          @include medium(13);
+          margin-bottom: 40px;
+        }
+        .circle {
+          @include relative;
+          width: 130px;
+          height: 130px;
+          background-color: #ebedfe;
+          border-radius: 50%;
+          .circle-block {
+            @include absolute(top 10% left 3%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #ebedfe;
+            opacity: 0.4;
+            z-index: 9;
+          }
+        }
+
+        i {
+          @include absolute(top 50% left 50%);
+          @include regular(150);
+          color: #4848ff;
+          transform: translate(-40%, -60%);
+        }
+
+        @include en-mobile {
+          .circle {
+            width: 110px;
+            height: 110px;
+
+            .circle-block {
+              @include absolute(top 20px left 10px);
+              width: 50px;
+              height: 50px;
+            }
+          }
+
+          i {
+            @include regular(120);
+          }
+        }
       }
 
       .form-title {
         @include semi-bold(22);
-        margin: 10px 0px 50px 0px;
+        margin: 50px 0px;
         text-align: center;
         line-height: 31px;
 
@@ -760,41 +887,52 @@ const router = useRouter()
         }
       }
 
-      .contact-form-success {
-        @include absolute(left 0 top 0);
-        width: 100%;
-        overflow: hidden;
-        height: 100%;
-        background-color: $white;
-        @include center-center;
-        z-index: 1000;
-        border-radius: 18px;
+      .thank-title {
+        @include semi-bold(31);
+        margin: 0px auto 50px;
+        text-align: center;
 
-        .contact-form-inner {
-          text-align: center;
-          img {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 30px;
+        @include en-tablet {
+          @include semi-bold(33);
+          margin-bottom: 45px;
+          max-width: 250px;
+        }
+
+        @include en-mobile {
+          @include semi-bold(28);
+          max-width: 210px;
+          margin-bottom: 40px;
+        }
+      }
+      .thank-text {
+        margin: 0px auto;
+        text-align: center;
+        .purpose {
+          @include semi-bold(16);
+          color: #161616;
+          margin-bottom: 23px;
+          @include en-mobile {
+            max-width: 200px;
           }
-          .content-heading {
-            @include medium(32);
-            color: $black;
+        }
+
+        p {
+          @include medium(15);
+          margin: 0px auto 0px;
+
+          @include en-tablet {
+            @include medium(15);
           }
-          .content-text {
-            @include medium(24);
-            color: $text-grey;
-          }
-          button {
-            margin: 0px auto;
-            margin-top: 30px;
-            @include button-4;
+
+          @include en-mobile {
+            @include medium(13);
           }
         }
       }
+
       .form-text {
         @include vertical-center();
-        width: 380px;
+        width: 428px;
         margin: 0px auto;
 
         .form-promotion-guide {
@@ -839,6 +977,7 @@ const router = useRouter()
         }
       }
       .label-text {
+        @include relative;
         width: 100%;
         input {
           @include medium(13);
@@ -846,7 +985,7 @@ const router = useRouter()
           width: 100%;
           height: 38px;
           padding: 0px 12px;
-          border: none;
+          border: 1.5px solid transparent;
           border-bottom: 1.5px solid #e5e5e5;
           color: #161616;
           &::placeholder {
@@ -859,6 +998,15 @@ const router = useRouter()
 
           @include en-mobile {
             height: 30px;
+          }
+        }
+
+        &.email-input {
+          &::after {
+            @include absolute(bottom 0px left 14px);
+            @include medium(10);
+            content: '* Work email only';
+            color: rgba(92, 109, 255, 0.8);
           }
         }
       }
@@ -902,28 +1050,64 @@ const router = useRouter()
         text-align: center;
         button {
           @include semi-bold(14);
-          margin: 0px auto;
           width: 180px;
           height: 45px;
           background: #4848ff;
           color: #fafafc;
           border-radius: 5px;
+          margin: 50px auto;
+          letter-spacing: 0.08em;
 
           @include en-tablet {
             @include semi-bold(16);
             width: 235px;
             height: 60px;
-            margin-top: 80px;
+            margin: 80px auto;
           }
 
           @include en-mobile {
             width: 100%;
-            margin-top: 60px;
+            margin: 44px auto;
+            max-width: 240px;
           }
         }
       }
-      input::placeholder {
-        color: $bt-secondary-stroke-disabled;
+
+      .beta-guide {
+        @include semi-bold(12);
+        color: #818181;
+        width: 100%;
+        margin: 0px auto;
+        text-align: center;
+        margin-bottom: 0px;
+
+        a {
+          color: #4848ff;
+          cursor: pointer;
+
+          &:visited {
+            color: #4848ff;
+          }
+        }
+
+        @include en-mobile {
+          max-width: 180px;
+          line-height: 18px;
+          margin-bottom: 18px;
+        }
+      }
+
+      .beta-guide-b {
+        @include regular(12);
+        width: 100%;
+        margin: 0px auto;
+        text-align: center;
+        color: #c4c4c4;
+        font-style: italic;
+        @include en-mobile {
+          max-width: 220px;
+          line-height: 18px;
+        }
       }
     }
   }

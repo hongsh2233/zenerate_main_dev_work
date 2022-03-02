@@ -142,7 +142,7 @@ watch(showDropdown, (v) => {
     .input-select {
       width: 100%;
       height: 100%;
-      padding: 0px 12px;
+      padding: 0px 6px 0px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
