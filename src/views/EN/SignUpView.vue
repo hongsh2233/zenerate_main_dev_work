@@ -2,13 +2,13 @@
   <div id="fullpage-signup">
     <section class="section-signup">
       <div class="signup-wrapper">
-        <div
-          class="header-logo hover-pointer"
-          @click="router.push({ name: 'en-landing' })"
-        >
-          <img class="logo" src="/img/logo_white.svg" alt="logo" />
-        </div>
         <div class="signup-header-wrapper" :class="{ done: sendEmailStatus }">
+          <div
+            class="header-logo hover-pointer"
+            @click="router.push({ name: 'en-landing' })"
+          >
+            <img class="logo" src="/img/logo_white.svg" alt="logo" />
+          </div>
           <div class="signup-text-wrapper">
             <p class="title">
               <span>The biggest&nbsp;</span><span>game-changer&nbsp;</span>
@@ -275,6 +275,12 @@
             data-aos-duration="500"
             data-aos-anchor-placement="bottom-bottom"
           >
+            <div
+              class="header-logo hover-pointer hidden-desktop"
+              @click="router.push({ name: 'en-landing' })"
+            >
+              <img class="logo" src="/img/logo_color.svg" alt="logo" />
+            </div>
             <div class="check-wrapper">
               <div class="circle">
                 <div class="circle-block"></div>

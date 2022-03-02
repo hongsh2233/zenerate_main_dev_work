@@ -1,5 +1,13 @@
 <template>
   <div class="layout-en">
+    <div
+      class="signup-banner"
+      @click="goSignUp"
+      v-show="path !== '/pre-launch-signup'"
+    >
+      <span>WANT TO KNOW WHEN WE LAUNCH? NOTIFY ME</span>
+      <i class="material-icons"> east </i>
+    </div>
     <Header
       @toggleDrawer="toggleDrawer"
       :showDrawer="showDrawer"
@@ -18,17 +26,18 @@
   </div>
 </template>
 <script lang="ts" setup>
-//@ts-ignore
 import Header from '/Components/EN/Header.vue'
-//@ts-ignore
 import Footer from '/Components/EN/Footer.vue'
-// @ts-ignore
 import Drawer from '/Components/EN/Drawer.vue'
-
 import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+
 const route = useRoute()
+const router = useRouter()
 const path = computed(() => route.path)
+const goSignUp = () => {
+  router.push('/pre-launch-signup')
+}
 
 const showDrawer = ref(false)
 const toggleDrawer = (flag = undefined) => {
@@ -50,6 +59,39 @@ const toggleDrawer = (flag = undefined) => {
 .layout-en {
   overflow-x: hidden;
   overflow-y: hidden;
+}
+
+.signup-banner {
+  @include flex();
+  @include semi-bold(13);
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+  background: #4848ff;
+  color: #ffffff;
+  transition: color 0.1s ease-in-out;
+  cursor: pointer;
+
+  i {
+    @include semi-bold(13);
+    @include medium(18);
+    margin-left: 8px;
+  }
+
+  @include en-mobile {
+    @include medium(12);
+
+    i {
+      @include medium(11);
+      margin-left: 4px;
+    }
+  }
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .layout-en,

@@ -103,7 +103,7 @@ const routes = [
 </script>
 <style lang="scss" scoped>
 .header-wrapper {
-  @include fixed(top 0 left 0);
+  @include fixed(top 35px left 0);
   width: 100vw;
   z-index: 1000;
   background: $white;
