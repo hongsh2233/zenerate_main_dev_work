@@ -1,8 +1,12 @@
 <template>
   <div class="input-select-wrapper">
     <div class="input-select-container">
-      <input type="text" class="dummy" ref="dummy" />
-      <div class="input-select hover-pointer" @click="toggleDropDown()">
+      <input type="text" class="dummy" ref="dummy" inputmode="none" />
+      <div
+        class="input-select hover-pointer"
+        @click="toggleDropDown()"
+        @focus="() => blur()"
+      >
         <span
           :class="{
             selected: props.selected,
@@ -25,7 +29,8 @@
           <div
             class="input-select-dropdown-item hover-pointer"
             v-for="(item, idx) in props.items"
-            @click="onSelect(item)"
+            @click="($evt) => onSelect($evt, item)"
+            @focus="() => blur()"
             :key="idx"
           >
             <span>{{ props.skipTranslate ? item.label : $t(item.label) }}</span>
@@ -85,7 +90,8 @@ const props = defineProps({
 const emit = defineEmits(['onSelect'])
 const isInvalid = ref(false)
 
-const onSelect = (value) => {
+const onSelect = ($evt, value) => {
+  $evt.stopPropagation()
   emit('onSelect', value)
   toggleDropDown(false)
 }

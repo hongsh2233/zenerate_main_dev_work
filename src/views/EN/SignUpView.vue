@@ -1,6 +1,12 @@
 <template>
   <div id="fullpage-signup">
-    <section class="section-signup">
+    <section
+      class="section-signup"
+      data-aos="fade-zoom-in"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-back"
+    >
+      <!-- data-aos="flip-left" -->
       <div class="signup-wrapper">
         <div class="signup-header-wrapper" :class="{ done: sendEmailStatus }">
           <div
@@ -83,6 +89,7 @@
                   <input
                     type="text"
                     placeholder="First name"
+                    autocomplete="new-firstname"
                     v-model="contactForm.firstName.value"
                     @blur="(v) => validation('firstName')"
                   />
@@ -97,6 +104,7 @@
                   <input
                     type="text"
                     placeholder="Last name"
+                    autocomplete="new-lastname"
                     v-model="contactForm.lastName.value"
                     @blur="(v) => validation('lastName')"
                   />
@@ -113,6 +121,8 @@
                   <input
                     type="text"
                     placeholder="Email"
+                    autocomplete="new-email"
+                    inputmode="email"
                     v-model="contactForm.email.value"
                     @blur="(v) => validation('email')"
                   />
@@ -129,6 +139,7 @@
                   <input
                     type="text"
                     placeholder="Company"
+                    autocomplete="new-company"
                     v-model="contactForm.company.value"
                     @blur="(v) => validation('company')"
                   />
@@ -145,6 +156,7 @@
                   <input
                     type="text"
                     placeholder="City"
+                    autocomplete="new-city"
                     v-model="contactForm.city.value"
                     @blur="(v) => validation('city')"
                   />
@@ -159,6 +171,7 @@
                   <input
                     type="text"
                     placeholder="State / Region"
+                    autocomplete="new-state"
                     v-model="contactForm.state.value"
                     @blur="(v) => validation('state')"
                   />
@@ -175,6 +188,7 @@
                   <input
                     type="text"
                     placeholder="Country / Region"
+                    autocomplete="new-country"
                     v-model="contactForm.country.value"
                     @blur="(v) => validation('country')"
                   />
@@ -188,7 +202,9 @@
                 <div class="label-text">
                   <input
                     type="text"
+                    inputmode="tel"
                     placeholder="Phone Number"
+                    autocomplete="new-phone"
                     v-model="contactForm.phone.value"
                     @blur="(v) => validation('phone')"
                   />
@@ -231,6 +247,7 @@
                   <input
                     type="text"
                     placeholder="Promotion Code"
+                    autocomplete="new-code"
                     v-model="contactForm.promotion.value"
                     @blur="(v) => validation('promotion')"
                   />
@@ -571,7 +588,11 @@ const sendForm = async () => {
   console.log('isvalied', isValid)
 
   if (!isValid) return
-  await ApiService.XSLX_TEST(form)
+  try {
+    await ApiService.XSLX_TEST(form)
+  } catch (e) {
+    // console.log("error", e)
+  }
   resetForm()
   sendEmailStatus.value = true
   // window.open('https://app.zenerate.ai', '_blank')
@@ -634,7 +655,7 @@ const router = useRouter()
       }
       @include en-mobile {
         width: 100%;
-        height: 93vh;
+        height: calc(93vh - 40px);
         min-height: 340px;
         &.done {
           display: none;
@@ -788,6 +809,7 @@ const router = useRouter()
       @include center-center();
       width: 80px;
       height: 80px;
+      top: calc(93vh - 40px);
       background-color: #3a2cdf;
       border-radius: 50%;
       transform: translate(-50%, -40px);
