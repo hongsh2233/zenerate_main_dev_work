@@ -368,7 +368,7 @@ onBeforeUnmount(() => {
   }
 
   &:first-child {
-    padding-top: 50px;
+    padding-top: 85px;
 
     @include en-desktop {
       height: 100vh !important;

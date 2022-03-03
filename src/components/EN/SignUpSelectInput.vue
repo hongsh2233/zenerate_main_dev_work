@@ -119,8 +119,12 @@ watch(showDropdown, (v) => {
 })
 </script>
 <style lang="scss" scoped>
+* {
+  font-family: 'Poppins' !important;
+}
 .input-select-wrapper {
   width: 100%;
+
   p {
     @include regular(16);
     color: rgba($text-grey, 1);

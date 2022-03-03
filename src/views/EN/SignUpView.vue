@@ -813,7 +813,6 @@ const router = useRouter()
       @include center-center();
       width: 80px;
       height: 80px;
-      top: calc(93vh - 40px);
       background-color: #3a2cdf;
       border-radius: 50%;
       transform: translate(-50%, -40px);
@@ -825,7 +824,8 @@ const router = useRouter()
       @include en-mobile {
         width: 62px;
         height: 62px;
-        transform: translate(-50%, -31px);
+        top: calc(93vh - 31px);
+        // transform: translate(-50%, -31px);
 
         svg {
           width: 17px;
@@ -1074,6 +1074,10 @@ const router = useRouter()
           border-radius: 5px;
           margin: 50px auto;
           letter-spacing: 0.08em;
+
+          &:hover {
+            color: rgba(#fafafc, 0.6);
+          }
 
           @include en-tablet {
             @include semi-bold(16);

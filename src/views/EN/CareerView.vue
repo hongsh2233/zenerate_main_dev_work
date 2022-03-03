@@ -292,10 +292,12 @@ const { meta } = useMeta({
     color: white;
     margin: 0 auto;
     position: relative;
+    padding-bottom: 30px;
 
     @include en-tablet {
       margin: 0px;
     }
+
     .main-title {
       @include bold(36);
       font-weight: 500;

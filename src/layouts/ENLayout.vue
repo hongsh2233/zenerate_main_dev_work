@@ -36,6 +36,7 @@ const route = useRoute()
 const router = useRouter()
 const path = computed(() => route.path)
 const goSignUp = () => {
+  toggleDrawer(false)
   router.push('/pre-launch-signup')
 }
 
@@ -84,11 +85,13 @@ const toggleDrawer = (flag = undefined) => {
   }
 
   @include en-mobile {
-    @include medium(12);
+    @include medium(11);
+    letter-spacing: 0.5pt;
 
     i {
       @include medium(11);
       margin-left: 4px;
+      // display: none;
     }
   }
 

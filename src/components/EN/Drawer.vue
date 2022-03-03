@@ -94,7 +94,7 @@ const close = () => {
     z-index: 1;
   }
   .drawer-wrapper {
-    @include fixed(top 0 right -2px);
+    @include fixed(top 0px right -2px);
     @include flex($dir: column, $justify: flex-end);
     width: calc(100% + 8px);
     height: 100%;
@@ -121,11 +121,11 @@ const close = () => {
       }
     }
     .drawer-items-wrapper {
-      height: calc(100% - 76px);
+      height: calc(100% - 111px);
       padding: 0px;
 
       @include en-mobile {
-        height: calc(100% - 64px);
+        height: calc(100% - 99px);
       }
       .header-navigation-wrapper {
         @include flex($dir: column, $justify: space-between);
