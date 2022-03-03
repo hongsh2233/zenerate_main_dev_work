@@ -21,7 +21,34 @@
 
           <div class="case-wrapper">
             <div
-              class="case"
+              class="case la"
+              data-aos="fade-up"
+              data-aos-offset="-1500"
+              data-aos-delay="300"
+              data-aos-duration="600"
+              data-aos-anchor-placement="top-bottom"
+            >
+              <img src="/en/case_study_la.gif" />
+
+              <div class="text-wrapper">
+                <p class="text-title">5751 Sunset Blvd. Los Angeles</p>
+                <p class="text-content">
+                  Based on one of the hottest sites in L.A. we zenerated over
+                  10,000 designs and applied a CPIO sub-area bonus to optimize
+                  project financing. Within the report you will see our
+                  suggested top three solutions based on different unit mixes.
+                </p>
+                <a
+                  class="download"
+                  download="Case_Study_Zenerate"
+                  href="/en/file/case_studies_zenerate.pdf"
+                  target="_blank"
+                  >View solution report <i class="material-icons"> east </i></a
+                >
+              </div>
+            </div>
+            <div
+              class="case highrise"
               data-aos="fade-up"
               data-aos-offset="-1500"
               data-aos-delay="300"
@@ -85,6 +112,8 @@
 </template>
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { useMeta } from 'vue-meta'
+
 import Store from '/Store/index'
 import AOS from 'aos'
 import Footer from '/Components/EN/Footer.vue'
@@ -102,7 +131,6 @@ onMounted(() => {
   // }, 0)
 })
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: 'Case Studies | Zenerate',
   description:
@@ -163,17 +191,17 @@ const { meta } = useMeta({
     .title-wrapper {
       @include flex($dir: column);
       align-items: center;
-      margin-bottom: 80px;
+      margin-bottom: 30px;
 
       @include en-tablet {
         max-width: 540px;
-        margin-bottom: 60px;
+        margin-bottom: 10px;
         text-align: center;
       }
 
       @include en-mobile {
         max-width: 360px;
-        margin-bottom: 32px;
+        margin-bottom: 4px;
         text-align: center;
       }
 
@@ -211,7 +239,7 @@ const { meta } = useMeta({
     }
 
     .case-wrapper {
-      @include flex($justify: space-around);
+      @include flex($justify: center);
       width: 100%;
       height: 100%;
       position: relative;
@@ -237,12 +265,13 @@ const { meta } = useMeta({
         width: 540px;
         height: 600px;
         border-radius: 20px;
+        margin-top: 50px;
         background-color: white;
         box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
 
         img {
           width: 100%;
-          height: 360px;
+          min-height: 330px;
           object-fit: cover;
           object-position: top;
           border-top-left-radius: 20px;
@@ -262,28 +291,36 @@ const { meta } = useMeta({
           display: none;
         }
 
-        &:last-child {
+        &:nth-child(2n) {
           margin-left: 68px;
         }
 
         @include en-tablet {
-          &:last-child {
-            margin-top: 60px;
+          &:nth-child(2n) {
             margin-left: 0px;
+          }
+
+          &:not(:first-child) {
+            margin-top: 60px;
           }
         }
 
         @include en-mobile {
+          margin-top: 30px;
           max-width: 280px;
           height: 100%;
 
-          &:last-child {
-            margin-top: 32px;
+          &:nth-child(2n) {
             margin-left: 0px;
+          }
+
+          &:not(:first-child) {
+            margin-top: 32px;
           }
 
           img {
             width: 100%;
+            min-height: 212px;
             height: 212px;
             object-fit: cover;
             border-top-left-radius: 20px;
@@ -299,13 +336,12 @@ const { meta } = useMeta({
           }
         }
 
-        &:first-child {
+        &.highrise {
           .text-wrapper {
-            padding: 30px 140px 30px 40px;
-
+            .text-content {
+              padding-right: 150px;
+            }
             @include en-mobile {
-              padding: 28px 20px;
-
               .text-title {
                 word-break: break-all;
                 max-width: 223px;
@@ -313,20 +349,41 @@ const { meta } = useMeta({
                 overflow-x: hidden;
                 overflow-y: hidden;
               }
+              .text-content {
+                padding-right: 20px;
+              }
+            }
+          }
+        }
+
+        &.la {
+          .text-wrapper {
+            .text-content {
+              padding-right: 10px;
+            }
+
+            @include en-mobile {
+              .text-title {
+                word-break: break-all;
+              }
+              .text-content {
+                padding-right: 0px;
+                height: 102px;
+              }
             }
           }
         }
         .text-wrapper {
           width: 100%;
-          padding: 30px 70px 30px 40px;
+          padding: 30px 40px;
 
           @include en-mobile {
-            padding: 28px 20px;
+            padding: 28px 16px 28px 20px;
           }
           .text-title {
-            @include semi-bold(21);
+            @include semi-bold(22);
             color: $text-darken;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
 
             @include en-mobile {
               @include semi-bold(16);
@@ -334,15 +391,18 @@ const { meta } = useMeta({
             }
           }
           .text-content {
-            @include regular(17);
+            @include regular(15);
+            padding-right: 80px;
             margin-bottom: 24px;
             line-height: 21.2px;
+            height: 114px;
 
             @include en-mobile {
-              @include regular(14);
+              @include regular(12);
+              padding-right: 40px;
               margin-bottom: 16px;
               line-height: 17.5px;
-              width: 240px;
+              height: 68px;
             }
 
             a {
