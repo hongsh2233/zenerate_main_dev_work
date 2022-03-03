@@ -63,7 +63,8 @@ const toggleDrawer = (flag = undefined) => {
 
 .signup-banner {
   @include flex();
-  @include semi-bold(13);
+  @include medium(13);
+  @include fixed(top 0px left 0);
   justify-content: center;
   flex-wrap: nowrap;
   align-items: center;
@@ -73,6 +74,8 @@ const toggleDrawer = (flag = undefined) => {
   color: #ffffff;
   transition: color 0.1s ease-in-out;
   cursor: pointer;
+  z-index: 1000;
+  letter-spacing: 1pt;
 
   i {
     @include semi-bold(13);
@@ -96,6 +99,6 @@ const toggleDrawer = (flag = undefined) => {
 
 .layout-en,
 .layout-en * {
-  font-family: 'Poppins', 'Roboto', sans-serif !important;
+  font-family: 'Inter', 'Roboto', sans-serif;
 }
 </style>

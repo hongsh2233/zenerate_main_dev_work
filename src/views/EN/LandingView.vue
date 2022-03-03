@@ -128,8 +128,10 @@
                 <p><strong>development project?</strong></p>
               </div>
               <div class="content-text">
-                <p>Use <span>Instant Search</span> to generate a feasible</p>
-                <p>&nbsp;option for any site within seconds.</p>
+                <p>
+                  Use <span>Instant Search</span> to generate a feasible&nbsp;
+                </p>
+                <p>option for any site within seconds.</p>
               </div>
               <div class="content-numbering">
                 <div class="content-inner">

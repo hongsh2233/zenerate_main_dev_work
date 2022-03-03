@@ -22,8 +22,8 @@
               is almost here.
             </p>
             <p class="text">
-              <strong>Zenerate</strong> upwards of 10,000 designs
-              <span>&nbsp;to maximize profit&nbsp;</span
+              <strong>Zenerate</strong> upwards of 10,000 designs&nbsp;<span
+                >to maximize profit&nbsp;</span
               ><span> up to 26%&nbsp;</span
               ><span>while saving weeks worth of time</span>
             </p>
@@ -97,7 +97,7 @@
                     class="label-error"
                     :class="{ active: contactForm.firstName.valid === false }"
                   >
-                    Please Enter!
+                    Please provide a name
                   </p>
                 </div>
                 <div class="label-text">
@@ -112,7 +112,7 @@
                     class="label-error"
                     :class="{ active: contactForm.lastName.valid === false }"
                   >
-                    Please Enter!
+                    Please provide a name
                   </p>
                 </div>
               </div>
@@ -130,7 +130,7 @@
                     class="label-error"
                     :class="{ active: contactForm.email.valid === false }"
                   >
-                    Please Enter Valid Email Address!
+                    Please enter a valid email address
                   </p>
                 </div>
               </div>
@@ -147,7 +147,7 @@
                     class="label-error"
                     :class="{ active: contactForm.company.valid === false }"
                   >
-                    Please Enter!
+                    Please provide your company name
                   </p>
                 </div>
               </div>
@@ -164,7 +164,7 @@
                     class="label-error"
                     :class="{ active: contactForm.city.valid === false }"
                   >
-                    Please Enter!
+                    Please enter your city
                   </p>
                 </div>
                 <div class="label-text">
@@ -179,7 +179,7 @@
                     class="label-error"
                     :class="{ active: contactForm.state.valid === false }"
                   >
-                    Please Enter!
+                    Please enter your state/region
                   </p>
                 </div>
               </div>
@@ -196,7 +196,7 @@
                     class="label-error"
                     :class="{ active: contactForm.country.valid === false }"
                   >
-                    Please Enter!
+                    Please enter your country/region
                   </p>
                 </div>
                 <div class="label-text">
@@ -212,7 +212,7 @@
                     class="label-error"
                     :class="{ active: contactForm.phone.valid === false }"
                   >
-                    Please Enter!
+                    Please enter a valid phone number
                   </p>
                 </div>
               </div>
@@ -255,7 +255,7 @@
                     class="label-error"
                     :class="{ active: contactForm.promotion.valid === false }"
                   >
-                    Please enter Valid Code!
+                    Please enter a valid code
                   </p>
                 </div>
               </div>
@@ -300,9 +300,18 @@
             </div>
             <div class="check-wrapper">
               <div class="circle">
-                <div class="circle-block"></div>
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m121.428.845-.836.845.024.024-22.525 22.892-54.788 55.688a6.006 6.006 0 0 1-7.018 1.136l3.313 2.695 5.004 4.07a6.013 6.013 0 0 0 3.797 1.35 5.99 5.99 0 0 0 4.289-1.795L130 9.17 121.428.845Z"
+                    fill="#4848FF"
+                  />
+                  <path
+                    d="m98.07 24.582-50.122 50.94-9.225-7.503-.028-.024-30.41-24.742L.69 52.472l29.596 24.074.028.024 5.971 4.86c.86.436 1.795.659 2.73.659a5.99 5.99 0 0 0 4.289-1.795l54.79-55.684-.023-.028Z"
+                    fill="#4848FF"
+                    fill-opacity=".4"
+                  />
+                </svg>
               </div>
-              <i class="material-icons"> done </i>
             </div>
             <p class="thank-title">
               <span>Thanks</span> <span>for Signing Up!</span>
@@ -423,24 +432,16 @@ const buildingsItems: Item[] = [
   },
   {
     id: 5,
+    value: 'mixed_use ',
+    label: 'Mixed-use ',
+  },
+  {
+    id: 6,
     value: 'other',
     label: 'Other',
   },
 ]
 
-/*   const temp = {
-    firstName: 'aa',
-    lastName: 'bb',
-    email: 'test@gmail.com',
-    company: 'zenerate',
-    city: 'seoul',
-    state: 'seoul',
-    country: 'korea',
-    phone: '821012341234',
-    role: 'bbb',
-    buildings: '1',
-  }
-*/
 const contactForm = reactive({
   firstName: {
     value: '',
@@ -601,11 +602,14 @@ const sendForm = async () => {
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
+.section-signup * {
+  font-family: 'Poppins' !important;
+}
 .section-signup {
   @include relative;
   width: 100vw;
   height: 100%;
-  font-family: 'Poppins';
+
   letter-spacing: -0.2pt;
   min-height: 100vh;
   .signup-wrapper {
@@ -858,42 +862,27 @@ const router = useRouter()
         }
         .circle {
           @include relative;
-          width: 130px;
-          height: 130px;
+          width: 138px;
+          height: 138px;
           background-color: #ebedfe;
           border-radius: 50%;
-          .circle-block {
-            @include absolute(top 10% left 3%);
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: #ebedfe;
-            opacity: 0.4;
-            z-index: 9;
+          svg {
+            @include absolute(top 50% left 50%);
+            transform: translate(-40%, -60%);
+            width: 130px;
+            height: 90px;
           }
-        }
-
-        i {
-          @include absolute(top 50% left 50%);
-          @include regular(150);
-          color: #4848ff;
-          transform: translate(-40%, -60%);
         }
 
         @include en-mobile {
           .circle {
+            @include relative;
             width: 110px;
             height: 110px;
-
-            .circle-block {
-              @include absolute(top 20px left 10px);
-              width: 50px;
-              height: 50px;
+            svg {
+              @include absolute(top 3% left 3%);
+              transform: scale(0.8);
             }
-          }
-
-          i {
-            @include regular(120);
           }
         }
       }
