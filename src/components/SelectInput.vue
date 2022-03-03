@@ -2,8 +2,12 @@
   <div class="input-select-wrapper">
     <p>{{ props.title || $t('main.contact.form.purpose') }}</p>
     <div class="input-select-container">
-      <input type="text" class="dummy" ref="dummy" />
-      <div class="input-select hover-pointer" @click="toggleDropDown()">
+      <input type="text" class="dummy" ref="dummy" inputmode="none" />
+      <div
+        class="input-select hover-pointer"
+        @click="toggleDropDown()"
+        @focus="() => blur()"
+      >
         <span
           :class="{
             selected: props.selected,
@@ -27,6 +31,7 @@
             class="input-select-dropdown-item hover-pointer"
             v-for="(item: Item, idx) in props.items"
             @click="onSelect(item)"
+            @focus="() => blur()"
             :key="idx"
           >
             <span>{{ props.skipTranslate ? item.label : $t(item.label) }}</span>

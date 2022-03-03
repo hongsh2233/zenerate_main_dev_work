@@ -585,9 +585,6 @@ const sendForm = async () => {
     }
   }
 
-  console.log('form', form)
-  console.log('isvalied', isValid)
-
   if (!isValid) return
   try {
     await ApiService.XSLX_TEST(form)
@@ -596,6 +593,7 @@ const sendForm = async () => {
   }
   resetForm()
   sendEmailStatus.value = true
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   // window.open('https://app.zenerate.ai', '_blank')
   // window.location.href = 'en-landing'
 }
