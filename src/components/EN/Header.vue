@@ -31,9 +31,7 @@
         </button>
       </div>
       <div class="header-demo-wrapper only-en-desktop" @click="goToApp()">
-        <router-link :to="{ name: 'SignUp' }" class="demo-link"
-          >JOIN APP</router-link
-        >
+        <a href="http://app.zenerate.ai" class="demo-link">Beta APP</a>
       </div>
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
         <MenuIcon @toggle="toggleDrawer" :showDrawer="showDrawer" />

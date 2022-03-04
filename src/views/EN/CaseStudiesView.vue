@@ -20,7 +20,7 @@
           </div>
 
           <div class="case-wrapper">
-            <div
+            <!-- <div
               class="case la"
               data-aos="fade-up"
               data-aos-offset="-1500"
@@ -46,7 +46,7 @@
                   >View solution report <i class="material-icons"> east </i></a
                 >
               </div>
-            </div>
+            </div> -->
             <div
               class="case highrise"
               data-aos="fade-up"
