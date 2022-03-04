@@ -129,7 +129,7 @@
               </div>
               <div class="content-text">
                 <p>
-                  Use <span>Instant Search</span> to generate a feasible&nbsp;
+                  <span>Use Instant Search</span> to generate a feasible&nbsp;
                 </p>
                 <p>option for any site within seconds.</p>
               </div>
@@ -213,10 +213,18 @@
                   does the optimization work for you.
                 </p>
               </div>
-              <div class="content-text">
+              <div class="content-text only-en-desktop">
                 <p>Zenerate™ solutions have increased&nbsp;</p>
                 <p>
                   real customer revenue by an average of 12%,<br />
+                  compared to non-AI methods.
+                </p>
+              </div>
+              <div class="content-text hidden-en-desktop">
+                <p>Zenerate™ solutions have &nbsp;</p>
+                <p>
+                  increased real customer revenue<br />
+                  by an average of 12%,<br />
                   compared to non-AI methods.
                 </p>
               </div>
@@ -821,9 +829,12 @@ const toContactForm = () => {
 
         .content-text {
           p:first-child {
-            display: block;
+            span {
+              display: block;
+            }
+
             margin: auto;
-            max-width: 165px;
+            max-width: 175px;
           }
         }
       }
@@ -1122,6 +1133,10 @@ const toContactForm = () => {
         width: 100%;
         margin-bottom: 36px;
         .content-text {
+          p:first-child {
+            max-width: 268px;
+            margin: auto;
+          }
           p:last-child {
             max-width: 268px;
             margin: auto;

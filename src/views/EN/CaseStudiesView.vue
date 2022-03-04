@@ -244,6 +244,7 @@ const { meta } = useMeta({
       height: 100%;
       position: relative;
       margin: 0px auto;
+      padding: 0px 40px;
 
       @include en-tablet {
         flex-direction: column;
@@ -291,13 +292,15 @@ const { meta } = useMeta({
           display: none;
         }
 
-        &:nth-child(2n) {
+        &:nth-child(2) {
           margin-left: 68px;
+          margin-right: 68px;
         }
 
         @include en-tablet {
-          &:nth-child(2n) {
+          &:nth-child(2) {
             margin-left: 0px;
+            margin-right: 0px;
           }
 
           &:not(:first-child) {
@@ -310,8 +313,9 @@ const { meta } = useMeta({
           max-width: 280px;
           height: 100%;
 
-          &:nth-child(2n) {
+          &:nth-child(2) {
             margin-left: 0px;
+            margin-right: 0px;
           }
 
           &:not(:first-child) {
