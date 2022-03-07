@@ -1,5 +1,5 @@
 <template>
-  <div class="layout-en">
+  <div class="layout-en" id="layout-en">
     <div
       class="signup-banner"
       @click="goSignUp"

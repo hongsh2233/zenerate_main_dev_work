@@ -20,7 +20,7 @@
           </div>
 
           <div class="case-wrapper">
-            <!-- <div
+            <div
               class="case la"
               data-aos="fade-up"
               data-aos-offset="-1500"
@@ -38,15 +38,15 @@
                   project financing. Within the report you will see our
                   suggested top three solutions based on different unit mixes.
                 </p>
+
                 <a
                   class="download"
-                  download="Case_Study_Zenerate"
-                  href="/en/file/case_studies_zenerate.pdf"
+                  :href="`https://drive.google.com/file/d/${pdfFiles.solution.src}/view?usp=sharing`"
                   target="_blank"
                   >View solution report <i class="material-icons"> east </i></a
                 >
               </div>
-            </div> -->
+            </div>
             <div
               class="case highrise"
               data-aos="fade-up"
@@ -64,12 +64,14 @@
                   condominium in Seoul to learn more about our surprising
                   insights!
                 </p>
+                <!-- <a class="download" @click="showPdf('zenerate')"
+                  >Download PDF <i class="material-icons"> east </i></a
+                > -->
                 <a
                   class="download"
-                  download="Case_Study_Zenerate"
-                  href="/en/file/case_studies_zenerate.pdf"
+                  :href="`https://drive.google.com/file/d/${pdfFiles.zenerate.src}/view?usp=sharing`"
                   target="_blank"
-                  >Download PDF <i class="material-icons"> east </i></a
+                  >View this case study <i class="material-icons"> east </i></a
                 >
               </div>
             </div>
@@ -97,7 +99,7 @@
                   class="download"
                   href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
                   target="_blank"
-                  >Read this Article <i class="material-icons"> east </i></a
+                  >Read this article <i class="material-icons"> east </i></a
                 >
               </div>
             </div>
@@ -111,7 +113,7 @@
   </section>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed, watch } from 'vue'
 import { useMeta } from 'vue-meta'
 
 import Store from '/Store/index'
@@ -122,13 +124,6 @@ import Arrow from '/Components/EN/Arrow.vue'
 const fullpage = computed(() => Store.state.root.FullPage)
 onMounted(() => {
   fullpage.value.destroy()
-  // setTimeout(() => {
-  //   document
-  //     .querySelectorAll('.fp-table.active .aos-init')
-  //     .forEach((doc: HTMLElement) => {
-  //       doc.classList.add('aos-animate')
-  //     })
-  // }, 0)
 })
 
 const { meta } = useMeta({
@@ -157,8 +152,69 @@ const { meta } = useMeta({
     title: 'Case Studies | Zenerate',
   },
 })
+
+const pdfFiles = {
+  zenerate: {
+    src: '1q2uBi_GU3MBLFb6tD8b9WvfWsxu7dRiu',
+    name: 'Case_Study_Zenerate',
+  },
+  solution: {
+    src: '1J-svhj_0OQCBZmGjwcI7fCJRtKtx0u2w',
+    name: 'Case_Study_Solution_Report',
+  },
+}
 </script>
 <style lang="scss" scoped>
+.pdf-popup-wrapper {
+  @include absolute(top 0px left 0px);
+  width: 100vw;
+  height: 100%;
+  z-index: 1001;
+
+  .pdf-popup {
+    @include fixed(top 0px left 50%);
+    max-width: 1200px;
+    width: 90%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: 1002;
+
+    @include en-mobile {
+      max-width: 600px;
+    }
+  }
+
+  .pdf-popup-background {
+    @include fixed(top 0px left 0px);
+    width: 100%;
+    height: 100%;
+    background-color: $text-darken;
+    opacity: 0.8;
+
+    button {
+      @include absolute(top 12px right 20px);
+      background-color: transparent;
+      color: $white;
+
+      i {
+        @include medium(34);
+      }
+
+      @include en-tablet {
+        @include absolute(top 12px right 14px);
+        i {
+          @include medium(30);
+        }
+      }
+      @include en-mobile {
+        @include absolute(top 12px right 0px);
+        i {
+          @include medium(28);
+        }
+      }
+    }
+  }
+}
 .section-case-studies {
   @include relative;
   width: 100%;
