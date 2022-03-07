@@ -136,7 +136,7 @@ import Validation from '/Utils/Validation'
 import { useRoute, useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 import SelectInput from '/Components/SelectInput.vue'
-
+import { useMeta } from 'vue-meta'
 const fullpage = computed(() => Store.state.root.FullPage)
 
 onMounted(() => {
@@ -270,7 +270,6 @@ const sendEmail = async () => {
 }
 const router = useRouter()
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: 'Contact Us | Zenerate',
   description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
@@ -304,7 +303,7 @@ const { meta } = useMeta({
   .contact-hero-wrapper {
     @include relative;
     height: 555px;
-    padding-top: 100px;
+    padding-top: 135px;
     background-image: url('/en/img/contact_hero.png');
     background-size: cover;
     background-origin: center center;
@@ -312,16 +311,16 @@ const { meta } = useMeta({
       width: 100%;
     }
     @include en-tablet {
-      padding-top: 40px;
+      padding-top: 75px;
       margin-bottom: 540px;
     }
     @include en-mobile {
-      padding-top: 40px;
+      padding-top: 75px;
       margin-bottom: 540px;
     }
     .hero-text-wrapper {
       @include container;
-      padding-top: 40px !important;
+      padding-top: 75px !important;
       p {
         color: white;
         &.title {
@@ -357,9 +356,9 @@ const { meta } = useMeta({
     }
   }
   .contact-form-wrapper {
-    padding-top: 52px;
+    padding-top: 87px;
     width: 840px;
-    @include absolute(top 260px);
+    @include absolute(top 320px);
     height: 500px;
     overflow-y: auto;
     background-color: $white;
@@ -369,17 +368,17 @@ const { meta } = useMeta({
     left: 50%;
     transform: translateX(-50%);
     @include en-tablet-big {
-      top: 190px;
+      top: 245px;
       width: 940px;
       height: auto;
     }
     @include en-tablet-small {
-      top: 190px;
+      top: 245px;
       width: 620px;
       height: auto;
     }
     @include en-mobile {
-      top: 168px;
+      top: 233px;
       width: calc(100% - 40px);
       height: auto;
     }
@@ -520,7 +519,7 @@ const { meta } = useMeta({
     }
   }
   .section-footer {
-    margin-top: 250px;
+    margin-top: 320px;
   }
 }
 </style>

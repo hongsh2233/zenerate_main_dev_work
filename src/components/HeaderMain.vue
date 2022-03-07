@@ -4,7 +4,7 @@
       <div class="header-logo hover-pointer" @click="router.push('/kr')">
         <img
           class="logo hidden-tablet hidden-mobile"
-          src="/img/logo_color.png"
+          src="/img/logo_color.svg"
           alt=""
         />
         <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="" />
@@ -94,9 +94,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-const { t, locale } = useI18n()
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+const { t, locale } = useI18n()
 
 const props = defineProps({
   showDrawer: Boolean,
@@ -116,7 +117,6 @@ const setMenuHovered = (flag) => {
   isMenuHovered.value = flag
 }
 
-import { useRouter } from 'vue-router'
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
