@@ -2,7 +2,7 @@
   <div class="header-wrapper">
     <div class="header-inner">
       <div class="header-logo">
-        <img class="logo" src="/img/logo_color.png" alt="" />
+        <img class="logo" src="/img/logo_color.svg" alt="" />
       </div>
       <div class="header-buttons-wrapper">
         <button class="button-lang" @click="setLocale(locale)">

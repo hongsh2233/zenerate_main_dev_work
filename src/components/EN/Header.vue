@@ -5,7 +5,7 @@
         class="header-logo hover-pointer"
         @click="router.push({ name: 'en-landing' }) && toggleDrawer(false)"
       >
-        <img class="logo" src="/img/logo_color.png" alt="logo" />
+        <img class="logo" src="/img/logo_color.svg" alt="logo" />
         <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" /> -->
       </div>
       <div class="header-navigation-wrapper only-en-desktop">
@@ -25,19 +25,13 @@
           <i class="material-icons"> language </i>
           <p>ENG</p>
           <span v-show="showLang">/</span>
-          <a
-            v-show="showLang"
-            href="https://www.zenerate.ai/kr"
-            target="_blank"
-          >
-            한국어</a
+          <router-link v-show="showLang" :to="{ name: 'ModuleLayout' }">
+            한국어</router-link
           >
         </button>
       </div>
       <div class="header-demo-wrapper only-en-desktop" @click="goToApp()">
-        <a class="demo-link" href="https://app.zenerate.ai" target="_blank"
-          >JOIN APP
-        </a>
+        <a href="http://app.zenerate.ai" class="demo-link">Beta APP</a>
       </div>
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
         <MenuIcon @toggle="toggleDrawer" :showDrawer="showDrawer" />
@@ -47,6 +41,8 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useGtag } from 'vue-gtag-next'
+import { useRouter } from 'vue-router'
 
 import MenuIcon from '/Components/EN/Icons/menu.vue'
 
@@ -66,7 +62,6 @@ const toggleLang = (flag?: boolean) => {
   console.log('ttt', flag)
 }
 
-import { useGtag } from 'vue-gtag-next'
 const { event } = useGtag()
 const goToApp = () => {
   event('generate_lead', {
@@ -76,7 +71,6 @@ const goToApp = () => {
 }
 
 // routes
-import { useRouter } from 'vue-router'
 const router = useRouter()
 const routes = [
   {
@@ -107,7 +101,7 @@ const routes = [
 </script>
 <style lang="scss" scoped>
 .header-wrapper {
-  @include fixed(top 0 left 0);
+  @include fixed(top 35px left 0);
   width: 100vw;
   z-index: 1000;
   background: $white;

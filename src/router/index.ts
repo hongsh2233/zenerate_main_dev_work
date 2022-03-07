@@ -11,6 +11,7 @@ import Company from '/Views/Main/Company.vue'
 import Timeline from '/Views/Main/Timeline.vue'
 import Team from '/Views/Main/Team.vue'
 import Career from '/Views/Main/Career.vue'
+
 // import NewsList from "/Views/Admin/NewsList.vue"
 // import NewsEdit from "/Views/Admin/NewsEdit.vue"
 
@@ -64,6 +65,7 @@ const routes: RouteRecordRaw[] = [
         name: 'Timeline',
         component: Timeline,
       },
+
       // {
       //   path: 'team',
       //   name: 'Team',

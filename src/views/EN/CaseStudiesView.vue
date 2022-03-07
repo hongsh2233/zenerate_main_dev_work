@@ -21,7 +21,34 @@
 
           <div class="case-wrapper">
             <div
-              class="case"
+              class="case la"
+              data-aos="fade-up"
+              data-aos-offset="-1500"
+              data-aos-delay="300"
+              data-aos-duration="600"
+              data-aos-anchor-placement="top-bottom"
+            >
+              <img src="/en/case_study_la.gif" />
+
+              <div class="text-wrapper">
+                <p class="text-title">5751 Sunset Blvd. Los Angeles</p>
+                <p class="text-content">
+                  Based on one of the hottest sites in L.A. we zenerated over
+                  10,000 designs and applied a CPIO sub-area bonus to optimize
+                  project financing. Within the report you will see our
+                  suggested top three solutions based on different unit mixes.
+                </p>
+
+                <a
+                  class="download"
+                  :href="`https://drive.google.com/file/d/${pdfFiles.solution.src}/view?usp=sharing`"
+                  target="_blank"
+                  >View solution report <i class="material-icons"> east </i></a
+                >
+              </div>
+            </div>
+            <div
+              class="case highrise"
               data-aos="fade-up"
               data-aos-offset="-1500"
               data-aos-delay="300"
@@ -37,12 +64,14 @@
                   condominium in Seoul to learn more about our surprising
                   insights!
                 </p>
+                <!-- <a class="download" @click="showPdf('zenerate')"
+                  >Download PDF <i class="material-icons"> east </i></a
+                > -->
                 <a
                   class="download"
-                  download="Case_Study_Zenerate"
-                  href="/en/file/case_studies_zenerate.pdf"
+                  :href="`https://drive.google.com/file/d/${pdfFiles.zenerate.src}/view?usp=sharing`"
                   target="_blank"
-                  >Download PDF <i class="material-icons"> east </i></a
+                  >View this case study <i class="material-icons"> east </i></a
                 >
               </div>
             </div>
@@ -70,7 +99,7 @@
                   class="download"
                   href="http://read.nxtbook.com/acuho/talking_stick/july_august_2019/news_and_notes.html"
                   target="_blank"
-                  >Read this Article <i class="material-icons"> east </i></a
+                  >Read this article <i class="material-icons"> east </i></a
                 >
               </div>
             </div>
@@ -84,7 +113,9 @@
   </section>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed, watch } from 'vue'
+import { useMeta } from 'vue-meta'
+
 import Store from '/Store/index'
 import AOS from 'aos'
 import Footer from '/Components/EN/Footer.vue'
@@ -93,16 +124,8 @@ import Arrow from '/Components/EN/Arrow.vue'
 const fullpage = computed(() => Store.state.root.FullPage)
 onMounted(() => {
   fullpage.value.destroy()
-  // setTimeout(() => {
-  //   document
-  //     .querySelectorAll('.fp-table.active .aos-init')
-  //     .forEach((doc: HTMLElement) => {
-  //       doc.classList.add('aos-animate')
-  //     })
-  // }, 0)
 })
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: 'Case Studies | Zenerate',
   description:
@@ -129,8 +152,69 @@ const { meta } = useMeta({
     title: 'Case Studies | Zenerate',
   },
 })
+
+const pdfFiles = {
+  zenerate: {
+    src: '1q2uBi_GU3MBLFb6tD8b9WvfWsxu7dRiu',
+    name: 'Case_Study_Zenerate',
+  },
+  solution: {
+    src: '1J-svhj_0OQCBZmGjwcI7fCJRtKtx0u2w',
+    name: 'Case_Study_Solution_Report',
+  },
+}
 </script>
 <style lang="scss" scoped>
+.pdf-popup-wrapper {
+  @include absolute(top 0px left 0px);
+  width: 100vw;
+  height: 100%;
+  z-index: 1001;
+
+  .pdf-popup {
+    @include fixed(top 0px left 50%);
+    max-width: 1200px;
+    width: 90%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: 1002;
+
+    @include en-mobile {
+      max-width: 600px;
+    }
+  }
+
+  .pdf-popup-background {
+    @include fixed(top 0px left 0px);
+    width: 100%;
+    height: 100%;
+    background-color: $text-darken;
+    opacity: 0.8;
+
+    button {
+      @include absolute(top 12px right 20px);
+      background-color: transparent;
+      color: $white;
+
+      i {
+        @include medium(34);
+      }
+
+      @include en-tablet {
+        @include absolute(top 12px right 14px);
+        i {
+          @include medium(30);
+        }
+      }
+      @include en-mobile {
+        @include absolute(top 12px right 0px);
+        i {
+          @include medium(28);
+        }
+      }
+    }
+  }
+}
 .section-case-studies {
   @include relative;
   width: 100%;
@@ -163,17 +247,17 @@ const { meta } = useMeta({
     .title-wrapper {
       @include flex($dir: column);
       align-items: center;
-      margin-bottom: 80px;
+      margin-bottom: 30px;
 
       @include en-tablet {
         max-width: 540px;
-        margin-bottom: 60px;
+        margin-bottom: 10px;
         text-align: center;
       }
 
       @include en-mobile {
         max-width: 360px;
-        margin-bottom: 32px;
+        margin-bottom: 4px;
         text-align: center;
       }
 
@@ -211,11 +295,12 @@ const { meta } = useMeta({
     }
 
     .case-wrapper {
-      @include flex($justify: space-around);
+      @include flex($justify: center);
       width: 100%;
       height: 100%;
       position: relative;
       margin: 0px auto;
+      padding: 0px 40px;
 
       @include en-tablet {
         flex-direction: column;
@@ -237,12 +322,13 @@ const { meta } = useMeta({
         width: 540px;
         height: 600px;
         border-radius: 20px;
+        margin-top: 50px;
         background-color: white;
         box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
 
         img {
           width: 100%;
-          height: 360px;
+          min-height: 330px;
           object-fit: cover;
           object-position: top;
           border-top-left-radius: 20px;
@@ -262,28 +348,39 @@ const { meta } = useMeta({
           display: none;
         }
 
-        &:last-child {
+        &:nth-child(2) {
           margin-left: 68px;
+          margin-right: 68px;
         }
 
         @include en-tablet {
-          &:last-child {
-            margin-top: 60px;
+          &:nth-child(2) {
             margin-left: 0px;
+            margin-right: 0px;
+          }
+
+          &:not(:first-child) {
+            margin-top: 60px;
           }
         }
 
         @include en-mobile {
+          margin-top: 30px;
           max-width: 280px;
           height: 100%;
 
-          &:last-child {
-            margin-top: 32px;
+          &:nth-child(2) {
             margin-left: 0px;
+            margin-right: 0px;
+          }
+
+          &:not(:first-child) {
+            margin-top: 32px;
           }
 
           img {
             width: 100%;
+            min-height: 212px;
             height: 212px;
             object-fit: cover;
             border-top-left-radius: 20px;
@@ -299,13 +396,12 @@ const { meta } = useMeta({
           }
         }
 
-        &:first-child {
+        &.highrise {
           .text-wrapper {
-            padding: 30px 140px 30px 40px;
-
+            .text-content {
+              padding-right: 150px;
+            }
             @include en-mobile {
-              padding: 28px 20px;
-
               .text-title {
                 word-break: break-all;
                 max-width: 223px;
@@ -313,20 +409,41 @@ const { meta } = useMeta({
                 overflow-x: hidden;
                 overflow-y: hidden;
               }
+              .text-content {
+                padding-right: 20px;
+              }
+            }
+          }
+        }
+
+        &.la {
+          .text-wrapper {
+            .text-content {
+              padding-right: 10px;
+            }
+
+            @include en-mobile {
+              .text-title {
+                word-break: break-all;
+              }
+              .text-content {
+                padding-right: 0px;
+                height: 102px;
+              }
             }
           }
         }
         .text-wrapper {
           width: 100%;
-          padding: 30px 70px 30px 40px;
+          padding: 30px 40px;
 
           @include en-mobile {
-            padding: 28px 20px;
+            padding: 28px 16px 28px 20px;
           }
           .text-title {
-            @include semi-bold(21);
+            @include semi-bold(22);
             color: $text-darken;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
 
             @include en-mobile {
               @include semi-bold(16);
@@ -334,15 +451,18 @@ const { meta } = useMeta({
             }
           }
           .text-content {
-            @include regular(17);
+            @include regular(15);
+            padding-right: 80px;
             margin-bottom: 24px;
             line-height: 21.2px;
+            height: 114px;
 
             @include en-mobile {
-              @include regular(14);
+              @include regular(12);
+              padding-right: 40px;
               margin-bottom: 16px;
               line-height: 17.5px;
-              width: 240px;
+              height: 68px;
             }
 
             a {

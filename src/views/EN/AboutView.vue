@@ -113,12 +113,7 @@
       </div>
     </div>
     <div
-      class="
-        section section-story-2
-        story-wrapper
-        fp-auto-height-responsive
-        hidden-en-tablet hidden-en-mobile
-      "
+      class="section section-story-2 story-wrapper fp-auto-height-responsive hidden-en-tablet hidden-en-mobile"
     >
       <div class="inner-contents">
         <div
@@ -199,11 +194,7 @@
             </p>
           </div>
           <div
-            class="
-              mission-content
-              content-text
-              hidden-en-desktop hidden-en-tablet
-            "
+            class="mission-content content-text hidden-en-desktop hidden-en-tablet"
           >
             <p>
               We believe there is a faster, smarter, <br />
@@ -377,7 +368,11 @@ onBeforeUnmount(() => {
   }
 
   &:first-child {
-    padding-top: 50px;
+    padding-top: 85px;
+
+    @include en-desktop {
+      height: 100vh !important;
+    }
   }
 
   @include en-tablet {
@@ -395,6 +390,10 @@ onBeforeUnmount(() => {
     margin: auto;
     padding-top: 30px;
     max-width: 1200px;
+
+    @include en-desktop {
+      padding-top: 60px;
+    }
 
     @include en-tablet {
       padding-top: 42px;

@@ -25,7 +25,7 @@
                 <div class="location-content">
                   <p class="content">Seoul</p>
                   <p class="content">Olympic-ro 362, 5F</p>
-                  <p class="content">Songpa-gu, Seoul 05544</p>
+                  <p class="content">Songpa-gu, Seoul 05543</p>
                 </div>
               </div>
             </div>

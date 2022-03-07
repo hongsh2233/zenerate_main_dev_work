@@ -9,7 +9,17 @@ const emailValidationFunction = (v: any): boolean => {
   return !!v && typeof v === 'string' && emailRegex.test(v)
 }
 
+const promotionCodeValidationFunction = (v: any): boolean => {
+  return String(v).trim().toLocaleLowerCase() === 'bisnow38' || !v
+}
+
+const phoneValidationFunction = (v: any): boolean => {
+  return !!v && String(v).length > 8
+}
+
 export default {
   string: stringValidationFunction,
   email: emailValidationFunction,
+  promotion: promotionCodeValidationFunction,
+  phone: phoneValidationFunction,
 }
