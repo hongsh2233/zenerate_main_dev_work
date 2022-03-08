@@ -6,7 +6,6 @@
       data-aos-duration="500"
       data-aos-easing="ease-in-back"
     >
-      <!-- data-aos="flip-left" -->
       <div class="signup-wrapper">
         <div class="signup-header-wrapper" :class="{ done: sendEmailStatus }">
           <div
@@ -55,30 +54,10 @@
           class="go-to-bottom hidden-desktop"
           :class="{ done: sendEmailStatus }"
         >
-          <svg
-            width="26"
-            height="54"
-            viewBox="0 0 26 54"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.1855 1.58081V53.1937"
-              stroke="white"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M24.9909 41.396L13.1856 53.1939L1.3877 41.396"
-              stroke="white"
-              stroke-width="1.5"
-              stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <p>
+            Sign up below to get<br />
+            notified of launch
+          </p>
         </div>
         <transition name="fade">
           <div class="signup-form-wrapper" v-if="!sendEmailStatus">
@@ -273,7 +252,7 @@
             <div class="form-send-wrapper">
               <div class="dummy" ref="dummy"></div>
               <button
-                class="form-send hover-pointer"
+                class="form-send submit hover-pointer"
                 :class="{ disabled: sendEmailStatus }"
                 @click="sendForm"
               >
@@ -284,7 +263,7 @@
         </transition>
         <transition name="fade">
           <div
-            class="signup-form-wrapper"
+            class="signup-form-wrapper thank"
             v-if="sendEmailStatus"
             data-aos="fade-up"
             data-aos-offset="-1500"
@@ -321,25 +300,30 @@
                 >We’ll send you an email once we launch.</span
               >
               <p>
-                <span> Until then, please follow us&nbsp;</span>
-                <span>on our LinkedIn Page</span> <br />
-                for more updates, news and insights.
+                <span>Until then check out our Beta App! </span>
+                <span class="available"> (Only available on PC or tablet)</span>
               </p>
             </div>
             <div class="form-send-wrapper">
               <div class="dummy" ref="dummy"></div>
-              <button class="form-send hover-pointer" @click="goLinkedIn">
+              <button class="form-send hover-pointer" @click="goBetaApp">
+                TEST BETA APP
+              </button>
+            </div>
+            <div class="thank-text">
+              <p>
+                <span>And give us a follow on Linkedin!</span>
+              </p>
+            </div>
+            <div class="form-send-wrapper">
+              <div class="dummy" ref="dummy"></div>
+              <button
+                class="form-send follow hover-pointer"
+                @click="goLinkedIn"
+              >
                 FOLLOW US
               </button>
             </div>
-
-            <p class="beta-guide">
-              If you want to check out our beta version
-              <a href="http://app.zenerate.ai">click here.</a>
-            </p>
-            <p class="beta-guide-b">
-              Guides and demos will be provided upon official launch.
-            </p>
           </div>
         </transition>
       </div>
@@ -367,6 +351,10 @@ onMounted(() => {
 
 const goLinkedIn = () => {
   window.open('http://linkedin.com/company/zenerate', '_blank')
+}
+
+const goBetaApp = () => {
+  window.open('http://app.zenerate.ai', '_blank')
 }
 
 type Item = {
@@ -588,14 +576,10 @@ const sendForm = async () => {
   if (!isValid) return
   try {
     await ApiService.XSLX_TEST(form)
-  } catch (e) {
-    // console.log("error", e)
-  }
+  } catch (e) {}
   resetForm()
   sendEmailStatus.value = true
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-  // window.open('https://app.zenerate.ai', '_blank')
-  // window.location.href = 'en-landing'
 }
 const router = useRouter()
 </script>
@@ -607,7 +591,6 @@ const router = useRouter()
   @include relative;
   width: 100vw;
   height: 100%;
-
   letter-spacing: -0.2pt;
   min-height: 100vh;
   .signup-wrapper {
@@ -649,7 +632,7 @@ const router = useRouter()
 
       @include en-tablet {
         width: 100%;
-        height: 93vh;
+        height: 78vh;
         min-height: 400px;
         &.done {
           display: none;
@@ -657,7 +640,7 @@ const router = useRouter()
       }
       @include en-mobile {
         width: 100%;
-        height: calc(93vh - 40px);
+        height: calc(88vh - 40px);
         min-height: 340px;
         &.done {
           display: none;
@@ -807,27 +790,31 @@ const router = useRouter()
     }
 
     .go-to-bottom {
-      @include absolute(top 93vh left 50%);
+      @include absolute(top 72vh left 50%);
       @include center-center();
-      width: 80px;
-      height: 80px;
-      background-color: #3a2cdf;
-      border-radius: 50%;
+      @include semi-bold(16);
+      width: 60vw;
+      max-width: 235px;
+      height: 60px;
+      background-color: #bac5ff;
+      border-radius: 5px;
+      color: #4848ff;
+      text-align: center;
+      line-height: 22px;
       transform: translate(-50%, -40px);
+      letter-spacing: 0.02em;
       z-index: 9;
       &.done {
         display: none;
       }
 
       @include en-mobile {
-        width: 62px;
-        height: 62px;
-        top: calc(93vh - 31px);
-        // transform: translate(-50%, -31px);
-
-        svg {
-          width: 17px;
-        }
+        @include semi-bold(14);
+        width: 74vw;
+        max-width: 272px;
+        height: 9vh;
+        top: calc(79vh - 31px);
+        line-height: 19px;
       }
     }
     .signup-form-wrapper {
@@ -840,19 +827,25 @@ const router = useRouter()
 
       @include en-tablet {
         width: 100%;
-        padding: 80px 40px 0px;
-        min-height: calc(100vh + 44px);
+        padding: 40px 40px 0px;
+        min-height: 100vh;
       }
       @include en-mobile {
         width: 100%;
         padding: 44px 32px 0px;
-        min-height: calc(100vh + 44px);
+        height: 100vh;
+        min-height: 820px;
+
+        &.thank {
+          padding: 74px 32px 0px;
+          min-height: 740px;
+        }
       }
 
       .check-wrapper {
         @include relative;
         @include center-center;
-        margin-bottom: 50px;
+        margin-bottom: 52px;
 
         @include en-mobile {
           @include medium(13);
@@ -898,25 +891,26 @@ const router = useRouter()
 
         @include en-mobile {
           @include semi-bold(20);
+          margin: 20px 0px;
           line-height: 28px;
         }
       }
 
       .thank-title {
         @include semi-bold(31);
-        margin: 0px auto 50px;
+        margin: 0px auto 25px;
         text-align: center;
 
         @include en-tablet {
           @include semi-bold(33);
-          margin-bottom: 45px;
+          margin-bottom: 25px;
           max-width: 250px;
         }
 
         @include en-mobile {
           @include semi-bold(28);
           max-width: 210px;
-          margin-bottom: 40px;
+          margin-bottom: 24px;
         }
       }
       .thank-text {
@@ -925,9 +919,11 @@ const router = useRouter()
         .purpose {
           @include semi-bold(16);
           color: #161616;
-          margin-bottom: 23px;
+          margin-bottom: 60px;
+
           @include en-mobile {
             max-width: 200px;
+            margin-bottom: 50px;
           }
         }
 
@@ -935,12 +931,23 @@ const router = useRouter()
           @include medium(15);
           margin: 0px auto 0px;
 
+          .available {
+            @include medium(11);
+            font-style: italic;
+            display: block;
+            color: #aaaaaa;
+          }
+
           @include en-tablet {
             @include medium(15);
           }
 
           @include en-mobile {
             @include medium(13);
+            .available {
+              @include medium(11);
+              font-style: italic;
+            }
           }
         }
       }
@@ -1070,8 +1077,12 @@ const router = useRouter()
           background: #4848ff;
           color: #fafafc;
           border-radius: 5px;
-          margin: 50px auto;
           letter-spacing: 0.08em;
+          margin: 16px auto 34px;
+
+          &.follow {
+            background: #364a69;
+          }
 
           &:hover {
             color: rgba(#fafafc, 0.6);
@@ -1081,51 +1092,17 @@ const router = useRouter()
             @include semi-bold(16);
             width: 235px;
             height: 60px;
-            margin: 80px auto;
           }
 
           @include en-mobile {
             width: 100%;
-            margin: 44px auto;
-            max-width: 240px;
+            max-width: 180px;
+
+            &.submit {
+              max-width: 100%;
+              margin: 50px auto 34px;
+            }
           }
-        }
-      }
-
-      .beta-guide {
-        @include semi-bold(12);
-        color: #818181;
-        width: 100%;
-        margin: 0px auto;
-        text-align: center;
-        margin-bottom: 0px;
-
-        a {
-          color: #4848ff;
-          cursor: pointer;
-
-          &:visited {
-            color: #4848ff;
-          }
-        }
-
-        @include en-mobile {
-          max-width: 180px;
-          line-height: 18px;
-          margin-bottom: 18px;
-        }
-      }
-
-      .beta-guide-b {
-        @include regular(12);
-        width: 100%;
-        margin: 0px auto;
-        text-align: center;
-        color: #c4c4c4;
-        font-style: italic;
-        @include en-mobile {
-          max-width: 220px;
-          line-height: 18px;
         }
       }
     }
