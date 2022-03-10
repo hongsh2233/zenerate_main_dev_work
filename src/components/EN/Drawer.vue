@@ -5,15 +5,27 @@
       <div class="drawer-items-wrapper">
         <div class="header-navigation-wrapper hidden-en-desktop">
           <div class="navgation-link-wrapper">
-            <router-link
-              v-for="(route, idx) in routes"
-              :key="idx"
-              class="navigation-link"
-              :class="route.to"
-              :to="{ name: route.to }"
-              @click="close"
-              >{{ route.title }}
-            </router-link>
+            <template v-for="(tab, idx) in routes" :key="idx">
+              <p class="navigation-link" @click="() => selectTab(tab.title)">
+                {{ tab.title }}
+              </p>
+              <transition name="slide-up">
+                <div
+                  v-show="currentTab === tab.title"
+                  class="navigation-link-list"
+                >
+                  <router-link
+                    v-for="(nav, idx) in tab.children"
+                    :key="idx"
+                    class="navigation-link sub"
+                    :class="nav.to"
+                    :to="{ name: nav.to }"
+                    @click="close"
+                    >{{ nav.title }}
+                  </router-link>
+                </div>
+              </transition>
+            </template>
             <a
               class="demo-link navigation-link"
               href="https://app.zenerate.ai"
@@ -39,39 +51,71 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const props = defineProps({
   showDrawer: Boolean,
 })
 
+// routes
 const router = useRouter()
 const routes = [
   {
-    title: 'ABOUT',
-    to: 'en-about',
+    title: 'Product',
+    children: [
+      {
+        title: 'Overview',
+        to: 'en-overview',
+      },
+      {
+        title: 'Pricing',
+        to: 'en-pricing',
+      },
+    ],
   },
   {
-    title: 'CASE STUDIES',
-    to: 'en-case-studies',
+    title: 'Resources',
+    children: [
+      {
+        title: 'How-To-Use',
+        to: 'en-how-to-use',
+      },
+      {
+        title: 'Case Studies',
+        to: 'en-case-studies',
+      },
+    ],
   },
   {
-    title: 'SERVICE',
-    to: 'en-services',
-  },
-  // {
-  //   title: 'PRICING',
-  //   to: 'en-pricing',
-  // },
-  {
-    title: 'CAREERS',
-    to: 'en-career',
-  },
-  {
-    title: 'CONTACT',
-    to: 'en-contact',
+    title: 'Company',
+    children: [
+      {
+        title: 'About Us',
+        to: 'en-about',
+      },
+      {
+        title: 'Careers',
+        to: 'en-career',
+      },
+      {
+        title: 'Contact',
+        to: 'en-contact',
+      },
+    ],
   },
 ]
+
+const currentTab = ref(null)
+const selectTab = (primary: String): void => {
+  if (currentTab.value == primary) {
+    console.log('!!')
+    currentTab.value = null
+  } else {
+    console.log('??')
+    currentTab.value = primary
+  }
+}
 
 const goToKrPage = () => {
   window.open('https://www.zenerate.ai/kr', '_blank')
@@ -134,18 +178,26 @@ const close = () => {
         .navgation-link-wrapper {
           @include flex($dir: column);
 
+          &:first-child {
+            border-top: 1px solid $footer;
+          }
+
+          .navigation-link-list {
+            @include vertical-center();
+          }
+
           .navigation-link {
             @include medium(18);
             line-height: 40px;
             border-bottom: 1px solid $footer;
             padding: 16px 48px;
 
-            @include en-mobile {
-              padding: 10px 28px;
+            &.sub {
+              margin-left: 20px;
             }
 
-            &:first-child {
-              border-top: 1px solid $footer;
+            @include en-mobile {
+              padding: 10px 28px;
             }
 
             &.demo-link {

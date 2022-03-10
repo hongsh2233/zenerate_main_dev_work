@@ -23,6 +23,11 @@ const ENRoute: RouteRecordRaw = {
       component: LandingView,
     },
     {
+      path: '/overview',
+      name: 'en-overview',
+      component: AboutView,
+    },
+    {
       path: '/about',
       name: 'en-about',
       component: AboutView,
@@ -32,10 +37,19 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-case-studies',
       component: CaseStudiesView,
     },
-
     {
       path: '/services',
       name: 'en-services',
+      component: ServiceView,
+    },
+    {
+      path: '/how-to-use',
+      name: 'en-how-to-use',
+      component: ServiceView,
+    },
+    {
+      path: '/pricing',
+      name: 'en-pricing',
       component: ServiceView,
     },
     {

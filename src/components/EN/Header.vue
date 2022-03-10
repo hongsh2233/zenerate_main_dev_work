@@ -8,14 +8,23 @@
         <img class="logo" src="/img/logo_color.svg" alt="logo" />
         <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" /> -->
       </div>
-      <div class="header-navigation-wrapper only-en-desktop">
-        <router-link
-          v-for="(route, idx) in routes"
-          :key="idx"
-          class="navigation-link hover-pointer"
-          :to="{ name: route.to }"
-          >{{ route.title }}
-        </router-link>
+      <nav class="header-navigation-wrapper only-en-desktop">
+        <template v-for="(primary, idx) in routes" :key="idx">
+          <div class="dropdown">
+            <button class="dropbtn">
+              {{ primary.title }}
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <template v-for="(secondary, idx) in primary.children" :key="idx">
+                <router-link :to="{ name: secondary.to }">
+                  {{ secondary.to }}
+                </router-link>
+              </template>
+            </div>
+          </div>
+        </template>
+
         <button
           type="button"
           class="navigation-link hover-pointer lang-button"
@@ -29,7 +38,7 @@
             한국어</router-link
           >
         </button>
-      </div>
+      </nav>
       <div class="header-demo-wrapper only-en-desktop" @click="goToApp()">
         <a href="http://app.zenerate.ai" class="demo-link">Beta APP</a>
       </div>
@@ -43,7 +52,6 @@
 import { ref } from 'vue'
 import { useGtag } from 'vue-gtag-next'
 import { useRouter } from 'vue-router'
-
 import MenuIcon from '/Components/EN/Icons/menu.vue'
 
 const props = defineProps({
@@ -74,30 +82,60 @@ const goToApp = () => {
 const router = useRouter()
 const routes = [
   {
-    title: 'ABOUT',
-    to: 'en-about',
+    title: 'Product',
+    children: [
+      {
+        title: 'Overview',
+        to: 'en-overview',
+      },
+      {
+        title: 'Pricing',
+        to: 'en-pricing',
+      },
+    ],
   },
   {
-    title: 'CASE STUDIES',
-    to: 'en-case-studies',
+    title: 'Resources',
+    children: [
+      {
+        title: 'How-To-Use',
+        to: 'en-how-to-use',
+      },
+      {
+        title: 'Case Studies',
+        to: 'en-case-studies',
+      },
+    ],
   },
   {
-    title: 'SERVICE',
-    to: 'en-services',
-  },
-  // {
-  //   title: 'PRICING',
-  //   to: 'en-pricing',
-  // },
-  {
-    title: 'CAREERS',
-    to: 'en-career',
-  },
-  {
-    title: 'CONTACT',
-    to: 'en-contact',
+    title: 'Company',
+    children: [
+      {
+        title: 'About Us',
+        to: 'en-about',
+      },
+      {
+        title: 'Careers',
+        to: 'en-career',
+      },
+      {
+        title: 'Contact',
+        to: 'en-contact',
+      },
+    ],
   },
 ]
+
+const selectedPrimaryNav = ref(null)
+const toggleNav = (primary: String) => {
+  if (selectedPrimaryNav.value == primary) {
+    console.log('!!')
+    selectedPrimaryNav.value = null
+  } else {
+    console.log('??')
+    selectedPrimaryNav.value = primary
+  }
+}
 </script>
 <style lang="scss" scoped>
 .header-wrapper {
@@ -160,27 +198,39 @@ const routes = [
       }
     }
     .header-navigation-wrapper {
-      @include flex($justify: flex-start);
+      @include flex($justify: flex-end);
+
       align-items: center;
       flex: 1;
       flex-wrap: nowrap;
       text-align: center;
       margin: auto 0px;
       .navigation-link {
+        @include relative;
         @include regular(16);
+        display: inline-block;
         margin-left: 34px;
         font-size: 16px;
         line-height: 20px;
         color: $text-darken-5;
         transition: color ease-in-out 0.2s;
 
-        &:first-child {
-          margin-left: 80px;
-        }
+        .navigation-subtitle-list {
+          @include absolute(top 30px right -30px);
+          display: none;
+          background-color: blue;
+          min-width: 160px;
+          height: 200px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
 
-        &:not(.lang-button):hover {
-          transition: color ease-in-out 0.2s;
-          color: $text-darken;
+          .navigation-subtitle-item {
+            padding: 0px;
+
+            &:hover {
+              background-color: #ddd;
+            }
+          }
         }
 
         &.router-link-active {
@@ -193,6 +243,7 @@ const routes = [
           align-items: center;
           width: 163px;
           height: 36px;
+          padding-left: 14px;
 
           &:hover {
             transition: color ease-in-out 0.2s;
@@ -210,8 +261,7 @@ const routes = [
 
           &.active {
             border-radius: 18px;
-            margin-left: 26px;
-            padding-left: 14px;
+
             box-shadow: 0px 0px 20px rgba(211, 210, 242, 0.6);
             transition: box-shadow ease-in-out 0.2s;
             transition: color ease-in-out 0.2s;
@@ -264,6 +314,53 @@ const routes = [
         @include medium(28);
       }
     }
+  }
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+
+  .navbar a:hover,
+  .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 }
 </style>
