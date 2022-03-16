@@ -159,7 +159,7 @@ const pdfFiles = {
     name: 'Case_Study_Zenerate',
   },
   solution: {
-    src: '1J-svhj_0OQCBZmGjwcI7fCJRtKtx0u2w',
+    src: '1iQHABmIvuVLwo4djmFJH0h4ENpKd8hv9',
     name: 'Case_Study_Solution_Report',
   },
 }
