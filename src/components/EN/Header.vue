@@ -163,6 +163,8 @@ const toggleNav = (primary: String) => {
   width: 100vw;
   z-index: 1000;
   background: $white;
+  box-shadow: 0px 2px 8px rgb(142 141 208 / 10%);
+
   @include en-desktop {
     height: 80px;
   }
@@ -314,7 +316,7 @@ const toggleNav = (primary: String) => {
     }
     .header-demo-wrapper {
       @include button-5($width: 133px, $height: 45px);
-      margin: 18px 0px 18px 45px;
+      margin: 18px 0px 18px;
       background-color: $navigation;
 
       .demo-link {
@@ -341,16 +343,13 @@ const toggleNav = (primary: String) => {
     float: left;
     overflow: hidden;
     padding-bottom: 5px;
-
-    &:not(:last-child) {
-      margin-right: 60px;
-    }
+    margin-right: 28px;
   }
 
   .dropdown .dropbtn {
     @include flex();
     @include medium(14);
-    width: 134px;
+    width: fit-content;
     border: none;
     align-items: center;
     outline: none;
@@ -376,6 +375,7 @@ const toggleNav = (primary: String) => {
   }
 
   .dropdown-content {
+    @include elevation-2();
     @include vertical-center();
     visibility: hidden;
     position: absolute;
@@ -386,6 +386,7 @@ const toggleNav = (primary: String) => {
     z-index: 1;
     border-radius: 7px;
     box-shadow: 0px 4px 8px rgba(142, 141, 208, 0.16);
+    border: 1px solid $footer;
   }
 
   .dropdown-content a {
