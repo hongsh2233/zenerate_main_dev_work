@@ -354,11 +354,12 @@ $breakpoint-480: 480px;
 
 /*************** mew colors ***************/
 $text-darken: #000729;
-$text-darken-5: rgba(#000729, 0.5);
+$text-darken-7: rgba($text-darken, 0.7);
+$text-darken-5: rgba($text-darken, 0.5);
 
 /*************** colors ***************/
-$main-blue: #5c6dff;
-$main-core: #4848ff;
+$core: #5c6dff;
+$navigation: #4d49f4;
 $white: #ffffff;
 $black: #161616;
 $footer: #f4f3fe;
@@ -493,20 +494,20 @@ $bt-secondary-etc: #f6f5ff;
 @mixin button-default-4($width, $height) {
   @include button-default-1($width, $height);
   background: $white;
-  color: $main-blue;
-  border: solid 1px $main-blue;
+  color: $core;
+  border: solid 1px $core;
 }
 
 @mixin button-hover-4($width, $height) {
   @include button-hover-1($width, $height);
-  color: $main-blue;
+  color: $core;
   background: $white;
   transform: none;
 }
 
 @mixin button-pressed-4($width, $height) {
   @include button-pressed-1($width, $height);
-  color: $main-blue;
+  color: $core;
   background: $white;
   transform: none;
 }
@@ -518,12 +519,12 @@ $bt-secondary-etc: #f6f5ff;
 
 @mixin button-hover-gnb {
   @include button-default-gnb;
-  color: $main-blue;
+  color: $core;
 }
 
 @mixin button-pressed-gnb {
   @include button-default-gnb;
-  color: $main-blue;
+  color: $core;
 }
 
 @mixin button-disabled-gnb {

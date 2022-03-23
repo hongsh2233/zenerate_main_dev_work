@@ -587,7 +587,7 @@ const toContactForm = () => {
         @include button-1;
         @include elevation-5;
         letter-spacing: 0.12em;
-        background: $main-core;
+        background: $navigation;
       }
       @include en-tablet {
         margin: 0px auto;
@@ -670,7 +670,7 @@ const toContactForm = () => {
           margin-bottom: 32px;
           color: $black;
           span {
-            color: $main-core;
+            color: $navigation;
           }
         }
 
@@ -878,7 +878,7 @@ const toContactForm = () => {
             line-height: 48px;
             text-align: center;
             border-radius: 42px;
-            background-color: $main-core;
+            background-color: $navigation;
             color: $white;
             box-shadow: 4px 4px 20px rgba(72, 72, 255, 0.3);
             @include en-desktop {
@@ -1370,7 +1370,7 @@ const toContactForm = () => {
         position: relative;
         line-height: 30px;
         span {
-          color: $main-core;
+          color: $navigation;
         }
       }
     }

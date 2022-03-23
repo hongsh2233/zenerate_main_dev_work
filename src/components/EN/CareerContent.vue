@@ -1449,7 +1449,7 @@ const goToApply = () => {
     }
 
     .email-highlight {
-      color: $main-core;
+      color: $navigation;
     }
   }
 }

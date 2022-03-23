@@ -295,7 +295,7 @@ import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
 import Footer from '/Components/EN/Footer.vue'
 import Arrow from '/Components/EN/Arrow.vue'
-import CloseIcon from '/Components/EN/Icons/close.vue'
+import CloseIcon from '../../components/EN/Icons/CloseIcon.vue'
 import AOS from 'aos'
 
 import { useMeta } from 'vue-meta'
@@ -324,7 +324,7 @@ onBeforeUnmount(() => {
 </script>
 <style lang="scss" scoped>
 .text-blue {
-  color: $main-core;
+  color: $navigation;
   font-weight: 300;
 }
 

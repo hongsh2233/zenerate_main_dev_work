@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+* {
+  font-family: 'Poppins', 'Roboto', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+    sans-serif !important;
+}
 .section {
   @include en-tablet {
     &:first-child {
@@ -134,7 +139,7 @@
     }
     span {
       @include bold(36);
-      color: $main-core;
+      color: $navigation;
       font-weight: $bold;
     }
   }

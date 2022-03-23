@@ -472,7 +472,7 @@ const pdfFiles = {
 
           .download {
             @include medium(17);
-            color: $main-core;
+            color: $navigation;
 
             i {
               @include medium(16);

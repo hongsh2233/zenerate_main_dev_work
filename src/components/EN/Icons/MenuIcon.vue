@@ -49,14 +49,14 @@ const barHeight = computed(() => {
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  color: $black;
-  font-size: 28px;
+  color: $text-darken;
+  font-size: 26px;
 
   @include en-tablet {
     padding: 10px 40px;
   }
   @include en-mobile {
-    padding: 10px 20px;
+    padding: 10px 26px;
   }
   .menu {
     width: 100%;

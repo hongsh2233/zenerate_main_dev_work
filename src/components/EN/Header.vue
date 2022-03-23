@@ -18,7 +18,13 @@
             <div class="dropdown-content">
               <template v-for="(secondary, idx) in primary.children" :key="idx">
                 <router-link :to="{ name: secondary.to }">
-                  {{ secondary.to }}
+                  <i class="material-icons" v-if="!secondary.outline">
+                    {{ secondary.icon }}
+                  </i>
+                  <i class="material-icons-outlined" v-else>
+                    {{ secondary.icon }}
+                  </i>
+                  {{ secondary.title }}
                 </router-link>
               </template>
             </div>
@@ -52,7 +58,7 @@
 import { ref } from 'vue'
 import { useGtag } from 'vue-gtag-next'
 import { useRouter } from 'vue-router'
-import MenuIcon from '/Components/EN/Icons/menu.vue'
+import MenuIcon from './Icons/MenuIcon.vue'
 
 const props = defineProps({
   showDrawer: Boolean,
@@ -87,10 +93,14 @@ const routes = [
       {
         title: 'Overview',
         to: 'en-overview',
+        icon: 'pageview',
+        outline: true,
       },
       {
         title: 'Pricing',
         to: 'en-pricing',
+        icon: 'paid',
+        outline: true,
       },
     ],
   },
@@ -98,12 +108,16 @@ const routes = [
     title: 'Resources',
     children: [
       {
-        title: 'How-To-Use',
+        title: 'How to use',
         to: 'en-how-to-use',
+        icon: 'format_list_bulleted',
+        outline: true,
       },
       {
         title: 'Case Studies',
         to: 'en-case-studies',
+        icon: 'description',
+        outline: true,
       },
     ],
   },
@@ -113,14 +127,20 @@ const routes = [
       {
         title: 'About Us',
         to: 'en-about',
+        icon: 'people_alt',
+        outline: true,
       },
       {
         title: 'Careers',
         to: 'en-career',
+        icon: 'business_center',
+        outline: true,
       },
       {
         title: 'Contact',
         to: 'en-contact',
+        icon: 'mail',
+        outline: true,
       },
     ],
   },
@@ -272,7 +292,7 @@ const toggleNav = (primary: String) => {
             p {
               &:hover {
                 transition: color ease-in-out 0.2s;
-                color: $main-blue;
+                color: $navigation;
               }
             }
 
@@ -284,7 +304,7 @@ const toggleNav = (primary: String) => {
 
               &:hover {
                 transition: color ease-in-out 0.2s;
-                color: $main-blue;
+                color: $navigation;
                 font-weight: 500;
               }
             }
@@ -298,7 +318,7 @@ const toggleNav = (primary: String) => {
       margin-left: 64px;
       .demo-link {
         @include regular(16);
-        color: $main-core;
+        color: $navigation;
       }
     }
     .header-drawer-wrapper {
@@ -318,6 +338,7 @@ const toggleNav = (primary: String) => {
   .dropdown {
     float: left;
     overflow: hidden;
+    padding-bottom: 5px;
 
     &:not(:last-child) {
       margin-right: 60px;
@@ -327,25 +348,25 @@ const toggleNav = (primary: String) => {
   .dropdown .dropbtn {
     @include flex();
     @include medium(14);
-    font-size: 16px;
+    width: 134px;
     border: none;
     align-items: center;
     outline: none;
     color: $text-darken;
-    padding: 14px 16px;
+    padding: 24px 16px 29px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
 
     i {
       @include regular(20);
-      margin-left: 4px;
+      margin-left: 8px;
     }
   }
 
   .navbar a:hover,
   .dropdown:hover .dropbtn {
-    color: $main-blue;
+    color: $navigation;
 
     i {
       transform: rotate(-180deg);
@@ -353,29 +374,44 @@ const toggleNav = (primary: String) => {
   }
 
   .dropdown-content {
-    display: none;
+    @include vertical-center();
+    visibility: hidden;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: $white;
     min-width: 130px;
+    padding: 19px 0px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-radius: 7px;
+    box-shadow: 0px 4px 8px rgba(142, 141, 208, 0.16);
   }
 
   .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
+    @include flex();
+    @include medium(12);
+    color: $text-darken;
+    align-items: center;
+    padding: 4px 14px;
     text-decoration: none;
-    display: block;
     text-align: left;
   }
 
+  .dropdown-content i {
+    @include medium(15);
+    color: $text-darken;
+    margin-right: 8px;
+  }
+
   .dropdown-content a:hover {
-    background-color: #ddd;
+    color: $navigation;
+
+    i {
+      color: $navigation;
+    }
   }
 
   .dropdown:hover .dropdown-content {
-    display: block;
+    visibility: visible;
   }
 }
 </style>

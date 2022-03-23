@@ -6,14 +6,12 @@
         <div class="header-navigation-wrapper hidden-en-desktop">
           <div class="navgation-link-wrapper">
             <template v-for="(tab, idx) in routes" :key="idx">
-              <p class="navigation-link" @click="() => selectTab(tab.title)">
+              <p class="navigation-link" @click="() => selectTab(tab.key)">
                 {{ tab.title }}
+                <i class="material-icons"> keyboard_arrow_down </i>
               </p>
               <transition name="slide-up">
-                <div
-                  v-show="currentTab === tab.title"
-                  class="navigation-link-list"
-                >
+                <div v-show="toggleTab[tab.key]" class="navigation-link-list">
                   <router-link
                     v-for="(nav, idx) in tab.children"
                     :key="idx"
@@ -21,7 +19,14 @@
                     :class="nav.to"
                     :to="{ name: nav.to }"
                     @click="close"
-                    >{{ nav.title }}
+                  >
+                    <i class="material-icons" v-if="!nav.outline">
+                      {{ nav.icon }}
+                    </i>
+                    <i class="material-icons-outlined" v-else>
+                      {{ nav.icon }}
+                    </i>
+                    {{ nav.title }}
                   </router-link>
                 </div>
               </transition>
@@ -30,17 +35,11 @@
               class="demo-link navigation-link"
               href="https://app.zenerate.ai"
               target="_blank"
-              >JOIN APP
+              >TRY FOR FREE
               <i class="material-icons"> east </i>
             </a>
           </div>
           <div class="info-wrapper">
-            <button type="button" class="lang-button" @click="goToKrPage()">
-              <i class="material-icons"> language </i>
-
-              <span> zenerate.ai/kr </span>
-              <i class="material-icons"> east </i>
-            </button>
             <span class="copyright"
               >© Zenerate, Inc. 2021. All rights reserved</span
             >
@@ -62,59 +61,80 @@ const props = defineProps({
 const router = useRouter()
 const routes = [
   {
+    key: 'product',
     title: 'Product',
     children: [
       {
         title: 'Overview',
         to: 'en-overview',
+        icon: 'pageview',
+        outline: true,
       },
       {
         title: 'Pricing',
         to: 'en-pricing',
+        icon: 'paid',
+        outline: true,
       },
     ],
   },
   {
+    key: 'resources',
     title: 'Resources',
     children: [
       {
-        title: 'How-To-Use',
+        title: 'How to use',
         to: 'en-how-to-use',
+        icon: 'format_list_bulleted',
+        outline: true,
       },
       {
         title: 'Case Studies',
         to: 'en-case-studies',
+        icon: 'description',
+        outline: true,
       },
     ],
   },
   {
+    key: 'company',
     title: 'Company',
     children: [
       {
         title: 'About Us',
         to: 'en-about',
+        icon: 'people_alt',
+        outline: true,
       },
       {
         title: 'Careers',
         to: 'en-career',
+        icon: 'business_center',
+        outline: true,
       },
       {
         title: 'Contact',
         to: 'en-contact',
+        icon: 'mail',
+        outline: true,
       },
     ],
   },
 ]
 
+const toggleTab = ref({
+  product: false,
+  resources: false,
+  company: false,
+})
 const currentTab = ref(null)
-const selectTab = (primary: String): void => {
-  if (currentTab.value == primary) {
-    console.log('!!')
-    currentTab.value = null
-  } else {
-    console.log('??')
-    currentTab.value = primary
-  }
+const selectTab = (primary): void => {
+  // if (currentTab.value == primary) {
+  //   currentTab.value = null
+  // } else {
+  //   currentTab.value = primary
+  // }
+  toggleTab.value[primary] = !toggleTab.value[primary]
 }
 
 const goToKrPage = () => {
@@ -160,7 +180,7 @@ const close = () => {
       }
 
       .icon-close {
-        color: $text-grey;
+        color: $text-darken-7;
         font-size: 28px;
       }
     }
@@ -175,6 +195,8 @@ const close = () => {
         @include flex($dir: column, $justify: space-between);
         height: 100%;
         flex-wrap: nowrap;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
         .navgation-link-wrapper {
           @include flex($dir: column);
 
@@ -184,16 +206,33 @@ const close = () => {
 
           .navigation-link-list {
             @include vertical-center();
+            border-top: 1px solid $footer;
+            border-bottom: 1px solid $footer;
           }
 
           .navigation-link {
+            @include flex($justify: space-between);
             @include medium(18);
             line-height: 40px;
-            border-bottom: 1px solid $footer;
             padding: 16px 48px;
+            cursor: pointer;
 
+            i {
+              @include medium(28);
+              color: $text-darken-7;
+            }
             &.sub {
-              margin-left: 20px;
+              @include medium(18);
+              @include flex();
+              align-items: center;
+              background-color: #fafbfe;
+              color: $text-darken-7;
+
+              i {
+                @include medium(16);
+                margin-right: 12px;
+                color: $text-darken-7;
+              }
             }
 
             @include en-mobile {
@@ -204,9 +243,10 @@ const close = () => {
               @include flex();
               align-items: center;
               font-weight: 700;
-              color: $main-core;
+              color: $navigation;
               i {
                 @include bold(18);
+                color: $navigation;
                 margin: 0px 0px 3px 14px;
               }
             }

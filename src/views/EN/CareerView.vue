@@ -409,8 +409,8 @@ const { meta } = useMeta({
               color: #161616;
               border-bottom: solid 1px $text-lightgrey;
               &:hover {
-                color: $main-blue;
-                border-bottom-color: $main-blue;
+                color: $core;
+                border-bottom-color: $core;
               }
 
               @include en-mobile {
