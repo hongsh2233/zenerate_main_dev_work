@@ -2,51 +2,44 @@
   <div id="fullpage-landing">
     <div class="section section-landing fp-auto-height-responsive">
       <div class="section-inner inner-landing">
-        <div
-          class="inner-contents landing-contents"
-          data-aos="fade-up"
-          data-aos-offset="-1500"
-          data-aos-delay="300"
-          data-aos-duration="600"
-          data-aos-anchor-placement="top-bottom"
-        >
-          <div class="content-heading">
-            <p>Zenerate™</p>
-            <p>
-              The only <strong>AI-powered</strong
-              ><strong> architectural design&nbsp;</strong>
-            </p>
-            <p>technology&nbsp;</p>
-            <p>that boosts&nbsp;</p>
-            <p>real estate development&nbsp;</p>
-            <p>profitability&nbsp;</p>
-            <p>from&nbsp;</p>
-            <p><span>3% to 26%</span></p>
-          </div>
-          <div class="content-phrase">
-            <p>All building design possibilities. Maximum success.</p>
-          </div>
-          <div class="content-justyourcuriosity"></div>
-          <div
-            class="content-button"
-            @click="goToApp()"
-            data-aos="zoom-in-down"
-            data-aos-offset="-1500"
-            data-aos-delay="300"
-            data-aos-duration="500"
-            data-aos-anchor-placement="bottom-bottom"
-          >
-            <a href="https://app.zenerate.ai" target="_blank">GO EXPLORE</a>
+        <div class="inner-contents landing-contents">
+          <div class="content-wrapper">
+            <div class="content-title-wrapper">
+              <div class="content-heading">
+                <p><strong>Feasibility studies,</strong></p>
+                <p>now AI-powered.</p>
+              </div>
+              <div class="content-phrase">
+                <p>Zenerate is an AI-powered&nbsp;</p>
+                <p><strong>feasibility</strong>&nbsp;</p>
+                <p><strong>study tool</strong>&nbsp;</p>
+                <p>that boosts&nbsp;</p>
+                <p><strong>real estate </strong></p>
+                <p><strong>development</strong>&nbsp;</p>
+                <p>profitability&nbsp;</p>
+                <p class="blue"><strong>up to 26%</strong></p>
+              </div>
+              <div class="content-justyourcuriosity"></div>
+              <div class="content-button" @click="goToApp()">
+                <a href="https://app.zenerate.ai" target="_blank"
+                  >TRY FOR FREE</a
+                >
+              </div>
+            </div>
+            <div class="content-image-wrapper">
+              <img src="/video/scroll_building.gif" alt="" />
+            </div>
           </div>
         </div>
-        <div class="arrow-bottom">
+        <div class="arrow-bottom arrow-blue">
           <Arrow />
         </div>
       </div>
-      <div class="landing-background"></div>
+
+      <!-- <div class="landing-background"></div>
       <div class="landing-background-wave">
         <img src="/en/img/about_mission_back.png" alt="" />
-      </div>
+      </div> -->
     </div>
     <div class="section section-engine fp-auto-height-responsive">
       <div class="section-inner inner-engine">
@@ -462,7 +455,12 @@ const toContactForm = () => {
   }
   .section-inner {
     z-index: 2;
+    padding: 0px 100px;
+    @include en-tablet {
+      padding: 0px 40px;
+    }
     @include en-mobile {
+      padding: 0px 20px;
       height: calc(100vh - 20px) !important;
     }
   }
@@ -508,8 +506,9 @@ const toContactForm = () => {
 
     .content-heading {
       margin-bottom: 28px;
-      letter-spacing: -0.015em;
-      color: $white;
+      letter-spacing: -0.2px;
+      color: $text-darken;
+      text-align: left;
 
       p:not(:first-child) {
         display: inline-block;
@@ -524,26 +523,27 @@ const toContactForm = () => {
       }
       p {
         @include en-desktop {
-          @include regular(40);
+          @include regular(52);
           strong {
-            @include bold(40);
+            @include bold(52);
           }
         }
 
         @include en-tablet {
-          @include regular(24);
+          @include regular(49);
           margin: auto;
 
           strong {
-            @include bold(24);
+            @include bold(49);
           }
         }
 
         @include en-mobile {
-          @include regular(24);
+          @include regular(26);
           display: inline-block;
+          text-align: center;
           strong {
-            @include bold(24);
+            @include bold(26);
           }
 
           &:last-child {
@@ -556,36 +556,48 @@ const toContactForm = () => {
       }
     }
     .content-phrase {
-      color: $white;
-      margin-bottom: 28px;
+      color: $text-darken;
+      margin-bottom: 60px;
+      max-width: 564px;
+      text-align: left;
+
       p {
-        @include regular(24);
+        @include regular(23);
+        line-height: 36px;
+        display: inline-block;
+
+        &.blue {
+          color: $navigation;
+        }
       }
       @include en-tablet {
-        max-width: 300px;
-        margin: 0px auto;
+        max-width: 390px;
+        margin: 0px;
         margin-bottom: 40px;
         p {
-          @include regular(16);
-          line-height: 20px;
+          @include regular(20);
+          line-height: 30px;
+          width: auto;
         }
       }
       @include en-mobile {
-        max-width: 300px;
-        height: 10%;
-        margin: 0px auto auto;
+        max-width: 250px;
+        margin: 0px;
         margin-bottom: 20px;
+        text-align: center;
         p {
-          @include regular(16);
-          line-height: 20px;
+          @include regular(14);
+          line-height: 22px;
         }
       }
     }
 
     .content-button {
+      margin: 0px !important;
       a {
         @include button-1;
         @include elevation-5;
+        @include bold(18);
         letter-spacing: 0.12em;
         background: $navigation;
       }
@@ -595,6 +607,60 @@ const toContactForm = () => {
     }
   }
 }
+
+.content-wrapper {
+  @include flex();
+  @include relative();
+  width: 100%;
+  flex-wrap: nowrap;
+
+  .content-title-wrapper {
+    @include vertical-center();
+    width: auto;
+    max-width: 500px;
+    z-index: 1;
+
+    @include en-tablet {
+      idth: 760px;
+      background: linear-gradient(
+        90deg,
+        #ffffff 60%,
+        #ffffff 70%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      mix-blend-mode: normal;
+    }
+
+    @include en-mobile {
+      margin: 0px auto;
+      background: linear-gradient(
+        0deg,
+        #ffffff 11.95%,
+        #ffffff 27.87%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      mix-blend-mode: normal;
+    }
+  }
+  .content-image-wrapper {
+    @include absolute(top -40px right 0px);
+    width: 400px;
+    img {
+      width: 400px;
+    }
+
+    @include en-mobile {
+      @include absolute(top 50% right 50%);
+      width: 250px;
+
+      transform: translate(50%, -50%);
+      img {
+        width: 250px;
+      }
+    }
+  }
+}
+
 .section-engine {
   // background: rgba(0, 0, 5, 0.88);
   .section-inner {
