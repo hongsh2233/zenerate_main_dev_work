@@ -13,7 +13,7 @@
           <div class="dropdown">
             <button class="dropbtn">
               {{ primary.title }}
-              <i class="fa fa-caret-down"></i>
+              <i class="material-icons"> keyboard_arrow_down </i>
             </button>
             <div class="dropdown-content">
               <template v-for="(secondary, idx) in primary.children" :key="idx">
@@ -24,7 +24,7 @@
             </div>
           </div>
         </template>
-
+        <!-- 
         <button
           type="button"
           class="navigation-link hover-pointer lang-button"
@@ -37,7 +37,7 @@
           <router-link v-show="showLang" :to="{ name: 'ModuleLayout' }">
             한국어</router-link
           >
-        </button>
+        </button> -->
       </nav>
       <div class="header-demo-wrapper only-en-desktop" @click="goToApp()">
         <a href="http://app.zenerate.ai" class="demo-link">Beta APP</a>
@@ -175,9 +175,10 @@ const toggleNav = (primary: String) => {
       @include flex();
       align-items: center;
       margin: auto 0px;
+      width: 123px;
       z-index: 9999;
       @include desktop {
-        width: 160px;
+        width: 123px;
         .logo {
           width: 100%;
         }
@@ -199,7 +200,6 @@ const toggleNav = (primary: String) => {
     }
     .header-navigation-wrapper {
       @include flex($justify: flex-end);
-
       align-items: center;
       flex: 1;
       flex-wrap: nowrap;
@@ -261,7 +261,6 @@ const toggleNav = (primary: String) => {
 
           &.active {
             border-radius: 18px;
-
             box-shadow: 0px 0px 20px rgba(211, 210, 242, 0.6);
             transition: box-shadow ease-in-out 0.2s;
             transition: color ease-in-out 0.2s;
@@ -319,29 +318,45 @@ const toggleNav = (primary: String) => {
   .dropdown {
     float: left;
     overflow: hidden;
+
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
   }
 
   .dropdown .dropbtn {
+    @include flex();
+    @include medium(14);
     font-size: 16px;
     border: none;
+    align-items: center;
     outline: none;
-    color: black;
+    color: $text-darken;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+
+    i {
+      @include regular(20);
+      margin-left: 4px;
+    }
   }
 
   .navbar a:hover,
   .dropdown:hover .dropbtn {
-    background-color: red;
+    color: $main-blue;
+
+    i {
+      transform: rotate(-180deg);
+    }
   }
 
   .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 130px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }

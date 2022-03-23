@@ -3,13 +3,7 @@
     <section class="section section-careers fp-auto-height-responsive">
       <div class="section-main">
         <div class="section-inner main-wrapper">
-          <div
-            class="inner-main"
-            data-aos="fade-up"
-            data-aos-offset="-1500"
-            data-aos-duration="500"
-            data-aos-anchor-placement="top-center"
-          >
+          <div class="inner-main">
             <div class="main-sub-title">
               <p>Build your life <span>with us</span></p>
               <!-- <img src="/img/logo.webp" alt="" /> -->
@@ -38,12 +32,12 @@
                 <div class="career-list">
                   <div class="career-item">
                     <div class="item-date">
-                      Posted
+                      <!-- Posted
                       {{
                         formatDistanceToNowStrict(new Date(2021, 9, 28), {
                           addSuffix: true,
                         })
-                      }}
+                      }} -->
                     </div>
                     <div
                       class="item-title hover-pointer"
@@ -54,12 +48,12 @@
                   </div>
                   <div class="career-item">
                     <div class="item-date">
-                      Posted
+                      <!-- Posted
                       {{
                         formatDistanceToNowStrict(new Date(2021, 9, 28), {
                           addSuffix: true,
                         })
-                      }}
+                      }} -->
                     </div>
                     <div
                       class="item-title hover-pointer"
@@ -70,12 +64,12 @@
                   </div>
                   <div class="career-item">
                     <div class="item-date">
-                      Posted
+                      <!-- Posted
                       {{
                         formatDistanceToNowStrict(new Date(2021, 9, 23), {
                           addSuffix: true,
                         })
-                      }}
+                      }} -->
                     </div>
                     <div
                       class="item-title hover-pointer"
@@ -86,10 +80,10 @@
                   </div>
                   <div class="career-item">
                     <div class="item-date">
-                      Posted
+                      <!-- Posted
                       {{
                         formatDistanceToNowStrict(posted, { addSuffix: true })
-                      }}
+                      }} -->
                     </div>
                     <div
                       class="item-title hover-pointer"
@@ -106,10 +100,10 @@
                   </div>
                   <div class="career-item">
                     <div class="item-date">
-                      Posted
+                      <!-- Posted
                       {{
                         formatDistanceToNowStrict(posted, { addSuffix: true })
-                      }}
+                      }} -->
                     </div>
                     <div
                       class="item-title hover-pointer"
@@ -126,10 +120,10 @@
                   </div>
                   <div class="career-item">
                     <div class="item-date">
-                      Posted
+                      <!-- Posted
                       {{
                         formatDistanceToNowStrict(posted, { addSuffix: true })
-                      }}
+                      }} -->
                     </div>
                     <div
                       class="item-title hover-pointer"
@@ -143,10 +137,10 @@
 
                   <div class="career-item">
                     <div class="item-date">
-                      Posted
+                      <!-- Posted
                       {{
                         formatDistanceToNowStrict(posted, { addSuffix: true })
-                      }}
+                      }} -->
                     </div>
                     <div
                       class="item-title hover-pointer"
@@ -178,10 +172,10 @@ import Store from '/Store/index'
 import CareerContent from '/src/components/EN/CareerContent.vue'
 import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-const router = useRouter()
-// @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
 import { formatDistanceToNowStrict } from 'date-fns'
+import { useMeta } from 'vue-meta'
+const router = useRouter()
 const posted = new Date(2021, 9, 17)
 const today = new Date()
 
@@ -198,7 +192,6 @@ onMounted(() => {
   }
 })
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: 'Career | Zenerate',
   description:
