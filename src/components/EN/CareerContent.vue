@@ -1310,6 +1310,7 @@ const goToApply = () => {
   height: 100%;
   max-width: 1600px;
   margin: auto;
+  margin-top: 120px;
   .career-content {
     // .image-wrapper {
     //   width: 100%;

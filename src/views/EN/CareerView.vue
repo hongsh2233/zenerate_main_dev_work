@@ -3,13 +3,7 @@
     <section class="section section-careers fp-auto-height-responsive">
       <div class="section-main">
         <div class="section-inner main-wrapper">
-          <div
-            class="inner-main"
-            data-aos="fade-up"
-            data-aos-offset="-1500"
-            data-aos-duration="500"
-            data-aos-anchor-placement="top-center"
-          >
+          <div class="inner-main">
             <div class="main-sub-title">
               <p>Build your life <span>with us</span></p>
               <!-- <img src="/img/logo.webp" alt="" /> -->
