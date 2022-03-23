@@ -3,27 +3,6 @@
     <div class="section section-story story-wrapper fp-auto-height-responsive">
       <div class="inner-contents">
         <div
-          class="person-wrapper hidden-en-tablet hidden-en-mobile"
-          data-aos="fade-right"
-          data-aos-offset="0"
-          data-aos-duration="600"
-          data-aos-delay="400"
-          data-aos-anchor-placement="center-bottom"
-        >
-          <div class="mission-image">
-            <img
-              src="/en/img/about_benji_shin.png"
-              alt="co-founder benji shin"
-            />
-          </div>
-          <p class="person-name">BENJI SHIN</p>
-          <p class="person-desc">
-            <span>CEO</span>
-            <span>ARCHITECT</span>
-            <span>CO-FOUNDER </span>
-          </p>
-        </div>
-        <div
           class="mission-contents"
           data-aos="fade-up"
           data-aos-offset="0"
@@ -32,23 +11,20 @@
           data-aos-anchor-placement="center-bottom"
         >
           <div class="title-wrapper">
-            <h2>ABOUT US</h2>
+            <h2>
+              An architect<br />
+              with a vision,
+            </h2>
             <div class="divider"></div>
           </div>
           <div class="mission-content content-text">
             <div class="hidden-en-tablet hidden-en-mobile">
               <p>
-                <span class="text-blue">Zenerate</span> is a tech company<br />founded
-                by Harvard and Caltech graduates.
+                After completing his master's in architecture at Harvard, Benji
+                Shin spent 6 years as an architect in Los Angeles at HED and
+                HKS.
               </p>
-              <p>
-                Our primary goal is to provide profitable<br />
-                solutions
-                <strong>
-                  that will change traditional<br />
-                  building designs lacking the financials.
-                </strong>
-              </p>
+              <p></p>
             </div>
             <div class="hidden-en-desktop hidden-en-mobile">
               <p>
@@ -109,6 +85,27 @@
               </p>
             </div>
           </div>
+        </div>
+        <div
+          class="person-wrapper hidden-en-tablet hidden-en-mobile"
+          data-aos="fade-right"
+          data-aos-offset="0"
+          data-aos-duration="600"
+          data-aos-delay="400"
+          data-aos-anchor-placement="center-bottom"
+        >
+          <div class="mission-image">
+            <img
+              src="/en/img/about_benji_shin.png"
+              alt="co-founder benji shin"
+            />
+          </div>
+          <p class="person-name">BENJI SHIN</p>
+          <p class="person-desc">
+            <span>CEO</span>
+            <span>ARCHITECT</span>
+            <span>CO-FOUNDER </span>
+          </p>
         </div>
       </div>
     </div>

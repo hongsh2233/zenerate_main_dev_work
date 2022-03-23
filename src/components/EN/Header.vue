@@ -46,7 +46,7 @@
         </button> -->
       </nav>
       <div class="header-demo-wrapper only-en-desktop" @click="goToApp()">
-        <a href="http://app.zenerate.ai" class="demo-link">Beta APP</a>
+        <a href="http://app.zenerate.ai" class="demo-link">TRY FOR FREE</a>
       </div>
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
         <MenuIcon @toggle="toggleDrawer" :showDrawer="showDrawer" />
@@ -159,7 +159,7 @@ const toggleNav = (primary: String) => {
 </script>
 <style lang="scss" scoped>
 .header-wrapper {
-  @include fixed(top 35px left 0);
+  @include fixed(top 0px left 0);
   width: 100vw;
   z-index: 1000;
   background: $white;
@@ -313,12 +313,14 @@ const toggleNav = (primary: String) => {
       }
     }
     .header-demo-wrapper {
-      @include button-2($width: 104px, $height: 42px);
-      margin: auto 0px;
-      margin-left: 64px;
+      @include button-5($width: 133px, $height: 45px);
+      margin: 18px 0px 18px 45px;
+      background-color: $navigation;
+
       .demo-link {
-        @include regular(16);
-        color: $navigation;
+        @include semi-bold(14);
+        color: $white;
+        letter-spacing: 0.1em;
       }
     }
     .header-drawer-wrapper {

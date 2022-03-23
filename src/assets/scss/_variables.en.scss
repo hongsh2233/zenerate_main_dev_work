@@ -588,8 +588,24 @@ $bt-secondary-etc: #f6f5ff;
   }
 }
 
+@mixin button-5($width: 240px, $height: 60px) {
+  @include button-default-3($width, $height);
+  &:hover {
+    @include button-hover-3($width, $height);
+    background-color: $navigation;
+    cursor: pointer;
+  }
+  &:active {
+    @include button-pressed-3($width, $height);
+  }
+  &.disabled {
+    @include button-disabled-3($width, $height);
+  }
+}
+
 @mixin button-gnb {
   @include button-default-gnb;
+
   &:hover {
     @include button-hover-gnb;
     cursor: pointer;
