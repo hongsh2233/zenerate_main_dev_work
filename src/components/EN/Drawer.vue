@@ -20,12 +20,7 @@
                       href="https://app.zenerate.ai/?pricing=true"
                       @click="close"
                     >
-                      <i class="material-icons" v-if="!nav.outline">
-                        {{ nav.icon }}
-                      </i>
-                      <i class="material-icons-outlined" v-else>
-                        {{ nav.icon }}
-                      </i>
+                      <component :is="nav.icon" />
                       {{ nav.title }}
                     </a>
                     <router-link
@@ -35,12 +30,7 @@
                       @click="close"
                       v-else
                     >
-                      <i class="material-icons" v-if="!nav.outline">
-                        {{ nav.icon }}
-                      </i>
-                      <i class="material-icons-outlined" v-else>
-                        {{ nav.icon }}
-                      </i>
+                      <component :is="nav.icon" />
                       {{ nav.title }}
                     </router-link>
                   </template>
@@ -68,6 +58,15 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import MenuIcon from './Icons/MenuIcon.vue'
+import AboutIcon from './Icons/header/AboutIcon.vue'
+import CareersIcon from './Icons/header/CareersIcon.vue'
+import CaseIcon from './Icons/header/CaseIcon.vue'
+import ContactIcon from './Icons/header/ContactIcon.vue'
+import FAQIcon from './Icons/header/FAQIcon.vue'
+import HowToUseIcon from './Icons/header/HowToUseIcon.vue'
+import OverviewIcon from './Icons/header/OverviewIcon.vue'
+import PricingIcon from './Icons/header/PricingIcon.vue'
 
 const props = defineProps({
   showDrawer: Boolean,
@@ -83,14 +82,17 @@ const routes = [
       {
         title: 'Overview',
         to: 'en-overview',
-        icon: 'pageview',
-        outline: true,
+        icon: OverviewIcon,
       },
       {
         title: 'Pricing',
         to: 'en-pricing',
-        icon: 'paid',
-        outline: true,
+        icon: PricingIcon,
+      },
+      {
+        title: 'FAQ',
+        to: 'en-pricing',
+        icon: FAQIcon,
       },
     ],
   },
@@ -101,14 +103,12 @@ const routes = [
       {
         title: 'How to use',
         to: 'en-how-to-use',
-        icon: 'format_list_bulleted',
-        outline: true,
+        icon: HowToUseIcon,
       },
       {
         title: 'Case Studies',
         to: 'en-case-studies',
-        icon: 'description',
-        outline: true,
+        icon: CaseIcon,
       },
     ],
   },
@@ -119,20 +119,17 @@ const routes = [
       {
         title: 'About Us',
         to: 'en-about',
-        icon: 'people_alt',
-        outline: true,
+        icon: AboutIcon,
       },
       {
         title: 'Careers',
         to: 'en-career',
-        icon: 'business_center',
-        outline: true,
+        icon: CareersIcon,
       },
       {
         title: 'Contact',
         to: 'en-contact',
-        icon: 'mail',
-        outline: true,
+        icon: ContactIcon,
       },
     ],
   },

@@ -21,21 +21,11 @@
                   v-if="secondary.to === 'en-pricing'"
                   href="https://app.zenerate.ai/?pricing=true"
                 >
-                  <i class="material-icons" v-if="!secondary.outline">
-                    {{ secondary.icon }}
-                  </i>
-                  <i class="material-icons-outlined" v-else>
-                    {{ secondary.icon }}
-                  </i>
+                  <component :is="secondary.icon" />
                   {{ secondary.title }}
                 </a>
                 <router-link :to="{ name: secondary.to }" v-else>
-                  <i class="material-icons" v-if="!secondary.outline">
-                    {{ secondary.icon }}
-                  </i>
-                  <i class="material-icons-outlined" v-else>
-                    {{ secondary.icon }}
-                  </i>
+                  <component :is="secondary.icon" />
                   {{ secondary.title }}
                 </router-link>
               </template>
@@ -71,6 +61,14 @@ import { ref } from 'vue'
 import { useGtag } from 'vue-gtag-next'
 import { useRouter } from 'vue-router'
 import MenuIcon from './Icons/MenuIcon.vue'
+import AboutIcon from './Icons/header/AboutIcon.vue'
+import CareersIcon from './Icons/header/CareersIcon.vue'
+import CaseIcon from './Icons/header/CaseIcon.vue'
+import ContactIcon from './Icons/header/ContactIcon.vue'
+import FAQIcon from './Icons/header/FAQIcon.vue'
+import HowToUseIcon from './Icons/header/HowToUseIcon.vue'
+import OverviewIcon from './Icons/header/OverviewIcon.vue'
+import PricingIcon from './Icons/header/PricingIcon.vue'
 
 const props = defineProps({
   showDrawer: Boolean,
@@ -100,59 +98,60 @@ const goToApp = () => {
 const router = useRouter()
 const routes = [
   {
+    key: 'product',
     title: 'Product',
     children: [
       {
         title: 'Overview',
         to: 'en-overview',
-        icon: 'pageview',
-        outline: true,
+        icon: OverviewIcon,
       },
       {
         title: 'Pricing',
         to: 'en-pricing',
-        icon: 'paid',
-        outline: true,
+        icon: PricingIcon,
+      },
+      {
+        title: 'FAQ',
+        to: 'en-pricing',
+        icon: FAQIcon,
       },
     ],
   },
   {
+    key: 'resources',
     title: 'Resources',
     children: [
       {
         title: 'How to use',
         to: 'en-how-to-use',
-        icon: 'format_list_bulleted',
-        outline: true,
+        icon: HowToUseIcon,
       },
       {
         title: 'Case Studies',
         to: 'en-case-studies',
-        icon: 'description',
-        outline: true,
+        icon: CaseIcon,
       },
     ],
   },
   {
+    key: 'company',
     title: 'Company',
     children: [
       {
         title: 'About Us',
         to: 'en-about',
-        icon: 'people_alt',
-        outline: true,
+        icon: AboutIcon,
       },
       {
         title: 'Careers',
         to: 'en-career',
-        icon: 'business_center',
-        outline: true,
+        icon: CareersIcon,
       },
       {
         title: 'Contact',
         to: 'en-contact',
-        icon: 'mail',
-        outline: true,
+        icon: ContactIcon,
       },
     ],
   },
@@ -409,19 +408,19 @@ const toggleNav = (primary: String) => {
     padding: 4px 14px;
     text-decoration: none;
     text-align: left;
-  }
 
-  .dropdown-content i {
-    @include medium(15);
-    color: $text-darken;
-    margin-right: 8px;
+    :deep(.icon-close) {
+      margin-right: 8px;
+    }
   }
 
   .dropdown-content a:hover {
     color: $navigation;
 
-    i {
-      color: $navigation;
+    :deep(.icon-close) {
+      path {
+        fill: $navigation;
+      }
     }
   }
 

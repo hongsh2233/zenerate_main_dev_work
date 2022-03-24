@@ -10,19 +10,13 @@
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g opacity=".7" :fill="!active ? '#000729' : '#4d49f4'">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M4.5 3H13v8h-1V4H5.5v4.5h-1V3Z"
-          />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M11 9a2 2 0 1 0 2 2h-1a1 1 0 1 1-1-1V9ZM5 10V9a2 2 0 1 0 0 4v-1a1 1 0 1 1 0-2Z"
-          />
-          <path d="M5 9h6v1H5zM5 12h6v1H5z" />
-        </g>
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M6 5V4h3v1H6ZM5 5V4a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h2Zm4 1H3v4h9V6H9Zm3 5H3v1h9v-1ZM8 8.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"
+          :fill="!active ? '#000729' : '#4d49f4'"
+          opacity=".7"
+        />
       </svg>
     </div>
   </div>
@@ -53,6 +47,5 @@ const props = defineProps({
 <style lang="scss" scoped>
 .icon-close-inner {
   width: 100%;
-  height: 100%;
 }
 </style>
