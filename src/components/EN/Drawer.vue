@@ -8,7 +8,12 @@
             <template v-for="(tab, idx) in routes" :key="idx">
               <p class="navigation-link" @click="() => selectTab(tab.key)">
                 {{ tab.title }}
-                <i class="material-icons"> keyboard_arrow_down </i>
+                <i
+                  class="material-icons"
+                  :class="{ active: toggleTab[tab.key] }"
+                >
+                  keyboard_arrow_down
+                </i>
               </p>
               <transition name="slide-up">
                 <div v-show="toggleTab[tab.key]" class="navigation-link-list">
@@ -241,24 +246,40 @@ const close = () => {
             }
 
             i {
-              @include medium(34);
-              color: $text-darken-7;
+              @include flex();
+              @include medium(32);
+              align-items: center;
+              color: $text-darken;
+
+              &.active {
+                transform: rotate(-180deg);
+              }
 
               @include en-mobile {
                 @include medium(28);
               }
             }
+
             &.sub {
               @include medium(18);
               @include flex();
               align-items: center;
               background-color: #fafbfe;
               color: $text-darken-7;
+              :deep(.icon-close) {
+                margin-right: 8px;
+                margin-bottom: 10px;
+              }
 
-              i {
-                @include medium(16);
-                margin-right: 12px;
-                color: $text-darken-7;
+              &:hover,
+              :active {
+                color: $navigation;
+
+                :deep(.icon-close) {
+                  path {
+                    fill: $navigation;
+                  }
+                }
               }
             }
 

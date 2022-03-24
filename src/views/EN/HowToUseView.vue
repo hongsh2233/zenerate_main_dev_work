@@ -151,10 +151,11 @@ import { useMeta } from 'vue-meta'
   @include relative;
   width: 100%;
   height: 100%;
-  background-image: url('/en/img/background_wave.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-
+  @include en-desktop {
+    background-image: url('/en/img/background_wave.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
   .inner-case-studies {
     @include flex($dir: column);
     align-items: center;
@@ -162,6 +163,12 @@ import { useMeta } from 'vue-meta'
     height: 100%;
     margin: 0 auto;
     padding: 160px 0px;
+    background: linear-gradient(
+      0deg,
+      #ffffff 23.95%,
+      rgba(255, 255, 255, 0.90625) 58.87%,
+      rgba(255, 255, 255, 0) 100%
+    );
 
     @include en-tablet {
       padding: 132px 0px;

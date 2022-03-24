@@ -374,14 +374,14 @@ const toContactForm = () => {
     //   height: 660px;
     // }
   }
-  &.fp-auto-height-responsive.fp-section {
-    // @include en-tablet {
-    //   height: calc(100vh - 40px) !important;
-    // }
-    // @include en-mobile {
-    //   height: calc(100vh - 20px) !important;
-    // }
-  }
+  // &.fp-auto-height-responsive.fp-section {
+  //   @include en-tablet {
+  //     height: calc(100vh - 40px) !important;
+  //   }
+  //   @include en-mobile {
+  //     height: calc(100vh - 20px) !important;
+  //   }
+  // }
   .section-inner {
     z-index: 2;
     padding: 0px 100px;
