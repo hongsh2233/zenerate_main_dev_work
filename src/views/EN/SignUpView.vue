@@ -18,7 +18,8 @@
             <p class="title">
               <span>The biggest&nbsp;</span><span>game-changer&nbsp;</span>
               <span>in the&nbsp;</span>real estate industry<br />
-              is almost here.
+              <span>is launching&nbsp;</span
+              ><span>in new cities soon.&nbsp;</span>
             </p>
             <p class="text">
               <strong>Zenerate</strong> upwards of 10,000 designs&nbsp;<span
@@ -29,7 +30,7 @@
           </div>
           <p class="guide hidden-tablet hidden-mobile">
             <strong>Sign up</strong> and we’ll send you an email <br />
-            when Zenerate launches!
+            when Zenerate launches in new cities!
           </p>
           <div class="background-building">
             <div class="left-building"></div>
@@ -56,7 +57,7 @@
         >
           <p>
             Sign up below to get<br />
-            notified of launch
+            notified of new cities
           </p>
         </div>
         <transition name="fade">
@@ -296,18 +297,19 @@
               <span>Thanks</span> <span>for Signing Up!</span>
             </p>
             <div class="thank-text">
-              <span class="purpose"
-                >We’ll send you an email once we launch.</span
-              >
+              <p class="purpose">
+                We’ll send you an email<br />
+                when we launch in new cities.
+              </p>
               <p>
-                <span>Until then check out our Beta App! </span>
+                <span>Until then test out Zenerate in L.A. </span>
                 <span class="available"> (Only available on PC or tablet)</span>
               </p>
             </div>
             <div class="form-send-wrapper">
               <div class="dummy" ref="dummy"></div>
               <button class="form-send hover-pointer" @click="goBetaApp">
-                TEST BETA APP
+                TEST ZENERATE
               </button>
             </div>
             <div class="thank-text">
@@ -650,7 +652,7 @@ const router = useRouter()
       .guide {
         @include absolute(bottom 40px left 30px);
         @include medium(14);
-        width: 276px;
+        width: 290px;
         height: 58px;
         color: $white;
         line-height: 21px;
@@ -739,10 +741,9 @@ const router = useRouter()
 
         .title {
           @include semi-bold(31);
-          max-width: 440px;
+          max-width: 490px;
           color: white;
           line-height: 43px;
-
           text-align: left;
           margin: 0px 0px 26px;
 
@@ -920,9 +921,10 @@ const router = useRouter()
           @include semi-bold(16);
           color: #161616;
           margin-bottom: 60px;
+          line-height: 23px;
 
           @include en-mobile {
-            max-width: 200px;
+            max-width: 244px;
             margin-bottom: 50px;
           }
         }
