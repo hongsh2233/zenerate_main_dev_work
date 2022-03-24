@@ -231,7 +231,7 @@
       </div>
     </div>
 
-    <div class="section section-partners fp-auto-height-responsive">
+    <div class="section section-partners">
       <div class="content-heading">
         <p>
           <strong>We’re excited to help you </strong>
