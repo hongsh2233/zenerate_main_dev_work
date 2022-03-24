@@ -111,11 +111,11 @@ const routes = [
         to: 'en-pricing',
         icon: PricingIcon,
       },
-      {
-        title: 'FAQ',
-        to: 'en-pricing',
-        icon: FAQIcon,
-      },
+      // {
+      //   title: 'FAQ',
+      //   to: 'en-pricing',
+      //   icon: FAQIcon,
+      // },
     ],
   },
   {

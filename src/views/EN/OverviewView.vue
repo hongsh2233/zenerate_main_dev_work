@@ -29,19 +29,67 @@
                 </p>
               </div>
               <div class="video-wrapper">
-                <img src="/en/img/landing_engine.gif" alt="" />
+                <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
               </div>
               <div class="text-wrapper">
-                <p class="text-title">
-                  <span class="step">Step 1.</span>
-                  Welcome To Zenerate!
+                <p class="text-title hidden-en-mobile hidden-en-tablet">
+                  Use <strong>Site Search</strong> to find<br />
+                  a feasible option<br />
+                  for any site within seconds.
                 </p>
-                <p class="text-content">
-                  Based on one of the hottest sites in L.A. we zenerated over
-                  10,000 designs and applied a CPIO sub-area bonus to optimize
-                  project financing. Within the report you will see our
-                  suggested top three solutions based on different unit mixes.
+                <p class="text-title hidden-en-desktop">
+                  Use <strong>Site Search</strong> to find a feasible option<br />
+                  for any site within seconds.
                 </p>
+                <div class="text-content hidden-en-mobile">
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span>
+                      Zoning, development information visually presented
+                    </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span class="hidden-en-tablet hidden-en-mobile">
+                      Parcel data includes AIN, lot sqft., parcel value,<br />
+                      last sales date
+                    </span>
+                    <span class="hidden-en-desktop">
+                      Parcel data includes AIN, lot sqft., parcel value, last
+                      sales date
+                    </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span>
+                      Market insights including average rent price, household
+                      income, building permits and more
+                    </span>
+                  </p>
+                </div>
+                <div class="text-content hidden-en-desktop hidden-en-tablet">
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span>
+                      Zoning, development information<br />
+                      visually presented
+                    </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span>
+                      Parcel data includes AIN, lot sqft.,<br />
+                      parcel value, last sales date
+                    </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span>
+                      Market insights including average rent price,<br />
+                      household income, building permits and more
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
             <div class="case">
@@ -58,18 +106,29 @@
                 </p>
               </div>
               <div class="video-wrapper">
-                <img src="/en/img/landing_engine.gif" alt="" />
+                <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
               </div>
               <div class="text-wrapper">
-                <p class="text-title">
-                  <span class="step">Step 2.</span>
-                  Site Search
-                </p>
-                <p class="text-content">
-                  Read Zenerate’s case study project about high-rise residential
-                  condominium in Seoul to learn more about our surprising
-                  insights!
-                </p>
+                <div class="text-content volume">
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span>
+                      Manually control building uses & occupancy on a given site
+                      of your choosing
+                    </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span>
+                      Automatically generate project costs and in-depth cash
+                      flow analysis
+                    </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span> Base zoning info included </span>
+                  </p>
+                </div>
               </div>
             </div>
             <div class="case">
@@ -78,58 +137,107 @@
                   <span class="step">03.</span>
                   Deep Search
                 </p>
-                <p class="text-content">
+                <p class="text-content deep">
                   <span>The ultimate feasibility tool to fully&nbsp;</span>
                   <span>understand&nbsp;</span>
                   <span>value-add&nbsp;</span>
-                  <span>and highest & best use of the site.</span>
+                  <span>and&nbsp;</span>
+                  <span>highest & best use of the site.</span>
                 </p>
               </div>
               <div class="video-wrapper">
-                <img src="/en/img/landing_engine.gif" alt="" />
+                <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
               </div>
-              <div class="text-wrapper">
-                <p class="text-title">
-                  <span class="step">Step 3.</span>
-                  Volume Study
-                </p>
-                <p class="text-content">
-                  Read to learn how CEO Benji Shin<br />
-                  collaborated with the USC housing team to transform and
-                  streamline the architectural design process.
-                </p>
+              <div class="text-wrapper half">
+                <div class="text-content deep">
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span>
+                      Automatically generates multifamily building plans with
+                      detailed floor plans
+                    </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span>
+                      Generate up to 10,000 solutions within 50 minutes
+                    </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span> Filter through options based on your needs </span>
+                  </p>
+                </div>
+                <div class="text-content">
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span> In-depth financial analysis </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span> Base zoning info included </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span> Download CAD files of designs </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span> Download Excel report of financial analysis </span>
+                  </p>
+                </div>
               </div>
             </div>
             <div class="case">
-              <div class="case-title-wrapper">
+              <div class="case-title-wrapper zoning">
                 <p class="text-title">
                   <span class="step">04.</span>
                   In-Depth Zoning Analysis
                 </p>
                 <p class="text-content">
-                  <span>No need to go through countless&nbsp;</span>
+                  <span>No need to go through&nbsp;</span>
+                  <span>countless&nbsp;</span>
                   <span>hours of zoning&nbsp;</span>
                   <span>information. &nbsp;</span>
                   <span>We have it all available for you.</span>
                 </p>
               </div>
               <div class="video-wrapper">
-                <img src="/en/img/landing_engine.gif" alt="" />
+                <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
               </div>
-              <div class="text-wrapper">
-                <p class="text-title">
-                  <span class="step">Step 4.</span>
-                  Deep Search
-                </p>
-                <p class="text-content">
-                  Read to learn how CEO Benji Shin<br />
-                  collaborated with the USC housing team to transform and
-                  streamline the architectural design process.
-                </p>
+              <div class="text-wrapper half">
+                <div class="text-content">
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span> Various Incentive Zoning </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span> Various Overlay Zones </span>
+                  </p>
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span> City/ District Specific Plans </span>
+                  </p>
+                </div>
+                <div class="text-content">
+                  <p>
+                    <i class="material-icons">check</i>
+                    <span> Additional Zoning Request </span>
+                  </p>
+                  <p class="zoning-guide">
+                    <i class="material-icons"></i>
+                    Can’t find what you’re looking for?<br />
+                    We’ll find the zoning info you need within<br />
+                    3 days and apply it to Zenerate’s engine.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <button type="button" class="start-button">START ZENERATING</button>
+            <div class="start-button" @click="goToApp()">
+              <a href="http://app.zenerate.ai">TRY FOR FREE</a>
+            </div>
           </div>
         </div>
       </div>
@@ -145,8 +253,9 @@ import Store from '/Store/index'
 import { useRouter } from 'vue-router'
 import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
-import AOS from 'aos'
+import { useGtag } from 'vue-gtag-next'
 import { useMeta } from 'vue-meta'
+import AOS from 'aos'
 
 // const fullpage = computed(() => Store.state.root.FullPage)
 // const router = useRouter()
@@ -158,6 +267,14 @@ import { useMeta } from 'vue-meta'
 //   //   navigation: false,
 //   // })
 // })
+
+const { event } = useGtag()
+const goToApp = () => {
+  event('generate_lead', {
+    event_category: 'engagement',
+    event_label: '(not yet)',
+  })
+}
 </script>
 <style lang="scss" scoped>
 .section-case-studies {
@@ -317,6 +434,7 @@ import { useMeta } from 'vue-meta'
         @include en-tablet {
           width: 628px;
           height: auto;
+          margin-top: 140px;
           margin-bottom: 116px;
         }
 
@@ -325,8 +443,8 @@ import { useMeta } from 'vue-meta'
           width: 100%;
           height: auto;
           border-radius: 0px;
-          margin-top: 100px;
-          margin-bottom: 50px;
+          margin-top: 120px;
+          margin-bottom: 64px;
           box-shadow: none;
         }
 
@@ -339,13 +457,30 @@ import { useMeta } from 'vue-meta'
           height: 138px;
 
           @include en-tablet {
+            @include absolute(top -140px left 0px);
             height: 116px;
+            &.zoning {
+              .text-title {
+                .step {
+                  display: block;
+                }
+              }
+            }
           }
 
           @include en-mobile {
-            @include absolute(top -100px left 0px);
+            @include absolute(top -120px left 0px);
             padding: 0px 6%;
-            height: 91px;
+            height: 99px;
+
+            &.zoning {
+              .text-title {
+                max-width: 200px;
+                span {
+                  display: block;
+                }
+              }
+            }
           }
           .text-title {
             @include semi-bold(44);
@@ -359,6 +494,7 @@ import { useMeta } from 'vue-meta'
 
             @include en-tablet {
               @include semi-bold(38);
+              margin-bottom: 3px;
 
               .step {
                 @include medium(36);
@@ -380,10 +516,18 @@ import { useMeta } from 'vue-meta'
 
             @include en-tablet {
               @include medium(20);
+              &.deep {
+                max-width: 540px;
+              }
             }
 
             @include en-mobile {
               @include medium(14);
+              line-height: 20px;
+
+              &.deep {
+                max-width: 280px;
+              }
             }
           }
         }
@@ -399,7 +543,7 @@ import { useMeta } from 'vue-meta'
 
             @include en-tablet {
               width: 628px;
-              height: 354hpx;
+              height: 354px;
             }
 
             @include en-mobile {
@@ -416,42 +560,131 @@ import { useMeta } from 'vue-meta'
         }
 
         .text-wrapper {
+          @include flex();
+          flex-wrap: nowrap;
           width: 100%;
-          padding: 42px 52px 55px;
+          padding: 48px 43px 56px 56px;
 
-          @include en-tablet {
-            padding: 35px 44px 54px;
-          }
-
-          @include en-mobile {
-            padding: 32px 30px 35px;
-          }
-          .text-title {
-            @include semi-bold(26);
-            color: $text-darken;
-            margin-bottom: 10px;
-
-            .step {
-              @include semi-bold(22);
-              color: $text-darken-5;
-            }
-
-            @include en-mobile {
-              @include semi-bold(15);
-              margin-bottom: 6px;
-
-              .step {
-                @include semi-bold(13);
+          @include en-desktop {
+            &.half {
+              .text-content:first-child {
+                width: 440px;
+                padding-right: 50px;
               }
             }
           }
-          .text-content {
-            @include regular(15);
-            line-height: 21px;
+
+          @include en-tablet {
+            flex-direction: column;
+            padding: 35px 50px 54px 40px;
+          }
+
+          @include en-mobile {
+            flex-direction: column;
+            padding: 23px 30px 30px 30px;
+            // align-items: center;
+          }
+          .text-title {
+            @include medium(22);
+            margin-bottom: 10px;
+            color: $text-darken;
+            line-height: 30px;
+
+            strong {
+              font-weight: 600;
+            }
+
+            @include en-desktop {
+              width: 560px;
+              padding-right: 50px;
+            }
+
+            @include en-tablet {
+              @include medium(20);
+              margin-bottom: 20px;
+            }
 
             @include en-mobile {
-              @include regular(13);
+              @include medium(13);
+              margin-bottom: 14px;
               line-height: 18px;
+            }
+          }
+          .text-content {
+            @include regular(19);
+            line-height: 27px;
+
+            p {
+              @include flex();
+              flex-wrap: nowrap;
+              margin-bottom: 12px;
+              color: $text-darken-7;
+
+              i {
+                min-width: 24px;
+                margin-right: 16px;
+                color: $navigation;
+                font-weight: 500;
+              }
+            }
+
+            &.volume {
+              @include en-tablet {
+                max-width: 392px;
+              }
+
+              @include en-mobile {
+                max-width: 265px;
+              }
+            }
+
+            &.deep {
+              @include en-mobile {
+                max-width: 280px;
+              }
+            }
+
+            .zoning-guide {
+              @include regular(17);
+              color: $text-darken-5;
+            }
+
+            @include en-tablet {
+              @include regular(16);
+              p {
+                margin-bottom: 4px;
+
+                i {
+                  @include medium(18);
+                  margin-right: 8px;
+                }
+              }
+
+              .zoning-guide {
+                @include regular(14);
+                line-height: 21px;
+              }
+            }
+
+            @include en-mobile {
+              @include regular(10);
+              line-height: 14px;
+              p {
+                margin-bottom: 2px;
+
+                i {
+                  @include medium(12);
+                  margin-right: 4px;
+                }
+                span {
+                  padding-top: 6px;
+                }
+              }
+
+              .zoning-guide {
+                @include regular(9);
+                line-height: 14px;
+              }
             }
 
             a {
@@ -473,6 +706,14 @@ import { useMeta } from 'vue-meta'
     border-radius: 10px;
     letter-spacing: 0.1em;
     transition: all ease-in-out 0.2s;
+
+    a {
+      @include center-center();
+      width: 100%;
+      height: 100%;
+      vertical-align: center;
+      text-align: center;
+    }
 
     &:hover {
       @include elevation-3;

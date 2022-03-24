@@ -21,10 +21,9 @@
             <div class="case">
               <div class="video-wrapper">
                 <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/f7JFBwjXI8I?controls=0"
-                  title="YouTube video player"
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/onFOGFiA0xg"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
@@ -46,12 +45,13 @@
             <div class="case">
               <div class="video-wrapper">
                 <iframe
+                  type="text/html"
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/f7JFBwjXI8I?controls=0"
+                  src="https://www.youtube.com/embed/f7JFBwjXI8I?controls=0&rel=0"
                   title="YouTube video player"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; "
                   allowfullscreen
                 ></iframe>
               </div>
@@ -70,12 +70,13 @@
             <div class="case">
               <div class="video-wrapper">
                 <iframe
+                  type="text/html"
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/f7JFBwjXI8I?controls=0"
+                  src="https://www.youtube.com/embed/f7JFBwjXI8I?controls=0&rel=0"
                   title="YouTube video player"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; "
                   allowfullscreen
                 ></iframe>
               </div>
@@ -94,9 +95,10 @@
             <div class="case">
               <div class="video-wrapper">
                 <iframe
+                  type="text/html"
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/f7JFBwjXI8I?controls=0"
+                  src="https://www.youtube.com/embed/f7JFBwjXI8I?controls=0&rel=0"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -116,7 +118,9 @@
               </div>
             </div>
 
-            <button type="button" class="start-button">START ZENERATING</button>
+            <div class="start-button" @click="goToApp()">
+              <a href="http://app.zenerate.ai">START ZENERATING</a>
+            </div>
           </div>
         </div>
       </div>
@@ -130,10 +134,11 @@
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
 import Store from '/Store/index'
 import { useRouter } from 'vue-router'
+import AOS from 'aos'
+import { useGtag } from 'vue-gtag-next'
+import { useMeta } from 'vue-meta'
 import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
-import AOS from 'aos'
-import { useMeta } from 'vue-meta'
 
 // const fullpage = computed(() => Store.state.root.FullPage)
 // const router = useRouter()
@@ -145,6 +150,14 @@ import { useMeta } from 'vue-meta'
 //   //   navigation: false,
 //   // })
 // })
+
+const { event } = useGtag()
+const goToApp = () => {
+  event('generate_lead', {
+    event_category: 'engagement',
+    event_label: '(not yet)',
+  })
+}
 </script>
 <style lang="scss" scoped>
 .section-case-studies {
@@ -295,29 +308,25 @@ import { useMeta } from 'vue-meta'
         box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
 
         .video-wrapper {
+          width: 780px;
+          height: 440px;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
           iframe {
-            width: 780px;
-            height: 440px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            pointer-events: none;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-
-            @include en-tablet {
-              width: 580px;
-              height: 326px;
-            }
-
-            @include en-mobile {
-              border-top-left-radius: 0px;
-              border-top-right-radius: 0px;
-              width: 100vw;
-              height: 56vw;
-            }
           }
 
-          video::-webkit-media-controls-start-playback-button {
-            display: none;
+          @include tablet {
+            width: 580px;
+            height: 326px;
+          }
+          @include mobile {
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            width: 100vw;
+            height: 63vw;
           }
         }
 
@@ -393,6 +402,14 @@ import { useMeta } from 'vue-meta'
     border-radius: 10px;
     letter-spacing: 0.1em;
     transition: all ease-in-out 0.2s;
+
+    a {
+      @include center-center();
+      width: 100%;
+      height: 100%;
+      vertical-align: center;
+      text-align: center;
+    }
 
     &:hover {
       @include elevation-3;
