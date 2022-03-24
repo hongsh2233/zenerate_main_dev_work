@@ -12,22 +12,38 @@
               </p>
               <transition name="slide-up">
                 <div v-show="toggleTab[tab.key]" class="navigation-link-list">
-                  <router-link
-                    v-for="(nav, idx) in tab.children"
-                    :key="idx"
-                    class="navigation-link sub"
-                    :class="nav.to"
-                    :to="{ name: nav.to }"
-                    @click="close"
-                  >
-                    <i class="material-icons" v-if="!nav.outline">
-                      {{ nav.icon }}
-                    </i>
-                    <i class="material-icons-outlined" v-else>
-                      {{ nav.icon }}
-                    </i>
-                    {{ nav.title }}
-                  </router-link>
+                  <template v-for="(nav, idx) in tab.children" :key="idx">
+                    <a
+                      class="navigation-link sub"
+                      :class="nav.to"
+                      v-if="nav.to === 'en-pricing'"
+                      href="https://app.zenerate.ai/?pricing=true"
+                      @click="close"
+                    >
+                      <i class="material-icons" v-if="!nav.outline">
+                        {{ nav.icon }}
+                      </i>
+                      <i class="material-icons-outlined" v-else>
+                        {{ nav.icon }}
+                      </i>
+                      {{ nav.title }}
+                    </a>
+                    <router-link
+                      :to="{ name: nav.to }"
+                      class="navigation-link sub"
+                      :class="nav.to"
+                      @click="close"
+                      v-else
+                    >
+                      <i class="material-icons" v-if="!nav.outline">
+                        {{ nav.icon }}
+                      </i>
+                      <i class="material-icons-outlined" v-else>
+                        {{ nav.icon }}
+                      </i>
+                      {{ nav.title }}
+                    </router-link>
+                  </template>
                 </div>
               </transition>
             </template>
@@ -185,17 +201,17 @@ const close = () => {
       }
     }
     .drawer-items-wrapper {
-      height: calc(100% - 111px);
+      height: calc(100% - 75px);
       padding: 0px;
 
       @include en-mobile {
-        height: calc(100% - 99px);
+        height: calc(100% - 63px);
       }
       .header-navigation-wrapper {
         @include flex($dir: column, $justify: space-between);
         height: 100%;
         flex-wrap: nowrap;
-        max-height: calc(100vh - 100px);
+        max-height: calc(100vh - 63px);
         overflow-y: auto;
         .navgation-link-wrapper {
           @include flex($dir: column);
@@ -206,20 +222,34 @@ const close = () => {
 
           .navigation-link-list {
             @include vertical-center();
-            border-top: 1px solid $footer;
-            border-bottom: 1px solid $footer;
           }
 
           .navigation-link {
             @include flex($justify: space-between);
             @include medium(18);
             line-height: 40px;
-            padding: 16px 48px;
+            padding: 16px 38px 16px 48px;
             cursor: pointer;
 
+            @include en-mobile {
+              padding: 0px 16px 48px;
+            }
+
+            &.sub:last-child {
+              border-bottom: 1px solid $footer;
+            }
+
+            &:not(.sub) {
+              border-bottom: 1px solid $footer;
+            }
+
             i {
-              @include medium(28);
+              @include medium(34);
               color: $text-darken-7;
+
+              @include en-mobile {
+                @include medium(28);
+              }
             }
             &.sub {
               @include medium(18);
@@ -255,10 +285,10 @@ const close = () => {
 
         .info-wrapper {
           @include flex($dir: column);
-          padding: 0px 48px 40px;
+          padding: 20px 48px;
 
           @include en-mobile {
-            padding: 0px 24px 24px;
+            padding: 20px 24px;
           }
 
           .lang-button {

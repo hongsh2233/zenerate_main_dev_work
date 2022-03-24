@@ -31,9 +31,9 @@
             </div>
           </div>
         </div>
-        <div class="arrow-bottom arrow-blue">
+        <!-- <div class="arrow-bottom arrow-blue">
           <Arrow />
-        </div>
+        </div> -->
       </div>
 
       <!-- <div class="landing-background"></div>
@@ -45,14 +45,7 @@
       <div class="section-inner inner-engine">
         <div class="inner-contents">
           <div class="engine-contents-wrapper">
-            <div
-              class="engine-contents"
-              data-aos="fade-up"
-              data-aos-offset="-500"
-              data-aos-delay="500"
-              data-aos-duration="600"
-              data-aos-anchor-placement="top-bottom"
-            >
+            <div class="engine-contents">
               <div class="content-heading">
                 <p>
                   <strong>The Zenerate™ <span>Engine</span></strong>
@@ -73,30 +66,16 @@
             </div>
           </div>
 
-          <div
-            class="engine-image only-en-desktop"
-            data-aos="fade-up"
-            data-aos-offset="0"
-            data-aos-duration="300"
-            data-aos-delay="0"
-            data-aos-anchor-placement="center-bottom"
-          >
+          <div class="engine-image only-en-desktop">
             <img src="/en/img/landing_engine.gif" alt="" />
           </div>
-          <div
-            class="engine-image hidden-en-desktop"
-            data-aos="fade-up"
-            data-aos-offset="0"
-            data-aos-duration="500"
-            data-aos-delay="800"
-            data-aos-anchor-placement="center-bottom"
-          >
+          <div class="engine-image hidden-en-desktop">
             <img src="/en/img/landing_engine.gif" alt="" />
           </div>
         </div>
-        <div class="arrow-bottom arrow-blue only-en-desktop">
+        <!-- <div class="arrow-bottom arrow-blue only-en-desktop">
           <Arrow />
-        </div>
+        </div> -->
       </div>
 
       <div class="background-image"></div>
@@ -106,14 +85,7 @@
       <div class="section-inner inner-instant-search">
         <div class="inner-contents instant-search-wrapper">
           <div class="instant-search-contents">
-            <div
-              class="content-inner"
-              data-aos="fade-up"
-              data-aos-offset="-200"
-              data-aos-delay="200"
-              data-aos-duration="500"
-              data-aos-anchor-placement="bottom-bottom"
-            >
+            <div class="content-inner">
               <div class="content-heading">
                 <p>
                   <strong><span>Scouting sites</span> for your next </strong>
@@ -144,14 +116,7 @@
               </div>
             </div>
           </div>
-          <div
-            class="instant-search-image hidden-en-desktop"
-            data-aos="fade-up"
-            data-aos-offset="0"
-            data-aos-delay="500"
-            data-aos-duration="300"
-            data-aos-anchor-placement="center-bottom"
-          >
+          <div class="instant-search-image hidden-en-desktop">
             <img
               class="outer"
               src="/en/img/landing_instant_search_start.png"
@@ -159,18 +124,12 @@
             />
           </div>
         </div>
-        <div class="arrow-bottom arrow-blue only-en-desktop">
+        <!-- <div class="arrow-bottom arrow-blue only-en-desktop">
           <Arrow />
-        </div>
+        </div> -->
       </div>
       <div class="background-image background-map">
-        <div
-          class="instant-search-image only-en-desktop"
-          data-aos="fade-up"
-          data-aos-offset="-200"
-          data-aos-duration="300"
-          data-aos-anchor-placement="bottom-bottom"
-        >
+        <div class="instant-search-image only-en-desktop">
           <img
             class="outer"
             src="/en/img/landing_instant_search_start.png"
@@ -183,14 +142,7 @@
       <div class="section-inner inner-generation">
         <div class="inner-contents generation-contents">
           <div class="content-right-wrapper">
-            <div
-              class="content-right"
-              data-aos="fade-up"
-              data-aos-offset="0"
-              data-aos-delay="200"
-              data-aos-duration="500"
-              data-aos-anchor-placement="center-bottom"
-            >
+            <div class="content-right">
               <div class="content-heading">
                 <p>
                   <strong
@@ -224,31 +176,18 @@
             </div>
           </div>
 
-          <div
-            class="content-left hidden-en-desktop"
-            data-aos="fade-up"
-            data-aos-offset="0"
-            data-aos-duration="300"
-            data-aos-delay="500"
-            data-aos-anchor-placement="center-bottom"
-          >
+          <div class="content-left hidden-en-desktop">
             <div class="left-img">
               <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
             </div>
           </div>
         </div>
-        <div class="arrow-bottom arrow-blue only-en-desktop">
+        <!-- <div class="arrow-bottom arrow-blue only-en-desktop">
           <Arrow />
-        </div>
+        </div> -->
       </div>
       <div class="background-image">
-        <div
-          class="content-left only-en-desktop"
-          data-aos="fade-up"
-          data-aos-offset="0"
-          data-aos-duration="300"
-          data-aos-anchor-placement="center-bottom"
-        >
+        <div class="content-left only-en-desktop">
           <div class="left-img">
             <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
           </div>
@@ -259,14 +198,7 @@
       <div class="section-inner inner-compare">
         <div class="inner-contents compare-contents">
           <div class="compare-text-wrapper">
-            <div
-              class="compare-text"
-              data-aos="fade-up"
-              data-aos-offset="0"
-              data-aos-delay="200"
-              data-aos-duration="500"
-              data-aos-anchor-placement="center-bottom"
-            >
+            <div class="compare-text">
               <div class="content-heading">
                 <p>
                   <strong
@@ -284,30 +216,16 @@
               </div>
             </div>
           </div>
-          <div
-            class="compare-image hidden-en-desktop"
-            data-aos="fade-up"
-            data-aos-offset="0"
-            data-aos-delay="500"
-            data-aos-duration="300"
-            data-aos-anchor-placement="center-bottom"
-          >
+          <div class="compare-image hidden-en-desktop">
             <img src="/en/img/landing_compare_likes.png" alt="" />
           </div>
         </div>
-        <div class="arrow-bottom arrow-blue only-en-desktop">
+        <!-- <div class="arrow-bottom arrow-blue only-en-desktop">
           <Arrow />
-        </div>
+        </div> -->
       </div>
       <div class="background-image">
-        <div
-          class="compare-image only-en-desktop"
-          data-aos="fade-up"
-          data-aos-offset="0"
-          data-aos-delay="0"
-          data-aos-duration="500"
-          data-aos-anchor-placement="center-bottom"
-        >
+        <div class="compare-image only-en-desktop">
           <img src="/en/img/landing_compare_likes.png" alt="" />
         </div>
       </div>
@@ -375,24 +293,24 @@ import { useRouter } from 'vue-router'
 import APIService from '/Services/api'
 import { useGtag } from 'vue-gtag-next'
 import Store from '/Store/index'
-const fullpage = computed(() => Store.state.root.FullPage)
-onMounted(async () => {
-  fullpage.value.init('#fullpage-landing', {
-    // parallax: false,
-    // offsetSections: false,
-    navigation: false,
-  })
+// const fullpage = computed(() => Store.state.root.FullPage)
+// onMounted(async () => {
+//   fullpage.value.init('#fullpage-landing', {
+//     // parallax: false,
+//     // offsetSections: false,
+//     navigation: false,
+//   })
 
-  const appHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
-  }
-  window.addEventListener('resize', appHeight)
-  appHeight()
-})
-onBeforeUnmount(() => {
-  fullpage.value.destroy()
-})
+//   const appHeight = () => {
+//     const doc = document.documentElement
+//     doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+//   }
+//   window.addEventListener('resize', appHeight)
+//   appHeight()
+// })
+// onBeforeUnmount(() => {
+//   fullpage.value.destroy()
+// })
 
 const { event } = useGtag()
 const goToApp = () => {
@@ -445,19 +363,34 @@ const toContactForm = () => {
 }
 
 .section-landing {
+  @include relative;
+  @include flex();
+  // height: 100vh;
+  height: 800px;
+
+  @include en-tablet {
+    height: 660px;
+    // @media only screen and (orientation: portrait) {
+    //   height: 660px;
+    // }
+  }
   &.fp-auto-height-responsive.fp-section {
-    @include en-tablet {
-      height: calc(100vh - 40px) !important;
-    }
-    @include en-mobile {
-      height: calc(100vh - 20px) !important;
-    }
+    // @include en-tablet {
+    //   height: calc(100vh - 40px) !important;
+    // }
+    // @include en-mobile {
+    //   height: calc(100vh - 20px) !important;
+    // }
   }
   .section-inner {
     z-index: 2;
     padding: 0px 100px;
+    height: 100%;
+
     @include en-tablet {
       padding: 0px 40px;
+      width: 100% !important;
+      max-width: 840px;
     }
     @include en-mobile {
       padding: 0px 20px;
@@ -604,6 +537,10 @@ const toContactForm = () => {
       @include en-tablet {
         margin: 0px auto;
       }
+
+      @include en-mobile {
+        margin: 246px 0px 0px !important;
+      }
     }
   }
 }
@@ -614,6 +551,11 @@ const toContactForm = () => {
   width: 100%;
   flex-wrap: nowrap;
 
+  // @include en-tablet {
+  //   max-width: 900px;
+  //   padding-right: 400px;
+  // }
+
   .content-title-wrapper {
     @include vertical-center();
     width: auto;
@@ -621,7 +563,7 @@ const toContactForm = () => {
     z-index: 1;
 
     @include en-tablet {
-      idth: 760px;
+      width: 760px;
       background: linear-gradient(
         90deg,
         #ffffff 60%,
@@ -632,11 +574,11 @@ const toContactForm = () => {
     }
 
     @include en-mobile {
-      margin: 0px auto;
+      margin: 40px auto 0px;
       background: linear-gradient(
         0deg,
-        #ffffff 11.95%,
-        #ffffff 27.87%,
+        #ffffff 0%,
+        #ffffff 14%,
         rgba(255, 255, 255, 0) 100%
       );
       mix-blend-mode: normal;
@@ -650,10 +592,10 @@ const toContactForm = () => {
     }
 
     @include en-mobile {
-      @include absolute(top 50% right 50%);
+      @include absolute(top 42% right 50%);
       width: 250px;
 
-      transform: translate(50%, -50%);
+      transform: translate(50%, 0%);
       img {
         width: 250px;
       }
@@ -663,6 +605,7 @@ const toContactForm = () => {
 
 .section-engine {
   // background: rgba(0, 0, 5, 0.88);
+  @include relative;
   .section-inner {
     @include en-desktop {
       max-width: 80%;
@@ -815,6 +758,7 @@ const toContactForm = () => {
   }
 }
 .section-instant-search {
+  @include relative;
   .section-inner {
     @include en-desktop {
       max-width: 80%;
@@ -1106,6 +1050,7 @@ const toContactForm = () => {
   }
 }
 .section-generation {
+  @include relative;
   .section-inner {
     @include en-desktop {
       max-width: 80%;
@@ -1272,6 +1217,7 @@ const toContactForm = () => {
 }
 
 .section-compare {
+  @include relative;
   .inner-contents {
     padding-left: 0px;
   }
@@ -1403,6 +1349,7 @@ const toContactForm = () => {
 }
 
 .section-partners {
+  @include relative;
   .section-inner {
     padding-top: 0;
     height: auto;

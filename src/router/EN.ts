@@ -2,7 +2,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import ENLayout from '/Layouts/ENLayout.vue'
 
 import AboutView from '/Views/EN/AboutView.vue'
-import CaseStudiesView from '../views/EN/CaseStudiesView.vue'
+import CaseStudiesView from '/Views/EN/CaseStudiesView.vue'
 import CareerView from '/Views/EN/CareerView.vue'
 import CareerContent from '/src/components/EN/CareerContent.vue'
 import ContactView from '/Views/EN/ContactView.vue'
@@ -11,6 +11,8 @@ import ServiceView from '/Views/EN/ServiceView.vue'
 import TermsAndConditionsView from '/Views/EN/TermsAndConditionsView.vue'
 import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
 import SignUp from '/Views/EN/SignUpView.vue'
+import HowToUseView from '/Views/EN/HowToUseView.vue'
+import OverviewView from '/Views/EN/OverviewView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -25,7 +27,7 @@ const ENRoute: RouteRecordRaw = {
     {
       path: '/overview',
       name: 'en-overview',
-      component: AboutView,
+      component: OverviewView,
     },
     {
       path: '/about',
@@ -45,13 +47,13 @@ const ENRoute: RouteRecordRaw = {
     {
       path: '/how-to-use',
       name: 'en-how-to-use',
-      component: ServiceView,
+      component: HowToUseView,
     },
-    {
-      path: '/pricing',
-      name: 'en-pricing',
-      component: ServiceView,
-    },
+    // {
+    //   path: '/pricing',
+    //   name: 'en-pricing',
+    //   component: ServiceView,
+    // },
     {
       path: '/career',
       name: 'en-career',

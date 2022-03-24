@@ -17,7 +17,19 @@
             </button>
             <div class="dropdown-content">
               <template v-for="(secondary, idx) in primary.children" :key="idx">
-                <router-link :to="{ name: secondary.to }">
+                <a
+                  v-if="secondary.to === 'en-pricing'"
+                  href="https://app.zenerate.ai/?pricing=true"
+                >
+                  <i class="material-icons" v-if="!secondary.outline">
+                    {{ secondary.icon }}
+                  </i>
+                  <i class="material-icons-outlined" v-else>
+                    {{ secondary.icon }}
+                  </i>
+                  {{ secondary.title }}
+                </a>
+                <router-link :to="{ name: secondary.to }" v-else>
                   <i class="material-icons" v-if="!secondary.outline">
                     {{ secondary.icon }}
                   </i>
