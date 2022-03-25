@@ -1,31 +1,20 @@
 <template>
-  <div
-    class="icon-close hover-pointer"
-    :style="{ width: `${props.width}px`, height: `${props.height}px` }"
+  <svg
+    :width="props.width"
+    :height="props.height"
+    :viewBox="props.width === 30 ? `0 0 32 32` : `0 0 30 30`"
+    fill="none"
+    perserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <div class="icon-close-inner">
-      <svg
-        :width="props.width"
-        :height="props.height"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g
-          opacity=".7"
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          :fill="!active ? '#000729' : '#4d49f4'"
-        >
-          <path
-            d="M7.5 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
-          />
-          <path
-            d="M5.14 8.607C4.294 9.038 4 9.496 4 9.857V11h7V9.857c0-.361-.294-.819-1.14-1.25C9.06 8.2 8.09 8 7.5 8c-.59 0-1.56.2-2.36.607ZM12 9.857C12 7.957 9.002 7 7.5 7 5.998 7 3 7.957 3 9.857V12h9V9.857Z"
-          />
-        </g>
-      </svg>
-    </div>
-  </div>
+    <path
+      opacity=".7"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M19.18 15.62a4.57 4.57 0 0 0 1.39-3.27c0-2.52-2.05-4.57-4.57-4.57-2.52 0-4.57 2.05-4.57 4.57 0 1.28.53 2.44 1.39 3.27-2.49.76-5.04 2.32-5.04 4.69v3.92h16.44v-3.92c0-2.37-2.55-3.93-5.04-4.69Zm-5.92-3.27c0-1.51 1.23-2.74 2.74-2.74 1.51 0 2.74 1.23 2.74 2.74 0 1.51-1.23 2.74-2.74 2.74-1.51 0-2.74-1.23-2.74-2.74ZM22.4 22.4H9.61v-2.09c0-.66.54-1.5 2.08-2.28 1.46-.74 3.23-1.11 4.31-1.11 1.08 0 2.85.37 4.31 1.11 1.55.79 2.08 1.62 2.08 2.28v2.09h.01Z"
+      fill="#111326"
+    />
+  </svg>
 </template>
 <script lang="ts" setup>
 import { computed } from 'vue'

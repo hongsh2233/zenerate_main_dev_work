@@ -1,25 +1,20 @@
 <template>
-  <div
-    class="icon-close hover-pointer"
-    :style="{ width: `${props.width}px`, height: `${props.height}px` }"
+  <svg
+    :width="props.width"
+    :height="props.height"
+    :viewBox="props.width === 30 ? `0 0 32 32` : `0 0 30 30`"
+    fill="none"
+    perserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
   >
-    <div class="icon-close-inner">
-      <svg
-        :width="props.width"
-        :height="props.height"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M4.916 4.277 3.768 6H2V5h1.232l.852-1.277.832.554ZM13 6H6V5h7v1ZM4.916 7.277 3.768 9H2V8h1.232l.852-1.277.832.554ZM13 9H6V8h7v1Zm-8.084 1.277L3.768 12H2v-1h1.232l.852-1.277.832.554ZM13 12H6v-1h7v1Z"
-          :fill="!active ? '#000729' : '#4d49f4'"
-          opacity=".7"
-        />
-      </svg>
-    </div>
-  </div>
+    <path
+      opacity=".7"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="m11.28 9.45-2.1 3.15H5.95v-1.83H8.2l1.56-2.33 1.52 1.01Zm14.77 3.15H13.26v-1.83h12.79v1.83Zm-14.77 2.33-2.1 3.15H5.95v-1.83H8.2l1.56-2.33 1.52 1.01Zm14.77 3.15H13.26v-1.83h12.79v1.83Zm-14.77 2.33-2.1 3.15H5.95v-1.83H8.2l1.56-2.33 1.52 1.01Zm14.77 3.15H13.26v-1.83h12.79v1.83Z"
+      fill="#111326"
+    />
+  </svg>
 </template>
 <script lang="ts" setup>
 import { computed } from 'vue'

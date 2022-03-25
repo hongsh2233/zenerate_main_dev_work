@@ -21,11 +21,13 @@
                   v-if="secondary.to === 'en-pricing'"
                   href="https://app.zenerate.ai/?pricing=true"
                 >
-                  <component :is="secondary.icon" />
+                  <component :is="secondary.icon" :width="20" :height="20" />
+
                   {{ secondary.title }}
                 </a>
                 <router-link :to="{ name: secondary.to }" v-else>
-                  <component :is="secondary.icon" />
+                  <component :is="secondary.icon" :width="20" :height="20" />
+
                   {{ secondary.title }}
                 </router-link>
               </template>
@@ -398,26 +400,26 @@ const toggleNav = (primary: String) => {
     border-radius: 7px;
     box-shadow: 0px 4px 8px rgba(142, 141, 208, 0.16);
     border: 1px solid $footer;
+
+    svg {
+      margin-right: 8px;
+    }
   }
 
   .dropdown-content a {
     @include flex();
-    @include medium(12);
+    @include regular(12);
     color: $text-darken;
     align-items: center;
-    padding: 4px 14px;
+    padding: 4px 18px 4px 14px;
     text-decoration: none;
     text-align: left;
-
-    :deep(.icon-close) {
-      margin-right: 8px;
-    }
   }
 
   .dropdown-content a:hover {
     color: $navigation;
 
-    :deep(.icon-close) {
+    :deep(svg) {
       path {
         fill: $navigation;
       }

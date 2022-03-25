@@ -25,7 +25,7 @@
                       href="https://app.zenerate.ai/?pricing=true"
                       @click="close"
                     >
-                      <component :is="nav.icon" />
+                      <component :is="nav.icon" :width="30" :height="30" />
                       {{ nav.title }}
                     </a>
                     <router-link
@@ -35,7 +35,8 @@
                       @click="close"
                       v-else
                     >
-                      <component :is="nav.icon" />
+                      <component :is="nav.icon" :width="30" :height="30" />
+
                       {{ nav.title }}
                     </router-link>
                   </template>
@@ -261,24 +262,26 @@ const close = () => {
             }
 
             &.sub {
-              @include medium(18);
+              @include regular(17);
               @include flex();
               align-items: center;
               background-color: #fafbfe;
               color: $text-darken-7;
-              :deep(.icon-close) {
+              .icon {
+                width: 28px;
                 margin-right: 8px;
-                margin-bottom: 10px;
+              }
+
+              svg {
+                margin-right: 6px;
               }
 
               &:hover,
               :active {
                 color: $navigation;
 
-                :deep(.icon-close) {
-                  path {
-                    fill: $navigation;
-                  }
+                :deep(path) {
+                  fill: $navigation;
                 }
               }
             }
