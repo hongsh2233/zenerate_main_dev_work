@@ -422,6 +422,11 @@ const toggleNav = (primary: String) => {
     :deep(svg) {
       path {
         fill: $navigation;
+        opacity: 0.9;
+      }
+
+      g {
+        opacity: 0.9;
       }
     }
   }

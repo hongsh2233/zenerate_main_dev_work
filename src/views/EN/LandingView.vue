@@ -273,7 +273,10 @@
       <div class="zenerate-launch-desc-wrapper">
         <p class="zenerate-launch-desc hidden-en-mobile">
           <span>If you want to subscribe to our updates lists&nbsp;</span>
-          <span class="blue"> click here.&nbsp;</span>
+
+          <router-link :to="{ name: 'SignUp' }" class="blue"
+            >click here.&nbsp;
+          </router-link>
           <span> We’ll send you an update everytime&nbsp;</span>
           <span> we launch in a new city or district.</span>
         </p>
@@ -281,7 +284,9 @@
         <p class="zenerate-launch-desc hidden-en-desktop hidden-en-tablet">
           <span>If you want to subscribe to</span><br />
           <span>our updates list&nbsp;</span>
-          <span class="blue"> click here.&nbsp;</span><br />
+          <router-link :to="{ name: 'SignUp' }" class="blue"
+            >click here.&nbsp;
+          </router-link>
           <span> We’ll send you an update everytime&nbsp;</span><br />
           <span> we launch in a new city or district.</span>
         </p>
@@ -557,7 +562,7 @@ const toContactForm = () => {
   }
 
   @include en-mobile {
-    padding: 0px 30px;
+    padding: 0px 24px;
   }
 
   .content-text-wrapper {
@@ -616,7 +621,7 @@ const toContactForm = () => {
 
         @include en-mobile {
           @include medium(27);
-          max-width: 264px;
+          max-width: 282px;
           margin: 0px 0px 18px 0px;
         }
       }
@@ -978,6 +983,7 @@ const toContactForm = () => {
   margin: 0px auto;
   padding: 100px 140px;
   background: linear-gradient(0deg, #7471ff 0%, #5f94ff 100%);
+  opacity: 0.9;
 
   @include en-tablet {
     padding: 110px 0px;
@@ -1015,6 +1021,7 @@ const toContactForm = () => {
     .banner-item {
       @include vertical-center();
       justify-content: flex-start;
+      align-items: center;
 
       @include en-tablet {
         align-items: center;
@@ -1101,6 +1108,7 @@ const toContactForm = () => {
         @include regular(20);
         color: $white;
         line-height: 26px;
+        text-align: center;
 
         strong {
           font-weight: 600;

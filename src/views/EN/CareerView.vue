@@ -1,6 +1,6 @@
 <template>
   <div id="fullpage-career">
-    <section class="section section-careers fp-auto-height-responsive">
+    <section class="section section-careers">
       <div class="section-main">
         <div class="section-inner main-wrapper">
           <div class="inner-main">
@@ -184,13 +184,13 @@ const careerId = ref(-1)
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 }
-const fullpage = computed(() => Store.state.root.FullPage)
+// const fullpage = computed(() => Store.state.root.FullPage)
 
-onMounted(() => {
-  if (fullpage.value) {
-    fullpage.value.destroy()
-  }
-})
+// onMounted(() => {
+//   if (fullpage.value) {
+//     fullpage.value.destroy()
+//   }
+// })
 
 const { meta } = useMeta({
   title: 'Career | Zenerate',

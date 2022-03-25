@@ -6,7 +6,7 @@
         <div class="divider"></div>
       </div>
     </div>
-    <div class="section section-story story-wrapper fp-auto-height-responsive">
+    <div class="section section-story story-wrapper">
       <div class="inner-contents">
         <div class="mission-contents">
           <div class="title-wrapper">
@@ -76,9 +76,7 @@
         </div>
       </div>
     </div>
-    <div
-      class="section section-story-2 story-wrapper fp-auto-height-responsive"
-    >
+    <div class="section section-story-2 story-wrapper">
       <div class="inner-contents">
         <div class="person-wrapper hidden-en-tablet hidden-en-mobile">
           <div class="mission-image">
@@ -147,9 +145,7 @@
         </div>
       </div>
     </div>
-    <div
-      class="section section-story-3 story-wrapper fp-auto-height-responsive"
-    >
+    <div class="section section-story-3 story-wrapper">
       <div class="inner-contents">
         <div class="mission-contents">
           <div class="title-wrapper">
@@ -233,13 +229,13 @@ const { meta } = useMeta({
   ],
   link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/about' }],
 })
-const fullpage = computed(() => Store.state.root.FullPage)
-onMounted(() => {
-  fullpage.value.init('#fullpage-about', { offsetSections: false })
-})
-onBeforeUnmount(() => {
-  fullpage.value.destroy()
-})
+// const fullpage = computed(() => Store.state.root.FullPage)
+// onMounted(() => {
+//   fullpage.value.init('#fullpage-about', { offsetSections: false })
+// })
+// onBeforeUnmount(() => {
+//   fullpage.value.destroy()
+// })
 </script>
 <style lang="scss" scoped>
 .text-blue {
@@ -296,7 +292,7 @@ onBeforeUnmount(() => {
 }
 
 .story-header-wrapper {
-  @include absolute(top 14vh left 0px);
+  @include absolute(top 130px left 0px);
   width: 100%;
 }
 .story-header {
@@ -312,7 +308,7 @@ onBeforeUnmount(() => {
   .divider {
     width: 56px;
     height: 2px;
-    background-color: $text-darken;
+    background-color: $text-darken-7;
   }
 
   @include en-tablet {
@@ -345,12 +341,12 @@ onBeforeUnmount(() => {
 .story-wrapper {
   width: 100%;
 
-  @include en-desktop {
-    background-image: url('/en/img/about_background.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-y: center;
-  }
+  // @include en-desktop {
+  //   background-image: url('/en/img/about_background.png');
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   background-position-y: center;
+  // }
 
   &:first-child {
     padding-top: 85px;
@@ -364,11 +360,17 @@ onBeforeUnmount(() => {
     padding: 0px 16px;
   }
 
+  &.section-story-3 {
+    .inner-contents {
+      margin-bottom: 12%;
+    }
+  }
+
   .inner-contents {
     @include flex($justify: space-around);
     height: content-fit;
     margin: auto;
-    padding-top: 60px;
+    padding-top: 140px;
     max-width: 1200px;
 
     @include en-tablet {

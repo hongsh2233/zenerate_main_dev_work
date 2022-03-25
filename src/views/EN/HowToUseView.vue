@@ -274,7 +274,7 @@ const goToApp = () => {
         height: 2px;
         border-radius: 5px;
         margin: 52px 0px 0px;
-        background-color: $text-darken;
+        background-color: $text-darken-7;
       }
     }
 
@@ -313,7 +313,7 @@ const goToApp = () => {
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
           iframe {
-            width: 100%;
+            width: calc(100% - 8px);
             height: 100%;
             object-fit: cover;
           }
@@ -321,6 +321,10 @@ const goToApp = () => {
           @include tablet {
             width: 580px;
             height: 326px;
+
+            iframe {
+              width: 100%;
+            }
           }
           @include mobile {
             border-top-left-radius: 0px;
@@ -353,7 +357,7 @@ const goToApp = () => {
           }
 
           @include en-mobile {
-            padding: 32px 30px 35px;
+            padding: 32px 30px 35px 10%;
           }
           .text-title {
             @include semi-bold(26);

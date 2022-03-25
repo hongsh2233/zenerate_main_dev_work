@@ -1,11 +1,6 @@
 <template>
   <div id="fullpage-signup">
-    <section
-      class="section-signup"
-      data-aos="fade-zoom-in"
-      data-aos-duration="500"
-      data-aos-easing="ease-in-back"
-    >
+    <section class="section-signup">
       <div class="signup-wrapper">
         <div class="signup-header-wrapper" :class="{ done: sendEmailStatus }">
           <div

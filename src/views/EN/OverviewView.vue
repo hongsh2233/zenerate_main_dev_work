@@ -228,8 +228,8 @@
                   <p class="zoning-guide">
                     <i class="material-icons"></i>
                     Can’t find what you’re looking for?<br />
-                    We’ll find the zoning info you need within<br />
-                    3 days and apply it to Zenerate’s engine.
+                    We’ll find the zoning info you need within 3 days <br />
+                    and apply it to Zenerate’s engine.
                   </p>
                 </div>
               </div>
@@ -260,7 +260,9 @@
                   <span
                     >If you want to subscribe to our updates lists&nbsp;</span
                   >
-                  <span class="blue"> click here.&nbsp;</span>
+                  <router-link :to="{ name: 'SignUp' }" class="blue"
+                    >click here.&nbsp;
+                  </router-link>
                   <span> We’ll send you an update everytime&nbsp;</span>
                   <span> we launch in a new city or district.</span>
                 </p>
@@ -270,7 +272,9 @@
                 >
                   <span>If you want to subscribe to</span><br />
                   <span>our updates list&nbsp;</span>
-                  <span class="blue"> click here.&nbsp;</span><br />
+                  <router-link :to="{ name: 'SignUp' }" class="blue"
+                    >click here.&nbsp;
+                  </router-link>
                   <span> We’ll send you an update everytime&nbsp;</span><br />
                   <span> we launch in a new city or district.</span>
                 </p>
@@ -489,10 +493,18 @@ const goToApp = () => {
 
       @include en-tablet {
         padding: 0px 20px;
+
+        &:last-child .case {
+          margin-top: 190px;
+        }
       }
 
       @include en-mobile {
         padding: 0px;
+
+        &:last-child .case {
+          margin-top: 200px;
+        }
       }
 
       .case {
@@ -547,7 +559,7 @@ const goToApp = () => {
 
           @include en-mobile {
             @include absolute(top -120px left 0px);
-            padding: 0px 6%;
+            padding: 0px 10%;
             height: 99px;
 
             &.zoning {
@@ -658,8 +670,8 @@ const goToApp = () => {
 
           @include en-mobile {
             flex-direction: column;
-            padding: 23px 30px 30px 30px;
-            // align-items: center;
+            padding: 23px 10% 30px;
+            background-color: #fbfbff;
           }
           .text-title {
             @include medium(22);
@@ -711,13 +723,13 @@ const goToApp = () => {
               }
 
               @include en-mobile {
-                max-width: 265px;
+                max-width: 330px;
               }
             }
 
             &.deep {
               @include en-mobile {
-                max-width: 280px;
+                max-width: 360px;
               }
             }
 
@@ -744,23 +756,23 @@ const goToApp = () => {
             }
 
             @include en-mobile {
-              @include regular(10);
-              line-height: 14px;
+              @include regular(13);
+              line-height: 18px;
               p {
-                margin-bottom: 2px;
+                margin-bottom: 8px;
 
                 i {
-                  @include medium(12);
+                  @include medium(14);
                   margin-right: 4px;
                 }
                 span {
-                  padding-top: 6px;
+                  padding-top: 4px;
                 }
               }
 
               .zoning-guide {
-                @include regular(9);
-                line-height: 14px;
+                @include regular(13);
+                line-height: 18px;
               }
             }
 
