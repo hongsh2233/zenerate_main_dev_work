@@ -1,44 +1,6 @@
 <template>
   <section class="section section-contact">
     <div class="contact-hero-wrapper">
-      <transition name="fade">
-        <div class="contact-form-success" v-if="sendEmailStatus">
-          <div class="contact-form-inner">
-            <div class="check-wrapper">
-              <div class="circle">
-                <svg fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="m121.428.845-.836.845.024.024-22.525 22.892-54.788 55.688a6.006 6.006 0 0 1-7.018 1.136l3.313 2.695 5.004 4.07a6.013 6.013 0 0 0 3.797 1.35 5.99 5.99 0 0 0 4.289-1.795L130 9.17 121.428.845Z"
-                    fill="#4848FF"
-                  />
-                  <path
-                    d="m98.07 24.582-50.122 50.94-9.225-7.503-.028-.024-30.41-24.742L.69 52.472l29.596 24.074.028.024 5.971 4.86c.86.436 1.795.659 2.73.659a5.99 5.99 0 0 0 4.289-1.795l54.79-55.684-.023-.028Z"
-                    fill="#4848FF"
-                    fill-opacity=".4"
-                  />
-                </svg>
-              </div>
-            </div>
-            <div class="inner-content">
-              <p class="content-heading">Thank you!</p>
-              <p class="content-text">
-                We'll get back to you as soon as possible.
-              </p>
-              <p class="content-contact">
-                <span>If you do not receive a reply&nbsp;</span>
-                <span>within 2 business days</span> <br />
-                please email
-                <a href="mailto: 'contact@zenerate.ai'">contact@zenerate.ai </a>
-              </p>
-              <router-link class="link-button" :to="{ name: 'en-overview' }">
-                View Product Overview
-                <i class="material-icons"> east </i>
-              </router-link>
-            </div>
-          </div>
-        </div>
-      </transition>
-
       <div
         class="contact-form-wrapper"
         :class="{ done: sendEmailStatus }"
@@ -103,6 +65,8 @@
               <input
                 type="text"
                 placeholder="abcd@zenerate.ai"
+                autocomplete="new-email"
+                inputmode="email"
                 v-model="contactForm.email.value"
                 @blur="(v) => validation('email')"
               />
@@ -134,6 +98,43 @@
           </div>
         </div>
       </div>
+      <transition name="fade">
+        <div class="contact-form-success" v-if="sendEmailStatus">
+          <div class="contact-form-inner">
+            <div class="check-wrapper">
+              <div class="circle">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m121.428.845-.836.845.024.024-22.525 22.892-54.788 55.688a6.006 6.006 0 0 1-7.018 1.136l3.313 2.695 5.004 4.07a6.013 6.013 0 0 0 3.797 1.35 5.99 5.99 0 0 0 4.289-1.795L130 9.17 121.428.845Z"
+                    fill="#4848FF"
+                  />
+                  <path
+                    d="m98.07 24.582-50.122 50.94-9.225-7.503-.028-.024-30.41-24.742L.69 52.472l29.596 24.074.028.024 5.971 4.86c.86.436 1.795.659 2.73.659a5.99 5.99 0 0 0 4.289-1.795l54.79-55.684-.023-.028Z"
+                    fill="#4848FF"
+                    fill-opacity=".4"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="inner-content">
+              <p class="content-heading">Thank you!</p>
+              <p class="content-text">
+                We'll get back to you as soon as possible.
+              </p>
+              <p class="content-contact">
+                <span>If you do not receive a reply&nbsp;</span>
+                <span>within 2 business days</span> <br />
+                please email
+                <a href="mailto: 'contact@zenerate.ai'">contact@zenerate.ai </a>
+              </p>
+              <router-link class="link-button" :to="{ name: 'en-overview' }">
+                View Product Overview
+                <i class="material-icons"> east </i>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </transition>
     </div>
     <div class="section section-footer">
       <Footer />
