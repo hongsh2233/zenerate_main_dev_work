@@ -276,68 +276,47 @@
                 </p>
               </div>
             </div>
-
-            <div class="section section-partners">
-              <div class="section-inner inner-partners">
-                <div class="inner-contents">
-                  <div class="join-wrapper">
-                    <div class="join-text-wrapper">
-                      <p class="join-text hidden-en-mobile">
-                        <span
-                          >Join some of the biggest names in real
-                          estate&nbsp;</span
-                        >
-                        <br />
-                        <span>
-                          in
-                          <strong>saving thousands of man-hours</strong
-                          >&nbsp;</span
-                        >
-                        <span> and <strong>maximizing profit</strong></span>
-                      </p>
-                      <p class="join-text hidden-en-desktop hidden-en-tablet">
-                        Join some of the biggest names in<br />
-                        real estate in <strong>saving thousands of</strong
-                        ><br />
-                        <strong>man-hours</strong> and
-                        <strong>maximizing profit</strong>
-                      </p>
-                      <div class="start-button" @click="goToApp()">
-                        <a href="http://app.zenerate.ai">TRY FOR FREE</a>
-                      </div>
-                    </div>
-                    <div class="background"></div>
-                  </div>
-                  <div class="partners-list">
-                    <div
-                      class="partners-item hover-pointer"
-                      v-for="(item, idx) in PartnersList"
-                      :key="idx"
-                    >
-                      <div
-                        class="item-logo"
-                        :style="{
-                          backgroundImage: `url('/logo/logo_${item.key}.png')`,
-                        }"
-                      ></div>
-                      <div class="item-description">
-                        {{ item.description }}
-                      </div>
-                    </div>
-                    <div class="partners-item fake"></div>
-                    <div class="partners-item fake"></div>
-                    <div class="partners-item fake"></div>
-                    <div class="partners-item fake"></div>
-                    <div class="partners-item fake"></div>
-                    <div class="partners-item fake"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="background-image background-map"></div>
-            </div>
           </div>
         </div>
+        <div class="join-wrapper">
+          <div class="join-text-wrapper">
+            <p class="join-text hidden-en-mobile">
+              <span>Join some of the biggest names in real estate&nbsp;</span>
+              <br />
+              <span>
+                in
+                <strong>saving thousands of man-hours</strong>&nbsp;</span
+              >
+              <span> and <strong>maximizing profit</strong></span>
+            </p>
+            <p class="join-text hidden-en-desktop hidden-en-tablet">
+              Join some of the biggest names in<br />
+              real estate in <strong>saving thousands of</strong><br />
+              <strong>man-hours</strong> and
+              <strong>maximizing profit</strong>
+            </p>
+            <div class="start-button" @click="goToApp()">
+              <a href="http://app.zenerate.ai">TRY FOR FREE</a>
+            </div>
+          </div>
+          <div class="partners-list">
+            <div
+              class="partners-item hover-pointer"
+              v-for="(item, idx) in PartnersList"
+              :key="idx"
+            >
+              <div
+                class="item-logo"
+                :style="{
+                  backgroundImage: `url('/logo/logo_${item.key}.png')`,
+                }"
+              ></div>
+            </div>
+          </div>
+          <div class="background"></div>
+        </div>
       </div>
+      <div class="background-image background-map"></div>
     </div>
     <div class="section section-footer fp-auto-height">
       <Footer></Footer>
@@ -392,7 +371,7 @@ const goToApp = () => {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 160px 0px;
+    padding: 160px 0px 0px;
     background: linear-gradient(
       0deg,
       #ffffff 23.95%,
@@ -400,10 +379,10 @@ const goToApp = () => {
       rgba(255, 255, 255, 0) 100%
     );
     @include en-tablet {
-      padding: 132px 0px;
+      padding: 132px 0px 0px;
     }
     @include en-mobile {
-      padding: 98px 0px;
+      padding: 98px 0px 0px;
     }
 
     .case-studies-wrapper {
@@ -661,12 +640,12 @@ const goToApp = () => {
           @include flex();
           flex-wrap: nowrap;
           width: 100%;
-          padding: 48px 43px 56px 56px;
+          padding: 48px 38px 56px 56px;
 
           @include en-desktop {
             &.half {
               .text-content:first-child {
-                width: 440px;
+                width: 430px;
                 padding-right: 50px;
               }
             }
@@ -947,32 +926,34 @@ const goToApp = () => {
     display: inline-block;
     width: 100%;
     height: 800px;
-    object-fit: contain;
+    object-fit: cover;
     background-image: url('/en/img/landing_map.png');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 
     @include en-tablet {
-      height: 500px;
+      height: 800px;
     }
 
     @include en-mobile {
-      height: 300px;
+      height: 480px;
+      background-position: center;
     }
   }
   .join-wrapper {
     @include relative();
     @include vertical-center();
     align-items: center;
+    width: 100%;
     height: 800px;
 
     @include en-tablet {
-      height: 500px;
+      height: 800px;
     }
 
     @include en-mobile {
-      height: 300px;
+      height: 800px;
     }
 
     .join-text-wrapper {
@@ -997,7 +978,7 @@ const goToApp = () => {
     @include bold(18);
     width: 260px;
     height: 60px;
-    margin-top: 110px;
+    margin-top: 40px;
     background-color: $navigation;
     color: $white;
     border-radius: 10px;
@@ -1023,157 +1004,110 @@ const goToApp = () => {
       color: rgba($white, 0.6);
       transform: translateY(-2px);
     }
+  }
+
+  .partners-text-wrapper {
+    padding: 0px 0px 76px;
+
+    @include en-mobile {
+      padding: 0px 0px 26px;
+    }
+    .content-text {
+      margin: 0px auto;
+      text-align: center;
+      p {
+        display: inline-block;
+        @include regular(22);
+        position: relative;
+        span {
+          color: $black;
+        }
+      }
+      @include en-tablet {
+        max-width: 85%;
+        p {
+          display: inline-block;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+      @include en-mobile {
+        p {
+          display: block;
+          margin: auto;
+          font-size: 18px;
+          line-height: 28px;
+
+          &:last-child {
+            max-width: 200px;
+          }
+        }
+      }
+      // p {
+      //   color: $text-darkgrey;
+      // }
+    }
+  }
+  .partners-list {
+    @include flex($justify: space-between);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 74px;
+
+    .partners-item {
+      @include center-center;
+      @include relative;
+      margin-bottom: 0px;
+      width: 200px;
+      height: 94px;
+      max-width: 100%;
+      margin: auto;
+
+      @include en-mobile {
+        width: 140px;
+        height: 86px;
+        margin: 0px auto;
+        margin-bottom: 0px;
+      }
+      .item-logo {
+        width: 200px;
+        margin: auto;
+        height: 60px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        @include en-mobile {
+          height: 40px;
+        }
+      }
+    }
+    margin-bottom: 40px;
 
     @include en-tablet {
-      margin-top: 80px;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 70px;
+      .partners-item {
+        width: auto;
+        max-width: 200px;
+      }
+
+      @media (orientation: landscape) {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     @include en-mobile {
-      margin-top: 40px;
-    }
-  }
-
-  .section-partners {
-    @include relative;
-    .section-inner {
-      padding-top: 0;
-      height: auto;
-
-      .inner-contents {
-        z-index: 9;
-      }
-    }
-
-    .partners-text-wrapper {
-      padding: 0px 0px 76px;
-
-      @include en-mobile {
-        padding: 0px 0px 26px;
-      }
-      .content-text {
-        margin: 0px auto;
-        text-align: center;
-        p {
-          display: inline-block;
-          @include regular(22);
-          position: relative;
-          span {
-            color: $black;
-          }
-        }
-        @include en-tablet {
-          max-width: 85%;
-          p {
-            display: inline-block;
-            font-size: 16px;
-            line-height: 20px;
-          }
-        }
-        @include en-mobile {
-          p {
-            display: block;
-            margin: auto;
-            font-size: 18px;
-            line-height: 28px;
-
-            &:last-child {
-              max-width: 200px;
-            }
-          }
-        }
-        // p {
-        //   color: $text-darkgrey;
-        // }
-      }
-    }
-    .partners-list {
-      @include flex($justify: space-between);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
+      max-width: 320px;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 40px auto 0px;
       .partners-item {
-        @include center-center;
-        @include relative;
-        margin-bottom: 0px;
-        width: 200px;
-        height: 94px;
-        max-width: 100%;
-        margin: auto;
+        width: auto;
+        max-width: 200px;
+        min-width: 140px;
 
-        @include en-mobile {
-          width: 140px;
-          height: 86px;
-          margin: 0px auto;
-          margin-bottom: 0px;
-        }
         .item-logo {
-          width: 200px;
-          margin: auto;
-          height: 60px;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center;
-          @include en-mobile {
-            height: 40px;
-          }
-        }
-        .item-description {
-          @include absolute(top 0 left 0);
           width: 100%;
-          height: 100%;
-          text-align: center;
-          visibility: hidden;
-          color: $black;
-          background-color: rgba($white, 0.7);
-          text-align: center;
-          @include center-center;
-        }
-        &.fake {
-          height: 0px;
-          margin: 0;
-          padding: 0;
-        }
-
-        &:hover {
-          .item-logo {
-            opacity: 0.5;
-          }
-          .item-description {
-            visibility: visible;
-            opacity: 0.7;
-          }
-        }
-      }
-      margin-bottom: 40px;
-
-      @include en-tablet {
-        grid-template-columns: repeat(2, 1fr);
-
-        margin: auto;
-        .partners-item {
-          width: auto;
-          max-width: 200px;
-        }
-
-        @media (orientation: landscape) {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-
-      @include en-mobile {
-        max-width: 320px;
-        grid-template-columns: repeat(2, 1fr);
-        margin: 0 auto;
-
-        .partners-item {
-          width: auto;
-          max-width: 200px;
-          min-width: 140px;
-
-          .item-logo {
-            width: 100%;
-            background-size: contain;
-          }
+          background-size: contain;
         }
       }
     }
