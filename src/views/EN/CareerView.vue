@@ -1,12 +1,12 @@
 <template>
   <div id="fullpage-career">
     <section class="section section-careers">
-      <div class="section-main">
+      <!-- <div class="section-main">
         <div class="section-inner main-wrapper">
           <div class="inner-main">
             <div class="main-sub-title">
               <p>Build your life <span>with us</span></p>
-              <!-- <img src="/img/logo.webp" alt="" /> -->
+            
             </div>
             <p class="main-content">
               <span>Join Zenerate as we innovate architectural planning</span>
@@ -16,7 +16,7 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="section section-content">
         <div class="content-list-wrapper section-inner">
@@ -338,6 +338,21 @@ const { meta } = useMeta({
   }
 }
 .section-content {
+  @include en-desktop {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 100px 20px 80px;
+  }
+  @include en-tablet {
+    padding: 36px 34px 0px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  @include en-mobile {
+    padding: 10px 24px 0px;
+  }
   &.active .content-list-wrapper .list-title {
     padding-top: 160px;
   }
@@ -362,7 +377,7 @@ const { meta } = useMeta({
       margin-bottom: 48px;
 
       @include en-mobile {
-        @include bold(28);
+        @include bold(26);
       }
     }
     .list-wrapper {
@@ -405,16 +420,23 @@ const { meta } = useMeta({
             .item-title {
               @include medium(24);
               line-height: 40px;
-              // 무슨 컬러?
-              color: #161616;
+              color: $text-darken;
               border-bottom: solid 1px $text-lightgrey;
               &:hover {
                 color: $core;
                 border-bottom-color: $core;
               }
 
+              @include en-tablet {
+                @include medium(18);
+                text-align: left;
+                padding: 0px 4px;
+              }
+
               @include en-mobile {
-                @include medium(16);
+                @include medium(14);
+                text-align: left;
+                padding: 0px 4px;
               }
             }
           }
