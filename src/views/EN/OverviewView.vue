@@ -779,15 +779,18 @@ const goToApp = () => {
     border-radius: 20px;
     padding: 58px 60px 46px;
     max-width: 980px;
+    margin: 0px auto;
 
     @include en-tablet {
       width: 628px;
       padding: 69px 47px 45px;
+      margin: 0px auto;
     }
 
     @include en-mobile {
       width: 90%;
       padding: 38px 20px 20px;
+      margin: 0px auto;
     }
 
     .zenerate-launch-info-wrapper {
@@ -1053,19 +1056,21 @@ const goToApp = () => {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 74px;
+    gap: 10px 20px;
+    z-index: 1;
 
     .partners-item {
       @include center-center;
       @include relative;
       margin-bottom: 0px;
       width: 200px;
-      height: 94px;
+      height: 60px;
       max-width: 100%;
       margin: auto;
 
       @include en-mobile {
         width: 140px;
-        height: 86px;
+        height: 40px;
         margin: 0px auto;
         margin-bottom: 0px;
       }
@@ -1073,7 +1078,7 @@ const goToApp = () => {
         width: 200px;
         margin: auto;
         height: 60px;
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         @include en-mobile {
