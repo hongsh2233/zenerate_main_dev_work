@@ -670,7 +670,7 @@ const goToApp = () => {
 
           @include en-mobile {
             flex-direction: column;
-            padding: 23px 10% 30px;
+            padding: 23px 44px 30px 10%;
             background-color: #fbfbff;
           }
           .text-title {

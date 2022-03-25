@@ -29,12 +29,12 @@
         <div class="input-select-dropdown" v-show="showDropdown">
           <div
             class="input-select-dropdown-item hover-pointer"
-            v-for="(item: Item, idx) in props.items"
+            v-for="(item, idx) in props.items"
             @click="onSelect(item)"
             @focus="() => blur()"
             :key="idx"
           >
-            <span>{{ props.skipTranslate ? item.label : $t(item.label) }}</span>
+            <span>{{ item['label'] }}</span>
           </div>
         </div>
       </transition>
@@ -109,9 +109,13 @@ watch(showDropdown, (v) => {
   margin-bottom: 40px;
   width: 100%;
   p {
-    @include regular(16);
-    color: rgba($text-grey, 1);
+    @include medium(14);
+    color: $text-darken;
     margin-bottom: 8px;
+
+    @include en-mobile {
+      @include medium(12);
+    }
   }
   .input-select-container {
     height: 42px;
@@ -135,12 +139,13 @@ watch(showDropdown, (v) => {
       align-items: center;
       justify-content: space-between;
       span {
-        @include medium(18);
+        @include medium(15);
         @include mobile {
           @include medium(14);
         }
         &.placeholder {
-          color: $bt-secondary-stroke-disabled;
+          @include regular(15);
+          color: rgba($black-1, 0.4);
         }
       }
       i {
@@ -157,10 +162,10 @@ watch(showDropdown, (v) => {
     background: $white;
     .input-select-dropdown-item {
       width: 100%;
-      @include medium(18);
+      @include regular(15);
       padding: 4px 12px;
       @include mobile {
-        @include medium(14);
+        @include regular(15);
       }
       &:hover {
         color: $main;
