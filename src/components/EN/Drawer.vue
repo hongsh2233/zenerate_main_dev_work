@@ -22,7 +22,7 @@
                       class="navigation-link sub"
                       :class="nav.to"
                       v-if="nav.to === 'en-pricing'"
-                      href="https://app.zenerate.ai/?pricing=true"
+                      href="https://app.zenerate.ai/?source=zenerate&target=subscription"
                       @click="close"
                     >
                       <component :is="nav.icon" :width="30" :height="30" />

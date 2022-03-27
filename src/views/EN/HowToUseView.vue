@@ -23,7 +23,7 @@
                 <iframe
                   width="100%"
                   height="100%"
-                  src="https://www.youtube.com/embed/onFOGFiA0xg"
+                  src="https://www.youtube.com/embed/onFOGFiA0xg&rel=0"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
@@ -48,7 +48,7 @@
                   type="text/html"
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/f7JFBwjXI8I?controls=0&rel=0"
+                  src="https://www.youtube.com/embed/f7JFBwjXI8I?rel=0"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; "
@@ -73,7 +73,7 @@
                   type="text/html"
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/f7JFBwjXI8I?controls=0&rel=0"
+                  src="https://www.youtube.com/embed/f7JFBwjXI8I?&rel=0"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; "
@@ -98,7 +98,7 @@
                   type="text/html"
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/f7JFBwjXI8I?controls=0&rel=0"
+                  src="https://www.youtube.com/embed/f7JFBwjXI8I?&rel=0"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -313,7 +313,7 @@ const goToApp = () => {
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
           iframe {
-            width: calc(100% - 8px);
+            width: 100%;
             height: 100%;
             object-fit: cover;
           }
@@ -321,15 +321,12 @@ const goToApp = () => {
           @include tablet {
             width: 580px;
             height: 326px;
-
-            iframe {
-              width: 100%;
-            }
           }
+
           @include mobile {
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
-            width: 100vw;
+            width: calc(100vw - 16px);
             height: 63vw;
           }
         }
