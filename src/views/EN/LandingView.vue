@@ -119,7 +119,7 @@
         </p>
         <p>
           <span>and anyone involved in&nbsp;</span><span>real estate&nbsp;</span
-          ><span>development&nbsp;</span><span>with&nbsp;</span>
+          ><span>development&nbsp;</span>
           <span>AI super powers to&nbsp;</span>
           <span
             ><strong>save weeks of time&nbsp;</strong>and
