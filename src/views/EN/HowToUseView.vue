@@ -346,6 +346,7 @@ const goToApp = () => {
           height: auto;
           border-radius: 0px;
           margin-bottom: 0px;
+          box-shadow: none;
         }
 
         .text-wrapper {
@@ -384,7 +385,8 @@ const goToApp = () => {
 
             @include en-mobile {
               @include regular(13);
-              line-height: 18px;
+              line-height: 19px;
+              padding-bottom: 12px;
             }
 
             a {

@@ -57,7 +57,9 @@
         </div>
         <transition name="fade">
           <div class="signup-form-wrapper" v-if="!sendEmailStatus">
-            <h2 class="form-title">Let me know<br />when Zenerate launches!</h2>
+            <h2 class="form-title">
+              Let me know<br />when Zenerate launches<br />in new cities!
+            </h2>
             <div class="form-text">
               <div class="form-row">
                 <div class="label-text">
@@ -234,15 +236,6 @@
                   </p>
                 </div>
               </div>
-
-              <p class="form-promotion-guide">
-                <span
-                  >* Promotion code holders will receive exclusive&nbsp;</span
-                ><span>premium access&nbsp;</span>
-                <span>for 14 days upon launch.&nbsp;</span>
-                <span>That’s a $1,000 value for you to use free &nbsp;</span
-                ><span>with no credit card required.</span>
-              </p>
             </div>
 
             <div class="form-send-wrapper">

@@ -71,22 +71,21 @@
                   <p>
                     <i class="material-icons">check</i>
                     <span>
-                      Zoning, development information<br />
-                      visually presented
+                      Zoning, development information visually presented
                     </span>
                   </p>
                   <p>
                     <i class="material-icons">check</i>
                     <span>
-                      Parcel data includes AIN, lot sqft.,<br />
-                      parcel value, last sales date
+                      Parcel data includes AIN, lot sqft., parcel value, last
+                      sales date
                     </span>
                   </p>
                   <p>
                     <i class="material-icons">check</i>
                     <span>
-                      Market insights including average rent price,<br />
-                      household income, building permits and more
+                      Market insights including average rent price, household
+                      income, building permits and more
                     </span>
                   </p>
                 </div>
@@ -100,9 +99,8 @@
                 </p>
                 <p class="text-content">
                   <span>The quickest and most accurate&nbsp;</span>
-                  <span>back-of-the-envelope&nbsp;</span>
-                  <span> calculation&nbsp;</span
-                  ><span>tool you'll ever use.</span>
+                  <span>back-of-the-envelope&nbsp;</span><br />
+                  <span>calculation tool you'll ever use.</span>
                 </p>
               </div>
               <div class="video-wrapper">
@@ -215,10 +213,6 @@
                     <i class="material-icons">check</i>
                     <span> Various Overlay Zones </span>
                   </p>
-                  <p>
-                    <i class="material-icons">check</i>
-                    <span> City/ District Specific Plans </span>
-                  </p>
                 </div>
                 <div class="text-content">
                   <p>
@@ -227,9 +221,9 @@
                   </p>
                   <p class="zoning-guide">
                     <i class="material-icons"></i>
-                    Can’t find what you’re looking for?<br />
-                    We’ll find the zoning info you need within 3 days <br />
-                    and apply it to Zenerate’s engine.
+                    Can't find what you're looking for?<br />
+                    We'll find the zoning info you need within 3 days and apply
+                    it to Zenerate's engine.
                   </p>
                 </div>
               </div>
@@ -238,8 +232,8 @@
               <div class="zenerate-launch-info-wrapper">
                 <div class="zenerate-launch-title-wrapper">
                   <h2 class="title">
-                    Zenerate is only available <br />
-                    in <strong>Los Angeles</strong> for now.
+                    Zenerate is now available <br />
+                    in <strong>Los Angeles, CA.</strong>
                   </h2>
                   <p class="subtitle">
                     <span> Our goal is to cover every inch of&nbsp;</span
@@ -478,6 +472,7 @@ const goToApp = () => {
         @include en-mobile {
           width: 38px;
           height: 1px;
+          margin: 32px 0px 0px;
         }
       }
     }
@@ -503,7 +498,7 @@ const goToApp = () => {
         padding: 0px;
 
         &:last-child .case {
-          margin-top: 200px;
+          margin-top: 175px;
         }
       }
 
@@ -533,7 +528,7 @@ const goToApp = () => {
           height: auto;
           border-radius: 0px;
           margin-top: 120px;
-          margin-bottom: 64px;
+          margin-bottom: 30px;
           box-shadow: none;
         }
 
@@ -572,12 +567,12 @@ const goToApp = () => {
             }
           }
           .text-title {
-            @include semi-bold(44);
+            @include semi-bold(38);
             color: $text-darken;
-            margin-bottom: 2px;
+            margin-bottom: 8px;
 
             .step {
-              @include medium(42);
+              @include medium(36);
               color: $navigation;
             }
 
@@ -600,8 +595,9 @@ const goToApp = () => {
             }
           }
           .text-content {
-            @include medium(24);
+            @include medium(22);
             color: $text-darken;
+            line-height: 34px;
 
             @include en-tablet {
               @include medium(20);
@@ -751,6 +747,7 @@ const goToApp = () => {
 
               .zoning-guide {
                 @include regular(14);
+                max-width: 394px;
                 line-height: 21px;
               }
             }
@@ -772,6 +769,7 @@ const goToApp = () => {
 
               .zoning-guide {
                 @include regular(13);
+                max-width: 300px;
                 line-height: 18px;
               }
             }
@@ -791,24 +789,25 @@ const goToApp = () => {
     border-radius: 20px;
     padding: 58px 60px 46px;
     max-width: 980px;
-    margin: 0px auto;
+    margin: 0px auto 123px;
 
     @include en-tablet {
       width: 628px;
       padding: 69px 47px 45px;
-      margin: 0px auto;
+      margin: 0px auto 133px;
     }
 
     @include en-mobile {
       width: 90%;
       padding: 38px 20px 20px;
-      margin: 0px auto;
+      margin: 0px auto 43px;
     }
 
     .zenerate-launch-info-wrapper {
       @include flex($justify: space-between);
       flex-wrap: nowrap;
       margin-bottom: 50px;
+
       @include en-tablet {
         flex-direction: column;
         align-items: center;
@@ -838,10 +837,13 @@ const goToApp = () => {
           }
 
           @include en-mobile {
-            @include semi-bold(16);
-            max-width: 240px;
+            @include semi-bold(23);
+            max-width: 300px;
             text-align: left;
-            line-height: 20px;
+            line-height: 23px;
+            strong {
+              @include semi-bold(23);
+            }
           }
         }
 
@@ -858,11 +860,11 @@ const goToApp = () => {
           }
 
           @include en-mobile {
-            @include medium(11);
+            @include medium(16);
             text-align: left;
             margin-bottom: 30px;
-            max-width: 240px;
-            line-height: 14px;
+            max-width: 297px;
+            line-height: 19px;
           }
         }
       }
@@ -895,14 +897,14 @@ const goToApp = () => {
       @include medium(20);
       background-color: rgba($white, 0.7);
       border-radius: 20px;
-      height: 106px;
+      min-height: 106px;
       padding: 20px 58px;
       color: $text-darken-8;
       text-align: center;
 
       .zenerate-launch-desc {
         @include en-mobile {
-          max-width: 238px;
+          max-width: 297px;
           margin: 0px auto;
         }
       }
@@ -926,12 +928,11 @@ const goToApp = () => {
       }
 
       @include en-mobile {
-        @include medium(10);
+        @include medium(16);
         text-align: center;
-        height: 95px;
         padding: 20px;
         text-align: left;
-        line-height: 14px;
+        line-height: 20px;
       }
     }
   }
@@ -948,12 +949,12 @@ const goToApp = () => {
     background-position: top;
 
     @include en-tablet {
-      height: 800px;
+      height: 600px;
     }
 
     @include en-mobile {
-      height: 480px;
-      background-position: center;
+      height: 400px;
+      background-position: top;
     }
   }
   .join-wrapper {
@@ -964,11 +965,11 @@ const goToApp = () => {
     height: 800px;
 
     @include en-tablet {
-      height: 800px;
+      height: 700px;
     }
 
     @include en-mobile {
-      height: 800px;
+      height: 500px;
     }
 
     .join-text-wrapper {
@@ -1064,27 +1065,25 @@ const goToApp = () => {
     }
   }
   .partners-list {
-    @include flex($justify: space-between);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    @include flex($justify: center);
+    max-width: 660px;
     margin-top: 74px;
-    gap: 10px 20px;
+    margin-bottom: 40px;
     z-index: 1;
 
     .partners-item {
       @include center-center;
       @include relative;
-      margin-bottom: 0px;
+      margin-bottom: 10px;
       width: 200px;
       height: 60px;
       max-width: 100%;
-      margin: auto;
 
       @include en-mobile {
         width: 140px;
         height: 40px;
         margin: 0px auto;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
       }
       .item-logo {
         width: 200px;
@@ -1098,24 +1097,17 @@ const goToApp = () => {
         }
       }
     }
-    margin-bottom: 40px;
 
     @include en-tablet {
-      grid-template-columns: repeat(2, 1fr);
       margin-top: 70px;
       .partners-item {
         width: auto;
         max-width: 200px;
       }
-
-      @media (orientation: landscape) {
-        grid-template-columns: repeat(3, 1fr);
-      }
     }
 
     @include en-mobile {
       max-width: 320px;
-      grid-template-columns: repeat(2, 1fr);
       margin: 40px auto 0px;
       .partners-item {
         width: auto;

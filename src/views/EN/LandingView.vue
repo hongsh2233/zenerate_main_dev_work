@@ -14,7 +14,7 @@
                 <p><strong>feasibility</strong>&nbsp;</p>
                 <p><strong>study tool</strong>&nbsp;</p>
                 <p>that boosts&nbsp;</p>
-                <p><strong>real estate </strong></p>
+                <p><strong>real estate&nbsp;</strong></p>
                 <p><strong>development</strong>&nbsp;</p>
                 <p>profitability&nbsp;</p>
                 <p class="blue"><strong>up to 26%</strong></p>
@@ -70,7 +70,7 @@
             <i class="material-icons"> east </i>
           </router-link>
         </div>
-        <div class="text-desc hidden-en-tablet">
+        <div class="text-desc hidden-en-tablet hidden-en-mobile">
           <p>
             No more spending weeks and months<br />
             to come up with 3-5 feasible options <br />
@@ -84,7 +84,7 @@
             and in-depth financial analysis.
           </p>
         </div>
-        <div class="text-desc hidden-en-desktop hidden-en-mobile">
+        <div class="text-desc hidden-en-desktop">
           <p>
             No more spending weeks and months to come up with 3-5 feasible
             options for development.
@@ -112,8 +112,9 @@
     <div class="section section-medium-banner">
       <div class="banner-text-wrapper">
         <p>
-          Giving architects,
-          <span class="blue">developers, brokers,&nbsp;</span>
+          Giving
+          <span class="blue">developers,&nbsp;</span
+          ><span class="blue">architects, brokers,&nbsp;</span>
           <span class="blue">financial institutions</span>
         </p>
         <p>
@@ -253,14 +254,16 @@
       <div class="zenerate-launch-info-wrapper">
         <div class="zenerate-launch-title-wrapper">
           <h2 class="title">
-            Zenerate is only available <br />
-            in <strong>Los Angeles</strong> for now.
+            Zenerate is now available <br />
+            in <strong>Los Angeles, CA.</strong>
           </h2>
           <p class="subtitle">
-            <span> Our goal is to cover every inch of&nbsp;</span
-            ><span>the U.S.&nbsp;</span>
+            <span> Our goal is to cover&nbsp;</span>
+            <span>every inch of&nbsp;</span>
+            <span>the U.S.&nbsp;</span>
             <span>But until then,&nbsp;</span>
-            <span>here are our upcoming cities</span>
+            <span>here are&nbsp;</span>
+            <span>our upcoming cities</span>
           </p>
         </div>
         <div class="map-wrapper">
@@ -277,18 +280,26 @@
           <router-link :to="{ name: 'SignUp' }" class="blue"
             >click here.&nbsp;
           </router-link>
-          <span> We’ll send you an update everytime&nbsp;</span>
-          <span> we launch in a new city or district.</span>
+          <span>We’ll send you an update everytime&nbsp;</span>
+          <span>we launch in a new city or district.</span>
         </p>
 
         <p class="zenerate-launch-desc hidden-en-desktop hidden-en-tablet">
-          <span>If you want to subscribe to</span><br />
-          <span>our updates list&nbsp;</span>
+          <span>If you want&nbsp;</span>
+          <span>to subscribe&nbsp;</span>
+          <span>to&nbsp;</span>
+          <span>our updates&nbsp;</span>
+          <span>list&nbsp;</span>
           <router-link :to="{ name: 'SignUp' }" class="blue"
             >click here.&nbsp;
           </router-link>
-          <span> We’ll send you an update everytime&nbsp;</span><br />
-          <span> we launch in a new city or district.</span>
+          <span>We’ll send&nbsp;</span>
+          <span>you&nbsp;</span>
+          <span>an update&nbsp;</span>
+          <span>everytime&nbsp;</span>
+          <span>we launch&nbsp;</span>
+          <span>in a new city&nbsp;</span>
+          <span>or district.&nbsp;</span>
         </p>
       </div>
     </div>
@@ -397,6 +408,7 @@ const toContactForm = () => {
 
       @include en-mobile {
         margin: 40px auto 0px;
+        align-items: center;
         background: linear-gradient(
           0deg,
           #ffffff 0%,
@@ -477,11 +489,12 @@ const toContactForm = () => {
         }
 
         @include en-mobile {
-          @include regular(26);
+          @include regular(29);
           display: inline-block;
           text-align: center;
+          line-height: 40px;
           strong {
-            @include bold(26);
+            @include bold(29);
           }
 
           &:last-child {
@@ -519,13 +532,13 @@ const toContactForm = () => {
         }
       }
       @include en-mobile {
-        max-width: 250px;
+        max-width: 270px;
         margin: 0px;
         margin-bottom: 20px;
         text-align: center;
         p {
-          @include regular(14);
-          line-height: 22px;
+          @include regular(16);
+          line-height: 25px;
         }
       }
     }
@@ -600,7 +613,7 @@ const toContactForm = () => {
       }
 
       @include en-mobile {
-        @include semi-bold(14);
+        @include medium(15);
         line-height: 18px;
         margin-top: 16px;
       }
@@ -651,8 +664,9 @@ const toContactForm = () => {
       }
 
       @include en-mobile {
-        @include regular(13);
-        line-height: 18px;
+        @include regular(15);
+        max-width: 296px;
+        line-height: 23px;
       }
     }
 
@@ -689,21 +703,23 @@ const toContactForm = () => {
       }
 
       @include en-mobile {
-        @include regular(13);
+        @include regular(15);
+        line-height: 23px;
 
         .list {
           margin-bottom: 12px;
         }
 
         .circle {
-          @include bold(9);
-          width: 14px;
-          height: 14px;
-          margin: 6px 8px 0px 0px;
+          @include semi-bold(10);
+          width: 16px;
+          height: 16px;
+          margin: 4px 8px 0px 0px;
         }
 
         .guide {
-          @include regular(10);
+          @include regular(13);
+          line-height: 19px;
         }
       }
     }
@@ -735,20 +751,18 @@ const toContactForm = () => {
   }
 
   .partners-list {
-    @include flex($justify: space-between);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    @include flex($justify: center);
+    max-width: 600px;
+    margin-bottom: 20px;
     z-index: 1;
-    gap: 10px 20px;
 
     .partners-item {
       @include center-center;
       @include relative;
-      margin-bottom: 0px;
       width: 200px;
       height: 60px;
       max-width: 100%;
-      margin: auto;
+      margin-top: 20px;
 
       @include en-mobile {
         width: 140px;
@@ -784,30 +798,24 @@ const toContactForm = () => {
         padding: 0;
       }
     }
-    margin-bottom: 40px;
 
     @include en-tablet {
-      grid-template-columns: repeat(2, 1fr);
       margin: auto;
       .partners-item {
         width: auto;
         max-width: 200px;
       }
-
-      @media (orientation: landscape) {
-        grid-template-columns: repeat(3, 1fr);
-      }
     }
 
     @include en-mobile {
       max-width: 320px;
-      grid-template-columns: repeat(2, 1fr);
       margin: 0 auto;
 
       .partners-item {
         width: auto;
         max-width: 200px;
         min-width: 140px;
+        margin-bottom: 10px;
 
         .item-logo {
           width: 100%;
@@ -857,6 +865,17 @@ const toContactForm = () => {
     background-image: url('/en/img/about_background.png');
     background-size: contain;
     background-repeat: no-repeat;
+    background-position-y: top;
+
+    @include en-tablet {
+      top: 100px;
+      height: 400px;
+    }
+
+    @include en-mobile {
+      top: 70px;
+      height: 260px;
+    }
   }
 
   .banner-text-wrapper {
@@ -1130,8 +1149,8 @@ const toContactForm = () => {
         }
 
         @include en-mobile {
-          @include regular(13);
-          line-height: 20px;
+          @include regular(15);
+          line-height: 23px;
 
           .desc-title {
             @include medium(15);
@@ -1217,10 +1236,13 @@ const toContactForm = () => {
         }
 
         @include en-mobile {
-          @include semi-bold(16);
-          max-width: 240px;
+          @include semi-bold(23);
+          max-width: 300px;
           text-align: left;
-          line-height: 20px;
+          line-height: 23px;
+          strong {
+            @include semi-bold(23);
+          }
         }
       }
 
@@ -1237,11 +1259,11 @@ const toContactForm = () => {
         }
 
         @include en-mobile {
-          @include medium(11);
+          @include medium(16);
           text-align: left;
           margin-bottom: 30px;
-          max-width: 240px;
-          line-height: 14px;
+          max-width: 297px;
+          line-height: 19px;
         }
       }
     }
@@ -1274,14 +1296,14 @@ const toContactForm = () => {
     @include medium(20);
     background-color: rgba($white, 0.7);
     border-radius: 20px;
-    height: 106px;
+    min-height: 106px;
     padding: 20px 58px;
     color: $text-darken-8;
     text-align: center;
 
     .zenerate-launch-desc {
       @include en-mobile {
-        max-width: 238px;
+        max-width: 297px;
         margin: 0px auto;
       }
     }
@@ -1305,12 +1327,11 @@ const toContactForm = () => {
     }
 
     @include en-mobile {
-      @include medium(10);
+      @include medium(16);
       text-align: center;
-      height: 95px;
       padding: 20px;
       text-align: left;
-      line-height: 14px;
+      line-height: 20px;
     }
   }
 }

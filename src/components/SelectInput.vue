@@ -106,7 +106,7 @@ watch(showDropdown, (v) => {
 </script>
 <style lang="scss" scoped>
 .input-select-wrapper {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   width: 100%;
   p {
     @include medium(14);

@@ -225,11 +225,15 @@ const close = () => {
 
           .navigation-link-list {
             @include vertical-center();
+            padding: 26px 0px;
+            border-bottom: 1px solid #e5e5e5;
+            background-color: #fafbfe;
           }
 
           .navigation-link {
             @include flex($justify: space-between);
             @include medium(18);
+            align-items: center;
             line-height: 40px;
             padding: 16px 38px 16px 48px;
             cursor: pointer;
@@ -238,12 +242,9 @@ const close = () => {
               padding: 0px 16px 48px;
             }
 
-            &.sub:last-child {
-              border-bottom: 1px solid $footer;
-            }
-
             &:not(.sub) {
-              border-bottom: 1px solid $footer;
+              border-bottom: 1px solid #e5e5e5;
+              height: 76px;
             }
 
             i {
@@ -265,7 +266,6 @@ const close = () => {
               @include regular(17);
               @include flex();
               align-items: center;
-              background-color: #fafbfe;
               color: $text-darken-7;
               .icon {
                 width: 28px;
@@ -274,6 +274,10 @@ const close = () => {
 
               svg {
                 margin-right: 6px;
+
+                :deep(path) {
+                  opacity: 0.7;
+                }
               }
 
               &:hover,
@@ -282,6 +286,7 @@ const close = () => {
 
                 :deep(path) {
                   fill: $navigation;
+                  opacity: 1;
                 }
               }
             }

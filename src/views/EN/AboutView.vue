@@ -348,18 +348,13 @@ const { meta } = useMeta({
   //   background-position-y: center;
   // }
 
-  &:first-child {
-    padding-top: 85px;
-
-    @include en-desktop {
-      height: 100vh !important;
+  &.section-story {
+    .inner-contents {
+      @include en-mobile {
+        padding-top: 220px;
+      }
     }
   }
-
-  @include en-mobile {
-    padding: 0px 16px;
-  }
-
   &.section-story-3 {
     .inner-contents {
       margin-bottom: 12%;
@@ -380,7 +375,7 @@ const { meta } = useMeta({
     }
 
     @include en-mobile {
-      padding: 220px 10% 42px;
+      padding: 33px 10% 42px;
     }
 
     .mission-contents {
@@ -431,10 +426,10 @@ const { meta } = useMeta({
 
           @include en-mobile {
             @include light(13);
-            line-height: 18px;
+            line-height: 19px;
             strong {
               @include medium(13);
-              line-height: 18px;
+              line-height: 19px;
             }
           }
         }

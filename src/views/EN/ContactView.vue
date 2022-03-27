@@ -168,26 +168,31 @@ type Item = {
 const items: Item[] = [
   {
     id: 1,
-    value: 'invest',
-    label: 'Investments',
+    value: 'product_service',
+    label: 'Product / Service',
   },
   {
     id: 2,
-    value: 'media',
-    label: 'Media',
+    value: 'billing',
+    label: 'Billing',
   },
   {
     id: 3,
-    value: 'product_service',
-    label: 'Product/Service',
+    value: 'partnerships_investments',
+    label: 'Partnerships & Investments',
   },
   {
     id: 4,
+    value: 'pr_media',
+    label: 'PR / Media',
+  },
+  {
+    id: 5,
     value: 'careers',
     label: 'Careers',
   },
   {
-    id: 5,
+    id: 6,
     value: 'other',
     label: 'Other',
   },
@@ -326,6 +331,7 @@ const { meta } = useMeta({
     .image-wrapper {
       @include flex();
       width: 100%;
+      object-fit: contain;
       margin-top: 46px;
       img {
         width: 157px;
@@ -541,10 +547,10 @@ const { meta } = useMeta({
         }
       }
       @include en-tablet {
-        margin-bottom: 8px;
+        margin-bottom: 1px;
       }
       @include en-mobile {
-        margin-bottom: 8px;
+        margin-bottom: 1px;
       }
     }
     .label-textarea {
@@ -554,9 +560,11 @@ const { meta } = useMeta({
         @include border-set(1px, rgba($grey, 0.6), 6px);
         @include regular(15);
         width: 100%;
-        height: 84px;
+        height: 190px;
         padding: 4px 12px;
         color: $black-1;
+        resize: none;
+
         &::placeholder {
           @include regular(15);
           color: rgba($black-1, 0.4);

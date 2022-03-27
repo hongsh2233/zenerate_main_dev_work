@@ -330,6 +330,9 @@ const pdfFiles = {
         &:nth-child(2) {
           margin-left: 68px;
           margin-right: 68px;
+          img {
+            object-position: center -74px;
+          }
         }
 
         @include en-tablet {
@@ -351,6 +354,10 @@ const pdfFiles = {
           &:nth-child(2) {
             margin-left: 0px;
             margin-right: 0px;
+
+            img {
+              object-position: center -32px;
+            }
           }
 
           &:not(:first-child) {
@@ -362,6 +369,7 @@ const pdfFiles = {
             min-height: 212px;
             height: 212px;
             object-fit: cover;
+
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
           }

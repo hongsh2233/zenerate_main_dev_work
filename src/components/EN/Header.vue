@@ -353,16 +353,23 @@ const toggleNav = (primary: String) => {
   }
 
   .dropdown {
-    float: left;
-    overflow: hidden;
-    padding-bottom: 5px;
+    width: 137px;
     margin-right: 28px;
+    padding-bottom: 5px;
+    overflow: hidden;
+
+    &:nth-child(2) {
+      width: 160px;
+
+      .dropdown-content {
+        width: 160px;
+      }
+    }
   }
 
   .dropdown .dropbtn {
     @include flex();
-    @include medium(14);
-    width: fit-content;
+    @include medium(15);
     border: none;
     align-items: center;
     outline: none;
@@ -370,7 +377,7 @@ const toggleNav = (primary: String) => {
     padding: 24px 16px 29px;
     background-color: inherit;
     font-family: inherit;
-    margin: 0;
+    margin: 0px auto;
 
     i {
       @include regular(20);
@@ -393,8 +400,8 @@ const toggleNav = (primary: String) => {
     visibility: hidden;
     position: absolute;
     background-color: $white;
-    min-width: 130px;
-    padding: 19px 0px;
+    min-width: 137px;
+    padding: 15px 0px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 7px;
@@ -408,7 +415,7 @@ const toggleNav = (primary: String) => {
 
   .dropdown-content a {
     @include flex();
-    @include regular(12);
+    @include regular(14);
     color: $text-darken;
     align-items: center;
     padding: 4px 18px 4px 14px;
@@ -422,11 +429,6 @@ const toggleNav = (primary: String) => {
     :deep(svg) {
       path {
         fill: $navigation;
-        opacity: 0.9;
-      }
-
-      g {
-        opacity: 0.9;
       }
     }
   }
