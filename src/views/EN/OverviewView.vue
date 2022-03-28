@@ -186,7 +186,7 @@
                 </div>
               </div>
             </div>
-            <div class="case">
+            <div class="case zoning">
               <div class="case-title-wrapper zoning">
                 <p class="text-title">
                   <span class="step">04.</span>
@@ -231,13 +231,21 @@
             <div class="zenerate-launch-wrapper">
               <div class="zenerate-launch-info-wrapper">
                 <div class="zenerate-launch-title-wrapper">
-                  <h2 class="title">
+                  <h2 class="title hidden-en-mobile">
                     Zenerate is now available <br />
                     in <strong>Los Angeles, CA.</strong>
                   </h2>
+                  <p class="title hidden-en-desktop hidden-en-tablet">
+                    <span>Zenerate is&nbsp;</span
+                    ><span>now available&nbsp;</span>
+                    <span>in&nbsp;</span>
+                    <span><strong>Los Angeles, CA.</strong></span>
+                  </p>
                   <p class="subtitle">
-                    <span> Our goal is to cover every inch of&nbsp;</span
-                    ><span>the U.S.&nbsp;</span>
+                    <span> Our goal is to cover&nbsp;</span>
+                    <span>every inch&nbsp;</span>
+                    <span>of&nbsp;</span>
+                    <span>the U.S.&nbsp;</span>
                     <span>But until then,&nbsp;</span>
                     <span>here are our upcoming cities</span>
                   </p>
@@ -404,7 +412,7 @@ const goToApp = () => {
         align-items: flex-start;
         width: 100%;
         padding: 0px 10%;
-        margin-bottom: 39px;
+        margin-bottom: 30px;
       }
 
       .title {
@@ -496,10 +504,6 @@ const goToApp = () => {
 
       @include en-mobile {
         padding: 0px;
-
-        &:last-child .case {
-          margin-top: 175px;
-        }
       }
 
       .case {
@@ -527,9 +531,13 @@ const goToApp = () => {
           width: 100%;
           height: auto;
           border-radius: 0px;
-          margin-top: 120px;
+          margin-top: 135px;
           margin-bottom: 30px;
           box-shadow: none;
+
+          &.zoning {
+            margin-top: 204px;
+          }
         }
 
         .case-title-wrapper {
@@ -838,11 +846,13 @@ const goToApp = () => {
 
           @include en-mobile {
             @include semi-bold(23);
-            max-width: 300px;
+            max-width: 305px;
             text-align: left;
-            line-height: 23px;
+            line-height: 25px;
+            margin-bottom: 10px;
             strong {
               @include semi-bold(23);
+              line-height: 25px;
             }
           }
         }
@@ -860,11 +870,11 @@ const goToApp = () => {
           }
 
           @include en-mobile {
-            @include medium(16);
+            @include medium(15);
             text-align: left;
             margin-bottom: 30px;
             max-width: 297px;
-            line-height: 19px;
+            line-height: 20px;
           }
         }
       }
@@ -904,7 +914,7 @@ const goToApp = () => {
 
       .zenerate-launch-desc {
         @include en-mobile {
-          max-width: 297px;
+          max-width: 305px;
           margin: 0px auto;
         }
       }
@@ -928,11 +938,11 @@ const goToApp = () => {
       }
 
       @include en-mobile {
-        @include medium(16);
+        @include medium(14);
         text-align: center;
         padding: 20px;
         text-align: left;
-        line-height: 20px;
+        line-height: 19px;
       }
     }
   }

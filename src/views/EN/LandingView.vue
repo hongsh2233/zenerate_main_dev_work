@@ -235,7 +235,7 @@
     <div class="section section-medium-banner">
       <div class="banner-text-wrapper large">
         <p>
-          <span> You’ll never want to start a project </span><br />
+          <span> You'll never want to start a project </span><br />
           <span> without </span>
           <img src="/img/logo_color.svg" alt="logo" />
           <span> again. </span>
@@ -253,13 +253,19 @@
     <div class="zenerate-launch-wrapper">
       <div class="zenerate-launch-info-wrapper">
         <div class="zenerate-launch-title-wrapper">
-          <h2 class="title">
+          <h2 class="title hidden-en-mobile">
             Zenerate is now available <br />
             in <strong>Los Angeles, CA.</strong>
           </h2>
+          <p class="title hidden-en-desktop hidden-en-tablet">
+            <span>Zenerate is&nbsp;</span><span>now available&nbsp;</span>
+            <span>in&nbsp;</span>
+            <span><strong>Los Angeles, CA.</strong></span>
+          </p>
           <p class="subtitle">
             <span> Our goal is to cover&nbsp;</span>
-            <span>every inch of&nbsp;</span>
+            <span>every inch&nbsp;</span>
+            <span>of&nbsp;</span>
             <span>the U.S.&nbsp;</span>
             <span>But until then,&nbsp;</span>
             <span>here are&nbsp;</span>
@@ -1237,11 +1243,13 @@ const toContactForm = () => {
 
         @include en-mobile {
           @include semi-bold(23);
-          max-width: 300px;
+          max-width: 305px;
           text-align: left;
-          line-height: 23px;
+          line-height: 25px;
+          margin-bottom: 10px;
           strong {
             @include semi-bold(23);
+            line-height: 25px;
           }
         }
       }
@@ -1259,11 +1267,11 @@ const toContactForm = () => {
         }
 
         @include en-mobile {
-          @include medium(16);
+          @include medium(15);
           text-align: left;
           margin-bottom: 30px;
           max-width: 297px;
-          line-height: 19px;
+          line-height: 20px;
         }
       }
     }
@@ -1303,7 +1311,7 @@ const toContactForm = () => {
 
     .zenerate-launch-desc {
       @include en-mobile {
-        max-width: 297px;
+        max-width: 305px;
         margin: 0px auto;
       }
     }
@@ -1327,11 +1335,11 @@ const toContactForm = () => {
     }
 
     @include en-mobile {
-      @include medium(16);
+      @include medium(14);
       text-align: center;
       padding: 20px;
       text-align: left;
-      line-height: 20px;
+      line-height: 19px;
     }
   }
 }

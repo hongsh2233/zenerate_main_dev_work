@@ -113,6 +113,10 @@ watch(showDropdown, (v) => {
     color: $text-darken;
     margin-bottom: 8px;
 
+    @include en-tablet {
+      @include medium(12);
+    }
+
     @include en-mobile {
       @include medium(12);
     }
@@ -139,18 +143,34 @@ watch(showDropdown, (v) => {
       align-items: center;
       justify-content: space-between;
       span {
-        @include medium(15);
-        @include mobile {
+        @include medium(17);
+        @include en-tablet {
+          @include medium(14);
+        }
+        @include en-mobile {
           @include medium(14);
         }
         &.placeholder {
-          @include regular(15);
+          @include regular(17);
           color: rgba($black-1, 0.4);
+          @include en-tablet {
+            @include regular(14);
+          }
+          @include en-mobile {
+            @include regular(14);
+          }
         }
       }
       i {
+        @include regular(32);
         color: rgba(196, 196, 196, 0.6);
-        font-size: 32px;
+
+        @include en-tablet {
+          @include regular(28);
+        }
+        @include en-mobile {
+          @include regular(28);
+        }
       }
     }
   }
@@ -161,11 +181,16 @@ watch(showDropdown, (v) => {
     @include absolute(left -1px top 36px);
     background: $white;
     .input-select-dropdown-item {
+      @include regular(17);
       width: 100%;
-      @include regular(15);
-      padding: 4px 12px;
-      @include mobile {
-        @include regular(15);
+      padding: 7px 12px;
+      @include en-tablet {
+        @include regular(14);
+        padding: 4px 12px;
+      }
+      @include en-mobile {
+        @include regular(14);
+        padding: 4px 12px;
       }
       &:hover {
         color: $main;

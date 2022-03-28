@@ -533,13 +533,13 @@ const { meta } = useMeta({
       input {
         @include border-set(1px, rgba($grey, 0.6), 6px);
         @include center-vertical();
-        @include regular(15);
+        @include regular(17);
         width: 100%;
         height: 42px;
         padding: 0px 12px;
         color: $text-darken;
         &::placeholder {
-          @include regular(15);
+          @include regular(17);
           color: rgba($black-1, 0.4);
         }
         &:focus {
@@ -548,9 +548,22 @@ const { meta } = useMeta({
       }
       @include en-tablet {
         margin-bottom: 1px;
+
+        input {
+          @include regular(15);
+          &::placeholder {
+            @include regular(15);
+          }
+        }
       }
       @include en-mobile {
         margin-bottom: 1px;
+        input {
+          @include regular(15);
+          &::placeholder {
+            @include regular(15);
+          }
+        }
       }
     }
     .label-textarea {
@@ -558,7 +571,7 @@ const { meta } = useMeta({
       margin-bottom: 24px;
       textarea {
         @include border-set(1px, rgba($grey, 0.6), 6px);
-        @include regular(15);
+        @include regular(17);
         width: 100%;
         height: 190px;
         padding: 4px 12px;
@@ -566,11 +579,25 @@ const { meta } = useMeta({
         resize: none;
 
         &::placeholder {
-          @include regular(15);
+          @include regular(17);
           color: rgba($black-1, 0.4);
         }
         &:focus {
           border: 1px solid #97a5f9;
+        }
+
+        @include en-tablet {
+          @include regular(15);
+          &::placeholder {
+            @include regular(15);
+          }
+        }
+
+        @include en-mobile {
+          @include regular(15);
+          &::placeholder {
+            @include regular(15);
+          }
         }
       }
     }
@@ -581,13 +608,17 @@ const { meta } = useMeta({
         color: $text-darken;
         margin-bottom: 8px;
 
+        @include en-tablet {
+          @include medium(12);
+        }
+
         @include en-mobile {
           @include medium(12);
         }
       }
       .label-error {
-        width: 100%;
         @include regular(12);
+        width: 100%;
         color: transparent;
         text-align: right;
         &.active {
@@ -599,7 +630,7 @@ const { meta } = useMeta({
       width: 100%;
       text-align: center;
       .start-button {
-        @include bold(18);
+        @include semi-bold(18);
         width: 100%;
         height: 60px;
         margin-top: 40px;

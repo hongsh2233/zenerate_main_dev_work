@@ -374,7 +374,7 @@ const toggleNav = (primary: String) => {
     align-items: center;
     outline: none;
     color: $text-darken;
-    padding: 24px 16px 29px;
+    padding: 24px 15px 29px;
     background-color: inherit;
     font-family: inherit;
     margin: 0px auto;

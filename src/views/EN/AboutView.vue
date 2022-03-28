@@ -350,6 +350,13 @@ const { meta } = useMeta({
 
   &.section-story {
     .inner-contents {
+      @include en-desktop {
+        padding-top: 220px;
+      }
+
+      @include en-tablet {
+        padding-top: 202px;
+      }
       @include en-mobile {
         padding-top: 220px;
       }
@@ -365,13 +372,13 @@ const { meta } = useMeta({
     @include flex($justify: space-around);
     height: content-fit;
     margin: auto;
-    padding-top: 140px;
+    padding-top: 80px;
     max-width: 1200px;
 
     @include en-tablet {
       flex-direction: column;
       padding-top: 90px;
-      padding: 202px calc(10% + 16px) 42px;
+      padding: 80px calc(10% + 16px) 42px;
     }
 
     @include en-mobile {

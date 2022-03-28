@@ -21,8 +21,8 @@
             <div class="case">
               <div class="video-wrapper">
                 <iframe
-                  width="100%"
-                  height="100%"
+                  width="580"
+                  height="315"
                   src="https://www.youtube.com/embed/onFOGFiA0xg&rel=0"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -46,7 +46,7 @@
               <div class="video-wrapper">
                 <iframe
                   type="text/html"
-                  width="560"
+                  width="580"
                   height="315"
                   src="https://www.youtube.com/embed/f7JFBwjXI8I?rel=0"
                   title="YouTube video player"
@@ -71,7 +71,7 @@
               <div class="video-wrapper">
                 <iframe
                   type="text/html"
-                  width="560"
+                  width="580"
                   height="315"
                   src="https://www.youtube.com/embed/f7JFBwjXI8I?&rel=0"
                   title="YouTube video player"
@@ -96,12 +96,12 @@
               <div class="video-wrapper">
                 <iframe
                   type="text/html"
-                  width="560"
+                  width="580"
                   height="315"
                   src="https://www.youtube.com/embed/f7JFBwjXI8I?&rel=0"
                   title="YouTube video player"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay; "
                   allowfullscreen
                 ></iframe>
               </div>
@@ -308,26 +308,47 @@ const goToApp = () => {
         box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
 
         .video-wrapper {
+          @include relative();
           width: 780px;
+          // width: 100%;
+          // height: 100%;
           height: 440px;
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
+          position: relative;
+          // max-width: 100%;
+          // height: 0;
+          overflow: hidden;
+
           iframe {
+            @include absolute(top 0px left 0px);
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
           }
 
-          @include tablet {
+          @include en-tablet {
             width: 580px;
-            height: 326px;
+            height: 350px;
+            iframe {
+              @include absolute(top 0px left 0px);
+              width: 100%;
+              height: 100%;
+            }
           }
 
-          @include mobile {
+          @include en-mobile {
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
             width: calc(100vw - 16px);
             height: 63vw;
+            iframe {
+              border-top-left-radius: 0px;
+              border-top-right-radius: 0px;
+              width: 100%;
+              height: 100%;
+            }
           }
         }
 
@@ -399,7 +420,7 @@ const goToApp = () => {
     @include bold(18);
     width: 260px;
     height: 60px;
-    margin-top: 110px;
+    margin-top: 30px;
     background-color: $navigation;
     color: $white;
     border-radius: 10px;
