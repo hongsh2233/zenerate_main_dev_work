@@ -24,7 +24,7 @@
               <img src="/en/case_study_la.gif" />
 
               <div class="text-wrapper">
-                <p class="text-title">5751 Sunset Blvd. Los Angeles</p>
+                <p class="text-title">1522 N Van Ness Ave, Los Angeles</p>
                 <p class="text-content">
                   Based on one of the hottest sites in L.A. we zenerated over
                   10,000 designs and applied a CPIO sub-area bonus to optimize
