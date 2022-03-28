@@ -23,7 +23,7 @@
                 <iframe
                   width="580"
                   height="315"
-                  src="https://www.youtube.com/embed/onFOGFiA0xg&rel=0"
+                  src="https://www.youtube.com/embed/w3DQZLwO4h4?&rel=0"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
@@ -35,10 +35,12 @@
                   Welcome To Zenerate!
                 </p>
                 <p class="text-content">
-                  Based on one of the hottest sites in L.A. we zenerated over
-                  10,000 designs and applied a CPIO sub-area bonus to optimize
-                  project financing. Within the report you will see our
-                  suggested top three solutions based on different unit mixes.
+                  <span>The first of a four part series.&nbsp;</span>
+                  <span> In this tutorial&nbsp;</span>
+                  <span>we cover&nbsp;</span>
+                  <span> the main features of&nbsp;</span>
+                  <span> Zenerate&nbsp;</span>
+                  <span> and where to find them!</span>
                 </p>
               </div>
             </div>
@@ -48,7 +50,7 @@
                   type="text/html"
                   width="580"
                   height="315"
-                  src="https://www.youtube.com/embed/f7JFBwjXI8I?rel=0"
+                  src="https://www.youtube.com/embed/hmESX7bTrXY?&rel=0"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; "
@@ -61,9 +63,15 @@
                   Site Search
                 </p>
                 <p class="text-content">
-                  Read Zenerate’s case study project about high-rise residential
-                  condominium in Seoul to learn more about our surprising
-                  insights!
+                  <span>It's time to get Zenerating!&nbsp;</span>
+                  <span> But first&nbsp;</span>
+                  <span> you must&nbsp;</span>
+                  <span> scout for&nbsp;</span>
+                  <span> sites&nbsp;</span>
+                  <span> and you can do&nbsp;</span>
+                  <span> that&nbsp;</span>
+                  <span> by using&nbsp;</span>
+                  <span>the Site Search feature.</span>
                 </p>
               </div>
             </div>
@@ -73,7 +81,7 @@
                   type="text/html"
                   width="580"
                   height="315"
-                  src="https://www.youtube.com/embed/f7JFBwjXI8I?&rel=0"
+                  src="https://www.youtube.com/embed/rc3n5uKjNaU?&rel=0"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; "
@@ -86,9 +94,15 @@
                   Volume Study
                 </p>
                 <p class="text-content">
-                  Read to learn how CEO Benji Shin<br />
-                  collaborated with the USC housing team to transform and
-                  streamline the architectural design process.
+                  <span>Before digging&nbsp;</span>
+                  <span> too deep&nbsp;</span>
+                  <span> into a certain site,&nbsp;</span>
+                  <span> it's best&nbsp;</span>
+                  <span> to perform&nbsp;</span>
+                  <span> a back of&nbsp;</span>
+                  <span> the envelope&nbsp;</span>
+                  <span> type&nbsp;</span>
+                  <span> calculation.</span>
                 </p>
               </div>
             </div>
@@ -98,7 +112,7 @@
                   type="text/html"
                   width="580"
                   height="315"
-                  src="https://www.youtube.com/embed/f7JFBwjXI8I?&rel=0"
+                  src="https://www.youtube.com/embed/_qYg-q6tN78?&rel=0"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; "
@@ -111,9 +125,14 @@
                   Deep Search
                 </p>
                 <p class="text-content">
-                  Read to learn how CEO Benji Shin<br />
-                  collaborated with the USC housing team to transform and
-                  streamline the architectural design process.
+                  <span>The flagship feature&nbsp;</span>
+                  <span> of Zenerate.&nbsp;</span>
+                  <span> Once you use it,&nbsp;</span>
+                  <span> you'll never think&nbsp;</span>
+                  <span>about&nbsp;</span>
+                  <span> starting&nbsp;</span>
+                  <span> a project&nbsp;</span>
+                  <span> without Zenerate again.</span>
                 </p>
               </div>
             </div>
@@ -310,9 +329,7 @@ const goToApp = () => {
         .video-wrapper {
           @include relative();
           width: 780px;
-          // width: 100%;
-          // height: 100%;
-          height: 440px;
+          height: 380px;
           border-top-left-radius: 20px;
           border-top-right-radius: 20px;
           position: relative;
@@ -322,6 +339,7 @@ const goToApp = () => {
 
           iframe {
             @include absolute(top 0px left 0px);
+            display: block;
             width: 100%;
             height: 100%;
             border-top-left-radius: 20px;
@@ -330,7 +348,7 @@ const goToApp = () => {
 
           @include en-tablet {
             width: 580px;
-            height: 350px;
+            height: 284px;
             iframe {
               @include absolute(top 0px left 0px);
               width: 100%;
@@ -342,12 +360,12 @@ const goToApp = () => {
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
             width: calc(100vw - 16px);
-            height: 63vw;
+            height: 46.6vw;
             iframe {
-              border-top-left-radius: 0px;
-              border-top-right-radius: 0px;
               width: 100%;
               height: 100%;
+              border-top-left-radius: 0px;
+              border-top-right-radius: 0px;
             }
           }
         }
@@ -398,11 +416,19 @@ const goToApp = () => {
             }
           }
           .text-content {
-            @include regular(15);
-            line-height: 21px;
+            @include regular(17);
+            line-height: 24px;
+            max-width: 600px;
+
+            @include en-tablet {
+              @include regular(15);
+              line-height: 21px;
+              max-width: 545px;
+            }
 
             @include en-mobile {
               @include regular(13);
+              max-width: 300px;
               line-height: 19px;
               padding-bottom: 12px;
             }

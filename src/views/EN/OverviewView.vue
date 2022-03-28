@@ -6,7 +6,7 @@
           <div class="title-wrapper">
             <h2 class="title">Zenerate Product Overview</h2>
             <p class="maincopy">
-              You’ll never want to start a project<br />
+              You'll never want to start a project<br />
               without <strong>Zenerate</strong> again.
             </p>
 
@@ -29,7 +29,11 @@
                 </p>
               </div>
               <div class="video-wrapper">
-                <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
+                <img
+                  class="img-map"
+                  src="/en/overview/overview_site.gif"
+                  alt=""
+                />
               </div>
               <div class="text-wrapper">
                 <p class="text-title hidden-en-mobile hidden-en-tablet">
@@ -104,7 +108,11 @@
                 </p>
               </div>
               <div class="video-wrapper">
-                <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
+                <img
+                  class="img-map"
+                  src="/en/overview/overview_volume.gif"
+                  alt=""
+                />
               </div>
               <div class="text-wrapper">
                 <div class="text-content volume">
@@ -144,7 +152,11 @@
                 </p>
               </div>
               <div class="video-wrapper">
-                <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
+                <img
+                  class="img-map"
+                  src="/en/overview/overview_deep.gif"
+                  alt=""
+                />
               </div>
               <div class="text-wrapper half">
                 <div class="text-content deep">
@@ -201,7 +213,11 @@
                 </p>
               </div>
               <div class="video-wrapper">
-                <img class="img-map" src="/en/img/landing_profit.gif" alt="" />
+                <img
+                  class="img-map"
+                  src="/en/overview/overview_zoning.gif"
+                  alt=""
+                />
               </div>
               <div class="text-wrapper half">
                 <div class="text-content">
@@ -262,10 +278,13 @@
                   <span
                     >If you want to subscribe to our updates lists&nbsp;</span
                   >
-                  <router-link :to="{ name: 'SignUp' }" class="blue"
+                  <router-link
+                    :to="{ name: 'SignUp' }"
+                    target="_blank"
+                    class="blue"
                     >click here.&nbsp;
                   </router-link>
-                  <span> We’ll send you an update everytime&nbsp;</span>
+                  <span> We'll send you an update everytime&nbsp;</span>
                   <span> we launch in a new city or district.</span>
                 </p>
 
@@ -274,10 +293,13 @@
                 >
                   <span>If you want to subscribe to</span><br />
                   <span>our updates list&nbsp;</span>
-                  <router-link :to="{ name: 'SignUp' }" class="blue"
+                  <router-link
+                    :to="{ name: 'SignUp' }"
+                    target="_blank"
+                    class="blue"
                     >click here.&nbsp;
                   </router-link>
-                  <span> We’ll send you an update everytime&nbsp;</span><br />
+                  <span> We'll send you an update everytime&nbsp;</span><br />
                   <span> we launch in a new city or district.</span>
                 </p>
               </div>
@@ -627,6 +649,7 @@ const goToApp = () => {
 
         .video-wrapper {
           img {
+            display: block;
             width: 980px;
             height: 552px;
             object-fit: cover;

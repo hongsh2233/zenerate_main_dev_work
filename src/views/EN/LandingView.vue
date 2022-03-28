@@ -104,8 +104,10 @@
           <i class="material-icons"> east </i>
         </router-link>
       </div>
-      <div class="content-image-wrapper">
-        <img src="/en/img/landing_solution.png" alt="solution" />
+      <div class="content-image-wrapper first">
+        <video loop muted autoplay playsinline>
+          <source src="/en/landing_solution.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
 
@@ -227,8 +229,10 @@
           </div>
         </div>
       </div>
-      <div class="content-image-wrapper">
-        <img src="/en/img/landing_solution.png" alt="solution" />
+      <div class="content-image-wrapper second">
+        <video loop muted autoplay playsinline>
+          <source src="/en/landing_setup.mp4" type="video/mp4" />
+        </video>
       </div>
     </div>
 
@@ -283,10 +287,10 @@
         <p class="zenerate-launch-desc hidden-en-mobile">
           <span>If you want to subscribe to our updates lists&nbsp;</span>
 
-          <router-link :to="{ name: 'SignUp' }" class="blue"
+          <router-link :to="{ name: 'SignUp' }" target="_blank" class="blue"
             >click here.&nbsp;
           </router-link>
-          <span>We’ll send you an update everytime&nbsp;</span>
+          <span>We'll send you an update everytime&nbsp;</span>
           <span>we launch in a new city or district.</span>
         </p>
 
@@ -296,10 +300,10 @@
           <span>to&nbsp;</span>
           <span>our updates&nbsp;</span>
           <span>list&nbsp;</span>
-          <router-link :to="{ name: 'SignUp' }" class="blue"
+          <router-link :to="{ name: 'SignUp' }" target="_blank" class="blue"
             >click here.&nbsp;
           </router-link>
-          <span>We’ll send&nbsp;</span>
+          <span>We'll send&nbsp;</span>
           <span>you&nbsp;</span>
           <span>an update&nbsp;</span>
           <span>everytime&nbsp;</span>
@@ -732,11 +736,16 @@ const toContactForm = () => {
   }
 
   .content-image-wrapper {
+    @include elevation-5;
     max-width: 100%;
     margin-top: 34px;
+    border-radius: 10px;
+    overflow-y: hidden;
 
-    img {
+    video {
+      display: block;
       width: 100%;
+      border-radius: 10px;
     }
   }
 }

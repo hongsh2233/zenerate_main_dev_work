@@ -22,7 +22,7 @@
                       class="navigation-link sub"
                       :class="nav.to"
                       v-if="nav.to === 'en-pricing'"
-                      href="http://dev.propzen/?source=zenerate&target=subscription"
+                      href="http://app.zenerate.ai/?source=zenerate&target=subscription"
                       @click="close"
                     >
                       <component :is="nav.icon" :width="30" :height="30" />
