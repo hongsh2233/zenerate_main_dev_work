@@ -19,7 +19,7 @@
               <template v-for="(secondary, idx) in primary.children" :key="idx">
                 <a
                   v-if="secondary.to === 'en-pricing'"
-                  href="https://app.zenerate.ai/?source=zenerate&target=subscription"
+                  href="https://propzen.zenerate.ai/?source=zenerate&target=subscription"
                 >
                   <component :is="secondary.icon" :width="20" :height="20" />
 
