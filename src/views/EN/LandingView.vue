@@ -105,8 +105,19 @@
         </router-link>
       </div>
       <div class="content-image-wrapper first">
-        <video loop muted autoplay playsinline>
-          <source src="/en/landing_solution.mp4" type="video/mp4" />
+        <video
+          loop
+          muted
+          autoplay
+          playsinline
+          id="solution-video"
+          data-src="/en/landing_solution_medium.mp4"
+        >
+          <source
+            data-src="/en/landing_solution_big.mp4"
+            data-mw="1600"
+            type="video/mp4"
+          />
         </video>
       </div>
     </div>
@@ -230,8 +241,19 @@
         </div>
       </div>
       <div class="content-image-wrapper second">
-        <video loop muted autoplay playsinline>
-          <source src="/en/landing_setup.mp4" type="video/mp4" />
+        <video
+          loop
+          muted
+          autoplay
+          playsinline
+          id="setup-video"
+          data-src="/en/landing_setup_medium.mp4"
+        >
+          <source
+            data-src="/en/landing_setup_big.mp4"
+            data-mw="1600"
+            type="video/mp4"
+          />
         </video>
       </div>
     </div>
@@ -285,7 +307,7 @@
       </div>
       <div class="zenerate-launch-desc-wrapper">
         <p class="zenerate-launch-desc hidden-en-mobile">
-          <span>If you want to subscribe to our updates lists&nbsp;</span>
+          <span>If you want to subscribe to our updates list&nbsp;</span>
 
           <router-link :to="{ name: 'SignUp' }" target="_blank" class="blue"
             >click here.&nbsp;
@@ -319,13 +341,14 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 import Arrow from '/Components/EN/Arrow.vue'
 import PartnersList from '/Constants/partners'
 import APIService from '/Services/api'
 import { useGtag } from 'vue-gtag-next'
+import VideoResponser from '/Utils/videoResponser'
 import Store from '/Store/index'
 // const fullpage = computed(() => Store.state.root.FullPage)
 // onMounted(async () => {
@@ -360,6 +383,13 @@ const toContactForm = () => {
     name: 'en-contact',
   })
 }
+
+const video1 = ref(null)
+const video2 = ref(null)
+onMounted(() => {
+  video1.value = new VideoResponser('#solution-video')
+  video2.value = new VideoResponser('#setup-video')
+})
 </script>
 <style lang="scss" scoped>
 .arrow-blue {

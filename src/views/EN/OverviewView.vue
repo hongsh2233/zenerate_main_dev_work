@@ -276,7 +276,7 @@
               <div class="zenerate-launch-desc-wrapper">
                 <p class="zenerate-launch-desc hidden-en-mobile">
                   <span
-                    >If you want to subscribe to our updates lists&nbsp;</span
+                    >If you want to subscribe to our updates list&nbsp;</span
                   >
                   <router-link
                     :to="{ name: 'SignUp' }"
