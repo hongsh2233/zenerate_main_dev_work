@@ -111,6 +111,7 @@
           autoplay
           playsinline
           id="solution-video"
+          poster="/en/landing_solution_poster.jpg"
           data-src="/en/landing_solution_medium.mp4"
         >
           <source
@@ -247,6 +248,7 @@
           autoplay
           playsinline
           id="setup-video"
+          poster="/en/landing_setup_poster.jpg"
           data-src="/en/landing_setup_medium.mp4"
         >
           <source

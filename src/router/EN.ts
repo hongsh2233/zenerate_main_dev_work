@@ -13,6 +13,7 @@ import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
 import SignUp from '/Views/EN/SignUpView.vue'
 import HowToUseView from '/Views/EN/HowToUseView.vue'
 import OverviewView from '/Views/EN/OverviewView.vue'
+import FAQView from '/Views/EN/FAQView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -70,6 +71,12 @@ const ENRoute: RouteRecordRaw = {
       path: '/contact',
       name: 'en-contact',
       component: ContactView,
+    },
+    {
+      path: '/faq',
+      name: 'en-faq',
+      component: FAQView,
+      children: [],
     },
     {
       path: '/pre-launch-signup',

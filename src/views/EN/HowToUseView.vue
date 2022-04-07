@@ -23,9 +23,10 @@
                 <iframe
                   width="580"
                   height="315"
-                  src="https://www.youtube.com/embed/w3DQZLwO4h4?&rel=0"
+                  src="https://www.youtube.com/embed/w3DQZLwO4h4?&rel=0&enablejsapi=1&origin=https://www.zenerate.ai"
+                  title="Welcome Guide"
                   frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; autoplay;"
                   allowfullscreen
                 ></iframe>
               </div>
@@ -50,8 +51,8 @@
                   type="text/html"
                   width="580"
                   height="315"
-                  src="https://www.youtube.com/embed/hmESX7bTrXY?&rel=0"
-                  title="YouTube video player"
+                  src="https://www.youtube.com/embed/hmESX7bTrXY?&rel=0&enablejsapi=1&origin=https://www.zenerate.ai"
+                  title="Site Search Guide"
                   frameborder="0"
                   allow="accelerometer; autoplay; "
                   allowfullscreen
@@ -81,8 +82,8 @@
                   type="text/html"
                   width="580"
                   height="315"
-                  src="https://www.youtube.com/embed/rc3n5uKjNaU?&rel=0"
-                  title="YouTube video player"
+                  src="https://www.youtube.com/embed/rc3n5uKjNaU?&rel=0&enablejsapi=1&origin=https://www.zenerate.ai"
+                  title="Volume Study Guide"
                   frameborder="0"
                   allow="accelerometer; autoplay; "
                   allowfullscreen
@@ -112,8 +113,8 @@
                   type="text/html"
                   width="580"
                   height="315"
-                  src="https://www.youtube.com/embed/_qYg-q6tN78?&rel=0"
-                  title="YouTube video player"
+                  src="https://www.youtube.com/embed/_qYg-q6tN78?&rel=0&enablejsapi=1&origin=https://www.zenerate.ai"
+                  title="Deep Search Guide"
                   frameborder="0"
                   allow="accelerometer; autoplay; "
                   allowfullscreen
@@ -177,6 +178,21 @@ const goToApp = () => {
     event_label: '(not yet)',
   })
 }
+
+const { meta } = useMeta({
+  title: 'How To Use | Zenerate',
+  description:
+    'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
+  htmlAttrs: { lang: 'en' },
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
+    },
+  ],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/how-to-use' }],
+})
 </script>
 <style lang="scss" scoped>
 .section-case-studies {

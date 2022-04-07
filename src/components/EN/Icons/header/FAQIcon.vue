@@ -2,7 +2,6 @@
   <svg
     :width="props.width"
     :height="props.height"
-    :viewBox="`0 0 ${props.width + 6} ${props.height + 6}`"
     fill="none"
     :viewBox="props.width === 30 ? `0 0 32 32` : `0 0 30 30`"
     perserveAspectRatio="none"

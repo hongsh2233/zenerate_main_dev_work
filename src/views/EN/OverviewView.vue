@@ -31,8 +31,14 @@
               <div class="video-wrapper">
                 <img
                   class="img-map"
-                  src="/en/overview/overview_site.gif"
-                  alt=""
+                  srcset="
+                    /en/overview/overview_site_720.gif   720w,
+                    /en/overview/overview_site_1200.gif 1200w
+                  "
+                  sizes="(max-width: 640px) 100%,
+                  (max-width: 1200px) 628px"
+                  src="/en/overview/overview_site_1200.gif"
+                  alt="site search"
                 />
               </div>
               <div class="text-wrapper">
@@ -110,8 +116,14 @@
               <div class="video-wrapper">
                 <img
                   class="img-map"
-                  src="/en/overview/overview_volume.gif"
-                  alt=""
+                  srcset="
+                    /en/overview/overview_volume_720.gif   720w,
+                    /en/overview/overview_volume_1200.gif 1200w
+                  "
+                  sizes="(max-width: 640px) 100%,
+                  (max-width: 1200px) 628px"
+                  src="/en/overview/overview_volume_1200.gif"
+                  alt="volume study"
                 />
               </div>
               <div class="text-wrapper">
@@ -154,8 +166,14 @@
               <div class="video-wrapper">
                 <img
                   class="img-map"
-                  src="/en/overview/overview_deep.gif"
-                  alt=""
+                  srcset="
+                    /en/overview/overview_deep_720.gif   720w,
+                    /en/overview/overview_deep_1200.gif 1200w
+                  "
+                  sizes="(max-width: 640px) 100%,
+                  (max-width: 1200px) 628px"
+                  src="/en/overview/overview_deep_1200.gif"
+                  alt="deep search"
                 />
               </div>
               <div class="text-wrapper half">
@@ -215,8 +233,14 @@
               <div class="video-wrapper">
                 <img
                   class="img-map"
-                  src="/en/overview/overview_zoning.gif"
-                  alt=""
+                  srcset="
+                    /en/overview/overview_zoning_720.gif   720w,
+                    /en/overview/overview_zoning_1200.gif 1200w
+                  "
+                  sizes="(max-width: 640px) 100%,
+                  (max-width: 1200px) 628px"
+                  src="/en/overview/overview_zoning_1200.gif"
+                  alt="In-Depth Zoning Analysis"
                 />
               </div>
               <div class="text-wrapper half">
@@ -380,6 +404,21 @@ const goToApp = () => {
     event_label: '(not yet)',
   })
 }
+
+const { meta } = useMeta({
+  title: 'Overview | Zenerate',
+  description:
+    'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
+  htmlAttrs: { lang: 'en' },
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
+    },
+  ],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/overview' }],
+})
 </script>
 <style lang="scss" scoped>
 .section-case-studies {

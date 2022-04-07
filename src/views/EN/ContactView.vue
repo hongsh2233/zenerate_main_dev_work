@@ -125,7 +125,7 @@
                 <span>If you do not receive a reply&nbsp;</span>
                 <span>within 2 business days</span> <br />
                 please email
-                <a href="mailto: 'contact@zenerate.ai'">contact@zenerate.ai </a>
+                <a href="mailto: contact@zenerate.ai">contact@zenerate.ai </a>
               </p>
               <router-link class="link-button" :to="{ name: 'en-overview' }">
                 View Product Overview
