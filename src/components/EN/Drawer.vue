@@ -18,22 +18,11 @@
               <transition name="slide-up">
                 <div v-show="toggleTab[tab.key]" class="navigation-link-list">
                   <template v-for="(nav, idx) in tab.children" :key="idx">
-                    <a
-                      class="navigation-link sub"
-                      :class="nav.to"
-                      v-if="nav.to === 'en-pricing'"
-                      href="http://app.zenerate.ai/?source=zenerate&target=subscription"
-                      @click="close"
-                    >
-                      <component :is="nav.icon" :width="30" :height="30" />
-                      {{ nav.title }}
-                    </a>
                     <router-link
                       :to="{ name: nav.to }"
                       class="navigation-link sub"
                       :class="nav.to"
                       @click="close"
-                      v-else
                     >
                       <component :is="nav.icon" :width="30" :height="30" />
 

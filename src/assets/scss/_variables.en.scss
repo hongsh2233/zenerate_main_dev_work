@@ -352,11 +352,14 @@ $breakpoint-480: 480px;
   line-height: 16px;
 }
 
-/*************** mew colors ***************/
+/*************** add colors ***************/
 $text-darken: #000729;
 $text-darken-8: rgba($text-darken, 0.8);
 $text-darken-7: rgba($text-darken, 0.7);
 $text-darken-5: rgba($text-darken, 0.5);
+$text-darken-3: rgba($text-darken, 0.3);
+
+$data-alert: #ff7081;
 
 /*************** colors ***************/
 $core: #5c6dff;
@@ -367,6 +370,8 @@ $footer: #f4f3fe;
 $text-darkgrey: #333333;
 $text-grey: #707070;
 $text-lightgrey: #888b9a;
+
+$bg-hover: rgba($core, 0.1);
 
 $cr-fields-form: #ffffff;
 $cr-fields-text: #202835;

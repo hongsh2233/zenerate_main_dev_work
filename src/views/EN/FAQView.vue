@@ -214,12 +214,13 @@
                 class="tab-contents-body"
               >
                 <p class="tab-content">
-                  If you feel Zenerate is not a great fit you can cancel anytime
-                  within 'My Page'. You will be able to use Zenerate until the
-                  end of the billing period. <br />Ex. Purchased/ or charge
+                  If you feel Zenerate is not a great fit, you can cancel
+                  anytime within 'My Page'. You will be able to use Zenerate
+                  until the end of the billing period. <br />Ex. Purchased/ or
+                  charge
                 </p>
                 <p class="tab-content">
-                  When you cancel we would greatly appreciate your feedback as
+                  When you cancel, we would greatly appreciate your feedback as
                   it would help our mission in saving everyone in the real
                   estate development industry a lot of time and money to focus
                   on what they do best instead.
