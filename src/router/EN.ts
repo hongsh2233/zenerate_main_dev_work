@@ -14,6 +14,8 @@ import SignUp from '/Views/EN/SignUpView.vue'
 import HowToUseView from '/Views/EN/HowToUseView.vue'
 import OverviewView from '/Views/EN/OverviewView.vue'
 import FAQView from '/Views/EN/FAQView.vue'
+import PricingView from '/Views/EN/PricingView.vue'
+import DemoSignUpView from '/Views/EN/DemoSignUpView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -50,11 +52,11 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-how-to-use',
       component: HowToUseView,
     },
-    // {
-    //   path: '/pricing',
-    //   name: 'en-pricing',
-    //   component: ServiceView,
-    // },
+    {
+      path: '/pricing',
+      name: 'en-pricing',
+      component: PricingView,
+    },
     {
       path: '/career',
       name: 'en-career',
@@ -83,6 +85,12 @@ const ENRoute: RouteRecordRaw = {
       name: 'SignUp',
       component: SignUp,
     },
+    {
+      path: '/demo-signup',
+      name: 'en-demo',
+      component: DemoSignUpView,
+    },
+
     {
       path: '/terms-and-conditions',
       name: 'en-terms-and-conditions',
