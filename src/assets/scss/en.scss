@@ -7,9 +7,15 @@
     sans-serif !important;
 }
 .section {
+  &:first-child {
+    // margin-top: 40px;
+    margin-top: 76px;
+  }
+
   @include en-tablet {
     &:first-child {
-      margin-top: 40px;
+      // margin-top: 40px;
+      margin-top: 76px;
     }
     &:last-child {
       margin-bottom: 0px;
@@ -17,7 +23,8 @@
   }
   @include en-mobile {
     &:first-child {
-      margin-top: 20px;
+      // margin-top: 20px;
+      margin-top: 46px;
     }
     &:last-child {
       margin-bottom: 0px;

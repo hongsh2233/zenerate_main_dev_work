@@ -1,5 +1,5 @@
 <template>
-  <div class="header-wrapper" id="header">
+  <div class="header-wrapper banner" id="header">
     <div class="header-inner">
       <div
         class="header-logo hover-pointer"
@@ -169,6 +169,10 @@ const toggleNav = (primary: String) => {
   z-index: 1000;
   background: $white;
   box-shadow: 0px 2px 8px rgb(142 141 208 / 10%);
+
+  &.banner {
+    top: 35px;
+  }
 
   @include en-desktop {
     height: 80px;

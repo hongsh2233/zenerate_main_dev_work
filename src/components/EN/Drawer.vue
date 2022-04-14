@@ -158,6 +158,7 @@ const close = () => {
 .drawer-wrapper {
   @include relative;
   z-index: 999;
+
   .drawer-dimmer {
     @include fixed(left 0 top 0);
     width: 100vw;
@@ -166,12 +167,19 @@ const close = () => {
     z-index: 1;
   }
   .drawer-wrapper {
-    @include fixed(top 0px right -2px);
+    // banner top
+    @include fixed(top 36px right -2px);
     @include flex($dir: column, $justify: flex-end);
     width: calc(100% + 8px);
-    height: 100%;
+    // height: 100%;
+    height: calc(100% - 36px);
     background-color: $white;
     z-index: 2;
+
+    @include en-mobile {
+      // banner top
+      height: calc(100% - 36px);
+    }
 
     .drawer-logo {
       @include flex($justify: space-between);

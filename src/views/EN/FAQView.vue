@@ -1,5 +1,5 @@
 <template>
-  <section class="section-faq">
+  <section class="section section-faq">
     <div class="faq-wrapper">
       <div class="faq-header">
         <h2>FAQ</h2>
@@ -114,7 +114,7 @@
                   contact your account manager or write to
                   <a class="blue" href="mailto: billing@zenerate.ai"
                     >billing@zenerate.ai</a
-                  >.
+                  >
                 </p>
               </div>
             </transition>
@@ -141,7 +141,7 @@
                   plan beforehand please email
                   <a class="blue" href="mailto: billing@zenerate.ai"
                     >billing@zenerate.ai</a
-                  >.
+                  >
                 </p>
               </div>
             </transition>
@@ -520,7 +520,7 @@ const toggleAccordion = (tab, idx) => {
     @include flex();
     justify-content: center;
     align-items: flex-start;
-    padding: 160px 0px;
+    padding: 140px 0px;
 
     @include en-tablet {
       flex-direction: column;
@@ -535,7 +535,7 @@ const toggleAccordion = (tab, idx) => {
   .faq-header {
     @include vertical-center();
     justify-content: flex-start;
-    margin: 0px 150px 50px 0px;
+    margin: 0px 120px 50px 0px;
 
     @include en-mobile {
       margin: 0px 30px 16px;

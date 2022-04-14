@@ -12,12 +12,18 @@
           </p>
         </div>
       </div>
-      <div
-        class="calendly-inline-widget"
-        id="calendly"
-        data-url="https://calendly.com/zenerate/30min?month=2022-04?hide_gdpr_banner=1"
-        style="position: relative; min-width: 320px"
-      ></div>
+      <div class="calendly-wrapper">
+        <div
+          class="calendly-inline-widget"
+          id="calendly"
+          data-url="https://calendly.com/zenerate/30min?hide_gdpr_banner=1?month=2022-04"
+          style="position: relative; min-width: 320px"
+        ></div>
+      </div>
+      <i class="material-icons-outlined demo-icon">calendar_month </i>
+      <button type="button" class="demo-button" @click="() => goCanlendly()">
+        SIGN UP FOR A DEMO
+      </button>
 
       <div class="banner-wrapper">
         <p class="banner-title">Can't find a time that works for you?</p>
@@ -64,27 +70,79 @@ const toContactForm = () => {
     name: 'en-contact',
   })
 }
+
+const goCanlendly = () => {
+  Calendly.initPopupWidget({
+    url: 'https://calendly.com/zenerate/30min?hide_gdpr_banner=1?month=2022-04',
+  })
+  return false
+}
 </script>
 <style lang="scss" scoped>
-#calendly {
+.calendly-wrapper {
   width: 100%;
-  height: 764px;
-  margin-bottom: 68px;
+  height: auto;
 
-  @media only screen and (min-width: 1000px) and (max-width: 1199px) {
-    height: 764px;
-  }
-
-  @media only screen and (min-width: 640px) and (max-width: 999px) {
-    height: 1310px;
-    margin-bottom: 60px;
+  @include en-tablet {
+    display: none;
   }
 
   @include en-mobile {
-    height: 1330px;
+    display: none;
+  }
+
+  #calendly {
+    width: 100%;
+    height: 796px;
+    margin-bottom: 68px;
+
+    @media only screen and (min-width: 1000px) and (max-width: 1199px) {
+      height: 796px;
+    }
+
+    @media only screen and (min-width: 640px) and (max-width: 999px) {
+      height: 1180px;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.demo-icon {
+  @include medium(96);
+  margin-bottom: 28px;
+  color: #000729;
+
+  @include en-desktop {
+    display: none;
+  }
+}
+
+.demo-button {
+  @include semi-bold(16);
+  width: 260px;
+  height: 60px;
+  background-color: $navigation;
+  color: $white;
+  border-radius: 5px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 74px;
+
+  @include en-desktop {
+    display: none;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $gray-100;
+
+  &.last {
     margin-bottom: 60px;
   }
 }
+
 .section-demo {
   @include relative;
   width: 100%;

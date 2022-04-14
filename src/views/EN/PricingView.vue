@@ -39,6 +39,14 @@
                     </p>
                   </div>
                 </template>
+                <div class="basic-option-guide">
+                  <i class="material-icons-outlined">info</i>
+                  <p>
+                    <strong>Save feature excluded</strong><br />
+                    for Site Search & Volume<br />
+                    Study in Basic Plan
+                  </p>
+                </div>
                 <button
                   type="button"
                   class="action-button hidden-en-desktop hidden-en-tablet"
@@ -137,7 +145,12 @@
             <p class="price-plan-item-banner">RECOMMENDED</p>
 
             <div class="pricing-plan-top">
-              <h4 class="pricing-plan-title">Premium</h4>
+              <p class="pricing-plan-title">
+                Premium
+                <span class="icon-wrapper"
+                  ><i class="material-icons">checked</i></span
+                >
+              </p>
               <p class="pricing-plan-info">
                 Full stack feasibility study<br />
                 tool with the addition of<br />
@@ -301,13 +314,7 @@
             <div class="image-wrapper">
               <img
                 class="img-map"
-                srcset="
-                  /en/overview/overview_marketdata_720.gif   720w,
-                  /en/overview/overview_marketdata_1200.gif 1200w
-                "
-                sizes="(max-width: 640px) 100%,
-                  (max-width: 1200px) 628px"
-                src="/en/overview/overview_marketdata_1200.gif"
+                src="/en/overview/overview_marketdata_720.gif"
                 alt="market data"
               />
             </div>
@@ -330,13 +337,7 @@
             <div class="image-wrapper">
               <img
                 class="img-map"
-                srcset="
-                  /en/overview/overview_site_720.gif   720w,
-                  /en/overview/overview_site_1200.gif 1200w
-                "
-                sizes="(max-width: 640px) 100%,
-                  (max-width: 1200px) 628px"
-                src="/en/overview/overview_site_1200.gif"
+                src="/en/overview/overview_site_720.gif"
                 alt="site search"
               />
             </div>
@@ -363,13 +364,7 @@
             <div class="image-wrapper">
               <img
                 class="img-map"
-                srcset="
-                  /en/overview/overview_volume_720.gif   720w,
-                  /en/overview/overview_volume_1200.gif 1200w
-                "
-                sizes="(max-width: 640px) 100%,
-                  (max-width: 1200px) 628px"
-                src="/en/overview/overview_volume_1200.gif"
+                src="/en/overview/overview_volume_720.gif"
                 alt="volume study"
               />
             </div>
@@ -386,6 +381,7 @@
         </div>
 
         <div class="only-plan-wrapper">
+          <div class="recommend-ribbon"></div>
           <div class="title-wrapper">
             <p class="title">
               Only Available in
@@ -416,13 +412,7 @@
                 <div class="image-wrapper">
                   <img
                     class="img-map"
-                    srcset="
-                      /en/overview/overview_deep_720.gif   720w,
-                      /en/overview/overview_deep_1200.gif 1200w
-                    "
-                    sizes="(max-width: 640px) 100%,
-                  (max-width: 1200px) 628px"
-                    src="/en/overview/overview_deep_1200.gif"
+                    src="/en/overview/overview_deep_720.gif"
                     alt="deep search"
                   />
                 </div>
@@ -454,13 +444,7 @@
                 <div class="image-wrapper">
                   <img
                     class="img-map"
-                    srcset="
-                      /en/overview/overview_zoning_720.gif   720w,
-                      /en/overview/overview_zoning_1200.gif 1200w
-                    "
-                    sizes="(max-width: 640px) 100%,
-                  (max-width: 1200px) 628px"
-                    src="/en/overview/overview_zoning_1200.gif"
+                    src="/en/overview/overview_zoning_720.gif"
                     alt="In-Depth Zoning Analysis"
                   />
                 </div>
@@ -480,6 +464,8 @@
           </div>
         </div>
       </div>
+
+      <FAQ />
     </div>
   </section>
   <div class="section section-footer fp-auto-height">
@@ -496,6 +482,7 @@ import { useMeta } from 'vue-meta'
 import { PRICING_PLAN_CONTENTS } from '/Constants/pricePlan'
 import PartnersList from '/Constants/partners'
 import Footer from '/Components/EN/Footer.vue'
+import FAQ from '/Views/EN/FAQView.vue'
 
 const { event } = useGtag()
 const goToApp = () => {
@@ -546,7 +533,7 @@ const togglePlan = (plan) => {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 160px 0px;
+    padding: 110px 0px;
     background: linear-gradient(
       0deg,
       #ffffff 23.95%,
@@ -555,7 +542,7 @@ const togglePlan = (plan) => {
     );
 
     @include en-tablet {
-      padding: 132px 0px;
+      padding: 85px 0px;
     }
     @include en-mobile {
       padding: 98px 0px;
@@ -582,7 +569,7 @@ const togglePlan = (plan) => {
       @include en-tablet {
         align-items: flex-start;
         padding: 0px 10%;
-        margin-bottom: 88px;
+        margin-bottom: 60px;
       }
 
       @include en-mobile {
@@ -668,6 +655,7 @@ const togglePlan = (plan) => {
     box-shadow: 10px 30px 60px rgba(211, 210, 242, 0.4);
 
     @include en-desktop {
+      padding: 32px 30px 36px;
       &:not(:last-child) {
         margin-right: 8px;
       }
@@ -743,6 +731,26 @@ const togglePlan = (plan) => {
       color: $text-darken;
       line-height: 26px;
       text-align: center;
+
+      .icon-wrapper {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 22px;
+        height: 22px;
+        background-color: #c2f9de;
+        border-radius: 50%;
+
+        i {
+          @include bold(18);
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          color: #12bf6c;
+          line-height: 20px;
+          margin: 0px auto;
+        }
+      }
     }
 
     .pricing-plan-subtitle {
@@ -799,12 +807,50 @@ const togglePlan = (plan) => {
       .plan-options {
         @include vertical-center();
         justify-content: flex-start;
-        height: 230px;
+        height: 240px;
+
+        .basic-option-guide {
+          @include flex($justify: center);
+          flex-wrap: nowrap;
+          align-items: center;
+          width: 100%;
+          padding: 10px 0px;
+          margin-top: 24px;
+          border-top: 1px solid $text-darken-3;
+          border-bottom: 1px solid $text-darken-3;
+          p {
+            @include medium(11);
+
+            color: $text-darken-3;
+            line-height: 15px;
+          }
+
+          i {
+            @include medium(20);
+            width: 16px;
+            margin-right: 14px;
+            color: $text-darken-3;
+          }
+
+          @include en-tablet {
+            align-items: flex-start;
+            margin-top: 0px;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            p {
+              padding-top: 4px;
+            }
+          }
+
+          @include en-mobile {
+            margin-top: 8px;
+          }
+        }
 
         @include en-tablet {
-          width: 158px;
+          width: 168px;
           height: auto;
-          margin-right: 32px;
+          margin-right: 24px;
         }
 
         @include en-mobile {
@@ -835,10 +881,16 @@ const togglePlan = (plan) => {
 
         p {
           @include vertical-center();
-          @include medium(12);
-          max-width: 132px;
+          @include medium(13);
+          max-width: 140px;
           padding-top: 2px;
-          line-height: 16px;
+          line-height: 17px;
+
+          @include en-desktop {
+            @include medium(14);
+            max-width: 152px;
+            line-height: 19px;
+          }
         }
         &:nth-child(5) {
           color: $navigation;
@@ -874,7 +926,7 @@ const togglePlan = (plan) => {
     .pricing-plan-bottom {
       @include relative();
       width: 100%;
-      height: 126px;
+      height: 116px;
 
       @include en-tablet {
         width: 188px;
@@ -1167,7 +1219,7 @@ const togglePlan = (plan) => {
       align-items: flex-start;
 
       @include en-desktop {
-        width: 425px;
+        width: 436px;
         min-height: 390px;
 
         &:first-child {
@@ -1176,7 +1228,7 @@ const togglePlan = (plan) => {
       }
 
       @include en-tablet {
-        width: 425px;
+        width: 436px;
       }
 
       @include en-mobile {
@@ -1241,7 +1293,7 @@ const togglePlan = (plan) => {
     }
 
     .image-wrapper {
-      width: calc(100% - 8px);
+      width: 100%;
       margin-bottom: 28px;
       border-radius: 20px;
       filter: drop-shadow(0px 16px 24px rgba(142, 141, 208, 0.12));
@@ -1250,38 +1302,55 @@ const togglePlan = (plan) => {
         display: block;
         width: 100%;
         height: auto;
+        min-height: 240px;
         object-fit: cover;
         pointer-events: none;
         border-radius: 20px;
       }
 
       @include en-desktop {
-        height: 205px;
+        height: 240px;
         overflow-y: hidden;
+        img {
+          min-width: 425px;
+        }
+      }
+
+      @include en-tablet {
+        img {
+          min-width: 428px;
+        }
       }
 
       @include en-mobile {
+        width: calc(100% - 8px);
         margin-bottom: 20px;
+
+        img {
+          min-width: 84vw;
+          min-height: 50vw;
+        }
       }
     }
 
     .contents-desc-wrapper {
       @include medium(18);
       color: $text-darken-7;
-      line-height: 23px;
+      line-height: 25px;
 
       @include en-tablet {
         @include medium(16);
-        line-height: 20px;
+        line-height: 23px;
       }
       @include en-mobile {
         @include medium(14);
-        line-height: 17px;
+        line-height: 20px;
       }
     }
   }
 
   .only-plan-wrapper {
+    @include relative();
     @include vertical-center;
     justify-content: flex-start;
     align-items: center;
@@ -1291,12 +1360,34 @@ const togglePlan = (plan) => {
     margin: 60px auto 0px;
     padding: 54px 0px 68px;
     background-color: #f5f6ff;
+
+    .recommend-ribbon {
+      @include absolute(top -30px right -37px);
+      width: 190px;
+      height: 174px;
+      background-image: url('/en/img/pricing_ribbon_big.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include en-mobile {
+        @include absolute(top -3.8vw right 50%);
+        transform: translateX(50%);
+        background-image: url('/en/img/pricing_ribbon_small.svg');
+        width: 68vw;
+        min-width: 184px;
+        max-width: 284px;
+        height: 11vw;
+        min-height: 32px;
+      }
+    }
+
     .title-wrapper {
       align-items: center;
     }
 
     .contents-top-wrapper {
       @include relative();
+      width: 100%;
     }
 
     @include en-tablet {
@@ -1310,7 +1401,7 @@ const togglePlan = (plan) => {
       width: 100%;
       height: auto;
       margin: 80px 0px 0px;
-      padding: 58px 0px 60px;
+      padding: 80px 0px 60px;
       border-radius: 0px;
 
       .title-wrapper {
@@ -1379,7 +1470,7 @@ const togglePlan = (plan) => {
 
     @include en-mobile {
       top: unset;
-      @include absolute(right 16px bottom 26px);
+      @include absolute(right 8px bottom 28px);
 
       .chip {
         height: 30px;
@@ -1405,9 +1496,18 @@ const togglePlan = (plan) => {
       }
 
       &:not(:last-child) {
-        margin-right: 8px;
+        margin-right: 5px;
       }
     }
+  }
+}
+
+.section-faq {
+  @include en-desktop {
+    max-width: 1200px;
+  }
+  @include en-tablet {
+    max-width: 768px;
   }
 }
 </style>

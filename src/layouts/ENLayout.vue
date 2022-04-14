@@ -1,13 +1,13 @@
 <template>
   <div class="layout-en" id="layout-en">
-    <!-- <div
+    <div
       class="signup-banner"
-      @click="goSignUp"
+      @click="goDemoSignUp"
       v-show="path !== '/pre-launch-signup'"
     >
-      <span>WANT TO KNOW WHEN WE LAUNCH? NOTIFY ME</span>
+      <p>SIGN UP FOR A PRODUCT DEMO</p>
       <i class="material-icons"> east </i>
-    </div> -->
+    </div>
     <Header
       @toggleDrawer="toggleDrawer"
       :showDrawer="showDrawer"
@@ -35,9 +35,9 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 const path = computed(() => route.path)
-const goSignUp = () => {
+const goDemoSignUp = () => {
   toggleDrawer(false)
-  router.push('/pre-launch-signup')
+  router.push('/demo-signup')
 }
 
 const showDrawer = ref(false)
@@ -78,6 +78,10 @@ const toggleDrawer = (flag = undefined) => {
   z-index: 1000;
   letter-spacing: 1pt;
 
+  p {
+    line-height: 14px;
+  }
+
   i {
     @include semi-bold(13);
     @include medium(18);
@@ -86,7 +90,9 @@ const toggleDrawer = (flag = undefined) => {
 
   @include en-mobile {
     @include medium(11);
-    letter-spacing: 0.5pt;
+    padding: 0px 20px;
+    // letter-spacing: 0.5pt;
+    // justify-content: space-between;
 
     i {
       @include medium(11);
