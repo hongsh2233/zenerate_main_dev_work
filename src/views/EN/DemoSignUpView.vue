@@ -20,7 +20,11 @@
           style="position: relative; min-width: 320px"
         ></div>
       </div>
-      <i class="material-icons-outlined demo-icon">calendar_month </i>
+      <img
+        class="demo-icon"
+        src="/en/img/demo_signup_calendar.png"
+        alt="calendar"
+      />
       <button type="button" class="demo-button" @click="() => goCanlendly()">
         SIGN UP FOR A DEMO
       </button>
@@ -108,9 +112,15 @@ const goCanlendly = () => {
 }
 
 .demo-icon {
-  @include medium(96);
-  margin-bottom: 28px;
-  color: #000729;
+  width: 130px;
+  min-height: 120px;
+  margin: 48px 0px;
+
+  @include en-mobile {
+    width: 104px;
+    min-height: 96px;
+    margin: 0px 0px 44px;
+  }
 
   @include en-desktop {
     display: none;
@@ -127,6 +137,10 @@ const goCanlendly = () => {
   line-height: 18px;
   letter-spacing: 1px;
   margin-bottom: 74px;
+
+  @include en-mobile {
+    margin-bottom: 52px;
+  }
 
   @include en-desktop {
     display: none;

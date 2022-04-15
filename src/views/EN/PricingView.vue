@@ -464,8 +464,32 @@
           </div>
         </div>
       </div>
-
       <FAQ />
+      <div class="help-banner-wrapper">
+        <div class="help-banner">
+          <div class="help-banner-text-wrapper">
+            <p class="help-banner-text-title">
+              <span>Can't find the answers&nbsp;</span>
+              <span>you're looking for?</span>
+            </p>
+            <p class="help-banner-text-desc">
+              Our Support Team is standing by to help.<br />
+              <span
+                >Please email
+                <a href="mailto: contact@zenerate.ai">contact@zenerate.ai</a
+                >&nbsp;
+              </span>
+              <span
+                >or fill out the
+                <router-link to="contact">Contact us page.</router-link>
+              </span>
+            </p>
+          </div>
+          <div class="help-banner-image-wrapper">
+            <img src="/en/img/contact_email.png" alt="contact us" />
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <div class="section section-footer fp-auto-height">
@@ -533,7 +557,7 @@ const togglePlan = (plan) => {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 110px 0px;
+    padding: 110px 0px 0px;
     background: linear-gradient(
       0deg,
       #ffffff 23.95%,
@@ -542,10 +566,10 @@ const togglePlan = (plan) => {
     );
 
     @include en-tablet {
-      padding: 85px 0px;
+      padding: 85px 0px 0px;
     }
     @include en-mobile {
-      padding: 98px 0px;
+      padding: 98px 0px 0px;
     }
 
     .pricing-wrapper {
@@ -1508,6 +1532,93 @@ const togglePlan = (plan) => {
   }
   @include en-tablet {
     max-width: 768px;
+  }
+}
+
+.help-banner-wrapper {
+  @include flex($justify: center);
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  background-color: #fafafc;
+
+  @include en-tablet {
+    height: 290px;
+    padding: 0px 60px;
+  }
+
+  @include en-mobile {
+    justify-content: flex-start;
+    height: 320px;
+    padding: 0px 28px;
+  }
+
+  .help-banner {
+    @include flex($justify: space-between);
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+
+    @include en-tablet {
+      max-width: 648px;
+    }
+
+    @include en-mobile {
+      max-width: 320px;
+    }
+  }
+
+  .help-banner-text-wrapper {
+    @include vertical-center();
+
+    .help-banner-text-title {
+      @include semi-bold(24);
+      color: $text-darken;
+      margin-bottom: 8px;
+
+      @include en-tablet {
+        @include semi-bold(22);
+        margin-bottom: 12px;
+        max-width: 300px;
+      }
+
+      @include en-mobile {
+        @include semi-bold(20);
+        margin-bottom: 26px;
+        line-height: 28px;
+      }
+    }
+
+    .help-banner-text-desc {
+      @include medium(17);
+      color: $text-darken;
+      line-height: 23px;
+
+      a {
+        color: $navigation;
+      }
+
+      @include en-tablet {
+        @include medium(14);
+        max-width: 320px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .help-banner-image-wrapper {
+    width: 140px;
+    height: 140px;
+
+    @include en-mobile {
+      display: none;
+    }
+
+    img {
+      width: 140px;
+      height: 140px;
+    }
   }
 }
 </style>
