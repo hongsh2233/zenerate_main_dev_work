@@ -20,14 +20,7 @@
           </div>
 
           <div class="case-wrapper">
-            <div
-              class="case la"
-              data-aos="fade-up"
-              data-aos-offset="-1500"
-              data-aos-delay="300"
-              data-aos-duration="600"
-              data-aos-anchor-placement="top-bottom"
-            >
+            <div class="case la">
               <img src="/en/case_study_la.gif" />
 
               <div class="text-wrapper">
@@ -47,14 +40,7 @@
                 >
               </div>
             </div>
-            <div
-              class="case highrise"
-              data-aos="fade-up"
-              data-aos-offset="-1500"
-              data-aos-delay="300"
-              data-aos-duration="600"
-              data-aos-anchor-placement="top-bottom"
-            >
+            <div class="case highrise">
               <img src="/en/case_study_highrise.gif" />
 
               <div class="text-wrapper">
@@ -75,14 +61,7 @@
                 >
               </div>
             </div>
-            <div
-              class="case"
-              data-aos="fade-up"
-              data-aos-offset="-1500"
-              data-aos-delay="500"
-              data-aos-duration="600"
-              data-aos-anchor-placement="top-bottom"
-            >
+            <div class="case">
               <img
                 data-src="/en/img/service_why2.jpg"
                 src="/en/img/service_why2.jpg"
@@ -351,6 +330,9 @@ const pdfFiles = {
         &:nth-child(2) {
           margin-left: 68px;
           margin-right: 68px;
+          img {
+            object-position: center -74px;
+          }
         }
 
         @include en-tablet {
@@ -372,6 +354,10 @@ const pdfFiles = {
           &:nth-child(2) {
             margin-left: 0px;
             margin-right: 0px;
+
+            img {
+              object-position: center -32px;
+            }
           }
 
           &:not(:first-child) {
@@ -383,6 +369,7 @@ const pdfFiles = {
             min-height: 212px;
             height: 212px;
             object-fit: cover;
+
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
           }
@@ -472,7 +459,7 @@ const pdfFiles = {
 
           .download {
             @include medium(17);
-            color: $main-core;
+            color: $navigation;
 
             i {
               @include medium(16);

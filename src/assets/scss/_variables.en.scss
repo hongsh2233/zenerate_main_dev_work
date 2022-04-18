@@ -352,19 +352,30 @@ $breakpoint-480: 480px;
   line-height: 16px;
 }
 
-/*************** mew colors ***************/
+/*************** add colors ***************/
 $text-darken: #000729;
-$text-darken-5: rgba(#000729, 0.5);
+$text-darken-8: rgba($text-darken, 0.8);
+$text-darken-7: rgba($text-darken, 0.7);
+$text-darken-5: rgba($text-darken, 0.5);
+$text-darken-3: rgba($text-darken, 0.3);
+
+$data-alert: #ff7081;
+
+// grayscale
+// divider, ...
+$gray-100: #ecedf0;
 
 /*************** colors ***************/
-$main-blue: #5c6dff;
-$main-core: #4848ff;
+$core: #5c6dff;
+$navigation: #4d49f4;
 $white: #ffffff;
 $black: #161616;
 $footer: #f4f3fe;
 $text-darkgrey: #333333;
 $text-grey: #707070;
 $text-lightgrey: #888b9a;
+
+$bg-hover: rgba($core, 0.1);
 
 $cr-fields-form: #ffffff;
 $cr-fields-text: #202835;
@@ -493,20 +504,20 @@ $bt-secondary-etc: #f6f5ff;
 @mixin button-default-4($width, $height) {
   @include button-default-1($width, $height);
   background: $white;
-  color: $main-blue;
-  border: solid 1px $main-blue;
+  color: $core;
+  border: solid 1px $core;
 }
 
 @mixin button-hover-4($width, $height) {
   @include button-hover-1($width, $height);
-  color: $main-blue;
+  color: $core;
   background: $white;
   transform: none;
 }
 
 @mixin button-pressed-4($width, $height) {
   @include button-pressed-1($width, $height);
-  color: $main-blue;
+  color: $core;
   background: $white;
   transform: none;
 }
@@ -518,12 +529,12 @@ $bt-secondary-etc: #f6f5ff;
 
 @mixin button-hover-gnb {
   @include button-default-gnb;
-  color: $main-blue;
+  color: $core;
 }
 
 @mixin button-pressed-gnb {
   @include button-default-gnb;
-  color: $main-blue;
+  color: $core;
 }
 
 @mixin button-disabled-gnb {
@@ -587,8 +598,24 @@ $bt-secondary-etc: #f6f5ff;
   }
 }
 
+@mixin button-5($width: 240px, $height: 60px) {
+  @include button-default-3($width, $height);
+  &:hover {
+    @include button-hover-3($width, $height);
+    background-color: $navigation;
+    cursor: pointer;
+  }
+  &:active {
+    @include button-pressed-3($width, $height);
+  }
+  &.disabled {
+    @include button-disabled-3($width, $height);
+  }
+}
+
 @mixin button-gnb {
   @include button-default-gnb;
+
   &:hover {
     @include button-hover-gnb;
     cursor: pointer;

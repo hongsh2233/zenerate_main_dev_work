@@ -29,12 +29,12 @@
         <div class="input-select-dropdown" v-show="showDropdown">
           <div
             class="input-select-dropdown-item hover-pointer"
-            v-for="(item: Item, idx) in props.items"
+            v-for="(item, idx) in props.items"
             @click="onSelect(item)"
             @focus="() => blur()"
             :key="idx"
           >
-            <span>{{ props.skipTranslate ? item.label : $t(item.label) }}</span>
+            <span>{{ item['label'] }}</span>
           </div>
         </div>
       </transition>
@@ -106,12 +106,20 @@ watch(showDropdown, (v) => {
 </script>
 <style lang="scss" scoped>
 .input-select-wrapper {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   width: 100%;
   p {
-    @include regular(16);
-    color: rgba($text-grey, 1);
+    @include medium(14);
+    color: $text-darken;
     margin-bottom: 8px;
+
+    @include en-tablet {
+      @include medium(12);
+    }
+
+    @include en-mobile {
+      @include medium(12);
+    }
   }
   .input-select-container {
     height: 42px;
@@ -135,17 +143,34 @@ watch(showDropdown, (v) => {
       align-items: center;
       justify-content: space-between;
       span {
-        @include medium(18);
-        @include mobile {
+        @include medium(17);
+        @include en-tablet {
+          @include medium(14);
+        }
+        @include en-mobile {
           @include medium(14);
         }
         &.placeholder {
-          color: $bt-secondary-stroke-disabled;
+          @include regular(17);
+          color: rgba($black-1, 0.4);
+          @include en-tablet {
+            @include regular(14);
+          }
+          @include en-mobile {
+            @include regular(14);
+          }
         }
       }
       i {
+        @include regular(32);
         color: rgba(196, 196, 196, 0.6);
-        font-size: 32px;
+
+        @include en-tablet {
+          @include regular(28);
+        }
+        @include en-mobile {
+          @include regular(28);
+        }
       }
     }
   }
@@ -156,11 +181,16 @@ watch(showDropdown, (v) => {
     @include absolute(left -1px top 36px);
     background: $white;
     .input-select-dropdown-item {
+      @include regular(17);
       width: 100%;
-      @include medium(18);
-      padding: 4px 12px;
-      @include mobile {
-        @include medium(14);
+      padding: 7px 12px;
+      @include en-tablet {
+        @include regular(14);
+        padding: 4px 12px;
+      }
+      @include en-mobile {
+        @include regular(14);
+        padding: 4px 12px;
       }
       &:hover {
         color: $main;

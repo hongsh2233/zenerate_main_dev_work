@@ -2,7 +2,7 @@ import type { RouteRecordRaw } from 'vue-router'
 import ENLayout from '/Layouts/ENLayout.vue'
 
 import AboutView from '/Views/EN/AboutView.vue'
-import CaseStudiesView from '../views/EN/CaseStudiesView.vue'
+import CaseStudiesView from '/Views/EN/CaseStudiesView.vue'
 import CareerView from '/Views/EN/CareerView.vue'
 import CareerContent from '/src/components/EN/CareerContent.vue'
 import ContactView from '/Views/EN/ContactView.vue'
@@ -11,6 +11,11 @@ import ServiceView from '/Views/EN/ServiceView.vue'
 import TermsAndConditionsView from '/Views/EN/TermsAndConditionsView.vue'
 import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
 import SignUp from '/Views/EN/SignUpView.vue'
+import HowToUseView from '/Views/EN/HowToUseView.vue'
+import OverviewView from '/Views/EN/OverviewView.vue'
+import FAQView from '/Views/EN/FAQView.vue'
+import PricingView from '/Views/EN/PricingView.vue'
+import DemoSignUpView from '/Views/EN/DemoSignUpView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -23,6 +28,11 @@ const ENRoute: RouteRecordRaw = {
       component: LandingView,
     },
     {
+      path: '/overview',
+      name: 'en-overview',
+      component: OverviewView,
+    },
+    {
       path: '/about',
       name: 'en-about',
       component: AboutView,
@@ -32,11 +42,20 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-case-studies',
       component: CaseStudiesView,
     },
-
     {
       path: '/services',
       name: 'en-services',
       component: ServiceView,
+    },
+    {
+      path: '/how-to-use',
+      name: 'en-how-to-use',
+      component: HowToUseView,
+    },
+    {
+      path: '/pricing',
+      name: 'en-pricing',
+      component: PricingView,
     },
     {
       path: '/career',
@@ -56,10 +75,22 @@ const ENRoute: RouteRecordRaw = {
       component: ContactView,
     },
     {
+      path: '/faq',
+      name: 'en-faq',
+      component: FAQView,
+      children: [],
+    },
+    {
       path: '/pre-launch-signup',
       name: 'SignUp',
       component: SignUp,
     },
+    {
+      path: '/demo-signup',
+      name: 'en-demo',
+      component: DemoSignUpView,
+    },
+
     {
       path: '/terms-and-conditions',
       name: 'en-terms-and-conditions',

@@ -5,30 +5,42 @@
       <div class="drawer-items-wrapper">
         <div class="header-navigation-wrapper hidden-en-desktop">
           <div class="navgation-link-wrapper">
-            <router-link
-              v-for="(route, idx) in routes"
-              :key="idx"
-              class="navigation-link"
-              :class="route.to"
-              :to="{ name: route.to }"
-              @click="close"
-              >{{ route.title }}
-            </router-link>
+            <template v-for="(tab, idx) in routes" :key="idx">
+              <p class="navigation-link" @click="() => selectTab(tab.key)">
+                {{ tab.title }}
+                <i
+                  class="material-icons"
+                  :class="{ active: toggleTab[tab.key] }"
+                >
+                  keyboard_arrow_down
+                </i>
+              </p>
+              <transition name="slide-up">
+                <div v-show="toggleTab[tab.key]" class="navigation-link-list">
+                  <template v-for="(nav, idx) in tab.children" :key="idx">
+                    <router-link
+                      :to="{ name: nav.to }"
+                      class="navigation-link sub"
+                      :class="nav.to"
+                      @click="close"
+                    >
+                      <component :is="nav.icon" :width="30" :height="30" />
+
+                      {{ nav.title }}
+                    </router-link>
+                  </template>
+                </div>
+              </transition>
+            </template>
             <a
               class="demo-link navigation-link"
               href="https://app.zenerate.ai"
               target="_blank"
-              >JOIN APP
+              >TRY FOR FREE
               <i class="material-icons"> east </i>
             </a>
           </div>
           <div class="info-wrapper">
-            <button type="button" class="lang-button" @click="goToKrPage()">
-              <i class="material-icons"> language </i>
-
-              <span> zenerate.ai/kr </span>
-              <i class="material-icons"> east </i>
-            </button>
             <span class="copyright"
               >© Zenerate, Inc. 2021. All rights reserved</span
             >
@@ -39,39 +51,99 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import MenuIcon from './Icons/MenuIcon.vue'
+import AboutIcon from './Icons/header/AboutIcon.vue'
+import CareersIcon from './Icons/header/CareersIcon.vue'
+import CaseIcon from './Icons/header/CaseIcon.vue'
+import ContactIcon from './Icons/header/ContactIcon.vue'
+import FAQIcon from './Icons/header/FAQIcon.vue'
+import HowToUseIcon from './Icons/header/HowToUseIcon.vue'
+import OverviewIcon from './Icons/header/OverviewIcon.vue'
+import PricingIcon from './Icons/header/PricingIcon.vue'
 
 const props = defineProps({
   showDrawer: Boolean,
 })
 
+// routes
 const router = useRouter()
 const routes = [
   {
-    title: 'ABOUT',
-    to: 'en-about',
+    key: 'product',
+    title: 'Product',
+    children: [
+      {
+        title: 'Overview',
+        to: 'en-overview',
+        icon: OverviewIcon,
+      },
+      {
+        title: 'Pricing',
+        to: 'en-pricing',
+        icon: PricingIcon,
+      },
+      {
+        title: 'FAQ',
+        to: 'en-faq',
+        icon: FAQIcon,
+      },
+    ],
   },
   {
-    title: 'CASE STUDIES',
-    to: 'en-case-studies',
+    key: 'resources',
+    title: 'Resources',
+    children: [
+      {
+        title: 'How to use',
+        to: 'en-how-to-use',
+        icon: HowToUseIcon,
+      },
+      {
+        title: 'Case Studies',
+        to: 'en-case-studies',
+        icon: CaseIcon,
+      },
+    ],
   },
   {
-    title: 'SERVICE',
-    to: 'en-services',
-  },
-  // {
-  //   title: 'PRICING',
-  //   to: 'en-pricing',
-  // },
-  {
-    title: 'CAREERS',
-    to: 'en-career',
-  },
-  {
-    title: 'CONTACT',
-    to: 'en-contact',
+    key: 'company',
+    title: 'Company',
+    children: [
+      {
+        title: 'About Us',
+        to: 'en-about',
+        icon: AboutIcon,
+      },
+      {
+        title: 'Careers',
+        to: 'en-career',
+        icon: CareersIcon,
+      },
+      {
+        title: 'Contact',
+        to: 'en-contact',
+        icon: ContactIcon,
+      },
+    ],
   },
 ]
+
+const toggleTab = ref({
+  product: false,
+  resources: false,
+  company: false,
+})
+const currentTab = ref(null)
+const selectTab = (primary): void => {
+  // if (currentTab.value == primary) {
+  //   currentTab.value = null
+  // } else {
+  //   currentTab.value = primary
+  // }
+  toggleTab.value[primary] = !toggleTab.value[primary]
+}
 
 const goToKrPage = () => {
   window.open('https://www.zenerate.ai/kr', '_blank')
@@ -86,6 +158,7 @@ const close = () => {
 .drawer-wrapper {
   @include relative;
   z-index: 999;
+
   .drawer-dimmer {
     @include fixed(left 0 top 0);
     width: 100vw;
@@ -94,12 +167,19 @@ const close = () => {
     z-index: 1;
   }
   .drawer-wrapper {
-    @include fixed(top 0px right -2px);
+    // banner top
+    @include fixed(top 36px right -2px);
     @include flex($dir: column, $justify: flex-end);
     width: calc(100% + 8px);
-    height: 100%;
+    // height: 100%;
+    height: calc(100% - 36px);
     background-color: $white;
     z-index: 2;
+
+    @include en-mobile {
+      // banner top
+      height: calc(100% - 36px);
+    }
 
     .drawer-logo {
       @include flex($justify: space-between);
@@ -116,45 +196,110 @@ const close = () => {
       }
 
       .icon-close {
-        color: $text-grey;
+        color: $text-darken-7;
         font-size: 28px;
       }
     }
     .drawer-items-wrapper {
-      height: calc(100% - 111px);
+      height: calc(100% - 75px);
       padding: 0px;
 
       @include en-mobile {
-        height: calc(100% - 99px);
+        height: calc(100% - 63px);
       }
       .header-navigation-wrapper {
         @include flex($dir: column, $justify: space-between);
         height: 100%;
         flex-wrap: nowrap;
+        max-height: calc(100vh - 63px);
+        overflow-y: auto;
         .navgation-link-wrapper {
           @include flex($dir: column);
 
+          &:first-child {
+            border-top: 1px solid $footer;
+          }
+
+          .navigation-link-list {
+            @include vertical-center();
+            padding: 26px 0px;
+            border-bottom: 1px solid #e5e5e5;
+            background-color: #fafbfe;
+          }
+
           .navigation-link {
+            @include flex($justify: space-between);
             @include medium(18);
+            align-items: center;
             line-height: 40px;
-            border-bottom: 1px solid $footer;
-            padding: 16px 48px;
+            padding: 16px 38px 16px 48px;
+            cursor: pointer;
+
+            @include en-mobile {
+              padding: 0px 16px 48px;
+            }
+
+            &:not(.sub) {
+              border-bottom: 1px solid #e5e5e5;
+              height: 76px;
+            }
+
+            i {
+              @include flex();
+              @include medium(32);
+              align-items: center;
+              color: $text-darken;
+
+              &.active {
+                transform: rotate(-180deg);
+              }
+
+              @include en-mobile {
+                @include medium(28);
+              }
+            }
+
+            &.sub {
+              @include regular(17);
+              @include flex();
+              align-items: center;
+              color: $text-darken-7;
+              .icon {
+                width: 28px;
+                margin-right: 8px;
+              }
+
+              svg {
+                margin-right: 6px;
+
+                :deep(path) {
+                  opacity: 0.7;
+                }
+              }
+
+              &:hover,
+              :active {
+                color: $navigation;
+
+                :deep(path) {
+                  fill: $navigation;
+                  opacity: 1;
+                }
+              }
+            }
 
             @include en-mobile {
               padding: 10px 28px;
-            }
-
-            &:first-child {
-              border-top: 1px solid $footer;
             }
 
             &.demo-link {
               @include flex();
               align-items: center;
               font-weight: 700;
-              color: $main-core;
+              color: $navigation;
               i {
                 @include bold(18);
+                color: $navigation;
                 margin: 0px 0px 3px 14px;
               }
             }
@@ -163,10 +308,10 @@ const close = () => {
 
         .info-wrapper {
           @include flex($dir: column);
-          padding: 0px 48px 40px;
+          padding: 20px 48px;
 
           @include en-mobile {
-            padding: 0px 24px 24px;
+            padding: 20px 24px;
           }
 
           .lang-button {

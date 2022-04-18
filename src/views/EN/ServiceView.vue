@@ -325,7 +325,7 @@ const { meta } = useMeta({
         .content-title {
           text-align: center;
           @include semi-bold(16);
-          color: $main-blue;
+          color: $core;
           margin-bottom: 24px;
           p:first-child {
             font-size: 22px;
@@ -397,7 +397,7 @@ const { meta } = useMeta({
     width: 212px;
     height: 64px;
     margin: 0px 0px 40px;
-    background-color: $main-core;
+    background-color: $navigation;
     box-shadow: 4px 4px 20px rgba(72, 72, 255, 0.3);
     border-radius: 42px;
     color: $white;
@@ -608,12 +608,12 @@ const { meta } = useMeta({
 
         &.aleady-allowed-plan {
           i {
-            color: $main-blue;
+            color: $core;
           }
           span {
-            color: $main-blue;
+            color: $core;
             &::before {
-              background-color: $main-blue;
+              background-color: $core;
             }
           }
         }
@@ -741,12 +741,12 @@ const { meta } = useMeta({
 
         &.aleady-allowed-plan {
           i {
-            color: $main-blue;
+            color: $core;
           }
           span {
-            color: $main-blue;
+            color: $core;
             &::before {
-              background-color: $main-blue;
+              background-color: $core;
             }
           }
         }

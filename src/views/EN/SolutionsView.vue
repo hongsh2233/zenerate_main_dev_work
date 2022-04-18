@@ -224,7 +224,7 @@ const { meta } = useMeta({
         text-align: center;
         span {
           @include regular(18);
-          color: $main-blue;
+          color: $core;
         }
       }
       .item-arrow {
@@ -237,7 +237,7 @@ const { meta } = useMeta({
         height: 108px;
         @include center-center;
         border-radius: 30px;
-        background-color: $main-blue;
+        background-color: $core;
         text-align: center;
         span {
           @include regular(18);

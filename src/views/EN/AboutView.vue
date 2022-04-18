@@ -1,15 +1,66 @@
 <template>
   <section id="fullpage-about">
-    <div class="section section-story story-wrapper fp-auto-height-responsive">
+    <div class="story-header-wrapper">
+      <div class="story-header">
+        <h2>The Zenerate Story</h2>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="section section-story story-wrapper">
       <div class="inner-contents">
-        <div
-          class="person-wrapper hidden-en-tablet hidden-en-mobile"
-          data-aos="fade-right"
-          data-aos-offset="0"
-          data-aos-duration="600"
-          data-aos-delay="400"
-          data-aos-anchor-placement="center-bottom"
-        >
+        <div class="mission-contents">
+          <div class="title-wrapper">
+            <h2>
+              An architect<br />
+              with a vision,
+            </h2>
+          </div>
+          <div class="mission-content content-text">
+            <div class="hidden-en-tablet hidden-en-mobile">
+              <p>
+                After completing his master's in architecture at Harvard,
+                <strong>Benji Shin</strong> spent 6 years as an architect<br />
+                in Los Angeles at HED and HKS.
+              </p>
+              <p>
+                While working on some of L.A.'s biggest projects,<br />
+                he got frustrated with the inefficiencies and limitations<br />
+                that came with the all-important feasibility study process of
+                real estate development.
+              </p>
+            </div>
+            <div class="hidden-en-desktop hidden-en-mobile">
+              <p>
+                After completing his master's in architecture at Harvard,
+                <strong>Benji Shin</strong> spent 6 years as an architect<br />
+                in Los Angeles at HED and HKS.
+              </p>
+              <p>
+                While working on some of L.A.'s biggest projects,<br />
+                he got frustrated with the inefficiencies and limitations<br />
+                that came with the all-important feasibility study process of
+                real estate development.
+              </p>
+            </div>
+
+            <div class="hidden-en-desktop hidden-en-tablet">
+              <p>
+                After completing his master's in <br />
+                architecture at Harvard, <strong>Benji Shin</strong> spent<br />
+                6 years as an architect in Los Angeles at<br />
+                HED and HKS.
+              </p>
+              <p>
+                While working on some of L.A.'s biggest<br />
+                projects, he got frustrated with the <br />inefficiencies and
+                limitations that came<br />
+                with the all-important feasibility study<br />
+                process of real estate development.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="person-wrapper">
           <div class="mission-image">
             <img
               src="/en/img/about_benji_shin.png"
@@ -23,107 +74,11 @@
             <span>CO-FOUNDER </span>
           </p>
         </div>
-        <div
-          class="mission-contents"
-          data-aos="fade-up"
-          data-aos-offset="0"
-          data-aos-duration="600"
-          data-aos-delay="0"
-          data-aos-anchor-placement="center-bottom"
-        >
-          <div class="title-wrapper">
-            <h2>ABOUT US</h2>
-            <div class="divider"></div>
-          </div>
-          <div class="mission-content content-text">
-            <div class="hidden-en-tablet hidden-en-mobile">
-              <p>
-                <span class="text-blue">Zenerate</span> is a tech company<br />founded
-                by Harvard and Caltech graduates.
-              </p>
-              <p>
-                Our primary goal is to provide profitable<br />
-                solutions
-                <strong>
-                  that will change traditional<br />
-                  building designs lacking the financials.
-                </strong>
-              </p>
-            </div>
-            <div class="hidden-en-desktop hidden-en-mobile">
-              <p>
-                <span class="text-blue">Zenerate</span> is a tech company<br />founded
-                by Harvard and Caltech graduates.
-              </p>
-              <p>
-                Our primary goal is to provide profitable<br />
-                solutions
-                <strong>
-                  that will change traditional<br />
-                  building designs lacking the financials.
-                </strong>
-              </p>
-
-              <p>
-                We strive to make design practical using AI<br />
-                so that it can be applied to various building<br />
-                design problems.
-              </p>
-              <p>
-                <span class="text-blue">Zenerate</span> is at the forefront of
-                transforming<br />
-                real estate development,
-                <strong
-                  >seeking to improve<br />
-                  the quality of urban development.
-                </strong>
-              </p>
-            </div>
-
-            <div class="hidden-en-desktop hidden-en-tablet">
-              <p>
-                <span class="text-blue">Zenerate</span> is a tech company
-                founded<br />
-                by Harvard and Caltech graduates.
-              </p>
-              <p>
-                Our primary goal is to provide profitable<br />
-                solutions
-                <strong>
-                  that will change traditional<br />
-                  building designs lacking the financials.
-                </strong>
-              </p>
-
-              <p>
-                We strive to make design practical<br />
-                using AI so that it can be applied to <br />various building
-                design problems.
-              </p>
-              <p>
-                <span class="text-blue">Zenerate</span> is at the forefront of
-                <br />transforming real estate development,<br />
-                <strong
-                  >seeking to improve the quality <br />of urban development.
-                </strong>
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-    <div
-      class="section section-story-2 story-wrapper fp-auto-height-responsive hidden-en-tablet hidden-en-mobile"
-    >
+    <div class="section section-story-2 story-wrapper">
       <div class="inner-contents">
-        <div
-          class="person-wrapper"
-          data-aos="fade-right"
-          data-aos-offset="0"
-          data-aos-duration="600"
-          data-aos-delay="400"
-          data-aos-anchor-placement="center-bottom"
-        >
+        <div class="person-wrapper hidden-en-tablet hidden-en-mobile">
           <div class="mission-image">
             <img
               src="/en/img/about_jamie_jeong.png"
@@ -137,81 +92,102 @@
             <span>CO-FOUNDER </span>
           </p>
         </div>
-        <div
-          class="mission-contents"
-          data-aos="fade-up"
-          data-aos-offset="0"
-          data-aos-duration="600"
-          data-aos-delay="0"
-          data-aos-anchor-placement="bottom-bottom"
-        >
+        <div class="mission-contents">
           <div class="title-wrapper">
-            <h2>ABOUT US</h2>
-            <div class="divider"></div>
+            <h2>
+              a passionate<br />
+              mathematician,
+            </h2>
           </div>
 
-          <div class="mission-content content-text">
-            <p>
-              We strive to make design practical using AI<br />
-              so that it can be applied to various building<br />
-              design problems.
-            </p>
-            <p>
-              <span class="text-blue">Zenerate</span> is at the forefront of
-              transforming <br />real estate development,
-              <strong
-                >seeking to improve<br />
-                the quality of urban development.
-              </strong>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="section section-story-3 story-wrapper fp-auto-height-responsive"
-    >
-      <div class="inner-contents">
-        <div
-          class="mission-contents"
-          data-aos="fade-up"
-          data-aos-offset="0"
-          data-aos-duration="600"
-          data-aos-delay="0"
-          data-aos-anchor-placement="bottom-bottom"
-        >
-          <div class="title-wrapper">
-            <h2>OUR MISSION</h2>
-            <div class="divider"></div>
-          </div>
           <div class="mission-content content-text hidden-en-mobile">
             <p>
-              <strong>We believe there is a faster, smarter, better way</strong>
-              <br />
-              <strong>to approach real estate development</strong>
-              <br />to improve feasibility and decision-making <br />for
-              developers and stakeholders.
+              Benji wanted to automate the process to make it<br />
+              more efficient, accurate and produce possibilities<br />
+              that humans could not generate within<br />
+              a short time frame.
+            </p>
+            <p>
+              So he teamed up with <strong>Jamie Jeong</strong>, a brilliant
+              mathematician and former Samsung AI Developer,<br />
+              to solve this problem through the power of AI.
             </p>
           </div>
           <div
             class="mission-content content-text hidden-en-desktop hidden-en-tablet"
           >
             <p>
-              We believe there is a faster, smarter, <br />
-              better way to approach real estate <br />
-              development to improve feasibility and <br />
-              decision-making for developers <br />and stakeholders.
+              Benji wanted to automate the process to<br />
+              make it more efficient, accurate and <br />produce possibilities
+              that humans could<br />
+              not generate within a short time frame.
+            </p>
+            <p>
+              So he teamed up with <strong>Jamie Jeong</strong>,<br />
+              a brilliant mathematician and<br />former Samsung AI Developer, to
+              solve <br />this problem through the power of AI.
             </p>
           </div>
         </div>
-        <div
-          class="person-wrapper hidden-en-tablet hidden-en-mobile"
-          data-aos="fade-left"
-          data-aos-offset="0"
-          data-aos-duration="800"
-          data-aos-delay="400"
-          data-aos-anchor-placement="center-bottom"
-        >
+        <div class="person-wrapper hidden-en-desktop">
+          <div class="mission-image">
+            <img
+              src="/en/img/about_jamie_jeong.png"
+              alt="co-founder jamie jeong"
+            />
+          </div>
+          <p class="person-name">JAMIE JEONG</p>
+          <p class="person-desc">
+            <span>CTO</span>
+            <span>AI DEVELOPER</span>
+            <span>CO-FOUNDER </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="section section-story-3 story-wrapper">
+      <div class="inner-contents">
+        <div class="mission-contents">
+          <div class="title-wrapper">
+            <h2>
+              and we’re just<br />
+              getting started.
+            </h2>
+          </div>
+          <div class="mission-content content-text hidden-en-mobile">
+            <p>
+              A few years later, with Benji and Jamie leading the way, we're
+              already working with some of the biggest names in real estate.
+            </p>
+            <p>
+              With substantial funding from incredible VC's backing our mission
+              along with a growing team of world-class architects, AI developers
+              and software engineers<br />
+              (like Co-Founder <strong>Hak Lee</strong>), we're zenerating the
+              future of real estate development one step at a time.
+            </p>
+          </div>
+          <div
+            class="mission-content content-text hidden-en-desktop hidden-en-tablet"
+          >
+            <p>
+              A few years later, with Benji and Jamie<br />
+              leading the way, we're already working<br />
+              with some of the biggest names<br />
+              in real estate.
+            </p>
+            <p>
+              With substantial funding from incredible<br />
+              VC's backing our mission along with<br />
+              a growing team of world-class architects,<br />
+              AI developers and software engineers<br />
+              (like Co-Founder <strong>Hak Lee</strong>),<br />
+              we're zenerating the future of real estate<br />
+              development one step at a time.
+            </p>
+          </div>
+        </div>
+        <div class="person-wrapper">
           <div class="mission-image">
             <img src="/en/img/about_hak_lee.png" alt="co-founder hak lee" />
           </div>
@@ -224,67 +200,6 @@
         </div>
       </div>
     </div>
-
-    <div
-      class="section-person-wrapper hidden-en-desktop fp-auto-height-responsive"
-    >
-      <div
-        class="person-wrapper"
-        data-aos="fade-up"
-        data-aos-offset="0"
-        data-aos-duration="800"
-        data-aos-delay="300"
-        data-aos-anchor-placement="center-bottom"
-      >
-        <div class="person-image">
-          <img src="/en/img/about_benji_shin.png" alt="co-founder benji shin" />
-        </div>
-        <p class="person-name">BENJI SHIN</p>
-        <p class="person-desc">
-          <span>CEO</span>
-          <span>ARCHITECT</span>
-          <span>CO-FOUNDER </span>
-        </p>
-      </div>
-      <div
-        class="person-wrapper"
-        data-aos="fade-up"
-        data-aos-offset="0"
-        data-aos-duration="800"
-        data-aos-delay="300"
-        data-aos-anchor-placement="center-bottom"
-      >
-        <div class="person-image">
-          <img
-            src="/en/img/about_jamie_jeong.png"
-            alt="co-founder jamie jeong"
-          />
-        </div>
-        <p class="person-name">JAMIE JEONG</p>
-        <p class="person-desc">
-          <span>CTO</span>
-          <span>AI DEVELOPER</span>
-          <span>CO-FOUNDER </span>
-        </p>
-      </div>
-      <div
-        class="person-wrapper"
-        data-aos="fade-up"
-        data-aos-offset="0"
-        data-aos-duration="600"
-        data-aos-delay="300"
-        data-aos-anchor-placement="center-bottom"
-      >
-        <div class="person-image">
-          <img src="/en/img/about_hak_lee.png" alt="co-founder hak lee" />
-        </div>
-        <p class="person-name">HAK LEE</p>
-        <p class="person-desc">
-          <span>SOFTWARE ENGINEER</span>
-          <span>CO-FOUNDER </span>
-        </p>
-      </div>
-    </div>
     <div class="section section-footer fp-auto-height">
       <Footer></Footer>
     </div>
@@ -295,7 +210,7 @@ import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
 import Footer from '/Components/EN/Footer.vue'
 import Arrow from '/Components/EN/Arrow.vue'
-import CloseIcon from '/Components/EN/Icons/close.vue'
+import CloseIcon from '../../components/EN/Icons/CloseIcon.vue'
 import AOS from 'aos'
 
 import { useMeta } from 'vue-meta'
@@ -314,17 +229,17 @@ const { meta } = useMeta({
   ],
   link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/about' }],
 })
-const fullpage = computed(() => Store.state.root.FullPage)
-onMounted(() => {
-  fullpage.value.init('#fullpage-about', { offsetSections: false })
-})
-onBeforeUnmount(() => {
-  fullpage.value.destroy()
-})
+// const fullpage = computed(() => Store.state.root.FullPage)
+// onMounted(() => {
+//   fullpage.value.init('#fullpage-about', { offsetSections: false })
+// })
+// onBeforeUnmount(() => {
+//   fullpage.value.destroy()
+// })
 </script>
 <style lang="scss" scoped>
 .text-blue {
-  color: $main-core;
+  color: $navigation;
   font-weight: 300;
 }
 
@@ -333,20 +248,38 @@ onBeforeUnmount(() => {
   align-items: center;
   width: 390px;
 
+  @include en-tablet {
+    width: 100%;
+    align-items: flex-end;
+  }
+
   .person-name {
     @include bold(18);
+    width: 292px;
+    text-align: left;
+
     @include en-mobile {
       @include bold(14);
+      width: 227px;
+      text-align: center;
     }
   }
   .person-desc {
+    width: 292px;
+    text-align: left;
+
+    @include en-mobile {
+      width: 227px;
+      text-align: center;
+
+      span {
+        @include regular(12);
+      }
+    }
+
     span {
       @include regular(14);
       color: $text-darken;
-
-      @include en-mobile {
-        @include regular(12);
-      }
 
       &:not(:first-child) {
         &::before {
@@ -357,54 +290,110 @@ onBeforeUnmount(() => {
     }
   }
 }
-.story-wrapper {
-  width: 100%;
 
-  @include en-desktop {
-    background-image: url('/en/img/about_background.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-y: center;
+.story-header-wrapper {
+  @include absolute(top 130px left 0px);
+  width: 100%;
+}
+.story-header {
+  @include vertical-center();
+  align-items: center;
+
+  h2 {
+    @include semi-bold(21);
+    margin: 0px 0px 10px 0px;
+    color: $text-darken;
   }
 
-  &:first-child {
-    padding-top: 85px;
-
-    @include en-desktop {
-      height: 100vh !important;
-    }
+  .divider {
+    width: 56px;
+    height: 2px;
+    background-color: $text-darken-7;
   }
 
   @include en-tablet {
-    width: 70%;
-    margin-left: auto;
+    align-items: flex-start;
+    padding: 0px calc(10% + 16px) 0px;
+
+    .divider {
+      width: 46px;
+      height: 2px;
+    }
   }
 
   @include en-mobile {
-    padding: 0px 16px;
+    align-items: flex-start;
+    padding: 0px auto 0px;
+    width: 260px;
+    margin: 0px auto;
+
+    h2 {
+      @include semi-bold(14);
+      margin: 0px 0px 8px;
+    }
+
+    .divider {
+      width: 38px;
+      height: 1px;
+    }
+  }
+}
+.story-wrapper {
+  width: 100%;
+
+  // @include en-desktop {
+  //   background-image: url('/en/img/about_background.png');
+  //   background-size: contain;
+  //   background-repeat: no-repeat;
+  //   background-position-y: center;
+  // }
+
+  &.section-story {
+    .inner-contents {
+      @include en-desktop {
+        padding-top: 220px;
+      }
+
+      @include en-tablet {
+        padding-top: 202px;
+      }
+      @include en-mobile {
+        padding-top: 220px;
+      }
+    }
+  }
+  &.section-story-3 {
+    .inner-contents {
+      margin-bottom: 12%;
+    }
   }
 
   .inner-contents {
     @include flex($justify: space-around);
     height: content-fit;
     margin: auto;
-    padding-top: 30px;
+    padding-top: 80px;
     max-width: 1200px;
 
-    @include en-desktop {
-      padding-top: 60px;
+    @include en-tablet {
+      flex-direction: column;
+      padding-top: 90px;
+      padding: 80px calc(10% + 16px) 42px;
     }
 
-    @include en-tablet {
-      padding-top: 42px;
+    @include en-mobile {
+      padding: 33px 10% 42px;
     }
 
     .mission-contents {
       @include vertical-center;
       flex: 1;
-      margin: 0px;
       text-align: right;
-      margin-left: 40px;
+      margin: 70px 0px 0px 40px;
+
+      @include en-tablet {
+        margin-left: 0px;
+      }
 
       .mission-title {
         margin-bottom: 40px;
@@ -413,68 +402,55 @@ onBeforeUnmount(() => {
       .title-wrapper {
         @include flex($dir: column);
         align-items: flex-start;
-        margin-bottom: 80px;
+        text-align: left;
 
         @include en-tablet {
           max-width: 540px;
-          margin-bottom: 60px;
-          text-align: center;
         }
 
         @include en-mobile {
           max-width: 360px;
-          margin-bottom: 32px;
-          text-align: center;
         }
 
         h2 {
-          @include bold(30);
+          @include semi-bold(40);
           color: $text-darken;
-          margin: 0px 0px 60px;
+          margin: 0px 0px 28px;
           @include en-mobile {
-            @include bold(24);
-            margin: 0px 0px 30px;
+            @include semi-bold(26);
+            margin: 0px 0px 18px;
           }
-        }
-
-        .divider {
-          width: 56px;
-          height: 2px;
-          margin-left: 2px;
-          border-radius: 5px;
-          background-color: $text-darken;
         }
       }
       .mission-content {
         text-align: left;
         p {
-          @include light(20);
+          @include light(19);
           margin-bottom: 24px;
           strong {
-            @include medium(20);
+            @include semi-bold(19);
           }
 
           @include en-mobile {
-            font-size: 14px;
-            line-height: 18px;
+            @include light(13);
+            line-height: 19px;
             strong {
-              @include medium(14);
-              line-height: 18px;
+              @include medium(13);
+              line-height: 19px;
             }
           }
         }
       }
 
       @include en-desktop {
-        max-width: 460px;
+        max-width: 518px;
       }
 
       @include en-tablet {
         @include relative;
+        max-width: 518px;
         z-index: 1;
         flex: none;
-        width: 100%;
-        margin-right: 0px;
         text-align: center;
       }
       @include en-mobile {
@@ -500,15 +476,10 @@ onBeforeUnmount(() => {
       }
 
       @include en-tablet {
-        @include absolute(left 0 bottom 50%);
-        transform: translateY(50%);
-        opacity: 0.2;
-        margin: 0;
       }
       @include en-mobile {
-        @include absolute(right 0 bottom 60px);
-        opacity: 0.2;
-        margin: 0;
+        width: 160px;
+        height: 160px;
       }
     }
     .mission-background {

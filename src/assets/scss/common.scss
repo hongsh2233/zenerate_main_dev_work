@@ -17,6 +17,7 @@
   width: 6px;
   height: 8px;
   position: absolute;
+  background-color: #fff;
 }
 ::-webkit-scrollbar-thumb {
   background-clip: padding-box;
@@ -247,4 +248,8 @@ textarea {
 }
 .material-icons {
   font-family: 'Material Icons' !important;
+}
+
+.material-icons-outlined {
+  font-family: 'Material Icons Outlined' !important;
 }
