@@ -811,7 +811,7 @@ const router = useRouter()
       @include vertical-center();
       width: 50%;
       background-color: $white;
-      padding: 0px;
+      padding: 50px 0px;
       min-height: 100vh;
 
       @include en-tablet {
