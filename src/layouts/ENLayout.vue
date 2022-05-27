@@ -17,11 +17,11 @@
       <Drawer v-if="showDrawer" @close="toggleDrawer" />
     </transition>
     <router-view v-slot="{ Component }">
-      <section class="section-en">
-        <transition name="fade">
+      <transition name="fade">
+        <section class="section-en">
           <component :is="Component" />
-        </transition>
-      </section>
+        </section>
+      </transition>
     </router-view>
   </div>
 </template>
