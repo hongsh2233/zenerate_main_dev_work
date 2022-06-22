@@ -138,9 +138,14 @@
               </div>
             </div>
 
-            <div class="start-button" @click="goToApp()">
-              <a href="http://app.zenerate.ai">START ZENERATING</a>
-            </div>
+            <button type="button" class="start-button">
+              <router-link
+                class="demo-link only-en-desktop"
+                :to="{ name: 'en-demo' }"
+              >
+                BOOK A DEMO
+              </router-link>
+            </button>
           </div>
         </div>
       </div>

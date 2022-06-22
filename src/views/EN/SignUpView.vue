@@ -24,7 +24,7 @@
             </p>
           </div>
           <p class="guide hidden-tablet hidden-mobile">
-            <strong>Sign up</strong> and we’ll send you an email <br />
+            <strong>Sign up</strong> and we'll send you an email <br />
             when Zenerate launches in new cities!
           </p>
           <div class="background-building">
@@ -286,7 +286,7 @@
             </p>
             <div class="thank-text">
               <p class="purpose">
-                We’ll send you an email<br />
+                We'll send you an email<br />
                 when we launch in new cities.
               </p>
               <p>
@@ -296,8 +296,10 @@
             </div>
             <div class="form-send-wrapper">
               <div class="dummy" ref="dummy"></div>
-              <button class="form-send hover-pointer" @click="goBetaApp">
-                TEST ZENERATE
+              <button type="button" class="form-send hover-pointer">
+                <router-link class="demo-link" :to="{ name: 'en-demo' }">
+                  BOOK A DEMO
+                </router-link>
               </button>
             </div>
             <div class="thank-text">

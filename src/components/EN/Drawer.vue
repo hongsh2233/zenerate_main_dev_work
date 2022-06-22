@@ -32,13 +32,14 @@
                 </div>
               </transition>
             </template>
-            <a
+            <router-link
               class="demo-link navigation-link"
-              href="https://app.zenerate.ai"
-              target="_blank"
-              >TRY FOR FREE
+              :to="{ name: 'en-demo' }"
+              @click="close"
+            >
+              BOOK A DEMO
               <i class="material-icons"> east </i>
-            </a>
+            </router-link>
           </div>
           <div class="info-wrapper">
             <span class="copyright"
@@ -79,11 +80,11 @@ const routes = [
         to: 'en-overview',
         icon: OverviewIcon,
       },
-      {
-        title: 'Pricing',
-        to: 'en-pricing',
-        icon: PricingIcon,
-      },
+      // {
+      //   title: 'Pricing',
+      //   to: 'en-pricing',
+      //   icon: PricingIcon,
+      // },
       {
         title: 'FAQ',
         to: 'en-faq',
@@ -167,17 +168,16 @@ const close = () => {
     z-index: 1;
   }
   .drawer-wrapper {
-    // banner top
-    @include fixed(top 36px right -2px);
+    @include fixed(top 0px right -2px);
     @include flex($dir: column, $justify: flex-end);
     width: calc(100% + 8px);
-    // height: 100%;
-    height: calc(100% - 36px);
+    height: 100%;
     background-color: $white;
     z-index: 2;
 
-    @include en-mobile {
+    &.banner {
       // banner top
+      @include fixed(top 36px right -2px);
       height: calc(100% - 36px);
     }
 
@@ -300,7 +300,7 @@ const close = () => {
               i {
                 @include bold(18);
                 color: $navigation;
-                margin: 0px 0px 3px 14px;
+                margin: 0px 0px 0px 14px;
               }
             }
           }

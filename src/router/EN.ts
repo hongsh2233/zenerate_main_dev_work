@@ -52,11 +52,11 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-how-to-use',
       component: HowToUseView,
     },
-    {
-      path: '/pricing',
-      name: 'en-pricing',
-      component: PricingView,
-    },
+    // {
+    //   path: '/pricing',
+    //   name: 'en-pricing',
+    //   component: PricingView,
+    // },
     {
       path: '/career',
       name: 'en-career',

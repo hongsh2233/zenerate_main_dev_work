@@ -423,10 +423,9 @@ $bt-secondary-etc: #f6f5ff;
   height: $height;
   border-radius: 10px;
   background: $bt-primary-bg-gradient;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.3s;
   color: $bt-primary-text-default;
   @include bold(20);
-  line-height: 23px;
   letter-spacing: 8% !important;
   @include center-center;
 }

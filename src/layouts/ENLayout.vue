@@ -1,13 +1,13 @@
 <template>
   <div class="layout-en" id="layout-en">
-    <div
+    <!-- <div
       class="signup-banner"
       @click="goDemoSignUp"
       v-show="path !== '/pre-launch-signup'"
     >
       <p>SIGN UP FOR A PRODUCT DEMO</p>
       <i class="material-icons"> east </i>
-    </div>
+    </div> -->
     <Header
       @toggleDrawer="toggleDrawer"
       :showDrawer="showDrawer"

@@ -1,5 +1,5 @@
 <template>
-  <div class="header-wrapper banner" id="header">
+  <div class="header-wrapper nobanner" id="header">
     <div class="header-inner">
       <div
         class="header-logo hover-pointer"
@@ -41,9 +41,12 @@
           >
         </button> -->
       </nav>
-      <div class="header-demo-wrapper only-en-desktop" @click="goToApp()">
-        <a href="http://app.zenerate.ai" class="demo-link">TRY FOR FREE</a>
-      </div>
+      <button type="button" class="header-demo-wrapper only-en-desktop">
+        <router-link class="demo-link" :to="{ name: 'en-demo' }">
+          BOOK A DEMO
+        </router-link>
+      </button>
+
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
         <MenuIcon @toggle="toggleDrawer" :showDrawer="showDrawer" />
       </div>
@@ -100,11 +103,11 @@ const routes = [
         to: 'en-overview',
         icon: OverviewIcon,
       },
-      {
-        title: 'Pricing',
-        to: 'en-pricing',
-        icon: PricingIcon,
-      },
+      // {
+      //   title: 'Pricing',
+      //   to: 'en-pricing',
+      //   icon: PricingIcon,
+      // },
       {
         title: 'FAQ',
         to: 'en-faq',
@@ -324,14 +327,24 @@ const toggleNav = (primary: String) => {
       }
     }
     .header-demo-wrapper {
-      @include button-5($width: 133px, $height: 45px);
+      width: 148px;
+      height: 44px;
+      background-color: $navigation;
+      color: $white;
+      border-radius: 10px;
+      letter-spacing: 0.1em;
+      transition: all ease-in-out 0.2s;
       margin: 18px 0px 18px;
       background-color: $navigation;
+      &:hover {
+        @include elevation-3;
+        transform: translateY(-2px);
+      }
 
       .demo-link {
         @include semi-bold(14);
         color: $white;
-        letter-spacing: 0.1em;
+        letter-spacing: 1.4px;
       }
     }
     .header-drawer-wrapper {
