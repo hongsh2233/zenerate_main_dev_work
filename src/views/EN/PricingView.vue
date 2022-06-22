@@ -54,6 +54,15 @@
                 >
                   TRY NOW
                 </button>
+
+                <!-- <button
+                  type="button"
+                  class="action-button hidden-en-desktop hidden-en-tablet"
+                >
+                  <router-link class="demo-link" :to="{ name: 'en-demo' }">
+                    BOOK A DEMO
+                  </router-link>
+                </button> -->
               </div>
               <div class="pricing-plan-bottom">
                 <div class="price-wrapper" @click="() => togglePlan('basic')">

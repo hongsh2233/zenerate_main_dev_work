@@ -347,9 +347,11 @@
               <strong>man-hours</strong> and
               <strong>maximizing profit</strong>
             </p>
-            <div class="start-button" @click="goToApp()">
-              <a href="http://app.zenerate.ai">TRY FOR FREE</a>
-            </div>
+            <button type="button" class="start-button">
+              <router-link class="demo-link" :to="{ name: 'en-demo' }">
+                BOOK A DEMO
+              </router-link>
+            </button>
           </div>
           <div class="partners-list">
             <div
