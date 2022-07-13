@@ -16,6 +16,7 @@ import '/Assets/scss/transitions.scss'
 import '/Assets/scss/components.scss'
 import '/Assets/scss/timeline.scss'
 import '/Assets/scss/en.scss'
+import '/Assets/css/tailwind.css'
 import '/Utils/gtm'
 
 createApp(App)

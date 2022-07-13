@@ -1,11 +1,13 @@
-const path = require('path')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { join } = require('path')
+
 module.exports = {
   plugins: {
-    'postcss-combine-media-query': {
-      output: {
-        path: path.join(__dirname, 'dist', 'assets'), // emit to 'dist' folder in root
-        name: '[name]-[query].[ext]', // pattern of emited files
-      },
+    'tailwindcss/nesting': {},
+    tailwindcss: {
+      config: join(__dirname, 'tailwind.config.js'),
     },
+    autoprefixer: {},
+    ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {}),
   },
 }
