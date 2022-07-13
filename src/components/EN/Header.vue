@@ -53,7 +53,7 @@
         </button> -->
       </nav>
 
-      <button type="button" class="header-demo-wrapper only-en-desktop">
+      <button type="button" class="primary-button text-12 h-36 only-en-desktop">
         <router-link class="demo-link" :to="{ name: 'en-demo' }">
           TRY ZENERATE
         </router-link>
@@ -224,7 +224,7 @@ const toggleNav = (primary: String) => {
       }
     }
 
-    .header-demo-wrapper {
+    .primary-button {
       background: rgba(77, 73, 244, 0.2);
     }
   }
@@ -381,22 +381,7 @@ const toggleNav = (primary: String) => {
       }
     }
   }
-  .header-demo-wrapper {
-    @include semi-bold(12);
-    width: 122px;
-    height: 36px;
-    background-color: $navigation;
-    color: $white;
-    border-radius: 5px;
-    letter-spacing: 1.25px;
 
-    transition: all ease-in-out 0.2s;
-    background-color: $navigation;
-    &:hover {
-      @include elevation-3;
-      transform: translateY(-2px);
-    }
-  }
   .header-drawer-wrapper {
     @include center-center;
     margin: auto 0px;

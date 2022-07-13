@@ -1,16 +1,16 @@
 <template>
   <section class="section_top">
     <div class="section-container">
-      <div class="section-layout-container container-medium with-padding">
+      <div>
         <div class="section-layout">
           <div class="gradient-area">
-            <div class="section_background-wrap">
+            <!-- <div class="section_background-wrap">
               <canvas
                 id="gradient-canvas"
                 data-js-darken-top
                 data-transition-in
               ></canvas>
-            </div>
+            </div> -->
             <div class="background-wrapper">
               <div class="background">
                 <span></span>
@@ -19,20 +19,17 @@
               </div>
             </div>
             <div class="gradient-title-area grid-2-columns">
-              <p class="text text-above section-title-1">
+              <p class="text relative flex flex-col justify-end text-white">
                 <strong>Maximize returns</strong>
                 by zenerating all possibilities
               </p>
 
-              <!-- <div class="text text-under text-under-blended section-title-1">
-                aaa
-              </div> -->
-              <div class="text text-under text-under-overlay section-title-1">
+              <div class="text text-under-overlay flex items-end text-white">
                 bbb
               </div>
             </div>
           </div>
-          <h2 class="section-title-2 subtitle">???</h2>
+          <h2 class="absolute">?????</h2>
         </div>
       </div>
     </div>
@@ -53,18 +50,6 @@ import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
 </script>
 <style lang="scss" scoped>
-// div {
-//   height: 200vh;
-//   width: 100vw;
-//   background-color: antiquewhite;
-// }
-
-.landing-top-wrapper {
-  @include relative();
-
-  background-color: $white;
-}
-
 $container_width: 1080px;
 $standard_space: 24px;
 $section-gap: $standard_space;
@@ -136,12 +121,12 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
       //   height: 40vmin;
       width: 600px;
       height: 700px;
-      top: 4%;
-      left: 4%;
+      top: -10%;
+      left: -10%;
       animation-duration: 26s;
       animation-delay: -19s;
       transform-origin: -13vw 6vh;
-      background-size: 80% 90%;
+      background-size: 80% 80%;
       background-repeat: no-repeat;
       overflow: hidden;
       background-image: radial-gradient(
@@ -162,36 +147,40 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
     }
 
     span:nth-child(2) {
-      width: 40vmin;
-      height: 40vmin;
-      top: 16%;
-      right: 18%;
+      width: 500px;
+      height: 400px;
+
+      top: 12%;
+      right: 0%;
       animation: move;
       animation-duration: 26s;
       animation-delay: -19s;
       transform-origin: -13vw 6vh;
-
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
       background-image: radial-gradient(
           at 76% 48%,
           hsla(189, 100%, 60%, 0.85) 0px,
           transparent 50%
         ),
         radial-gradient(
-          at 40% 25%,
+          at 45% 25%,
           hsla(229, 100%, 96%, 0.7) 0px,
           transparent 50%
         );
     }
 
     span:nth-child(3) {
-      width: 80vmin;
-      height: 60vmin;
+      //   width: 80vmin;
+      //   height: 60vmin;
+      width: 100%;
+      height: 400px;
       bottom: 0%;
-      left: 40%;
+      right: 0%;
       animation-duration: 26s;
       animation-delay: -19s;
       transform-origin: -13vw 6vh;
-
+      background-size: 100% 100%;
       background-color: hsla(234, 71%, 62%, 1);
       background-image: radial-gradient(
           at 63% 91%,
@@ -208,59 +197,15 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
 }
 
 .grid-2-columns {
-  //   @include relative;
-  //   position: absolute;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.container {
-  width: 100%;
-  height: 100vh;
-}
-
-// dddddddddddddddddddddddddddd
-
-.section-title-1 {
-  @include medium(48);
-  width: 500px;
-  margin: 0px;
-  color: white;
-  //   @include mq(450px) {
-  //     font-size: 70px;
-  //   }
-  //   @include mq($tablet) {
-  //     font-size: 90px;
-  //   }
-  //   @include mq($laptop) {
-  //     font-size: 100px;
-  //     width: 600px;
-  //   }
-  strong {
-    @include semi-bold(48);
-  }
-}
-
 .text {
-  line-height: 1;
   margin: $gradient-title-margin 0 0 0;
-  text-transform: none;
-  letter-spacing: 2px;
   min-height: 200px;
-  display: flex;
-  align-items: flex-end;
 }
 
-.text-above {
-  position: relative;
-}
-
-.text-under {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2;
-}
 .text-under-blended {
   color: #3a3a3a;
   mix-blend-mode: color-burn;

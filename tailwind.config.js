@@ -13,14 +13,99 @@ module.exports = {
   content: ['./src/**/*.{html,ts,js,vue}', './index.html'],
   theme: {
     screens: {
-      base: { min: em(1201), max: '' },
-      sm: { min: em(1024), max: em(1201) },
-      xs: { min: '', max: em(1024) },
+      base: { min: '', max: px(768) },
+      md: { min: px(1024), max: px(768) },
+      lg: { min: px(1024), max: '' },
     },
-    fontSize: {},
+    fontSize: {
+      44: [
+        '44px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.3',
+        },
+      ],
+      40: [
+        '40px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.3',
+        },
+      ],
+      38: [
+        '38px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.3',
+        },
+      ],
+      34: [
+        '34px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.3',
+        },
+      ],
+      32: [
+        '32px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.5',
+        },
+      ],
+      30: [
+        '30px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.5',
+        },
+      ],
+      26: [
+        '26px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.2',
+        },
+      ],
+      24: [
+        '24px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.4',
+        },
+      ],
+      22: [
+        '22px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.2',
+        },
+      ],
+      20: [
+        '20px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.5',
+        },
+      ],
+      18: [
+        '18px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.5',
+        },
+      ],
+      16: [
+        '16px',
+        {
+          letterSpacing: '0px',
+          lineHeight: '1.5',
+        },
+      ],
+    },
     fontWeight: {
       bold: 700,
-      'semi-bold': 600,
+      semibold: 600,
       medium: 500,
       regular: 400,
     },
@@ -174,10 +259,6 @@ module.exports = {
         400: '0px 0px 16px rgba(0, 0, 0, 0.2)',
       },
     },
-
-    debugScreens: {
-      position: ['bottom', 'left'],
-    },
   },
   variants: {
     extend: {
@@ -199,15 +280,7 @@ module.exports = {
       })
       addComponents({
         // ---------------- text ----------------
-        '.text-title': {
-          fontFamily: 'Poppins',
-        },
-        '.text-content': {
-          fontFamily: 'IBM Plex Sans',
-        },
-        'text-table': {
-          fontFamily: 'IBM Plex Sans Condensed',
-        },
+
         '.text-24-semi-bold': {
           fontWeight: '600',
           fontSize: '24px',
