@@ -8,11 +8,14 @@
       <p>SIGN UP FOR A PRODUCT DEMO</p>
       <i class="material-icons"> east </i>
     </div> -->
+
     <Header
-      @toggleDrawer="toggleDrawer"
-      :showDrawer="showDrawer"
       v-show="path !== '/pre-launch-signup'"
+      :showDrawer="showDrawer"
+      :transparent="transparentHeader"
+      @toggleDrawer="toggleDrawer"
     ></Header>
+
     <transition name="fade">
       <Drawer v-if="showDrawer" @close="toggleDrawer" />
     </transition>
@@ -26,11 +29,11 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { ref, computed, onMounted, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import Header from '/Components/EN/Header.vue'
 import Footer from '/Components/EN/Footer.vue'
 import Drawer from '/Components/EN/Drawer.vue'
-import { ref, computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
@@ -39,6 +42,27 @@ const goDemoSignUp = () => {
   toggleDrawer(false)
   router.push('/demo-signup')
 }
+
+const transparentHeader = ref(true)
+const observerHandler = (entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      transparentHeader.value = false
+    } else {
+      transparentHeader.value = true
+    }
+  })
+}
+
+onMounted(() => {
+  const sentinalEl = document.querySelector('.sentinal')
+  const observer = new IntersectionObserver(observerHandler, {
+    rootMargin: '60px 0px 0px',
+    threshold: 1.0,
+  })
+
+  observer.observe(sentinalEl)
+})
 
 const showDrawer = ref(false)
 const toggleDrawer = (flag = undefined) => {

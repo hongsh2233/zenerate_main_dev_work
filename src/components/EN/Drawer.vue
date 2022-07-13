@@ -37,13 +37,13 @@
               :to="{ name: 'en-demo' }"
               @click="close"
             >
-              BOOK A DEMO
+              TRY ZENERATE
               <i class="material-icons"> east </i>
             </router-link>
           </div>
           <div class="info-wrapper">
             <span class="copyright"
-              >© Zenerate, Inc. 2021. All rights reserved</span
+              >© Zenerate, Inc. 2022. All rights reserved</span
             >
           </div>
         </div>
@@ -159,185 +159,186 @@ const close = () => {
 .drawer-wrapper {
   @include relative;
   z-index: 999;
+}
 
-  .drawer-dimmer {
-    @include fixed(left 0 top 0);
-    width: 100vw;
-    height: 100vh;
-    background: rgba($text-darkgrey, 0.6);
-    z-index: 1;
+.drawer-dimmer {
+  @include fixed(left 0 top 0);
+  width: 100vw;
+  height: 100vh;
+  background: rgba($text-darkgrey, 0.6);
+  z-index: 1;
+}
+.drawer-wrapper {
+  @include fixed(top 0px right -2px);
+  @include flex($dir: column, $justify: flex-end);
+  width: calc(100% + 8px);
+  height: 100%;
+  background-color: $white;
+  z-index: 2;
+
+  &.banner {
+    // banner top
+    @include fixed(top 36px right -2px);
+    height: calc(100% - 36px);
   }
-  .drawer-wrapper {
-    @include fixed(top 0px right -2px);
-    @include flex($dir: column, $justify: flex-end);
-    width: calc(100% + 8px);
+}
+
+.drawer-logo {
+  @include flex($justify: space-between);
+  align-items: flex-start;
+  width: 100%;
+  height: 70px;
+
+  @include en-mobile {
+    height: 58px;
+  }
+
+  img {
     height: 100%;
-    background-color: $white;
-    z-index: 2;
+  }
 
-    &.banner {
-      // banner top
-      @include fixed(top 36px right -2px);
-      height: calc(100% - 36px);
-    }
+  .icon-close {
+    color: $text-darken-7;
+    font-size: 28px;
+  }
+}
+.drawer-items-wrapper {
+  height: calc(100% - 70px);
+  padding: 0px;
 
-    .drawer-logo {
-      @include flex($justify: space-between);
-      align-items: flex-start;
-      width: 100%;
-      height: 76px;
+  @include en-mobile {
+    height: calc(100% - 58px);
+  }
+  .header-navigation-wrapper {
+    @include flex($dir: column, $justify: space-between);
+    height: 100%;
+    flex-wrap: nowrap;
+    max-height: calc(100vh - 58px);
+    overflow-y: auto;
+    .navgation-link-wrapper {
+      @include flex($dir: column);
 
-      @include en-mobile {
-        height: 64px;
+      &:first-child {
+        border-top: 1px solid $footer;
       }
 
-      img {
-        height: 100%;
+      .navigation-link-list {
+        @include vertical-center();
+        padding: 26px 0px;
+        border-bottom: 1px solid #e5e5e5;
+        background-color: #fafbfe;
       }
 
-      .icon-close {
-        color: $text-darken-7;
-        font-size: 28px;
-      }
-    }
-    .drawer-items-wrapper {
-      height: calc(100% - 75px);
-      padding: 0px;
+      .navigation-link {
+        @include flex($justify: space-between);
+        @include medium(18);
+        align-items: center;
+        line-height: 40px;
+        padding: 16px 38px 16px 48px;
+        cursor: pointer;
 
-      @include en-mobile {
-        height: calc(100% - 63px);
-      }
-      .header-navigation-wrapper {
-        @include flex($dir: column, $justify: space-between);
-        height: 100%;
-        flex-wrap: nowrap;
-        max-height: calc(100vh - 63px);
-        overflow-y: auto;
-        .navgation-link-wrapper {
-          @include flex($dir: column);
-
-          &:first-child {
-            border-top: 1px solid $footer;
-          }
-
-          .navigation-link-list {
-            @include vertical-center();
-            padding: 26px 0px;
-            border-bottom: 1px solid #e5e5e5;
-            background-color: #fafbfe;
-          }
-
-          .navigation-link {
-            @include flex($justify: space-between);
-            @include medium(18);
-            align-items: center;
-            line-height: 40px;
-            padding: 16px 38px 16px 48px;
-            cursor: pointer;
-
-            @include en-mobile {
-              padding: 0px 16px 48px;
-            }
-
-            &:not(.sub) {
-              border-bottom: 1px solid #e5e5e5;
-              height: 76px;
-            }
-
-            i {
-              @include flex();
-              @include medium(32);
-              align-items: center;
-              color: $text-darken;
-
-              &.active {
-                transform: rotate(-180deg);
-              }
-
-              @include en-mobile {
-                @include medium(28);
-              }
-            }
-
-            &.sub {
-              @include regular(17);
-              @include flex();
-              align-items: center;
-              color: $text-darken-7;
-              .icon {
-                width: 28px;
-                margin-right: 8px;
-              }
-
-              svg {
-                margin-right: 6px;
-
-                :deep(path) {
-                  opacity: 0.7;
-                }
-              }
-
-              &:hover,
-              :active {
-                color: $navigation;
-
-                :deep(path) {
-                  fill: $navigation;
-                  opacity: 1;
-                }
-              }
-            }
-
-            @include en-mobile {
-              padding: 10px 28px;
-            }
-
-            &.demo-link {
-              @include flex();
-              align-items: center;
-              font-weight: 700;
-              color: $navigation;
-              i {
-                @include bold(18);
-                color: $navigation;
-                margin: 0px 0px 0px 14px;
-              }
-            }
-          }
+        @include en-mobile {
+          padding: 0px 16px 48px;
         }
 
-        .info-wrapper {
-          @include flex($dir: column);
-          padding: 20px 48px;
+        &:not(.sub) {
+          border-bottom: 1px solid #e5e5e5;
+          height: 76px;
+        }
+
+        i {
+          @include flex();
+          @include medium(32);
+          align-items: center;
+          color: $text-darken;
+
+          &.active {
+            transform: rotate(-180deg);
+          }
 
           @include en-mobile {
-            padding: 20px 24px;
-          }
-
-          .lang-button {
-            @include flex($justify: space-between);
-            @include bold(18);
-            align-items: center;
-            width: 214px;
-            height: 28px;
-            margin-bottom: 28px;
-            padding: 0px;
-            color: $text-darken-5;
-
-            i:last-child {
-              @include bold(18);
-            }
-
-            @include en-mobile {
-              margin-bottom: 16px;
-            }
-          }
-
-          .copyright {
-            @include regular(14);
-            color: #808394;
+            @include medium(28);
           }
         }
+
+        &.sub {
+          @include regular(17);
+          @include flex();
+          align-items: center;
+          color: $text-darken-7;
+          .icon {
+            width: 28px;
+            margin-right: 8px;
+          }
+
+          svg {
+            margin-right: 6px;
+
+            :deep(path) {
+              opacity: 0.7;
+            }
+          }
+
+          &:hover,
+          :active {
+            color: $navigation;
+
+            :deep(path) {
+              fill: $navigation;
+              opacity: 1;
+            }
+          }
+        }
+
+        @include en-mobile {
+          padding: 10px 28px;
+        }
+
+        &.demo-link {
+          @include semi-bold(18);
+          @include flex();
+          align-items: center;
+          color: $navigation;
+
+          i {
+            @include semi-bold(18);
+            color: $navigation;
+            margin: 0px 0px 0px 14px;
+          }
+        }
+      }
+    }
+
+    .info-wrapper {
+      @include flex($dir: column);
+      padding: 20px 48px;
+
+      @include en-mobile {
+        padding: 20px 24px;
+      }
+
+      .lang-button {
+        @include flex($justify: space-between);
+        @include bold(18);
+        align-items: center;
+        width: 214px;
+        height: 28px;
+        margin-bottom: 28px;
+        padding: 0px;
+        color: $text-darken-5;
+
+        i:last-child {
+          @include bold(18);
+        }
+
+        @include en-mobile {
+          margin-bottom: 16px;
+        }
+      }
+
+      .copyright {
+        @include regular(14);
+        color: #808394;
       }
     }
   }

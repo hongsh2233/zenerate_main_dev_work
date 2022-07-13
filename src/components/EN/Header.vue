@@ -1,11 +1,22 @@
 <template>
-  <div class="header-wrapper nobanner" id="header">
+  <div class="sentinal"></div>
+  <div
+    id="header"
+    class="header-wrapper nobanner"
+    :class="transparent && 'transparent'"
+  >
     <div class="header-inner">
       <div
         class="header-logo hover-pointer"
         @click="router.push({ name: 'en-landing' }) && toggleDrawer(false)"
       >
-        <img class="logo" src="/img/logo_color.svg" alt="logo" />
+        <img
+          class="logo"
+          :src="`/img/logo_${
+            !showDrawer && transparent ? 'white' : 'color'
+          }.svg`"
+          alt="logo"
+        />
         <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" /> -->
       </div>
       <nav class="header-navigation-wrapper only-en-desktop">
@@ -41,20 +52,25 @@
           >
         </button> -->
       </nav>
+
       <button type="button" class="header-demo-wrapper only-en-desktop">
         <router-link class="demo-link" :to="{ name: 'en-demo' }">
-          BOOK A DEMO
+          TRY ZENERATE
         </router-link>
       </button>
 
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
-        <MenuIcon @toggle="toggleDrawer" :showDrawer="showDrawer" />
+        <MenuIcon
+          @toggle="toggleDrawer"
+          :showDrawer="showDrawer"
+          :transparent="transparent"
+        />
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useGtag } from 'vue-gtag-next'
 import { useRouter } from 'vue-router'
 import MenuIcon from './Icons/MenuIcon.vue'
@@ -69,6 +85,7 @@ import PricingIcon from './Icons/header/PricingIcon.vue'
 
 const props = defineProps({
   showDrawer: Boolean,
+  transparent: Boolean,
 })
 
 const emit = defineEmits(['toggleDrawer'])
@@ -76,6 +93,8 @@ const toggleDrawer = (flag?: boolean) => {
   emit('toggleDrawer', flag)
 }
 
+const showDrawer = computed(() => props.showDrawer)
+const transparent = computed(() => props.transparent)
 const showLang = ref(false)
 const toggleLang = (flag?: boolean) => {
   const f = flag == null ? !showLang.value : flag
@@ -166,284 +185,311 @@ const toggleNav = (primary: String) => {
 }
 </script>
 <style lang="scss" scoped>
+.sentinal {
+  width: 0px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .header-wrapper {
   @include fixed(top 0px left 0);
   width: 100vw;
   z-index: 1000;
   background: $white;
-  box-shadow: 0px 2px 8px rgb(142 141 208 / 10%);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
+  transition: color ease-in-out 0.2s;
 
   &.banner {
     top: 35px;
   }
 
-  @include en-desktop {
-    height: 80px;
+  &.transparent {
+    background: transparent;
+    box-shadow: none;
+
+    .dropbtn {
+      color: $white;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      color: $white;
+      opacity: 0.6;
+
+      i {
+        opacity: 0.6;
+      }
+    }
+
+    .header-demo-wrapper {
+      background: rgba(77, 73, 244, 0.2);
+    }
   }
-  @include en-tablet {
+
+  @include en-desktop {
     height: 76px;
   }
-  @include en-mobile {
-    height: 64px;
+  @include en-tablet {
+    height: 70px;
   }
-  .header-inner {
-    @include flex($justify: space-between);
-    @include container;
+  @include en-mobile {
+    height: 58px;
+  }
+}
+.header-inner {
+  @include flex($justify: space-between);
+  @include container;
+  height: 100%;
+  align-items: center;
+
+  @include en-desktop {
+    max-width: 1200px;
+    width: auto;
+    margin: 0px auto;
+    padding: 0 !important;
+  }
+  @include en-tablet {
+    padding: 0px 40px !important;
+    width: 100%;
+  }
+  @include en-mobile {
+    padding: 0px 20px !important;
+    width: 100%;
+  }
+  .header-logo {
+    @include flex();
+    align-items: center;
+    margin: auto 0px;
+    width: auto;
     height: 100%;
-
-    @include en-desktop {
-      max-width: 1200px;
+    z-index: 9999;
+    @include desktop {
+      width: 104px;
+      .logo {
+        width: 100%;
+      }
+    }
+    @include tablet {
       width: auto;
-      margin: 0px auto;
-      padding: 0 !important;
-    }
-    @include en-tablet {
-      padding: 0px 40px !important;
-      width: 100%;
-    }
-    @include en-mobile {
-      padding: 0px 20px !important;
-      width: 100%;
-    }
-    .header-logo {
-      @include flex();
-      align-items: center;
-      margin: auto 0px;
-      width: 123px;
-      z-index: 9999;
-      @include desktop {
-        width: 123px;
-        .logo {
-          width: 100%;
-        }
-      }
-      @include tablet {
-        width: auto;
-        height: 100%;
-        .logo {
-          width: 134px;
-        }
-      }
-      @include mobile {
-        width: auto;
-        height: 100%;
-        .logo {
-          width: 134px;
-        }
+      height: 100%;
+      .logo {
+        width: 104px;
       }
     }
-    .header-navigation-wrapper {
-      @include flex($justify: flex-end);
-      align-items: center;
-      flex: 1;
-      flex-wrap: nowrap;
-      text-align: center;
-      margin: auto 0px;
-      .navigation-link {
-        @include relative;
-        @include regular(16);
-        display: inline-block;
-        margin-left: 34px;
-        font-size: 16px;
-        line-height: 20px;
-        color: $text-darken-5;
-        transition: color ease-in-out 0.2s;
+    @include mobile {
+      width: auto;
+      height: 100%;
+      .logo {
+        width: 104px;
+      }
+    }
+  }
+  .header-navigation-wrapper {
+    @include flex($justify: flex-end);
+    align-items: center;
+    flex: 1;
+    flex-wrap: nowrap;
+    text-align: center;
+    margin: auto 0px;
+    .navigation-link {
+      @include relative;
+      @include regular(16);
+      display: inline-block;
+      margin-left: 34px;
+      font-size: 16px;
+      line-height: 20px;
+      color: $text-darken-5;
+      transition: color ease-in-out 0.2s;
 
-        .navigation-subtitle-list {
-          @include absolute(top 30px right -30px);
-          display: none;
-          background-color: blue;
-          min-width: 160px;
-          height: 200px;
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          z-index: 1;
+      .navigation-subtitle-list {
+        @include absolute(top 30px right -30px);
+        display: none;
+        background-color: blue;
+        min-width: 160px;
+        height: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
 
-          .navigation-subtitle-item {
-            padding: 0px;
+        .navigation-subtitle-item {
+          padding: 0px;
 
-            &:hover {
-              background-color: #ddd;
-            }
+          &:hover {
+            background-color: #ddd;
           }
         }
+      }
 
-        &.router-link-active {
-          font-weight: 600;
+      &.router-link-active {
+        font-weight: 600;
+        color: $text-darken;
+      }
+
+      &.lang-button {
+        @include flex($justify: flex-start);
+        align-items: center;
+        width: 163px;
+        height: 36px;
+        padding-left: 14px;
+
+        &:hover {
+          transition: color ease-in-out 0.2s;
           color: $text-darken;
         }
 
-        &.lang-button {
-          @include flex($justify: flex-start);
-          align-items: center;
-          width: 163px;
-          height: 36px;
-          padding-left: 14px;
+        i {
+          @include regular(22);
+          margin-right: 12px;
+        }
+
+        p {
+          margin-right: 8px;
+        }
+
+        &.active {
+          border-radius: 18px;
+          box-shadow: 0px 0px 20px rgba(211, 210, 242, 0.6);
+          transition: box-shadow ease-in-out 0.2s;
+          transition: color ease-in-out 0.2s;
 
           &:hover {
-            transition: color ease-in-out 0.2s;
-            color: $text-darken;
-          }
-
-          i {
-            @include regular(22);
-            margin-right: 12px;
+            color: $text-darken-5;
           }
 
           p {
-            margin-right: 8px;
+            &:hover {
+              transition: color ease-in-out 0.2s;
+              color: $navigation;
+            }
           }
 
-          &.active {
-            border-radius: 18px;
-            box-shadow: 0px 0px 20px rgba(211, 210, 242, 0.6);
-            transition: box-shadow ease-in-out 0.2s;
-            transition: color ease-in-out 0.2s;
+          a {
+            height: 26px;
+            margin-left: 8px;
+            font-size: 15px;
+            line-height: 27px;
 
             &:hover {
-              color: $text-darken-5;
-            }
-
-            p {
-              &:hover {
-                transition: color ease-in-out 0.2s;
-                color: $navigation;
-              }
-            }
-
-            a {
-              height: 26px;
-              margin-left: 8px;
-              font-size: 15px;
-              line-height: 27px;
-
-              &:hover {
-                transition: color ease-in-out 0.2s;
-                color: $navigation;
-                font-weight: 500;
-              }
+              transition: color ease-in-out 0.2s;
+              color: $navigation;
+              font-weight: 500;
             }
           }
         }
       }
     }
-    .header-demo-wrapper {
-      width: 148px;
-      height: 44px;
-      background-color: $navigation;
-      color: $white;
-      border-radius: 10px;
-      letter-spacing: 0.1em;
-      transition: all ease-in-out 0.2s;
-      margin: 18px 0px 18px;
-      background-color: $navigation;
-      &:hover {
-        @include elevation-3;
-        transform: translateY(-2px);
-      }
+  }
+  .header-demo-wrapper {
+    @include semi-bold(12);
+    width: 122px;
+    height: 36px;
+    background-color: $navigation;
+    color: $white;
+    border-radius: 5px;
+    letter-spacing: 1.25px;
 
-      .demo-link {
-        @include semi-bold(14);
-        color: $white;
-        letter-spacing: 1.4px;
-      }
-    }
-    .header-drawer-wrapper {
-      @include center-center;
-      margin: auto 0px;
-      padding: 12px;
-      padding-right: 0px;
-      height: 100%;
-      position: absolute;
-      right: 0px;
-      span {
-        @include medium(28);
-      }
+    transition: all ease-in-out 0.2s;
+    background-color: $navigation;
+    &:hover {
+      @include elevation-3;
+      transform: translateY(-2px);
     }
   }
-
-  .dropdown {
-    width: 137px;
-    margin-right: 28px;
-    padding-bottom: 5px;
-    overflow: hidden;
-
-    &:nth-child(2) {
-      width: 160px;
-
-      .dropdown-content {
-        width: 160px;
-      }
-    }
-  }
-
-  .dropdown .dropbtn {
-    @include flex();
-    @include medium(15);
-    border: none;
-    align-items: center;
-    outline: none;
-    color: $text-darken;
-    padding: 24px 15px 29px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0px auto;
-
-    i {
-      @include regular(20);
-      margin-left: 8px;
-    }
-  }
-
-  .navbar a:hover,
-  .dropdown:hover .dropbtn {
-    color: $navigation;
-
-    i {
-      transform: rotate(-180deg);
-    }
-  }
-
-  .dropdown-content {
-    @include elevation-2();
-    @include vertical-center();
-    visibility: hidden;
+  .header-drawer-wrapper {
+    @include center-center;
+    margin: auto 0px;
+    padding: 12px;
+    padding-right: 0px;
+    height: 100%;
     position: absolute;
-    background-color: $white;
-    min-width: 137px;
-    padding: 15px 0px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 7px;
-    box-shadow: 0px 4px 8px rgba(142, 141, 208, 0.16);
-    border: 1px solid $footer;
-
-    svg {
-      margin-right: 8px;
+    right: 0px;
+    span {
+      @include medium(28);
     }
   }
+}
 
-  .dropdown-content a {
-    @include flex();
-    @include regular(14);
-    color: $text-darken;
-    align-items: center;
-    padding: 4px 18px 4px 14px;
-    text-decoration: none;
-    text-align: left;
-  }
+.dropdown {
+  width: 137px;
+  margin-right: 28px;
+  overflow: hidden;
 
-  .dropdown-content a:hover {
-    color: $navigation;
+  &:nth-child(2) {
+    width: 160px;
 
-    :deep(svg) {
-      path {
-        fill: $navigation;
-      }
+    .dropdown-content {
+      width: 160px;
     }
   }
+}
 
-  .dropdown:hover .dropdown-content {
-    visibility: visible;
+.dropdown .dropbtn {
+  @include flex();
+  @include medium(14);
+  border: none;
+  align-items: center;
+  outline: none;
+  color: $text-darken;
+  padding: 10px 14px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0px auto;
+
+  i {
+    @include regular(18);
+    margin-left: 8px;
   }
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  color: $navigation;
+
+  i {
+    transform: rotate(-180deg);
+  }
+}
+
+.dropdown-content {
+  @include vertical-center();
+  visibility: hidden;
+  position: absolute;
+  background-color: $white;
+  min-width: 137px;
+  padding: 16px 0px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+  border-radius: 8px;
+  border: 1px solid $footer;
+
+  svg {
+    margin-right: 8px;
+  }
+}
+
+.dropdown-content a {
+  @include flex();
+  @include regular(12);
+  color: $text-darken;
+  align-items: center;
+  padding: 4px 18px 4px 14px;
+  text-decoration: none;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  color: $navigation;
+
+  :deep(svg) {
+    path {
+      fill: $navigation;
+    }
+  }
+}
+
+.dropdown:hover .dropdown-content {
+  visibility: visible;
 }
 </style>
