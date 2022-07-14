@@ -3,7 +3,9 @@
     class="landing-main-wrapper bg-gray-50 pt-[100vw] lg:pt-[50vw] md:bg-red-300 lg:bg-core-300"
   >
     <Layout class="gap-42">
-      <ListItem class="justify-start items-start gap-[38px] md:gap-[46px]">
+      <ListItem
+        class="justify-start items-start gap-[38px] md:gap-[46px] md:w-full lg:w-full"
+      >
         <div
           class="flex flex-col justify-start items-start gap-[32px] md:gap-[36px]"
         >
@@ -287,23 +289,25 @@
               done.
             </span>
             <span
-              class="text-m-26-regular md:text-t-34-regular text-white lg:hidden"
+              class="text-m-26-regular md:text-t-34-regular text-white lg:hidden w-[280px]"
               >research, done.
             </span>
           </p>
         </ListItem>
         <ListItem
-          class="max-w-[248px] md:max-w-[294px] lg:max-w-auto gap-12 md:gap-14 lg:gap-14 text-white text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
+          class="max-w-[248px] md:max-w-full lg:max-w-full md:flex-1 lg:flex-1 gap-12 md:gap-14 lg:gap-14 text-white text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
         >
           <p>All solutions are zoning code compliant.</p>
           <p>How?</p>
-          <p class="w-[255px] md:w-[294px] lg:w-[330px]">
+          <p class="w-[255px] md:w-[300px] lg:w-[340px]">
             <span>We have a dedicated </span
             ><span class="font-semibold">&nbsp;Zoning Team</span><br /><span
-              >per region that does all the </span
-            ><br /><span>research for you and inputs </span><br /><span
-              >regulations into Zenerate's engine.
+              >per region that does all the&nbsp;
             </span>
+            <span>research&nbsp;</span>
+            <span>for you and inputs&nbsp;</span>
+            <span>regulations&nbsp;</span>
+            <span> into Zenerate's engine. </span>
           </p>
         </ListItem>
       </Layout>
@@ -417,7 +421,7 @@
     <div class="bg-white">
       <Layout class="gap-42 relative w-auto">
         <ListItem
-          class="justify-start m-auto items-start gap-[310px] md:gap-[106px] lg:gap-[116px] w-[260px] md:w-auto lg:w-auto"
+          class="justify-start m-auto items-start gap-[310px] md:gap-[106px] lg:gap-[116px] w-[260px] md:w-full lg:w-full"
         >
           <div
             class="flex flex-col justify-start items-start gap-[32px] md:gap-[36px]"
