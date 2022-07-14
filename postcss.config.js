@@ -4,6 +4,7 @@ const { join } = require('path')
 module.exports = {
   plugins: {
     'tailwindcss/nesting': {},
+    'postcss-preset-env': { stage: 0 },
     tailwindcss: {
       config: join(__dirname, 'tailwind.config.js'),
     },

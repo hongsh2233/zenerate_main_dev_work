@@ -1,68 +1,475 @@
 <template>
-  <div class="landing-main-wrapper bg-gray-50 pt-[100vw] lg:pt-[50vw]">
-    <div class="layout w-full flex flex-col gap-42">
-      <div
-        class="flex flex-col justify-start items-start gap-[38px] md:gap-[46px]"
-      >
+  <div
+    class="landing-main-wrapper bg-gray-50 pt-[100vw] lg:pt-[50vw] md:bg-red-300 lg:bg-core-300"
+  >
+    <Layout class="gap-42">
+      <ListItem class="justify-start items-start gap-[38px] md:gap-[46px]">
         <div
           class="flex flex-col justify-start items-start gap-[32px] md:gap-[36px]"
         >
           <div
             class="flex flex-col justify-start items-start relative gap-6 md:gap-8 lg:gap-10"
           >
-            <p class="text-14 font-semibold text-left text-core-500">
+            <p
+              class="text-14-semibold md:text-16-semibold lg:text-20-semibold text-left text-core-500"
+            >
               Explore ALL possibilities
             </p>
-            <p class="text-26 text-left text-black">
-              <span class="text-26 font-semibold text-left text-black"
-                >Thousands of </span
-              ><br /><span class="text-26 font-semibold text-left text-black"
-                >feasible solutions</span
-              ><span class="text-26 text-left text-black"> </span><br /><span
-                class="text-26 text-left text-black"
-                >within minutes</span
-              >
+            <p
+              class="text-m-26-semibold md:text-t-34-semibold lg:text-d-40-semibold text-left text-black"
+            >
+              <span>Thousands of </span><br /><span>feasible solutions</span
+              ><br /><span>within minutes</span>
             </p>
           </div>
-          <div class="flex flex-col justify-start items-start relative gap-5">
-            <p class="text-14 text-left text-black">
-              <span class="text-14 text-left text-black"
-                >Zenerate's AI-powered feasibility study tool</span
-              ><br /><span class="text-14 text-left text-black"
-                >provides thousands of zoning code compliant</span
-              ><br /><span class="text-14 text-left text-black"
+          <div
+            class="flex flex-col justify-start items-start relative gap-5 max-w-[260px] md:max-w-[340px] lg:max-w-[440px]"
+          >
+            <p
+              class="text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
+            >
+              <span>Zenerate's AI-powered feasibility study tool</span
+              ><br /><span>provides thousands of zoning code compliant</span
+              ><br /><span
                 >solutions that are optimized to maximize returns.
               </span>
             </p>
-            <p class="w-[422px] text-14 text-left text-black">
-              <span class="w-[422px] text-14 text-left text-black"
-                >No more spending weeks and months </span
-              ><br /><span class="w-[422px] text-14 text-left text-black"
+            <p
+              class="w-[422px] text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
+            >
+              <span>No more spending weeks and months </span><br /><span
                 >to come up with 3-5 feasible options </span
-              ><br /><span class="w-[422px] text-14 text-left text-black"
-                >for development.</span
-              >
+              ><br /><span>for development.</span>
             </p>
-            <p class="text-14 text-left text-black">
-              <span class="text-14 text-left text-black"
-                >Now, you can explore all the possibilities </span
-              ><br /><span class="text-14 text-left text-black"
-                >of a site within minutes.
-              </span>
+            <p
+              class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-left text-black"
+            >
+              <span>Now, you can explore all the possibilities </span
+              ><br /><span>of a site within minutes. </span>
             </p>
           </div>
         </div>
-        <button type="button" class="primary-button text-16 uppercase">
+        <button
+          type="button"
+          class="primary-button mx-auto text-16 uppercase md:mx-0 lg:mx-0"
+        >
           <router-link class="demo-link" :to="{ name: 'en-how-to-use' }">
             How Zenerate works
           </router-link>
         </button>
-      </div>
+      </ListItem>
       <div class="image-wrapper w-100vw h-[224px] overflow-hidden">
         <div class="bg-core-400 w-full h-full">
           애니메이션 빌딩 그림 움직이게
         </div>
       </div>
+    </Layout>
+
+    <Layout class="gap-[70px]">
+      <ListItem class="items-center">
+        <svg
+          width="73"
+          height="72"
+          viewBox="0 0 73 72"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-[72px] h-[72px]"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <rect
+            x="4.01123"
+            y="25.4667"
+            width="53.5111"
+            height="31.5333"
+            fill="#C5CBFF"
+          ></rect>
+          <g style="mix-blend-mode: multiply">
+            <rect
+              x="14.5223"
+              y="14"
+              width="54.4667"
+              height="33.4444"
+              fill="#DCDFFF"
+            ></rect>
+          </g>
+          <rect
+            x="14.5223"
+            y="25.4667"
+            width="43"
+            height="21.9778"
+            fill="#5C6DFF"
+          ></rect>
+          <path
+            d="M46.3883 23.7106H40.4481C38.5938 23.7106 37.0906 25.2138 37.0906 27.0681C37.0906 28.9224 38.5938 30.4256 40.4481 30.4256H43.0308C44.8851 30.4256 46.3883 31.9288 46.3883 33.7831C46.3883 35.6374 44.8851 37.1406 43.0308 37.1406H37.0906"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          ></path>
+          <path
+            d="M41.7394 21.6445V22.6776"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          ></path>
+          <path
+            d="M41.7394 38.1737V39.2067"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+        <p
+          class="text-t-30-semibold md:text-t-34-semibold lg:text-d-42-semibold md-6 lg:mb-8 text-center text-black"
+        >
+          +12 %
+        </p>
+        <p
+          class="text-[22px] leading-[1.2] md:text-[26px] lg:text-[32px] font-semibold text-center text-black mb-20 lg:mb-30"
+        >
+          additional<br />returns
+        </p>
+        <p
+          class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-center text-black"
+        >
+          <span>Users have experienced </span><br /><span
+            class="text-m-14-semibold md:text-t-16-semibold lg:text-d-18-semibold"
+            >3-26% additional returns </span
+          ><br /><span>compared to their original </span><br /><span
+            >plans which took them </span
+          ><br /><span>weeks or months to create.</span>
+        </p>
+      </ListItem>
+      <ListItem class="items-center">
+        <svg
+          width="72"
+          height="72"
+          viewBox="0 0 72 72"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-[72px] h-[72px]"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M56.0714 35.999C56.0714 24.6377 46.8613 15.4276 35.5 15.4276C24.1387 15.4276 14.9286 24.6377 14.9286 35.999L56.0714 35.999Z"
+            fill="#DCDFFF"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M35.5 59.999C22.2452 59.999 11.5 49.2539 11.5 35.999C11.5 22.7442 22.2452 11.999 35.5 11.999C48.7548 11.999 59.5 22.7442 59.5 35.999H55.2143C55.2143 25.1111 46.3879 16.2847 35.5 16.2847C24.6121 16.2847 15.7857 25.1111 15.7857 35.999C15.7857 46.8869 24.6121 55.7133 35.5 55.7133L35.5 59.999Z"
+            fill="#5C6DFF"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M35.5 11.999C22.2452 11.999 11.5 22.7442 11.5 35.999C11.5 49.2539 22.2452 59.999 35.5 59.999L35.5 55.7133C24.6121 55.7133 15.7857 46.8869 15.7857 35.999C15.7857 25.1111 24.6121 16.2847 35.5 16.2847L35.5 11.999Z"
+            fill="#A4AEFF"
+          ></path>
+          <g style="mix-blend-mode: multiply">
+            <rect
+              x="47.5"
+              y="49.7133"
+              width="3.42857"
+              height="3.42857"
+              fill="#5C6DFF"
+            ></rect>
+          </g>
+          <g style="mix-blend-mode: multiply">
+            <rect
+              x="52.6429"
+              y="43.7133"
+              width="3.42857"
+              height="3.42857"
+              fill="#5C6DFF"
+            ></rect>
+          </g>
+          <g style="mix-blend-mode: multiply">
+            <rect
+              x="40.6429"
+              y="54.8562"
+              width="3.42857"
+              height="3.42857"
+              fill="#5C6DFF"
+            ></rect>
+          </g>
+          <rect
+            x="33.7857"
+            y="22.2847"
+            width="4.28571"
+            height="17.1429"
+            fill="#A4AEFF"
+          ></rect>
+          <rect
+            x="46.6429"
+            y="35.999"
+            width="4.28571"
+            height="12.8571"
+            transform="rotate(90 46.6429 35.999)"
+            fill="#5C6DFF"
+          ></rect>
+          <path
+            d="M57.3571 41.1419L50.3052 33.4276L64.4091 33.4276L57.3571 41.1419Z"
+            fill="#5C6DFF"
+          ></path>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M11.5 35.999C11.5 49.2539 22.2452 59.999 35.5 59.999L35.5 55.7133C24.6121 55.7133 15.7857 46.8869 15.7857 35.999H11.5Z"
+            fill="#A4AEFF"
+          ></path>
+        </svg>
+        <p
+          class="text-[24px] leading-[1.2] md:text-[26px] lg:text-[32px] mb-18 md:mb-16 md:mb-23 font-semibold text-center text-black"
+        >
+          Hundreds of <br />hours saved
+        </p>
+        <div class="flex flex-col justify-start items-center gap-4">
+          <p
+            class="text-m-15-semibold mb-16 md:text-16-semibold md:mb-10 lg:mb-20 lg:text-t-22-semibold text-center text-black"
+          >
+            Cut down on weeks <br />&#x26; months of
+          </p>
+          <div>
+            <div class="flex flex-col justify-start items-start gap-1.5">
+              <template v-for="(items, idx) in CONTENT.saved" :key="idx">
+                <div class="flex justify-start relative gap-2.5">
+                  <div
+                    class="w-16 h-16 rounded-[50%] bg-core-50 mt-3 md:mt-4 lg:mt-6 flex items-center justify-center"
+                  >
+                    <Icon
+                      icon-name="checkmark"
+                      icon-color="#4D49F4"
+                      :width="12"
+                      :height="12"
+                    />
+                  </div>
+                  <p
+                    class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
+                  >
+                    <template v-for="(name, iidx) in items.name" :key="iidx">
+                      <br v-if="iidx !== 0" />
+                      {{ name }}
+                    </template>
+                  </p>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </ListItem>
+    </Layout>
+
+    <div class="bg-[#242B4E]">
+      <Layout>
+        <ListItem
+          class="justify-center md:justify-start lg:justify-start w-[248px] md:w-auto lg:w-auto"
+        >
+          <p
+            class="text-14-semibold mb-6 md:text-16-semibold mb-8 lg:text-20-semibold lg:mb-10 text-left text-core-500"
+          >
+            Zoning code compliance
+          </p>
+          <p class="text-left text-white mb-28 md:mr-[76px] lg:mr-[114px]">
+            <span
+              class="text-m-26-semibold md:text-t-34-medium lg:text-d-40-semibold text-white"
+              >Zoning
+            </span>
+            <span class="text-d-40-regular text-white hidden lg:inline-block"
+              >&nbsp;research
+            </span>
+            <br />
+            <span class="text-d-40-regular text-white hidden lg:inline-block">
+              done.
+            </span>
+            <span
+              class="text-m-26-regular md:text-t-34-regular text-white lg:hidden"
+              >research, done.
+            </span>
+          </p>
+        </ListItem>
+        <ListItem
+          class="max-w-[248px] md:max-w-[294px] lg:max-w-auto gap-12 md:gap-14 lg:gap-14 text-white text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
+        >
+          <p>All solutions are zoning code compliant.</p>
+          <p>How?</p>
+          <p class="w-[255px] md:w-[294px] lg:w-[330px]">
+            <span>We have a dedicated </span
+            ><span class="font-semibold">&nbsp;Zoning Team</span><br /><span
+              >per region that does all the </span
+            ><br /><span>research for you and inputs </span><br /><span
+              >regulations into Zenerate's engine.
+            </span>
+          </p>
+        </ListItem>
+      </Layout>
+    </div>
+
+    <div class="bg-white">
+      <Layout class="md:gap-9 lg:gap-6 px-0 bg-white items-center">
+        <ListItem
+          class="w-[320px] h-[210px] px-30 pt-32 pb-30 md:px-36 md:pt-34 md:shadow-100 lg:shadow-100 md:rounded-8 lg:rounded-8 bg-white md:pb-36 lg:px-34 lg:pt-34 lg:pb-36 md:w-[340px] md:h-[244px] lg:w-[358px] lg:h-[260px]"
+        >
+          <div class="flex flex-col justify-start items-start gap-[18px]">
+            <div class="flex justify-between items-center w-full">
+              <p
+                class="text-m-18-semibold md:text-t-20-semibold lg:text-d-22-semibold text-black"
+              >
+                <span>Accurate,</span><br /><span>up-to-date</span>
+              </p>
+              <svg
+                width="42"
+                height="42"
+                viewBox="0 0 42 42"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[42px] h-[42px]"
+                preserveAspectRatio="none"
+              >
+                <circle cx="21" cy="21" r="17" fill="#ECEFFF"></circle>
+                <path d="M19 0L23 0V8L19 8V0Z" fill="#A4AEFF"></path>
+                <path d="M19 34H23V42H19V34Z" fill="#A4AEFF"></path>
+                <path d="M34 23L34 19L42 19L42 23L34 23Z" fill="#A4AEFF"></path>
+                <path
+                  d="M0 23L-1.74846e-07 19L8 19L8 23L0 23Z"
+                  fill="#A4AEFF"
+                ></path>
+                <circle cx="21" cy="21" r="4" fill="#5C6DFF"></circle>
+              </svg>
+            </div>
+            <p
+              class="text-m-14-regular text-gray-700 md:text-t-16-regular lg:text-d-18-regular"
+            >
+              <span>We update our zoning </span><br /><span
+                >information monthly so you </span
+              ><br /><span>have the most accurate zoning </span><br /><span
+                >information available to you.
+              </span>
+            </p>
+          </div>
+        </ListItem>
+        <ListItem
+          class="w-[320px] h-[210px] px-30 pt-32 pb-30 md:px-36 md:pt-34 md:shadow-100 lg:shadow-100 md:rounded-8 lg:rounded-8 bg-white md:pb-36 lg:px-34 lg:pt-34 lg:pb-36 md:w-[340px] md:h-[244px] lg:w-[358px] lg:h-[260px]"
+        >
+          <div class="flex flex-col justify-start items-start gap-[18px]">
+            <div class="flex justify-between items-center w-full">
+              <p
+                class="text-m-18-semibold md:text-t-20-semibold lg:text-d-22-semibold text-black"
+              >
+                <span>Overlays &#x26; incentives </span><br /><span
+                  >included</span
+                >
+              </p>
+              <svg
+                width="44"
+                height="42"
+                viewBox="0 0 44 42"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-[44px] h-[41px]"
+                preserveAspectRatio="none"
+              >
+                <g style="mix-blend-mode: multiply">
+                  <circle
+                    cx="33.5"
+                    cy="11"
+                    r="10.5"
+                    transform="rotate(-180 33.5 11)"
+                    fill="#A4AEFF"
+                  ></circle>
+                </g>
+                <g style="mix-blend-mode: multiply">
+                  <circle
+                    cx="17.5"
+                    cy="24"
+                    r="17.5"
+                    transform="rotate(-180 17.5 24)"
+                    fill="#ECEFFF"
+                  ></circle>
+                </g>
+                <g style="mix-blend-mode: multiply">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M23.5692 7.58105C23.2003 8.6528 23 9.80301 23 11C23 16.799 27.701 21.5 33.5 21.5C33.944 21.5 34.3815 21.4724 34.811 21.419C33.8662 15.0273 29.4656 9.76143 23.5692 7.58105Z"
+                    fill="#7D8AFF"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <p
+              class="text-m-14-regular text-gray-700 md:text-t-16-regular lg:text-d-18-regular"
+            >
+              <span>Choose from multiple</span><br /><span
+                >overlays and specific city </span
+              ><br /><span>plan incentives, all within </span><br /><span
+                >the tool.</span
+              >
+            </p>
+          </div>
+        </ListItem>
+      </Layout>
+    </div>
+    <div class="bg-white">
+      <Layout class="gap-42">
+        <ListItem class="justify-start items-start gap-[38px] md:gap-[46px]">
+          <div
+            class="flex flex-col justify-start items-start gap-[32px] md:gap-[36px]"
+          >
+            <div
+              class="flex flex-col justify-start items-start relative gap-6 md:gap-8 lg:gap-10"
+            >
+              <p
+                class="text-14-semibold md:text-16-semibold lg:text-20-semibold text-left text-core-500"
+              >
+                Feasibility solutions
+              </p>
+              <p
+                class="text-m-24-regular md:text-t-34-regular lg:text-d-40-regular text-left text-black"
+              >
+                <span> What's included </span><br /><span>in each</span
+                ><br /><span
+                  class="text-m-24-semibold md:text-t-34-semibold lg:text-d-40-semibold"
+                  >zenerated solution?</span
+                >
+              </p>
+            </div>
+            <div
+              class="flex flex-col justify-start items-start relative gap-5 max-w-[260px] md:max-w-[340px] lg:max-w-[440px]"
+            >
+              <p
+                class="text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
+              >
+                <span>Zenerate's AI-powered feasibility study tool</span
+                ><br /><span>provides thousands of zoning code compliant</span
+                ><br /><span
+                  >solutions that are optimized to maximize returns.
+                </span>
+              </p>
+              <p
+                class="w-[422px] text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
+              >
+                <span>No more spending weeks and months </span><br /><span
+                  >to come up with 3-5 feasible options </span
+                ><br /><span>for development.</span>
+              </p>
+              <p
+                class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-left text-black"
+              >
+                <span>Now, you can explore all the possibilities </span
+                ><br /><span>of a site within minutes. </span>
+              </p>
+            </div>
+          </div>
+        </ListItem>
+        <div class="image-wrapper w-100vw h-[224px] overflow-hidden">
+          <div class="bg-core-400 w-full h-full">노트북 그림 움직이게</div>
+        </div>
+      </Layout>
     </div>
   </div>
 </template>
@@ -70,5 +477,27 @@
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
+import { Icon, Layout, ListItem } from '/Components/EN'
+
+const CONTENT = {
+  saved: [
+    {
+      name: ['Searching for sites'],
+      isOneLine: true,
+    },
+    {
+      name: ['Analyzing zoning codes'],
+      isOneLine: true,
+    },
+    {
+      name: ['Crunching numbers'],
+      isOneLine: true,
+    },
+    {
+      name: ['Requesting or drafting', 'preliminary floor plans'],
+      isOneLine: false,
+    },
+  ],
+}
 </script>
 <style lang="scss" scoped></style>

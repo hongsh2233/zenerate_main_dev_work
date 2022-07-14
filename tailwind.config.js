@@ -10,98 +10,12 @@ module.exports = {
   corePlugins: {
     preflight: false,
   },
-  content: ['./src/**/*.{html,ts,js,vue}', './index.html'],
+  content: ['./src/**/*.{html,ts,js,vue}'],
   theme: {
     screens: {
-      base: { min: '', max: px(768) },
-      md: { min: px(1024), max: px(768) },
-      lg: { min: px(1024), max: '' },
-    },
-    fontSize: {
-      44: [
-        '44px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.3',
-        },
-      ],
-      40: [
-        '40px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.3',
-        },
-      ],
-      38: [
-        '38px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.3',
-        },
-      ],
-      34: [
-        '34px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.3',
-        },
-      ],
-      32: [
-        '32px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.5',
-        },
-      ],
-      30: [
-        '30px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.5',
-        },
-      ],
-      26: [
-        '26px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.2',
-        },
-      ],
-      24: [
-        '24px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.4',
-        },
-      ],
-      22: [
-        '22px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.2',
-        },
-      ],
-      20: [
-        '20px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.5',
-        },
-      ],
-      18: [
-        '18px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.5',
-        },
-      ],
-      16: [
-        '16px',
-        {
-          letterSpacing: '0px',
-          lineHeight: '1.5',
-        },
-      ],
+      base: { max: '768px' },
+      md: { min: '768px', max: '1024px' },
+      lg: { min: '1024px' },
     },
     fontWeight: {
       bold: 700,
@@ -262,7 +176,27 @@ module.exports = {
   },
   variants: {
     extend: {
-      // opacity: ['disabled'],
+      display: ['responsive'],
+      zIndex: ['responsive', 'hover'],
+      position: ['responsive', 'hover'],
+      padding: ['responsive', 'last'],
+      margin: ['responsive', 'last'],
+      borderWidth: ['responsive', 'last'],
+      backgroundColor: ['last', 'first', 'odd', 'responsive', 'hover', 'dark'],
+      borderColor: ['last', 'first', 'odd', 'responsive', 'hover', 'dark'],
+      fontSize: ['responsive', 'hover'],
+      fontWeight: ['responsive', 'hover'],
+      textColor: ['last', 'first', 'odd', 'responsive', 'hover', 'dark'],
+      boxShadow: ['last', 'first', 'odd', 'responsive', 'hover', 'dark'],
+      borderOpacity: ['last', 'first', 'odd', 'responsive', 'hover', 'dark'],
+      backgroundOpacity: [
+        'last',
+        'first',
+        'odd',
+        'responsive',
+        'hover',
+        'dark',
+      ],
     },
   },
   plugins: [
@@ -279,21 +213,427 @@ module.exports = {
         })
       })
       addComponents({
-        // ---------------- text ----------------
+        // ---------------- Text:Desktop ----------------
+        '.text-d-44-semibold': {
+          fontWeight: '600',
+          fontSize: '44px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-d-44-medium': {
+          fontWeight: '500',
+          fontSize: '44px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-d-42-semibold': {
+          fontWeight: '600',
+          fontSize: '42px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-d-40-bold': {
+          fontWeight: '700',
+          fontSize: '40px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-d-40-semibold': {
+          fontWeight: '600',
+          fontSize: '40px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-d-40-medium': {
+          fontWeight: '500',
+          fontSize: '40px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-d-40-regular': {
+          fontWeight: '400',
+          fontSize: '40px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-d-32-bold': {
+          fontWeight: '700',
+          fontSize: '32px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-32-semibold': {
+          fontWeight: '600',
+          fontSize: '32px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-32-medium': {
+          fontWeight: '500',
+          fontSize: '32px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-32-regular': {
+          fontWeight: '400',
+          fontSize: '32px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-32-light': {
+          fontWeight: '300',
+          fontSize: '32px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-26-semibold': {
+          fontWeight: '600',
+          fontSize: '26px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-d-26-light': {
+          fontWeight: '300',
+          fontSize: '26px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-d-24-semibold': {
+          fontWeight: '600',
+          fontSize: '24px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-d-24-medium': {
+          fontWeight: '500',
+          fontSize: '24px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-d-24-regular': {
+          fontWeight: '400',
+          fontSize: '24px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-d-22-semibold': {
+          fontWeight: '600',
+          fontSize: '22px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-d-22-light': {
+          fontWeight: '300',
+          fontSize: '22px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-d-18-semibold': {
+          fontWeight: '600',
+          fontSize: '18px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-18-medium': {
+          fontWeight: '500',
+          fontSize: '18px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-18-regular': {
+          fontWeight: '400',
+          fontSize: '18px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-15-medium': {
+          fontWeight: '500',
+          fontSize: '15px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-14-semibold': {
+          fontWeight: '600',
+          fontSize: '14px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-14-medium': {
+          fontWeight: '500',
+          fontSize: '14px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-14-regular': {
+          fontWeight: '400',
+          fontSize: '14px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-d-13-medium': {
+          fontWeight: '500',
+          fontSize: '13px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-d-12-medium': {
+          fontWeight: '500',
+          fontSize: '12px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        // ---------------- Text:Tablet ----------------
+        '.text-t-38-semibold': {
+          fontWeight: '600',
+          fontSize: '38px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-t-38-regular': {
+          fontWeight: '400',
+          fontSize: '38px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-t-34-semibold': {
+          fontWeight: '600',
+          fontSize: '34px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-t-34-medium': {
+          fontWeight: '500',
+          fontSize: '34px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-t-34-regular': {
+          fontWeight: '400',
+          fontSize: '34px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-t-30-bold': {
+          fontWeight: '700',
+          fontSize: '30px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-t-30-semibold': {
+          fontWeight: '600',
+          fontSize: '34px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-t-30-regular': {
+          fontWeight: '400',
+          fontSize: '34px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-t-26-semibold': {
+          fontWeight: '600',
+          fontSize: '26px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-t-26-regular': {
+          fontWeight: '400',
+          fontSize: '26px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-t-22-semibold': {
+          fontWeight: '600',
+          fontSize: '22px',
+          lineHeight: '1.2',
+          letterSpacing: '0px',
+        },
+        '.text-t-20-semibold': {
+          fontWeight: '600',
+          fontSize: '20px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-t-16-semibold': {
+          fontWeight: '600',
+          fontSize: '16px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-t-16-medium': {
+          fontWeight: '500',
+          fontSize: '16px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-t-16-regular': {
+          fontWeight: '400',
+          fontSize: '16px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
 
-        '.text-24-semi-bold': {
+        // ---------------- Text:Mobile ----------------
+        '.text-m-28-semibold': {
+          fontWeight: '600',
+          fontSize: '28px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-28-regular': {
+          fontWeight: '400',
+          fontSize: '28px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-26-semibold': {
+          fontWeight: '600',
+          fontSize: '26px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-26-medium': {
+          fontWeight: '500',
+          fontSize: '26px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-26-regular': {
+          fontWeight: '400',
+          fontSize: '26px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-24-semibold': {
+          fontWeight: '600',
+          fontSize: '24px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-24-medium': {
+          fontWeight: '500',
+          fontSize: '24px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-24-regular': {
+          fontWeight: '400',
+          fontSize: '24px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-22-bold': {
+          fontWeight: '700',
+          fontSize: '22px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-22-semibold': {
+          fontWeight: '600',
+          fontSize: '22px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-22-regular': {
+          fontWeight: '400',
+          fontSize: '22px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-20-semibold': {
+          fontWeight: '600',
+          fontSize: '20px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-m-20-light': {
+          fontWeight: '400',
+          fontSize: '20px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-m-18-semibold': {
+          fontWeight: '600',
+          fontSize: '18px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-m-18-regular': {
+          fontWeight: '400',
+          fontSize: '18px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-m-16-semibold': {
+          fontWeight: '600',
+          fontSize: '16px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-m-16-regular': {
+          fontWeight: '400',
+          fontSize: '16px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-m-15-semibold': {
+          fontWeight: '600',
+          fontSize: '15px',
+          lineHeight: '1.3',
+          letterSpacing: '0px',
+        },
+        '.text-m-14-semibold': {
+          fontWeight: '600',
+          fontSize: '14px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-m-14-medium': {
+          fontWeight: '400',
+          fontSize: '14px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-m-14-regular': {
+          fontWeight: '400',
+          fontSize: '14px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-m-13-semibold': {
+          fontWeight: '600',
+          fontSize: '13px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-m-13-medium': {
+          fontWeight: '400',
+          fontSize: '13px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+        '.text-m-13-regular': {
+          fontWeight: '400',
+          fontSize: '13px',
+          lineHeight: '1.5',
+          letterSpacing: '0px',
+        },
+
+        // ---------------- Text: App ----------------
+        '.text-24-semibold': {
           fontWeight: '600',
           fontSize: '24px',
           lineHeight: '1.25',
           letterSpacing: '0px',
         },
-        '.text-22-semi-bold': {
+        '.text-22-semibold': {
           fontWeight: '600',
           fontSize: '22px',
           lineHeight: '1.25',
           letterSpacing: '0px',
         },
-        '.text-20-semi-bold': {
+        '.text-20-semibold': {
           fontWeight: '600',
           fontSize: '20px',
           lineHeight: '1.25',
@@ -305,7 +645,7 @@ module.exports = {
           lineHeight: '1.25',
           letterSpacing: '0px',
         },
-        '.text-18-semi-bold': {
+        '.text-18-semibold': {
           fontWeight: '600',
           fontSize: '18px',
           lineHeight: '1.25',
@@ -323,7 +663,7 @@ module.exports = {
           lineHeight: '1.25',
           letterSpacing: '0px',
         },
-        '.text-16-semi-bold': {
+        '.text-16-semibold': {
           fontWeight: '600',
           fontSize: '16px',
           lineHeight: '1.35',
@@ -341,7 +681,7 @@ module.exports = {
           lineHeight: '1.35',
           letterSpacing: '0px',
         },
-        '.text-15-semi-bold': {
+        '.text-15-semibold': {
           fontWeight: '600',
           fontSize: '15px',
           lineHeight: '1.35',
@@ -353,7 +693,7 @@ module.exports = {
           lineHeight: '1.35',
           letterSpacing: '0px',
         },
-        '.text-14-semi-bold': {
+        '.text-14-semibold': {
           fontWeight: '600',
           fontSize: '14px',
           lineHeight: '1.35',
@@ -371,7 +711,7 @@ module.exports = {
           lineHeight: '1.35',
           letterSpacing: '0px',
         },
-        '.text-13-semi-bold': {
+        '.text-13-semibold': {
           fontWeight: '600',
           fontSize: '13px',
           lineHeight: '1.35',
@@ -389,7 +729,7 @@ module.exports = {
           lineHeight: '1.35',
           letterSpacing: '0px',
         },
-        '.text-12-semi-bold': {
+        '.text-12-semibold': {
           fontWeight: '600',
           fontSize: '12px',
           lineHeight: '1.35',
@@ -413,7 +753,7 @@ module.exports = {
           lineHeight: '1.40',
           letterSpacing: '-0.02em',
         },
-        '.text-10-semi-bold': {
+        '.text-10-semibold': {
           fontWeight: '600',
           fontSize: '10px',
           lineHeight: '1.35',
@@ -437,6 +777,7 @@ module.exports = {
           lineHeight: '1.40',
           letterSpacing: '-0.02em',
         },
+
         '.text-uppercase-button': {
           fontWeight: '600',
           lineHeight: '1.25',
