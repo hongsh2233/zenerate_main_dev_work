@@ -415,8 +415,10 @@
       </Layout>
     </div>
     <div class="bg-white">
-      <Layout class="gap-42">
-        <ListItem class="justify-start items-start gap-[38px] md:gap-[46px]">
+      <Layout class="gap-42 relative w-auto">
+        <ListItem
+          class="justify-start m-auto items-start gap-[310px] md:gap-[106px] lg:gap-[116px] w-[260px] md:w-auto lg:w-auto"
+        >
           <div
             class="flex flex-col justify-start items-start gap-[32px] md:gap-[36px]"
           >
@@ -438,37 +440,67 @@
                 >
               </p>
             </div>
+          </div>
+          <div class="w-full">
             <div
-              class="flex flex-col justify-start items-start relative gap-5 max-w-[260px] md:max-w-[340px] lg:max-w-[440px]"
+              class="image-wrapper w-[200px] h-[224px] overflow-hidden absolute top-[164px] right-0 md:top-[210px] lg:top-[300px]"
             >
-              <p
-                class="text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
-              >
-                <span>Zenerate's AI-powered feasibility study tool</span
-                ><br /><span>provides thousands of zoning code compliant</span
-                ><br /><span
-                  >solutions that are optimized to maximize returns.
-                </span>
-              </p>
-              <p
-                class="w-[422px] text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
-              >
-                <span>No more spending weeks and months </span><br /><span
-                  >to come up with 3-5 feasible options </span
-                ><br /><span>for development.</span>
-              </p>
-              <p
-                class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-left text-black"
-              >
-                <span>Now, you can explore all the possibilities </span
-                ><br /><span>of a site within minutes. </span>
-              </p>
+              <div class="bg-core-400 w-full h-full">노트북 그림</div>
+            </div>
+            <div
+              class="grid grid-rows-2 gap-[44px] md:grid-cols-2 lg:grid-cols-2"
+            >
+              <ListItem class="w-full bg-red-200 gap-30">
+                <div
+                  class="image-wrapper w-[260px] md:w-[290px] lg:w-[358px] h-[200px] overflow-hidden rounded-8 border-1 border-gray-50 border-solid shadow-200 bg-white"
+                >
+                  <div class="bg-core-50 w-full h-full">image</div>
+                </div>
+                <div class="flex flex-col">
+                  <p
+                    class="text-black text-m-18-semibold mb-10 md:text-t-22-semibold md:mb-16 lg:text-d-24-semibold lg:mb-14"
+                  >
+                    Detailed floor plans
+                  </p>
+                  <p
+                    class="text-gray-700 text-m-14-regular md:text-t-16-medium lg:text-d-18-medium"
+                  >
+                    <span>In order to accurately calculate</span><br /><span
+                      >expected rent revenue</span
+                    ><br /><span>we incorporate market consistent</span
+                    ><br /><span>floor plans within our 3D model.</span
+                    ><br /><span>Custom floor plans available for</span
+                    ><br /><span>input into our engine if needed.</span>
+                  </p>
+                </div>
+              </ListItem>
+              <div class="bg-red-50 hidden md:block lg:block"></div>
+              <div class="bg-red-50 hidden md:block lg:block"></div>
+              <ListItem class="w-full bg-red-200 gap-30">
+                <div
+                  class="image-wrapper w-[260px] md:w-[290px] lg:w-[358px] h-[200px] overflow-hidden rounded-8 border-1 border-gray-50 border-solid shadow-200 bg-white"
+                >
+                  <div class="bg-core-50 w-full h-full">image</div>
+                </div>
+                <div class="flex flex-col">
+                  <p
+                    class="text-black text-m-18-semibold mb-10 md:text-t-22-semibold md:mb-16 lg:text-d-24-semibold lg:mb-14"
+                  >
+                    In-depth financial analysis
+                  </p>
+                  <p
+                    class="text-gray-700 text-m-14-regular md:text-t-16-medium lg:text-d-18-medium"
+                  >
+                    <span>Detailed discounted cash flow</span><br /><span
+                      >analysis with adjustable loan</span
+                    ><br /><span>assumptions and various metrics</span
+                    ><br /><span>based on your own financial models.</span>
+                  </p>
+                </div>
+              </ListItem>
             </div>
           </div>
         </ListItem>
-        <div class="image-wrapper w-100vw h-[224px] overflow-hidden">
-          <div class="bg-core-400 w-full h-full">노트북 그림 움직이게</div>
-        </div>
       </Layout>
     </div>
   </div>
