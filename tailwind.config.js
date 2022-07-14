@@ -421,13 +421,13 @@ module.exports = {
         },
         '.text-t-30-semibold': {
           fontWeight: '600',
-          fontSize: '34px',
+          fontSize: '30px',
           lineHeight: '1.5',
           letterSpacing: '0px',
         },
         '.text-t-30-regular': {
           fontWeight: '400',
-          fontSize: '34px',
+          fontSize: '30px',
           lineHeight: '1.5',
           letterSpacing: '0px',
         },

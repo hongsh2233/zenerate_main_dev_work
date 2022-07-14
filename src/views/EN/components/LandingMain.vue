@@ -800,6 +800,51 @@
         </div>
       </Layout>
     </div>
+
+    <div class="bg-white">
+      <Layout
+        class="md:flex-col lg:flex-col items-center gap-63 md:gap-34 lg:gap-40"
+      >
+        <p
+          class="text-black w-[250px] md:w-auto lg:w-auto text-center text-m-22-regular md:text-t-30-regular lg:text-d-32-regular"
+        >
+          <span>Ready to&nbsp;</span
+          ><span class="font-bold md:font-semibold">maximize&nbsp;</span
+          ><span class="font-bold md:font-semibold"> your returns</span
+          ><br /><span>while saving</span
+          ><span>&nbsp;hundreds of hours?&nbsp;</span>
+        </p>
+        <div class="flex flex-col items-center gap-16">
+          <button
+            type="button"
+            class="primary-button mx-auto text-16 uppercase md:mx-0 lg:mx-0"
+          >
+            <router-link class="demo-link" :to="{ name: 'en-how-to-use' }">
+              Try Zenerate
+            </router-link>
+          </button>
+          <button
+            type="button"
+            class="text-button mx-auto text-16 uppercase md:mx-0 lg:mx-0 group"
+          >
+            <router-link
+              class="demo-link flex items-center"
+              :to="{ name: 'en-how-to-use' }"
+            >
+              Book a quick demo
+              <Icon
+                icon-name="chevron-right"
+                icon-color="484A4F"
+                icon-hover-color="#4D49F4"
+                icon-active-color="#3E3CCB"
+                :width="24"
+                :height="24"
+              />
+            </router-link>
+          </button>
+        </div>
+      </Layout>
+    </div>
   </div>
 </template>
 

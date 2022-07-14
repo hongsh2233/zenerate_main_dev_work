@@ -46,6 +46,7 @@
         [`group-hover:!fill-red-400`]: iconHoverColor === '#FF4A55',
         [`group-active:!fill-white`]: iconActiveColor === 'white',
         [`group-active:!fill-core-500`]: iconActiveColor === '#5C6DFF',
+        [`group-active:!fill-core-700`]: iconActiveColor === '#E3CCB',
         [`group-focus-within:!fill-gray-700`]: iconFocusColor === '#484A4F',
       }"
     >
