@@ -426,7 +426,7 @@
               class="flex flex-col justify-start items-start relative gap-6 md:gap-8 lg:gap-10"
             >
               <p
-                class="text-14-semibold md:text-16-semibold lg:text-20-semibold text-left text-core-500"
+                class="text-14-semibold md:text-16-semibold lg:text-20-semibold text-left text-primary"
               >
                 Feasibility solutions
               </p>
@@ -501,6 +501,303 @@
             </div>
           </div>
         </ListItem>
+      </Layout>
+    </div>
+    <div class="bg-gray-50">
+      <Layout class="md:flex-col lg:flex-col">
+        <div
+          class="flex flex-col justify-start items-start gap-6 md:gap-8 lg:gap-10 mb-[42px] md:mb-[56px] lg:mb-[98px]"
+        >
+          <p
+            class="text-14-semibold md:text-16-semibold lg:text-20-semibold text-primary"
+          >
+            Who uses Zenerate
+          </p>
+          <p
+            class="text-m-24-medium md:text-t-34-medium lg:text-d-40-medium text-black md:w-[520px] lg:w-[610px]"
+          >
+            <span>A tool that makes&nbsp;</span
+            ><span
+              class="text-m-24-semibold md:text-t-34-semibold lg:text-d-40-semibold text-primary"
+              >work easier&nbsp;</span
+            ><span>and&nbsp;</span
+            ><span
+              class="text-m-24-semibold md:text-t-34-semibold lg:text-d-40-semibold text-primary"
+              >more profitable</span
+            ><span>&nbsp;for: </span>
+          </p>
+        </div>
+        <div
+          class="grid grid-rows-2 gap-[44px] md:gap-[48px] lg:grid-cols-2 lg:gap-x-90 lg:gap-y-72"
+        >
+          <ListItem class="gap-6 lg:gap-8">
+            <svg
+              width="76"
+              height="76"
+              viewBox="0 0 76 76"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[76px] h-[76px] relative"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <rect x="4" y="13" width="29" height="48" fill="#DCDFFF"></rect>
+              <rect
+                width="16"
+                height="24"
+                transform="matrix(-1 0 0 1 49 37)"
+                fill="#A4AEFF"
+              ></rect>
+              <rect
+                x="10"
+                y="20.0001"
+                width="5"
+                height="5"
+                fill="#000729"
+              ></rect>
+              <rect
+                x="21"
+                y="20.0004"
+                width="5"
+                height="5"
+                fill="#000729"
+              ></rect>
+              <rect
+                x="10"
+                y="30.0001"
+                width="5"
+                height="5"
+                fill="#000729"
+              ></rect>
+              <rect
+                x="21"
+                y="30.0004"
+                width="5"
+                height="5"
+                fill="#000729"
+              ></rect>
+              <rect x="10" y="40" width="5" height="5" fill="#000729"></rect>
+              <rect x="21" y="40" width="5" height="5" fill="#000729"></rect>
+              <g style="mix-blend-mode: multiply">
+                <circle
+                  cx="52.799"
+                  cy="34.799"
+                  r="14"
+                  transform="rotate(-45 52.799 34.799)"
+                  fill="#DCDFFF"
+                ></circle>
+              </g>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M48.9999 48.2762C46.7659 47.6487 44.6571 46.4561 42.8995 44.6984C40.7275 42.5264 39.4183 39.8183 38.9721 37H48.9999V48.2762Z"
+                fill="#000729"
+              ></path>
+              <rect
+                x="56.3345"
+                y="41.163"
+                width="4"
+                height="20"
+                rx="2"
+                transform="rotate(-45 56.3345 41.163)"
+                fill="#5C6DFF"
+              ></rect>
+            </svg>
+            <div
+              class="flex flex-col justify-start items-start relative gap-8 md:gap-14 lg:gap-10"
+            >
+              <p
+                class="text-black text-m-18-semibold md:text-t-22-semibold lg:text-d-24-semibold"
+              >
+                Developers
+              </p>
+              <p
+                class="text-gray-700 text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
+              >
+                <span>Gain on average an additional&nbsp;</span
+                ><span>12% profit on your projects </span><br /><span
+                  >by instantly zenerating site solutions&nbsp;</span
+                ><span>beyond what's capable </span><br /><span
+                  >within human capacity.</span
+                >
+              </p>
+            </div>
+          </ListItem>
+          <ListItem class="gap-6 lg:gap-8">
+            <svg
+              width="76"
+              height="76"
+              viewBox="0 0 76 76"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[76px] h-[76px] relative"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <circle cx="26" cy="24" r="9" fill="#A4AEFF"></circle>
+              <path
+                d="M9 51C9 42.1634 16.1634 35 25 35H27C35.8366 35 43 42.1634 43 51V60H9V51Z"
+                fill="#DCDFFF"
+              ></path>
+              <rect x="46" y="31" width="19" height="29" fill="#5C6DFF"></rect>
+              <rect x="51" y="35" width="3" height="3" fill="white"></rect>
+              <rect x="51" y="41" width="3" height="3" fill="white"></rect>
+              <rect x="58" y="41" width="3" height="3" fill="white"></rect>
+              <rect x="58" y="35" width="3" height="3" fill="white"></rect>
+              <rect x="36" y="47" width="10" height="13" fill="#000729"></rect>
+            </svg>
+            <div
+              class="flex flex-col justify-start items-start gap-8 md:gap-14 lg:gap-10"
+            >
+              <p
+                class="text-black text-m-18-semibold md:text-t-22-semibold lg:text-d-24-semibold"
+              >
+                Brokers
+              </p>
+              <p
+                class="text-gray-700 text-m-14-medium md:text-t-16-medium lg:text-d-18-medium md:w-[424px]"
+              >
+                <span>Leverage your position like never&nbsp;</span>
+                <span>before by instantly&nbsp;</span>
+
+                <span>and accurately&nbsp;</span>
+
+                <span> evaluating profit potential on sites. </span>
+              </p>
+            </div>
+          </ListItem>
+          <ListItem class="gap-6 lg:gap-8">
+            <svg
+              width="76"
+              height="76"
+              viewBox="0 0 76 76"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[76px] h-[76px] relative"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <rect
+                x="7"
+                y="11"
+                width="36.7348"
+                height="36.7348"
+                fill="#DCDFFF"
+              ></rect>
+              <g style="mix-blend-mode: multiply">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M18.9435 23.2451H66.9999V58.1432L18.9435 23.2451ZM43.4251 31.2545H58.8394V42.6965L43.4251 31.2545Z"
+                  fill="#5C6DFF"
+                ></path>
+              </g>
+              <g style="mix-blend-mode: multiply">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M43.7348 23.2451H18.9434L43.7348 41.2485V31.4845L43.425 31.2545H43.7348V23.2451Z"
+                  fill="#000729"
+                ></path>
+              </g>
+              <g style="mix-blend-mode: multiply">
+                <circle
+                  cx="26.5903"
+                  cy="53.8555"
+                  r="12.1206"
+                  transform="rotate(-45 26.5903 53.8555)"
+                  fill="#A4AEFF"
+                ></circle>
+              </g>
+              <g style="mix-blend-mode: multiply">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M37.0555 47.7348H16.1252C16.6377 46.8599 17.2693 46.0354 18.0198 45.2849C22.7532 40.5515 30.4275 40.5515 35.1609 45.2849C35.9114 46.0354 36.543 46.8599 37.0555 47.7348Z"
+                  fill="#000729"
+                ></path>
+              </g>
+            </svg>
+            <div
+              class="flex flex-col justify-start items-start gap-8 md:gap-14 lg:gap-10"
+            >
+              <p
+                class="text-black text-m-18-semibold md:text-t-22-semibold lg:text-d-24-semibold"
+              >
+                Architects
+              </p>
+              <p
+                class="text-gray-700 text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
+              >
+                <span
+                  >Gain an immediate starting point for your project. Save
+                  hundreds of </span
+                ><br /><span
+                  >hours and win deals by instantly zenerating profit maximized
+                  designs </span
+                ><br /><span>hat clients want to see.</span>
+              </p>
+            </div>
+          </ListItem>
+          <ListItem class="gap-6 lg:gap-8">
+            <svg
+              width="76"
+              height="76"
+              viewBox="0 0 76 76"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-[76px] h-[76px] relative"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <rect x="8" y="28" width="51" height="31" fill="#000729"></rect>
+              <g style="mix-blend-mode: multiply">
+                <rect
+                  x="17"
+                  y="17"
+                  width="53"
+                  height="33"
+                  fill="#DCDFFF"
+                ></rect>
+              </g>
+              <rect x="17" y="28" width="42" height="22" fill="#5C6DFF"></rect>
+              <path
+                d="M47.4172 26.5283H41.8621C40.1279 26.5283 38.7222 28.0757 38.7222 29.9845C38.7222 31.8934 40.1279 33.4408 41.8621 33.4408H44.2774C46.0115 33.4408 47.4172 34.9882 47.4172 36.897C47.4172 38.8058 46.0115 40.3532 44.2774 40.3532H38.7222"
+                stroke="white"
+                stroke-width="2.5"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M43.0698 24.4014V25.4648"
+                stroke="white"
+                stroke-width="2.5"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M43.0698 41.4167V42.4802"
+                stroke="white"
+                stroke-width="2.5"
+                stroke-linecap="square"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <div
+              class="flex flex-col justify-start items-start gap-8 md:gap-14 lg:gap-10"
+            >
+              <p
+                class="text-black text-m-18-semibold md:text-t-22-semibold lg:text-d-24-semibold"
+              >
+                Private Equity
+              </p>
+              <p
+                class="text-gray-700 text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
+              >
+                <span>Gain deep insight into all the&nbsp;</span
+                ><span>possible development solutions and</span><br /><span
+                  >make sure that the project you're&nbsp;</span
+                ><span>financing is fulfilling its profit potential.</span>
+              </p>
+            </div>
+          </ListItem>
+        </div>
       </Layout>
     </div>
   </div>
