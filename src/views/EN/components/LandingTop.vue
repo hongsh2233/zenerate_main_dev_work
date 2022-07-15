@@ -12,16 +12,18 @@
               ></canvas>
             </div> -->
             <div class="background-wrapper z-[-1]">
-              <div class="background">
-                <span></span>
-                <span></span>
-                <span></span>
+              <div class="background lg:h-[558px]">
+                <span class="z-[3]"></span>
+                <span class="z-[2]"></span>
+                <span class="z-[1]"></span>
               </div>
             </div>
             <Layout class="pb-44 md:pb-56 lg:pb-50">
-              <div class="flex flex-col gap-44 md:gap-[88px] lg:gap-[140px]">
+              <div
+                class="w-full flex flex-col gap-44 md:gap-[88px] lg:gap-[140px]"
+              >
                 <div
-                  class="grid grid-rows-[1fr_1fr_auto] md:grid-cols-2 md:grid-rows-[auto_auto] lg:grid-cols-2 lg:grid-rows-[auto_auto] gap-24 md:gap-34 lg:gap-38 mt-100 md:mt-147 lg:mt-182"
+                  class="grid grid-rows-[1fr_1fr_auto] md:grid-cols-[auto_auto] md:grid-rows-[auto_auto] lg:grid-cols-[auto_auto] lg:grid-rows-[auto_auto] gap-24 md:gap-34 lg:gap-x-38 lg:gap-y-[104px] mt-100 md:mt-147 lg:mt-182"
                 >
                   <ListItem class="gap-24">
                     <p
@@ -51,9 +53,27 @@
                   </ListItem>
                   <ListItem>
                     <div class="image-wrapper relative">
-                      <div
-                        class="w-[200px] h-[200px] bg-white absolute right-0 top-0"
-                      ></div>
+                      <div class="absolute right-[-236px] top-[-60px]">
+                        <picture>
+                          <source
+                            srcset="/en/img/landing_top_small.png"
+                            media="(max-width: 767px)"
+                          />
+                          <source
+                            srcset="/en/img/landing_top_medium.png"
+                            media="(max-width: 1023px)"
+                          />
+                          <source
+                            srcset="/en/img/landing_top_large.png"
+                            media="(max-width: 1920px)"
+                          />
+                          <img
+                            src="/en/img/landing_top_large.png"
+                            alt="Zenerate"
+                            class="w-[330px] md:w-[500px] lg:w-[640px] h-full"
+                          />
+                        </picture>
+                      </div>
                     </div>
                   </ListItem>
                   <div
@@ -195,29 +215,24 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 100vh;
 
     background-color: hsla(234, 71%, 62%, 1);
     overflow: hidden;
 
     span {
-      //   border-radius: 40vmin;
       backface-visibility: hidden;
       position: absolute;
-
       animation-duration: 1s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-      background-color: hsla(234, 71%, 62%, 1);
     }
 
     span:nth-child(1) {
-      //   width: 40vmin;
-      //   height: 40vmin;
       width: 600px;
       height: 700px;
       top: -10%;
       left: -10%;
+      border-radius: 50%;
       animation-duration: 26s;
       animation-delay: -19s;
       transform-origin: -13vw 6vh;
@@ -242,11 +257,11 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
     }
 
     span:nth-child(2) {
-      width: 500px;
+      width: 700px;
       height: 400px;
 
-      top: 12%;
-      right: 0%;
+      top: 20%;
+      right: -6%;
       animation: move;
       animation-duration: 26s;
       animation-delay: -19s;
@@ -254,12 +269,12 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-image: radial-gradient(
-          at 76% 48%,
-          hsla(189, 100%, 60%, 0.85) 0px,
+          at 80% 60%,
+          hsla(189, 100%, 60%, 0.7) 0px,
           transparent 50%
         ),
         radial-gradient(
-          at 45% 25%,
+          at 44% 50%,
           hsla(229, 100%, 96%, 0.7) 0px,
           transparent 50%
         );
@@ -278,12 +293,12 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
       background-size: 100% 100%;
       background-color: hsla(234, 71%, 62%, 1);
       background-image: radial-gradient(
-          at 63% 91%,
+          at 63% 90%,
           hsla(258, 73%, 37%, 1) 0px,
           transparent 50%
         ),
         radial-gradient(
-          at 92% 54%,
+          at 94% 54%,
           hsla(229, 63%, 52%, 0.7) 0px,
           transparent 50%
         );

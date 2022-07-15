@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="landing-main-wrapper bg-gray-50 pt-[100vw] lg:pt-[50vw] md:bg-red-300 lg:bg-core-300"
-  >
+  <div class="landing-main-wrapper">
     <div class="bg-gray-50 pt-50">
       <Layout class="gap-42">
         <ListItem
