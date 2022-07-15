@@ -214,6 +214,18 @@ module.exports = {
       })
       addComponents({
         // ---------------- Text:Desktop ----------------
+        '.text-d-48-semibold': {
+          fontWeight: '600',
+          fontSize: '48px',
+          lineHeight: '1.2',
+          letterSpacing: '0px',
+        },
+        '.text-d-48-regular': {
+          fontWeight: '400',
+          fontSize: '48px',
+          lineHeight: '1.2',
+          letterSpacing: '0px',
+        },
         '.text-d-44-semibold': {
           fontWeight: '600',
           fontSize: '44px',

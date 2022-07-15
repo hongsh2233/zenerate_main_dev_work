@@ -1,6 +1,6 @@
 <template>
   <section class="section_top">
-    <div class="section-container">
+    <div class="w-full h-auto">
       <div>
         <div class="section-layout">
           <div class="gradient-area">
@@ -11,43 +11,97 @@
                 data-transition-in
               ></canvas>
             </div> -->
-            <div class="background-wrapper">
+            <div class="background-wrapper z-[-1]">
               <div class="background">
                 <span></span>
                 <span></span>
                 <span></span>
               </div>
             </div>
-            <div class="gradient-title-area grid-2-columns">
-              <p class="text relative flex flex-col justify-end text-white">
-                <strong>Maximize returns</strong>
-                by zenerating all possibilities
-              </p>
+            <Layout>
+              <div
+                class="grid grid-rows-3 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-2 gap-24 md:gap-34 lg:gap-38 mt-100 md:mt-147 lg:mt-182"
+              >
+                <ListItem class="gap-24">
+                  <p
+                    class="text-m-28-regular md:text-t-38-regular lg:text-d-48-regular flex relative flex-col justify-end text-white"
+                  >
+                    <strong
+                      class="text-m-28-semibold md:text-t-38-semibold lg:text-d-48-semibold"
+                      >Maximize returns</strong
+                    >
 
-              <div class="text text-under-overlay flex items-end text-white">
-                bbb
+                    by zenerating<br />
+                    all possibilities
+                  </p>
+                  <p
+                    class="text-m-14-medium w-[242px] md:w-[330px] lg:w-[370px] md:text-t-16-regular lg:text-d-18-regular relative text-white md:w-[284px] lg:w-[370px]"
+                  >
+                    <strong
+                      class="text-m-14-medium md:text-t-16-semibold lg:text-d-18-semibold"
+                      >AI-powered feasibility study tool&nbsp;</strong
+                    >
+                    <span>taking&nbsp;</span>
+                    <span>'highest and best use'&nbsp;</span>
+                    <span> to the next level,&nbsp;</span>
+                    <span>boosting returns&nbsp;</span>
+                    <span> by an average of 12%</span>
+                  </p>
+                </ListItem>
+                <ListItem>
+                  <div class="image-wrapper relative">
+                    <div
+                      class="w-[200px] h-[200px] bg-white absolute right-0 top-0"
+                    ></div>
+                  </div>
+                </ListItem>
+                <div
+                  class="flex flex-col md:flex-row gap-y-20 gap-x-8 lg:flex-row"
+                >
+                  <button
+                    type="button"
+                    class="primary-button min-w-[190px] mx-auto text-16 uppercase md:mx-0 lg:mx-0"
+                  >
+                    <router-link
+                      class="demo-link"
+                      :to="{ name: 'en-how-to-use' }"
+                    >
+                      Try Zenerate
+                    </router-link>
+                  </button>
+                  <button
+                    type="button"
+                    class="text-button mx-auto text-16 uppercase md:mx-0 lg:mx-0 group"
+                  >
+                    <router-link
+                      class="demo-link flex items-center"
+                      :to="{ name: 'en-how-to-use' }"
+                    >
+                      <span class="w-[120px]">Contact Us</span>
+                      <Icon
+                        icon-name="chevron-right"
+                        icon-color="484A4F"
+                        icon-hover-color="#4D49F4"
+                        icon-active-color="#3E3CCB"
+                        :width="24"
+                        :height="24"
+                      />
+                    </router-link>
+                  </button>
+                </div>
               </div>
-            </div>
+            </Layout>
           </div>
-          <h2 class="absolute">?????</h2>
         </div>
       </div>
     </div>
   </section>
-  <!-- <section class="landing-top-wrapper">
-    <div class="container grid-2-columns">
-      <div class="background-wrapper">
-        <div class="background"></div>
-      </div>
-      <div class="section-layout-container">title</div>
-      <div class="card-right-container">image</div>
-    </div>
-  </section> -->
 </template>
 
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
+import { Icon, Layout, ListItem } from '/Components/EN'
 </script>
 <style lang="scss" scoped>
 $container_width: 1080px;

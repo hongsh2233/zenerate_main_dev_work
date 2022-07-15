@@ -2,271 +2,275 @@
   <div
     class="landing-main-wrapper bg-gray-50 pt-[100vw] lg:pt-[50vw] md:bg-red-300 lg:bg-core-300"
   >
-    <Layout class="gap-42">
-      <ListItem
-        class="justify-start items-start gap-[38px] md:gap-[46px] md:w-full lg:w-full"
-      >
-        <div
-          class="flex flex-col justify-start items-start gap-[32px] md:gap-[36px]"
+    <div class="bg-gray-50 pt-50">
+      <Layout class="gap-42">
+        <ListItem
+          class="justify-start items-start gap-[38px] md:gap-[46px] md:w-full lg:w-full"
         >
           <div
-            class="flex flex-col justify-start items-start relative gap-6 md:gap-8 lg:gap-10"
+            class="flex flex-col justify-start items-start gap-[32px] md:gap-[36px]"
           >
-            <p
-              class="text-14-semibold md:text-16-semibold lg:text-20-semibold text-left text-core-500"
+            <div
+              class="flex flex-col justify-start items-start relative gap-6 md:gap-8 lg:gap-10"
             >
-              Explore ALL possibilities
-            </p>
-            <p
-              class="text-m-26-semibold md:text-t-34-semibold lg:text-d-40-semibold text-left text-black"
+              <p
+                class="text-14-semibold md:text-16-semibold lg:text-20-semibold text-left text-core-500"
+              >
+                Explore ALL possibilities
+              </p>
+              <p
+                class="text-m-26-semibold md:text-t-34-semibold lg:text-d-40-semibold text-left text-black"
+              >
+                <span>Thousands of </span><br /><span>feasible solutions</span
+                ><br /><span>within minutes</span>
+              </p>
+            </div>
+            <div
+              class="flex flex-col justify-start items-start relative gap-5 max-w-[260px] md:max-w-[340px] lg:max-w-[440px]"
             >
-              <span>Thousands of </span><br /><span>feasible solutions</span
-              ><br /><span>within minutes</span>
-            </p>
-          </div>
-          <div
-            class="flex flex-col justify-start items-start relative gap-5 max-w-[260px] md:max-w-[340px] lg:max-w-[440px]"
-          >
-            <p
-              class="text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
-            >
-              <span>Zenerate's AI-powered feasibility study tool</span
-              ><br /><span>provides thousands of zoning code compliant</span
-              ><br /><span
-                >solutions that are optimized to maximize returns.
-              </span>
-            </p>
-            <p
-              class="w-[422px] text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
-            >
-              <span>No more spending weeks and months </span><br /><span
-                >to come up with 3-5 feasible options </span
-              ><br /><span>for development.</span>
-            </p>
-            <p
-              class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-left text-black"
-            >
-              <span>Now, you can explore all the possibilities </span
-              ><br /><span>of a site within minutes. </span>
-            </p>
-          </div>
-        </div>
-        <button
-          type="button"
-          class="primary-button mx-auto text-16 uppercase md:mx-0 lg:mx-0"
-        >
-          <router-link class="demo-link" :to="{ name: 'en-how-to-use' }">
-            How Zenerate works
-          </router-link>
-        </button>
-      </ListItem>
-      <div class="image-wrapper w-100vw h-[224px] overflow-hidden">
-        <div class="bg-core-400 w-full h-full">
-          애니메이션 빌딩 그림 움직이게
-        </div>
-      </div>
-    </Layout>
-
-    <Layout class="gap-[70px]">
-      <ListItem class="items-center">
-        <svg
-          width="73"
-          height="72"
-          viewBox="0 0 73 72"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-[72px] h-[72px]"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <rect
-            x="4.01123"
-            y="25.4667"
-            width="53.5111"
-            height="31.5333"
-            fill="#C5CBFF"
-          ></rect>
-          <g style="mix-blend-mode: multiply">
-            <rect
-              x="14.5223"
-              y="14"
-              width="54.4667"
-              height="33.4444"
-              fill="#DCDFFF"
-            ></rect>
-          </g>
-          <rect
-            x="14.5223"
-            y="25.4667"
-            width="43"
-            height="21.9778"
-            fill="#5C6DFF"
-          ></rect>
-          <path
-            d="M46.3883 23.7106H40.4481C38.5938 23.7106 37.0906 25.2138 37.0906 27.0681C37.0906 28.9224 38.5938 30.4256 40.4481 30.4256H43.0308C44.8851 30.4256 46.3883 31.9288 46.3883 33.7831C46.3883 35.6374 44.8851 37.1406 43.0308 37.1406H37.0906"
-            stroke="white"
-            stroke-width="3"
-            stroke-linecap="square"
-            stroke-linejoin="round"
-          ></path>
-          <path
-            d="M41.7394 21.6445V22.6776"
-            stroke="white"
-            stroke-width="3"
-            stroke-linecap="square"
-            stroke-linejoin="round"
-          ></path>
-          <path
-            d="M41.7394 38.1737V39.2067"
-            stroke="white"
-            stroke-width="3"
-            stroke-linecap="square"
-            stroke-linejoin="round"
-          ></path>
-        </svg>
-        <p
-          class="text-t-30-semibold md:text-t-34-semibold lg:text-d-42-semibold md-6 lg:mb-8 text-center text-black"
-        >
-          +12 %
-        </p>
-        <p
-          class="text-[22px] leading-[1.2] md:text-[26px] lg:text-[32px] font-semibold text-center text-black mb-20 lg:mb-30"
-        >
-          additional<br />returns
-        </p>
-        <p
-          class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-center text-black"
-        >
-          <span>Users have experienced </span><br /><span
-            class="text-m-14-semibold md:text-t-16-semibold lg:text-d-18-semibold"
-            >3-26% additional returns </span
-          ><br /><span>compared to their original </span><br /><span
-            >plans which took them </span
-          ><br /><span>weeks or months to create.</span>
-        </p>
-      </ListItem>
-      <ListItem class="items-center">
-        <svg
-          width="72"
-          height="72"
-          viewBox="0 0 72 72"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-[72px] h-[72px]"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M56.0714 35.999C56.0714 24.6377 46.8613 15.4276 35.5 15.4276C24.1387 15.4276 14.9286 24.6377 14.9286 35.999L56.0714 35.999Z"
-            fill="#DCDFFF"
-          ></path>
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M35.5 59.999C22.2452 59.999 11.5 49.2539 11.5 35.999C11.5 22.7442 22.2452 11.999 35.5 11.999C48.7548 11.999 59.5 22.7442 59.5 35.999H55.2143C55.2143 25.1111 46.3879 16.2847 35.5 16.2847C24.6121 16.2847 15.7857 25.1111 15.7857 35.999C15.7857 46.8869 24.6121 55.7133 35.5 55.7133L35.5 59.999Z"
-            fill="#5C6DFF"
-          ></path>
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M35.5 11.999C22.2452 11.999 11.5 22.7442 11.5 35.999C11.5 49.2539 22.2452 59.999 35.5 59.999L35.5 55.7133C24.6121 55.7133 15.7857 46.8869 15.7857 35.999C15.7857 25.1111 24.6121 16.2847 35.5 16.2847L35.5 11.999Z"
-            fill="#A4AEFF"
-          ></path>
-          <g style="mix-blend-mode: multiply">
-            <rect
-              x="47.5"
-              y="49.7133"
-              width="3.42857"
-              height="3.42857"
-              fill="#5C6DFF"
-            ></rect>
-          </g>
-          <g style="mix-blend-mode: multiply">
-            <rect
-              x="52.6429"
-              y="43.7133"
-              width="3.42857"
-              height="3.42857"
-              fill="#5C6DFF"
-            ></rect>
-          </g>
-          <g style="mix-blend-mode: multiply">
-            <rect
-              x="40.6429"
-              y="54.8562"
-              width="3.42857"
-              height="3.42857"
-              fill="#5C6DFF"
-            ></rect>
-          </g>
-          <rect
-            x="33.7857"
-            y="22.2847"
-            width="4.28571"
-            height="17.1429"
-            fill="#A4AEFF"
-          ></rect>
-          <rect
-            x="46.6429"
-            y="35.999"
-            width="4.28571"
-            height="12.8571"
-            transform="rotate(90 46.6429 35.999)"
-            fill="#5C6DFF"
-          ></rect>
-          <path
-            d="M57.3571 41.1419L50.3052 33.4276L64.4091 33.4276L57.3571 41.1419Z"
-            fill="#5C6DFF"
-          ></path>
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M11.5 35.999C11.5 49.2539 22.2452 59.999 35.5 59.999L35.5 55.7133C24.6121 55.7133 15.7857 46.8869 15.7857 35.999H11.5Z"
-            fill="#A4AEFF"
-          ></path>
-        </svg>
-        <p
-          class="text-[24px] leading-[1.2] md:text-[26px] lg:text-[32px] mb-18 md:mb-16 md:mb-23 font-semibold text-center text-black"
-        >
-          Hundreds of <br />hours saved
-        </p>
-        <div class="flex flex-col justify-start items-center gap-4">
-          <p
-            class="text-m-15-semibold mb-16 md:text-16-semibold md:mb-10 lg:mb-20 lg:text-t-22-semibold text-center text-black"
-          >
-            Cut down on weeks <br />&#x26; months of
-          </p>
-          <div>
-            <div class="flex flex-col justify-start items-start gap-1.5">
-              <template v-for="(items, idx) in CONTENT.saved" :key="idx">
-                <div class="flex justify-start relative gap-2.5">
-                  <div
-                    class="w-16 h-16 rounded-[50%] bg-core-50 mt-3 md:mt-4 lg:mt-6 flex items-center justify-center"
-                  >
-                    <Icon
-                      icon-name="checkmark"
-                      icon-color="#4D49F4"
-                      :width="12"
-                      :height="12"
-                    />
-                  </div>
-                  <p
-                    class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
-                  >
-                    <template v-for="(name, iidx) in items.name" :key="iidx">
-                      <br v-if="iidx !== 0" />
-                      {{ name }}
-                    </template>
-                  </p>
-                </div>
-              </template>
+              <p
+                class="text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
+              >
+                <span>Zenerate's AI-powered feasibility study tool</span
+                ><br /><span>provides thousands of zoning code compliant</span
+                ><br /><span
+                  >solutions that are optimized to maximize returns.
+                </span>
+              </p>
+              <p
+                class="w-[422px] text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
+              >
+                <span>No more spending weeks and months </span><br /><span
+                  >to come up with 3-5 feasible options </span
+                ><br /><span>for development.</span>
+              </p>
+              <p
+                class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-left text-black"
+              >
+                <span>Now, you can explore all the possibilities </span
+                ><br /><span>of a site within minutes. </span>
+              </p>
             </div>
           </div>
+          <button
+            type="button"
+            class="primary-button mx-auto text-16 uppercase md:mx-0 lg:mx-0"
+          >
+            <router-link class="demo-link" :to="{ name: 'en-how-to-use' }">
+              How Zenerate works
+            </router-link>
+          </button>
+        </ListItem>
+        <div class="image-wrapper w-100vw h-[224px] overflow-hidden">
+          <div class="bg-core-400 w-full h-full">
+            애니메이션 빌딩 그림 움직이게
+          </div>
         </div>
-      </ListItem>
-    </Layout>
+      </Layout>
+    </div>
 
-    <div class="bg-[#242B4E]">
+    <div class="bg-white py-90">
+      <Layout class="gap-[70px]">
+        <ListItem class="items-center">
+          <svg
+            width="73"
+            height="72"
+            viewBox="0 0 73 72"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-[72px] h-[72px]"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <rect
+              x="4.01123"
+              y="25.4667"
+              width="53.5111"
+              height="31.5333"
+              fill="#C5CBFF"
+            ></rect>
+            <g style="mix-blend-mode: multiply">
+              <rect
+                x="14.5223"
+                y="14"
+                width="54.4667"
+                height="33.4444"
+                fill="#DCDFFF"
+              ></rect>
+            </g>
+            <rect
+              x="14.5223"
+              y="25.4667"
+              width="43"
+              height="21.9778"
+              fill="#5C6DFF"
+            ></rect>
+            <path
+              d="M46.3883 23.7106H40.4481C38.5938 23.7106 37.0906 25.2138 37.0906 27.0681C37.0906 28.9224 38.5938 30.4256 40.4481 30.4256H43.0308C44.8851 30.4256 46.3883 31.9288 46.3883 33.7831C46.3883 35.6374 44.8851 37.1406 43.0308 37.1406H37.0906"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M41.7394 21.6445V22.6776"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M41.7394 38.1737V39.2067"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="square"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+          <p
+            class="text-t-30-semibold md:text-t-34-semibold lg:text-d-42-semibold md-6 lg:mb-8 text-center text-black"
+          >
+            +12 %
+          </p>
+          <p
+            class="text-[22px] leading-[1.2] md:text-[26px] lg:text-[32px] font-semibold text-center text-black mb-20 lg:mb-30"
+          >
+            additional<br />returns
+          </p>
+          <p
+            class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-center text-black"
+          >
+            <span>Users have experienced </span><br /><span
+              class="text-m-14-semibold md:text-t-16-semibold lg:text-d-18-semibold"
+              >3-26% additional returns </span
+            ><br /><span>compared to their original </span><br /><span
+              >plans which took them </span
+            ><br /><span>weeks or months to create.</span>
+          </p>
+        </ListItem>
+        <ListItem class="items-center">
+          <svg
+            width="72"
+            height="72"
+            viewBox="0 0 72 72"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-[72px] h-[72px]"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M56.0714 35.999C56.0714 24.6377 46.8613 15.4276 35.5 15.4276C24.1387 15.4276 14.9286 24.6377 14.9286 35.999L56.0714 35.999Z"
+              fill="#DCDFFF"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M35.5 59.999C22.2452 59.999 11.5 49.2539 11.5 35.999C11.5 22.7442 22.2452 11.999 35.5 11.999C48.7548 11.999 59.5 22.7442 59.5 35.999H55.2143C55.2143 25.1111 46.3879 16.2847 35.5 16.2847C24.6121 16.2847 15.7857 25.1111 15.7857 35.999C15.7857 46.8869 24.6121 55.7133 35.5 55.7133L35.5 59.999Z"
+              fill="#5C6DFF"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M35.5 11.999C22.2452 11.999 11.5 22.7442 11.5 35.999C11.5 49.2539 22.2452 59.999 35.5 59.999L35.5 55.7133C24.6121 55.7133 15.7857 46.8869 15.7857 35.999C15.7857 25.1111 24.6121 16.2847 35.5 16.2847L35.5 11.999Z"
+              fill="#A4AEFF"
+            ></path>
+            <g style="mix-blend-mode: multiply">
+              <rect
+                x="47.5"
+                y="49.7133"
+                width="3.42857"
+                height="3.42857"
+                fill="#5C6DFF"
+              ></rect>
+            </g>
+            <g style="mix-blend-mode: multiply">
+              <rect
+                x="52.6429"
+                y="43.7133"
+                width="3.42857"
+                height="3.42857"
+                fill="#5C6DFF"
+              ></rect>
+            </g>
+            <g style="mix-blend-mode: multiply">
+              <rect
+                x="40.6429"
+                y="54.8562"
+                width="3.42857"
+                height="3.42857"
+                fill="#5C6DFF"
+              ></rect>
+            </g>
+            <rect
+              x="33.7857"
+              y="22.2847"
+              width="4.28571"
+              height="17.1429"
+              fill="#A4AEFF"
+            ></rect>
+            <rect
+              x="46.6429"
+              y="35.999"
+              width="4.28571"
+              height="12.8571"
+              transform="rotate(90 46.6429 35.999)"
+              fill="#5C6DFF"
+            ></rect>
+            <path
+              d="M57.3571 41.1419L50.3052 33.4276L64.4091 33.4276L57.3571 41.1419Z"
+              fill="#5C6DFF"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M11.5 35.999C11.5 49.2539 22.2452 59.999 35.5 59.999L35.5 55.7133C24.6121 55.7133 15.7857 46.8869 15.7857 35.999H11.5Z"
+              fill="#A4AEFF"
+            ></path>
+          </svg>
+          <p
+            class="text-[24px] leading-[1.2] md:text-[26px] lg:text-[32px] mb-18 md:mb-16 md:mb-23 font-semibold text-center text-black"
+          >
+            Hundreds of <br />hours saved
+          </p>
+          <div class="flex flex-col justify-start items-center gap-4">
+            <p
+              class="text-m-15-semibold mb-16 md:text-16-semibold md:mb-10 lg:mb-20 lg:text-t-22-semibold text-center text-black"
+            >
+              Cut down on weeks <br />&#x26; months of
+            </p>
+            <div>
+              <div class="flex flex-col justify-start items-start gap-1.5">
+                <template v-for="(items, idx) in CONTENT.saved" :key="idx">
+                  <div class="flex justify-start relative gap-2.5">
+                    <div
+                      class="w-16 h-16 rounded-[50%] bg-core-50 mt-3 md:mt-4 lg:mt-6 flex items-center justify-center"
+                    >
+                      <Icon
+                        icon-name="checkmark"
+                        icon-color="#4D49F4"
+                        :width="12"
+                        :height="12"
+                      />
+                    </div>
+                    <p
+                      class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
+                    >
+                      <template v-for="(name, iidx) in items.name" :key="iidx">
+                        <br v-if="iidx !== 0" />
+                        {{ name }}
+                      </template>
+                    </p>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+        </ListItem>
+      </Layout>
+    </div>
+
+    <div class="bg-[#242B4E] py-90">
       <Layout>
         <ListItem
           class="justify-center md:justify-start lg:justify-start w-[248px] md:w-auto lg:w-auto"
@@ -313,6 +317,13 @@
       </Layout>
     </div>
 
+    <div class="bg-gray-50">
+      <Layout>
+        <div class="image-wrapper h-[50vw] bg-core-200">
+          overlay & incentives
+        </div>
+      </Layout>
+    </div>
     <div class="bg-white">
       <Layout class="md:gap-9 lg:gap-6 px-0 bg-white items-center">
         <ListItem
@@ -418,7 +429,7 @@
         </ListItem>
       </Layout>
     </div>
-    <div class="bg-white">
+    <div class="bg-white py-60">
       <Layout class="gap-42 relative w-auto">
         <ListItem
           class="justify-start m-auto items-start gap-[310px] md:gap-[106px] lg:gap-[116px] w-[260px] md:w-full lg:w-full"
@@ -507,7 +518,7 @@
         </ListItem>
       </Layout>
     </div>
-    <div class="bg-gray-50">
+    <div class="bg-gray-50 pt-100 pb-60">
       <Layout class="md:flex-col lg:flex-col">
         <div
           class="flex flex-col justify-start items-start gap-6 md:gap-8 lg:gap-10 mb-[42px] md:mb-[56px] lg:mb-[98px]"
@@ -805,7 +816,7 @@
       </Layout>
     </div>
 
-    <div class="bg-white">
+    <div class="bg-white pt-90 pb-50">
       <Layout
         class="md:flex-col lg:flex-col items-center gap-63 md:gap-34 lg:gap-40"
       >
@@ -835,7 +846,7 @@
               class="demo-link flex items-center"
               :to="{ name: 'en-how-to-use' }"
             >
-              Book a quick demo
+              <span class="w-[200px]">Book a quick demo</span>
               <Icon
                 icon-name="chevron-right"
                 icon-color="484A4F"

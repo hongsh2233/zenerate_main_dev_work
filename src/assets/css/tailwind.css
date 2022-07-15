@@ -63,7 +63,7 @@
   .primary-button {
     @apply bg-primary;
     height: 48px;
-    padding: 15px 24px;
+    padding: 12px 24px;
     font-weight: 600;
     color: white;
     border-radius: 5px;
@@ -87,7 +87,7 @@
   .text-button {
     @apply bg-white text-gray-700;
     height: 48px;
-    padding: 15px 24px;
+    padding: 12px 24px;
     font-weight: 600;
     border-radius: 5px;
     letter-spacing: 0.08rem;
