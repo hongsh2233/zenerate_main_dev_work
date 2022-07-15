@@ -18,76 +18,116 @@
                 <span></span>
               </div>
             </div>
-            <Layout>
-              <div
-                class="grid grid-rows-3 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-2 lg:grid-rows-2 gap-24 md:gap-34 lg:gap-38 mt-100 md:mt-147 lg:mt-182"
-              >
-                <ListItem class="gap-24">
-                  <p
-                    class="text-m-28-regular md:text-t-38-regular lg:text-d-48-regular flex relative flex-col justify-end text-white"
-                  >
-                    <strong
-                      class="text-m-28-semibold md:text-t-38-semibold lg:text-d-48-semibold"
-                      >Maximize returns</strong
-                    >
-
-                    by zenerating<br />
-                    all possibilities
-                  </p>
-                  <p
-                    class="text-m-14-medium w-[242px] md:w-[330px] lg:w-[370px] md:text-t-16-regular lg:text-d-18-regular relative text-white md:w-[284px] lg:w-[370px]"
-                  >
-                    <strong
-                      class="text-m-14-medium md:text-t-16-semibold lg:text-d-18-semibold"
-                      >AI-powered feasibility study tool&nbsp;</strong
-                    >
-                    <span>taking&nbsp;</span>
-                    <span>'highest and best use'&nbsp;</span>
-                    <span> to the next level,&nbsp;</span>
-                    <span>boosting returns&nbsp;</span>
-                    <span> by an average of 12%</span>
-                  </p>
-                </ListItem>
-                <ListItem>
-                  <div class="image-wrapper relative">
-                    <div
-                      class="w-[200px] h-[200px] bg-white absolute right-0 top-0"
-                    ></div>
-                  </div>
-                </ListItem>
+            <Layout class="pb-44 md:pb-56 lg:pb-50">
+              <div class="flex flex-col gap-44 md:gap-[88px] lg:gap-[140px]">
                 <div
-                  class="flex flex-col md:flex-row gap-y-20 gap-x-8 lg:flex-row"
+                  class="grid grid-rows-[1fr_1fr_auto] md:grid-cols-2 md:grid-rows-[auto_auto] lg:grid-cols-2 lg:grid-rows-[auto_auto] gap-24 md:gap-34 lg:gap-38 mt-100 md:mt-147 lg:mt-182"
                 >
-                  <button
-                    type="button"
-                    class="primary-button min-w-[190px] mx-auto text-16 uppercase md:mx-0 lg:mx-0"
-                  >
-                    <router-link
-                      class="demo-link"
-                      :to="{ name: 'en-how-to-use' }"
+                  <ListItem class="gap-24">
+                    <p
+                      class="text-m-28-regular md:text-t-38-regular lg:text-d-48-regular flex relative flex-col justify-end text-white"
                     >
-                      Try Zenerate
-                    </router-link>
-                  </button>
-                  <button
-                    type="button"
-                    class="text-button mx-auto text-16 uppercase md:mx-0 lg:mx-0 group"
-                  >
-                    <router-link
-                      class="demo-link flex items-center"
-                      :to="{ name: 'en-how-to-use' }"
+                      <strong
+                        class="text-m-28-semibold md:text-t-38-semibold lg:text-d-48-semibold"
+                        >Maximize returns</strong
+                      >
+
+                      by zenerating<br />
+                      all possibilities
+                    </p>
+                    <p
+                      class="text-m-14-medium w-[242px] md:w-[330px] lg:w-[370px] md:text-t-16-regular lg:text-d-18-regular relative text-white md:w-[284px] lg:w-[370px]"
                     >
-                      <span class="w-[120px]">Contact Us</span>
-                      <Icon
-                        icon-name="chevron-right"
-                        icon-color="484A4F"
-                        icon-hover-color="#4D49F4"
-                        icon-active-color="#3E3CCB"
-                        :width="24"
-                        :height="24"
+                      <strong
+                        class="text-m-14-medium md:text-t-16-semibold lg:text-d-18-semibold"
+                        >AI-powered feasibility study tool&nbsp;</strong
+                      >
+                      <span>taking&nbsp;</span>
+                      <span>'highest and best use'&nbsp;</span>
+                      <span> to the next level,&nbsp;</span>
+                      <span>boosting returns&nbsp;</span>
+                      <span> by an average of 12%</span>
+                    </p>
+                  </ListItem>
+                  <ListItem>
+                    <div class="image-wrapper relative">
+                      <div
+                        class="w-[200px] h-[200px] bg-white absolute right-0 top-0"
+                      ></div>
+                    </div>
+                  </ListItem>
+                  <div
+                    class="flex flex-col md:flex-row gap-y-20 gap-x-8 lg:flex-row"
+                  >
+                    <button
+                      type="button"
+                      class="primary-button min-w-[190px] mx-auto text-16 uppercase md:mx-0 lg:mx-0"
+                    >
+                      <router-link
+                        class="demo-link"
+                        :to="{ name: 'en-how-to-use' }"
+                      >
+                        Try Zenerate
+                      </router-link>
+                    </button>
+                    <button
+                      type="button"
+                      class="text-button mx-auto text-16 uppercase md:mx-0 lg:mx-0 group"
+                    >
+                      <router-link
+                        class="demo-link flex items-center"
+                        :to="{ name: 'en-how-to-use' }"
+                      >
+                        <span class="w-[120px]">Contact Us</span>
+                        <Icon
+                          icon-name="chevron-right"
+                          icon-color="484A4F"
+                          icon-hover-color="#4D49F4"
+                          icon-active-color="#3E3CCB"
+                          :width="24"
+                          :height="24"
+                        />
+                      </router-link>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="gap-5 flex items-center md:items-start lg:items-start flex-col lg:flex-row lg:justify-center"
+                >
+                  <div class="flex gap-6 lg:gap-20 md:gap-x-14 md:gap-y-8">
+                    <div class="w-88 h-28 md:w-110 md:h-37 lg:w-130 lg:h-44">
+                      <img
+                        :src="`./logo/logo_color_${partners[0].key}.png`"
+                        class="h-full"
                       />
-                    </router-link>
-                  </button>
+                    </div>
+                    <div class="w-88 h-28 md:w-110 md:h-37 lg:w-130 lg:h-44">
+                      <img
+                        :src="`./logo/logo_color_${partners[1].key}.png`"
+                        class="h-full"
+                      />
+                    </div>
+                  </div>
+                  <div class="flex gap-6 lg:gap-20 md:gap-x-14 md:gap-y-8">
+                    <div class="w-88 h-28 md:w-110 md:h-37 lg:w-130 lg:h-44">
+                      <img
+                        :src="`./logo/logo_color_${partners[2].key}.png`"
+                        class="h-full"
+                      />
+                    </div>
+                    <div class="w-88 h-28 md:w-110 md:h-37 lg:w-130 lg:h-44">
+                      <img
+                        :src="`./logo/logo_color_${partners[3].key}.png`"
+                        class="h-full"
+                      />
+                    </div>
+                    <div class="w-88 h-28 md:w-110 md:h-37 lg:w-130 lg:h-44">
+                      <img
+                        :src="`./logo/logo_color_${partners[4].key}.png`"
+                        class="h-full"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </Layout>
@@ -102,6 +142,7 @@
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
 import { Icon, Layout, ListItem } from '/Components/EN'
+import partners from '/Constants/partners'
 </script>
 <style lang="scss" scoped>
 $container_width: 1080px;

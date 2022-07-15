@@ -4,19 +4,19 @@ export default [
     name: 'CUSHMAN & WAKEFIELD',
   },
   {
-    key: 'neovalue',
-    name: 'NEOVALUE',
-  },
-  {
     key: 'hyundai',
     name: 'HYUNDAI',
   },
   {
-    key: 'shinyoung',
-    name: 'SHINYOUNG',
+    key: 'neovalue',
+    name: 'NEOVALUE',
   },
   {
     key: 'hdc',
     name: 'HDC',
+  },
+  {
+    key: 'shinyoung',
+    name: 'SHINYOUNG',
   },
 ]
