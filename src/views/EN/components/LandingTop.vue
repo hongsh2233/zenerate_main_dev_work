@@ -8,10 +8,10 @@
               class="background-wrapper z-[-1] top-[-80px] md:top-[-108px] lg:top-[-180px]"
             >
               <div
-                class="background-back absolute top-0 left-0 z-[-2] w-[30vw] h-[540px] md:h-[620px] lg:h-[648px] rounded-br-[90%]"
+                class="background-back absolute top-0 left-0 z-[-2] w-[30vw] h-[472px] md:h-[430px] lg:h-[648px] rounded-br-[90%]"
               ></div>
-              <div class="background h-[540px] md:h-[620px] lg:h-[648px]">
-                <Layout class="relative">
+              <div class="background h-[472px] md:h-[456px] lg:h-[648px]">
+                <Layout class="relative h-full">
                   <span class="z-[3]"></span>
                   <span class="z-[2]"></span>
                   <span class="z-[1]"></span>
@@ -23,7 +23,7 @@
                 class="w-full flex flex-col gap-44 md:gap-[88px] lg:gap-[140px]"
               >
                 <div
-                  class="grid grid-rows-[auto_auto] md:grid-cols-[auto_auto] md:grid-rows-[auto_auto] lg:grid-cols-[auto_auto] lg:grid-rows-[auto_auto] gap-24 md:gap-x-34 md:gap-y-[174px] lg:gap-x-38 lg:gap-y-[104px] mt-100 md:mt-[147px] lg:mt-[182px]"
+                  class="grid grid-rows-[auto_auto] md:grid-cols-[auto_auto] md:grid-rows-[auto_auto] lg:grid-cols-[auto_auto] lg:grid-rows-[auto_auto] gap-24 md:gap-x-34 md:gap-y-[92px] lg:gap-x-38 lg:gap-y-[104px] mt-100 md:mt-[147px] lg:mt-[182px]"
                 >
                   <ListItem class="gap-24">
                     <p
@@ -38,7 +38,7 @@
                       all possibilities
                     </p>
                     <p
-                      class="text-m-14-medium w-[242px] md:w-[330px] lg:w-[370px] md:text-t-16-regular lg:text-d-18-regular relative text-white md:w-[284px] lg:w-[370px]"
+                      class="text-m-14-medium w-[242px] md:w-[340px] lg:w-[370px] md:text-t-16-regular lg:text-d-18-regular relative text-white"
                     >
                       <strong
                         class="text-m-14-medium md:text-t-16-semibold lg:text-d-18-semibold"
@@ -54,7 +54,7 @@
                   <ListItem>
                     <div class="image-wrapper relative w-full min-h-[310px]">
                       <div
-                        class="absolute top-0 right-[-60px] md:right-[-236px] lg:right-[-236px] md:top-[-60px] lg:top-[-60px]"
+                        class="absolute top-0 right-[-60px] md:right-[-236px] lg:right-[-236px] md:top-[-36px] lg:top-[-60px]"
                       >
                         <picture>
                           <source
@@ -72,7 +72,7 @@
                           <img
                             src="/en/img/landing_top_large.png"
                             alt="Zenerate"
-                            class="w-[356px] md:w-[500px] lg:w-[654px] h-full"
+                            class="w-[356px] md:w-[568px] lg:w-[654px] h-full"
                           />
                         </picture>
                       </div>
@@ -169,25 +169,18 @@ $gradient-padding: 120px;
 $gradient-title-margin: 100px;
 $section-skew-Y: -12deg;
 $section-angle-sin: 0.212;
-$transform-origin-x: calc(var(--section-gap) * 0.8);
-@mixin mq($container_medium_width) {
-  $section-gap: calc(
-    (100vw - $container_medium_width + $standard_space * 2) / 2
-  );
-}
+$transform-origin-x: calc($section-gap * 0.8);
 
 @keyframes move {
-  //  20% {
-  //   transform: translate3d(0, 0, 1px) rotate(360deg);
-  // }
-  // 100% {
-  //   transform: translate3d(0, 0, 1px) rotate(360deg);
-  // }
-  20% {
-    transform: translateX(4vw);
+  50% {
+    transform: translate3d(0, 0, 1px) rotate(8deg);
   }
-  80% {
-    transform: translateX(-4vw);
+}
+
+@keyframes blur {
+  50% {
+    opacity: 1.2;
+    transform: scale(0.7);
   }
 }
 
@@ -201,8 +194,6 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
   // top: -$gradient-title-margin;
   //   top: auto;
   left: calc($section-gap * -1);
-  //   bottom: 15px;
-
   -webkit-transform-origin: $transform-origin-x 100%;
   transform-origin: $transform-origin-x 100%;
 
@@ -213,9 +204,22 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
     top: -24%;
     width: 100%;
     height: 30%;
-    -webkit-transform: skewY(-12deg);
-    transform: skewY(-12deg);
+    -webkit-transform: skewY(-8deg);
+    transform: skewY(-8deg);
     background-color: hsla(234, 71%, 62%, 1);
+    outline: 1px solid transparent;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    @media only screen and (min-width: theme('screens.md.min')) and (max-width: theme('screens.md.max')) {
+      -webkit-transform: skewY(-10deg);
+      transform: skewY(-10deg);
+    }
+
+    @media only screen and (min-width: theme('screens.lg.min')) {
+      -webkit-transform: skewY(-12deg);
+      transform: skewY(-12deg);
+    }
   }
 
   .background {
@@ -223,31 +227,37 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
     top: 0px;
     left: 0px;
     width: 100%;
-    -webkit-transform: skewY(-12deg);
-    transform: skewY(-12deg);
+    -webkit-transform: skewY(-8deg);
+    transform: skewY(-8deg);
     background-color: hsla(234, 71%, 62%, 1);
-    overflow: hidden;
+    outline: 1px solid transparent;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    // overflow: hidden;
+    @media only screen and (min-width: theme('screens.md.min')) and (max-width: theme('screens.md.max')) {
+      -webkit-transform: skewY(-10deg);
+      transform: skewY(-10deg);
+    }
+
+    @media only screen and (min-width: theme('screens.lg.min')) {
+      -webkit-transform: skewY(-12deg);
+      transform: skewY(-12deg);
+    }
 
     span {
       backface-visibility: hidden;
       position: absolute;
-      animation-duration: 1s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
     }
 
     span:nth-child(1) {
-      width: 600px;
-      height: 700px;
-      top: -10%;
-      left: -10%;
+      width: 360px;
+      height: 440px;
+      top: -100px;
+      left: calc(100% - 320px - 120px);
+
       border-radius: 50%;
-      animation-duration: 0.2ms;
-      // animation-delay: -19s;
-      transform-origin: -13vw 6vh;
-      background-size: 80% 80%;
-      background-repeat: no-repeat;
       overflow: hidden;
+
       background-image: radial-gradient(
           at 48% 48%,
           rgba(235, 251, 255, 0.6) 0px,
@@ -263,24 +273,66 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
           rgba(26, 228, 255, 0.8) 0px,
           transparent 50%
         );
+
+      @media only screen and (min-width: theme('screens.md.min')) and (max-width: theme('screens.md.max')) {
+        width: 540px;
+        height: 540px;
+        top: -120px;
+        left: calc(100% - 720px - 216px);
+      }
+
+      @media only screen and (min-width: theme('screens.lg.min')) {
+        width: 800px;
+        height: 700px;
+        top: -190px;
+        left: calc(100% - 1024px - 170px);
+        background-image: radial-gradient(
+            at 48% 48%,
+            rgba(235, 251, 255, 0.6) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 58% 39%,
+            rgba(255, 61, 168, 0.95) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 44% 52%,
+            rgba(26, 228, 255, 0.8) 0px,
+            transparent 50%
+          );
+      }
+
+      animation: blur;
+      animation-duration: 45;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      transform-origin: -13vw 6vh;
+
+      background-size: 80% 80%;
+      background-repeat: no-repeat;
     }
 
     span:nth-child(2) {
-      width: 700px;
-      height: 400px;
+      width: 400px;
+      height: 280px;
+      top: -72px;
+      right: calc(100% - 320px - 200px);
+      overflow: hidden;
 
-      top: 20%;
-      right: -6%;
       animation: move;
       animation-iteration-count: infinite;
+      animation-timing-function: linear;
       animation-duration: 26s;
       animation-delay: -19s;
+      //  animation-duration: 45;
+
       transform-origin: -13vw 6vh;
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-image: radial-gradient(
-          at 58% 60%,
-          hsla(189, 100%, 60%, 0.7) 0px,
+          at 58% 58%,
+          hsla(189, 100%, 60%, 0.6) 0px,
           transparent 50%
         ),
         radial-gradient(
@@ -288,20 +340,51 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
           hsla(229, 100%, 96%, 0.7) 0px,
           transparent 50%
         );
+
+      @media only screen and (min-width: theme('screens.md.min')) and (max-width: theme('screens.md.max')) {
+        width: 600px;
+        height: 440px;
+        top: -18%;
+        right: -26%;
+
+        background-image: radial-gradient(
+            at 58% 58%,
+            hsla(189, 100%, 60%, 0.6) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 44% 50%,
+            hsla(229, 100%, 96%, 0.7) 0px,
+            transparent 50%
+          );
+      }
+
+      @media only screen and (min-width: theme('screens.lg.min')) {
+        width: 700px;
+        height: 500px;
+        top: 0px;
+        right: calc(100% - 1024px - 200px);
+
+        background-image: radial-gradient(
+            at 58% 66%,
+            hsla(189, 100%, 60%, 0.6) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 44% 50%,
+            hsla(229, 100%, 96%, 0.7) 0px,
+            transparent 50%
+          );
+      }
     }
 
     span:nth-child(3) {
-      //   width: 80vmin;
-      //   height: 60vmin;
       width: 100%;
-      height: 400px;
+      height: 260px;
       bottom: 0%;
       right: 0%;
-      animation-duration: 26s;
-      animation-delay: -19s;
-      transform-origin: -13vw 6vh;
-      background-size: 100% 100%;
-      background-color: hsla(234, 71%, 62%, 1);
+      overflow: hidden;
+
       background-image: radial-gradient(
           at 63% 90%,
           hsla(258, 73%, 37%, 1) 0px,
@@ -312,39 +395,24 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
           hsla(229, 63%, 52%, 0.7) 0px,
           transparent 50%
         );
+
+      @media only screen and (min-width: theme('screens.md.min')) and (max-width: theme('screens.md.max')) {
+        height: 200px;
+      }
+
+      @media only screen and (min-width: theme('screens.lg.min')) {
+        width: 100%;
+        height: 400px;
+        bottom: 0%;
+        right: 0%;
+      }
+
+      animation-duration: 26s;
+      animation-delay: -19s;
+      transform-origin: -13vw 6vh;
+      background-size: 100% 100%;
+      background-color: hsla(234, 71%, 62%, 1);
     }
   }
-}
-
-.grid-2-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.text {
-  margin: $gradient-title-margin 0 0 0;
-  min-height: 200px;
-}
-
-.text-under-blended {
-  color: #3a3a3a;
-  mix-blend-mode: color-burn;
-}
-
-.text-under-overlay {
-  opacity: 0.2;
-  color: #3a3a3a;
-}
-
-#gradient-canvas {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  --gradientcolorzero: #6ec3f4;
-  --gradientcolorone: #3a3aff;
-  --gradientcolortwo: #ff61ab;
-  --gradientcolorthree: #e63946;
 }
 </style>
