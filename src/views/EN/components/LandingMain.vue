@@ -29,24 +29,27 @@
               <p
                 class="text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
               >
-                <span>Zenerate's AI-powered feasibility study tool</span
-                ><br /><span>provides thousands of zoning code compliant</span
-                ><br /><span
-                  >solutions that are optimized to maximize returns.
-                </span>
+                <span>Zenerate's AI-powered feasibility&nbsp;</span
+                ><span> study tool&nbsp;</span
+                ><span>provides thousands of&nbsp;</span
+                ><span> zoning code compliant&nbsp;</span
+                ><span>solutions&nbsp;</span
+                ><span> that are optimized to&nbsp;</span
+                ><span> maximize returns. </span>
               </p>
               <p
                 class="w-[422px] text-left text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-black"
               >
-                <span>No more spending weeks and months </span><br /><span
-                  >to come up with 3-5 feasible options </span
+                <span>No more spending weeks and months&nbsp;</span
+                ><span>to come up with 3-5 feasible options &nbsp;</span
                 ><br /><span>for development.</span>
               </p>
               <p
                 class="text-m-14-regular md:text-t-16-regular lg:text-d-18-regular text-left text-black"
               >
-                <span>Now, you can explore all the possibilities </span
-                ><br /><span>of a site within minutes. </span>
+                <span>Now, you can explore all&nbsp;</span
+                ><span> the possibilities &nbsp;</span
+                ><span>of a site within minutes. </span>
               </p>
             </div>
           </div>
@@ -456,9 +459,27 @@
           </div>
           <div class="w-full">
             <div
-              class="image-wrapper w-[200px] h-[224px] overflow-hidden absolute top-[164px] right-0 md:top-[210px] lg:top-[300px]"
+              class="image-wrapper overflow-hidden absolute top-[164px] right-[-128px] md:top-[234px] lg:top-[300px]"
             >
-              <div class="bg-core-400 w-full h-full">노트북 그림</div>
+              <picture>
+                <source
+                  srcset="/en/img/landing_macbook_small.png"
+                  media="(max-width: 767px)"
+                />
+                <source
+                  srcset="/en/img/landing_macbook_medium.png"
+                  media="(max-width: 1023px)"
+                />
+                <source
+                  srcset="/en/img/landing_macbook_large.png"
+                  media="(max-width: 1920px)"
+                />
+                <img
+                  src="/en/img/landing_macbook_large.png"
+                  alt="Zenerate"
+                  class="w-[406px] md:w-[580px] lg:w-[730px] h-full"
+                />
+              </picture>
             </div>
             <div
               class="grid grid-rows-2 gap-[44px] md:grid-cols-2 lg:grid-cols-2"
@@ -835,19 +856,14 @@
           ><br /><span>while saving</span
           ><span>&nbsp;hundreds of hours?&nbsp;</span>
         </p>
-        <div class="flex flex-col items-center gap-16">
-          <button
-            type="button"
-            class="primary-button mx-auto text-16 uppercase md:mx-0 lg:mx-0"
-          >
+        <div class="flex flex-col items-center gap-16 md:flex-row lg:flex-row">
+          <Button>
             <router-link class="demo-link" :to="{ name: 'en-how-to-use' }">
               Try Zenerate
             </router-link>
-          </button>
-          <button
-            type="button"
-            class="text-button mx-auto text-16 uppercase md:mx-0 lg:mx-0 group"
-          >
+          </Button>
+
+          <Button variant="text">
             <router-link
               class="demo-link flex items-center"
               :to="{ name: 'en-how-to-use' }"
@@ -862,7 +878,7 @@
                 :height="24"
               />
             </router-link>
-          </button>
+          </Button>
         </div>
       </Layout>
     </div>
@@ -872,7 +888,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
-import { Icon, Layout, ListItem } from '/Components/EN'
+import { Icon, Layout, ListItem, Button } from '/Components/EN'
 
 const CONTENT = {
   saved: [

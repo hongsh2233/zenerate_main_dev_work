@@ -4,11 +4,18 @@
       <div>
         <div class="section-layout">
           <div class="gradient-area">
-            <div class="background-wrapper z-[-1]">
-              <div class="background h-[570px] md:h-[400px] lg:h-[558px]">
-                <span class="z-[3]"></span>
-                <span class="z-[2]"></span>
-                <span class="z-[1]"></span>
+            <div
+              class="background-wrapper z-[-1] top-[-80px] md:top-[-108px] lg:top-[-180px]"
+            >
+              <div
+                class="background-back absolute top-0 left-0 z-[-2] w-[30vw] h-[540px] md:h-[620px] lg:h-[648px] rounded-br-[90%]"
+              ></div>
+              <div class="background h-[540px] md:h-[620px] lg:h-[648px]">
+                <Layout class="relative">
+                  <span class="z-[3]"></span>
+                  <span class="z-[2]"></span>
+                  <span class="z-[1]"></span>
+                </Layout>
               </div>
             </div>
             <Layout class="pb-44 md:pb-56 lg:pb-50">
@@ -65,7 +72,7 @@
                           <img
                             src="/en/img/landing_top_large.png"
                             alt="Zenerate"
-                            class="w-[330px] md:w-[500px] lg:w-[640px] h-full"
+                            class="w-[356px] md:w-[500px] lg:w-[654px] h-full"
                           />
                         </picture>
                       </div>
@@ -104,34 +111,34 @@
                 <div
                   class="gap-5 flex items-center md:items-start lg:items-start flex-col lg:flex-row lg:justify-center"
                 >
-                  <div class="flex gap-6 lg:gap-20 md:gap-x-14 md:gap-y-8">
-                    <div class="w-88 h-28 md:w-110 md:h-37 lg:w-130 lg:h-44">
+                  <div class="flex gap-8 lg:gap-20 md:gap-x-14 md:gap-y-8">
+                    <div class="w-88 h-32 md:w-110 md:h-37 lg:w-130 lg:h-44">
                       <img
                         :src="`./logo/logo_color_${partners[0].key}.png`"
                         class="h-full"
                       />
                     </div>
-                    <div class="w-88 h-28 md:w-110 md:h-37 lg:w-130 lg:h-44">
+                    <div class="w-88 h-32 md:w-110 md:h-37 lg:w-130 lg:h-44">
                       <img
                         :src="`./logo/logo_color_${partners[1].key}.png`"
                         class="h-full"
                       />
                     </div>
                   </div>
-                  <div class="flex gap-6 lg:gap-20 md:gap-x-14 md:gap-y-8">
-                    <div class="w-88 h-28 md:w-110 md:h-37 lg:w-130 lg:h-44">
+                  <div class="flex gap-8 md:gap-x-14 md:gap-y-8 lg:gap-20">
+                    <div class="w-88 h-32 md:w-110 md:h-37 lg:w-130 lg:h-44">
                       <img
                         :src="`./logo/logo_color_${partners[2].key}.png`"
                         class="h-full"
                       />
                     </div>
-                    <div class="w-88 h-28 md:w-110 md:h-37 lg:w-130 lg:h-44">
+                    <div class="w-88 h-32 md:w-110 md:h-37 lg:w-130 lg:h-44">
                       <img
                         :src="`./logo/logo_color_${partners[3].key}.png`"
                         class="h-full"
                       />
                     </div>
-                    <div class="w-88 h-28 md:w-110 md:h-37 lg:w-130 lg:h-44">
+                    <div class="w-88 h-32 md:w-110 md:h-37 lg:w-130 lg:h-44">
                       <img
                         :src="`./logo/logo_color_${partners[4].key}.png`"
                         class="h-full"
@@ -168,44 +175,56 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
     (100vw - $container_medium_width + $standard_space * 2) / 2
   );
 }
+
+@keyframes move {
+  //  20% {
+  //   transform: translate3d(0, 0, 1px) rotate(360deg);
+  // }
+  // 100% {
+  //   transform: translate3d(0, 0, 1px) rotate(360deg);
+  // }
+  20% {
+    transform: translateX(4vw);
+  }
+  80% {
+    transform: translateX(-4vw);
+  }
+}
+
 .background-wrapper {
   width: calc(100vw + 24px);
-  height: calc(
-    100% + $gradient-padding + $gradient-title-margin + $transform-origin-x *
-      $section-angle-sin
-  );
-  position: absolute;
-  top: -$gradient-title-margin;
+  height: 100%;
+  // height: calc(
+  //   100% + $gradient-padding + $gradient-title-margin + $transform-origin-x *
+  //     $section-angle-sin
+  // );
+  // top: -$gradient-title-margin;
   //   top: auto;
   left: calc($section-gap * -1);
   //   bottom: 15px;
-  -webkit-transform: skewY(-12deg);
-  transform: skewY(-12deg);
+
   -webkit-transform-origin: $transform-origin-x 100%;
   transform-origin: $transform-origin-x 100%;
+
   //   overflow: hidden;
 
-  @keyframes move {
-    //  20% {
-    //   transform: translate3d(0, 0, 1px) rotate(360deg);
-    // }
-    // 100% {
-    //   transform: translate3d(0, 0, 1px) rotate(360deg);
-    // }
-    20% {
-      transform: translateX(4vw);
-    }
-    80% {
-      transform: translateX(-4vw);
-    }
+  .background-back {
+    position: absolute;
+    top: -24%;
+    width: 100%;
+    height: 30%;
+    -webkit-transform: skewY(-12deg);
+    transform: skewY(-12deg);
+    background-color: hsla(234, 71%, 62%, 1);
   }
 
   .background {
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
-
+    -webkit-transform: skewY(-12deg);
+    transform: skewY(-12deg);
     background-color: hsla(234, 71%, 62%, 1);
     overflow: hidden;
 
@@ -223,8 +242,8 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
       top: -10%;
       left: -10%;
       border-radius: 50%;
-      animation-duration: 26s;
-      animation-delay: -19s;
+      animation-duration: 0.2ms;
+      // animation-delay: -19s;
       transform-origin: -13vw 6vh;
       background-size: 80% 80%;
       background-repeat: no-repeat;
@@ -253,13 +272,14 @@ $transform-origin-x: calc(var(--section-gap) * 0.8);
       top: 20%;
       right: -6%;
       animation: move;
+      animation-iteration-count: infinite;
       animation-duration: 26s;
       animation-delay: -19s;
       transform-origin: -13vw 6vh;
       background-size: 100% 100%;
       background-repeat: no-repeat;
       background-image: radial-gradient(
-          at 80% 60%,
+          at 58% 60%,
           hsla(189, 100%, 60%, 0.7) 0px,
           transparent 50%
         ),
