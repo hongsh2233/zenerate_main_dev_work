@@ -4,15 +4,8 @@
       <div>
         <div class="section-layout">
           <div class="gradient-area">
-            <!-- <div class="section_background-wrap">
-              <canvas
-                id="gradient-canvas"
-                data-js-darken-top
-                data-transition-in
-              ></canvas>
-            </div> -->
             <div class="background-wrapper z-[-1]">
-              <div class="background lg:h-[558px]">
+              <div class="background h-[570px] md:h-[400px] lg:h-[558px]">
                 <span class="z-[3]"></span>
                 <span class="z-[2]"></span>
                 <span class="z-[1]"></span>
@@ -23,7 +16,7 @@
                 class="w-full flex flex-col gap-44 md:gap-[88px] lg:gap-[140px]"
               >
                 <div
-                  class="grid grid-rows-[1fr_1fr_auto] md:grid-cols-[auto_auto] md:grid-rows-[auto_auto] lg:grid-cols-[auto_auto] lg:grid-rows-[auto_auto] gap-24 md:gap-34 lg:gap-x-38 lg:gap-y-[104px] mt-100 md:mt-147 lg:mt-182"
+                  class="grid grid-rows-[auto_auto] md:grid-cols-[auto_auto] md:grid-rows-[auto_auto] lg:grid-cols-[auto_auto] lg:grid-rows-[auto_auto] gap-24 md:gap-x-34 md:gap-y-[174px] lg:gap-x-38 lg:gap-y-[104px] mt-100 md:mt-[147px] lg:mt-[182px]"
                 >
                   <ListItem class="gap-24">
                     <p
@@ -52,8 +45,10 @@
                     </p>
                   </ListItem>
                   <ListItem>
-                    <div class="image-wrapper relative">
-                      <div class="absolute right-[-236px] top-[-60px]">
+                    <div class="image-wrapper relative w-full min-h-[310px]">
+                      <div
+                        class="absolute top-0 right-[-60px] md:right-[-236px] lg:right-[-236px] md:top-[-60px] lg:top-[-60px]"
+                      >
                         <picture>
                           <source
                             srcset="/en/img/landing_top_small.png"
@@ -79,21 +74,16 @@
                   <div
                     class="flex flex-col md:flex-row gap-y-20 gap-x-8 lg:flex-row"
                   >
-                    <button
-                      type="button"
-                      class="primary-button min-w-[190px] mx-auto text-16 uppercase md:mx-0 lg:mx-0"
-                    >
+                    <Button class="w-[150px] lg:w-[158px]">
                       <router-link
                         class="demo-link"
                         :to="{ name: 'en-how-to-use' }"
                       >
                         Try Zenerate
                       </router-link>
-                    </button>
-                    <button
-                      type="button"
-                      class="text-button mx-auto text-16 uppercase md:mx-0 lg:mx-0 group"
-                    >
+                    </Button>
+
+                    <Button variant="text" class="w-[150px] lg:w-[158px]">
                       <router-link
                         class="demo-link flex items-center"
                         :to="{ name: 'en-how-to-use' }"
@@ -108,7 +98,7 @@
                           :height="24"
                         />
                       </router-link>
-                    </button>
+                    </Button>
                   </div>
                 </div>
                 <div
@@ -161,7 +151,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
-import { Icon, Layout, ListItem } from '/Components/EN'
+import { Icon, Layout, ListItem, Button } from '/Components/EN'
 import partners from '/Constants/partners'
 </script>
 <style lang="scss" scoped>

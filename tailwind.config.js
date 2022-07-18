@@ -602,7 +602,7 @@ module.exports = {
           letterSpacing: '0px',
         },
         '.text-m-14-medium': {
-          fontWeight: '400',
+          fontWeight: '500',
           fontSize: '14px',
           lineHeight: '1.5',
           letterSpacing: '0px',

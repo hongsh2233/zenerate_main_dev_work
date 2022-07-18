@@ -355,7 +355,7 @@
               </svg>
             </div>
             <p
-              class="text-m-14-regular text-gray-700 md:text-t-16-regular lg:text-d-18-regular"
+              class="text-m-14-medium text-gray-700 md:text-t-16-regular lg:text-d-18-regular"
             >
               <span>We update our zoning </span><br /><span
                 >information monthly so you </span
@@ -415,7 +415,7 @@
               </svg>
             </div>
             <p
-              class="text-m-14-regular text-gray-700 md:text-t-16-regular lg:text-d-18-regular"
+              class="text-m-14-medium text-gray-700 md:text-t-16-regular lg:text-d-18-regular"
             >
               <span>Choose from multiple</span><br /><span
                 >overlays and specific city </span
@@ -476,7 +476,7 @@
                     Detailed floor plans
                   </p>
                   <p
-                    class="text-gray-700 text-m-14-regular md:text-t-16-medium lg:text-d-18-medium"
+                    class="text-gray-700 text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
                   >
                     <span>In order to accurately calculate</span><br /><span
                       >expected rent revenue</span
@@ -502,7 +502,7 @@
                     In-depth financial analysis
                   </p>
                   <p
-                    class="text-gray-700 text-m-14-regular md:text-t-16-medium lg:text-d-18-medium"
+                    class="text-gray-700 text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
                   >
                     <span>Detailed discounted cash flow</span><br /><span
                       >analysis with adjustable loan</span
@@ -627,11 +627,12 @@
                 class="text-gray-700 text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
               >
                 <span>Gain on average an additional&nbsp;</span
-                ><span>12% profit on your projects </span><br /><span
-                  >by instantly zenerating site solutions&nbsp;</span
-                ><span>beyond what's capable </span><br /><span
-                  >within human capacity.</span
-                >
+                ><span>12% profit&nbsp;</span><span> on your projects </span
+                ><span>by instantly zenerating&nbsp;</span
+                ><span>site solutions&nbsp;</span
+                ><span>beyond what's capable&nbsp;</span>
+                <br class="hidden md:inline-block lg:inline-block" />
+                <span>within&nbsp;</span><span> human capacity.</span>
               </p>
             </div>
           </ListItem>
@@ -669,11 +670,13 @@
                 class="text-gray-700 text-m-14-medium md:text-t-16-medium lg:text-d-18-medium md:w-[424px]"
               >
                 <span>Leverage your position like never&nbsp;</span>
-                <span>before by instantly&nbsp;</span>
+                <span>before&nbsp;</span>
+                <span> by instantly&nbsp;</span>
 
                 <span>and accurately&nbsp;</span>
 
-                <span> evaluating profit potential on sites. </span>
+                <span> evaluating&nbsp;</span>
+                <span> profit potential on sites. </span>
               </p>
             </div>
           </ListItem>
@@ -739,13 +742,14 @@
               <p
                 class="text-gray-700 text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
               >
-                <span
-                  >Gain an immediate starting point for your project. Save
-                  hundreds of </span
-                ><br /><span
-                  >hours and win deals by instantly zenerating profit maximized
-                  designs </span
-                ><br /><span>hat clients want to see.</span>
+                <span>Gain an immediate starting point for&nbsp;</span>
+                <span> your&nbsp;</span>
+                <span> project. Save hundreds of&nbsp;</span>
+                <span>hours and win&nbsp;</span>
+                <span> deals by instantly&nbsp;</span>
+                <span> zenerating profit&nbsp;</span>
+                <span> maximized designs&nbsp;</span
+                ><span>hat clients want to see.</span>
               </p>
             </div>
           </ListItem>
@@ -804,9 +808,13 @@
                 class="text-gray-700 text-m-14-medium md:text-t-16-medium lg:text-d-18-medium"
               >
                 <span>Gain deep insight into all the&nbsp;</span
-                ><span>possible development solutions and</span><br /><span
-                  >make sure that the project you're&nbsp;</span
-                ><span>financing is fulfilling its profit potential.</span>
+                ><span>possible&nbsp;</span>
+                <span> development solutions and&nbsp;</span>
+                <span>make sure that&nbsp;</span>
+                <span> the project you're&nbsp;</span
+                ><span>financing is fulfilling&nbsp;</span>
+                <span> its profit&nbsp;</span>
+                <span> potential.</span>
               </p>
             </div>
           </ListItem>
