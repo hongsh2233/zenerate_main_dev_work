@@ -51,12 +51,21 @@
             한국어</router-link
           >
         </button> -->
+        <button
+          type="button"
+          class="mr-24 text-14 font-bold pt-4 text-uppercase-button text-core-500 hover:text-core-700 bg-transparent"
+          :class="transparent && ' text-white hover:text-white/60'"
+        >
+          LOGIN
+        </button>
       </nav>
 
-      <button type="button" class="primary-button text-12 h-36 only-en-desktop">
-        <router-link class="demo-link" :to="{ name: 'en-demo' }">
-          TRY ZENERATE
-        </router-link>
+      <button
+        type="button"
+        class="primary-button text-12 h-36 only-en-desktop"
+        @click="() => toggleTryPopup(true)"
+      >
+        TRY ZENERATE
       </button>
 
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
@@ -88,9 +97,13 @@ const props = defineProps({
   transparent: Boolean,
 })
 
-const emit = defineEmits(['toggleDrawer'])
+const emit = defineEmits(['toggleDrawer', 'toggleTryPopup'])
 const toggleDrawer = (flag?: boolean) => {
   emit('toggleDrawer', flag)
+}
+
+const toggleTryPopup = (flag?: boolean) => {
+  emit('toggleTryPopup', flag)
 }
 
 const showDrawer = computed(() => props.showDrawer)

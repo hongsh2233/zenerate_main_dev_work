@@ -560,7 +560,7 @@ module.exports = {
           letterSpacing: '0px',
         },
         '.text-m-20-light': {
-          fontWeight: '400',
+          fontWeight: '300',
           fontSize: '20px',
           lineHeight: '1.4',
           letterSpacing: '0px',
@@ -620,7 +620,7 @@ module.exports = {
           letterSpacing: '0px',
         },
         '.text-m-13-medium': {
-          fontWeight: '400',
+          fontWeight: '500',
           fontSize: '13px',
           lineHeight: '1.5',
           letterSpacing: '0px',

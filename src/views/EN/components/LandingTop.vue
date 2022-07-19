@@ -79,15 +79,13 @@
                     </div>
                   </ListItem>
                   <div
-                    class="flex flex-col md:flex-row gap-y-20 gap-x-8 lg:flex-row"
+                    class="flex flex-col md:flex-row gap-y-20 gap-x-8 lg:flex-row z-[1]"
                   >
-                    <Button class="w-[150px] lg:w-[158px]">
-                      <router-link
-                        class="demo-link"
-                        :to="{ name: 'en-how-to-use' }"
-                      >
-                        Try Zenerate
-                      </router-link>
+                    <Button
+                      class="w-[150px] lg:w-[158px]"
+                      @click="openTryPopup"
+                    >
+                      Try Zenerate
                     </Button>
 
                     <Button variant="text" class="w-[150px] lg:w-[158px]">
@@ -158,8 +156,14 @@
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
+import { MENU_EVENT } from '/Constants/eventConstant'
+import Emitter from '/Libraries/bus'
 import { Icon, Layout, ListItem, Button } from '/Components/EN'
 import partners from '/Constants/partners'
+
+const openTryPopup = () => {
+  Emitter.emit(MENU_EVENT.TOGGLE_TRY_POPUP, true)
+}
 </script>
 <style lang="scss" scoped>
 $container_width: 1080px;

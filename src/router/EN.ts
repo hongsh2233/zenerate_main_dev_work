@@ -99,6 +99,11 @@ const ENRoute: RouteRecordRaw = {
     },
 
     {
+      path: '/signup',
+      name: 'en-signup',
+      component: DemoSignUpView,
+    },
+    {
       path: '/terms-and-conditions',
       name: 'en-terms-and-conditions',
       component: TermsAndConditionsView,

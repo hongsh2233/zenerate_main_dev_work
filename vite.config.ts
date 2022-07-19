@@ -35,6 +35,10 @@ export default defineConfig({
         find: '/Components',
         replacement: resolve(__dirname, 'src/components'),
       },
+      {
+        find: '/Composables',
+        replacement: resolve(__dirname, 'src/composables'),
+      },
       { find: '/Libraries', replacement: resolve(__dirname, 'src/libraries') },
       { find: '/Services', replacement: resolve(__dirname, 'src/services') },
       { find: '/Views', replacement: resolve(__dirname, 'src/views') },

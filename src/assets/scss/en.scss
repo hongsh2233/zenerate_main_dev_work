@@ -6,6 +6,12 @@
     'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
     sans-serif !important;
 }
+
+.stop-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
 .section {
   &:first-child {
     margin-top: 40px;
