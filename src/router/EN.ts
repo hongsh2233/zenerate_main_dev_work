@@ -10,7 +10,8 @@ import LandingView from '/Views/EN/LandingView.vue'
 import ServiceView from '/Views/EN/ServiceView.vue'
 import TermsAndConditionsView from '/Views/EN/TermsAndConditionsView.vue'
 import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
-import SignUp from '/Views/EN/SignUpView.vue'
+import PreSignUpView from '/Views/EN/PreSignUpView.vue'
+import SignUpView from '../views/EN/SignUpView.vue'
 import HowToUseView from '/Views/EN/HowToUseView.vue'
 import OverviewView from '/Views/EN/OverviewView.vue'
 import FAQView from '/Views/EN/FAQView.vue'
@@ -90,18 +91,17 @@ const ENRoute: RouteRecordRaw = {
     {
       path: '/pre-launch-signup',
       name: 'SignUp',
-      component: SignUp,
+      component: PreSignUpView,
     },
     {
       path: '/demo-signup',
       name: 'en-demo',
       component: DemoSignUpView,
     },
-
     {
       path: '/signup',
       name: 'en-signup',
-      component: DemoSignUpView,
+      component: SignUpView,
     },
     {
       path: '/terms-and-conditions',

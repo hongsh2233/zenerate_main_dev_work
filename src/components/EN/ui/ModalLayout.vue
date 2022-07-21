@@ -4,7 +4,7 @@
       class="dim-black-70 absolute top-0 left-0 flex h-full w-full z-[-1]"
       @click.self="() => close()"
     ></div>
-    <div class="w-full h-full overflow-y-auto">
+    <div class="w-full h-full overflow-y-auto py-12 md:py-44 lg:py-75">
       <div
         class="relative z-[1002] flex m-auto"
         :class="[
