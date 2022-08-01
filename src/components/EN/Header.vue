@@ -2,7 +2,7 @@
   <div class="sentinal"></div>
   <div
     id="header"
-    class="header-wrapper nobanner"
+    class="header-wrapper banner"
     :class="transparent && 'transparent'"
   >
     <div class="header-inner">
@@ -13,7 +13,7 @@
         <img
           class="logo"
           :src="`/img/logo_${
-            !showDrawer && transparent ? 'white' : 'color'
+            !showDrawer && transparent ? 'color' : 'color'
           }.svg`"
           alt="logo"
         />
@@ -51,21 +51,18 @@
             한국어</router-link
           >
         </button> -->
-        <button
+        <!-- <button
           type="button"
           class="mr-24 text-14 font-bold pt-4 text-uppercase-button text-core-500 hover:text-core-700 bg-transparent"
-          :class="transparent && ' text-white hover:text-white/60'"
         >
           LOGIN
-        </button>
+        </button> -->
       </nav>
 
-      <button
-        type="button"
-        class="primary-button text-12 h-36 only-en-desktop"
-        @click="() => toggleTryPopup(true)"
-      >
-        TRY ZENERATE
+      <button type="button" class="primary-button text-12 h-36 only-en-desktop">
+        <router-link class="demo-link" :to="{ name: 'en-demo' }">
+          BOOK A DEMO
+        </router-link>
       </button>
 
       <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
@@ -216,34 +213,39 @@ const toggleNav = (primary: String) => {
   transition: color ease-in-out 0.2s;
 
   &.banner {
+    // banner
     top: 35px;
+    @include en-mobile-banner-large {
+      top: 50px;
+    }
   }
 
   &.transparent {
-    background: transparent;
+    // background: transparent;
     box-shadow: none;
 
-    .dropbtn {
-      color: $white;
-    }
+    // .dropbtn {
+    //   color: $white;
+    // }
 
-    .navbar a:hover,
-    .dropdown:hover .dropbtn {
-      color: $white;
-      opacity: 0.6;
+    // .navbar a:hover,
+    // .dropdown:hover .dropbtn {
+    //   color: $white;
+    //   opacity: 0.6;
 
-      i {
-        opacity: 0.6;
-      }
-    }
+    //   i {
+    //     opacity: 0.6;
+    //   }
+    // }
 
-    .primary-button {
-      background: rgba(77, 73, 244, 0.2);
-    }
+    // .primary-button {
+    //   background: rgba(77, 73, 244, 0.2);
+    // }
   }
 
   @include en-desktop {
     height: 76px;
+    padding: 0px 60px;
   }
   @include en-tablet {
     height: 70px;

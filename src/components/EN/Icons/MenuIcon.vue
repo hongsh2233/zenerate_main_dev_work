@@ -2,7 +2,7 @@
   <div class="icon-menu hover-pointer" @click="toggle()">
     <i
       class="icon-menu-inner material-icons"
-      :class="!showDrawer && transparent && 'transparent'"
+      :class="!showDrawer && 'transparent'"
       >{{ showDrawer ? 'close' : 'menu' }}</i
     >
   </div>
@@ -63,9 +63,9 @@ const barHeight = computed(() => {
     padding: 10px 26px;
   }
 
-  &.transparent {
-    color: $white;
-  }
+  // &.transparent {
+  //   color: $white;
+  // }
 
   .menu {
     width: 100%;

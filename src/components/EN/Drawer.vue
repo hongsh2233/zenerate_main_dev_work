@@ -1,5 +1,5 @@
 <template>
-  <div class="drawer-wrapper">
+  <div class="drawer-wrapper banner">
     <div class="drawer-dimmer" @click="close"></div>
     <div class="drawer-wrapper">
       <div class="drawer-items-wrapper">
@@ -174,12 +174,17 @@ const close = () => {
   width: calc(100% + 8px);
   height: 100%;
   background-color: $white;
-  z-index: 2;
+  z-index: 3;
 
   &.banner {
     // banner top
     @include fixed(top 36px right -2px);
     height: calc(100% - 36px);
+
+    @include en-mobile-banner-large {
+      @include fixed(top 50px right -2px);
+      height: calc(100% - 50px);
+    }
   }
 }
 

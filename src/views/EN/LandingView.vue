@@ -1,23 +1,24 @@
 <template>
-  <div id="fullpage-landing">
+  <div class="min-w-[320px]">
     <div class="section section-landing">
       <div class="section-inner inner-landing">
         <div class="inner-contents landing-contents">
           <div class="content-wrapper">
             <div class="content-title-wrapper">
               <div class="content-heading">
-                <p><strong>Feasibility studies,</strong></p>
-                <p>now AI-powered.</p>
+                <p><strong>The all-in-one,</strong></p>
+                <p>AI-powered</p>
+                <p>feasibility study tool</p>
               </div>
+
               <div class="content-phrase">
-                <p>Zenerate is an AI-powered&nbsp;</p>
-                <p><strong>feasibility</strong>&nbsp;</p>
-                <p><strong>study tool</strong>&nbsp;</p>
-                <p>that boosts&nbsp;</p>
-                <p><strong>real estate&nbsp;</strong></p>
-                <p><strong>development</strong>&nbsp;</p>
-                <p>profitability&nbsp;</p>
-                <p class="blue"><strong>up to 26%</strong></p>
+                <p>Let Zenerate take care of&nbsp;</p>
+                <p>the&nbsp;<strong>zoning research,</strong>&nbsp;</p>
+                <p><strong>floor plan designs</strong>&nbsp;</p>
+                <p>and&nbsp;</p>
+                <p><strong>financial analysis.</strong></p>
+                <p>All while&nbsp;<strong>maximizing returns</strong></p>
+                <p>via our advanced AI-engine</p>
               </div>
               <div class="content-justyourcuriosity"></div>
               <button type="button" class="content-button">
@@ -58,9 +59,9 @@
       <div class="content-text-wrapper">
         <div class="title-wrapper">
           <p class="title">
-            <strong>10,000</strong><br />
-            <strong>feasibility solutions </strong><br />
-            within minutes
+            Instantly find <br />
+            <strong>the most profitable,</strong><br />
+            <strong>feasible solutions</strong>
           </p>
 
           <router-link
@@ -70,30 +71,47 @@
             <i class="material-icons"> east </i>
           </router-link>
         </div>
-        <div class="text-desc hidden-en-tablet hidden-en-mobile">
+        <div class="text-desc hidden-en-tablet">
           <p>
-            No more spending weeks and months<br />
-            to come up with 3-5 feasible options <br />
-            for development.
+            <span>No more spending weeks&nbsp;</span>
+            <span>and months&nbsp;</span>
+            <span>to come up with &nbsp;</span
+            ><span>feasible options&nbsp;</span>
+            <span>for development.</span>
           </p>
 
           <p>
-            Now, with the click of a button, you can<br />
-            zenerate thousands of solutions with<br />
-            architectural designs <br />
-            and in-depth financial analysis.
+            <span>In minutes, Zenerate's AI engine&nbsp;</span
+            ><span>optimizes&nbsp;</span><span>a multitude of&nbsp;</span
+            ><span>variables&nbsp;</span><span>to find the true &nbsp;</span
+            ><span>'highest&nbsp;</span><span>and&nbsp;</span
+            ><span>best use'&nbsp;</span><span>solution&nbsp;</span
+            ><span>available&nbsp;</span><span>on&nbsp;</span
+            ><span>a given site.</span>
+          </p>
+          <p>
+            <span>This includes zenerating market&nbsp;</span
+            ><span>consistent floor plans&nbsp;</span
+            ><span>that are all&nbsp;</span
+            ><span>zoning code compliant&nbsp;</span><span>while&nbsp;</span
+            ><span>using&nbsp;</span><span>AI algorithms&nbsp;</span
+            ><span>to&nbsp;</span><span>maximize returns.</span>
           </p>
         </div>
-        <div class="text-desc hidden-en-desktop">
+        <div class="text-desc hidden-en-desktop hidden-en-mobile">
           <p>
-            No more spending weeks and months to come up with 3-5 feasible
+            No more spending weeks and months to come up with <br />feasible
             options for development.
           </p>
-
           <p>
-            Now, with the click of a button, you can zenerate thousands of
-            solutions with architectural designs and in-depth financial
-            analysis.
+            In minutes, Zenerate's AI engine optimizes a multitude of<br />
+            variables to find the true 'highest and best use' solution<br />
+            available on a given site.
+          </p>
+          <p>
+            This includes zenerating market consistent floor plans that<br />
+            are all zoning code compliant while using AI algorithms<br />
+            to maximize returns.
           </p>
         </div>
 
@@ -127,14 +145,14 @@
       <div class="banner-text-wrapper">
         <p>
           Giving
-          <span class="blue">developers,&nbsp;</span
-          ><span class="blue">architects, brokers,&nbsp;</span>
+          <span class="blue">architects,&nbsp;</span
+          ><span class="blue">developers, brokers,&nbsp;</span>
           <span class="blue">financial institutions</span>
         </p>
         <p>
           <span>and anyone involved in&nbsp;</span><span>real estate&nbsp;</span
           ><span>development&nbsp;</span>
-          <span>AI super powers to&nbsp;</span>
+          <span>with AI super powers to&nbsp;</span>
           <span
             ><strong>save weeks of time&nbsp;</strong>and
             <strong>zenerate more profit!&nbsp;</strong></span
@@ -151,25 +169,22 @@
     <div class="section section-big-banner">
       <div class="banner-item-wrapper">
         <div class="banner-item">
-          <h4 class="title">Profit, maximized.</h4>
+          <h4 class="title">Returns, maximized.</h4>
           <div class="profit-wrapper">
             <div class="icon-wrapper">
-              <i class="material-icons-outlined">paid</i>
-              <span>up to</span>
+              <i class="material-icons-outlined">add</i>
             </div>
             <div class="profit">
-              <span class="number">26</span>
+              <span class="number">12</span>
               <span class="unit">%</span>
             </div>
           </div>
-          <div class="item-desc">
-            <p>
-              Users have experienced an average<br />
-              of <strong>12% profit maximization</strong> compared to<br />
-              their original feasibility plans which<br />
-              took them weeks or months to create.
-            </p>
-          </div>
+          <p class="item-desc">
+            Users have experienced<br />
+            an average of 12%<br />
+            additional returns compared to<br />
+            their original plans
+          </p>
         </div>
         <div class="banner-item-divider hidden-en-desktop"></div>
         <div class="banner-item">
@@ -264,7 +279,13 @@
 
     <div class="section section-medium-banner">
       <div class="banner-text-wrapper large">
-        <p>
+        <p class="hidden-en-tablet hidden-en-desktop">
+          <span> You'll never want to </span><br />
+          <span>start a project without</span>
+          <img src="/img/logo_color.svg" alt="logo" />
+          <span>again.</span>
+        </p>
+        <p class="hidden-en-mobile">
           <span> You'll never want to start a project </span><br />
           <span> without </span>
           <img src="/img/logo_color.svg" alt="logo" />
@@ -286,13 +307,13 @@
       <div class="zenerate-launch-info-wrapper">
         <div class="zenerate-launch-title-wrapper">
           <h2 class="title hidden-en-mobile">
-            Zenerate is now available <br />
-            in <strong>Los Angeles, CA.</strong>
+            Zenerate is only available <br />
+            in <strong>Los Angeles</strong> for now.
           </h2>
           <p class="title hidden-en-desktop hidden-en-tablet">
-            <span>Zenerate is&nbsp;</span><span>now available&nbsp;</span>
+            <span>Zenerate is&nbsp;</span><span>only available&nbsp;</span>
             <span>in&nbsp;</span>
-            <span><strong>Los Angeles, CA.</strong></span>
+            <span><strong>Los Angeles</strong> for now.</span>
           </p>
           <p class="subtitle">
             <span> Our goal is to cover&nbsp;</span>
@@ -407,10 +428,11 @@ onMounted(() => {
 .section-landing {
   @include relative;
   @include flex();
-  height: 800px;
+  height: 780px;
+  padding: 80px 0px 0px;
 
-  @include en-tablet {
-    height: 660px;
+  @include en-mobile {
+    height: 730px;
   }
 
   .section-inner {
@@ -438,7 +460,7 @@ onMounted(() => {
     .content-title-wrapper {
       @include vertical-center();
       width: auto;
-      max-width: 500px;
+      max-width: 540px;
       z-index: 1;
 
       @include en-tablet {
@@ -453,12 +475,12 @@ onMounted(() => {
       }
 
       @include en-mobile {
-        margin: 40px auto 0px;
+        margin: 0px auto 0px;
         align-items: center;
         background: linear-gradient(
           0deg,
           #ffffff 0%,
-          #ffffff 14%,
+          #ffffff 8%,
           rgba(255, 255, 255, 0) 100%
         );
         mix-blend-mode: normal;
@@ -472,7 +494,7 @@ onMounted(() => {
       }
 
       @include en-mobile {
-        @include absolute(top 42% right 50%);
+        @include absolute(top 50% right 50%);
         width: 250px;
 
         transform: translate(50%, 0%);
@@ -514,37 +536,36 @@ onMounted(() => {
         max-width: 600px;
       }
       @include en-mobile {
-        max-width: 360px;
+        max-width: 300px;
         margin: 0px auto 20px;
+        text-align: center;
       }
       p {
         @include en-desktop {
-          @include regular(52);
+          @include medium(52);
           strong {
             @include bold(52);
           }
         }
 
         @include en-tablet {
-          @include regular(49);
+          @include medium(45);
           margin: auto;
+          line-height: 54px;
 
           strong {
-            @include bold(49);
+            @include bold(45);
+            line-height: 54px;
           }
         }
 
         @include en-mobile {
-          @include regular(29);
-          display: inline-block;
+          @include medium(29);
           text-align: center;
           line-height: 40px;
           strong {
             @include bold(29);
-          }
-
-          &:last-child {
-            display: block;
+            line-height: 40px;
           }
         }
       }
@@ -562,23 +583,25 @@ onMounted(() => {
         @include regular(23);
         line-height: 36px;
         display: inline-block;
-
-        &.blue {
-          color: $navigation;
-        }
       }
+
+      strong {
+        font-weight: 600;
+      }
+
       @include en-tablet {
-        max-width: 390px;
+        max-width: 480px;
         margin: 0px;
-        margin-bottom: 40px;
+        margin-bottom: 46px;
         p {
           @include regular(20);
           line-height: 30px;
           width: auto;
         }
       }
+
       @include en-mobile {
-        max-width: 270px;
+        max-width: 300px;
         margin: 0px;
         margin-bottom: 20px;
         text-align: center;
@@ -613,7 +636,7 @@ onMounted(() => {
       }
 
       @include en-mobile {
-        margin: 246px 0px 0px !important;
+        margin: 200px 0px 0px !important;
       }
     }
   }
@@ -627,7 +650,7 @@ onMounted(() => {
   }
 
   @include en-tablet {
-    padding: 0px 96px;
+    padding: 0px 56px;
   }
 
   @include en-mobile {
@@ -637,12 +660,12 @@ onMounted(() => {
   .content-text-wrapper {
     @include flex($justify: space-between);
     @include en-desktop {
-      padding: 0px 70px 0px 46px;
+      padding: 0px;
     }
 
     @include en-tablet {
       @include vertical-center();
-      padding-left: 4.7%;
+      // padding-left: 4.7%;
     }
 
     @include en-mobile {
@@ -669,7 +692,7 @@ onMounted(() => {
       }
 
       @include en-mobile {
-        @include medium(15);
+        @include semi-bold(14);
         line-height: 18px;
         margin-top: 16px;
       }
@@ -689,7 +712,7 @@ onMounted(() => {
         }
 
         @include en-mobile {
-          @include medium(27);
+          @include medium(24);
           max-width: 282px;
           margin: 0px 0px 18px 0px;
         }
@@ -698,9 +721,10 @@ onMounted(() => {
 
     .text-desc {
       @include regular(19);
+      max-width: 400px;
       color: $text-darken-8;
       p {
-        &:first-child {
+        &:not(:last-child) {
           margin-bottom: 18px;
         }
       }
@@ -709,7 +733,7 @@ onMounted(() => {
         margin-top: 58px;
 
         p {
-          &:first-child {
+          &:not(:last-child) {
             margin-bottom: 28px;
           }
         }
@@ -721,7 +745,7 @@ onMounted(() => {
 
       @include en-mobile {
         @include regular(15);
-        max-width: 296px;
+        max-width: 434px;
         line-height: 23px;
       }
     }
@@ -869,7 +893,7 @@ onMounted(() => {
     }
 
     @include en-mobile {
-      max-width: 320px;
+      max-width: 300px;
       margin: 0 auto;
 
       .partners-item {
@@ -916,7 +940,7 @@ onMounted(() => {
   }
 
   @include en-mobile {
-    padding: 80px 0px;
+    padding: 150px 0px 80px;
   }
 
   .background-wave {
@@ -934,7 +958,7 @@ onMounted(() => {
     }
 
     @include en-mobile {
-      top: 70px;
+      top: 160px;
       height: 260px;
     }
   }
@@ -960,6 +984,7 @@ onMounted(() => {
       p:last-child {
         margin-top: 28px;
       }
+      line-height: 20px;
       span {
         @include medium(33);
       }
@@ -1003,8 +1028,9 @@ onMounted(() => {
         max-width: 320px;
 
         img {
-          width: 110px;
-          margin: 0px 6px -6px;
+          display: block;
+          width: 148px;
+          margin: 12px auto 6px;
         }
 
         p:last-child {
@@ -1050,6 +1076,10 @@ onMounted(() => {
       @include elevation-3;
       color: rgba($white, 0.6);
       transform: translateY(-2px);
+    }
+
+    @include en-mobile {
+      margin-top: 120px;
     }
   }
 }
@@ -1138,26 +1168,29 @@ onMounted(() => {
         margin-right: 16px;
         align-items: center;
         height: 52px;
-        justify-content: flex-end;
+        justify-content: center;
 
         @include en-mobile {
           margin-right: 8px;
         }
 
         i {
-          @include medium(35);
-          height: 40px;
+          @include medium(48);
 
           &.big {
             @include medium(48);
+            height: 40px;
+            margin-top: 24px;
             transform: rotate(-130deg);
           }
 
           @include en-mobile {
-            @include medium(30);
-            height: 34px;
+            @include medium(36);
+
             &.big {
               @include medium(36);
+              height: 34px;
+              margin-top: 24px;
             }
           }
         }
@@ -1185,9 +1218,9 @@ onMounted(() => {
       }
 
       .item-desc {
-        @include regular(20);
+        @include medium(20);
         color: $white;
-        line-height: 26px;
+        line-height: 30px;
         text-align: center;
 
         strong {
@@ -1196,6 +1229,7 @@ onMounted(() => {
 
         .list {
           @include flex();
+          @include regular(20);
           align-items: center;
           margin-bottom: 8px;
 
@@ -1210,7 +1244,7 @@ onMounted(() => {
         }
 
         @include en-mobile {
-          @include regular(15);
+          @include medium(15);
           line-height: 23px;
 
           .desc-title {
@@ -1218,6 +1252,7 @@ onMounted(() => {
           }
 
           .list {
+            @include regular(15);
             margin-bottom: 0px;
 
             i {
@@ -1298,13 +1333,13 @@ onMounted(() => {
 
         @include en-mobile {
           @include semi-bold(23);
-          max-width: 305px;
+          max-width: 310px;
           text-align: left;
-          line-height: 25px;
+          line-height: 28px;
           margin-bottom: 10px;
           strong {
             @include semi-bold(23);
-            line-height: 25px;
+            line-height: 28px;
           }
         }
       }
@@ -1344,12 +1379,13 @@ onMounted(() => {
 
       @include en-mobile {
         text-align: center;
-        width: 200px;
-        height: 130px;
+        width: 100%;
+        max-width: 310px;
+        height: auto;
 
         img {
-          width: 200px;
-          height: 130px;
+          width: 100%;
+          height: auto;
         }
       }
     }
