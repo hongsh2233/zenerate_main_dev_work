@@ -45,6 +45,7 @@ import Header from '/Components/EN/Header.vue'
 import Footer from '/Components/EN/Footer.vue'
 import Drawer from '/Components/EN/Drawer.vue'
 import { ModalLayout, Button, Form } from '/Components/EN/index'
+import '/Assets/scss/en.scss'
 
 const route = useRoute()
 const path = computed(() => route.path)
@@ -179,6 +180,8 @@ const toggleDrawer = (flag = undefined) => {
 
 .layout-en,
 .layout-en * {
-  font-family: 'Inter', 'Roboto', sans-serif;
+  font-family: 'Poppins', 'Roboto', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+    sans-serif;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-w-[320px]">
+  <div class="min-w-[280px]">
     <div class="section section-landing">
       <div class="section-inner inner-landing">
         <div class="inner-contents landing-contents">
@@ -20,7 +20,6 @@
                 <p>All while&nbsp;<strong>maximizing returns</strong></p>
                 <p>via our advanced AI-engine</p>
               </div>
-              <div class="content-justyourcuriosity"></div>
               <button type="button" class="content-button">
                 <router-link class="demo-link" :to="{ name: 'en-demo' }">
                   BOOK A DEMO
@@ -429,10 +428,12 @@ onMounted(() => {
   @include relative;
   @include flex();
   height: 780px;
-  padding: 80px 0px 0px;
+  padding: 40px 0px 0px;
 
   @include en-mobile {
-    height: 730px;
+    min-height: 750px;
+    height: 100%;
+    padding: 92px 0px 0px;
   }
 
   .section-inner {
@@ -441,13 +442,14 @@ onMounted(() => {
     height: 100%;
 
     @include en-tablet {
-      padding: 0px 40px;
+      padding: 0px 56px;
       width: 100% !important;
       max-width: 840px;
     }
     @include en-mobile {
-      padding: 0px 20px;
-      height: calc(100vh - 20px) !important;
+      padding: 0px 10px;
+      height: calc(100vh - 20px);
+      max-height: 700px;
     }
   }
 
@@ -456,6 +458,10 @@ onMounted(() => {
     @include relative();
     width: 100%;
     flex-wrap: nowrap;
+
+    @include en-mobile {
+      height: 100%;
+    }
 
     .content-title-wrapper {
       @include vertical-center();
@@ -475,13 +481,14 @@ onMounted(() => {
       }
 
       @include en-mobile {
+        width: 760px;
         margin: 0px auto 0px;
         align-items: center;
         background: linear-gradient(
           0deg,
           #ffffff 0%,
-          #ffffff 8%,
-          rgba(255, 255, 255, 0) 100%
+          #ffffff 6%,
+          rgba(255, 255, 255, 0) 40%
         );
         mix-blend-mode: normal;
       }
@@ -494,9 +501,8 @@ onMounted(() => {
       }
 
       @include en-mobile {
-        @include absolute(top 50% right 50%);
+        @include absolute(top 52% right 50%);
         width: 250px;
-
         transform: translate(50%, 0%);
         img {
           width: 250px;
@@ -636,7 +642,7 @@ onMounted(() => {
       }
 
       @include en-mobile {
-        margin: 200px 0px 0px !important;
+        margin: 0px 0px 200px !important;
       }
     }
   }

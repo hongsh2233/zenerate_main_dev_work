@@ -1,6 +1,5 @@
 <template>
   <div class="layout-main">
-    
     <Header @toggleDrawer="toggleDrawer" :showDrawer="showDrawer" />
     <router-view v-slot="{ Component }">
       <transition name="fade">
@@ -33,7 +32,6 @@ import MenuDrawer from '/Components/MenuDrawer.vue'
 // @ts-ignore
 import NewsLetterModal from '/Components/NewsLetterModal.vue'
 
-
 import { ref, onMounted } from 'vue'
 const showDrawer = ref(false)
 
@@ -53,8 +51,7 @@ onMounted(() => {
   if (isFirst) toggleNewsLetterModal(true)
 })
 </script>
-<style lang="scss" scoped>
-
+<style lang="scss">
 .layout-main {
   margin: 0px;
   width: 100%;

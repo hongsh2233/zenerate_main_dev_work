@@ -181,9 +181,17 @@ const close = () => {
     @include fixed(top 36px right -2px);
     height: calc(100% - 36px);
 
+    .drawer-items-wrapper {
+      height: calc(100% - 94px);
+    }
+
     @include en-mobile-banner-large {
       @include fixed(top 50px right -2px);
       height: calc(100% - 50px);
+
+      .drawer-items-wrapper {
+        height: calc(100% - 108px);
+      }
     }
   }
 }

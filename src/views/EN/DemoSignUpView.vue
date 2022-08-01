@@ -5,10 +5,11 @@
         <div class="title-wrapper">
           <p class="maincopy">
             Learn how <span class="blue">Zenerate</span> will
-            <strong>maximize profit</strong>
+            <strong>maximize returns</strong>
           </p>
           <p class="subcopy">
-            <span>while saving&nbsp;</span><span>thousands of man-hours</span>
+            <span>while saving your team&nbsp;</span
+            ><span>hundreds of hours</span>
           </p>
         </div>
       </div>
@@ -16,7 +17,7 @@
         <div
           class="calendly-inline-widget"
           id="calendly"
-          data-url="https://calendly.com/zenerate/30min?hide_gdpr_banner=1?month=2022-04"
+          data-url="https://calendly.com/zenerate/30min?hide_gdpr_banner=1?month=2022-08"
           style="position: relative; min-width: 320px"
         ></div>
       </div>
@@ -77,7 +78,7 @@ const toContactForm = () => {
 
 const goCanlendly = () => {
   Calendly.initPopupWidget({
-    url: 'https://calendly.com/zenerate/30min?hide_gdpr_banner=1?month=2022-04',
+    url: 'https://calendly.com/zenerate/30min?hide_gdpr_banner=1?month=2022-08',
   })
   return false
 }
