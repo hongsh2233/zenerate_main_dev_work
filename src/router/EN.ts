@@ -17,8 +17,7 @@ import OverviewView from '/Views/EN/OverviewView.vue'
 import FAQView from '/Views/EN/FAQView.vue'
 import PricingView from '/Views/EN/PricingView.vue'
 import DemoSignUpView from '/Views/EN/DemoSignUpView.vue'
-
-import NewLandingView from '/Views/EN/NewLandingView.vue'
+// import NewLandingView from '/Views/EN/NewLandingView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -30,11 +29,11 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-landing',
       component: LandingView,
     },
-    {
-      path: '/new',
-      name: 'en-new-landing',
-      component: NewLandingView,
-    },
+    // {
+    //   path: '/new',
+    //   name: 'en-new-landing',
+    //   component: NewLandingView,
+    // },
     {
       path: '/overview',
       name: 'en-overview',
