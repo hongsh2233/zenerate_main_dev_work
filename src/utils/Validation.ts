@@ -1,5 +1,14 @@
-const stringValidationFunction = (v: any): boolean => {
-  return !!v && typeof v === 'string' && v.length > 0
+const stringValidationFunction = (
+  str: string,
+  min: number = 0,
+  max: number = 50
+) => {
+  const payload = str.trim()
+  return (
+    typeof payload === 'string' &&
+    payload.length >= min &&
+    payload.length <= max
+  )
 }
 
 const emailValidationFunction = (v: any): boolean => {

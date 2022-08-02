@@ -1,18 +1,29 @@
 <template>
   <div class="layout-en" id="layout-en">
-    <!-- <div
-      class="signup-banner"
-      @click="goDemoSignUp"
-      v-show="path !== '/pre-launch-signup'"
-    >
-      <p>SIGN UP FOR A PRODUCT DEMO</p>
-      <i class="material-icons"> east </i>
-    </div> -->
+    <router-link :to="{ name: 'en-demo' }">
+      <button
+        type="button"
+        class="signup-banner"
+        v-show="path !== '/pre-launch-signup'"
+      >
+        <div class="signup-banner-inner">
+          <p class="uppercase">
+            <span>Signup for a product demo&nbsp;</span>
+            <span>and free project consultation!</span>
+          </p>
+          <i class="material-icons"> east </i>
+        </div>
+      </button>
+    </router-link>
+
     <Header
-      @toggleDrawer="toggleDrawer"
-      :showDrawer="showDrawer"
       v-show="path !== '/pre-launch-signup'"
+      :showDrawer="showDrawer"
+      :transparent="transparentHeader"
+      @toggleDrawer="toggleDrawer"
+      @toggleTryPopup="toggleTryPopup"
     ></Header>
+
     <transition name="fade">
       <Drawer v-if="showDrawer" @close="toggleDrawer" />
     </transition>
@@ -26,20 +37,48 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { ref, computed, onMounted, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { MENU_EVENT } from '/Constants/eventConstant'
+import Emitter from '/Libraries/bus'
 import Header from '/Components/EN/Header.vue'
 import Footer from '/Components/EN/Footer.vue'
 import Drawer from '/Components/EN/Drawer.vue'
-import { ref, computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ModalLayout, Button, Form } from '/Components/EN/index'
 
 const route = useRoute()
-const router = useRouter()
 const path = computed(() => route.path)
-const goDemoSignUp = () => {
-  toggleDrawer(false)
-  router.push('/demo-signup')
+// ---------------- try popup ----------------
+const showTryPopup = ref(true)
+const toggleTryPopup = (flag?: boolean) => {
+  const f = flag == null ? !showTryPopup.value : flag
+  showTryPopup.value = f
+}
+Emitter.on(MENU_EVENT.TOGGLE_TRY_POPUP, (v) => toggleTryPopup(v))
+
+// ---------------- header scroll transparent ----------------
+const transparentHeader = ref(true)
+const observerHandler = (entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      transparentHeader.value = false
+    } else {
+      transparentHeader.value = true
+    }
+  })
 }
 
+onMounted(() => {
+  const sentinalEl = document.querySelector('.sentinal')
+  const observer = new IntersectionObserver(observerHandler, {
+    rootMargin: '60px 0px 0px',
+    threshold: 1.0,
+  })
+
+  observer.observe(sentinalEl)
+})
+
+// ---------------- drawer : mobile, tablet  ----------------
 const showDrawer = ref(false)
 const toggleDrawer = (flag = undefined) => {
   showDrawer.value = flag == null ? !showDrawer.value : flag
@@ -63,9 +102,9 @@ const toggleDrawer = (flag = undefined) => {
 }
 
 .signup-banner {
+  @include fixed(top 0px left 0);
   @include flex();
   @include medium(13);
-  @include fixed(top 0px left 0);
   justify-content: center;
   flex-wrap: nowrap;
   align-items: center;
@@ -77,6 +116,14 @@ const toggleDrawer = (flag = undefined) => {
   cursor: pointer;
   z-index: 1000;
   letter-spacing: 1pt;
+
+  .signup-banner-inner {
+    @include flex();
+    width: 100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
 
   p {
     line-height: 14px;
@@ -90,14 +137,38 @@ const toggleDrawer = (flag = undefined) => {
 
   @include en-mobile {
     @include medium(11);
-    padding: 0px 20px;
-    // letter-spacing: 0.5pt;
-    // justify-content: space-between;
+    padding: 0px 30px;
+    .signup-banner-inner {
+      max-width: 460px;
+      justify-content: space-between;
+    }
+    p {
+      text-align: left;
+    }
 
     i {
       @include medium(11);
       margin-left: 4px;
-      // display: none;
+    }
+  }
+
+  @include en-mobile-banner-large {
+    @include medium(11);
+    padding: 0px 30px;
+    height: 50px;
+    // letter-spacing: 0.5pt;
+
+    .signup-banner-inner {
+      justify-content: space-between;
+    }
+
+    p {
+      text-align: left;
+    }
+
+    i {
+      @include medium(11);
+      margin-left: 4px;
     }
   }
 
@@ -108,6 +179,10 @@ const toggleDrawer = (flag = undefined) => {
 
 .layout-en,
 .layout-en * {
-  font-family: 'Inter', 'Roboto', sans-serif;
+  * {
+    font-family: 'Poppins', 'Roboto', -apple-system, BlinkMacSystemFont,
+      'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+      sans-serif !important;
+  }
 }
 </style>

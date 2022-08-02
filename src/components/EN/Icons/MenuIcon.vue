@@ -1,8 +1,10 @@
 <template>
   <div class="icon-menu hover-pointer" @click="toggle()">
-    <i class="icon-menu-inner material-icons">{{
-      showDrawer ? 'close' : 'menu'
-    }}</i>
+    <i
+      class="icon-menu-inner material-icons"
+      :class="!showDrawer && 'transparent'"
+      >{{ showDrawer ? 'close' : 'menu' }}</i
+    >
   </div>
   <!-- <div
     class="icon-menu hover-pointer"
@@ -32,12 +34,14 @@ const props = defineProps({
     },
   },
   showDrawer: Boolean,
+  transparent: Boolean,
 })
 const emit = defineEmits(['toggle'])
 const toggle = () => {
   emit('toggle', null)
 }
 const showDrawer = computed(() => props.showDrawer)
+const transparent = computed(() => props.transparent)
 
 const barHeight = computed(() => {
   return Math.floor((props.height / 2 / 12) * 2)
@@ -58,6 +62,11 @@ const barHeight = computed(() => {
   @include en-mobile {
     padding: 10px 26px;
   }
+
+  // &.transparent {
+  //   color: $white;
+  // }
+
   .menu {
     width: 100%;
     &:last-child {

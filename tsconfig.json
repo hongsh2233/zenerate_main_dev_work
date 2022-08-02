@@ -25,6 +25,7 @@
       "/@/*": ["src/*"],
       "/vue/*": ["@vue/runtime-dom/*"],
       "/Assets/*": ["src/assets/*"],
+      "/Composables/*": ["src/composables/*"],
       "/Components/*": ["src/components/*"],
       "/Libraries/*": ["src/libraries/*"],
       "/Services/*": ["src/services/*"],
