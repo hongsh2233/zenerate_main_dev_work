@@ -348,7 +348,7 @@ const pdfFiles = {
 
         @include en-mobile {
           margin-top: 30px;
-          max-width: 280px;
+          max-width: 288px;
           height: 100%;
 
           &:nth-child(2) {
@@ -412,10 +412,11 @@ const pdfFiles = {
             @include en-mobile {
               .text-title {
                 word-break: break-all;
+                font-size: 15px;
               }
               .text-content {
-                padding-right: 0px;
-                height: 102px;
+                padding-right: 4px;
+                height: 100%;
               }
             }
           }
@@ -459,12 +460,18 @@ const pdfFiles = {
 
           .download {
             @include medium(17);
+            @include flex();
+            align-items: center;
             color: $navigation;
 
             i {
               @include medium(16);
               margin-left: 10px;
               line-height: 16px;
+            }
+
+            @include en-mobile {
+              @include medium(14);
             }
           }
         }

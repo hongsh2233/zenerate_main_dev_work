@@ -1,7 +1,9 @@
 <template>
   <section class="section-news-list">
     <div class="news-create">
-      <button @click="router.push('/kr/main/admin/edit')"><span>NEW</span></button>
+      <button @click="router.push('/kr/main/admin/edit')">
+        <span>NEW</span>
+      </button>
     </div>
     <table class="news-list-wrapper">
       <tr class="news-list-header">
@@ -33,7 +35,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from '@vue/runtime-core'
+import { onMounted, ref } from 'vue'
 import ApiService from '/Services/api'
 import Swal from 'sweetalert2'
 import { useRouter } from 'vue-router'
@@ -49,7 +51,7 @@ const openDeleteModal = (id) => {
   Swal.fire({
     titleText: `Confirm delete news id ${id}`,
     // text: 'Will be marked as deleted and disappear from list, can be restored later',
-    text: "Will be deleted permanently",
+    text: 'Will be deleted permanently',
     confirmButtonText: 'Delete',
     cancelButtonText: 'Cancel',
     showCancelButton: true,
@@ -70,7 +72,6 @@ onMounted(async () => {
 </script>
 
 <style lang="scss" scoped>
-
 .section-news-list {
   width: 100%;
   padding: 56px 24px;

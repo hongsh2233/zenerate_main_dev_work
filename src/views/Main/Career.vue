@@ -18,13 +18,13 @@ import CareerList from '/Components/Module/CareerList.vue'
 import { onMounted, ref, computed } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
 import ApiService from '/Services/api'
+import { useMeta } from 'vue-meta'
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 }
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: '채용 | 제너레잇',
   vmid: 'description',

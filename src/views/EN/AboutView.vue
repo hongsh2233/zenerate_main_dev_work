@@ -209,10 +209,6 @@
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
 import Footer from '/Components/EN/Footer.vue'
-import Arrow from '/Components/EN/Arrow.vue'
-import CloseIcon from '../../components/EN/Icons/CloseIcon.vue'
-import AOS from 'aos'
-
 import { useMeta } from 'vue-meta'
 
 const { meta } = useMeta({
@@ -269,7 +265,7 @@ const { meta } = useMeta({
     text-align: left;
 
     @include en-mobile {
-      width: 227px;
+      width: 258px;
       text-align: center;
 
       span {

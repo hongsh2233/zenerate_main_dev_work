@@ -1,175 +1,77 @@
 <template>
-  <div id="fullpage-career">
-    <section class="section section-careers">
-      <!-- <div class="section-main">
-        <div class="section-inner main-wrapper">
-          <div class="inner-main">
-            <div class="main-sub-title">
-              <p>Build your life <span>with us</span></p>
-            
-            </div>
-            <p class="main-content">
-              <span>Join Zenerate as we innovate architectural planning</span>
-              ​<span>and improve</span> ​<span> living standards</span> ​<span
-                >for your communities.</span
-              >
+  <section class="section section-careers">
+    <div class="section-inner">
+      <div
+        class="w-[80%] max-w-[440px] min-w-[280px] m-auto md:min-w-[628px] md:max-w-[772px] lg:min-w-[772px] lg:max-w-[1200px]"
+      >
+        <div
+          class="flex flex-col gap-[18px] md:gap-[20px] lg:gap-[16px] mb-[26px] md:mb-[42px] lg:mb-[44px]"
+        >
+          <div class="flex flex-col items-start">
+            <p
+              class="text-m-20-semibold md:text-t-30-semibold lg:text-d-32-semibold text-black"
+            >
+              Together,
+            </p>
+
+            <p
+              class="text-m-20-regular text-left md:text-t-30-regular lg:text-d-32-regular text-black"
+            >
+              <span>let's build the future&nbsp;</span>
+              <span>of real estate</span>
             </p>
           </div>
+          <p
+            class="text-m-13-medium md:text-t-16-medium text-left lg:text-d-15-medium text-black w-[210px] md:w-[370px] lg:w-[340px]"
+          >
+            <span>We're looking for passionate, </span>
+            <span>talented teammates&nbsp;</span><span>to help grow</span>
+            <span class="text-primary">&nbsp;Zenerate!</span>
+          </p>
         </div>
-      </div> -->
 
-      <div class="section section-content">
-        <div class="content-list-wrapper section-inner">
-          <div class="inner-content-list">
-            <div class="list-title">
-              <p>We’re Hiring!</p>
-            </div>
-            <div class="list-wrapper">
-              <div class="list-image">
-                <img src="/en/img/career_content.webp" alt="" />
-              </div>
-              <div class="list-items">
-                <div class="career-list">
-                  <div class="career-item">
-                    <div class="item-date">
-                      <!-- Posted
-                      {{
-                        formatDistanceToNowStrict(new Date(2021, 9, 28), {
-                          addSuffix: true,
-                        })
-                      }} -->
-                    </div>
-                    <div
-                      class="item-title hover-pointer"
-                      @click=";[router.push(`/career/head-of-marketing`)]"
-                    >
-                      Head of Marketing, B2B SaaS (Full-time)
-                    </div>
+        <div
+          class="w-full shadow-100 rounded-10 p-[26px] md:px-[42px] md:py-[38px] lg:px-[50px] flex flex-col lg:py-[48px] gap-16 md:gap-26 lg:gap-26"
+        >
+          <div>
+            <h2
+              class="text-m-14-semibold md:text-17 md:font-semibold lg:font-semibold lg:text-17 m-0"
+            >
+              We're Hiring! 🚀
+            </h2>
+          </div>
+          <div class="w-full flex flex-col gap-16">
+            <template v-for="(job, idx) in JOBS">
+              <div
+                class="w-full min-h-38 md:min-h-24 cursor-pointer group lg:min-h-28 flex flex-row md:items-center lg:items-center gap-12"
+                @click=";[router.push(`/career/${job.key}`)]"
+              >
+                <span>{{ job.icon }}</span>
+                <div
+                  class="w-full flex flex-col md:flex-row lg:flex-row justify-between items-start md:items-center lg:items-center"
+                >
+                  <div
+                    class="text-m-13-regular group-hover:text-primary md:text-t-16-regular lg:text-d-18-regular text-black"
+                  >
+                    {{ job.name }}
                   </div>
-                  <div class="career-item">
-                    <div class="item-date">
-                      <!-- Posted
-                      {{
-                        formatDistanceToNowStrict(new Date(2021, 9, 28), {
-                          addSuffix: true,
-                        })
-                      }} -->
-                    </div>
-                    <div
-                      class="item-title hover-pointer"
-                      @click=";[router.push(`/career/graphic-designer`)]"
-                    >
-                      Mid-level Graphic Designer (Full-time)
-                    </div>
-                  </div>
-                  <div class="career-item">
-                    <div class="item-date">
-                      <!-- Posted
-                      {{
-                        formatDistanceToNowStrict(new Date(2021, 9, 23), {
-                          addSuffix: true,
-                        })
-                      }} -->
-                    </div>
-                    <div
-                      class="item-title hover-pointer"
-                      @click=";[router.push(`/career/head-of-sales`)]"
-                    >
-                      Head of Sales (Full-time)
-                    </div>
-                  </div>
-                  <div class="career-item">
-                    <div class="item-date">
-                      <!-- Posted
-                      {{
-                        formatDistanceToNowStrict(posted, { addSuffix: true })
-                      }} -->
-                    </div>
-                    <div
-                      class="item-title hover-pointer"
-                      @click="
-                        ;[
-                          router.push(
-                            `/career/architect-architectural-designer`
-                          ),
-                        ]
-                      "
-                    >
-                      Architect / Architectural Designer (Full-time)
-                    </div>
-                  </div>
-                  <div class="career-item">
-                    <div class="item-date">
-                      <!-- Posted
-                      {{
-                        formatDistanceToNowStrict(posted, { addSuffix: true })
-                      }} -->
-                    </div>
-                    <div
-                      class="item-title hover-pointer"
-                      @click="
-                        ;[
-                          router.push(
-                            `/career/project-analyst-real-estate-development`
-                          ),
-                        ]
-                      "
-                    >
-                      Project Analyst, Real Estate Development (Part-time)
-                    </div>
-                  </div>
-                  <div class="career-item">
-                    <div class="item-date">
-                      <!-- Posted
-                      {{
-                        formatDistanceToNowStrict(posted, { addSuffix: true })
-                      }} -->
-                    </div>
-                    <div
-                      class="item-title hover-pointer"
-                      @click="
-                        ;[router.push(`/career/strategic-account-executive`)]
-                      "
-                    >
-                      Strategic Account Executive (Full-time)
-                    </div>
-                  </div>
-
-                  <div class="career-item">
-                    <div class="item-date">
-                      <!-- Posted
-                      {{
-                        formatDistanceToNowStrict(posted, { addSuffix: true })
-                      }} -->
-                    </div>
-                    <div
-                      class="item-title hover-pointer"
-                      @click="
-                        ;[
-                          router.push(
-                            `/career/business-development-marketing-intern`
-                          ),
-                        ]
-                      "
-                    >
-                      Business Development & Marketing Intern (Full-time)
-                    </div>
-                  </div>
+                  <span
+                    class="text-left w-[80px] md:pt-2 lg:pt-6 group-hover:text-gray-700 text-12-medium md:text-13-medium lg:text-13-medium text-gray-450"
+                    >{{ job.fulltime ? 'Full-time' : 'Part-time' }}</span
+                  >
                 </div>
               </div>
-            </div>
+            </template>
           </div>
         </div>
       </div>
-      <div class="section section-footer fp-auto-height">
-        <Footer></Footer>
-      </div>
-    </section>
-  </div>
+    </div>
+    <div class="section section-footer fp-auto-height">
+      <Footer></Footer>
+    </div>
+  </section>
 </template>
 <script lang="ts" setup>
-import Store from '/Store/index'
-import CareerContent from '/src/components/EN/CareerContent.vue'
 import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
@@ -180,17 +82,48 @@ const posted = new Date(2021, 9, 17)
 const today = new Date()
 
 const careerId = ref(-1)
-// console.log(careerId.value)
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 }
-// const fullpage = computed(() => Store.state.root.FullPage)
 
-// onMounted(() => {
-//   if (fullpage.value) {
-//     fullpage.value.destroy()
-//   }
-// })
+const JOBS = [
+  // {
+  //   key: 'head-of-marketing',
+  //   name: 'Head of Marketing, B2B SaaS',
+  //   fulltime: true,
+  // },
+  {
+    key: 'graphic-designer',
+    icon: `🎨`,
+    name: 'Mid-level Graphic Designer',
+    fulltime: true,
+  },
+  // { key: 'head-of-sales', name: 'Head of Sales', fulltime: true },
+  {
+    key: 'architect-architectural-designer',
+    icon: '🏗️',
+    name: 'Architect / Architectural Designer',
+    fulltime: true,
+  },
+  {
+    key: 'project-analyst-real-estate-development',
+    icon: '📊',
+    name: 'Project Analyst, Real Estate Development',
+    fulltime: false,
+  },
+  {
+    key: 'strategic-account-executive',
+    icon: '🎯',
+    name: 'Strategic Account Executive',
+    fulltime: true,
+  },
+  {
+    key: 'business-development-marketing-intern',
+    icon: '💼',
+    name: ' Business Development & Marketing Intern',
+    fulltime: true,
+  },
+]
 
 const { meta } = useMeta({
   title: 'Career | Zenerate',
@@ -220,229 +153,10 @@ const { meta } = useMeta({
 })
 </script>
 <style lang="scss" scoped>
-#fullpage {
-  overflow: hidden;
-}
-.section-main {
-  background-image: url('/en/img/career_main.png');
-  background-size: cover;
-  background-position: top;
-  .inner-main {
-    @include en-desktop {
-      max-width: 1200px;
-      width: 100%;
-      margin: 0 auto;
-      padding: 0px 20px;
-    }
-    @include en-tablet {
-      padding: 0px 34px;
-      max-width: 100%;
-      text-align: center;
-      .main-sub-title {
-        justify-content: center;
-        p {
-          @include regular(36);
-          span {
-            @include semi-bold(36);
-          }
-        }
-      }
-      .main-content {
-        max-width: 660px;
-        width: 100%;
-        margin: 0px auto;
-        line-height: 23px;
-      }
-    }
-    @include en-mobile {
-      padding: 0px 24px;
-      max-width: 100%;
-      text-align: center;
-
-      .main-sub-title {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        p {
-          @include regular(24);
-          span {
-            @include semi-bold(24);
-          }
-        }
-      }
-      .main-content {
-        max-width: 200px;
-        margin: auto;
-      }
-    }
-  }
-
-  .main-wrapper {
-    @include vertical-center;
-    width: 100%;
-    height: 450px;
-    color: white;
-    margin: 0 auto;
-    position: relative;
-    padding-bottom: 30px;
-
-    @include en-tablet {
-      margin: 0px;
-    }
-
-    .main-title {
-      @include bold(36);
-      font-weight: 500;
-      line-height: 40px;
-    }
-    .main-sub-title {
-      @include flex($dir: row);
-      p {
-        @include regular(40);
-        margin-right: 10px;
-        line-height: 50px;
-        span {
-          @include semi-bold(40);
-        }
-      }
-      img {
-        width: 200px;
-        height: 50px;
-      }
-
-      @include en-tablet {
-        justify-content: flex-start;
-        align-items: flex-end;
-        span {
-          @include regular(20);
-        }
-      }
-    }
-    .main-content {
-      @include regular(18);
-      padding-top: 28px;
-      max-width: 600px;
-      @include en-tablet {
-        max-width: 600px;
-        margin: 0px;
-        text-align: left;
-        span {
-          @include regular(16);
-        }
-      }
-      @include en-mobile {
-        @include regular(14);
-      }
-    }
-  }
-}
-.section-content {
+.section-inner {
   @include en-desktop {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 100px 20px 80px;
-  }
-  @include en-tablet {
-    padding: 36px 34px 0px;
-    max-width: 100%;
-    text-align: center;
-  }
-
-  @include en-mobile {
-    padding: 10px 24px 0px;
-  }
-  &.active .content-list-wrapper .list-title {
-    padding-top: 160px;
-  }
-  .content-list-wrapper {
-    padding-top: 0px;
-    margin-bottom: 72px;
-    height: 100%;
-    .inner-content-list {
-      padding: 0px 60px;
-      @include en-tablet {
-        padding: 0px 24px;
-      }
-      @include en-mobile {
-        padding: 0px 24px;
-      }
-    }
-    .list-title {
-      transition: padding 0.5s ease;
-      margin-top: 100px;
-      text-align: center;
-      @include bold(32);
-      margin-bottom: 48px;
-
-      @include en-mobile {
-        @include bold(26);
-      }
-    }
-    .list-wrapper {
-      @include flex($justify: space-between);
-      @include en-tablet {
-        justify-content: center;
-        .list-image {
-          margin-right: 0;
-          width: 100%;
-          text-align: center;
-        }
-      }
-      @include en-mobile {
-        justify-content: center;
-        .list-image {
-          margin-right: 0;
-          width: 100%;
-          text-align: center;
-        }
-      }
-      .list-image {
-        margin-right: 70px;
-        img {
-          width: 400px;
-          max-width: 100%;
-        }
-      }
-      .list-items {
-        flex: 1;
-        .career-list {
-          @include flex($dir: column, $justify: space-between);
-          .career-item {
-            margin-bottom: 32px;
-            .item-date {
-              @include regular(16);
-              @include vertical-center;
-              line-height: 40px;
-              color: $text-grey;
-            }
-            .item-title {
-              @include medium(24);
-              line-height: 40px;
-              color: $text-darken;
-              border-bottom: solid 1px $text-lightgrey;
-              &:hover {
-                color: $core;
-                border-bottom-color: $core;
-              }
-
-              @include en-tablet {
-                @include medium(18);
-                text-align: left;
-                padding: 0px 4px;
-              }
-
-              @include en-mobile {
-                @include medium(14);
-                text-align: left;
-                padding: 0px 4px;
-              }
-            }
-          }
-        }
-      }
-    }
+    padding: 0px 20px !important;
+    height: 900px !important;
   }
 }
 </style>

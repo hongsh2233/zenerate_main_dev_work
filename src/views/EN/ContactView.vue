@@ -280,7 +280,6 @@ const sendEmail = async () => {
       }
     }
   }
-  console.log(!isValid)
   if (!isValid) return
   await ApiService.SEND_EMAIL(form)
   resetForm()

@@ -22,17 +22,12 @@
     ></NewsLetterModal>
   </div>
 </template>
-<script lang="ts" setup>
-// @ts-ignore
-import Header from '/Components/HeaderMain.vue'
-// @ts-ignore
-import Footer from '/Components/Footer.vue'
-// @ts-ignore
-import MenuDrawer from '/Components/MenuDrawer.vue'
-// @ts-ignore
-import NewsLetterModal from '/Components/NewsLetterModal.vue'
-
+<script setup>
 import { ref, onMounted } from 'vue'
+import Header from '/Components/HeaderMain.vue'
+import Footer from '/Components/Footer.vue'
+import MenuDrawer from '/Components/MenuDrawer.vue'
+import NewsLetterModal from '/Components/NewsLetterModal.vue'
 const showDrawer = ref(false)
 
 const showNewsLetterModal = ref(false)

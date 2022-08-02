@@ -56,10 +56,10 @@
 <script setup>
 import CareerContent from './CareerContent.vue'
 import { useI18n } from 'vue-i18n'
-const { locale } = useI18n()
 import { ref } from 'vue'
+const { locale } = useI18n()
 const careerId = ref(-1)
-console.log(careerId.value)
+
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 }

@@ -37,7 +37,7 @@
               :to="{ name: 'en-demo' }"
               @click="close"
             >
-              TRY ZENERATE
+              BOOK A DEMO
               <i class="material-icons"> east </i>
             </router-link>
           </div>

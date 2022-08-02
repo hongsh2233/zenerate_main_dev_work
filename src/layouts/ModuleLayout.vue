@@ -9,15 +9,12 @@
   </div>
 </template>
 
-<script setup lang="ts">
-// @ts-ignore
+<script setup>
+import { useMeta } from 'vue-meta'
 import Header from '/Components/HeaderMain.vue'
-// @ts-ignore
 import ModulePage from '/Pages/ModulePage.vue'
-// @ts-ignore
-import Footer from '/Components/Footer.vue'
-// @ts-ignore
 import MenuDrawer from '/Components/MenuDrawer.vue'
+import Footer from '/Components/Footer.vue'
 
 import { useI18n } from 'vue-i18n'
 import { ref } from '@vue/reactivity'
@@ -26,11 +23,9 @@ const { t } = useI18n()
 const showDrawer = ref(false)
 
 const toggleDrawer = (flag) => {
-  console.log(flag)
   showDrawer.value = flag
 }
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: '제너레잇 | 부동산개발 수익극대화 빌딩디자인 AI솔루션',
   description:

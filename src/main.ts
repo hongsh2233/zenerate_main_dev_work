@@ -7,6 +7,7 @@ import i18n from '/Config/locales/i18n'
 import App from './App.vue'
 import Router from './router'
 import Store from './store'
+import gtmPlugin from '/Utils/gtm'
 import 'vue-slider-component/theme/default.css'
 import 'vue3-carousel/dist/carousel.css'
 import 'aos/dist/aos.css'
@@ -17,12 +18,12 @@ import '/Assets/scss/components.scss'
 import '/Assets/scss/timeline.scss'
 import '/Assets/scss/en.scss'
 import '/Assets/css/tailwind.css'
-import '/Utils/gtm'
 
 createApp(App)
   .use(Router)
   .use(i18n)
   .use(Store.original)
+  .use(gtmPlugin)
   .use(VueGtag, {
     property: [
       { id: 'UA-212995971-1', default: true },

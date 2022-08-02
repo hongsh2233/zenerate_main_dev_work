@@ -68,16 +68,14 @@ onMounted(async () => {
     // }
     return blog
   })
-  console.log(blogList.value)
 })
 </script>
 <style lang="scss" scoped>
-
 .column-inner {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  .title-caption{
+  .title-caption {
     line-height: 40px;
   }
   @include flex($dir: column);
@@ -109,7 +107,6 @@ onMounted(async () => {
       }
       @include mobile {
         max-height: 400px;
-        
       }
     }
   }

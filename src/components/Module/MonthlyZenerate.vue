@@ -51,11 +51,11 @@
 <script lang="ts" setup>
 // @ts-ignore
 import NewsLetterModal from '/Components/NewsLetterModal.vue'
-
+import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+
 const { locale } = useI18n()
 
-import { ref, computed, onMounted } from 'vue'
 const showNewsLetterModal = ref(false)
 const toggleNewsLetterModal = (flag) => {
   if (flag != null) showNewsLetterModal.value = flag
@@ -63,7 +63,6 @@ const toggleNewsLetterModal = (flag) => {
 }
 </script>
 <style lang="scss" scoped>
-
 .monthly-inner {
   width: 100%;
   height: 100%;

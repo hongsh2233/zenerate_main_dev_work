@@ -559,6 +559,18 @@ module.exports = {
           lineHeight: '1.4',
           letterSpacing: '0px',
         },
+        '.text-m-20-medium': {
+          fontWeight: '500',
+          fontSize: '20px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
+        '.text-m-20-regular': {
+          fontWeight: '400',
+          fontSize: '20px',
+          lineHeight: '1.4',
+          letterSpacing: '0px',
+        },
         '.text-m-20-light': {
           fontWeight: '300',
           fontSize: '20px',

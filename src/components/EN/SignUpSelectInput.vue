@@ -2,11 +2,7 @@
   <div class="input-select-wrapper">
     <div class="input-select-container">
       <input type="text" class="dummy" ref="dummy" inputmode="none" />
-      <div
-        class="input-select hover-pointer"
-        @click="toggleDropDown()"
-        @focus="() => blur()"
-      >
+      <div class="input-select hover-pointer" @click="toggleDropDown()">
         <span
           :class="{
             selected: props.selected,
@@ -30,10 +26,9 @@
             class="input-select-dropdown-item hover-pointer"
             v-for="(item, idx) in props.items"
             @click="($evt) => onSelect($evt, item)"
-            @focus="() => blur()"
             :key="idx"
           >
-            <span>{{ props.skipTranslate ? item.label : $t(item.label) }}</span>
+            <span>{{ item.label }}</span>
           </div>
         </div>
       </transition>
@@ -47,7 +42,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
@@ -63,7 +58,14 @@ const props = defineProps({
     required: false,
   },
   items: {
-    type: Array,
+    type: Array as PropType<
+      {
+        id: number
+        value: string
+        label: string
+        ref?: string
+      }[]
+    >,
     default() {
       return []
     },
@@ -87,13 +89,17 @@ const props = defineProps({
     required: false,
   },
 })
-const emit = defineEmits(['onSelect'])
+const emit = defineEmits(['onSelect', 'blur'])
 const isInvalid = ref(false)
 
 const onSelect = ($evt, value) => {
   $evt.stopPropagation()
   emit('onSelect', value)
   toggleDropDown(false)
+}
+
+const blur = (value) => {
+  emit('blur', value)
 }
 
 const showDropdown = ref(false)

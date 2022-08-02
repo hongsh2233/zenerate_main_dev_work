@@ -114,7 +114,6 @@ const nextId = ref(-1)
 const prevId = ref(-1)
 const emit = defineEmits(['onSelect'])
 const onSelect = (value) => {
-  console.log(value)
   emit('onSelect', value)
 }
 const scrollTop = () => {

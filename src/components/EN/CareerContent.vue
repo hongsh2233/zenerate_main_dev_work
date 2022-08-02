@@ -14,8 +14,8 @@
           Zenerate has received multiple awards and funding to grow across the
           world. We are now looking for an enthusiastic full-time
           <strong>Head of Marketing, B2B SaaS</strong> to immediately join our
-          new Downtown Los Angeles office as we’re expanding our operations in
-          the States. We hope you’ll join our fast-growing, innovative company!
+          new Downtown Los Angeles office as we're expanding our operations in
+          the States. We hope you'll join our fast-growing, innovative company!
         </div>
       </div>
       <div class="content-item">
@@ -208,8 +208,8 @@
           Zenerate has received multiple awards and funding to grow across the
           world. We are now looking for an enthusiastic full-time
           <strong>Graphic Designer</strong> to immediately join our new Downtown
-          Los Angeles office as we’re expanding our operations in the States. We
-          hope you’ll join our fast-growing, innovative company!
+          Los Angeles office as we're expanding our operations in the States. We
+          hope you'll join our fast-growing, innovative company!
         </div>
       </div>
       <div class="content-item">
@@ -601,7 +601,7 @@
           world. We are now looking for an enthusiastic
           <strong>full-time Architect / Architectural Designer</strong> to
           immediately join our new <strong>Downtown Los Angeles</strong> office
-          as we’re expanding our operations in the States. We hope you’ll join
+          as we're expanding our operations in the States. We hope you'll join
           our fast-growing, innovative company!
         </div>
       </div>
@@ -1270,8 +1270,8 @@
 import { ref, onMounted, computed } from 'vue'
 import Store from '/Store/index'
 import CAREERS from '../../constants/careers.ts'
-const fp = computed(() => Store.state.root.FullPage)
 import { useRouter } from 'vue-router'
+const fp = computed(() => Store.state.root.FullPage)
 const router = useRouter()
 onMounted(() => {
   fp.value.destroy()
@@ -1305,47 +1305,40 @@ const goToApply = () => {
 .section-inner {
   height: auto !important;
   padding-bottom: 80px !important;
+  padding-top: 160px !important;
+
+  @include en-desktop {
+    padding-top: 200px !important;
+  }
 }
 .career-content-wrapper {
   height: 100%;
   max-width: 1600px;
   margin: auto;
   margin-top: 120px;
+
+  @include en-mobile {
+    max-width: 100%;
+  }
   .career-content {
-    // .image-wrapper {
-    //   width: 100%;
-    //   margin-bottom: 40px;
-    //   @include tablet {
-    //     margin-bottom: 30px;
-    //   }
-    //   @include mobile {
-    //     margin-bottom: 20px;
-    //   }
-    //   img {
-    //     width: 100%;
-    //     height: 100%;
-    //     object-fit: contain;
-    //   }
-    // }
     .career-content-title {
       @include flex($justify: space-between);
-      padding-bottom: 40px;
+      padding-bottom: 20px;
       border-bottom: solid 1px $grey-3;
       margin-bottom: 40px;
       @include tablet {
-        padding-bottom: 30px;
+        padding-bottom: 14px;
       }
       @include mobile {
-        padding-bottom: 30px;
+        padding-bottom: 12px;
       }
       span {
-        @include bold(40);
-        line-height: 60px;
+        @include bold(32);
         @include tablet {
-          @include bold(32);
+          @include bold(30);
         }
         @include mobile {
-          @include bold(28);
+          @include bold(20);
         }
       }
       button {

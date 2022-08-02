@@ -52,11 +52,6 @@
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
 import Store from '/Store/index'
 import { useRouter } from 'vue-router'
-import AOS from 'aos'
-import { useGtag } from 'vue-gtag-next'
-import { useMeta } from 'vue-meta'
-import { PRICING_PLAN_CONTENTS } from '/Constants/pricePlan'
-import PartnersList from '/Constants/partners'
 import Footer from '/Components/EN/Footer.vue'
 
 onMounted(() => {

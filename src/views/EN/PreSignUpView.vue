@@ -1,11 +1,11 @@
 <template>
-  <div id="fullpage-signup">
+  <div>
     <section class="section-signup">
       <div class="signup-wrapper">
         <div class="signup-header-wrapper" :class="{ done: sendEmailStatus }">
           <div
             class="header-logo hover-pointer"
-            @click="router.push({ name: 'en-landing' })"
+            @click="() => router.push({ name: 'en-landing' })"
           >
             <img class="logo" src="/img/logo_white.svg" alt="logo" />
           </div>
@@ -332,14 +332,14 @@ import Validation from '/Utils/Validation'
 import Footer from '/Components/EN/Footer.vue'
 import SelectInput from '/Components/EN/SignUpSelectInput.vue'
 
-const fullpage = computed(() => Store.state.root.FullPage)
+// const fullpage = computed(() => Store.state.root.FullPage)
 const sendEmailStatus = ref(false)
 
-onMounted(() => {
-  if (fullpage.value) {
-    fullpage.value.destroy()
-  }
-})
+// onMounted(() => {
+//   if (fullpage.value) {
+//     fullpage.value.destroy()
+//   }
+// })
 
 const goLinkedIn = () => {
   window.open('http://linkedin.com/company/zenerate', '_blank')
@@ -482,7 +482,6 @@ const contactForm = reactive({
 
 const validation = (item: string) => {
   contactForm[item].valid = contactForm[item].validator(contactForm[item].value)
-  console.log('tt', contactForm[item].validator(contactForm[item].value))
 }
 
 const resetForm = () => {
@@ -964,7 +963,10 @@ const router = useRouter()
 
           .form-row:not(:first-child) {
             flex-wrap: wrap;
-            :nth-child(2) {
+            .label-text:nth-child(2) {
+              margin-left: 0px;
+            }
+            .input-select-wrapper:nth-child(2) {
               margin-left: 0px;
             }
           }

@@ -54,6 +54,8 @@ import NewsContent from '/Components/Module/NewsContent.vue'
 import { onMounted, ref, computed } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
 import ApiService from '/Services/api'
+import { useMeta } from 'vue-meta'
+import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
 const targetYear = ref(-1)
@@ -71,7 +73,6 @@ const scrollTop = () => {
 
 const currentNews = ref(null)
 
-import { useRoute } from 'vue-router'
 const route = useRoute()
 const newsList = ref([])
 onMounted(async () => {
@@ -83,7 +84,6 @@ onMounted(async () => {
   }
 })
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: '새소식 | 제너레잇',
   description: '제너레잇의 최신 소식을 확인하세요.',

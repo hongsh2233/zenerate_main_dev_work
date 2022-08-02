@@ -33,20 +33,17 @@
   .section-inner {
     margin: 0px auto;
     height: 100vh;
-    padding-top: 100px;
     @include flex($dir: column);
     @include relative;
     z-index: 1;
     @include container;
     @include en-tablet {
       height: auto;
-      padding-top: 80px;
-      padding-bottom: 80px;
+      padding: 120px 30px 80px;
     }
     @include en-mobile {
       height: auto;
-      padding-top: 80px;
-      padding-bottom: 80px;
+      padding: 120px 20px 80px;
     }
   }
 }

@@ -343,7 +343,6 @@
 import { ref, onMounted } from 'vue'
 const emit = defineEmits(['onSelect'])
 const onSelect = (value) => {
-  console.log(value)
   emit('onSelect', value)
 }
 const props = defineProps({
@@ -360,7 +359,6 @@ const goToApply = () => {
     '_blank'
   )
 }
-console.log(props.careerId)
 </script>
 <style lang="scss" scoped>
 .career-content {

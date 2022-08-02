@@ -1,43 +1,47 @@
 <template>
-  <div class="sentinal"></div>
-  <div
-    id="header"
-    class="header-wrapper banner"
-    :class="transparent && 'transparent'"
-  >
-    <div class="header-inner">
-      <div
-        class="header-logo hover-pointer"
-        @click="router.push({ name: 'en-landing' }) && toggleDrawer(false)"
-      >
-        <img
-          class="logo"
-          :src="`/img/logo_${
-            !showDrawer && transparent ? 'color' : 'color'
-          }.svg`"
-          alt="logo"
-        />
-        <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" /> -->
-      </div>
-      <nav class="header-navigation-wrapper only-en-desktop">
-        <template v-for="(primary, idx) in routes" :key="idx">
-          <div class="dropdown">
-            <button class="dropbtn">
-              {{ primary.title }}
-              <i class="material-icons"> keyboard_arrow_down </i>
-            </button>
-            <div class="dropdown-content">
-              <template v-for="(secondary, idx) in primary.children" :key="idx">
-                <router-link :to="{ name: secondary.to }">
-                  <component :is="secondary.icon" :width="20" :height="20" />
+  <div>
+    <div class="sentinal"></div>
+    <div
+      id="header"
+      class="header-wrapper banner"
+      :class="transparent && 'transparent'"
+    >
+      <div class="header-inner">
+        <div
+          class="header-logo hover-pointer"
+          @click="router.push({ name: 'en-landing' }) && toggleDrawer(false)"
+        >
+          <img
+            class="logo"
+            :src="`/img/logo_${
+              !showDrawer && transparent ? 'color' : 'color'
+            }.svg`"
+            alt="logo"
+          />
+          <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" /> -->
+        </div>
+        <nav class="header-navigation-wrapper only-en-desktop">
+          <template v-for="(primary, idx) in routes" :key="idx">
+            <div class="dropdown">
+              <button class="dropbtn">
+                {{ primary.title }}
+                <i class="material-icons"> keyboard_arrow_down </i>
+              </button>
+              <div class="dropdown-content">
+                <template
+                  v-for="(secondary, idx) in primary.children"
+                  :key="idx"
+                >
+                  <router-link :to="{ name: secondary.to }">
+                    <component :is="secondary.icon" :width="20" :height="20" />
 
-                  {{ secondary.title }}
-                </router-link>
-              </template>
+                    {{ secondary.title }}
+                  </router-link>
+                </template>
+              </div>
             </div>
-          </div>
-        </template>
-        <!-- 
+          </template>
+          <!-- 
         <button
           type="button"
           class="navigation-link hover-pointer lang-button"
@@ -51,26 +55,30 @@
             한국어</router-link
           >
         </button> -->
-        <!-- <button
+          <!-- <button
           type="button"
           class="mr-24 text-14 font-bold pt-4 text-uppercase-button text-core-500 hover:text-core-700 bg-transparent"
         >
           LOGIN
         </button> -->
-      </nav>
+        </nav>
 
-      <button type="button" class="primary-button text-12 h-36 only-en-desktop">
-        <router-link class="demo-link" :to="{ name: 'en-demo' }">
-          BOOK A DEMO
-        </router-link>
-      </button>
+        <button
+          type="button"
+          class="primary-button text-12 h-36 only-en-desktop"
+        >
+          <router-link class="demo-link" :to="{ name: 'en-demo' }">
+            BOOK A DEMO
+          </router-link>
+        </button>
 
-      <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
-        <MenuIcon
-          @toggle="toggleDrawer"
-          :showDrawer="showDrawer"
-          :transparent="transparent"
-        />
+        <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
+          <MenuIcon
+            @toggle="toggleDrawer"
+            :showDrawer="showDrawer"
+            :transparent="transparent"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -109,7 +117,6 @@ const showLang = ref(false)
 const toggleLang = (flag?: boolean) => {
   const f = flag == null ? !showLang.value : flag
   showLang.value = f
-  console.log('ttt', flag)
 }
 
 const { event } = useGtag()
@@ -186,10 +193,8 @@ const routes = [
 const selectedPrimaryNav = ref(null)
 const toggleNav = (primary: String) => {
   if (selectedPrimaryNav.value == primary) {
-    console.log('!!')
     selectedPrimaryNav.value = null
   } else {
-    console.log('??')
     selectedPrimaryNav.value = primary
   }
 }

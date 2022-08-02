@@ -139,10 +139,7 @@
             </div>
 
             <button type="button" class="start-button">
-              <router-link
-                class="demo-link only-en-desktop"
-                :to="{ name: 'en-demo' }"
-              >
+              <router-link class="demo-link" :to="{ name: 'en-demo' }">
                 BOOK A DEMO
               </router-link>
             </button>
@@ -158,11 +155,8 @@
 <script lang="ts" setup>
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
 import Store from '/Store/index'
-import { useRouter } from 'vue-router'
-import AOS from 'aos'
 import { useGtag } from 'vue-gtag-next'
 import { useMeta } from 'vue-meta'
-import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
 
 // const fullpage = computed(() => Store.state.root.FullPage)

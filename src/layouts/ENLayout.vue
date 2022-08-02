@@ -44,10 +44,11 @@ import Emitter from '/Libraries/bus'
 import Header from '/Components/EN/Header.vue'
 import Footer from '/Components/EN/Footer.vue'
 import Drawer from '/Components/EN/Drawer.vue'
-import { ModalLayout, Button, Form } from '/Components/EN/index'
+import { Button } from '/Components/EN/index'
 
 const route = useRoute()
 const path = computed(() => route.path)
+
 // ---------------- try popup ----------------
 const showTryPopup = ref(true)
 const toggleTryPopup = (flag?: boolean) => {
@@ -75,7 +76,9 @@ onMounted(() => {
     threshold: 1.0,
   })
 
-  observer.observe(sentinalEl)
+  if (sentinalEl) {
+    observer.observe(sentinalEl)
+  }
 })
 
 // ---------------- drawer : mobile, tablet  ----------------

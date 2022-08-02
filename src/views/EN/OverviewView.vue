@@ -385,7 +385,6 @@ import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
 import { useGtag } from 'vue-gtag-next'
 import { useMeta } from 'vue-meta'
-import AOS from 'aos'
 import PartnersList from '/Constants/partners'
 
 // const fullpage = computed(() => Store.state.root.FullPage)

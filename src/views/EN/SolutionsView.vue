@@ -105,11 +105,10 @@
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
-const fullpage = computed(() => Store.state.root.FullPage)
-// @ts-ignore
 import Footer from '/Components/EN/Footer.vue'
-// @ts-ignore
-import Arrow from '/Components/EN/Arrow.vue'
+import { useMeta } from 'vue-meta'
+const fullpage = computed(() => Store.state.root.FullPage)
+
 onMounted(() => {
   fullpage.value.init('#fullpage-solution', {
     // parallax: false,
@@ -118,7 +117,6 @@ onMounted(() => {
   })
 })
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: 'Services | Zenerate',
   description:
