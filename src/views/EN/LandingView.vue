@@ -466,7 +466,7 @@ onMounted(() => {
     .content-title-wrapper {
       @include vertical-center();
       width: auto;
-      max-width: 540px;
+      max-width: 570px;
       z-index: 1;
 
       @include en-tablet {
@@ -494,15 +494,17 @@ onMounted(() => {
       }
     }
     .content-image-wrapper {
-      @include absolute(top -40px right 0px);
+      @include absolute(top -32px right 0px);
       width: 400px;
       img {
         width: 400px;
       }
 
       @include en-mobile {
-        @include absolute(top 52% right 50%);
+        @include absolute(top 60% right 50%);
         width: 250px;
+        height: 250px;
+        overflow: hidden;
         transform: translate(50%, 0%);
         img {
           width: 250px;
@@ -596,7 +598,7 @@ onMounted(() => {
       }
 
       @include en-tablet {
-        max-width: 480px;
+        max-width: 530px;
         margin: 0px;
         margin-bottom: 46px;
         p {
@@ -609,7 +611,7 @@ onMounted(() => {
       @include en-mobile {
         max-width: 300px;
         margin: 0px;
-        margin-bottom: 20px;
+        margin-bottom: 34px;
         text-align: center;
         p {
           @include regular(16);
@@ -642,7 +644,7 @@ onMounted(() => {
       }
 
       @include en-mobile {
-        margin: 0px 0px 200px !important;
+        margin: 0px 0px 258px !important;
       }
     }
   }
@@ -650,16 +652,19 @@ onMounted(() => {
 
 .section-app-contents {
   @include vertical-center();
-  margin: 148px auto 0px;
+
   @include en-desktop {
     max-width: 1022px;
+    margin: 120px auto 0px;
   }
 
   @include en-tablet {
+    margin: 100px auto 0px;
     padding: 0px 56px;
   }
 
   @include en-mobile {
+    margin: 64px auto 0px;
     padding: 0px 24px;
   }
 
@@ -814,9 +819,17 @@ onMounted(() => {
   .content-image-wrapper {
     @include elevation-5;
     max-width: 100%;
-    margin-top: 34px;
+    margin-top: 70px;
     border-radius: 10px;
     overflow-y: hidden;
+
+    @include en-tablet {
+      margin-top: 60px;
+    }
+
+    @include en-mobile {
+      margin-top: 44px;
+    }
 
     video {
       display: block;

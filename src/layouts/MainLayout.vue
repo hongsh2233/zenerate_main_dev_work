@@ -69,10 +69,5 @@ onMounted(() => {
     padding: 28px;
     padding-top: 69px;
   }
-  // .section-main {
-  //   @include desktop {
-  //     margin-top: 81px;
-  //   }
-  // }
 }
 </style>
