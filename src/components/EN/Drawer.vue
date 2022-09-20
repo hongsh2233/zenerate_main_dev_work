@@ -76,8 +76,13 @@ const routes = [
     title: 'Product',
     children: [
       {
-        title: 'Overview',
+        title: 'Zenerate',
         to: 'en-overview',
+        icon: OverviewIcon,
+      },
+      {
+        title: 'Z-Maps',
+        to: 'en-zmaps',
         icon: OverviewIcon,
       },
       // {

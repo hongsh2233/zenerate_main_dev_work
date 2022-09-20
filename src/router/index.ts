@@ -106,4 +106,13 @@ trackRouter(router, {
   useScreenview: true,
 })
 
+router.beforeEach((to, from, next) => {
+  console.log('dddd', to)
+  if (to.name === 'en-zmaps') {
+    window.open('https://maps.zenerate.ai')
+  } else {
+    next()
+  }
+})
+
 export default router

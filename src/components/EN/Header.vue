@@ -132,11 +132,16 @@ const router = useRouter()
 const routes = [
   {
     key: 'product',
-    title: 'Product',
+    title: 'Products',
     children: [
       {
-        title: 'Overview',
+        title: 'Zenerate',
         to: 'en-overview',
+        icon: OverviewIcon,
+      },
+      {
+        title: 'Z-Maps',
+        to: 'en-zmaps',
         icon: OverviewIcon,
       },
       // {
