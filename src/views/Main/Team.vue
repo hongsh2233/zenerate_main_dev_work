@@ -96,7 +96,17 @@ const toggleTab = (idx) => {
   currentTab.value = idx
 }
 
-const memberList = reactive([
+const memberList = reactive<
+  {
+    name: string
+    title: string
+    comment: string
+    team: string
+    img: string
+    github?: string
+    linkedin?: string
+  }[]
+>([
   {
     name: 'main.team.name.sbj',
     title: 'main.team.job.sbj',

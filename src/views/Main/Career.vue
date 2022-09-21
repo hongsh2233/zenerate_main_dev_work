@@ -13,13 +13,11 @@
   </section>
 </template>
 <script lang="ts" setup>
-// @ts-ignore
-import CareerList from '/Components/Module/CareerList.vue'
 import { onMounted, ref, computed } from 'vue'
-import { onBeforeRouteUpdate } from 'vue-router'
-import ApiService from '/Services/api'
 import { useMeta } from 'vue-meta'
 import { useI18n } from 'vue-i18n'
+import CareerList from '/Components/Module/CareerList.vue'
+
 const { locale } = useI18n()
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })

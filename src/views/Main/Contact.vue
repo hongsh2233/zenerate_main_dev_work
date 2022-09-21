@@ -61,7 +61,7 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import ApiService from '/Services/api'
-// @ts-ignore
+import { useMeta } from 'vue-meta'
 import SelectInput from '/Components/SelectInput.vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
@@ -120,7 +120,6 @@ const sendEmail = async () => {
   sendEmailStatus.value = true
 }
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: '문의 | 제너레잇',
   description:

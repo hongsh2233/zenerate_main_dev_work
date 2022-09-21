@@ -133,7 +133,7 @@ import Store from '/Store/index'
 import { useRouter } from 'vue-router'
 import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
-import AOS from 'aos'
+import { useMeta } from 'vue-meta'
 
 const fullpage = computed(() => Store.state.root.FullPage)
 const router = useRouter()
@@ -176,7 +176,6 @@ const selectPricingPlan = (item) => {
   })
 }
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: 'Service | Zenerate',
   description:

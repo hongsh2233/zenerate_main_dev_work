@@ -288,21 +288,25 @@
             <div class="item-desc">{{ $t(member.title) }}</div>
             <div class="item-icons plain">
               <a
-                v-if="member.linkedin"
-                :href="member.linkedin"
+                v-if="member?.linkedin"
+                :href="member?.linkedin"
                 class="icon-linkedin"
               >
                 <img src="/img/logo_linkedin.svg" alt="" />
               </a>
-              <a :href="member.github" class="icon-github" v-if="member.github">
+              <a
+                :href="member?.github"
+                class="icon-github"
+                v-if="member?.github"
+              >
                 <img src="/img/logo_github.svg" alt="" />
               </a>
             </div>
             <div class="item-icons hovered">
               <a
-                :href="member.linkedin"
+                :href="member?.linkedin"
                 class="icon-linkedin"
-                v-if="member.linkedin"
+                v-if="member?.linkedin"
               >
                 <img src="/img/logo_linkedin_white.svg" alt="" />
               </a>
@@ -327,8 +331,9 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
 import { ref, computed, reactive } from 'vue'
-const { locale } = useI18n()
+import { useMeta } from 'vue-meta'
 import timelineItem from '/Constants/timeline'
+const { locale } = useI18n()
 const leftItem = ref(
   computed(() => {
     return timelineItem.filter((item, index) => {
@@ -349,7 +354,17 @@ const toggleTab = (idx) => {
   currentTab.value = idx
 }
 
-const memberList = reactive([
+const memberList = reactive<
+  {
+    name: string
+    title: string
+    comment: string
+    img: string
+    team: string
+    github?: string
+    linkedin?: string
+  }[]
+>([
   {
     name: 'main.team.name.sbj',
     title: 'main.team.job.sbj',
@@ -452,7 +467,6 @@ const filteredMember = computed(() => {
   return memberList.filter((f) => f.team === currentTab.value)
 })
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: '회사소개 | 제너레잇',
   description:
