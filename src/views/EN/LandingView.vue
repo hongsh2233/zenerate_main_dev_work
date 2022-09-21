@@ -129,7 +129,7 @@
           playsinline
           id="solution-video"
           poster="/en/landing_solution_poster.jpg"
-          data-src="/en/landing_solution_medium.mp4"
+          data-src="/en/landing_solution_big.mp4"
         >
           <source
             data-src="/en/landing_solution_big.mp4"
@@ -265,7 +265,7 @@
           playsinline
           id="setup-video"
           poster="/en/landing_setup_poster.jpg"
-          data-src="/en/landing_setup_medium.mp4"
+          data-src="/en/landing_setup_big.mp4"
         >
           <source
             data-src="/en/landing_setup_big.mp4"
@@ -370,30 +370,9 @@
 import { ref, watch, onMounted, onBeforeUnmount, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
-import Arrow from '/Components/EN/Arrow.vue'
 import PartnersList from '/Constants/partners'
-import APIService from '/Services/api'
 import { useGtag } from 'vue-gtag-next'
 import VideoResponser from '/Utils/videoResponser'
-import Store from '/Store/index'
-// const fullpage = computed(() => Store.state.root.FullPage)
-// onMounted(async () => {
-//   fullpage.value.init('#fullpage-landing', {
-//     // parallax: false,
-//     // offsetSections: false,
-//     navigation: false,
-//   })
-
-//   const appHeight = () => {
-//     const doc = document.documentElement
-//     doc.style.setProperty('--app-height', `${window.innerHeight}px`)
-//   }
-//   window.addEventListener('resize', appHeight)
-//   appHeight()
-// })
-// onBeforeUnmount(() => {
-//   fullpage.value.destroy()
-// })
 
 const { event } = useGtag()
 const goToApp = () => {
@@ -404,11 +383,6 @@ const goToApp = () => {
 }
 
 const router = useRouter()
-const toContactForm = () => {
-  router.push({
-    name: 'en-contact',
-  })
-}
 
 const video1 = ref(null)
 const video2 = ref(null)

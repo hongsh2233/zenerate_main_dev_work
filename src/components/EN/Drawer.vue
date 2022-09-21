@@ -62,6 +62,7 @@ import ContactIcon from './Icons/header/ContactIcon.vue'
 import FAQIcon from './Icons/header/FAQIcon.vue'
 import HowToUseIcon from './Icons/header/HowToUseIcon.vue'
 import OverviewIcon from './Icons/header/OverviewIcon.vue'
+import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
 import PricingIcon from './Icons/header/PricingIcon.vue'
 
 const props = defineProps({
@@ -83,7 +84,7 @@ const routes = [
       {
         title: 'Z-Maps',
         to: 'en-zmaps',
-        icon: OverviewIcon,
+        icon: ZmapsIcon,
       },
       // {
       //   title: 'Pricing',

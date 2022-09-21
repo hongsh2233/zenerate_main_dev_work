@@ -42,7 +42,7 @@ const ENRoute: RouteRecordRaw = {
     {
       path: '/z-maps',
       name: 'en-zmaps',
-      component: LandingView,
+      component: null,
     },
     {
       path: '/about',
