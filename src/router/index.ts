@@ -12,8 +12,8 @@ import Timeline from '/Views/Main/Timeline.vue'
 import Team from '/Views/Main/Team.vue'
 import Career from '/Views/Main/Career.vue'
 
-// import NewsList from "/Views/Admin/NewsList.vue"
-// import NewsEdit from "/Views/Admin/NewsEdit.vue"
+import NewsList from '/Views/Admin/NewsList.vue'
+import NewsEdit from '/Views/Admin/NewsEdit.vue'
 
 import ENRoute from './EN'
 
@@ -71,17 +71,17 @@ const routes: RouteRecordRaw[] = [
       //   name: 'Team',
       //   component: Team,
       // },
-      // {
-      //   path: "admin",
-      //   name: "NewsList",
-      //   component: NewsList
-      // },
-      // {
-      //   path: "admin/edit/:id?",
-      //   name: "NewsEdit",
-      //   component: NewsEdit,
-      //   props: true
-      // }
+      {
+        path: 'admin',
+        name: 'NewsList',
+        component: NewsList,
+      },
+      {
+        path: 'admin/edit/:id?',
+        name: 'NewsEdit',
+        component: NewsEdit,
+        props: true,
+      },
     ],
   },
   {
