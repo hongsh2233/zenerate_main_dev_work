@@ -54,6 +54,14 @@ const routes: RouteRecordRaw[] = [
         path: 'career',
         name: 'Career',
         component: Career,
+        children: [
+          {
+            path: ':careerKey',
+            name: 'CareerContent',
+            component: Career,
+            props: true,
+          },
+        ],
       },
       {
         path: 'company',

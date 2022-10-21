@@ -5,8 +5,8 @@
         <span>{{ $t('main.career.title') }}</span>
       </div>
       <div class="career-title-explanation">
-        글로벌 스타트업 제너레잇과 건축 설계 자동화를 이끌어 갈 인재분들의 많은
-        지원을 기다립니다!
+        프롭테크 스타트업 '제너레잇'에서 부동산 개발 시장의 혁신을 이끌어나갈
+        인재를 찾습니다.
       </div>
     </div>
     <CareerList></CareerList>

@@ -1,68 +1,50 @@
 <template>
   <div class="career-list-wrapper" v-if="locale != 'en'">
-    <transition name="fade" mode="out-in">
-      <CareerContent
-        v-if="careerId != -1"
-        @onSelect="(v) => (careerId = v)"
-        :careerId="careerId"
-      ></CareerContent>
-    </transition>
-    <transition name="fade" mode="out-in">
-      <div class="career-list" v-if="careerId === -1">
-        <div class="career-item">
-          <!-- <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div> -->
-          <div
-            class="item-title hover-pointer"
-            @click=";[(careerId = 0), scrollTop()]"
-          >
-            백엔드 개발자 (경력)
-            <div class="arrow-right"></div>
+    <transition-group name="fade" mode="out-in">
+      <CareerContent v-if="route.name === 'CareerContent'"></CareerContent>
+      <div class="career-list" v-else>
+        <template v-for="(job, idx) in CAREER_LIST" :key="job.key">
+          <div class="career-item">
+            <!-- <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div> -->
+            <div
+              class="item-title hover-pointer"
+              @click="() => selectCareer(job.key)"
+            >
+              {{ job.title }}
+              <div class="arrow-right"></div>
+            </div>
           </div>
-        </div>
-        <div class="career-item">
-          <!-- <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div> -->
-          <div
-            class="item-title hover-pointer"
-            @click=";[(careerId = 1), scrollTop()]"
-          >
-            프론트엔드 개발자 (경력)
-            <div class="arrow-right"></div>
-          </div>
-        </div>
-        <div class="career-item">
-          <!-- <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div> -->
-          <div
-            class="item-title hover-pointer"
-            @click=";[(careerId = 2), scrollTop()]"
-          >
-            데이터 분석
-            <div class="arrow-right"></div>
-          </div>
-        </div>
-        <div class="career-item">
-          <!-- <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div> -->
-          <div
-            class="item-title hover-pointer"
-            @click=";[(careerId = 3), scrollTop()]"
-          >
-            경영 지원
-            <div class="arrow-right"></div>
-          </div>
-        </div>
+        </template>
       </div>
-    </transition>
+    </transition-group>
   </div>
 </template>
 <script setup>
 import CareerContent from './CareerContent.vue'
 import { useI18n } from 'vue-i18n'
+import { useRoute, useRouter } from 'vue-router'
 import { ref } from 'vue'
 const { locale } = useI18n()
-const careerId = ref(-1)
+const route = useRoute()
+const router = useRouter()
 
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 }
+
+const selectCareer = (key) => {
+  router.push(`/kr/main/career/${key}`)
+  scrollTop()
+}
+
+const CAREER_LIST = [
+  { key: 'computational-designer-a', title: '컴퓨테이셔널 디자이너 - A' },
+  { key: 'computational-designer-b', title: '컴퓨테이셔널 디자이너 - B' },
+  { key: 'frontend-developer', title: '프론트엔드 개발자 (경력)' },
+  { key: 'backend-developer', title: '백엔드 개발자 (경력)' },
+  { key: 'data-analyst', title: '데이터 분석' },
+  { key: 'management-support', title: '경영 지원' },
+]
 </script>
 <style lang="scss" scoped>
 .career-list-wrapper {

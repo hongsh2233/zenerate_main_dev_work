@@ -1,7 +1,383 @@
 <template>
   <div class="career-content-wrapper">
+    <!-- 컴퓨테이셔널 디자이너 - A -->
+    <div
+      class="career-content"
+      v-if="route.params.careerKey === 'computational-designer-a'"
+    >
+      <div class="image-wrapper">
+        <img src="/img/career.png" alt="career" />
+      </div>
+      <div class="career-content-title">
+        <span>컴퓨테이셔널 디자이너 - A</span>
+        <!-- <button @click="goToApply">지원하기</button> -->
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">주요 업무</div>
+        <p class="content-item-subtitle">
+          컴퓨테이셔널 디자이너는 아래의 업무 중 일부를 수행합니다.
+        </p>
+        <ul class="content-item-content">
+          <li>
+            프로젝트에서 설계를 자동화 할 수 있는 부분을 찾아 서비스 개발 팀원
+            분들이 구현할 수 있도록 기획합니다.
+          </li>
+          <li>
+            다양한 타입의 건물에 대한 매스 생성, 건물 배치, 세대 평면 생성
+            로직을 리서치하고 구현합니다.
+          </li>
+          <li>리서치 내용을 시각화하고 문서화 합니다.</li>
+          <li>
+            건축 법규 정보를 건물 생성에 활용할 수 있도록 구조화하고 수집
+            합니다.
+          </li>
+          <li>
+            구현한 기능을 서비스 개발 팀원 분들과 협업하여 서비스에 적용하고
+            유지보수 합니다.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">자격 요건</div>
+        <ul class="content-item-content">
+          <li>건축 설계 자동화에 대한 열정과 비전을 가지고 있으신 분</li>
+          <li>
+            건축 실무 혹은 시행사 근무 경력 2년 이상 혹은 이에 준하는 경험이
+            있으신 분
+          </li>
+          <li>
+            Rhino3D, Revit 등의 3D 소프트웨어에서 노드형 프로그래밍 혹은
+            스크립팅 기능을 활용해본 경험이 있으신 분
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">우대 사항</div>
+        <ul class="content-item-content">
+          <li>건축사 자격을 보유하고 계신 분</li>
+          <li>
+            건축 설계 자동화 분야의 프로젝트에 참여해 보았거나, 이에 준하는
+            경험이 있으신 분
+          </li>
+          <li>
+            Python, C#, C++, JavaScript 혹은 기타 프로그래밍 언어를 1가지 이상
+            능숙하게 사용하실 수 있는 분
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">혜택 및 복지</div>
+        <ul class="content-item-content">
+          <li>최신 사양 장비 및 듀얼모니터 제공</li>
+          <li>점심 식대 지원</li>
+          <li>연말 기간 전직원 refresh 휴가</li>
+          <li>4대 보험, 퇴직금 등의 기본 사항</li>
+          <li>중소기업 소득세 감면, 청년 내일채움공제 지원기업</li>
+          <li>송파구 몽촌토성역 3분 이내 거리에 사무실 위치</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">지원 절차</div>
+        <ul class="content-item-content">
+          <li>서류전형 → 면접(직무) → 면접(컬쳐) → 처우협의 → 최종 합격</li>
+          <li>
+            서류전형의 이력서, 포트폴리오는 양식 제한 없이 자유롭게
+            제출해주세요.
+          </li>
+          <li>서류 합격시 접수 1주일 내에 개별 연락 드리겠습니다.</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">지원 및 문의</div>
+        <ul class="content-item-content">
+          <li>
+            <a href="mailto:apply@zenerate.ai" class="link-text"
+              >apply@zenerate.ai</a
+            >
+            로 이력서를 제출해주세요.
+          </li>
+          <li>
+            채용 및 업무에 대해 궁금한 점이 있으시면
+            <a href="https://forms.gle/LEGbTJy8hLLHvNWJ9" class="link-text"
+              >이 링크</a
+            >로 커피챗 신청도 가능합니다☕☕
+          </li>
+        </ul>
+      </div>
+
+      <button class="back-button" @click="() => goBack()">
+        <span>BACK</span>
+        <svg
+          width="122"
+          height="28"
+          viewBox="0 0 122 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M121 27H0.999997L27.6886 1"
+            stroke="#4747FF"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+    <!-- 컴퓨테이셔널 디자이너 - B -->
+    <div
+      class="career-content"
+      v-if="route.params.careerKey === 'computational-designer-b'"
+    >
+      <div class="image-wrapper">
+        <img src="/img/career.png" alt="career" />
+      </div>
+      <div class="career-content-title">
+        <span>컴퓨테이셔널 디자이너 - B</span>
+        <!-- <button @click="goToApply">지원하기</button> -->
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">주요 업무</div>
+        <p class="content-item-subtitle">
+          컴퓨테이셔널 디자이너는 아래의 업무 중 일부를 수행합니다.
+        </p>
+        <ul class="content-item-content">
+          <li>
+            다양한 타입의 건물에 대한 매스 생성, 건물 배치, 세대 평면 생성
+            로직을 리서치하고 구현합니다.
+          </li>
+          <li>
+            리서치 내용을 도형 라이브러리를 사용하여 시각화하고 문서화 합니다.
+          </li>
+          <li>
+            구현한 기능을 서비스 개발 팀원 분들과 협업하여 서비스에 적용합니다.
+          </li>
+          <li>
+            언급되어 있는 주요 업무 외에 팀에 기여할 수 있는 역할에 대하여
+            논의가 가능하니, 궁금하신 점이 있으시면 편하게 공지 하단의 링크를
+            통해 커피챗 신청 부탁드립니다.
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">자격 요건</div>
+        <ul class="content-item-content">
+          <li>건축 설계 자동화에 대한 열정과 비전을 가지고 있으신 분</li>
+          <li>
+            Rhino3D, Revit 등의 3D 소프트웨어에서 노드형 프로그래밍 혹은
+            스크립팅 경험 권장
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">우대 사항</div>
+        <ul class="content-item-content">
+          <li>
+            주차장 설계 자동화와 같은 설계 자동화 분야의 프로젝트를 진행해본
+            경험이 있으신 분
+          </li>
+          <li>웹 서비스 개발에 기획/개발 역할로 참여해본 적 있으신 분</li>
+          <li>
+            Git을 사용하여 개발팀과 협업해보았거나 오픈소스에 기여해본 경험이
+            있으신 분
+          </li>
+          <li>
+            이산수학, 계산 기하 분야에 관심이 있거나, 알고리즘 문제 풀이에
+            관심이 있으신 분
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">참고 사항</div>
+        <ul class="content-item-content">
+          <li>업무 논의 후 학업 병행, 파트타임 근무도 가능합니다.</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">혜택 및 복지</div>
+        <ul class="content-item-content">
+          <li>최신 사양 장비 및 듀얼모니터 제공</li>
+          <li>점심 식대 지원</li>
+          <li>연말 기간 전직원 refresh 휴가</li>
+          <li>4대 보험, 퇴직금 등의 기본 사항</li>
+          <li>중소기업 소득세 감면, 청년 내일채움공제 지원기업</li>
+          <li>송파구 몽촌토성역 3분 이내 거리에 사무실 위치</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">지원 절차</div>
+        <ul class="content-item-content">
+          <li>서류전형 → 면접(직무) → 면접(컬쳐) → 처우협의 → 최종 합격</li>
+          <li>
+            서류전형의 이력서, 포트폴리오는 양식 제한 없이 자유롭게
+            제출해주세요.
+          </li>
+          <li>서류 합격시 접수 1주일 내에 개별 연락 드리겠습니다.</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">지원 및 문의</div>
+        <ul class="content-item-content">
+          <li>
+            <a href="mailto:apply@zenerate.ai" class="link-text"
+              >apply@zenerate.ai</a
+            >
+            로 이력서를 제출해주세요.
+          </li>
+          <li>
+            채용 및 업무에 대해 궁금한 점이 있으시면
+            <a href="https://forms.gle/LEGbTJy8hLLHvNWJ9" class="link-text"
+              >이 링크</a
+            >로 커피챗 신청도 가능합니다.
+          </li>
+        </ul>
+      </div>
+
+      <button class="back-button" @click="() => goBack()">
+        <span>BACK</span>
+        <svg
+          width="122"
+          height="28"
+          viewBox="0 0 122 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M121 27H0.999997L27.6886 1"
+            stroke="#4747FF"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+    <!-- Frontend -->
+    <div
+      class="career-content"
+      v-if="route.params.careerKey === 'frontend-developer'"
+    >
+      <div class="image-wrapper">
+        <img src="/img/career.png" alt="career" />
+      </div>
+      <div class="career-content-title">
+        <span>프론트엔드 개발자 (경력)</span>
+        <button @click="goToApply">지원하기</button>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">주요 업무</div>
+        <ul class="content-item-content">
+          <li>
+            현재 운영중인 웹 어플리케이션의 신규 기능 설계, 개발 및 유지보수를
+            담당하는 팀의 업무를 맡아 진행합니다.
+          </li>
+          <li>
+            Vue.js 3를 메인 프레임워크로 하여 필요한 컴포넌트 및 로직을
+            개발합니다.
+          </li>
+          <li>
+            사용자가 상호작용 가능한 지도 위에 각종 데이터 및 3D 도형을 시각화
+            합니다.
+          </li>
+          <li>디자이너와 Figma를 사용하여 협업합니다.</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">자격 요건</div>
+        <ul class="content-item-content">
+          <li>나이 / 성별 / 학력 / 전공 무관</li>
+          <li>
+            3년 이상의 웹 프론트엔드 개발 경력 또는 이에 준하는 경험이 있으신 분
+          </li>
+          <li>JavaScript에 대한 깊은 이해가 있으신 분</li>
+          <li>HTML, CSS 등 마크업에 대한 이해가 있으신 분</li>
+          <li>HTTP 통신과 RESTful API에 대해 이해가 있으신 분</li>
+          <li>
+            Vue, React, Angular와 같은 프론트엔드 라이브러리 또는 프레임워크에
+            대한 이해가 있으신 분
+          </li>
+          <li>웹 어플리케이션의 생명 주기에 대한 이해가 있으신 분</li>
+          <li>git에 대한 기본적인 사용법을 알고 있으신 분</li>
+          <li>
+            개발팀 및 그 외 부서와의 원활한 커뮤니케이션을 통한 협업이 가능하신
+            분
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">우대 사항</div>
+        <ul class="content-item-content">
+          <li>반응형 웹 개발에 대한 경험이 있으신 분</li>
+          <li>
+            정적 타입 언어를 사용해 보았거나, TypeScript에 대한 이해가 있으신 분
+          </li>
+          <li>AWS 등 클라우드 환경에서 개발 경험이 있으신 분</li>
+          <li>대규모 웹 어플리케이션의 개발 경험이 있으신 분</li>
+          <li>웹 서비스의 최적화에 대해 깊이 고민해보신 분</li>
+          <li>D3.js 등을 활용한 데이터 시각화 경험이 있으신 분</li>
+          <li>GeoJSON과 같은 GIS 데이터 포맷을 다뤄본 경험이 있으신 분</li>
+          <li>
+            Mapbox, Leaflet 등의 지도 관련 라이브러리를 통한 개발 경험이 있으신
+            분
+          </li>
+          <li>
+            Konva, PixiJS를 사용해 보았거나 HTML Canvas를 사용한 2D 시각화 관련
+            경험이 있으신 분
+          </li>
+          <li>
+            Three.js등의 라이브러리를 사용해 보았거나 Webgl를 사용한 3D 시각화
+            관련 경험이 있으신 분
+          </li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">이렇게 일해요</div>
+        <div class="content-item-content content-item-content-nolist">
+          <div class="caption-large">기술 스택</div>
+          <p>TypeScript, Vue.js 3, Vite, CSS, HTML</p>
+          <div class="caption-large">협업 환경</div>
+          <p>Slack, Notion, Jira를 이용해 협업해요!</p>
+        </div>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">혜택 및 복지</div>
+        <ul class="content-item-content">
+          <li>최신 사양 장비 및 듀얼모니터 제공</li>
+          <li>점심 식대 지원</li>
+          <li>연말 기간 전직원 refresh 휴가</li>
+          <li>4대 보험, 퇴직금 등의 기본 사항</li>
+          <li>중소기업 소득세 감면, 청년 내일채움공제 지원기업</li>
+          <li>송파구 몽촌토성역 3분 이내 거리에 사무실 위치</li>
+        </ul>
+      </div>
+      <div class="content-item">
+        <div class="content-item-title">지원 절차</div>
+        <ul class="content-item-content">
+          <li>간편지원 > 3일 이내 인터뷰 진행 > 1주일 이내 최종 합격 통지</li>
+        </ul>
+      </div>
+
+      <button class="back-button" @click="() => goBack()">
+        <span>BACK</span>
+        <svg
+          width="122"
+          height="28"
+          viewBox="0 0 122 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M121 27H0.999997L27.6886 1"
+            stroke="#4747FF"
+            stroke-linecap="square"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
     <!-- Backend -->
-    <div class="career-content" v-if="props.careerId === 0">
+    <div
+      class="career-content"
+      v-if="route.params.careerKey === 'backend-developer'"
+    >
       <div class="image-wrapper">
         <img src="/img/career.png" alt="career" />
       </div>
@@ -12,10 +388,7 @@
       <div class="content-item">
         <div class="content-item-title">주요 업무</div>
         <ul class="content-item-content">
-          <li>
-            2021년 하반기 미국에서 오픈 할 실시간 웹서비스의 백엔드 설계 및
-            개발을 담당합니다.
-          </li>
+          <li>웹서비스의 백엔드 설계 및 개발을 담당합니다.</li>
           <li>계산 엔진의 성능을 모니터링하고 개선합니다.</li>
         </ul>
       </div>
@@ -50,34 +423,32 @@
         <div class="content-item-content content-item-content-nolist">
           <div class="caption-large">기술 스택</div>
           <p>
-            Vue.js 3, Vite, CSS, HTML, Node.js, Express, Python, Typescript,
-            MySQL
+            JavaScript, TypeScript, Express.js, TypeORM, TypeDI, Python, Oracle
+            Cloud, MySQL, Redis, Docker
           </p>
-          <div class="caption-large">개발 환경</div>
-          <p>AWS EC2, AWS RDS, AWS S3</p>
           <div class="caption-large">협업 환경</div>
           <p>Slack, Notion, Jira를 이용해 협업합니다</p>
         </div>
       </div>
       <div class="content-item">
+        <div class="content-item-title">혜택 및 복지</div>
+        <ul class="content-item-content">
+          <li>최신 사양 장비 및 듀얼모니터 제공</li>
+          <li>점심 식대 지원</li>
+          <li>연말 기간 전직원 refresh 휴가</li>
+          <li>4대 보험, 퇴직금 등의 기본 사항</li>
+          <li>중소기업 소득세 감면, 청년 내일채움공제 지원기업</li>
+          <li>송파구 몽촌토성역 3분 이내 거리에 사무실 위치</li>
+        </ul>
+      </div>
+      <div class="content-item">
         <div class="content-item-title">지원 절차</div>
         <ul class="content-item-content">
           <li>간편지원 > 3일 이내 인터뷰 진행 > 1주일 이내 최종 합격 통지</li>
         </ul>
       </div>
-      <div class="content-item">
-        <div class="content-item-title">근무조건 및 업무환경</div>
-        <ul class="content-item-content">
-          <li>정규직</li>
-          <li>휴가 17일</li>
-          <li>선택적 근로 시간제</li>
-          <li>점심 식사 제공</li>
-        </ul>
-      </div>
-      <button
-        class="back-button"
-        @click=";[(nowId = -1), onSelect(nowId), scrollTop()]"
-      >
+
+      <button class="back-button" @click="() => goBack()">
         <span>BACK</span>
         <svg
           width="122"
@@ -95,101 +466,12 @@
         </svg>
       </button>
     </div>
-    <!-- Frontend -->
-    <div class="career-content" v-if="props.careerId === 1">
-      <div class="image-wrapper">
-        <img src="/img/career.png" alt="career" />
-      </div>
-      <div class="career-content-title">
-        <span>프론트엔드 개발자 (경력)</span>
-        <button @click="goToApply">지원하기</button>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">주요 업무</div>
-        <ul class="content-item-content">
-          <li>웹페이지 UI 컴포넌트 구현</li>
-          <li>웹페이지 로직 개발 및 성능 개선</li>
-          <li>WebGL 기반 2D/3D 데이터 시각화</li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">자격 조건</div>
-        <ul class="content-item-content">
-          <li>나이 / 성별 / 학력 / 전공 무관</li>
-          <li>웹서비스 개발 및 운영 경력이 있으신 분</li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">필수 사항</div>
-        <ul class="content-item-content">
-          <li>JavaScript의 이해도가 높은 분</li>
-          <li>HTML5, CSS3을 이용, 웹 표준 준수한 프로젝트 경험이 있는 분</li>
-          <li>React, Vue 등 웹 프레임워크를 활용한 개발 경험이 있는 분</li>
-          <li>Rest API에 대한 전반적인 이해가 있는 분</li>
-          <li>Git을 활용한 형상관리 및 협업 경험이 있는 분</li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">우대 사항</div>
-        <ul class="content-item-content">
-          <li>
-            Vue.js 또는 React.js 와 같은 프론트엔드 프레임워크를 사용해 완결된
-            웹 서비스 개발 경험이 있으신 분
-          </li>
-          <li>TypeScript 개발 경험이 있으신 분</li>
-          <li>새로운 기술에 대한 호기심이 많고, 빠르게 습득할 수 있는 분</li>
-          <li>협업과 의사소통이 원활한 분</li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">이렇게 일해요</div>
-        <div class="content-item-content content-item-content-nolist">
-          <div class="caption-large">기술 스택</div>
-          <p>Vue.js 3, Vite, CSS, HTML, Node.js, Express, Python, Typescript</p>
-          <div class="caption-large">개발 환경</div>
-          <p>AWS EC2, AWS RDS, AWS S3</p>
-          <div class="caption-large">협업 환경</div>
-          <p>Slack, Notion, Jira를 이용해 협업해요!</p>
-        </div>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">지원 절차</div>
-        <ul class="content-item-content">
-          <li>간편지원 > 3일 이내 인터뷰 진행 > 1주일 이내 최종 합격 통지</li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">근무조건 및 업무환경</div>
-        <ul class="content-item-content">
-          <li>정규직</li>
-          <li>휴가 17일</li>
-          <li>선택적 근로 시간제</li>
-          <li>점심 식사 제공</li>
-        </ul>
-      </div>
-      <button
-        class="back-button"
-        @click=";[(nowId = -1), scrollTop(), onSelect(nowId)]"
-      >
-        <span>BACK</span>
-        <svg
-          width="122"
-          height="28"
-          viewBox="0 0 122 28"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M121 27H0.999997L27.6886 1"
-            stroke="#4747FF"
-            stroke-linecap="square"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-    </div>
+
     <!-- Data Analysist -->
-    <div class="career-content" v-if="props.careerId === 2">
+    <div
+      class="career-content"
+      v-if="route.params.careerKey === 'data-analyst'"
+    >
       <div class="image-wrapper">
         <img src="/img/career.png" alt="career" />
       </div>
@@ -215,16 +497,17 @@
           <li>Python 을 활용한 데이터 분석 경험이 있으신 분</li>
         </ul>
       </div>
+
       <div class="content-item">
-        <div class="content-item-title">이렇게 일해요</div>
-        <div class="content-item-content content-item-content-nolist">
-          <div class="caption-large">기술 스택</div>
-          <p>Vue.js 3, Vite, CSS, HTML, Node.js, Express, Python, Typescript</p>
-          <div class="caption-large">개발 환경</div>
-          <p>AWS EC2, AWS RDS, AWS S3</p>
-          <div class="caption-large">협업 환경</div>
-          <p>Slack, Notion, Jira를 이용해 협업해요!</p>
-        </div>
+        <div class="content-item-title">혜택 및 복지</div>
+        <ul class="content-item-content">
+          <li>최신 사양 장비 및 듀얼모니터 제공</li>
+          <li>점심 식대 지원</li>
+          <li>연말 기간 전직원 refresh 휴가</li>
+          <li>4대 보험, 퇴직금 등의 기본 사항</li>
+          <li>중소기업 소득세 감면, 청년 내일채움공제 지원기업</li>
+          <li>송파구 몽촌토성역 3분 이내 거리에 사무실 위치</li>
+        </ul>
       </div>
       <div class="content-item">
         <div class="content-item-title">지원 절차</div>
@@ -232,19 +515,7 @@
           <li>간편지원 > 3일 이내 인터뷰 진행 > 1주일 이내 최종 합격 통지</li>
         </ul>
       </div>
-      <div class="content-item">
-        <div class="content-item-title">근무조건 및 업무환경</div>
-        <ul class="content-item-content">
-          <li>정규직</li>
-          <li>휴가 17일</li>
-          <li>선택적 근로 시간제</li>
-          <li>점심 식사 제공</li>
-        </ul>
-      </div>
-      <button
-        class="back-button"
-        @click=";[(nowId = -1), scrollTop(), onSelect(nowId)]"
-      >
+      <button class="back-button" @click="() => goBack()">
         <span>BACK</span>
         <svg
           width="122"
@@ -263,7 +534,10 @@
       </button>
     </div>
     <!-- Management Support -->
-    <div class="career-content" v-if="props.careerId === 3">
+    <div
+      class="career-content"
+      v-if="route.params.careerKey === 'management-support'"
+    >
       <div class="image-wrapper">
         <img src="/img/career.png" alt="career" />
       </div>
@@ -300,25 +574,24 @@
           <li>문서 작업(워드, 엑셀, 한컴)이 뛰어나신 분</li>
         </ul>
       </div>
+
+      <div class="content-item">
+        <div class="content-item-title">혜택 및 복지</div>
+        <ul class="content-item-content">
+          <li>점심 식대 지원</li>
+          <li>연말 기간 전직원 refresh 휴가</li>
+          <li>4대 보험, 퇴직금 등의 기본 사항</li>
+          <li>중소기업 소득세 감면, 청년 내일채움공제 지원기업</li>
+          <li>송파구 몽촌토성역 3분 이내 거리에 사무실 위치</li>
+        </ul>
+      </div>
       <div class="content-item">
         <div class="content-item-title">지원 절차</div>
         <ul class="content-item-content">
           <li>help@zenerate.ai 이메일로 이력서 제출</li>
         </ul>
       </div>
-      <div class="content-item">
-        <div class="content-item-title">근무조건 및 업무환경</div>
-        <ul class="content-item-content">
-          <li>정규직</li>
-          <li>휴가 17일</li>
-          <li>선택적 근로 시간제</li>
-          <li>점심 식사 제공</li>
-        </ul>
-      </div>
-      <button
-        class="back-button"
-        @click=";[(nowId = -1), scrollTop(), onSelect(nowId)]"
-      >
+      <button class="back-button" @click="() => goBack()">
         <span>BACK</span>
         <svg
           width="122"
@@ -341,15 +614,15 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-const emit = defineEmits(['onSelect'])
-const onSelect = (value) => {
-  emit('onSelect', value)
+import { useRoute, useRouter } from 'vue-router'
+
+const route = useRoute()
+const router = useRouter()
+const goBack = () => {
+  scrollTop()
+  router.push('/kr/main/career')
 }
-const props = defineProps({
-  careerId: {
-    type: Number,
-  },
-})
+
 const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 }
@@ -428,6 +701,27 @@ const goToApply = () => {
         @include bold(14);
       }
     }
+
+    .content-item-subtitle {
+      @include medium(16);
+      .caption-large {
+        @include bold(16);
+        line-height: 40px;
+        @include tablet {
+          @include bold(14);
+        }
+        @include mobile {
+          @include bold(12);
+        }
+      }
+      @include tablet {
+        @include medium(14);
+      }
+      @include mobile {
+        @include medium(12);
+      }
+    }
+
     .content-item-content {
       list-style-type: disc;
       margin-left: 28px;
@@ -482,6 +776,11 @@ const goToApply = () => {
     @include mobile {
       @include bold(14);
     }
+  }
+
+  .link-text {
+    color: $main;
+    text-decoration: underline;
   }
 }
 </style>
