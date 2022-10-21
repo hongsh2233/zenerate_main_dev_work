@@ -43,7 +43,7 @@ const CAREER_LIST = [
   { key: 'frontend-developer', title: '프론트엔드 개발자 (경력)' },
   { key: 'backend-developer', title: '백엔드 개발자 (경력)' },
   { key: 'data-analyst', title: '데이터 분석' },
-  { key: 'management-support', title: '경영 지원' },
+  // { key: 'management-support', title: '경영 지원' },
 ]
 </script>
 <style lang="scss" scoped>
