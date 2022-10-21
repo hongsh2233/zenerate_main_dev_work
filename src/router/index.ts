@@ -71,17 +71,17 @@ const routes: RouteRecordRaw[] = [
       //   name: 'Team',
       //   component: Team,
       // },
-      {
-        path: 'admin',
-        name: 'NewsList',
-        component: NewsList,
-      },
-      {
-        path: 'admin/edit/:id?',
-        name: 'NewsEdit',
-        component: NewsEdit,
-        props: true,
-      },
+      // {
+      //   path: 'admin',
+      //   name: 'NewsList',
+      //   component: NewsList,
+      // },
+      // {
+      //   path: 'admin/edit/:id?',
+      //   name: 'NewsEdit',
+      //   component: NewsEdit,
+      //   props: true,
+      // },
     ],
   },
   {

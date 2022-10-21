@@ -9,6 +9,7 @@
         <span>{{ $t('main.news.title[1]') }}</span>
       </div>
       <div class="news-year-wrapper">
+        <button @click="() => ((targetYear = 2022), (nowId = -1))">2022</button>
         <button @click="() => ((targetYear = 2021), (nowId = -1))">2021</button>
         <button @click="() => ((targetYear = 2020), (nowId = -1))">2020</button>
       </div>
