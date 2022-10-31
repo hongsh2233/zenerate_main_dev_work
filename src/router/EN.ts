@@ -11,7 +11,8 @@ import ServiceView from '/Views/EN/ServiceView.vue'
 import TermsAndConditionsView from '/Views/EN/TermsAndConditionsView.vue'
 import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
 import PreSignUpView from '/Views/EN/PreSignUpView.vue'
-import SignUpView from '../views/EN/SignUpView.vue'
+import SignUpView from '/Views/EN/SignUpView.vue'
+import ZenerateView from '/Views/EN/ZenerateView.vue'
 import HowToUseView from '/Views/EN/HowToUseView.vue'
 import OverviewView from '/Views/EN/OverviewView.vue'
 import FAQView from '/Views/EN/FAQView.vue'
@@ -37,12 +38,7 @@ const ENRoute: RouteRecordRaw = {
     {
       path: '/overview',
       name: 'en-overview',
-      component: OverviewView,
-    },
-    {
-      path: '/z-maps',
-      name: 'en-zmaps',
-      component: null,
+      component: ZenerateView,
     },
     {
       path: '/about',
@@ -54,16 +50,16 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-case-studies',
       component: CaseStudiesView,
     },
-    {
-      path: '/services',
-      name: 'en-services',
-      component: ServiceView,
-    },
-    {
-      path: '/how-to-use',
-      name: 'en-how-to-use',
-      component: HowToUseView,
-    },
+    // {
+    //   path: '/services',
+    //   name: 'en-services',
+    //   component: ServiceView,
+    // },
+    // {
+    //   path: '/how-to-use',
+    //   name: 'en-how-to-use',
+    //   component: HowToUseView,
+    // },
     // {
     //   path: '/pricing',
     //   name: 'en-pricing',
@@ -86,12 +82,12 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-contact',
       component: ContactView,
     },
-    {
-      path: '/faq',
-      name: 'en-faq',
-      component: FAQView,
-      children: [],
-    },
+    // {
+    //   path: '/faq',
+    //   name: 'en-faq',
+    //   component: FAQView,
+    //   children: [],
+    // },
     {
       path: '/pre-launch-signup',
       name: 'SignUp',

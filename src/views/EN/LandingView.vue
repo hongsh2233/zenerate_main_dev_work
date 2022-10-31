@@ -1,42 +1,311 @@
 <template>
   <div class="min-w-[280px]">
-    <div class="section section-landing">
-      <div class="section-inner inner-landing">
-        <div class="inner-contents landing-contents">
-          <div class="content-wrapper">
-            <div class="content-title-wrapper">
-              <div class="content-heading">
-                <p><strong>The all-in-one,</strong></p>
-                <p>AI-powered</p>
-                <p>feasibility study tool</p>
-              </div>
+    <section class="section section-landing">
+      <div
+        class="py-40 md:py-60 mb-10 lg:pt-100 px-30 lg:pb-60 w-[320px] md:w-[630px] lg:w-[630px] mx-auto"
+      >
+        <div class="flex flex-col">
+          <p
+            class="text-26 font-regular leading-[135%] md:mb-28 lg:mb-20 mb-20 text-left md:text-center lg:text-center md:text-30 lg:text-34"
+          >
+            <span>Making <strong>feasibility</strong>&nbsp;</span>
+            <span><strong>studies easier</strong></span>
+            <br />
+            <span>and <strong>projects more&nbsp;</strong></span>
+            <span><strong>profitable</strong>&nbsp;</span>
+            <span>through&nbsp;</span>
+            <span>the power of AI</span>
+          </p>
 
-              <div class="content-phrase">
-                <p>Let Zenerate take care of&nbsp;</p>
-                <p>the&nbsp;<strong>zoning research,</strong>&nbsp;</p>
-                <p><strong>floor plan designs</strong>&nbsp;</p>
-                <p>and&nbsp;</p>
-                <p><strong>financial analysis.</strong></p>
-                <p>All while&nbsp;<strong>maximizing returns</strong></p>
-                <p>via our advanced AI-engine</p>
-              </div>
-              <button type="button" class="content-button">
-                <router-link class="demo-link" :to="{ name: 'en-demo' }">
-                  BOOK A DEMO
-                </router-link>
-              </button>
-            </div>
-            <div class="content-image-wrapper">
-              <img src="/video/scroll_building.gif" alt="" />
-            </div>
-          </div>
+          <p
+            class="text-14 font-regular leading-[150%] md:text-16 lg:text-18 text-left md:text-center lg:text-center"
+          >
+            <span>Zenerate provides products and&nbsp;</span>
+            <span>services that automate<br /></span>
+            <span>and optimize key aspects of the</span>
+            <span>feasibility study process.</span>
+          </p>
         </div>
-        <!-- <div class="arrow-bottom arrow-blue">
+      </div>
+
+      <!-- <div class="arrow-bottom arrow-blue">
           <Arrow />
         </div> -->
+    </section>
+
+    <section
+      class="section flex flex-col lg:flex-row items-center lg:items-start lg:justify-center"
+    >
+      <article
+        class="case mb-16 lg:mr-12 lg:w-[490px] shadow-200 overflow-x-hidden"
+      >
+        <div
+          class="w-full h-114 md:h-172 lg:h-172 bg-core-500 justify-between text-white flex flex-col px-18 pt-18 pb-14 md:px-28 md:pt-24 md:pb-20 lg:px-28 lg:pt-24 lg:pb-20"
+        >
+          <p class="text-18 font-regular leading-[150%] md:text-26 lg:text-26">
+            Explore all possibilities,<br />
+            <strong> maximize returns. </strong>
+          </p>
+          <p
+            class="text-right text-12-medium md:text-18-medium lg:text-18-medium"
+          >
+            Zenerate™ App
+          </p>
+        </div>
+        <div class="w-full md:h-[506px] lg:h-[506px] h-[330px] bg-blue-400">
+          slider
+        </div>
+        <div
+          class="flex flex-col pt-38 px-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
+        >
+          <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
+            <p
+              class="text-primary md:text-18 lg:text-18 text-12 mb-8 font-semibold"
+            >
+              The Zenerate™ App
+            </p>
+            <p
+              class="text-20 font-regular text-black leading-[135%] md:text-28 lg:text-28"
+            >
+              Instantly evaluate<br />
+              development potential<br />
+              and maximize returns
+            </p>
+          </div>
+
+          <div
+            class="hidden-en-mobile lg:h-[108px] text-18 font-regular leading-[150%] mb-36 text-gray-700"
+          >
+            <p>
+              An AI-powered feasibility study tool utilizing<br />
+              generative design and advanced data<br />
+              analytics that zenerates ALL development<br />
+              possibilities within a given site.
+            </p>
+          </div>
+          <div
+            class="text-14 font-regular text-gray-700 leading-[150%] mb-22 hidden-en-desktop hidden-en-tablet"
+          >
+            <p>
+              An AI-powered feasibility study tool<br />
+              utilizing generative design and<br />
+              advanced data analytics that <br />
+              zenerates ALL development<br />
+              possibilities within a given site.
+            </p>
+          </div>
+
+          <button type="button" class="start-button w-[160px] bg-primary">
+            <router-link
+              class="demo-link text-14 lg:text-16"
+              :to="{ name: 'en-overview' }"
+            >
+              LEARN MORE
+            </router-link>
+          </button>
+        </div>
+      </article>
+      <article class="case flex-col shadow-200 overflow-x-hidden">
+        <div
+          class="w-full h-114 md:h-172 lg:h-172 bg-purple-500 justify-between text-white flex flex-col px-18 pt-18 pb-14 md:px-28 md:pt-24 md:pb-20 lg:px-28 lg:pt-24 lg:pb-20"
+        >
+          <p class="text-18 font-regular leading-[150%] md:text-26 lg:text-26">
+            Find your comps.
+          </p>
+
+          <div class="flex justify-end">
+            <svg
+              class="hidden-en-desktop hidden-en-tablet"
+              width="58"
+              height="18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M18.098.143H.898v16.98h17.2V.142Z" fill="#fff" />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.672 3.781v1.456h3.502L6.427 9.239v1.395h6.45V9.178h-3.87l3.685-3.88V3.78h-6.02Zm-.245 8.308h6.45v1.456h-6.45v-1.456Z"
+                fill="#914EFF"
+              />
+              <path
+                d="M30.209 3.781c.85 0 1.517.24 2.002.78.485.478.789 1.197.789 2.096v3.953h-2.063V6.956c0-.42-.122-.779-.364-1.018-.243-.24-.546-.36-.971-.36-.425 0-.728.12-.97.36-.244.24-.365.599-.365 1.018v3.654h-2.063V6.956c0-.42-.121-.779-.364-1.018-.243-.24-.546-.36-.97-.36-.425 0-.729.12-.972.36-.242.24-.364.599-.364 1.018v3.654h-2.123V3.84h2.123v.839c.243-.3.486-.48.85-.659.364-.18.728-.24 1.153-.24.485 0 .97.12 1.395.3.425.24.728.539.971.958.243-.36.546-.659.97-.898.365-.24.85-.36 1.336-.36ZM34.474 7.255c0-.718.122-1.317.364-1.856.243-.54.607-.959 1.092-1.198.486-.3.971-.42 1.517-.42.486 0 .91.12 1.274.3.365.18.668.42.85.779V3.9h2.124v6.769H39.57V9.71c-.182.3-.485.6-.85.779-.364.18-.788.3-1.274.3-.546 0-1.092-.12-1.517-.42-.485-.3-.85-.719-1.092-1.198a5.13 5.13 0 0 1-.364-1.917Zm5.097 0c0-.539-.121-.898-.425-1.197a1.43 1.43 0 0 0-1.031-.42c-.364 0-.79.12-1.093.42-.303.299-.424.718-.424 1.197 0 .54.121.959.425 1.258.303.3.667.42 1.092.42.424 0 .788-.12 1.031-.42.304-.359.425-.718.425-1.258Z"
+                fill="#fff"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M46.142 4.08c-.364.18-.667.48-.85.78V3.84H43.17v9.704h2.124V9.65c.182.36.485.6.85.78.363.179.788.299 1.273.299.546 0 1.032-.12 1.517-.42.486-.24.85-.659 1.092-1.198.304-.539.425-1.138.425-1.857 0-.718-.182-1.317-.425-1.856-.303-.54-.606-.899-1.092-1.198-.425-.3-.97-.42-1.517-.42-.485 0-.91.12-1.274.3Zm1.726 1.978c.306.299.428.658.428 1.197 0 .54-.122.899-.428 1.258-.244.3-.61.42-1.039.42-.428 0-.794-.12-1.1-.42-.305-.3-.428-.718-.428-1.258 0-.479.123-.898.428-1.197.306-.3.734-.42 1.1-.42.367 0 .734.12 1.04.42Z"
+                fill="#fff"
+              />
+              <path
+                d="M54.84 10.787c-.613 0-1.163-.121-1.591-.302a2.245 2.245 0 0 1-1.102-.846c-.244-.362-.428-.785-.428-1.208h2.08c0 .242.123.423.306.604.184.181.428.242.734.242.245 0 .49-.06.612-.121.122-.12.245-.242.245-.423a.454.454 0 0 0-.306-.422c-.184-.121-.55-.182-.98-.302-.488-.121-.917-.242-1.223-.363a2.028 2.028 0 0 1-.856-.604 1.672 1.672 0 0 1-.367-1.087c0-.362.122-.724.306-1.087.244-.302.55-.604.979-.785a3.82 3.82 0 0 1 1.529-.302c.856 0 1.53.242 2.019.665.489.422.795.966.856 1.69h-1.957c-.062-.241-.123-.422-.306-.543a1.245 1.245 0 0 0-.673-.181c-.245 0-.428.06-.55.12-.123.061-.184.242-.184.363 0 .181.122.362.306.423.244.12.55.18.978.302.49.12.918.241 1.224.362.306.12.611.302.856.604s.367.664.367 1.147c0 .423-.122.785-.367 1.087-.245.302-.55.544-.979.725-.489.181-.978.242-1.529.242Z"
+                fill="#fff"
+              />
+            </svg>
+
+            <svg
+              class="hidden-en-mobile"
+              width="87"
+              height="26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M26.338 0H0v26h26.338V0Z" fill="#fff" />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.842 5.571V7.8h5.361l-5.737 6.129v2.135h9.876v-2.228h-5.926l5.644-5.943V5.57H8.842Zm-.376 12.722h9.876v2.228H8.466v-2.228Z"
+                fill="#914EFF"
+              />
+              <path
+                d="M44.882 5.571c1.3 0 2.323.367 3.066 1.193.743.734 1.208 1.834 1.208 3.21v6.053h-3.159v-5.595c0-.641-.186-1.192-.557-1.559-.372-.367-.837-.55-1.487-.55-.65 0-1.115.183-1.486.55-.372.367-.558.918-.558 1.56v5.594H38.75v-5.595c0-.641-.186-1.192-.557-1.559-.372-.367-.837-.55-1.487-.55-.65 0-1.115.183-1.487.55-.371.367-.557.918-.557 1.56v5.594H31.41V5.663h3.252v1.284c.372-.458.743-.734 1.3-1.009.558-.275 1.116-.367 1.766-.367.743 0 1.487.184 2.137.459.65.367 1.115.825 1.487 1.468a4.279 4.279 0 0 1 1.486-1.376c.558-.367 1.3-.55 2.044-.55ZM51.414 10.891c0-1.1.185-2.018.557-2.843.372-.826.93-1.468 1.672-1.835.744-.458 1.487-.642 2.323-.642.743 0 1.394.184 1.951.459.558.275 1.022.642 1.301 1.192V5.755h3.252v10.364h-3.252v-1.467a3.264 3.264 0 0 1-1.3 1.192 4.365 4.365 0 0 1-1.952.459c-.836 0-1.672-.184-2.323-.643a4.55 4.55 0 0 1-1.672-1.834 7.856 7.856 0 0 1-.557-2.935Zm7.804 0c0-.825-.186-1.376-.65-1.834a2.19 2.19 0 0 0-1.58-.642c-.557 0-1.208.183-1.672.642-.465.458-.65 1.1-.65 1.834 0 .826.185 1.468.65 1.926.464.459 1.022.642 1.672.642.65 0 1.208-.183 1.58-.642.464-.55.65-1.1.65-1.926Z"
+                fill="#fff"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M69.28 6.03a3.264 3.264 0 0 0-1.3 1.192V5.663h-3.253v14.859h3.252V14.56c.279.55.743.917 1.3 1.192a4.365 4.365 0 0 0 1.952.459c.836 0 1.58-.184 2.323-.642.743-.367 1.3-1.01 1.672-1.835.465-.825.65-1.742.65-2.843 0-1.1-.278-2.018-.65-2.843-.464-.826-.929-1.376-1.672-1.835-.65-.458-1.487-.642-2.323-.642-.743 0-1.394.184-1.951.459Zm2.643 3.027c.468.458.655 1.009.655 1.834 0 .826-.187 1.376-.655 1.926-.374.459-.936.642-1.59.642-.656 0-1.217-.183-1.685-.642-.468-.458-.655-1.1-.655-1.926 0-.734.187-1.376.655-1.834.468-.459 1.123-.642 1.684-.642.562 0 1.123.183 1.591.642Z"
+                fill="#fff"
+              />
+              <path
+                d="M82.597 16.298c-.936 0-1.78-.185-2.435-.462-.75-.278-1.312-.74-1.686-1.295-.375-.555-.656-1.202-.656-1.85h3.185c0 .37.187.648.468.925.281.278.656.37 1.124.37.375 0 .75-.092.937-.185.187-.185.375-.37.375-.647a.696.696 0 0 0-.469-.647c-.28-.185-.843-.278-1.498-.463-.75-.185-1.405-.37-1.874-.554-.468-.185-.936-.463-1.311-.925-.375-.463-.562-1.017-.562-1.665 0-.554.187-1.11.468-1.664.375-.462.843-.925 1.499-1.202a5.849 5.849 0 0 1 2.342-.463c1.311 0 2.341.37 3.09 1.018.75.647 1.219 1.48 1.312 2.589H83.91c-.094-.37-.188-.648-.469-.832-.28-.185-.655-.278-1.03-.278a1.89 1.89 0 0 0-.843.185c-.187.093-.281.37-.281.555 0 .277.187.555.468.647.375.185.843.278 1.499.463.75.184 1.405.37 1.873.554.469.185.937.463 1.312.925S87 12.414 87 13.154c0 .647-.187 1.202-.562 1.665a3.721 3.721 0 0 1-1.499 1.11c-.75.277-1.499.37-2.342.37Z"
+                fill="#fff"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="w-full md:h-[506px] lg:h-[506px] h-[330px] bg-blue-400">
+          slider
+        </div>
+        <div
+          class="flex flex-col pt-38 px-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
+        >
+          <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
+            <p class="flex flex-nowrap mb-6">
+              <span
+                class="bg-purple-50 mr-4 text-purple-500 text-12-medium md:text-14-semibold lg:text-14-semibold rounded-26 py-4 px-9 w-fit"
+                >New Product</span
+              >
+              <span
+                class="bg-purple-50 text-purple-500 text-12-medium md:text-14-semibold lg:text-14-semibold rounded-26 py-4 px-9 w-fit"
+                >Free</span
+              >
+            </p>
+            <p
+              class="text-20 font-regular text-black leading-[135%] md:text-28 lg:text-28"
+            >
+              Your city's latest<br />
+              real estate <br />
+              development map
+            </p>
+          </div>
+
+          <div
+            class="hidden-en-mobile lg:h-[108px] text-18 font-regular leading-[150%] mb-36 text-gray-700"
+          >
+            <p>
+              No more going through public records to <br />
+              find information on competitors and gain <br />
+              context on an area of interest.
+            </p>
+          </div>
+          <div
+            class="text-14 font-regular text-gray-700 leading-[150%] mb-22 hidden-en-desktop hidden-en-tablet"
+          >
+            <p>
+              No more going through public <br />
+              records to find information on <br />
+              competitors and gain context on <br />
+              an area of interest.
+            </p>
+          </div>
+
+          <button type="button" class="start-button w-[254px] bg-purple-500">
+            <a
+              class="demo-link text-14 lg:text-16"
+              href="https://maps.zenerate.ai"
+            >
+              TRY Z-MAPS, IT'S FREE!
+            </a>
+          </button>
+        </div>
+      </article>
+    </section>
+    <section
+      class="section section-partners pt-34 md:pt-98 lg:pt-120 pb-74 md:pb-126 lg:pb-126"
+    >
+      <div
+        class="flex flex-col w-[320px] mx-auto md:w-[630px] px-30 lg:w-[1000px]"
+      >
+        <div class="flex flex-col mb-46 lg:flex-row">
+          <div
+            class="partners-item !mx-0 md:!mx-auto lg:!mx-auto hidden-en-tablet hidden-en-mobile"
+          >
+            <div
+              class="item-logo"
+              :style="{
+                backgroundImage: `url('/logo/logo_color_cushman.png')`,
+              }"
+            ></div>
+          </div>
+          <p
+            class="text-14 font-regular lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
+          >
+            Not only was Zenerate able to raise the valuation of our sites by an
+            average of 23%, our clients and partners were blown away with the
+            level of detail provided in our OMs. All within a fraction of the
+            time it takes us to prepare our usual material. Utilizing Zenerate
+            is now mandatory for us when valuing large scale sites, that's how
+            valuable their software is.
+          </p>
+
+          <div
+            class="partners-item !mx-0 md:!mx-auto lg:!mx-auto hidden-en-desktop"
+          >
+            <div
+              class="item-logo"
+              :style="{
+                backgroundImage: `url('/logo/logo_color_cushman.png')`,
+              }"
+            ></div>
+          </div>
+        </div>
+
+        <div class="flex flex-col mb-46 lg:flex-row">
+          <div
+            class="partners-item !mx-0 md:!mx-auto lg:!mx-auto hidden-en-tablet hidden-en-mobile"
+          >
+            <div
+              class="item-logo"
+              :style="{
+                backgroundImage: `url('/logo/logo_color_neovalue.png')`,
+              }"
+            ></div>
+          </div>
+          <p
+            class="text-14 font-regular lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
+          >
+            As developers, our job is to ultimately maximize the potential
+            returns within a given site. Zenerate, with their AI technology,
+            showed us that even the most successful developers often fall short
+            of truly maximizing returns. To my fellow developers around the
+            world I suggest you put your ego aside and embrace PropTech, like
+            Zenerate, as it is an absolute competitive advantage and will become
+            a necessity within your workflow - as it is for us now.
+          </p>
+          <div
+            class="partners-item !mx-0 md:!mx-auto lg:!mx-auto hidden-en-desktop"
+          >
+            <div
+              class="item-logo"
+              :style="{
+                backgroundImage: `url('/logo/logo_color_neovalue.png')`,
+              }"
+            ></div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="section section-partners">
       <div class="partners-list">
         <div
           class="partners-item"
@@ -46,324 +315,58 @@
           <div
             class="item-logo"
             :style="{
-              backgroundImage: `url('/logo/logo_${item.key}.png')`,
+              backgroundImage: `url('/logo/logo_color_${item.key}.png')`,
             }"
           ></div>
         </div>
       </div>
-      <div class="background-image background-map"></div>
-    </div>
+    </section>
 
-    <div class="section section-app-contents">
-      <div class="content-text-wrapper">
-        <div class="title-wrapper">
-          <p class="title">
-            Instantly find <br />
-            <strong>the most profitable,</strong><br />
-            <strong>feasible solutions</strong>
-          </p>
-
+    <section
+      class="section flex w-full flex-col items-center pb-46 pt-50 lg:py-86 bg-gray-50"
+    >
+      <p
+        class="mb-34 md:mb-22 lg:mb-26 text-center px-30 text-16 font-regular lg:text-22 md:text-20 leading-[150%]"
+      >
+        <span>Join some of the biggest names&nbsp;</span>
+        <span>in real estate development</span>
+        <br />
+        <span>and brokerage in&nbsp;</span>
+        <span><strong>saving hundreds of man-hours</strong>&nbsp;</span>
+        <span>and <strong>maximizing profit.</strong></span>
+      </p>
+      <div
+        class="flex flex-col w-[240px] md:w-fit lg:w-fit md:flex-row lg:flex-row"
+      >
+        <button
+          type="button"
+          class="start-button bg-primary mb-8 md:mb-0 px-24 md:mr-18 lg:mr-18 lg:mb-0"
+        >
           <router-link
-            :to="{ name: 'en-overview' }"
-            class="link hidden-en-tablet hidden-en-mobile"
-            >Product Overview
-            <i class="material-icons"> east </i>
-          </router-link>
-        </div>
-        <div class="text-desc hidden-en-tablet">
-          <p>
-            <span>No more spending weeks&nbsp;</span>
-            <span>and months&nbsp;</span>
-            <span>to come up with &nbsp;</span
-            ><span>feasible options&nbsp;</span>
-            <span>for development.</span>
-          </p>
-
-          <p>
-            <span>In minutes, Zenerate's AI engine&nbsp;</span
-            ><span>optimizes&nbsp;</span><span>a multitude of&nbsp;</span
-            ><span>variables&nbsp;</span><span>to find the true &nbsp;</span
-            ><span>'highest&nbsp;</span><span>and&nbsp;</span
-            ><span>best use'&nbsp;</span><span>solution&nbsp;</span
-            ><span>available&nbsp;</span><span>on&nbsp;</span
-            ><span>a given site.</span>
-          </p>
-          <p>
-            <span>This includes zenerating market&nbsp;</span
-            ><span>consistent floor plans&nbsp;</span
-            ><span>that are all&nbsp;</span
-            ><span>zoning code compliant&nbsp;</span><span>while&nbsp;</span
-            ><span>using&nbsp;</span><span>AI algorithms&nbsp;</span
-            ><span>to&nbsp;</span><span>maximize returns.</span>
-          </p>
-        </div>
-        <div class="text-desc hidden-en-desktop hidden-en-mobile">
-          <p>
-            No more spending weeks and months to come up with <br />feasible
-            options for development.
-          </p>
-          <p>
-            In minutes, Zenerate's AI engine optimizes a multitude of<br />
-            variables to find the true 'highest and best use' solution<br />
-            available on a given site.
-          </p>
-          <p>
-            This includes zenerating market consistent floor plans that<br />
-            are all zoning code compliant while using AI algorithms<br />
-            to maximize returns.
-          </p>
-        </div>
-
-        <router-link
-          :to="{ name: 'en-overview' }"
-          class="link hidden-en-desktop"
-          >Product Overview
-          <i class="material-icons"> east </i>
-        </router-link>
-      </div>
-      <div class="content-image-wrapper first">
-        <video
-          loop
-          muted
-          autoplay
-          playsinline
-          id="solution-video"
-          poster="/en/landing_solution_poster.jpg"
-          data-src="/en/landing_solution_big.mp4"
-        >
-          <source
-            data-src="/en/landing_solution_big.mp4"
-            data-mw="1600"
-            type="video/mp4"
-          />
-        </video>
-      </div>
-    </div>
-
-    <div class="section section-medium-banner">
-      <div class="banner-text-wrapper">
-        <p>
-          Giving
-          <span class="blue">architects,&nbsp;</span
-          ><span class="blue">developers, brokers,&nbsp;</span>
-          <span class="blue">financial institutions</span>
-        </p>
-        <p>
-          <span>and anyone involved in&nbsp;</span><span>real estate&nbsp;</span
-          ><span>development&nbsp;</span>
-          <span>with AI super powers to&nbsp;</span>
-          <span
-            ><strong>save weeks of time&nbsp;</strong>and
-            <strong>zenerate more profit!&nbsp;</strong></span
+            class="demo-link text-14 lg:text-16"
+            :to="{ name: 'en-demo' }"
           >
-        </p>
+            BOOK A DEMO
+          </router-link>
+        </button>
+        <button type="button" class="text-button px-24 bg-transparent">
+          <router-link
+            class="demo-link items-center justify-center flex text-14 lg:text-16"
+            :to="{ name: 'en-contact' }"
+          >
+            <span class="mx-6">CONTACT US</span>
+            <i class="material-icons text-20 lg:text-22">
+              keyboard_arrow_right
+            </i>
+          </router-link>
+        </button>
       </div>
-      <button type="button" class="start-button">
-        <router-link class="demo-link" :to="{ name: 'en-demo' }">
-          BOOK A DEMO
-        </router-link>
-      </button>
-    </div>
-
-    <div class="section section-big-banner">
-      <div class="banner-item-wrapper">
-        <div class="banner-item">
-          <h4 class="title">Returns, maximized.</h4>
-          <div class="profit-wrapper">
-            <div class="icon-wrapper">
-              <i class="material-icons-outlined">add</i>
-            </div>
-            <div class="profit">
-              <span class="number">12</span>
-              <span class="unit">%</span>
-            </div>
-          </div>
-          <p class="item-desc">
-            Users have experienced<br />
-            an average of 12%<br />
-            additional returns compared to<br />
-            their original plans
-          </p>
-        </div>
-        <div class="banner-item-divider hidden-en-desktop"></div>
-        <div class="banner-item">
-          <h4 class="title">Weeks reduced to</h4>
-          <div class="profit-wrapper">
-            <div class="icon-wrapper">
-              <i class="material-icons big">history</i>
-            </div>
-            <div class="profit">
-              <span class="number">50</span>
-              <span class="unit">min.</span>
-            </div>
-          </div>
-          <div class="item-desc">
-            <span class="desc-title">Cut down on weeks & months of </span>
-            <p class="list">
-              <i class="material-icons">check</i>
-              <span>Searching for sites</span>
-            </p>
-            <p class="list">
-              <i class="material-icons">check</i>
-              <span>Analyzing zoning codes</span>
-            </p>
-            <p class="list">
-              <i class="material-icons">check</i>
-              <span>Crunching numbers</span>
-            </p>
-            <p class="list">
-              <i class="material-icons">check</i>
-              <span>Requesting or drafting floor plans</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section section-app-contents">
-      <div class="content-text-wrapper">
-        <div class="title-wrapper">
-          <p class="title">
-            <strong>Easy to use</strong><br />
-            with no setup
-          </p>
-        </div>
-        <div class="text-desc-list">
-          <div class="list">
-            <span class="circle">1</span>
-            <span>Search for a site</span>
-          </div>
-
-          <div class="list">
-            <span class="circle">2</span>
-
-            <div class="guide-wrapper">
-              <p>
-                <span>Verify auto populated&nbsp;</span
-                ><span> zoning code info</span>
-              </p>
-              <p class="guide">
-                <span>*Manually adjust regulation settings&nbsp;</span
-                ><span>if needed</span>
-              </p>
-            </div>
-          </div>
-          <div class="list">
-            <span class="circle">3</span>
-            <p>
-              <span>Zenerate thousands of&nbsp;</span
-              ><span>feasibility solutions</span>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="content-image-wrapper second">
-        <video
-          loop
-          muted
-          autoplay
-          playsinline
-          id="setup-video"
-          poster="/en/landing_setup_poster.jpg"
-          data-src="/en/landing_setup_big.mp4"
-        >
-          <source
-            data-src="/en/landing_setup_big.mp4"
-            data-mw="1600"
-            type="video/mp4"
-          />
-        </video>
-      </div>
-    </div>
-
-    <div class="section section-medium-banner">
-      <div class="banner-text-wrapper large">
-        <p class="hidden-en-tablet hidden-en-desktop">
-          <span> You'll never want to </span><br />
-          <span>start a project without</span>
-          <img src="/img/logo_color.svg" alt="logo" />
-          <span>again.</span>
-        </p>
-        <p class="hidden-en-mobile">
-          <span> You'll never want to start a project </span><br />
-          <span> without </span>
-          <img src="/img/logo_color.svg" alt="logo" />
-          <span> again. </span>
-        </p>
-        <p>
-          <span><strong>Try for free</strong> to see why.</span>
-        </p>
-      </div>
-      <button type="button" class="start-button">
-        <router-link class="demo-link" :to="{ name: 'en-demo' }">
-          BOOK A DEMO
-        </router-link>
-      </button>
       <div class="background-wave"></div>
-    </div>
+    </section>
 
-    <div class="zenerate-launch-wrapper">
-      <div class="zenerate-launch-info-wrapper">
-        <div class="zenerate-launch-title-wrapper">
-          <h2 class="title hidden-en-mobile">
-            Zenerate is only available <br />
-            in <strong>Los Angeles</strong> for now.
-          </h2>
-          <p class="title hidden-en-desktop hidden-en-tablet">
-            <span>Zenerate is&nbsp;</span><span>only available&nbsp;</span>
-            <span>in&nbsp;</span>
-            <span><strong>Los Angeles</strong> for now.</span>
-          </p>
-          <p class="subtitle">
-            <span> Our goal is to cover&nbsp;</span>
-            <span>every inch&nbsp;</span>
-            <span>of&nbsp;</span>
-            <span>the U.S.&nbsp;</span>
-            <span>But until then,&nbsp;</span>
-            <span>here are&nbsp;</span>
-            <span>our upcoming cities</span>
-          </p>
-        </div>
-        <div class="map-wrapper">
-          <img
-            src="/en/img/overview_launch_map.png"
-            alt="zenerate laucnch site"
-          />
-        </div>
-      </div>
-      <div class="zenerate-launch-desc-wrapper">
-        <p class="zenerate-launch-desc hidden-en-mobile">
-          <span>If you want to subscribe to our updates list&nbsp;</span>
-
-          <router-link :to="{ name: 'SignUp' }" target="_blank" class="blue"
-            >click here.&nbsp;
-          </router-link>
-          <span>We'll send you an update everytime&nbsp;</span>
-          <span>we launch in a new city or district.</span>
-        </p>
-
-        <p class="zenerate-launch-desc hidden-en-desktop hidden-en-tablet">
-          <span>If you want&nbsp;</span>
-          <span>to subscribe&nbsp;</span>
-          <span>to&nbsp;</span>
-          <span>our updates&nbsp;</span>
-          <span>list&nbsp;</span>
-          <router-link :to="{ name: 'SignUp' }" target="_blank" class="blue"
-            >click here.&nbsp;
-          </router-link>
-          <span>We'll send&nbsp;</span>
-          <span>you&nbsp;</span>
-          <span>an update&nbsp;</span>
-          <span>everytime&nbsp;</span>
-          <span>we launch&nbsp;</span>
-          <span>in a new city&nbsp;</span>
-          <span>or district.&nbsp;</span>
-        </p>
-      </div>
-    </div>
-    <div class="section section-footer fp-auto-height">
+    <section class="section section-footer fp-auto-height">
       <Footer />
-    </div>
+    </section>
   </div>
 </template>
 <script lang="ts" setup>
@@ -372,7 +375,6 @@ import { useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 import PartnersList from '/Constants/partners'
 import { useGtag } from 'vue-gtag-next'
-import VideoResponser from '/Utils/videoResponser'
 
 const { event } = useGtag()
 const goToApp = () => {
@@ -383,29 +385,92 @@ const goToApp = () => {
 }
 
 const router = useRouter()
-
-const video1 = ref(null)
-const video2 = ref(null)
-onMounted(() => {
-  video1.value = new VideoResponser('#solution-video')
-  video2.value = new VideoResponser('#setup-video')
-})
 </script>
 <style lang="scss" scoped>
+strong {
+  font-weight: 600;
+}
+
 .arrow-blue {
   &::v-deep(path) {
     stroke: #4747ff;
   }
 }
 
+.start-button {
+  height: 48px;
+  font-weight: 600;
+  color: $white;
+  border-radius: 5px;
+  letter-spacing: 0.1em;
+  transition: all ease-in-out 0.2s;
+  z-index: 1;
+
+  a {
+    @include center-center();
+    width: 100%;
+    height: 100%;
+    vertical-align: center;
+    text-align: center;
+  }
+
+  &:hover {
+    @include elevation-3;
+    color: rgba($white, 0.6);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    @include elevation-3;
+    color: rgba($white, 0.6);
+    transform: translateY(-2px);
+  }
+}
+
+.case {
+  @include relative();
+  @include vertical-center();
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 490px;
+  // height: auto;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+
+  @include en-tablet {
+    height: auto;
+  }
+
+  @include en-mobile {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    box-shadow: none;
+    background-color: transparent;
+
+    @media only screen and (min-width: 360px) {
+      margin-bottom: 20px;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.18);
+
+      &:last-child {
+        margin-bottom: 52px;
+      }
+    }
+  }
+}
+
 .section-landing {
   @include relative;
   @include flex();
-  height: 780px;
   padding: 40px 0px 0px;
 
   @include en-mobile {
-    min-height: 750px;
     height: 100%;
     padding: 92px 0px 0px;
   }
@@ -624,258 +689,11 @@ onMounted(() => {
   }
 }
 
-.section-app-contents {
-  @include vertical-center();
-
-  @include en-desktop {
-    max-width: 1022px;
-    margin: 120px auto 0px;
-  }
-
-  @include en-tablet {
-    margin: 100px auto 0px;
-    padding: 0px 56px;
-  }
-
-  @include en-mobile {
-    margin: 64px auto 0px;
-    padding: 0px 24px;
-  }
-
-  .content-text-wrapper {
-    @include flex($justify: space-between);
-    @include en-desktop {
-      padding: 0px;
-    }
-
-    @include en-tablet {
-      @include vertical-center();
-      // padding-left: 4.7%;
-    }
-
-    @include en-mobile {
-      @include vertical-center();
-      padding-left: 4.7%;
-    }
-
-    a {
-      @include flex();
-      @include semi-bold(23);
-      color: $navigation;
-      align-items: center;
-      margin-top: 28px;
-
-      i {
-        @include medium(18);
-        margin-left: 8px;
-      }
-
-      @include en-tablet {
-        @include semi-bold(21);
-        line-height: 27px;
-        margin-top: 30px;
-      }
-
-      @include en-mobile {
-        @include semi-bold(14);
-        line-height: 18px;
-        margin-top: 16px;
-      }
-    }
-
-    .title-wrapper {
-      @include vertical-center();
-      justify-content: flex-start;
-      .title {
-        @include medium(40);
-        margin: 0px;
-
-        @include en-tablet {
-          @include medium(37);
-
-          margin: 0px 0px 32px 0px;
-        }
-
-        @include en-mobile {
-          @include medium(24);
-          max-width: 282px;
-          margin: 0px 0px 18px 0px;
-        }
-      }
-    }
-
-    .text-desc {
-      @include regular(19);
-      max-width: 400px;
-      color: $text-darken-8;
-      p {
-        &:not(:last-child) {
-          margin-bottom: 18px;
-        }
-      }
-
-      @include en-desktop {
-        margin-top: 58px;
-
-        p {
-          &:not(:last-child) {
-            margin-bottom: 28px;
-          }
-        }
-      }
-
-      @include en-tablet {
-        max-width: 694px;
-      }
-
-      @include en-mobile {
-        @include regular(15);
-        max-width: 434px;
-        line-height: 23px;
-      }
-    }
-
-    .text-desc-list {
-      @include vertical-center();
-      @include regular(19);
-      color: $text-darken;
-
-      .list {
-        @include flex();
-        margin-bottom: 18px;
-        flex-wrap: nowrap;
-      }
-
-      .circle {
-        @include center-center();
-        @include bold(13);
-        width: 24px;
-        height: 24px;
-        color: #7676f3;
-        background-color: #eeedff;
-        border-radius: 50%;
-        margin: 4px 16px 0px 0px;
-        padding-top: 2px;
-      }
-
-      .guide-wrapper {
-        @include vertical-center();
-      }
-
-      .guide {
-        @include regular(15);
-        color: $text-darken-5;
-      }
-
-      @include en-mobile {
-        @include regular(15);
-        line-height: 23px;
-
-        .list {
-          margin-bottom: 12px;
-        }
-
-        .circle {
-          @include semi-bold(10);
-          width: 16px;
-          height: 16px;
-          margin: 4px 8px 0px 0px;
-        }
-
-        .guide {
-          @include regular(13);
-          line-height: 19px;
-        }
-      }
-    }
-  }
-
-  .content-image-wrapper {
-    @include elevation-5;
-    max-width: 100%;
-    margin-top: 70px;
-    border-radius: 10px;
-    overflow-y: hidden;
-
-    @include en-tablet {
-      margin-top: 60px;
-    }
-
-    @include en-mobile {
-      margin-top: 44px;
-    }
-
-    video {
-      display: block;
-      width: 100%;
-      border-radius: 10px;
-    }
-  }
-}
-
 .section-partners {
-  @include center-center();
-  @include relative;
-  background: #f9f9ff;
-  height: 300px;
-  overflow: hidden;
-
-  @include en-tablet {
-    height: 250px;
-  }
-
-  @include en-mobile {
-    height: 220px;
-  }
-
   .partners-list {
     @include flex($justify: center);
-    max-width: 600px;
     margin-bottom: 20px;
     z-index: 1;
-
-    .partners-item {
-      @include center-center;
-      @include relative;
-      width: 200px;
-      height: 60px;
-      max-width: 100%;
-      margin-top: 20px;
-
-      @include en-mobile {
-        width: 140px;
-        height: 40px;
-        margin: 0px auto;
-        margin-bottom: 0px;
-      }
-      .item-logo {
-        width: 200px;
-        margin: auto;
-        height: 60px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        @include en-mobile {
-          height: 40px;
-        }
-      }
-      .item-description {
-        @include absolute(top 0 left 0);
-        @include center-center;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        visibility: hidden;
-        color: $black;
-        background-color: rgba($white, 0.7);
-        text-align: center;
-      }
-      &.fake {
-        height: 0px;
-        margin: 0;
-        padding: 0;
-      }
-    }
 
     @include en-tablet {
       margin: auto;
@@ -886,13 +704,14 @@ onMounted(() => {
     }
 
     @include en-mobile {
-      max-width: 300px;
+      flex-direction: column;
       margin: 0 auto;
+      align-items: center;
 
       .partners-item {
         width: auto;
-        max-width: 200px;
-        min-width: 140px;
+        max-width: 210px;
+        min-width: 210px;
         margin-bottom: 10px;
 
         .item-logo {
@@ -902,371 +721,56 @@ onMounted(() => {
       }
     }
   }
+  .partners-item {
+    @include center-center;
+    @include relative;
+    width: 200px;
+    height: 68px;
+    max-width: 100%;
+    margin-top: 20px;
 
-  .background-map {
-    @include absolute(top 0px left 0px);
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-    background-image: url('/en/img/landing_map.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    &:not(:last-child) {
+      margin-right: 52px;
 
-    @include en-mobile {
-      height: 230px;
-    }
-  }
-}
-
-.section-medium-banner {
-  @include relative();
-  @include vertical-center();
-  width: 100%;
-  height: auto;
-  align-items: center;
-  padding: 175px 0px;
-  z-index: 1;
-
-  @include en-tablet {
-    padding: 150px 0px;
-  }
-
-  @include en-mobile {
-    padding: 150px 0px 80px;
-  }
-
-  .background-wave {
-    @include absolute(top 0px left 0px);
-    width: 100%;
-    height: 600px;
-    background-image: url('/en/img/about_background.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-y: top;
-
-    @include en-tablet {
-      top: 100px;
-      height: 400px;
-    }
-
-    @include en-mobile {
-      top: 160px;
-      height: 260px;
-    }
-  }
-
-  .banner-text-wrapper {
-    @include regular(26);
-    text-align: center;
-    z-index: 1;
-
-    @include en-desktop {
-      max-width: 900px;
-    }
-
-    .blue {
-      @include semi-bold(26);
-      color: $navigation;
-    }
-    strong {
-      @include semi-bold(26);
-    }
-
-    &.large {
-      p:last-child {
-        margin-top: 28px;
-      }
-      line-height: 20px;
-      span {
-        @include medium(33);
-      }
-      strong {
-        @include semi-bold(33);
+      @include en-tablet {
+        margin-right: 30px;
       }
 
-      img {
-        margin: 0px 8px -8px;
-      }
-    }
-
-    @include en-tablet {
-      max-width: 610px;
-
-      p {
-        &:nth-child(2) {
-          margin-top: 28px;
-        }
+      @include en-mobile {
+        margin-right: 0px;
       }
     }
 
     @include en-mobile {
-      @include regular(21);
-      max-width: 300px;
-
-      .blue {
-        @include semi-bold(21);
-      }
-      strong {
-        @include semi-bold(21);
-      }
-
-      p {
-        &:nth-child(2) {
-          margin-top: 24px;
-        }
-      }
-
-      &.large {
-        max-width: 320px;
-
-        img {
-          display: block;
-          width: 148px;
-          margin: 12px auto 6px;
-        }
-
-        p:last-child {
-          margin-top: 12px;
-        }
-        span {
-          @include medium(18);
-        }
-
-        strong {
-          @include semi-bold(18);
-        }
+      width: 210px;
+      margin-bottom: 0px;
+    }
+    .item-logo {
+      width: 200px;
+      margin: auto;
+      height: 68px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      @include en-mobile {
+        height: 70px;
       }
     }
-  }
-  .start-button {
-    @include bold(18);
-    width: 260px;
-    height: 60px;
-    margin-top: 40px;
-    background-color: $navigation;
-    color: $white;
-    border-radius: 10px;
-    letter-spacing: 0.1em;
-    transition: all ease-in-out 0.2s;
-    z-index: 1;
-
-    a {
-      @include center-center();
+    .item-description {
+      @include absolute(top 0 left 0);
+      @include center-center;
       width: 100%;
       height: 100%;
-      vertical-align: center;
+      text-align: center;
+      visibility: hidden;
+      color: $black;
+      background-color: rgba($white, 0.7);
       text-align: center;
     }
-
-    &:hover {
-      @include elevation-3;
-      color: rgba($white, 0.6);
-      transform: translateY(-2px);
-    }
-
-    &:active {
-      @include elevation-3;
-      color: rgba($white, 0.6);
-      transform: translateY(-2px);
-    }
-
-    @include en-mobile {
-      margin-top: 120px;
-    }
-  }
-}
-
-.section-big-banner {
-  @include flex();
-  width: 100%;
-  height: auto;
-  align-items: center;
-  justify-content: center;
-  margin: 0px auto;
-  padding: 100px 140px;
-  background: linear-gradient(0deg, #7471ff 0%, #5f94ff 100%);
-  opacity: 0.9;
-
-  @include en-tablet {
-    padding: 110px 0px;
-  }
-
-  @include en-mobile {
-    padding: 90px 0px;
-  }
-
-  .banner-item-wrapper {
-    @include flex();
-    flex-wrap: nowrap;
-
-    @include en-tablet {
-      @include vertical-center();
-    }
-
-    @include en-mobile {
-      @include vertical-center();
-    }
-
-    .banner-item-divider {
-      width: 39px;
-      height: 2px;
-      background-color: $white;
-      margin: 60px auto;
-
-      @include en-mobile {
-        width: 26px;
-        height: 1px;
-        margin: 50px auto;
-      }
-    }
-
-    .banner-item {
-      @include vertical-center();
-      justify-content: flex-start;
-      align-items: center;
-
-      @include en-tablet {
-        align-items: center;
-      }
-
-      @include en-mobile {
-        align-items: center;
-        text-align: center;
-      }
-
-      .title {
-        @include semi-bold(33);
-        color: $white;
-        margin: 0px;
-
-        @include en-mobile {
-          @include semi-bold(24);
-        }
-      }
-      .profit-wrapper {
-        @include flex();
-        flex-wrap: nowrap;
-        align-items: center;
-        color: $white;
-        margin-bottom: 26px;
-
-        @include en-mobile {
-          margin-bottom: 12px;
-        }
-      }
-
-      .icon-wrapper {
-        @include vertical-center();
-        margin-right: 16px;
-        align-items: center;
-        height: 52px;
-        justify-content: center;
-
-        @include en-mobile {
-          margin-right: 8px;
-        }
-
-        i {
-          @include medium(48);
-
-          &.big {
-            @include medium(48);
-            height: 40px;
-            margin-top: 24px;
-            transform: rotate(-130deg);
-          }
-
-          @include en-mobile {
-            @include medium(36);
-
-            &.big {
-              @include medium(36);
-              height: 34px;
-              margin-top: 24px;
-            }
-          }
-        }
-      }
-
-      .profit {
-        padding-top: 5px;
-        .number {
-          @include semi-bold(64);
-        }
-        .unit {
-          @include semi-bold(48);
-          margin-left: 6px;
-        }
-
-        @include en-mobile {
-          .number {
-            @include semi-bold(52);
-          }
-          .unit {
-            @include semi-bold(30);
-            margin-left: 4px;
-          }
-        }
-      }
-
-      .item-desc {
-        @include medium(20);
-        color: $white;
-        line-height: 30px;
-        text-align: center;
-
-        strong {
-          font-weight: 600;
-        }
-
-        .list {
-          @include flex();
-          @include regular(20);
-          align-items: center;
-          margin-bottom: 8px;
-
-          i {
-            margin-right: 8px;
-          }
-        }
-
-        .desc-title {
-          @include medium(21);
-          margin-bottom: 4px;
-        }
-
-        @include en-mobile {
-          @include medium(15);
-          line-height: 23px;
-
-          .desc-title {
-            @include medium(15);
-          }
-
-          .list {
-            @include regular(15);
-            margin-bottom: 0px;
-
-            i {
-              @include regular(18);
-              line-height: 22px;
-            }
-          }
-        }
-      }
-
-      @include en-desktop {
-        &:first-child {
-          margin-right: 120px;
-        }
-      }
-
-      @include en-tablet {
-        &:first-child .item-desc {
-          text-align: center;
-        }
-      }
+    &.fake {
+      height: 0px;
+      margin: 0;
+      padding: 0;
     }
   }
 }

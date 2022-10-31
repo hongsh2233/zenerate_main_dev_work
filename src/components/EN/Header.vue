@@ -37,6 +37,14 @@
 
                     {{ secondary.title }}
                   </router-link>
+                  <a
+                    v-if="secondary.title === 'Zenerate'"
+                    :href="'https://maps.zenerate.ai'"
+                  >
+                    <component :is="ZmapsIcon" :width="20" :height="20" />
+
+                    Z-Maps
+                  </a>
                 </template>
               </div>
             </div>
@@ -140,32 +148,32 @@ const routes = [
         to: 'en-overview',
         icon: OverviewIcon,
       },
-      {
-        title: 'Z-Maps',
-        to: 'en-zmaps',
-        icon: ZmapsIcon,
-      },
+      // {
+      //   title: 'Z-Maps',
+      //   to: 'en-zmaps',
+      //   icon: ZmapsIcon,
+      // },
       // {
       //   title: 'Pricing',
       //   to: 'en-pricing',
       //   icon: PricingIcon,
       // },
-      {
-        title: 'FAQ',
-        to: 'en-faq',
-        icon: FAQIcon,
-      },
+      // {
+      //   title: 'FAQ',
+      //   to: 'en-faq',
+      //   icon: FAQIcon,
+      // },
     ],
   },
   {
     key: 'resources',
     title: 'Resources',
     children: [
-      {
-        title: 'How to use',
-        to: 'en-how-to-use',
-        icon: HowToUseIcon,
-      },
+      // {
+      //   title: 'How to use',
+      //   to: 'en-how-to-use',
+      //   icon: HowToUseIcon,
+      // },
       {
         title: 'Case Studies',
         to: 'en-case-studies',
