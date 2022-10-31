@@ -175,13 +175,6 @@ const memberList = reactive<
     team: 'it',
   },
   {
-    name: 'main.team.name.psm',
-    title: 'main.team.job.psm',
-    comment: 'main.team.comment.psm',
-    img: 'psm',
-    team: 'marketing',
-  },
-  {
     name: 'main.team.name.ngsa',
     title: 'main.team.job.ngsa',
     comment: 'main.team.comment.ngsa',

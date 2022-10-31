@@ -61,8 +61,11 @@
           },
           "timeline": {
             "date": [
+              "2022. 10",
+              "2022. 06",
+              "2022. 03",
+              "2021. 12",
               "2021. 03",
-              "2020. 12",
               "2020. 12",
               "2020. 11",
               "2020. 10",
@@ -71,9 +74,12 @@
               "2020. 07"
             ],
             "contents": [
+              "Selected for Korea AI Startup 100",
+              "Attracted  investment from NeoValue",
+              "Attracted 4 billion investment",
+              "Shinhan Futures Lab, 'Proptech Gaming Tinger' Grand Prize",
               "Selected for Startup Voucher",
               "Selected for IBK Changong Mapo 6th Batch",
-              "3rd Prizer UKC 2020 startup Pitch Competition",
               "3rd Prizer Innovative Tech Competiton",
               "TIPS R&D Funding",
               "Rookie League Startups at Comeup 2020",
@@ -106,24 +112,26 @@
         },
         "contents": {
           "1": {
-            "title": ["Selected for Startup Voucher"],
-            "date": ["4 Mar 2021"],
+            "title": ["Selected for Korea AI Startup 100"],
+            "date": ["19 Oct 2022"],
             "contents": [
-              "Zenerate has been selected as the finalist for Startup Voucher hosted by Korea International Trade Association. The Program aims at startups with less than 7 years in operation to support their global business expansion and marketing to buyers and investors. $40K at maximum will be awarded to the selected startups."
+              "Zenerate was selected as Korea AI Startup 100 hosted by Korea Economic Daily and AI One Team. In the field of prop-tech, Zenerate was the only winner."
             ]
           },
           "2": {
-            "title": ["Signed Consulting Contract with Shin Young"],
-            "date": ["19 Jan 2021"],
+            "title": ["Attracted 4 billion investment"],
+            "date": ["03 Mar 2022"],
             "contents": [
-              "ShinYoung(developer) signed a consulting contract with Zenerate for a mixed-use project in Yongsan, Seoul. Zenerate will find the unit mix and unit layout solution for maximizing sales revenue of a residential tower and retail space. Additionally, appropriate sales prices will be projected through Zenerate’s AI solution."
+              "According to the investment banking (IB) industry, DSN Investment, SL Investment, Daekyo Investment, and Asia F&I (Asia F&I) participated as investors (LPs) in Zenerate's recent 4 billion won pre-series A investment."
             ]
           },
           "3": {
-            "title": ["Selected for IBK Changong Mapo 6th Batch "],
-            "date": ["20 Dec 2020"],
+            "title": [
+              "Shinhan Futures Lab, 'Proptech Gaming Tinger' Grand Prize"
+            ],
+            "date": ["15 Dec 2021"],
             "contents": [
-              "Zenerate has been selected for Industrial bank of Korea(IBK)’s Changong Mapo(accelerator program). The selected startups will be supported by IBK in relation to angel investment, loan, venture capital as well as office space, mentoring, education, consulting, networking, marketing and promotion."
+              "Zenerate participated in 'Proptech Game Changer', an event jointly hosted by Shinhan Futures Lab and Asia FnI. This event was held to discover startups with high growth potential as unicorns in the Proptech field. Zenerate received the grand prize out of a total of 140 startup applicants."
             ]
           }
         }
@@ -319,7 +327,6 @@
         "lsh": "Sinhoo Lee",
         "kdh": "Daehong Kim",
         "bsh": "Suhyun Bae",
-        "psm": "Sumin Park",
         "ngsa": "Suna Namgung",
         "psj": "Sangjun Park",
         "ksh": "Seonghoon Kim"
@@ -334,7 +341,6 @@
         "lsh": "Computational Designer",
         "kdh": "Computational Designer",
         "bsh": "Backend Engineer",
-        "psm": "Graphic Designer",
         "ngsa": "Web Developer",
         "psj": "Computational Designer",
         "ksh": "Computational Designer"
@@ -349,7 +355,6 @@
         "lsh": "Connect Architecture and Codes",
         "kdh": "Manuscripts don't burn",
         "bsh": "Divide and conquer",
-        "psm": "Design the values",
         "ngsa": "Clear and Concise",
         "psj": "Step by step",
         "ksh": "Think Different"

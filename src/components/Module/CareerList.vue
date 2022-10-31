@@ -5,7 +5,6 @@
       <div class="career-list" v-else>
         <template v-for="(job, idx) in CAREER_LIST" :key="job.key">
           <div class="career-item">
-            <!-- <div class="item-date">2021. 00. 00 ~ 2021. 00. 00</div> -->
             <div
               class="item-title hover-pointer"
               @click="() => selectCareer(job.key)"

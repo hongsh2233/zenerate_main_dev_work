@@ -153,9 +153,10 @@
             <p>2018</p>
             <p>2019</p>
             <p>2020</p>
+            <p>2021</p>
           </div>
           <div class="timeline-spacer"></div>
-          <div class="timeline-end">2021</div>
+          <div class="timeline-end">2022</div>
         </div>
         <div class="timeline-left-wrapper hidden-mobile">
           <div
@@ -431,13 +432,6 @@ const memberList = reactive<
     comment: 'main.team.comment.bsh',
     img: 'bsh',
     team: 'it',
-  },
-  {
-    name: 'main.team.name.psm',
-    title: 'main.team.job.psm',
-    comment: 'main.team.comment.psm',
-    img: 'psm',
-    team: 'marketing',
   },
   {
     name: 'main.team.name.ngsa',
@@ -891,7 +885,7 @@ const { meta } = useMeta({
         transform: translateX(-50%);
         .timeline-start {
           @include flex($dir: column, $justify: space-around);
-          height: 200px;
+          height: 250px;
           margin-bottom: 10px;
           @include mobile {
             display: none;

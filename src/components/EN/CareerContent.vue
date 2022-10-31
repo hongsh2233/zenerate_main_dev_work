@@ -1,199 +1,5 @@
 <template>
   <div class="section career-content-wrapper">
-    <!-- Head of Marketing, B2B SaaS (Full-time)-->
-    <div
-      class="section-inner career-content"
-      v-if="$route.params.id === 'head-of-marketing'"
-    >
-      <div class="career-content-title">
-        <span>Head of Marketing, B2B SaaS (Full-time)</span>
-        <!-- <button @click=";[(nowId = -1), onSelect(nowId)]">지원하기</button> -->
-      </div>
-      <div class="content-item">
-        <div class="content-message">
-          Zenerate has received multiple awards and funding to grow across the
-          world. We are now looking for an enthusiastic full-time
-          <strong>Head of Marketing, B2B SaaS</strong> to immediately join our
-          new Downtown Los Angeles office as we're expanding our operations in
-          the States. We hope you'll join our fast-growing, innovative company!
-        </div>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">{{ CAREERS.about_zenerate.name }}</div>
-        <ul class="content-item-content">
-          <li>
-            {{ CAREERS.about_zenerate.content }}
-          </li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">
-          {{ CAREERS.our_innovative_solution.name }}
-        </div>
-        <ul class="content-item-content">
-          <li>
-            {{ CAREERS.our_innovative_solution.content }}
-          </li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">{{ CAREERS.who_we_are.name }}</div>
-        <ul class="content-item-content">
-          <li>
-            {{ CAREERS.who_we_are.content }}
-          </li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">{{ CAREERS.who_we_serve.name }}</div>
-        <ul class="content-item-content">
-          <li>
-            {{ CAREERS.who_we_serve.content }}
-          </li>
-        </ul>
-      </div>
-
-      <div class="content-item">
-        <div class="content-item-title">
-          {{ CAREERS.key_responsibilities.name }}
-        </div>
-        <ul class="content-item-content">
-          <li>
-            Represent Zenerate with professional courtesy and enthusiasm to all
-            customers and stakeholders.
-          </li>
-          <li>
-            Create a demand generation engine that results in scalable results.
-          </li>
-          <li>
-            Actively test and run successful B2B marketing campaigns and
-            tactics.
-          </li>
-          <li>
-            Launch an analytics program to track and monitor marketing metrics
-            that cover customer acquisition and retention.
-          </li>
-          <li>Hire and mentor a team of B2B SaaS marketing specialists.</li>
-          <li>
-            Write and review marketing and sales materials for accurate content
-            and consistent language and formatting to ensure the highest
-            quality.
-          </li>
-          <li>
-            Collaborate with designers on the development of marketing and sales
-            materials and thought leadership content.
-          </li>
-          <li>
-            Develop and manage long-term company marketing strategy and budget.
-          </li>
-          <li>
-            Collaborate with cross-functional teams: sales, product, and
-            executive for product marketing.
-          </li>
-          <li>
-            Take ownership of PR, communication, and brand management via social
-            media channels.
-          </li>
-          <li>
-            Grow the customer base and expand to other regions with high-density
-            real estate development.
-          </li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">{{ CAREERS.requirements.name }}</div>
-        <ul class="content-item-content">
-          <li>
-            Entrepreneurial team player, quick to adapt to changing situations
-          </li>
-          <li>
-            Proven track record of lead & pipeline generation and scaling
-            marketing teams
-          </li>
-          <li>Minimum 5 years of B2B SaaS / Software sales experience</li>
-          <li>
-            Strong listener with excellent presentation and closure skills
-          </li>
-          <li>
-            Account planning and execution skills in a high growth, scaling
-            business
-          </li>
-          <li>Eloquent & effective written, verbal, interpersonal skills</li>
-          <li>
-            Ability to build and maintain professional relationships with
-            C-level executives
-          </li>
-          <li>
-            A passion for human-centered design and creative problem solving
-          </li>
-          <li>
-            Must be highly self-motivated and able to work independently,
-            proactively
-          </li>
-          <li>
-            Be willing to wear multiple hats as the company grows and expands
-          </li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">{{ CAREERS.not_necessary.name }}</div>
-        <ul class="content-item-content">
-          <li>
-            Experience in related industries: PropTech, real estate development,
-            urban planning, construction, architecture
-          </li>
-          <li>
-            Understands the needs and priorities of our primary customers: real
-            estate developers and architects
-          </li>
-          <li>Available to start in November 2021</li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">
-          {{ CAREERS.company_benefits.name }}
-        </div>
-        <ul class="content-item-content">
-          <li>Flexible work hours</li>
-          <li>Professional development learning stipend</li>
-          <li>Health and wellness perks</li>
-        </ul>
-      </div>
-      <div class="content-item">
-        <div class="content-item-title">{{ CAREERS.how_to_apply.name }}</div>
-        <ul class="content-item-content">
-          <li>
-            Please send your resume (PDF) and work samples if available to
-            <span class="email-highlight">apply@zenerate.ai</span>
-          </li>
-          <li>
-            A cover letter is optional: can be used to describe salary
-            requirements and interests
-          </li>
-        </ul>
-      </div>
-      <button
-        class="back-button hover-pointer"
-        @click=";[router.push('/career')]"
-      >
-        <a href="#firstPage"> <span>BACK</span></a>
-        <svg
-          width="122"
-          height="28"
-          viewBox="0 0 122 28"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M121 27H0.999997L27.6886 1"
-            stroke="#4747FF"
-            stroke-linecap="square"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-    </div>
-
     <!-- Mid-level Graphic Designer (Full-time)-->
     <div
       class="section-inner career-content"
@@ -290,7 +96,7 @@
         <div class="content-item-title">{{ CAREERS.requirements.name }}</div>
         <ul class="content-item-content">
           <li>
-            Bachelor’s degree in graphic design, environmental graphic design,
+            Bachelor's degree in graphic design, environmental graphic design,
             information design, communication design or similar
           </li>
           <li>
@@ -335,7 +141,6 @@
             Understands the needs and priorities of our primary customers: real
             estate developers and architects
           </li>
-          <li>Available to start in November 2021</li>
         </ul>
       </div>
       <div class="content-item">
@@ -540,7 +345,6 @@
             Ability to search and analyze Zoning regulations in the Los Angeles
             area
           </li>
-          <li>Available to start in November 2021</li>
         </ul>
       </div>
       <div class="content-item">
@@ -723,7 +527,6 @@
             Technical expertise with Excel and design software: Rhino, Revit,
             AutoCAD, Adobe Creative Suite, SketchUp
           </li>
-          <li>Available to start immediately in November 2021</li>
         </ul>
       </div>
       <div class="content-item">
@@ -883,7 +686,6 @@
         <ul class="content-item-content">
           <li>Architect licensed in California</li>
           <li>Experience working with real estate developers</li>
-          <li>Available to start immediately in November 2021</li>
         </ul>
       </div>
       <div class="content-item">

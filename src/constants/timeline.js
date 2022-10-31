@@ -4,7 +4,7 @@ export default [
     kr: ['로스엔젤레스 오픈빌딩 학회 발표'],
     active: false,
     icon: 'business',
-    year: 2018, 
+    year: 2018,
   },
   {
     en: ['USC Student Housing'],
@@ -28,9 +28,7 @@ export default [
     year: 2020,
   },
   {
-    kr: [
-      '3개 벤처투자사 시드투자유치'
-    ],
+    kr: ['3개 벤처투자사 시드투자유치'],
     en: [
       'Raised Seed Funding',
       'BLUEPOINT PARTNERS',
@@ -117,5 +115,33 @@ export default [
     active: false,
     icon: 'emoji_events',
     year: 2021,
+  },
+  {
+    kr: ['신한퓨처스랩, ‘프롭테크 게임체인저’ 공모전 대상'],
+    en: ['Shinhan Futures Lab, "Proptech Gaming Tinger" Grand Prize'],
+    active: false,
+    icon: 'emoji_events',
+    year: 2021,
+  },
+  {
+    kr: ['40억 투자 유치'],
+    en: ['Attracted 4 billion investment'],
+    active: false,
+    icon: 'emoji_events',
+    year: 2021,
+  },
+  {
+    kr: ['네오밸류로부터 투자 유치'],
+    en: ['Attracted  investment from NeoValue'],
+    active: false,
+    icon: 'emoji_events',
+    year: 2022,
+  },
+  {
+    kr: ['Korea AI Startup 100 선정'],
+    en: ['Selected for Korea AI Startup 100'],
+    active: false,
+    icon: 'emoji_events',
+    year: 2022,
   },
 ]

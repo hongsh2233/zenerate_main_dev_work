@@ -45,7 +45,7 @@
             >Privacy Policy</a
           >
           <div class="sns-wrapper">
-            <p class="copyright">©Zenerate,Inc. 2021. All rights reserved</p>
+            <p class="copyright">©Zenerate,Inc. 2022. All rights reserved</p>
             <div class="footer-sns">
               <a
                 href="https://www.linkedin.com/company/zenerate"
