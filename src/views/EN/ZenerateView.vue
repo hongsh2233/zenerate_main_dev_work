@@ -2,8 +2,27 @@
   <div class="flex flex-col">
     <div class="section section-case-studies">
       <div class="section-inner inner-case-studies">
-        <section class="flex flex-col relative pb-52 md:pb-[250px]">
-          <div class="bg-core-500 w-300 h-300">image</div>
+        <section
+          class="flex flex-col relative pl-18 md:pl-0 lg:pl-0 pb-52 w-[288px] mx-auto md:w-full lg:w-full items-start lg:items-start md:items-start lg:min-w-[1024px] lg:w-full lg:px-120 lg:max-w-[1200px] md:pb-[210px] w-full md:max-w-[740px] md:px-80"
+        >
+          <div
+            class="w-[288px] md:w-[472px] lg:w-[576px] mb-24 md:mb-0 lg:mb-0 md:absolute md:bottom-0 md:right-0 lg:absolute lg:bottom-0 lg:right-0"
+          >
+            <img
+              class="object-cover pointer-events-none block w-full h-auto"
+              srcset="
+                /en/overview/overview_hero_mobile.png   592w,
+                /en/overview/overview_hero_tablet.png   960w,
+                /en/overview/overview_hero_desktop.png 1168w
+              "
+              sizes="
+                (max-width: 767px) 288px, (min-width: 1200px) 472px,
+                576px
+                "
+              src="/en/overview/overview_hero_mobile.png"
+              alt="maximize project returns"
+            />
+          </div>
           <div class="flex flex-col">
             <p
               class="text-primary md:text-18 lg:text-20 text-14 mb-8 font-semibold"
@@ -37,7 +56,10 @@
               </p>
             </div>
           </div>
-          <button type="button" class="start-button w-[160px] bg-primary">
+          <button
+            type="button"
+            class="start-button w-[260px] md:w-[160px] lg:w-[172px] bg-primary"
+          >
             <router-link
               class="demo-link text-14 lg:text-16"
               :to="{ name: 'en-demo' }"
@@ -47,13 +69,13 @@
           </button>
         </section>
         <section
-          class="case-studies-wrapper pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[124px] lg:pb-[80px]"
+          class="case-studies-wrapper pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[8%] lg:pb-[4%]"
         >
           <div
-            class="bg-gray-50 absolute origin-top-left md:rotate-[4deg] lg:rotate-[5deg] w-[130vw] h-full top-0 left-0 z-[-1] transform-sc"
+            class="bg-gray-50 absolute origin-top-left md:rotate-[3deg] lg:rotate-[2deg] w-[130vw] h-full top-0 left-0 z-[-1] transform-sc"
           ></div>
           <p
-            class="text-22 w-full max-w-[350px] md:max-w-[490px] lg:max-w-[490px] pl-34 md:pl-0 lg:pl-0 mb-44 md:mb-52 lg:mb-42 font-regular text-left md:text-center lg:text-center text-black md:text-28 lg:text-30 leading-[135%]"
+            class="text-22 w-full max-w-[352px] md:max-w-[488px] lg:max-w-[488px] pl-34 md:pl-0 lg:pl-0 mb-44 md:mb-52 lg:mb-42 font-regular text-left md:text-center lg:text-center text-black md:text-28 lg:text-30 leading-[135%]"
           >
             Instantly evaluate <br />
             <strong>development potential</strong>
@@ -61,19 +83,12 @@
 
           <div class="case-wrapper lg:max-w-[1000px] lg:justify-between">
             <article class="case shadow-200 overflow-x-hidden">
-              <div class="video-wrapper w-full">
-                <div class="w-full h-[300px] bg-blue-400"></div>
-                <!-- <img
+              <div class="image-wrapper w-full">
+                <img
                   class="img-map"
-                  srcset="
-                    /en/overview/overview_site_720.gif   720w,
-                    /en/overview/overview_site_1200.gif 1200w
-                  "
-                  sizes="(max-width: 640px) 100%,
-                  (max-width: 1200px) 628px"
-                  src="/en/overview/overview_site_1200.gif"
-                  alt="site search"
-                /> -->
+                  src="/en/overview/overview_step_1.jpg"
+                  alt="find a site and review zoning info"
+                />
               </div>
               <div
                 class="pl-34 pt-32 pb-40 md:pt-40 w-full md:pl-50 md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
@@ -105,19 +120,12 @@
             </article>
 
             <article class="case shadow-200 overflow-x-hidden">
-              <div class="video-wrapper w-full">
-                <div class="w-full h-[300px] bg-blue-400"></div>
-                <!-- <img
+              <div class="image-wrapper w-full">
+                <img
                   class="img-map"
-                  srcset="
-                    /en/overview/overview_site_720.gif   720w,
-                    /en/overview/overview_site_1200.gif 1200w
-                  "
-                  sizes="(max-width: 640px) 100%,
-                  (max-width: 1200px) 628px"
-                  src="/en/overview/overview_site_1200.gif"
-                  alt="site search"
-                /> -->
+                  src="/en/overview/overview_step_2.jpg"
+                  alt="      Click Start Zenerating"
+                />
               </div>
               <div
                 class="pl-34 pt-32 pb-40 md:pt-40 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
@@ -148,19 +156,12 @@
             </article>
 
             <article class="case shadow-200 overflow-x-hidden">
-              <div class="video-wrapper w-full">
-                <div class="w-full h-[300px] bg-blue-400"></div>
-                <!-- <img
+              <div class="image-wrapper w-full">
+                <img
                   class="img-map"
-                  srcset="
-                    /en/overview/overview_site_720.gif   720w,
-                    /en/overview/overview_site_1200.gif 1200w
-                  "
-                  sizes="(max-width: 640px) 100%,
-                  (max-width: 1200px) 628px"
-                  src="/en/overview/overview_site_1200.gif"
-                  alt="site search"
-                /> -->
+                  src="/en/overview/overview_step_3.jpg"
+                  alt="      Click Start Zenerating"
+                />
               </div>
               <div
                 class="pl-34 pt-32 pb-40 md:pt-40 lg:pr-20 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
@@ -191,19 +192,12 @@
             </article>
 
             <article class="case shadow-200 overflow-x-hidden">
-              <div class="video-wrapper w-full">
-                <div class="w-full h-[300px] bg-blue-400"></div>
-                <!-- <img
+              <div class="image-wrapper w-full">
+                <img
                   class="img-map"
-                  srcset="
-                    /en/overview/overview_site_720.gif   720w,
-                    /en/overview/overview_site_1200.gif 1200w
-                  "
-                  sizes="(max-width: 640px) 100%,
-                  (max-width: 1200px) 628px"
-                  src="/en/overview/overview_site_1200.gif"
-                  alt="site search"
-                /> -->
+                  src="/en/overview/overview_step_4.jpg"
+                  alt="      Click Start Zenerating"
+                />
               </div>
               <div
                 class="pl-34 pt-32 pb-40 md:pt-40 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
@@ -354,26 +348,37 @@
         </section>
 
         <section
-          class="pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[124px] lg:pb-[80px]"
+          class="pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[8%] lg:pb-[4%]"
         >
           <div
-            class="bg-[#333B61] absolute origin-top-left md:rotate-[4deg] lg:rotate-[5deg] w-[130vw] h-full top-0 left-0 z-[-1] transform-sc"
+            class="bg-[#333B61] absolute origin-top-left md:rotate-[3deg] lg:rotate-[2deg] w-[130vw] h-full top-0 left-0 z-[-1] transform-sc"
           ></div>
           <div class="flex flex-col w-full mx-auto">
             <p
-              class="font-regular w-[350px] mx-auto md:w-full lg:w-full text-24 md:text-center md:px-20 px-32 lg:text-center leading-[135%] mb-30 text-white md:text-28 md:mb-24 lg:text-32 lg:mb-10"
+              class="font-regular w-[352px] mx-auto md:w-full lg:w-full text-24 md:text-center md:px-20 px-32 lg:text-center leading-[135%] mb-30 text-white md:text-28 md:mb-24 lg:text-32 lg:mb-10"
             >
               <strong>Maximize </strong>
               <span>project returns</span>
             </p>
 
-            <div
-              class="w-[260px] h-[300px] md:w-[704px] lg:w-[992px] mb-60 mx-auto bg-blue-400"
-            >
-              img
+            <div class="w-[260px] md:w-[704px] lg:w-[984px] mb-60 mx-auto">
+              <img
+                class="object-cover pointer-events-none block w-full h-auto"
+                srcset="
+                  /en/overview/overview_graph_mobile.png   566w,
+                  /en/overview/overview_graph_tablet.png  1408w,
+                  /en/overview/overview_graph_desktop.png 2006w
+                "
+                sizes="
+                (max-width: 767px) 260px, (min-width: 1200px) 704px,
+                984px
+                "
+                src="/en/overview/overview_graph_mobile.png"
+                alt="maximize project returns"
+              />
             </div>
             <div
-              class="flex flex-col w-[350px] mx-auto md:w-[510px] lg:w-[840px] lg:items-center"
+              class="flex flex-col w-[352px] mx-auto md:w-[510px] lg:w-[840px] lg:items-center"
             >
               <p
                 class="font-semibold text-20 px-32 md:text-26 md:px-20 mb-18 lg:text-30 text-white md:mb-24 lg:mb-24 lg:text-center"
@@ -439,7 +444,7 @@
                 </div>
 
                 <div
-                  class="flex pr-50 md:pr-0 lg:pr-0 lg:w-[350px] flex-col text-14 items-start font-regular text-white leading-[150%] md:text-18 lg:text-18"
+                  class="flex pr-50 md:pr-0 lg:pr-0 lg:w-[352px] flex-col text-14 items-start font-regular text-white leading-[150%] md:text-18 lg:text-18"
                 >
                   <p>
                     <span>Over 30+ multifamily projects&nbsp;</span>
@@ -459,7 +464,7 @@
         </section>
       </div>
 
-      <section class="pt-38 pb-76 md:pt-110 md:pb-90 lg:pt-180">
+      <section class="pt-38 pb-76 md:pt-110 md:pb-90 lg:pt-[8%]">
         <div
           class="flex flex-col md:items-center mx-auto w-[260px] md:w-auto lg:w-auto lg:items-center"
         >
@@ -606,7 +611,7 @@ strong {
         @include vertical-center();
         justify-content: flex-start;
         align-items: center;
-        width: 490px;
+        width: 488px;
         // height: auto;
         height: 590px;
         border-radius: 10px;
@@ -618,7 +623,7 @@ strong {
         }
 
         @include en-mobile {
-          max-width: 350px;
+          max-width: 352px;
           width: 100%;
           height: auto;
           border-radius: 0px;
@@ -638,31 +643,22 @@ strong {
           }
         }
 
-        .video-wrapper {
-          img {
-            display: block;
-            width: 980px;
-            height: 552px;
-            object-fit: cover;
-            pointer-events: none;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-
-            @include en-tablet {
-              width: 628px;
-              height: 354px;
-            }
-
-            @include en-mobile {
-              border-top-left-radius: 0px;
-              border-top-right-radius: 0px;
-              width: 100vw;
-              height: 54vw;
-            }
+        .image-wrapper {
+          min-height: 312px;
+          @include en-mobile {
+            min-height: 226px;
           }
 
-          video::-webkit-media-controls-start-playback-button {
-            display: none;
+          img {
+            display: block;
+            height: 312px;
+            object-fit: cover;
+            pointer-events: none;
+
+            @include en-mobile {
+              width: 360px;
+              height: auto;
+            }
           }
         }
       }

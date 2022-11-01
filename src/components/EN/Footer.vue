@@ -95,7 +95,7 @@ const router = useRouter()
 </script>
 <style lang="scss" scoped>
 .section-footer {
-  background-color: #fafafc;
+  background-color: white;
   padding-top: 52px;
   padding-bottom: 28px;
   height: 500px !important;
@@ -108,7 +108,7 @@ const router = useRouter()
   }
 
   .footer-wrapper {
-    background-color: #fafafc;
+    background-color: white;
     width: 100%;
     height: 500px !important;
     margin: auto 0px;

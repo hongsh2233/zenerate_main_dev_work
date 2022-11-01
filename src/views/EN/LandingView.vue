@@ -2,7 +2,7 @@
   <div class="min-w-[280px]">
     <section class="section section-landing">
       <div
-        class="py-40 md:py-60 mb-10 lg:pt-100 px-30 lg:pb-60 w-[320px] md:w-[630px] lg:w-[630px] mx-auto"
+        class="py-40 md:py-60 mb-10 lg:pt-100 px-10 md:px-30 lg:px-30 lg:pb-60 w-[320px] md:w-[630px] lg:w-[630px] mx-auto"
       >
         <div class="flex flex-col">
           <p
@@ -236,7 +236,7 @@
       class="section section-partners pt-34 md:pt-98 lg:pt-120 pb-74 md:pb-126 lg:pb-126"
     >
       <div
-        class="flex flex-col w-[320px] mx-auto md:w-[630px] px-30 lg:w-[1000px]"
+        class="flex flex-col w-[320px] mx-auto md:w-[630px] px-12 lg:w-[1000px]"
       >
         <div class="flex flex-col mb-46 lg:flex-row">
           <div
@@ -248,9 +248,13 @@
                 backgroundImage: `url('/logo/logo_color_cushman.png')`,
               }"
             ></div>
+            <span
+              class="text-gray-700 md:text-18 lg:text-18 text-14 font-semibold pl-18"
+              >James Kim, CEO</span
+            >
           </div>
           <p
-            class="text-14 font-regular lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
+            class="text-14 font-regular pl-12 lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
           >
             Not only was Zenerate able to raise the valuation of our sites by an
             average of 23%, our clients and partners were blown away with the
@@ -269,6 +273,10 @@
                 backgroundImage: `url('/logo/logo_color_cushman.png')`,
               }"
             ></div>
+            <span
+              class="text-gray-700 md:text-18 lg:text-18 text-14 font-semibold pl-18"
+              >James Kim, CEO</span
+            >
           </div>
         </div>
 
@@ -282,9 +290,13 @@
                 backgroundImage: `url('/logo/logo_color_neovalue.png')`,
               }"
             ></div>
+            <span
+              class="text-gray-700 md:text-18 lg:text-18 text-14 font-semibold"
+              >James Kim, CEO</span
+            >
           </div>
           <p
-            class="text-14 font-regular lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
+            class="text-14 font-regular pl-12 lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
           >
             As developers, our job is to ultimately maximize the potential
             returns within a given site. Zenerate, with their AI technology,
@@ -303,6 +315,10 @@
                 backgroundImage: `url('/logo/logo_color_neovalue.png')`,
               }"
             ></div>
+            <span
+              class="text-gray-700 md:text-18 lg:text-18 text-14 font-semibold pl-18"
+              >James Kim, CEO</span
+            >
           </div>
         </div>
       </div>
@@ -704,9 +720,11 @@ strong {
     }
 
     @include en-mobile {
+      width: 320px;
       flex-direction: column;
       margin: 0 auto;
-      align-items: center;
+      padding: 0 6px;
+      align-items: flex-start;
 
       .partners-item {
         width: auto;
@@ -725,9 +743,11 @@ strong {
     @include center-center;
     @include relative;
     width: 200px;
-    height: 68px;
+    min-height: 68px;
+    height: auto;
     max-width: 100%;
     margin-top: 20px;
+    flex-direction: column;
 
     &:not(:last-child) {
       margin-right: 52px;
@@ -744,10 +764,11 @@ strong {
     @include en-mobile {
       width: 210px;
       margin-bottom: 0px;
+
+      align-items: flex-start;
     }
     .item-logo {
       width: 200px;
-      margin: auto;
       height: 68px;
       background-size: contain;
       background-repeat: no-repeat;
