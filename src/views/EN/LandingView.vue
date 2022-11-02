@@ -95,7 +95,10 @@
             </p>
           </div>
 
-          <button type="button" class="start-button w-[160px] bg-primary">
+          <button
+            type="button"
+            class="start-button w-[160px] bg-primary hover:text-core-200 text-white active:bg-core-700 active:text-white"
+          >
             <router-link
               class="demo-link text-14 lg:text-16"
               :to="{ name: 'en-overview' }"
@@ -221,7 +224,10 @@
             </p>
           </div>
 
-          <button type="button" class="start-button w-[254px] bg-purple-500">
+          <button
+            type="button"
+            class="start-button w-[254px] bg-purple-500 text-white active:bg-purple-700 active:text-white hover:text-purple-200"
+          >
             <a
               class="demo-link text-14 lg:text-16"
               href="https://maps.zenerate.ai"
@@ -339,10 +345,10 @@
     </section>
 
     <section
-      class="section flex w-full flex-col items-center pb-46 pt-50 lg:py-86 bg-gray-50"
+      class="section flex w-full flex-col items-center pb-46 pt-72 lg:py-86 bg-gray-50"
     >
       <p
-        class="mb-34 md:mb-22 lg:mb-26 text-center px-30 text-16 font-regular lg:text-22 md:text-20 leading-[150%]"
+        class="mb-34 md:mb-22 lg:mb-32 text-center px-30 text-16 font-regular lg:text-22 md:text-20 leading-[150%]"
       >
         <span>Join some of the biggest names&nbsp;</span>
         <span>in real estate development</span>
@@ -356,7 +362,7 @@
       >
         <button
           type="button"
-          class="start-button bg-primary mb-8 md:mb-0 px-24 md:mr-18 lg:mr-18 lg:mb-0"
+          class="start-button bg-primary hover:text-core-200 text-white active:bg-core-700 active:text-white mb-8 md:mb-0 px-24 md:mr-18 lg:mr-18 lg:mb-0"
         >
           <router-link
             class="demo-link text-14 lg:text-16"
@@ -416,7 +422,6 @@ strong {
 .start-button {
   height: 48px;
   font-weight: 600;
-  color: $white;
   border-radius: 5px;
   letter-spacing: 0.1em;
   transition: all ease-in-out 0.2s;
@@ -430,17 +435,17 @@ strong {
     text-align: center;
   }
 
-  &:hover {
-    @include elevation-3;
-    color: rgba($white, 0.6);
-    transform: translateY(-2px);
-  }
+  // &:hover {
+  //   @include elevation-3;
+  //   color: rgba($white, 0.6);
+  //   // transform: translateY(-2px);
+  // }
 
-  &:active {
-    @include elevation-3;
-    color: rgba($white, 0.6);
-    transform: translateY(-2px);
-  }
+  // &:active {
+  //   @include elevation-3;
+  //   color: rgba($white, 0.6);
+  //   transform: translateY(-2px);
+  // }
 }
 
 .case {
@@ -775,6 +780,7 @@ strong {
       background-position: center;
       @include en-mobile {
         height: 70px;
+        margin-left: 4px;
       }
     }
     .item-description {

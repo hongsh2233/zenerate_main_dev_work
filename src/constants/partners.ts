@@ -12,11 +12,11 @@ export default [
     name: 'HYUNDAI',
   },
   {
-    key: 'shinyoung',
-    name: 'SHINYOUNG',
-  },
-  {
     key: 'hdc',
     name: 'HDC',
+  },
+  {
+    key: 'shinyoung',
+    name: 'SHINYOUNG',
   },
 ]

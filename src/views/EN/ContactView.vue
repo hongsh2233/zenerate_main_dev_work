@@ -89,7 +89,7 @@
           <div class="form-send-wrapper">
             <div class="dummy" ref="dummy"></div>
             <button
-              class="form-send start-button hover-pointer"
+              class="form-send start-button hover-pointer bg-primary hover:text-core-200 text-white active:bg-core-700 active:text-white"
               :class="{ disabled: sendEmailStatus }"
               @click="() => sendEmail()"
             >
@@ -633,8 +633,6 @@ const { meta } = useMeta({
         width: 100%;
         height: 60px;
         margin-top: 40px;
-        background-color: $navigation;
-        color: $white;
         border-radius: 10px;
         letter-spacing: 0.1em;
         transition: all ease-in-out 0.2s;
@@ -647,17 +645,17 @@ const { meta } = useMeta({
           text-align: center;
         }
 
-        &:hover {
-          @include elevation-3;
-          color: rgba($white, 0.6);
-          transform: translateY(-2px);
-        }
+        // &:hover {
+        //   @include elevation-3;
+        //   color: rgba($white, 0.6);
+        //   transform: translateY(-2px);
+        // }
 
-        &:active {
-          @include elevation-3;
-          color: rgba($white, 0.6);
-          transform: translateY(-2px);
-        }
+        // &:active {
+        //   @include elevation-3;
+        //   color: rgba($white, 0.6);
+        //   transform: translateY(-2px);
+        // }
       }
     }
     input::placeholder {

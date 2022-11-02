@@ -3,22 +3,19 @@
     <div class="section section-case-studies">
       <div class="section-inner inner-case-studies">
         <section
-          class="flex flex-col relative pl-18 md:pl-0 lg:pl-0 pb-52 w-[288px] mx-auto md:w-full lg:w-full items-start lg:items-start md:items-start lg:min-w-[1024px] lg:w-full lg:px-120 lg:max-w-[1200px] md:pb-[210px] w-full md:max-w-[740px] md:px-80"
+          class="flex flex-col relative pl-18 md:pl-0 pb-52 w-[288px] mx-auto items-start lg:items-start md:items-start lg:px-60 lg:w-[1024px] md:pb-[260px] w-full md:w-[660px] md:px-80"
         >
           <div
-            class="w-[288px] md:w-[472px] lg:w-[576px] mb-24 md:mb-0 lg:mb-0 md:absolute md:bottom-0 md:right-0 lg:absolute lg:bottom-0 lg:right-0"
+            class="w-[296px] lg:h-[352px] md:h-[456px] md:min-h-[456px] h-[296px] min-h-[296px] lg:min-h-[352px] md:w-[480px] lg:w-[584px] h-auto mb-24 md:mb-0 lg:mb-0 md:absolute md:bottom-0 md:right-0 lg:absolute lg:bottom-[32px] lg:right-0"
           >
             <img
-              class="object-cover pointer-events-none block w-full h-auto"
+              class="object-cover pointer-events-none block w-full h-full min-w-[296px] md:min-w-[480px] lg:min-w-[584px]"
               srcset="
-                /en/overview/overview_hero_mobile.png   592w,
-                /en/overview/overview_hero_tablet.png   960w,
-                /en/overview/overview_hero_desktop.png 1168w
+                /en/overview/overview_hero_mobile.png  296w,
+                /en/overview/overview_hero_tablet.png  480w,
+                /en/overview/overview_hero_desktop.png 584w
               "
-              sizes="
-                (max-width: 767px) 288px, (min-width: 1200px) 472px,
-                576px
-                "
+              sizes="(max-width: 767px) 296px,  (max-width: 1024px) 480px, 584px"
               src="/en/overview/overview_hero_mobile.png"
               alt="maximize project returns"
             />
@@ -58,7 +55,7 @@
           </div>
           <button
             type="button"
-            class="start-button w-[260px] md:w-[160px] lg:w-[172px] bg-primary"
+            class="start-button w-[260px] md:w-[160px] lg:w-[172px] bg-primary hover:text-core-200 text-white active:bg-core-700 active:text-white"
           >
             <router-link
               class="demo-link text-14 lg:text-16"
@@ -69,7 +66,7 @@
           </button>
         </section>
         <section
-          class="case-studies-wrapper pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[8%] lg:pb-[4%]"
+          class="case-studies-wrapper pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[148px] lg:pb-[4%]"
         >
           <div
             class="bg-gray-50 absolute origin-top-left md:rotate-[3deg] lg:rotate-[2deg] w-[130vw] h-full top-0 left-0 z-[-1] transform-sc"
@@ -81,8 +78,8 @@
             <strong>development potential</strong>
           </p>
 
-          <div class="case-wrapper lg:max-w-[1000px] lg:justify-between">
-            <article class="case shadow-200 overflow-x-hidden">
+          <div class="case-wrapper lg:max-w-[996px] lg:justify-between">
+            <article class="case shadow-100 overflow-x-hidden">
               <div class="image-wrapper w-full">
                 <img
                   class="img-map"
@@ -95,7 +92,7 @@
               >
                 <div class="flex flex-nowrap">
                   <p
-                    class="min-w-18 w-18 h-18 md:w-34 md:min-w-34 md:h-34 lg:w-34 lg:min-w-34 lg:h-34 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-22 md:pt-4 lg:pt-4 text-12 lg:text-22 font-semibold pt-1"
+                    class="min-w-18 w-18 h-18 md:w-30 md:min-w-30 md:h-30 lg:w-30 lg:min-w-30 flex leading-[150%] items-center justify-center lg:h-30 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-20 text-12 lg:text-20 font-semibold"
                   >
                     1
                   </p>
@@ -119,7 +116,7 @@
               </div>
             </article>
 
-            <article class="case shadow-200 overflow-x-hidden">
+            <article class="case shadow-100 overflow-x-hidden">
               <div class="image-wrapper w-full">
                 <img
                   class="img-map"
@@ -132,7 +129,7 @@
               >
                 <div class="flex flex-nowrap">
                   <p
-                    class="min-w-18 w-18 h-18 md:w-34 md:min-w-34 md:h-34 lg:w-34 lg:min-w-34 lg:h-34 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-22 md:pt-4 lg:pt-4 text-12 lg:text-22 font-semibold pt-1"
+                    class="min-w-18 w-18 h-18 md:w-34 md:min-w-34 md:h-34 lg:w-34 lg:min-w-34 flex leading-[150%] items-center justify-center lg:h-34 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-22 text-12 lg:text-22 font-semibold"
                   >
                     2
                   </p>
@@ -155,7 +152,7 @@
               </div>
             </article>
 
-            <article class="case shadow-200 overflow-x-hidden">
+            <article class="case shadow-100 overflow-x-hidden">
               <div class="image-wrapper w-full">
                 <img
                   class="img-map"
@@ -168,7 +165,7 @@
               >
                 <div class="flex flex-nowrap">
                   <p
-                    class="min-w-18 w-18 h-18 md:w-34 md:min-w-34 md:h-34 lg:w-34 lg:min-w-34 lg:h-34 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-22 md:pt-4 lg:pt-4 text-12 lg:text-22 font-semibold pt-1"
+                    class="min-w-18 w-18 h-18 md:w-34 md:min-w-34 md:h-34 lg:w-34 lg:min-w-34 flex leading-[150%] items-center justify-center lg:h-34 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-22 text-12 lg:text-22 font-semibold"
                   >
                     3
                   </p>
@@ -191,7 +188,7 @@
               </div>
             </article>
 
-            <article class="case shadow-200 overflow-x-hidden">
+            <article class="case shadow-100 overflow-x-hidden">
               <div class="image-wrapper w-full">
                 <img
                   class="img-map"
@@ -204,7 +201,7 @@
               >
                 <div class="flex flex-nowrap">
                   <p
-                    class="min-w-18 w-18 h-18 md:w-34 md:min-w-34 md:h-34 lg:w-34 lg:min-w-34 lg:h-34 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-22 md:pt-4 lg:pt-4 text-12 lg:text-22 font-semibold pt-1"
+                    class="min-w-18 w-18 h-18 md:w-34 md:min-w-34 md:h-34 lg:w-34 lg:min-w-34 flex leading-[150%] items-center justify-center lg:h-34 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-22 text-12 lg:text-22 font-semibold"
                   >
                     4
                   </p>
@@ -233,7 +230,7 @@
             </article>
 
             <article
-              class="case shadow-200 overflow-x-hidden lg:!w-full lg:!h-auto"
+              class="case shadow-100 overflow-x-hidden lg:!w-full lg:!h-auto"
             >
               <div
                 class="flex flex-col pt-42 md:pl-74 w-full md:pl-74 pl-34 pb-56 lg:flex-row lg:!justify-around lg:items-center"
@@ -309,7 +306,20 @@
                       <div
                         class="flex mr-10 items-center justify-center bg-core-500 rounded-[50%] text-white w-16 h-16"
                       >
-                        <i class="material-icons text-14">check</i>
+                        <svg
+                          width="12"
+                          height="13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m2.77 6.962 2.307 2.307 4.154-5.538"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
                       </div>
                       <span>Searching for sites</span>
                     </li>
@@ -317,7 +327,20 @@
                       <div
                         class="flex mr-10 items-center justify-center bg-core-500 rounded-[50%] text-white w-16 h-16"
                       >
-                        <i class="material-icons text-14">check</i>
+                        <svg
+                          width="12"
+                          height="13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m2.77 6.962 2.307 2.307 4.154-5.538"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
                       </div>
                       <span>Optimizing zoning scenarios</span>
                     </li>
@@ -325,7 +348,20 @@
                       <div
                         class="flex mr-10 items-center justify-center bg-core-500 rounded-[50%] text-white w-16 h-16"
                       >
-                        <i class="material-icons text-14">check</i>
+                        <svg
+                          width="12"
+                          height="13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m2.77 6.962 2.307 2.307 4.154-5.538"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
                       </div>
                       <span>Crunching numbers</span>
                     </li>
@@ -333,7 +369,20 @@
                       <div
                         class="flex mr-10 mt-3 items-center justify-center bg-core-500 rounded-[50%] text-white w-16 h-16"
                       >
-                        <i class="material-icons text-14">check</i>
+                        <svg
+                          width="12"
+                          height="13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="m2.77 6.962 2.307 2.307 4.154-5.538"
+                            stroke="#fff"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
                       </div>
                       <span
                         >Requesting or drafting <br />
@@ -348,30 +397,32 @@
         </section>
 
         <section
-          class="pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[8%] lg:pb-[4%]"
+          class="pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[148px] lg:pb-[4%]"
         >
           <div
             class="bg-[#333B61] absolute origin-top-left md:rotate-[3deg] lg:rotate-[2deg] w-[130vw] h-full top-0 left-0 z-[-1] transform-sc"
           ></div>
           <div class="flex flex-col w-full mx-auto">
             <p
-              class="font-regular w-[352px] mx-auto md:w-full lg:w-full text-24 md:text-center md:px-20 px-32 lg:text-center leading-[135%] mb-30 text-white md:text-28 md:mb-24 lg:text-32 lg:mb-10"
+              class="font-regular w-[352px] mx-auto md:w-full lg:w-full text-24 md:text-center md:px-20 px-32 lg:text-center leading-[135%] mb-30 text-white md:text-28 md:mb-24 lg:text-32 lg:mb-42"
             >
               <strong>Maximize </strong>
               <span>project returns</span>
             </p>
 
-            <div class="w-[260px] md:w-[704px] lg:w-[984px] mb-60 mx-auto">
+            <div
+              class="w-[296px] h-[632px] min-h-[632px] md:h-[448px] lg:h-[640px] lg:min-h-[640px] md:min-h-[448px] md:w-[704px] lg:w-[1000px] mb-60 mx-auto"
+            >
               <img
-                class="object-cover pointer-events-none block w-full h-auto"
+                class="object-cover pointer-events-none block w-full h-full"
                 srcset="
-                  /en/overview/overview_graph_mobile.png   566w,
-                  /en/overview/overview_graph_tablet.png  1408w,
-                  /en/overview/overview_graph_desktop.png 2006w
+                  /en/overview/overview_graph_mobile.png   296w,
+                  /en/overview/overview_graph_tablet.png   704w,
+                  /en/overview/overview_graph_desktop.png 1000w
                 "
                 sizes="
-                (max-width: 767px) 260px, (min-width: 1200px) 704px,
-                984px
+                (max-width: 767px) 296px, (max-width: 1024px) 704px,
+                1000px
                 "
                 src="/en/overview/overview_graph_mobile.png"
                 alt="maximize project returns"
@@ -469,7 +520,7 @@
           class="flex flex-col md:items-center mx-auto w-[260px] md:w-auto lg:w-auto lg:items-center"
         >
           <p
-            class="mb-30 text-14 font-regular leading-[150%] md:text-24 md:mb-36 lg:mb-40 lg:text-22 text-black text-center"
+            class="mb-30 text-16 font-regular leading-[150%] md:text-24 md:mb-36 lg:mb-40 lg:text-22 text-black text-center"
           >
             <span>You'll never want to start a project&nbsp;</span>
             <span>without Zenerate again. </span><br />
@@ -477,7 +528,7 @@
           </p>
           <button
             type="button"
-            class="start-button bg-primary px-24 md:w-[210px] lg:w-[210px]"
+            class="start-button bg-primary hover:text-core-200 text-white active:bg-core-700 active:text-white px-24 md:w-[210px] lg:w-[210px]"
           >
             <router-link
               class="demo-link text-14 lg:text-16"
@@ -535,7 +586,6 @@ strong {
 .start-button {
   height: 48px;
   font-weight: 600;
-  color: $white;
   border-radius: 5px;
   letter-spacing: 0.1em;
   transition: all ease-in-out 0.2s;
@@ -549,17 +599,17 @@ strong {
     text-align: center;
   }
 
-  &:hover {
-    @include elevation-3;
-    color: rgba($white, 0.6);
-    transform: translateY(-2px);
-  }
+  // &:hover {
+  //   @include elevation-3;
+  //   color: rgba($white, 0.6);
+  //   transform: translateY(-2px);
+  // }
 
-  &:active {
-    @include elevation-3;
-    color: rgba($white, 0.6);
-    transform: translateY(-2px);
-  }
+  // &:active {
+  //   @include elevation-3;
+  //   color: rgba($white, 0.6);
+  //   transform: translateY(-2px);
+  // }
 }
 .section-case-studies {
   @include relative;
@@ -572,7 +622,7 @@ strong {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 160px 0px 0px;
+    padding: 168px 0px 0px;
 
     @include en-tablet {
       padding: 132px 0px 0px;

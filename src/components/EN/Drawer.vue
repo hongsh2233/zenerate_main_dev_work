@@ -43,14 +43,14 @@
                 </div>
               </transition>
             </template>
-            <router-link
+            <a
               class="demo-link navigation-link"
-              :to="{ name: 'en-demo' }"
+              href="https://maps.zenerate.ai"
               @click="close"
             >
-              BOOK A DEMO
+              TRY Z-MAPS
               <i class="material-icons"> east </i>
-            </router-link>
+            </a>
           </div>
           <div class="info-wrapper">
             <span class="copyright"
@@ -190,7 +190,7 @@ const close = () => {
   @include flex($dir: column, $justify: flex-end);
   width: calc(100% + 8px);
   height: 100%;
-  background-color: $white;
+  background-color: white;
   z-index: 3;
 
   &.banner {
@@ -228,7 +228,7 @@ const close = () => {
   }
 
   .icon-close {
-    color: $text-darken-7;
+    color: theme('colors.gray.700');
     font-size: 28px;
   }
 }
@@ -255,7 +255,7 @@ const close = () => {
       .navigation-link-list {
         @include vertical-center();
         padding: 26px 0px;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid theme('colors.gray.100');
         background-color: #fafbfe;
       }
 
@@ -272,7 +272,7 @@ const close = () => {
         }
 
         &:not(.sub) {
-          border-bottom: 1px solid #e5e5e5;
+          border-bottom: 1px solid theme('colors.gray.100');
           height: 76px;
         }
 
@@ -280,7 +280,7 @@ const close = () => {
           @include flex();
           @include medium(32);
           align-items: center;
-          color: $text-darken;
+          color: theme('colors.gray.700');
 
           &.active {
             transform: rotate(-180deg);
@@ -295,7 +295,7 @@ const close = () => {
           @include regular(17);
           @include flex();
           align-items: center;
-          color: $text-darken-7;
+          color: theme('colors.gray.700');
           .icon {
             width: 28px;
             margin-right: 8px;
@@ -311,10 +311,10 @@ const close = () => {
 
           &:hover,
           :active {
-            color: $navigation;
+            color: theme('colors.core.700');
 
             :deep(path) {
-              fill: $navigation;
+              fill: theme('colors.core.700');
               opacity: 1;
             }
           }
@@ -328,11 +328,11 @@ const close = () => {
           @include semi-bold(18);
           @include flex();
           align-items: center;
-          color: $navigation;
+          color: theme('colors.core.700');
 
           i {
             @include semi-bold(18);
-            color: $navigation;
+            color: theme('colors.core.700');
             margin: 0px 0px 0px 14px;
           }
         }
@@ -368,7 +368,7 @@ const close = () => {
 
       .copyright {
         @include regular(14);
-        color: #808394;
+        color: theme('colors.gray.700');
       }
     }
   }

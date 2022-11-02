@@ -73,7 +73,7 @@
 
         <button
           type="button"
-          class="primary-button text-12 h-36 only-en-desktop"
+          class="primary-button text-12 h-36 only-en-desktop w-[130px] !px-14"
         >
           <router-link class="demo-link" :to="{ name: 'en-demo' }">
             BOOK A DEMO
@@ -395,7 +395,7 @@ const toggleNav = (primary: String) => {
           p {
             &:hover {
               transition: color ease-in-out 0.2s;
-              color: $navigation;
+              color: theme('colors.core.700');
             }
           }
 
@@ -407,7 +407,7 @@ const toggleNav = (primary: String) => {
 
             &:hover {
               transition: color ease-in-out 0.2s;
-              color: $navigation;
+              color: theme('colors.core.700');
               font-weight: 500;
             }
           }
@@ -432,14 +432,18 @@ const toggleNav = (primary: String) => {
 
 .dropdown {
   width: 137px;
-  margin-right: 28px;
+  margin-right: 0px;
   overflow: hidden;
 
+  &:last-child {
+    margin-right: 18px;
+  }
+
   &:nth-child(2) {
-    width: 160px;
+    width: 150px;
 
     .dropdown-content {
-      width: 160px;
+      width: 150px;
     }
   }
 }
@@ -464,7 +468,7 @@ const toggleNav = (primary: String) => {
 
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-  color: $navigation;
+  color: theme('colors.core.700');
 
   i {
     transform: rotate(-180deg);
@@ -476,7 +480,7 @@ const toggleNav = (primary: String) => {
   visibility: hidden;
   position: absolute;
   background-color: $white;
-  min-width: 137px;
+  min-width: 130px;
   padding: 16px 0px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
   z-index: 1;
@@ -491,7 +495,7 @@ const toggleNav = (primary: String) => {
 .dropdown-content a {
   @include flex();
   @include regular(12);
-  color: $text-darken;
+  color: theme('colors.black');
   align-items: center;
   padding: 4px 18px 4px 14px;
   text-decoration: none;
@@ -499,11 +503,11 @@ const toggleNav = (primary: String) => {
 }
 
 .dropdown-content a:hover {
-  color: $navigation;
+  color: theme('colors.core.700');
 
   :deep(svg) {
     path {
-      fill: $navigation;
+      fill: theme('colors.core.700');
     }
   }
 }
