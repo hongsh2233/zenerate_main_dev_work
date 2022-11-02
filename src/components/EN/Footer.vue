@@ -1,52 +1,176 @@
 <template>
-  <div class="section-footer">
-    <div class="footer-wrapper">
-      <div class="footer-inner">
-        <div class="footer-contents-wrapper">
-          <div class="footer-locations">
-            <div class="footer-location location-title">
-              <p class="title main-title">Locations</p>
+  <div class="flex flex-col w-full h-auto items-center">
+    <div
+      class="flex flex-col max-w-[320px] w-full md:max-w-[768px] lg:max-w-[1024px] py-46 md:py-80 lg:py-80"
+    >
+      <div
+        class="flex flex-col md:flex-row lg:flex-row md:justify-between lg:justify-between border-b-gray-200"
+      >
+        <div class="flex flex-nowrap">
+          <div class="mr-32 md:mr-38 lg:mr-40">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h32v32H0V0Z" fill="#fff" />
+              <path
+                d="M0 0v32h32V0H0Zm9.696 17.216 7.392-8.736h-6.88V5.296H22V8.56l-7.312 8.464h7.584v3.216H9.696V17.2v.016Zm.032 9.488v-3.232h12.576v3.232H9.728Z"
+                fill="#4D49F4"
+              />
+            </svg>
+          </div>
+          <div class="flex flex-col mb-36 md:mb-60 lg:mb-50">
+            <div class="flex flex-col mb-18 lg:mb-22">
+              <p class="mb-4 lg:mb-8 text-black font-semibold text-14">
+                Headquarters
+              </p>
+              <p
+                class="leading-[170%] text-gray-700 font-medium text-13 md:text-14 lg:text-14"
+              >
+                United States<br />
+                555 West 5th Street<br />
+                Los Angeles, CA 90013
+              </p>
             </div>
-            <div class="location-content-wrapper">
-              <div class="footer-location location-headquarters">
-                <div class="location-title">
-                  <p class="title">Headquarters</p>
-                </div>
-                <div class="location-content">
-                  <p class="content">Los Angeles</p>
-                  <p class="content">555 West 5th Street, 35F</p>
-                  <p class="content">Los Angeles, CA 90013</p>
-                </div>
-              </div>
-              <div class="footer-location location-international">
-                <div class="location-title">
-                  <p class="title">International</p>
-                </div>
-                <div class="location-content">
-                  <p class="content">Seoul</p>
-                  <p class="content">Olympic-ro 362, 5F</p>
-                  <p class="content">Songpa-gu, Seoul 05543</p>
-                </div>
-              </div>
+
+            <div class="flex flex-col">
+              <p class="mb-4 lg:mb-8 text-black font-semibold text-14">
+                APAC Office
+              </p>
+              <p
+                class="leading-[170%] text-gray-700 font-medium text-13 md:text-14 lg:text-14"
+              >
+                South Korea<br />
+                Olympic-ro 362, 5F<br />
+                Songpa-gu, Seoul 05544
+              </p>
             </div>
           </div>
-          <div class="footer-contact">
-            <p class="contact-title">Contact</p>
-            <p class="contact">
-              <a href="mailto:help@zenerate.ai">help@zenerate.ai</a>
+        </div>
+
+        <div class="flex flex-col lg:pb-50 pb-20 md:items-end lg:items-end">
+          <div class="flex flex-row md:mb-120 mb-52 lg:mb-84">
+            <div
+              class="flex flex-col mr-24 md:mr-30 lg:mr-50 w-[80px] md:w-auto lg:w-auto"
+            >
+              <p
+                class="text-black font-semibold text-13 mb-12 md:text-14 md:mb-18 lg:text-14 lg:mb-18"
+              >
+                Product
+              </p>
+              <p
+                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14 mb-8 md:mb-10 lg:mb-14"
+              >
+                <router-link :to="{ name: 'en-overview' }">
+                  Zenerate™ App
+                </router-link>
+              </p>
+              <p
+                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14"
+              >
+                <a :href="'https://maps.zenerate.ai'"> Z-maps </a>
+              </p>
+            </div>
+            <div
+              class="flex flex-col mr-20 md:mr-28 lg:mr-62 w-[80px] md:w-auto lg:w-auto"
+            >
+              <p
+                class="text-black font-semibold text-13 mb-12 md:text-14 md:mb-18 lg:text-14 lg:mb-18"
+              >
+                Resources
+              </p>
+              <p
+                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14"
+              >
+                <router-link :to="{ name: 'en-case-studies' }">
+                  Case Studies
+                </router-link>
+              </p>
+            </div>
+            <div class="flex flex-col">
+              <p
+                class="text-black font-semibold text-13 mb-12 md:text-14 md:mb-18 lg:text-14 lg:mb-18"
+              >
+                Company
+              </p>
+              <p
+                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14 mb-8 md:mb-10 lg:mb-14"
+              >
+                <router-link :to="{ name: 'en-about' }"> About Us </router-link>
+              </p>
+              <p
+                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14 mb-8 md:mb-10 lg:mb-14"
+              >
+                <router-link :to="{ name: 'en-career' }"> Careers </router-link>
+              </p>
+              <p
+                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14"
+              >
+                <router-link :to="{ name: 'en-contact' }">
+                  Contact
+                </router-link>
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex text-gray-700 font-regular items-center text-13 md:text-14 lg:text-14"
+          >
+            <p class="mr-10 font-semibold">Contact</p>
+
+            <p>
+              <a href="mailto:support@zenerate.ai">support@zenerate.ai</a>
             </p>
           </div>
         </div>
-        <div class="term-wrapper">
-          <a @click="router.push('/terms-and-conditions')" class="term"
-            >Terms and Conditions</a
+      </div>
+      <div class="flex flex-col pt-40 md:pt-20 lg:pt-30">
+        <div class="flex flex-col md:flex-row lg:flex-row">
+          <div
+            class="flex flex-col w-full lg:items-center md:items-center md:flex-row mb-40 md:mb-14 lg:mb-18 lg:flex-row text-gray-700 font-semibold text-14"
           >
-          <a @click="router.push('/privacy-policy')" class="term"
-            >Privacy Policy</a
-          >
-          <div class="sns-wrapper">
-            <p class="copyright">©Zenerate,Inc. 2022. All rights reserved</p>
-            <div class="footer-sns">
+            <p class="mb-18 md:mb-0 lg:mb-0 md:mr-30 lg:mr-30">
+              <router-link :to="{ name: 'en-terms-and-conditions' }">
+                Terms of Service
+              </router-link>
+            </p>
+            <p class="mb-18 md:mb-0 lg:mb-0 md:mr-30 lg:mr-30">
+              <router-link :to="{ name: 'en-privacy-policy' }">
+                Privacy Policy
+              </router-link>
+            </p>
+            <p class="mb-10 md:mb-0 lg:mb-0 md:mr-30 lg:mr-30">
+              <router-link :to="{ name: 'en-contact' }">
+                Contact Us
+              </router-link>
+            </p>
+            <div class="flex flex-nowrap justify-between flex-1">
+              <div class="flex relative group cursor-pointer">
+                <button
+                  type="button"
+                  class="peer text-gray-700 px-0 font-semibold text-14 flex items-center flex-nowrap"
+                >
+                  <i class="material-icons mr-8 text-18"> language </i>
+                  <p>ENG</p>
+                </button>
+                <div
+                  class="absolute top-0 pt-36 font-medium text-14 left-0 invisible group-hover:visible hover:visible"
+                >
+                  <div
+                    class="w-66 py-12 px-18 flex flex-col items-center shadow-100 rounded-8 bg-white"
+                  >
+                    <p class="text-gray-400 mb-14 cursor-default">ENG</p>
+                    <p class="text-gray-700 cursor-pointer hover:text-primary">
+                      <router-link :to="{ name: 'ModuleLayout' }">
+                        KOR</router-link
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+
               <a
                 href="https://www.linkedin.com/company/zenerate"
                 class="hover-pointer linkedin-icon"
@@ -60,38 +184,33 @@
                 >
                   <g id="surface1">
                     <path
-                      fill="#161616"
+                      fill="#666666"
                       d="M 9.972656 0 C 4.464844 0 0 4.464844 0 9.972656 C 0 15.484375 4.464844 19.949219 9.972656 19.949219 C 15.484375 19.949219 19.949219 15.484375 19.949219 9.972656 C 19.949219 4.464844 15.484375 0 9.972656 0 Z M 6.238281 16.726562 L 3.433594 16.726562 L 3.433594 7.707031 L 6.238281 7.707031 Z M 4.835938 6.472656 C 3.9375 6.472656 3.210938 5.746094 3.210938 4.847656 C 3.210938 3.949219 3.9375 3.222656 4.835938 3.222656 C 5.730469 3.222656 6.460938 3.949219 6.460938 4.847656 C 6.460938 5.742188 5.730469 6.472656 4.835938 6.472656 Z M 16.738281 16.726562 L 13.9375 16.726562 L 13.9375 12.339844 C 13.9375 11.292969 13.917969 9.949219 12.480469 9.949219 C 11.023438 9.949219 10.796875 11.085938 10.796875 12.265625 L 10.796875 16.726562 L 7.996094 16.726562 L 7.996094 7.707031 L 10.683594 7.707031 L 10.683594 8.9375 L 10.722656 8.9375 C 11.097656 8.230469 12.011719 7.480469 13.375 7.480469 C 16.214844 7.480469 16.738281 9.351562 16.738281 11.777344 Z M 16.738281 16.726562 "
                     />
                   </g>
                 </svg>
               </a>
-              <a href="https://www.facebook.com/zenerate/" class="hover-pointer"
-                ><svg
-                  width="28px"
-                  height="28px"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0 10.0558C0 15.0275 3.61083 19.1617 8.33333 20V12.7775H5.83333V10H8.33333V7.7775C8.33333 5.2775 9.94417 3.88917 12.2225 3.88917C12.9442 3.88917 13.7225 4 14.4442 4.11083V6.66667H13.1667C11.9442 6.66667 11.6667 7.2775 11.6667 8.05583V10H14.3333L13.8892 12.7775H11.6667V20C16.3892 19.1617 20 15.0283 20 10.0558C20 4.525 15.5 0 10 0C4.5 0 0 4.525 0 10.0558Z"
-                    fill="#161616"
-                  />
-                </svg>
-              </a>
             </div>
           </div>
         </div>
+        <p
+          class="text-gray-700 lg:font-regular font-medium md:font-regular md:text-14 lg:text-14 text-12"
+        >
+          © Zenerate,Inc. 2022. All rights reserved
+        </p>
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
+const showLang = ref(false)
+const toggleLang = (flag?: boolean) => {
+  const f = flag == null ? !showLang.value : flag
+  showLang.value = f
+}
 </script>
 <style lang="scss" scoped>
 .section-footer {

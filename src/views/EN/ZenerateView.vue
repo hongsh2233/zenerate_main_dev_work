@@ -492,7 +492,7 @@
         class="pt-38 pb-76 md:pt-[156px] md:pb-[150px] lg:pt-[156px] lg:pb-[150px]"
       >
         <div
-          class="flex flex-col md:items-center mx-auto w-[260px] md:w-auto lg:w-auto lg:items-center"
+          class="flex flex-col items-center mx-auto w-[300px] md:w-auto lg:w-auto"
         >
           <p
             class="mb-30 text-16 font-regular leading-[150%] md:text-24 md:mb-36 lg:mb-40 lg:text-22 text-black text-center"
@@ -503,7 +503,7 @@
           </p>
           <button
             type="button"
-            class="start-button bg-primary hover:text-core-200 text-white active:bg-core-700 active:text-white px-24 md:w-[210px] lg:w-[210px]"
+            class="start-button w-[260px] bg-primary hover:text-core-200 text-white active:bg-core-700 active:text-white px-24 md:w-[210px] lg:w-[210px]"
           >
             <router-link
               class="demo-link text-14 lg:text-16"
