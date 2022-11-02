@@ -3,23 +3,11 @@
     <div class="section section-case-studies">
       <div class="section-inner inner-case-studies">
         <section
-          class="flex flex-col relative pl-18 md:pl-0 pb-52 w-[288px] mx-auto items-start lg:items-start md:items-start lg:px-60 lg:w-[1024px] md:pb-[260px] w-full md:w-[660px] md:px-80"
+          class="flex flex-col relative pl-18 md:pl-0 pb-52 w-[288px] mx-auto items-start lg:items-start md:items-start lg:px-60 lg:w-[1024px] md:pb-[260px] md:w-[660px] md:px-80"
         >
           <div
-            class="w-[296px] lg:h-[352px] md:h-[456px] md:min-h-[456px] h-[296px] min-h-[296px] lg:min-h-[352px] md:w-[480px] lg:w-[584px] h-auto mb-24 md:mb-0 lg:mb-0 md:absolute md:bottom-0 md:right-0 lg:absolute lg:bottom-[32px] lg:right-0"
-          >
-            <img
-              class="object-cover pointer-events-none block w-full h-full min-w-[296px] md:min-w-[480px] lg:min-w-[584px]"
-              srcset="
-                /en/overview/overview_hero_mobile.png  296w,
-                /en/overview/overview_hero_tablet.png  480w,
-                /en/overview/overview_hero_desktop.png 584w
-              "
-              sizes="(max-width: 767px) 296px,  (max-width: 1024px) 480px, 584px"
-              src="/en/overview/overview_hero_mobile.png"
-              alt="maximize project returns"
-            />
-          </div>
+            class="w-[296px] hero-image-wrapper md:h-[456px] md:min-h-[456px] h-[296px] min-h-[296px] lg:min-h-[352px] lg:h-[352px] md:w-[480px] lg:w-[584px] mb-24 md:mb-0 lg:mb-0 md:absolute md:bottom-0 md:right-0 lg:absolute lg:bottom-[32px] lg:right-0"
+          ></div>
           <div class="flex flex-col">
             <p
               class="text-primary md:text-18 lg:text-20 text-14 mb-8 font-semibold"
@@ -411,23 +399,8 @@
             </p>
 
             <div
-              class="w-[296px] h-[632px] min-h-[632px] md:h-[448px] lg:h-[640px] lg:min-h-[640px] md:min-h-[448px] md:w-[704px] lg:w-[1000px] mb-60 mx-auto"
-            >
-              <img
-                class="object-cover pointer-events-none block w-full h-full"
-                srcset="
-                  /en/overview/overview_graph_mobile.png   296w,
-                  /en/overview/overview_graph_tablet.png   704w,
-                  /en/overview/overview_graph_desktop.png 1000w
-                "
-                sizes="
-                (max-width: 767px) 296px, (max-width: 1024px) 704px,
-                1000px
-                "
-                src="/en/overview/overview_graph_mobile.png"
-                alt="maximize project returns"
-              />
-            </div>
+              class="graph-image-wrapper w-[296px] h-[632px] min-h-[632px] md:h-[448px] lg:h-[640px] lg:min-h-[640px] md:min-h-[448px] md:w-[704px] lg:w-[1000px] mb-60 mx-auto"
+            ></div>
             <div
               class="flex flex-col w-[352px] mx-auto md:w-[510px] lg:w-[840px] lg:items-center"
             >
@@ -554,7 +527,6 @@ import Footer from '/Components/EN/Footer.vue'
 import { useGtag } from 'vue-gtag-next'
 import { useMeta } from 'vue-meta'
 import PartnersList from '/Constants/partners'
-
 const { event } = useGtag()
 const goToApp = () => {
   event('generate_lead', {
@@ -562,7 +534,6 @@ const goToApp = () => {
     event_label: '(not yet)',
   })
 }
-
 const { meta } = useMeta({
   title: 'Zenerate | Zenerate',
   description:
@@ -582,7 +553,24 @@ const { meta } = useMeta({
 strong {
   font-weight: 600;
 }
-
+.hero-image-wrapper {
+  background-image: url('/en/overview/overview_hero_desktop.png');
+  @include en-tablet {
+    background-image: url('/en/overview/overview_hero_tablet.png');
+  }
+  @include en-mobile {
+    background-image: url('/en/overview/overview_hero_mobile.png');
+  }
+}
+.graph-image-wrapper {
+  background-image: url('/en/overview/overview_graph_desktop.png');
+  @include en-tablet {
+    background-image: url('/en/overview/overview_graph_tablet.png');
+  }
+  @include en-mobile {
+    background-image: url('/en/overview/overview_graph_mobile.png');
+  }
+}
 .start-button {
   height: 48px;
   font-weight: 600;
@@ -590,7 +578,6 @@ strong {
   letter-spacing: 0.1em;
   transition: all ease-in-out 0.2s;
   z-index: 1;
-
   a {
     @include center-center();
     width: 100%;
@@ -598,13 +585,11 @@ strong {
     vertical-align: center;
     text-align: center;
   }
-
   // &:hover {
   //   @include elevation-3;
   //   color: rgba($white, 0.6);
   //   transform: translateY(-2px);
   // }
-
   // &:active {
   //   @include elevation-3;
   //   color: rgba($white, 0.6);
@@ -615,7 +600,6 @@ strong {
   @include relative;
   width: 100%;
   height: 100%;
-
   .inner-case-studies {
     @include flex($dir: column);
     align-items: center;
@@ -623,20 +607,17 @@ strong {
     height: 100%;
     margin: 0 auto;
     padding: 168px 0px 0px;
-
     @include en-tablet {
       padding: 132px 0px 0px;
     }
     @include en-mobile {
       padding: 98px 0px 0px;
     }
-
     .case-studies-wrapper {
       @include vertical-center();
       margin: 0px auto;
       align-items: center;
     }
-
     .case-wrapper {
       position: relative;
       display: flex;
@@ -645,17 +626,14 @@ strong {
       width: 100%;
       height: 100%;
       margin: 0px auto;
-
       @include en-tablet {
         @include vertical-center;
         padding: 0px 20px;
       }
-
       @include en-mobile {
         @include vertical-center;
         padding: 0px;
       }
-
       .case {
         @include relative();
         @include vertical-center();
@@ -667,11 +645,9 @@ strong {
         border-radius: 10px;
         margin-bottom: 20px;
         background-color: white;
-
         @include en-tablet {
           height: auto;
         }
-
         @include en-mobile {
           max-width: 352px;
           width: 100%;
@@ -680,31 +656,26 @@ strong {
           margin-bottom: 0px;
           box-shadow: none;
           background-color: transparent;
-
           @media only screen and (min-width: 360px) {
             margin-bottom: 20px;
             border-radius: 10px;
             background-color: white;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.18);
-
             &:last-child {
               margin-bottom: 52px;
             }
           }
         }
-
         .image-wrapper {
           min-height: 312px;
           @include en-mobile {
             min-height: 226px;
           }
-
           img {
             display: block;
             height: 312px;
             object-fit: cover;
             pointer-events: none;
-
             @include en-mobile {
               width: 360px;
               height: auto;

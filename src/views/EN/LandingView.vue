@@ -348,7 +348,7 @@
       class="section flex w-full flex-col items-center pb-46 pt-72 lg:py-86 bg-gray-50"
     >
       <p
-        class="mb-34 md:mb-22 lg:mb-32 text-center px-30 text-16 font-regular lg:text-22 md:text-20 leading-[150%]"
+        class="mb-34 md:mb-22 lg:mb-32 text-center px-28 text-16 font-regular lg:text-22 md:text-20 leading-[150%]"
       >
         <span>Join some of the biggest names&nbsp;</span>
         <span>in real estate development</span>
