@@ -3,7 +3,7 @@
     <div class="section section-case-studies">
       <div class="section-inner inner-case-studies">
         <section
-          class="flex flex-col relative pl-18 md:pl-0 pb-52 w-[288px] mx-auto items-start lg:items-start md:items-start lg:px-60 lg:w-[1024px] md:pb-[260px] md:w-[660px] md:px-80"
+          class="flex flex-col relative pl-18 md:pl-0 pb-70 w-[288px] mx-auto items-start lg:items-start md:items-start lg:px-60 lg:w-[1024px] md:pb-[260px] md:w-[660px] md:px-80"
         >
           <div
             class="w-[296px] hero-image-wrapper md:h-[456px] md:min-h-[456px] h-[296px] min-h-[296px] lg:min-h-[352px] lg:h-[352px] md:w-[480px] lg:w-[584px] mb-24 md:mb-0 lg:mb-0 md:absolute md:bottom-0 md:right-0 lg:absolute lg:bottom-[32px] lg:right-0"
@@ -15,7 +15,7 @@
               Zenerate™ Web App
             </p>
             <p
-              class="text-24 font-medium mb-16 md:mb-20 lg:mb-20 lg:text-30 text-black leading-[135%] md:text-28 lg:text-28"
+              class="text-24 font-medium mb-16 md:mb-20 lg:mb-20 lg:text-32 text-black leading-[135%] md:text-28"
             >
               Instantly evaluate<br />
               development potential<br />
@@ -57,7 +57,7 @@
           class="case-studies-wrapper pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[148px] lg:pb-[4%]"
         >
           <div
-            class="bg-gray-50 absolute origin-top-left md:rotate-[3deg] lg:rotate-[2deg] w-[130vw] h-full top-0 left-0 z-[-1] transform-sc"
+            class="bg-gray-50 absolute origin-top-left md:rotate-[3deg] lg:rotate-[2deg] w-[150%] h-full top-0 left-0 z-[-1] transform-sc"
           ></div>
           <p
             class="text-22 w-full max-w-[352px] md:max-w-[488px] lg:max-w-[488px] pl-34 md:pl-0 lg:pl-0 mb-44 md:mb-52 lg:mb-42 font-regular text-left md:text-center lg:text-center text-black md:text-28 lg:text-30 leading-[135%]"
@@ -80,14 +80,14 @@
               >
                 <div class="flex flex-nowrap">
                   <p
-                    class="min-w-18 w-18 h-18 md:w-30 md:min-w-30 md:h-30 lg:w-30 lg:min-w-30 flex leading-[150%] items-center justify-center lg:h-30 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-20 text-12 lg:text-20 font-semibold"
+                    class="lg:mt-2 md:mt-3 min-w-18 w-18 h-18 md:w-30 md:min-w-30 md:h-30 lg:w-30 lg:min-w-30 flex leading-[150%] items-center justify-center lg:h-30 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-20 text-12 lg:text-20 font-semibold"
                   >
                     1
                   </p>
 
                   <div class="flex flex-col">
                     <p
-                      class="mb-10 font-medium text-16 lg:text-28 md:text-30 md:mb-14 lg:mb-14"
+                      class="mb-10 font-medium text-16 lg:text-26 md:text-30 md:mb-14 lg:mb-14"
                     >
                       <span>Find a site &&nbsp;</span>
                       <span>review zoning info</span>
@@ -117,14 +117,14 @@
               >
                 <div class="flex flex-nowrap">
                   <p
-                    class="min-w-18 w-18 h-18 md:w-34 md:min-w-34 md:h-34 lg:w-34 lg:min-w-34 flex leading-[150%] items-center justify-center lg:h-34 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-22 text-12 lg:text-22 font-semibold"
+                    class="lg:mt-2 md:mt-3 min-w-18 w-18 h-18 md:w-30 md:min-w-30 md:h-30 lg:w-30 lg:min-w-30 flex leading-[150%] items-center justify-center lg:h-30 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-20 text-12 lg:text-20 font-semibold"
                   >
                     2
                   </p>
 
                   <div class="flex flex-col">
                     <p
-                      class="mb-10 font-medium lg:text-28 text-16 md:text-30 md:mb-14 lg:mb-14"
+                      class="mb-10 font-medium lg:text-26 text-16 md:text-30 md:mb-14 lg:mb-14"
                     >
                       Click Start Zenerating
                     </p>
@@ -153,14 +153,14 @@
               >
                 <div class="flex flex-nowrap">
                   <p
-                    class="min-w-18 w-18 h-18 md:w-34 md:min-w-34 md:h-34 lg:w-34 lg:min-w-34 flex leading-[150%] items-center justify-center lg:h-34 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-22 text-12 lg:text-22 font-semibold"
+                    class="lg:mt-2 md:mt-3 min-w-18 w-18 h-18 md:w-30 md:min-w-30 md:h-30 lg:w-30 lg:min-w-30 flex leading-[150%] items-center justify-center lg:h-30 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-20 text-12 lg:text-20 font-semibold"
                   >
                     3
                   </p>
 
                   <div class="flex flex-col">
                     <p
-                      class="mb-10 font-medium lg:text-28 text-16 md:text-30 md:mb-14 lg:mb-14"
+                      class="mb-10 font-medium lg:text-26 text-16 md:text-30 md:mb-14 lg:mb-14"
                     >
                       Review zenerated solutions
                     </p>
@@ -189,14 +189,14 @@
               >
                 <div class="flex flex-nowrap">
                   <p
-                    class="min-w-18 w-18 h-18 md:w-34 md:min-w-34 md:h-34 lg:w-34 lg:min-w-34 flex leading-[150%] items-center justify-center lg:h-34 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-22 text-12 lg:text-22 font-semibold"
+                    class="lg:mt-2 md:mt-3 min-w-18 w-18 h-18 md:w-30 md:min-w-30 md:h-30 lg:w-30 lg:min-w-30 flex leading-[150%] items-center justify-center lg:h-30 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-20 text-12 lg:text-20 font-semibold"
                   >
                     4
                   </p>
 
                   <div class="flex flex-col">
                     <p
-                      class="mb-10 font-medium lg:text-28 text-16 md:text-30 md:mb-14 lg:mb-14"
+                      class="mb-10 font-medium lg:text-26 text-16 md:text-30 md:mb-14 lg:mb-14"
                     >
                       Download a report
                     </p>
@@ -385,27 +385,27 @@
         </section>
 
         <section
-          class="pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[148px] lg:pb-[4%]"
+          class="pt-66 md:pt-[186px] relative w-full md:pb-[90px] lg:pt-[186px] lg:pb-[90px]"
         >
           <div
-            class="bg-[#333B61] absolute origin-top-left md:rotate-[3deg] lg:rotate-[2deg] w-[130vw] h-full top-0 left-0 z-[-1] transform-sc"
+            class="bg-[#333B61] absolute origin-top-left md:rotate-[3deg] lg:rotate-[2deg] w-[150%] h-full top-0 left-0 z-[-1] transform-sc"
           ></div>
           <div class="flex flex-col w-full mx-auto">
             <p
-              class="font-regular w-[352px] mx-auto md:w-full lg:w-full text-24 md:text-center md:px-20 px-32 lg:text-center leading-[135%] mb-30 text-white md:text-28 md:mb-24 lg:text-32 lg:mb-42"
+              class="font-regular w-[352px] mx-auto md:w-full lg:w-full text-24 md:text-center md:px-20 px-32 lg:text-center leading-[135%] mb-30 text-white md:text-28 md:mb-50 lg:text-34 lg:mb-50"
             >
               <strong>Maximize </strong>
               <span>project returns</span>
             </p>
 
             <div
-              class="graph-image-wrapper w-[296px] h-[632px] min-h-[632px] md:h-[448px] lg:h-[640px] lg:min-h-[640px] md:min-h-[448px] md:w-[704px] lg:w-[1000px] mb-60 mx-auto"
+              class="graph-image-wrapper w-[296px] h-[632px] min-h-[632px] md:h-[416px] lg:h-[600px] lg:min-h-[600px] md:min-h-[416px] md:w-[664px] lg:w-[944px] mb-60 mx-auto"
             ></div>
             <div
               class="flex flex-col w-[352px] mx-auto md:w-[510px] lg:w-[840px] lg:items-center"
             >
               <p
-                class="font-semibold text-20 px-32 md:text-26 md:px-20 mb-18 lg:text-30 text-white md:mb-24 lg:mb-24 lg:text-center"
+                class="font-semibold text-20 px-32 md:text-26 md:px-20 mb-18 lg:text-26 text-white md:mb-24 lg:mb-24 lg:text-center"
               >
                 by exploring ALL possibilities
               </p>
@@ -488,7 +488,9 @@
         </section>
       </div>
 
-      <section class="pt-38 pb-76 md:pt-110 md:pb-90 lg:pt-[8%]">
+      <section
+        class="pt-38 pb-76 md:pt-[156px] md:pb-[150px] lg:pt-[156px] lg:pb-[150px]"
+      >
         <div
           class="flex flex-col md:items-center mx-auto w-[260px] md:w-auto lg:w-auto lg:items-center"
         >
@@ -555,6 +557,7 @@ strong {
 }
 .hero-image-wrapper {
   background-image: url('/en/overview/overview_hero_desktop.png');
+  background-size: cover;
   @include en-tablet {
     background-image: url('/en/overview/overview_hero_tablet.png');
   }
@@ -563,6 +566,7 @@ strong {
   }
 }
 .graph-image-wrapper {
+  background-size: cover;
   background-image: url('/en/overview/overview_graph_desktop.png');
   @include en-tablet {
     background-image: url('/en/overview/overview_graph_tablet.png');

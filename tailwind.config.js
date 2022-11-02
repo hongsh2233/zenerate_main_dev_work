@@ -116,6 +116,7 @@ module.exports = {
           300: '#AD7BFF',
           400: '#9555FF',
           500: '#8032FF',
+          700: '#6D2BDA',
         },
         magenta: {
           200: '#FEAEFF',

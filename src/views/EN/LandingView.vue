@@ -52,15 +52,23 @@
             Zenerate™ App
           </p>
         </div>
-        <div class="w-full md:h-[506px] lg:h-[506px] h-[330px] bg-blue-400">
-          slider
+        <div
+          class="slider-wrapper first-slider relative w-full md:h-[506px] lg:h-[506px] h-[330px] bg-blue-400"
+        >
+          <template v-for="index in 9" :key="index">
+            <img
+              class="w-full h-full"
+              :src="`/en/landing/slider1/pic${index}.jpg`"
+              :alt="`slider-image${index}`"
+            />
+          </template>
         </div>
         <div
-          class="flex flex-col pt-38 px-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
+          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 px-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
         >
           <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
             <p
-              class="text-primary md:text-18 lg:text-18 text-12 mb-8 font-semibold"
+              class="text-primary md:text-18 lg:text-18 text-12 mb-8 md:mb-10 lg:mb-10 font-semibold"
             >
               The Zenerate™ App
             </p>
@@ -178,14 +186,22 @@
             </svg>
           </div>
         </div>
-        <div class="w-full md:h-[506px] lg:h-[506px] h-[330px] bg-blue-400">
-          slider
+        <div
+          class="slider-wrapper second-slider relative w-full md:h-[506px] lg:h-[506px] h-[330px] bg-blue-400"
+        >
+          <template v-for="index in 5" :key="index">
+            <img
+              class="w-full h-full"
+              :src="`/en/landing/slider2/pic${index}.jpg`"
+              :alt="`slider-image${index}`"
+            />
+          </template>
         </div>
         <div
-          class="flex flex-col pt-38 px-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
+          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 px-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
         >
           <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
-            <p class="flex flex-nowrap mb-6">
+            <p class="flex flex-nowrap mb-6 md:mb-10 lg:mb-10">
               <span
                 class="bg-purple-50 mr-4 text-purple-500 text-12-medium md:text-14-semibold lg:text-14-semibold rounded-26 py-4 px-9 w-fit"
                 >New Product</span
@@ -205,7 +221,7 @@
           </div>
 
           <div
-            class="hidden-en-mobile lg:h-[108px] text-18 font-regular leading-[150%] mb-36 text-gray-700"
+            class="hidden-en-mobile lg:h-[108px] text-18 font-regular leading-[150%] mb-28 text-gray-700"
           >
             <p>
               No more going through public records to <br />
@@ -260,7 +276,7 @@
             >
           </div>
           <p
-            class="text-14 font-regular pl-12 lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
+            class="text-14 font-regular md:text-center pl-12 lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
           >
             Not only was Zenerate able to raise the valuation of our sites by an
             average of 23%, our clients and partners were blown away with the
@@ -302,7 +318,7 @@
             >
           </div>
           <p
-            class="text-14 font-regular pl-12 lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
+            class="text-14 font-regular pl-12 md:text-center lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
           >
             As developers, our job is to ultimately maximize the potential
             returns within a given site. Zenerate, with their AI technology,
@@ -345,7 +361,7 @@
     </section>
 
     <section
-      class="section flex w-full flex-col items-center pb-46 pt-72 lg:py-86 bg-gray-50"
+      class="section flex w-full flex-col items-center py-72 lg:py-86 bg-gray-50"
     >
       <p
         class="mb-34 md:mb-22 lg:mb-32 text-center px-28 text-16 font-regular lg:text-22 md:text-20 leading-[150%]"
@@ -416,6 +432,172 @@ strong {
 .arrow-blue {
   &::v-deep(path) {
     stroke: #4747ff;
+  }
+}
+
+@keyframes showMe {
+  0% {
+    visibility: visible;
+    z-index: 100;
+    opacity: 0;
+  }
+  5% {
+    visibility: visible;
+    z-index: 100;
+    opacity: 1;
+  }
+
+  97% {
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    z-index: 0;
+    opacity: 0;
+  }
+}
+
+.slider-wrapper {
+  background-size: cover;
+  background-position: bottom left;
+
+  img {
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    opacity: 0;
+  }
+
+  &.first-slider {
+    background-image: url('/en/landing/slider1/pic2.jpg');
+
+    img {
+      animation: showMe 8s linear infinite 0s forwards;
+      animation-play-state: paused;
+
+      @include en-tablet {
+        animation-play-state: running;
+      }
+
+      @include en-mobile {
+        animation-play-state: running;
+      }
+
+      &:nth-child(1) {
+        z-index: 9;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 1s;
+        z-index: 8;
+      }
+      &:nth-child(3) {
+        animation-delay: 2s;
+        z-index: 7;
+      }
+      &:nth-child(4) {
+        animation-delay: 3s;
+        z-index: 6;
+      }
+
+      &:nth-child(5) {
+        animation-delay: 4s;
+        z-index: 5;
+      }
+
+      &:nth-child(6) {
+        animation-delay: 5s;
+        z-index: 4;
+      }
+
+      &:nth-child(7) {
+        animation-delay: 5.7s;
+        z-index: 3;
+      }
+
+      &:nth-child(8) {
+        animation-delay: 6.4s;
+        z-index: 2;
+      }
+
+      &:nth-child(9) {
+        animation-delay: 7.1s;
+        z-index: 1;
+      }
+    }
+
+    &:hover img {
+      animation-play-state: running;
+      opacity: 1;
+    }
+  }
+
+  @keyframes showMeSlow {
+    0% {
+      visibility: visible;
+      z-index: 100;
+      opacity: 0;
+    }
+
+    5% {
+      opacity: 0.6;
+    }
+
+    8% {
+      visibility: visible;
+      z-index: 100;
+      opacity: 1;
+    }
+
+    100% {
+      visibility: hidden;
+      z-index: 0;
+      opacity: 1;
+    }
+  }
+
+  &.second-slider {
+    background-image: url('/en/landing/slider2/pic4.jpg');
+
+    img {
+      animation: showMeSlow 10s linear infinite 0s forwards;
+      animation-play-state: paused;
+
+      @include en-tablet {
+        animation-play-state: running;
+      }
+
+      @include en-mobile {
+        animation-play-state: running;
+      }
+
+      &:nth-child(1) {
+        z-index: 9;
+      }
+      &:nth-child(2) {
+        animation-delay: 2s;
+        z-index: 8;
+      }
+      &:nth-child(3) {
+        animation-delay: 4s;
+        z-index: 7;
+      }
+      &:nth-child(4) {
+        animation-delay: 6s;
+        z-index: 6;
+      }
+
+      &:nth-child(5) {
+        animation-delay: 8s;
+        z-index: 5;
+      }
+    }
+
+    &:hover img {
+      animation-play-state: running;
+      opacity: 1;
+    }
   }
 }
 

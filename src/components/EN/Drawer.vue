@@ -249,7 +249,7 @@ const close = () => {
       @include flex($dir: column);
 
       &:first-child {
-        border-top: 1px solid $footer;
+        border-top: 1px solid theme('colors.gray.100');
       }
 
       .navigation-link-list {
@@ -311,10 +311,10 @@ const close = () => {
 
           &:hover,
           :active {
-            color: theme('colors.core.700');
+            color: theme('colors.primary.DEFAULT');
 
             :deep(path) {
-              fill: theme('colors.core.700');
+              fill: theme('colors.primary.DEFAULT');
               opacity: 1;
             }
           }
@@ -328,12 +328,21 @@ const close = () => {
           @include semi-bold(18);
           @include flex();
           align-items: center;
-          color: theme('colors.core.700');
+          color: theme('colors.primary.DEFAULT');
 
           i {
             @include semi-bold(18);
-            color: theme('colors.core.700');
+            color: theme('colors.primary.DEFAULT');
             margin: 0px 0px 0px 14px;
+          }
+
+          &:hover,
+          :active {
+            color: theme('colors.core.700');
+
+            i {
+              color: theme('colors.core.700');
+            }
           }
         }
       }

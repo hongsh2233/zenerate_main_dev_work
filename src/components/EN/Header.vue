@@ -395,7 +395,7 @@ const toggleNav = (primary: String) => {
           p {
             &:hover {
               transition: color ease-in-out 0.2s;
-              color: theme('colors.core.700');
+              color: theme('colors.primary.DEFAULT');
             }
           }
 
@@ -407,7 +407,7 @@ const toggleNav = (primary: String) => {
 
             &:hover {
               transition: color ease-in-out 0.2s;
-              color: theme('colors.core.700');
+              color: theme('colors.primary.DEFAULT');
               font-weight: 500;
             }
           }
@@ -468,7 +468,7 @@ const toggleNav = (primary: String) => {
 
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-  color: theme('colors.core.700');
+  color: theme('colors.primary.DEFAULT');
 
   i {
     transform: rotate(-180deg);
@@ -485,7 +485,7 @@ const toggleNav = (primary: String) => {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
   z-index: 1;
   border-radius: 8px;
-  border: 1px solid $footer;
+  border: 1px solid theme('colors.gray.100');
 
   svg {
     margin-right: 8px;
@@ -503,11 +503,11 @@ const toggleNav = (primary: String) => {
 }
 
 .dropdown-content a:hover {
-  color: theme('colors.core.700');
+  color: theme('colors.primary.DEFAULT');
 
   :deep(svg) {
     path {
-      fill: theme('colors.core.700');
+      fill: theme('colors.primary.DEFAULT');
     }
   }
 }
