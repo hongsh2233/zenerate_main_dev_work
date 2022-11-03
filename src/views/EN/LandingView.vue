@@ -430,6 +430,8 @@ import Footer from '/Components/EN/Footer.vue'
 import PartnersList from '/Constants/partners'
 import { useGtag } from 'vue-gtag-next'
 import ImagePreloader from '/Utils/ImagePreloader'
+import { getOSByUserAgent } from '/Utils/getOSByUserAgent'
+
 const { event } = useGtag()
 const goToApp = () => {
   event('generate_lead', {
@@ -446,17 +448,27 @@ const slider1Images = Array(9)
 const slider2Images = Array(4)
   .fill('')
   .map((v, i) => `/en/landing/slider2/pic${i + 1}.jpg`)
+const userAgent = getOSByUserAgent()
 
 onBeforeMount(() => {
-  ImagePreloader.sequential([
-    ...slider1Images[slider1PosterIndex],
-    ...slider2Images[slider2PosterIndex],
-  ])
+  if (userAgent === 'web') {
+    ImagePreloader.sequential([
+      ...slider1Images[slider1PosterIndex],
+      ...slider2Images[slider2PosterIndex],
+    ])
+  } else {
+    ImagePreloader.sequential(slider1Images)
+    ImagePreloader.sequential(slider2Images)
+  }
 })
 
 onMounted(() => {
-  ImagePreloader.sequential(slider1Images)
-  ImagePreloader.sequential(slider2Images)
+  if (userAgent === 'web') {
+    nextTick(() => {
+      ImagePreloader.sequential(slider1Images)
+      ImagePreloader.sequential(slider2Images)
+    })
+  }
 })
 </script>
 <style lang="scss" scoped>
