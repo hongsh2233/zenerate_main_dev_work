@@ -14,8 +14,8 @@ module.exports = {
   theme: {
     screens: {
       base: { max: '767px' },
-      md: { min: '768px', max: '1199px' },
-      lg: { min: '1200px' },
+      md: { min: '768px', max: '1023px' },
+      lg: { min: '1024px' },
     },
     fontWeight: {
       bold: 700,

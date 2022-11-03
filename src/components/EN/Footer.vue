@@ -213,6 +213,11 @@ const toggleLang = (flag?: boolean) => {
 }
 </script>
 <style lang="scss" scoped>
+p,
+span {
+  cursor: default;
+}
+
 .section-footer {
   background-color: white;
   padding-top: 52px;

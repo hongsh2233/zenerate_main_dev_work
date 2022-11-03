@@ -55,11 +55,12 @@
         <div
           class="slider-wrapper first-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] bg-blue-400 overflow-hidden"
         >
-          <template v-for="index in 9" :key="index">
+          <template v-for="(src, index) in slider1Images" :key="index">
             <img
               class="w-full h-full"
-              :src="`/en/landing/slider1/pic${index}.jpg`"
+              :src="src"
               :alt="`slider-image${index}`"
+              rel="preload"
             />
           </template>
           <div
@@ -192,11 +193,12 @@
         <div
           class="slider-wrapper second-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] bg-blue-400 overflow-hidden"
         >
-          <template v-for="index in 4" :key="index">
+          <template v-for="(src, index) in slider2Images" :key="index">
             <img
               class="w-full h-full"
-              :src="`/en/landing/slider2/pic${index}.jpg`"
+              :src="src"
               :alt="`slider-image${index}`"
+              rel="preload"
             />
           </template>
           <div
@@ -414,12 +416,20 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, watch, onMounted, onBeforeUnmount, computed } from 'vue'
+import {
+  ref,
+  watch,
+  onMounted,
+  onBeforeUnmount,
+  onBeforeMount,
+  computed,
+  nextTick,
+} from 'vue'
 import { useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 import PartnersList from '/Constants/partners'
 import { useGtag } from 'vue-gtag-next'
-
+import ImagePreloader from '/Utils/ImagePreloader'
 const { event } = useGtag()
 const goToApp = () => {
   event('generate_lead', {
@@ -428,11 +438,30 @@ const goToApp = () => {
   })
 }
 
-const router = useRouter()
+const slider1Images = Array(9)
+  .fill('')
+  .map((v, i) => `/en/landing/slider1/pic${i + 1}.jpg`)
+const slider2Images = Array(4)
+  .fill('')
+  .map((v, i) => `/en/landing/slider2/pic${i + 1}.jpg`)
+
+onBeforeMount(() => {
+  ImagePreloader.sequential([...slider1Images[0], ...slider2Images[0]])
+})
+
+onMounted(() => {
+  ImagePreloader.sequential(slider1Images.slice(1))
+  ImagePreloader.sequential(slider2Images.slice(1))
+})
 </script>
 <style lang="scss" scoped>
 strong {
   font-weight: 600;
+}
+
+p,
+span {
+  cursor: default;
 }
 
 .arrow-blue {
@@ -470,21 +499,44 @@ strong {
 }
 
 @include en-desktop {
-  .slider-group:hover {
-    .slider-wrapper {
-      img {
-        animation-play-state: running;
-        opacity: 1;
+  @media (any-pointer: fine) {
+    .slider-group:hover {
+      .slider-wrapper {
+        img {
+          animation-play-state: running;
+          opacity: 1;
+        }
+      }
+    }
+    .slider-group:not(:hover) {
+      .slider-wrapper {
+        img {
+          animation-play-state: paused;
+          z-index: -1 !important;
+          opacity: 0 !important;
+        }
       }
     }
   }
 
-  .slider-group:not(:hover) {
-    .slider-wrapper {
-      img {
-        animation-play-state: paused;
-        z-index: -1 !important;
-        opacity: 0 !important;
+  @media (any-pointer: coarse) {
+    .slider-group {
+      .slider-wrapper {
+        img {
+          animation-play-state: running;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media (any-hover: none) {
+    .slider-group {
+      .slider-wrapper {
+        img {
+          animation-play-state: running;
+          opacity: 1;
+        }
       }
     }
   }

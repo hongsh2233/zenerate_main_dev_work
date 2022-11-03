@@ -557,6 +557,12 @@ const { meta } = useMeta({
 strong {
   font-weight: 600;
 }
+
+p,
+span {
+  cursor: default;
+}
+
 .hero-image-wrapper {
   background-image: url('/en/overview/overview_hero_desktop.png');
   background-size: cover;
