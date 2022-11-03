@@ -440,6 +440,7 @@ const goToApp = () => {
   })
 }
 
+const userAgent = getOSByUserAgent()
 const slider1PosterIndex = 1
 const slider2PosterIndex = 3
 const slider1Images = Array(9)
@@ -448,24 +449,24 @@ const slider1Images = Array(9)
 const slider2Images = Array(4)
   .fill('')
   .map((v, i) => `/en/landing/slider2/pic${i + 1}.jpg`)
-const userAgent = getOSByUserAgent()
 
 onBeforeMount(() => {
+  ImagePreloader.sequential([
+    ...slider1Images[slider1PosterIndex],
+    ...slider2Images[slider2PosterIndex],
+  ])
+
   if (userAgent === 'web') {
-    ImagePreloader.sequential([
-      ...slider1Images[slider1PosterIndex],
-      ...slider2Images[slider2PosterIndex],
-    ])
-  } else {
     ImagePreloader.sequential(slider1Images)
     ImagePreloader.sequential(slider2Images)
+  } else {
+    ImagePreloader.sequential(slider1Images)
   }
 })
 
 onMounted(() => {
-  if (userAgent === 'web') {
+  if (userAgent !== 'web') {
     nextTick(() => {
-      ImagePreloader.sequential(slider1Images)
       ImagePreloader.sequential(slider2Images)
     })
   }
