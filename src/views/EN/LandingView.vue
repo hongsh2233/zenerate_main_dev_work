@@ -53,7 +53,7 @@
           </p>
         </div>
         <div
-          class="slider-wrapper first-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] bg-blue-400 overflow-hidden"
+          class="slider-wrapper first-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] overflow-hidden"
         >
           <template v-for="(src, index) in slider1Images" :key="index">
             <img
@@ -191,7 +191,7 @@
           </div>
         </div>
         <div
-          class="slider-wrapper second-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] bg-blue-400 overflow-hidden"
+          class="slider-wrapper second-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] overflow-hidden"
         >
           <template v-for="(src, index) in slider2Images" :key="index">
             <img
