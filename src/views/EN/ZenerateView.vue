@@ -221,7 +221,7 @@
               class="case shadow-100 overflow-x-hidden lg:!w-full lg:!h-auto"
             >
               <div
-                class="flex flex-col pt-46 md:pl-74 w-full lg:pl-84 md:pl-74 pl-34 pb-60 lg:pr-100 lg:flex-row lg:!justify-around lg:items-center"
+                class="flex flex-col pt-46 md:pl-74 w-full lg:pl-84 pl-56 pb-60 lg:pr-100 lg:flex-row lg:!justify-around lg:items-center"
               >
                 <div
                   class="flex flex-col items-start mb-22 md:mb-28 lg:mb-12 lg:pl-26"

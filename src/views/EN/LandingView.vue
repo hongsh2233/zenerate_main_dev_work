@@ -53,7 +53,7 @@
           </p>
         </div>
         <div
-          class="slider-wrapper first-slider shadow-100 relative w-full md:h-[506px] lg:h-[506px] h-[350px] bg-blue-400"
+          class="slider-wrapper first-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] bg-blue-400 overflow-hidden"
         >
           <template v-for="index in 9" :key="index">
             <img
@@ -62,9 +62,12 @@
               :alt="`slider-image${index}`"
             />
           </template>
+          <div
+            class="absolute top-[-10px] left-[-8px] w-[calc(100%_+_16px)] h-[calc(100%_+_16px)] inner-shadow"
+          ></div>
         </div>
         <div
-          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 px-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
+          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 pl-54 pr-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
         >
           <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
             <p
@@ -187,7 +190,7 @@
           </div>
         </div>
         <div
-          class="slider-wrapper second-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] bg-blue-400"
+          class="slider-wrapper second-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] bg-blue-400 overflow-hidden"
         >
           <template v-for="index in 4" :key="index">
             <img
@@ -196,9 +199,12 @@
               :alt="`slider-image${index}`"
             />
           </template>
+          <div
+            class="absolute top-[-10px] left-[-8px] w-[calc(100%_+_16px)] h-[calc(100%_+_16px)] inner-shadow"
+          ></div>
         </div>
         <div
-          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 px-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
+          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 pl-54 pr-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
         >
           <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
             <p class="flex flex-nowrap mb-6 md:mb-10 lg:mb-10">
@@ -433,6 +439,11 @@ strong {
   &::v-deep(path) {
     stroke: #4747ff;
   }
+}
+
+.inner-shadow {
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px inset;
+  z-index: 999;
 }
 
 @keyframes showMe {
