@@ -68,7 +68,7 @@
 
           <div class="case-wrapper lg:max-w-[996px] lg:justify-between">
             <article class="case shadow-100 overflow-x-hidden">
-              <div class="image-wrapper w-full">
+              <div class="image-wrapper w-full relative overflow-hidden">
                 <img
                   class="img-map"
                   src="/en/overview/overview_step_1.jpg"
@@ -76,6 +76,9 @@
                   rel="preload"
                   decoding="async"
                 />
+                <div
+                  class="absolute top-[-10px] left-[-8px] w-[calc(100%_+_16px)] h-[calc(100%_+_16px)] inner-shadow"
+                ></div>
               </div>
               <div
                 class="pl-34 pt-32 pb-40 md:pt-40 w-full md:pl-50 md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
@@ -107,7 +110,7 @@
             </article>
 
             <article class="case shadow-100 overflow-x-hidden">
-              <div class="image-wrapper w-full">
+              <div class="image-wrapper w-full relative overflow-hidden">
                 <img
                   class="img-map"
                   src="/en/overview/overview_step_2.jpg"
@@ -115,6 +118,9 @@
                   decoding="async"
                   loading="lazy"
                 />
+                <div
+                  class="absolute top-[-10px] left-[-8px] w-[calc(100%_+_16px)] h-[calc(100%_+_16px)] inner-shadow"
+                ></div>
               </div>
               <div
                 class="pl-34 pt-32 pb-40 md:pt-40 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
@@ -145,7 +151,7 @@
             </article>
 
             <article class="case shadow-100 overflow-x-hidden">
-              <div class="image-wrapper w-full">
+              <div class="image-wrapper w-full relative overflow-hidden">
                 <img
                   class="img-map"
                   src="/en/overview/overview_step_3.jpg"
@@ -153,6 +159,9 @@
                   decoding="async"
                   loading="lazy"
                 />
+                <div
+                  class="absolute top-[-10px] left-[-8px] w-[calc(100%_+_16px)] h-[calc(100%_+_16px)] inner-shadow"
+                ></div>
               </div>
               <div
                 class="pl-34 pt-32 pb-40 md:pt-40 lg:pr-36 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
@@ -183,7 +192,7 @@
             </article>
 
             <article class="case shadow-100 overflow-x-hidden">
-              <div class="image-wrapper w-full">
+              <div class="image-wrapper w-full relative overflow-hidden">
                 <img
                   class="img-map"
                   src="/en/overview/overview_step_4.jpg"
@@ -191,6 +200,9 @@
                   decoding="async"
                   loading="lazy"
                 />
+                <div
+                  class="absolute top-[-10px] left-[-8px] w-[calc(100%_+_16px)] h-[calc(100%_+_16px)] inner-shadow"
+                ></div>
               </div>
               <div
                 class="pl-34 pt-32 pb-40 md:pt-40 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
@@ -616,6 +628,11 @@ strong {
 p,
 span {
   cursor: default;
+}
+
+.inner-shadow {
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px inset;
+  z-index: 999;
 }
 
 .hero-image-wrapper {
