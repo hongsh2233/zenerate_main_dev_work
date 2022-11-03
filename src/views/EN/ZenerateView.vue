@@ -3,10 +3,10 @@
     <div class="section section-case-studies">
       <div class="section-inner inner-case-studies">
         <section
-          class="flex flex-col relative pl-18 md:pl-0 pb-70 w-[288px] mx-auto items-start lg:items-start md:items-start lg:px-60 lg:w-[1024px] md:pb-[260px] md:w-[660px] md:px-80"
+          class="flex flex-col relative pl-18 md:pl-0 pb-70 w-[288px] mx-auto items-start lg:items-start md:items-start lg:pl-44 lg:pr-0 lg:w-[1024px] md:pb-[260px] md:w-[660px] md:px-80"
         >
           <div
-            class="w-[296px] hero-image-wrapper md:h-[456px] md:min-h-[456px] h-[296px] min-h-[296px] lg:min-h-[352px] lg:h-[352px] md:w-[480px] lg:w-[584px] mb-24 md:mb-0 lg:mb-0 md:absolute md:bottom-0 md:right-0 lg:absolute lg:bottom-[32px] lg:right-0"
+            class="w-[296px] hero-image-wrapper md:h-[456px] md:min-h-[456px] h-[296px] min-h-[296px] lg:min-h-[352px] lg:h-[352px] md:w-[480px] lg:w-[584px] mb-24 md:mb-0 lg:mb-0 md:absolute md:bottom-0 md:right-0 lg:absolute lg:bottom-[32px] lg:right-[-28px]"
           ></div>
           <div class="flex flex-col">
             <p
@@ -221,9 +221,11 @@
               class="case shadow-100 overflow-x-hidden lg:!w-full lg:!h-auto"
             >
               <div
-                class="flex flex-col pt-42 md:pl-74 w-full md:pl-74 pl-34 pb-56 lg:flex-row lg:!justify-around lg:items-center"
+                class="flex flex-col pt-46 md:pl-74 w-full lg:pl-84 md:pl-74 pl-34 pb-60 lg:pr-100 lg:flex-row lg:!justify-around lg:items-center"
               >
-                <div class="flex flex-col items-start mb-22 md:mb-28 lg:mb-12">
+                <div
+                  class="flex flex-col items-start mb-22 md:mb-28 lg:mb-12 lg:pl-26"
+                >
                   <div>
                     <svg
                       width="72"
@@ -284,7 +286,7 @@
                 </div>
 
                 <div
-                  class="flex flex-col text-14 items-start font-regular text-gray-700 leading-[150%] md:text-18 lg:text-18"
+                  class="flex flex-col text-14 lg:pt-10 items-start font-regular text-gray-700 leading-[150%] md:text-18 lg:text-18"
                 >
                   <p class="font-medium mb-8 md:mb-10 lg:mb-10">
                     Cut down on weeks & months of
@@ -427,7 +429,7 @@
               class="bg-white/10 md:shadow-100 lg:shadow-100 md:rounded-10 lg:rounded-10 flex flex-col md:w-[510px] lg:w-[840px] mx-auto w-full"
             >
               <div
-                class="flex flex-col mx-auto pt-42 w-[280px] md:px-74 lg:w-full md:w-full md:pl-74 pb-56 lg:flex-row lg:!justify-around lg:items-center"
+                class="flex flex-col mx-auto pt-45 w-[280px] lg:pl-38 md:px-74 lg:pt-48 lg:pr-10 lg:w-full md:w-full md:pl-74 pb-56 lg:flex-row lg:!justify-around lg:items-center"
               >
                 <div class="flex flex-col items-start mb-22 md:mb-28 lg:mb-12">
                   <div>

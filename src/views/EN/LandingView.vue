@@ -37,7 +37,7 @@
       class="section flex flex-col lg:flex-row items-center lg:items-start lg:justify-center"
     >
       <article
-        class="case mb-16 lg:mr-12 lg:w-[490px] shadow-200 overflow-x-hidden"
+        class="case mb-16 slider-group lg:mr-12 lg:w-[490px] shadow-200 overflow-x-hidden"
       >
         <div
           class="w-full h-114 md:h-172 lg:h-172 bg-core-500 justify-between text-white flex flex-col px-18 pt-18 pb-14 md:px-28 md:pt-24 md:pb-20 lg:px-28 lg:pt-24 lg:pb-20"
@@ -53,7 +53,7 @@
           </p>
         </div>
         <div
-          class="slider-wrapper first-slider relative w-full md:h-[506px] lg:h-[506px] h-[330px] bg-blue-400"
+          class="slider-wrapper first-slider shadow-100 relative w-full md:h-[506px] lg:h-[506px] h-[350px] bg-blue-400"
         >
           <template v-for="index in 9" :key="index">
             <img
@@ -116,7 +116,7 @@
           </button>
         </div>
       </article>
-      <article class="case flex-col shadow-200 overflow-x-hidden">
+      <article class="case flex-col slider-group shadow-200 overflow-x-hidden">
         <div
           class="w-full h-114 md:h-172 lg:h-172 bg-purple-500 justify-between text-white flex flex-col px-18 pt-18 pb-14 md:px-28 md:pt-24 md:pb-20 lg:px-28 lg:pt-24 lg:pb-20"
         >
@@ -187,9 +187,9 @@
           </div>
         </div>
         <div
-          class="slider-wrapper second-slider relative w-full md:h-[506px] lg:h-[506px] h-[330px] bg-blue-400"
+          class="slider-wrapper second-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] bg-blue-400"
         >
-          <template v-for="index in 5" :key="index">
+          <template v-for="index in 4" :key="index">
             <img
               class="w-full h-full"
               :src="`/en/landing/slider2/pic${index}.jpg`"
@@ -458,6 +458,27 @@ strong {
   }
 }
 
+@include en-desktop {
+  .slider-group:hover {
+    .slider-wrapper {
+      img {
+        animation-play-state: running;
+        opacity: 1;
+      }
+    }
+  }
+
+  .slider-group:not(:hover) {
+    .slider-wrapper {
+      img {
+        animation-play-state: paused;
+        z-index: -1 !important;
+        opacity: 0 !important;
+      }
+    }
+  }
+}
+
 .slider-wrapper {
   background-size: cover;
   background-position: bottom left;
@@ -467,6 +488,7 @@ strong {
     left: 0px;
     position: absolute;
     opacity: 0;
+    object-fit: cover;
   }
 
   &.first-slider {
@@ -561,7 +583,7 @@ strong {
     background-image: url('/en/landing/slider2/pic4.jpg');
 
     img {
-      animation: showMeSlow 10s linear infinite 0s forwards;
+      animation: showMeSlow 8s linear infinite 0s forwards;
       animation-play-state: paused;
 
       @include en-tablet {
@@ -586,11 +608,6 @@ strong {
       &:nth-child(4) {
         animation-delay: 6s;
         z-index: 6;
-      }
-
-      &:nth-child(5) {
-        animation-delay: 8s;
-        z-index: 5;
       }
     }
 

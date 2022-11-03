@@ -175,7 +175,7 @@ const close = () => {
 <style lang="scss" scoped>
 .drawer-wrapper {
   @include relative;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .drawer-dimmer {
@@ -183,7 +183,7 @@ const close = () => {
   width: 100vw;
   height: 100vh;
   background: rgba($text-darkgrey, 0.6);
-  z-index: 1;
+  z-index: 99;
 }
 .drawer-wrapper {
   @include fixed(top 0px right -2px);
@@ -191,7 +191,7 @@ const close = () => {
   width: calc(100% + 8px);
   height: 100%;
   background-color: white;
-  z-index: 3;
+  z-index: 999;
 
   &.banner {
     // banner top
