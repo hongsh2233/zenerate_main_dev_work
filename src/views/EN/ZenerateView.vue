@@ -73,6 +73,7 @@
                   class="img-map"
                   src="/en/overview/overview_step_1.jpg"
                   alt="find a site and review zoning info"
+                  rel="preload"
                 />
               </div>
               <div
@@ -523,14 +524,60 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
+import {
+  ref,
+  watch,
+  onMounted,
+  onBeforeUnmount,
+  onBeforeMount,
+  computed,
+  nextTick,
+} from 'vue'
 import Store from '/Store/index'
 import { useRouter } from 'vue-router'
 import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
 import { useGtag } from 'vue-gtag-next'
 import { useMeta } from 'vue-meta'
+import ImagePreloader from '/Utils/ImagePreloader'
 import PartnersList from '/Constants/partners'
+
+const preloadImages = {
+  desktop: ['/en/overview/overview_hero_desktop.png'],
+  tablet: ['/en/overview/overview_hero_tablet.png'],
+  mobile: ['/en/overview/overview_hero_mobile.png'],
+}
+
+const onloadImages = {
+  desktop: ['/en/overview/overview_graph_desktop.png'],
+  tablet: ['/en/overview/overview_graph_tablet.png'],
+  mobile: ['/en/overview/overview_graph_mobile.png'],
+}
+
+const commonPreloadImages = [
+  '/en/overview/overview_step_1.jpg',
+  '/en/overview/overview_step_2.jpg',
+  '/en/overview/overview_step_3.jpg',
+  '/en/overview/overview_step_4.jpg',
+]
+
+const mediaQueryDevice =
+  window.innerWidth >= 1024
+    ? 'desktop'
+    : window.innerWidth >= 768
+    ? 'tablet'
+    : 'mobile'
+
+onBeforeMount(() => {
+  ImagePreloader.sequential(preloadImages[mediaQueryDevice])
+  ImagePreloader.sequential(commonPreloadImages)
+})
+
+onMounted(() => {
+  ImagePreloader.sequential(onloadImages[mediaQueryDevice])
+})
+
+// GTM
 const { event } = useGtag()
 const goToApp = () => {
   event('generate_lead', {
