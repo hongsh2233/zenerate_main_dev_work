@@ -1,18 +1,18 @@
 /*************** viewpoint ***************/
 
-$breakpoint-1024: 1024px;
+$breakpoint-1200: 1200px;
 $breakpoint-960: 960px;
 $breakpoint-768: 768px;
 $breakpoint-480: 480px;
 
 @mixin en-desktop {
-  @media only screen and (min-width: #{$breakpoint-1024}) {
+  @media only screen and (min-width: #{$breakpoint-1200}) {
     @content;
   }
 }
 
 @mixin en-tablet-big {
-  @media only screen and (min-width: #{$breakpoint-960}) and (max-width: #{$breakpoint-1024 - 1px}) {
+  @media only screen and (min-width: #{$breakpoint-960}) and (max-width: #{$breakpoint-1200 - 1px}) {
     @content;
   }
 }
@@ -30,7 +30,7 @@ $breakpoint-480: 480px;
 }
 
 @mixin en-tablet {
-  @media only screen and (min-width: #{$breakpoint-768}) and (max-width: #{$breakpoint-1024 - 1px}) {
+  @media only screen and (min-width: #{$breakpoint-768}) and (max-width: #{$breakpoint-1200 - 1px}) {
     @content;
   }
 }

@@ -149,7 +149,7 @@
                 />
               </div>
               <div
-                class="pl-34 pt-32 pb-40 md:pt-40 lg:pr-20 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
+                class="pl-34 pt-32 pb-40 md:pt-40 lg:pr-36 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
               >
                 <div class="flex flex-nowrap">
                   <p
