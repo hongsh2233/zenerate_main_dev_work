@@ -438,6 +438,8 @@ const goToApp = () => {
   })
 }
 
+const slider1PosterIndex = 1
+const slider2PosterIndex = 3
 const slider1Images = Array(9)
   .fill('')
   .map((v, i) => `/en/landing/slider1/pic${i + 1}.jpg`)
@@ -446,12 +448,15 @@ const slider2Images = Array(4)
   .map((v, i) => `/en/landing/slider2/pic${i + 1}.jpg`)
 
 onBeforeMount(() => {
-  ImagePreloader.sequential([...slider1Images[0], ...slider2Images[0]])
+  ImagePreloader.sequential([
+    ...slider1Images[slider1PosterIndex],
+    ...slider2Images[slider2PosterIndex],
+  ])
 })
 
 onMounted(() => {
-  ImagePreloader.sequential(slider1Images.slice(1))
-  ImagePreloader.sequential(slider2Images.slice(1))
+  ImagePreloader.sequential(slider1Images)
+  ImagePreloader.sequential(slider2Images)
 })
 </script>
 <style lang="scss" scoped>
