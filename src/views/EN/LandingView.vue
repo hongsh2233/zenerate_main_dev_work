@@ -459,10 +459,7 @@ onBeforeMount(() => {
     ...slider2Images[slider2PosterIndex],
   ])
 
-  if (userAgent === 'web') {
-    ImagePreloader.sequential(slider1Images)
-    ImagePreloader.sequential(slider2Images)
-  } else {
+  if (userAgent !== 'web') {
     ImagePreloader.sequential(slider1Images)
   }
 })
@@ -470,6 +467,11 @@ onBeforeMount(() => {
 onMounted(() => {
   if (userAgent !== 'web') {
     nextTick(() => {
+      ImagePreloader.sequential(slider2Images)
+    })
+  } else {
+    nextTick(() => {
+      ImagePreloader.sequential(slider1Images)
       ImagePreloader.sequential(slider2Images)
     })
   }
