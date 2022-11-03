@@ -570,10 +570,11 @@ const mediaQueryDevice =
 
 onBeforeMount(() => {
   ImagePreloader.sequential(preloadImages[mediaQueryDevice])
-  ImagePreloader.sequential(commonPreloadImages)
+  ImagePreloader.sequential([...commonPreloadImages.slice(0, 2)])
 })
 
 onMounted(() => {
+  ImagePreloader.sequential([...commonPreloadImages.slice(2, 4)])
   ImagePreloader.sequential(onloadImages[mediaQueryDevice])
 })
 
