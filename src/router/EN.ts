@@ -7,18 +7,12 @@ import CareerView from '/Views/EN/CareerView.vue'
 import CareerContent from '/src/components/EN/CareerContent.vue'
 import ContactView from '/Views/EN/ContactView.vue'
 import LandingView from '/Views/EN/LandingView.vue'
-import ServiceView from '/Views/EN/ServiceView.vue'
 import TermsAndConditionsView from '/Views/EN/TermsAndConditionsView.vue'
 import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
 import PreSignUpView from '/Views/EN/PreSignUpView.vue'
 import SignUpView from '/Views/EN/SignUpView.vue'
 import ZenerateView from '/Views/EN/ZenerateView.vue'
-import HowToUseView from '/Views/EN/HowToUseView.vue'
-import OverviewView from '/Views/EN/OverviewView.vue'
-import FAQView from '/Views/EN/FAQView.vue'
-import PricingView from '/Views/EN/PricingView.vue'
 import DemoSignUpView from '/Views/EN/DemoSignUpView.vue'
-// import NewLandingView from '/Views/EN/NewLandingView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -30,13 +24,8 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-landing',
       component: LandingView,
     },
-    // {
-    //   path: '/new',
-    //   name: 'en-new-landing',
-    //   component: NewLandingView,
-    // },
     {
-      path: '/overview',
+      path: '/zenerate-app',
       name: 'en-overview',
       component: ZenerateView,
     },

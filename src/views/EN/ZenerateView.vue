@@ -25,19 +25,21 @@
               class="hidden-en-mobile lg:h-[108px] md:text-16 lg:text-18 font-regular leading-[150%] mb-50 text-gray-700"
             >
               <p>
-                Zenerate provides products and services <br />
-                that automate and optimize key aspects <br />
-                of the feasibility study process.
+                An AI-powered feasibility study tool utilizing<br />
+                generative design and advanced data <br />
+                analytics that zenerates ALL development<br />
+                possibilities within a given site.
               </p>
             </div>
             <div
               class="text-14 font-regular text-gray-700 leading-[150%] mb-40 hidden-en-desktop hidden-en-tablet"
             >
               <p>
-                Zenerate provides products and <br />
-                services that automate and <br />
-                optimize key aspects of <br />
-                the feasibility study process.
+                An AI-powered feasibility study<br />
+                tool utilizing generative design<br />
+                and advanced data analytics that<br />
+                zenerates ALL development <br />
+                possibilities within a given site.
               </p>
             </div>
           </div>
@@ -309,7 +311,7 @@
                   class="flex flex-col text-14 lg:pt-10 items-start font-regular text-gray-700 leading-[150%] md:text-18 lg:text-18"
                 >
                   <p class="font-medium mb-8 md:mb-10 lg:mb-10">
-                    Cut down on weeks & months of
+                    Cut down on weeks of
                   </p>
                   <ul class="flex flex-col">
                     <li class="flex w-full items-center mb-6">
@@ -421,7 +423,7 @@
             </p>
 
             <div
-              class="graph-image-wrapper w-[296px] h-[632px] min-h-[632px] md:h-[416px] lg:h-[600px] lg:min-h-[600px] md:min-h-[416px] md:w-[664px] lg:w-[944px] mb-60 mx-auto"
+              class="graph-image-wrapper w-[296px] h-[642px] min-h-[642px] md:h-[416px] lg:h-[600px] lg:min-h-[600px] md:min-h-[416px] md:w-[664px] lg:w-[944px] mb-60 mx-auto"
             ></div>
             <div
               class="flex flex-col w-[352px] mx-auto md:w-[510px] lg:w-[840px] lg:items-center"
@@ -493,7 +495,7 @@
                   class="flex pr-50 md:pr-0 lg:pr-0 lg:w-[352px] flex-col text-14 items-start font-regular text-white leading-[150%] md:text-18 lg:text-18"
                 >
                   <p>
-                    <span>Over 30+ multifamily projects&nbsp;</span>
+                    <span>Over 40+ multifamily projects&nbsp;</span>
                     <span>starting&nbsp;</span>
                     <span>with Zenerate&nbsp;</span>
                     <span>experienced&nbsp;</span>
@@ -531,7 +533,7 @@
               class="demo-link text-14 lg:text-16"
               :to="{ name: 'en-demo' }"
             >
-              TRY FOR FREE
+              BOOK A DEMO
             </router-link>
           </button>
         </div>
@@ -606,7 +608,7 @@ const goToApp = () => {
   })
 }
 const { meta } = useMeta({
-  title: 'Zenerate | Zenerate',
+  title: 'Zenerate App | Zenerate',
   description:
     'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
   htmlAttrs: { lang: 'en' },
@@ -617,7 +619,7 @@ const { meta } = useMeta({
         'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/overview' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/zenerate-app' }],
 })
 </script>
 <style lang="scss" scoped>

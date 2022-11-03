@@ -22,7 +22,7 @@
           >
             <span>Zenerate provides products and&nbsp;</span>
             <span>services that automate<br /></span>
-            <span>and optimize key aspects of the</span>
+            <span>and optimize key aspects of the&nbsp;</span>
             <span>feasibility study process.</span>
           </p>
         </div>
@@ -70,11 +70,11 @@
           ></div>
         </div>
         <div
-          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 pl-54 pr-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
+          class="flex flex-col lg:h-[514px] md:h-[514px] pt-38 pl-54 pr-30 pb-48 md:pl-58 md:pr-20 md:pt-60 md:pb-90 lg:pl-58 lg:pr-20 lg:pt-60 lg:pb-90"
         >
           <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
             <p
-              class="text-primary md:text-18 lg:text-18 text-12 mb-8 md:mb-10 lg:mb-10 font-semibold"
+              class="text-primary md:text-18 lg:text-18 text-12 mb-8 md:mb-10 lg:mb-15 font-semibold"
             >
               The Zenerate™ App
             </p>
@@ -88,13 +88,13 @@
           </div>
 
           <div
-            class="hidden-en-mobile lg:h-[108px] text-18 font-regular leading-[150%] mb-36 text-gray-700"
+            class="hidden-en-mobile lg:h-[134px] text-18 font-regular leading-[150%] mb-36 text-gray-700"
           >
             <p>
               An AI-powered feasibility study tool utilizing<br />
               generative design and advanced data<br />
               analytics that zenerates ALL development<br />
-              possibilities within a given site.
+              possibilities with pro forma within a given site.
             </p>
           </div>
           <div
@@ -105,7 +105,7 @@
               utilizing generative design and<br />
               advanced data analytics that <br />
               zenerates ALL development<br />
-              possibilities within a given site.
+              possibilities with pro forma<br />within a given site.
             </p>
           </div>
 
@@ -127,7 +127,8 @@
           class="w-full h-114 md:h-172 lg:h-172 bg-purple-500 justify-between text-white flex flex-col px-18 pt-18 pb-14 md:px-28 md:pt-24 md:pb-20 lg:px-28 lg:pt-24 lg:pb-20"
         >
           <p class="text-18 font-regular leading-[150%] md:text-26 lg:text-26">
-            Find your comps.
+            <strong>Key comp details</strong><br />
+            on a map.
           </p>
 
           <div class="flex justify-end">
@@ -209,17 +210,13 @@
           ></div>
         </div>
         <div
-          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 pl-54 pr-30 pb-48 md:pl-60 md:pr-20 md:pt-60 md:pb-90 lg:pl-60 lg:pr-20 lg:pt-60 lg:pb-90"
+          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 pl-54 pr-30 pb-48 md:pl-58 md:pr-20 md:pt-60 md:pb-74 lg:pl-58 lg:pr-20 lg:pt-60 lg:pb-74"
         >
           <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
             <p class="flex flex-nowrap mb-6 md:mb-10 lg:mb-10">
               <span
                 class="bg-purple-50 mr-4 text-purple-500 text-12-medium md:text-14-semibold lg:text-14-semibold rounded-26 py-4 px-9 w-fit"
                 >New Product</span
-              >
-              <span
-                class="bg-purple-50 text-purple-500 text-12-medium md:text-14-semibold lg:text-14-semibold rounded-26 py-4 px-9 w-fit"
-                >Free</span
               >
             </p>
             <p
@@ -232,34 +229,38 @@
           </div>
 
           <div
-            class="hidden-en-mobile lg:h-[108px] text-18 font-regular leading-[150%] mb-28 text-gray-700"
+            class="hidden-en-mobile lg:h-[134px] text-18 font-regular leading-[150%] mb-28 text-gray-700"
           >
             <p>
-              No more going through public records to <br />
-              find information on competitors and gain <br />
-              context on an area of interest.
+              No more of the difficult and time-consuming<br />
+              process of going through public records.<br />
+              Easily view project details of all proposed,<br />
+              under construction and recently completed<br />
+              developments all on a map.
             </p>
           </div>
           <div
             class="text-14 font-regular text-gray-700 leading-[150%] mb-22 hidden-en-desktop hidden-en-tablet"
           >
             <p>
-              No more going through public <br />
-              records to find information on <br />
-              competitors and gain context on <br />
-              an area of interest.
+              No more of the difficult and time-<br />consuming process of going
+              through<br />
+              public records. Easily view project<br />
+              details of all proposed, under<br />
+              construction and recently completed<br />
+              developments all on a map.
             </p>
           </div>
 
           <button
             type="button"
-            class="start-button w-[254px] bg-purple-500 text-white active:bg-purple-700 active:text-white hover:text-purple-200"
+            class="start-button w-[160px] bg-purple-500 text-white active:bg-purple-700 active:text-white hover:text-purple-200"
           >
             <a
               class="demo-link text-14 lg:text-16"
               href="https://maps.zenerate.ai"
             >
-              TRY Z-MAPS, IT'S FREE!
+              TRY Z-MAPS
             </a>
           </button>
         </div>
@@ -281,20 +282,23 @@
                 backgroundImage: `url('/logo/logo_color_cushman.png')`,
               }"
             ></div>
-            <span
-              class="text-gray-700 md:text-18 lg:text-18 text-14 font-semibold pl-18"
-              >James Kim, CEO</span
+            <p
+              class="text-gray-700 md:text-18 md:text-center md:w-[300px] lg:text-18 text-14 font-medium pl-8 md:pl-0"
             >
+              JH Kim,
+              <span class="text-gray-600 font-regular lg:mt-4"
+                >Senior Manager</span
+              >
+            </p>
           </div>
           <p
             class="text-14 font-regular md:text-center pl-12 lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
           >
-            Not only was Zenerate able to raise the valuation of our sites by an
-            average of 23%, our clients and partners were blown away with the
-            level of detail provided in our OMs. All within a fraction of the
-            time it takes us to prepare our usual material. Utilizing Zenerate
-            is now mandatory for us when valuing large scale sites, that's how
-            valuable their software is.
+            Already on 8 different residential/mixed use projects, Zenerate was
+            able to explore all possible development scenarios, presenting us
+            with recommended development plans. These contributions and more
+            have helped us increase the max sales price of each project
+            successfully.
           </p>
 
           <div
@@ -306,10 +310,14 @@
                 backgroundImage: `url('/logo/logo_color_cushman.png')`,
               }"
             ></div>
-            <span
-              class="text-gray-700 md:text-18 lg:text-18 text-14 font-semibold pl-18"
-              >James Kim, CEO</span
+            <p
+              class="text-gray-700 md:text-18 md:w-[300px] lg:text-18 md:text-center text-14 font-medium pl-12 md:pl-0"
             >
+              JH Kim,
+              <span class="text-gray-600 font-regular lg:mt-4"
+                >Senior Manager</span
+              >
+            </p>
           </div>
         </div>
 
@@ -323,21 +331,25 @@
                 backgroundImage: `url('/logo/logo_color_neovalue.png')`,
               }"
             ></div>
-            <span
-              class="text-gray-700 md:text-18 lg:text-18 text-14 font-semibold"
-              >James Kim, CEO</span
+            <p
+              class="text-gray-700 md:text-18 lg:text-18 md:text-center text-14 font-medium pl-14"
             >
+              Anna Lee,
+              <span
+                class="text-gray-600 font-regular mt-4 md:w-[288px] w-[220px] lg:w-auto"
+              >
+                Architecture Department Lead</span
+              >
+            </p>
           </div>
           <p
             class="text-14 font-regular pl-12 md:text-center lg:ml-40 text-gray-700 leading-[150%] md:text-18 lg:text-20"
           >
-            As developers, our job is to ultimately maximize the potential
-            returns within a given site. Zenerate, with their AI technology,
-            showed us that even the most successful developers often fall short
-            of truly maximizing returns. To my fellow developers around the
-            world I suggest you put your ego aside and embrace PropTech, like
-            Zenerate, as it is an absolute competitive advantage and will become
-            a necessity within your workflow - as it is for us now.
+            We looked for a site in Los Angeles to develop a mixed-use project
+            and reviewed tons of sites. Zenerate helped us verify development
+            potential including building uses, density, maximum FAR, cashflow in
+            a timely manner. Utilizing AI solutions such as Zenerate becomes a
+            must and I would highly recommend it to my fellow developers.
           </p>
           <div
             class="partners-item !mx-0 md:!mx-auto lg:!mx-auto hidden-en-desktop"
@@ -348,14 +360,20 @@
                 backgroundImage: `url('/logo/logo_color_neovalue.png')`,
               }"
             ></div>
-            <span
-              class="text-gray-700 md:text-18 lg:text-18 text-14 font-semibold pl-18"
-              >James Kim, CEO</span
+            <p
+              class="text-gray-700 md:text-18 lg:text-18 md:text-center text-14 font-medium pl-18 md:pl-0"
             >
+              Anna Lee,
+              <span
+                class="text-gray-600 font-regular mt-4 md:w-[288px] w-[220px] lg:w-auto"
+              >
+                Architecture Department Lead</span
+              >
+            </p>
           </div>
         </div>
       </div>
-      <div class="partners-list">
+      <!-- <div class="partners-list">
         <div
           class="partners-item"
           v-for="(item, idx) in PartnersList"
@@ -368,18 +386,17 @@
             }"
           ></div>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <section
       class="section flex w-full flex-col items-center py-72 lg:py-86 bg-gray-50"
     >
       <p
-        class="mb-34 md:mb-22 lg:mb-32 text-center px-28 text-16 font-regular lg:text-22 md:text-20 leading-[150%]"
+        class="mb-34 md:mb-22 lg:mb-32 text-center px-28 text-16 font-regular lg:max-w-[1200px] lg:text-22 md:text-20 leading-[150%]"
       >
         <span>Join some of the biggest names&nbsp;</span>
-        <span>in real estate development</span>
-        <br />
+        <span>in real estate development&nbsp;</span>
         <span>and brokerage in&nbsp;</span>
         <span><strong>saving hundreds of man-hours</strong>&nbsp;</span>
         <span>and <strong>maximizing profit.</strong></span>
@@ -522,47 +539,46 @@ span {
 }
 
 @include en-desktop {
-  @media (any-pointer: fine) {
-    .slider-group:hover {
-      .slider-wrapper {
-        img {
-          animation-play-state: running;
-          opacity: 1;
-        }
-      }
-    }
-    .slider-group:not(:hover) {
-      .slider-wrapper {
-        img {
-          animation-play-state: paused;
-          z-index: -1 !important;
-          opacity: 0 !important;
-        }
-      }
-    }
-  }
+  // @media (any-pointer: fine) {
+  //   .slider-group:hover {
+  //     .slider-wrapper {
+  //       img {
+  //         animation-play-state: running;
+  //       }
+  //     }
+  //   }
+  //   .slider-group:not(:hover) {
+  //     .slider-wrapper {
+  //       img {
+  //         animation-play-state: paused;
+  //         z-index: -1 !important;
+  //         opacity: 0 !important;
+  //       }
+  //     }
+  //   }
+  // }
 
-  @media (any-pointer: coarse) {
-    .slider-group {
-      .slider-wrapper {
-        img {
-          animation-play-state: running;
-          opacity: 1;
-        }
-      }
-    }
-  }
+  // @media (any-pointer: coarse) {
+  //   .slider-group {
+  //     .slider-wrapper {
+  //       img {
+  //         animation-play-state: running;
+  //         opacity: 1;
+  //       }
+  //     }
+  //   }
+  // }
 
-  @media (any-hover: none) {
-    .slider-group {
-      .slider-wrapper {
-        img {
-          animation-play-state: running;
-          opacity: 1;
-        }
-      }
-    }
-  }
+  // @media (any-hover: none) {
+  //   .slider-group {
+  //     .slider-wrapper {
+  //       img {
+  //         animation-play-state: running;
+  //         opacity: 1;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 .slider-wrapper {
@@ -581,65 +597,150 @@ span {
     background-image: url('/en/landing/slider1/pic2.jpg');
 
     img {
-      animation: showMe 8s linear infinite 1s forwards;
-      animation-play-state: paused;
-
-      @include en-tablet {
-        animation-play-state: running;
-      }
-
-      @include en-mobile {
-        animation-play-state: running;
-      }
+      animation: showMe 18s linear infinite 0s forwards;
+      animation-play-state: running;
 
       &:nth-child(1) {
-        animation-delay: 1s;
-        z-index: 9;
+        z-index: 10;
       }
 
       &:nth-child(2) {
+        animation-delay: 1s;
+        z-index: 9;
+      }
+      &:nth-child(3) {
         animation-delay: 2s;
         z-index: 8;
       }
-      &:nth-child(3) {
+      &:nth-child(4) {
         animation-delay: 3s;
         z-index: 7;
       }
-      &:nth-child(4) {
+
+      &:nth-child(5) {
         animation-delay: 4s;
         z-index: 6;
       }
 
-      &:nth-child(5) {
+      &:nth-child(6) {
         animation-delay: 5s;
         z-index: 5;
       }
 
-      &:nth-child(6) {
+      &:nth-child(7) {
         animation-delay: 6s;
         z-index: 4;
       }
 
-      &:nth-child(7) {
-        animation-delay: 6.7s;
+      &:nth-child(8) {
+        animation-delay: 7s;
         z-index: 3;
       }
 
-      &:nth-child(8) {
-        animation-delay: 7.4s;
+      &:nth-child(9) {
+        animation-delay: 8s;
         z-index: 2;
       }
 
-      &:nth-child(9) {
-        animation-delay: 8.1s;
-        z-index: 1;
+      @include en-tablet {
+        animation: showMe 8s linear infinite 0s forwards;
+        animation-play-state: running;
+
+        &:nth-child(1) {
+          z-index: 10;
+        }
+
+        &:nth-child(2) {
+          animation-delay: 1s;
+          z-index: 9;
+        }
+        &:nth-child(3) {
+          animation-delay: 2s;
+          z-index: 8;
+        }
+        &:nth-child(4) {
+          animation-delay: 3s;
+          z-index: 7;
+        }
+
+        &:nth-child(5) {
+          animation-delay: 4s;
+          z-index: 6;
+        }
+
+        &:nth-child(6) {
+          animation-delay: 4.7s;
+          z-index: 5;
+        }
+
+        &:nth-child(7) {
+          animation-delay: 5.4s;
+          z-index: 4;
+        }
+
+        &:nth-child(8) {
+          animation-delay: 6.1s;
+          z-index: 3;
+        }
+
+        &:nth-child(9) {
+          animation-delay: 6.8s;
+          z-index: 2;
+        }
+      }
+
+      @include en-mobile {
+        animation: showMe 8s linear infinite 0s forwards;
+        animation-play-state: running;
+
+        &:nth-child(1) {
+          z-index: 10;
+        }
+
+        &:nth-child(2) {
+          animation-delay: 1s;
+          z-index: 9;
+        }
+        &:nth-child(3) {
+          animation-delay: 2s;
+          z-index: 8;
+        }
+        &:nth-child(4) {
+          animation-delay: 3s;
+          z-index: 7;
+        }
+
+        &:nth-child(5) {
+          animation-delay: 4s;
+          z-index: 6;
+        }
+
+        &:nth-child(6) {
+          animation-delay: 4.7s;
+          z-index: 5;
+        }
+
+        &:nth-child(7) {
+          animation-delay: 5.4s;
+          z-index: 4;
+        }
+
+        &:nth-child(8) {
+          animation-delay: 6.1s;
+          z-index: 3;
+        }
+
+        &:nth-child(9) {
+          animation-delay: 6.8s;
+          z-index: 2;
+        }
       }
     }
 
-    &:hover img {
-      animation-play-state: running;
-      opacity: 1;
-    }
+    // &:hover img {
+    //   animation-play-state: running;
+    //   opacity: 1;
+    // }
   }
 
   @keyframes showMeSlow {
@@ -670,38 +771,69 @@ span {
     background-image: url('/en/landing/slider2/pic4.jpg');
 
     img {
-      animation: showMeSlow 9s linear infinite 1s forwards;
-      animation-play-state: paused;
-
-      @include en-tablet {
-        animation-play-state: running;
-      }
-
-      @include en-mobile {
-        animation-play-state: running;
-      }
+      animation: showMeSlow 18s linear infinite 0s forwards;
+      animation-play-state: running;
 
       &:nth-child(1) {
-        animation-delay: 1s;
+        animation-delay: 9s;
         z-index: 9;
       }
       &:nth-child(2) {
-        animation-delay: 3s;
+        animation-delay: 11s;
         z-index: 8;
       }
       &:nth-child(3) {
-        animation-delay: 5s;
+        animation-delay: 13s;
         z-index: 7;
       }
       &:nth-child(4) {
-        animation-delay: 7s;
+        animation-delay: 15s;
         z-index: 6;
       }
-    }
 
-    &:hover img {
-      animation-play-state: running;
-      opacity: 1;
+      @include en-tablet {
+        animation: showMeSlow 9s linear infinite 0s forwards;
+        animation-play-state: running;
+
+        &:nth-child(1) {
+          animation-delay: 1s;
+          z-index: 9;
+        }
+        &:nth-child(2) {
+          animation-delay: 3s;
+          z-index: 8;
+        }
+        &:nth-child(3) {
+          animation-delay: 5s;
+          z-index: 7;
+        }
+        &:nth-child(4) {
+          animation-delay: 7s;
+          z-index: 6;
+        }
+      }
+
+      @include en-mobile {
+        animation: showMeSlow 9s linear infinite 0s forwards;
+        animation-play-state: running;
+
+        &:nth-child(1) {
+          animation-delay: 1s;
+          z-index: 9;
+        }
+        &:nth-child(2) {
+          animation-delay: 3s;
+          z-index: 8;
+        }
+        &:nth-child(3) {
+          animation-delay: 5s;
+          z-index: 7;
+        }
+        &:nth-child(4) {
+          animation-delay: 7s;
+          z-index: 6;
+        }
+      }
     }
   }
 }
@@ -1038,19 +1170,23 @@ span {
     min-height: 68px;
     height: auto;
     max-width: 100%;
-    margin-top: 20px;
+    // margin-top: 20px;
     flex-direction: column;
 
     &:not(:last-child) {
       margin-right: 52px;
 
       @include en-tablet {
-        margin-right: 30px;
+        margin-bottom: 0px;
       }
 
       @include en-mobile {
         margin-right: 0px;
       }
+    }
+
+    @include en-tablet {
+      margin-bottom: 20px;
     }
 
     @include en-mobile {

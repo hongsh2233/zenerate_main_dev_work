@@ -38,7 +38,7 @@
                     {{ secondary.title }}
                   </router-link>
                   <a
-                    v-if="secondary.title === 'Zenerate'"
+                    v-if="secondary.to === 'en-overview'"
                     :href="'https://maps.zenerate.ai'"
                   >
                     <component :is="ZmapsIcon" :width="20" :height="20" />
@@ -100,11 +100,8 @@ import AboutIcon from './Icons/header/AboutIcon.vue'
 import CareersIcon from './Icons/header/CareersIcon.vue'
 import CaseIcon from './Icons/header/CaseIcon.vue'
 import ContactIcon from './Icons/header/ContactIcon.vue'
-import FAQIcon from './Icons/header/FAQIcon.vue'
-import HowToUseIcon from './Icons/header/HowToUseIcon.vue'
 import OverviewIcon from './Icons/header/OverviewIcon.vue'
 import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
-import PricingIcon from './Icons/header/PricingIcon.vue'
 
 const props = defineProps({
   showDrawer: Boolean,
@@ -144,36 +141,16 @@ const routes = [
     title: 'Products',
     children: [
       {
-        title: 'Zenerate',
+        title: 'Zenerate™ App',
         to: 'en-overview',
         icon: OverviewIcon,
       },
-      // {
-      //   title: 'Z-Maps',
-      //   to: 'en-zmaps',
-      //   icon: ZmapsIcon,
-      // },
-      // {
-      //   title: 'Pricing',
-      //   to: 'en-pricing',
-      //   icon: PricingIcon,
-      // },
-      // {
-      //   title: 'FAQ',
-      //   to: 'en-faq',
-      //   icon: FAQIcon,
-      // },
     ],
   },
   {
     key: 'resources',
     title: 'Resources',
     children: [
-      // {
-      //   title: 'How to use',
-      //   to: 'en-how-to-use',
-      //   icon: HowToUseIcon,
-      // },
       {
         title: 'Case Studies',
         to: 'en-case-studies',
@@ -226,7 +203,7 @@ const toggleNav = (primary: String) => {
 .header-wrapper {
   @include fixed(top 0px left 0);
   width: 100vw;
-  z-index: 1000;
+  z-index: 10000;
   background: $white;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
   transition: color ease-in-out 0.2s;

@@ -29,7 +29,7 @@
                       {{ nav.title }}
                     </router-link>
                     <a
-                      v-if="nav.title === 'Zenerate'"
+                      v-if="nav.to === 'en-overview'"
                       :href="'https://maps.zenerate.ai'"
                       class="navigation-link sub"
                       :class="nav.to"
@@ -88,7 +88,7 @@ const routes = [
     title: 'Product',
     children: [
       {
-        title: 'Zenerate',
+        title: 'Zenerate™ App',
         to: 'en-overview',
         icon: OverviewIcon,
       },
@@ -175,7 +175,7 @@ const close = () => {
 <style lang="scss" scoped>
 .drawer-wrapper {
   @include relative;
-  z-index: 9999;
+  z-index: 9998;
 }
 
 .drawer-dimmer {
@@ -183,7 +183,7 @@ const close = () => {
   width: 100vw;
   height: 100vh;
   background: rgba($text-darkgrey, 0.6);
-  z-index: 99;
+  z-index: 9996;
 }
 .drawer-wrapper {
   @include fixed(top 0px right -2px);
@@ -191,7 +191,7 @@ const close = () => {
   width: calc(100% + 8px);
   height: 100%;
   background-color: white;
-  z-index: 999;
+  z-index: 9997;
 
   &.banner {
     // banner top

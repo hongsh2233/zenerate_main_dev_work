@@ -1,6 +1,6 @@
 <template>
   <div class="layout-en" id="layout-en">
-    <router-link :to="{ name: 'en-demo' }">
+    <a :href="'https://maps.zenerate.ai'">
       <button
         type="button"
         class="signup-banner"
@@ -8,13 +8,13 @@
       >
         <div class="signup-banner-inner">
           <p class="uppercase">
-            <span>Signup for a product demo&nbsp;</span>
-            <span>and free project consultation!</span>
+            <span>VIEW YOUR CITY'S LATEST DEVELOPMENTS&nbsp;</span>
+            <span>WITH OUR NEW TOOL Z-MAPS!</span>
           </p>
           <i class="material-icons"> east </i>
         </div>
       </button>
-    </router-link>
+    </a>
 
     <Header
       v-show="path !== '/pre-launch-signup'"
@@ -118,7 +118,7 @@ const toggleDrawer = (flag = undefined) => {
   color: #ffffff;
   transition: color 0.1s ease-in-out;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 9999;
   letter-spacing: 1pt;
 
   .signup-banner-inner {
@@ -140,10 +140,10 @@ const toggleDrawer = (flag = undefined) => {
   }
 
   @include en-mobile {
-    @include medium(11);
+    @include medium(10);
     padding: 0px 30px;
     .signup-banner-inner {
-      max-width: 460px;
+      max-width: 474px;
       justify-content: space-between;
     }
     p {
@@ -157,13 +157,14 @@ const toggleDrawer = (flag = undefined) => {
   }
 
   @include en-mobile-banner-large {
-    @include medium(11);
+    @include medium(10);
     padding: 0px 30px;
     height: 50px;
     // letter-spacing: 0.5pt;
 
     .signup-banner-inner {
       justify-content: space-between;
+      max-width: 342px;
     }
 
     p {
