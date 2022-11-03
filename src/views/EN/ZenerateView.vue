@@ -74,6 +74,7 @@
                   src="/en/overview/overview_step_1.jpg"
                   alt="find a site and review zoning info"
                   rel="preload"
+                  decoding="async"
                 />
               </div>
               <div
@@ -110,7 +111,9 @@
                 <img
                   class="img-map"
                   src="/en/overview/overview_step_2.jpg"
-                  alt="      Click Start Zenerating"
+                  alt="Click Start Zenerating"
+                  decoding="async"
+                  loading="lazy"
                 />
               </div>
               <div
@@ -146,7 +149,9 @@
                 <img
                   class="img-map"
                   src="/en/overview/overview_step_3.jpg"
-                  alt="      Click Start Zenerating"
+                  alt="Review zenerated solutions"
+                  decoding="async"
+                  loading="lazy"
                 />
               </div>
               <div
@@ -182,7 +187,9 @@
                 <img
                   class="img-map"
                   src="/en/overview/overview_step_4.jpg"
-                  alt="      Click Start Zenerating"
+                  alt="Download a report"
+                  decoding="async"
+                  loading="lazy"
                 />
               </div>
               <div

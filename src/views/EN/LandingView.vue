@@ -61,6 +61,8 @@
               :src="src"
               :alt="`slider-image${index}`"
               rel="preload"
+              decoding="async"
+              loading="lazy"
             />
           </template>
           <div
@@ -198,6 +200,8 @@
               class="w-full h-full"
               :src="src"
               :alt="`slider-image${index}`"
+              decoding="async"
+              loading="lazy"
             />
           </template>
           <div
