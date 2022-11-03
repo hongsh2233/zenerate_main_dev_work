@@ -198,7 +198,6 @@
               class="w-full h-full"
               :src="src"
               :alt="`slider-image${index}`"
-              rel="preload"
             />
           </template>
           <div
@@ -562,7 +561,7 @@ span {
 
 .slider-wrapper {
   background-size: cover;
-  background-position: bottom left;
+  background-position: center center;
 
   img {
     bottom: 0px;
@@ -576,7 +575,7 @@ span {
     background-image: url('/en/landing/slider1/pic2.jpg');
 
     img {
-      animation: showMe 8s linear infinite 0s forwards;
+      animation: showMe 8s linear infinite 1s forwards;
       animation-play-state: paused;
 
       @include en-tablet {
@@ -588,44 +587,45 @@ span {
       }
 
       &:nth-child(1) {
+        animation-delay: 1s;
         z-index: 9;
       }
 
       &:nth-child(2) {
-        animation-delay: 1s;
+        animation-delay: 2s;
         z-index: 8;
       }
       &:nth-child(3) {
-        animation-delay: 2s;
+        animation-delay: 3s;
         z-index: 7;
       }
       &:nth-child(4) {
-        animation-delay: 3s;
+        animation-delay: 4s;
         z-index: 6;
       }
 
       &:nth-child(5) {
-        animation-delay: 4s;
+        animation-delay: 5s;
         z-index: 5;
       }
 
       &:nth-child(6) {
-        animation-delay: 5s;
+        animation-delay: 6s;
         z-index: 4;
       }
 
       &:nth-child(7) {
-        animation-delay: 5.7s;
+        animation-delay: 6.7s;
         z-index: 3;
       }
 
       &:nth-child(8) {
-        animation-delay: 6.4s;
+        animation-delay: 7.4s;
         z-index: 2;
       }
 
       &:nth-child(9) {
-        animation-delay: 7.1s;
+        animation-delay: 8.1s;
         z-index: 1;
       }
     }
@@ -664,7 +664,7 @@ span {
     background-image: url('/en/landing/slider2/pic4.jpg');
 
     img {
-      animation: showMeSlow 8s linear infinite 0s forwards;
+      animation: showMeSlow 9s linear infinite 1s forwards;
       animation-play-state: paused;
 
       @include en-tablet {
@@ -676,18 +676,19 @@ span {
       }
 
       &:nth-child(1) {
+        animation-delay: 1s;
         z-index: 9;
       }
       &:nth-child(2) {
-        animation-delay: 2s;
+        animation-delay: 3s;
         z-index: 8;
       }
       &:nth-child(3) {
-        animation-delay: 4s;
+        animation-delay: 5s;
         z-index: 7;
       }
       &:nth-child(4) {
-        animation-delay: 6s;
+        animation-delay: 7s;
         z-index: 6;
       }
     }
