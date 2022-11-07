@@ -431,21 +431,21 @@
               class="flex flex-col w-[352px] mx-auto md:w-[510px] lg:w-[840px] lg:items-center"
             >
               <p
-                class="font-semibold text-20 px-32 md:text-26 md:px-20 mb-18 lg:text-26 text-white md:mb-24 lg:mb-24 lg:text-center"
+                class="font-semibold text-20 pl-42 pr-60 md:text-26 md:px-20 mb-18 lg:text-26 text-white md:mb-24 lg:mb-24 lg:text-center lg:px-32"
               >
-                by exploring ALL possibilities
+                <span>by exploring&nbsp;</span> <span>ALL possibilities</span>
               </p>
               <div
-                class="flex mb-50 flex-col px-32 md:px-20 md:mb-62 lg:mb-68 text-white font-regular lg:text-20 text-16 md:text-18 leading-[150%]"
+                class="flex mb-50 flex-col pl-42 pr-60 md:px-20 md:mb-62 lg:mb-68 text-white lg:px-[160px] font-regular lg:text-20 text-16 md:text-18 leading-[150%]"
               >
                 <p class="mb-12">
-                  Our AI engine zenerates all the possible designs <br />
-                  including building massings, unit mixes and layouts.
+                  Our AI engine zenerates all the possible designs including
+                  building massings, unit mixes and layouts.
                 </p>
                 <p>
-                  By exploring all the possibilities and then analyzing <br />
-                  the options, users can confidently find the solution <br />
-                  generating the highest returns.
+                  By exploring all the possibilities and then analyzing the
+                  options, users can confidently find the solution generating
+                  the highest returns.
                 </p>
               </div>
             </div>
