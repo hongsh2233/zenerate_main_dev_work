@@ -70,7 +70,7 @@
           ></div>
         </div>
         <div
-          class="flex flex-col lg:h-[514px] md:h-[514px] pt-38 pl-54 pr-30 pb-48 md:pl-58 md:pr-20 md:pt-54 md:pb-43 lg:pl-58 lg:pr-20 lg:pt-54 lg:pb-72"
+          class="flex flex-col lg:h-[514px] md:h-[514px] pt-38 pl-48 pr-30 pb-48 md:pl-58 md:pr-20 md:pt-54 md:pb-43 lg:pl-58 lg:pr-20 lg:pt-54 lg:pb-72"
         >
           <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
             <p
@@ -212,7 +212,7 @@
           ></div>
         </div>
         <div
-          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 pl-54 pr-30 pb-48 md:pl-58 md:pr-20 md:pt-54 md:pb-72 lg:pl-58 lg:pr-20 lg:pt-54 lg:pb-72"
+          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 pl-48 pr-30 pb-48 md:pl-58 md:pr-20 md:pt-54 md:pb-72 lg:pl-58 lg:pr-20 lg:pt-54 lg:pb-72"
         >
           <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
             <p class="flex flex-nowrap mb-6 md:mb-10 lg:mb-10">
@@ -288,7 +288,8 @@
               class="text-gray-700 md:text-18 md:text-center md:w-[300px] lg:text-18 text-14 font-medium pl-8 md:pl-0"
             >
               JH Kim,
-              <span class="text-gray-600 font-regular lg:mt-4"
+              <span
+                class="text-gray-600 font-regular lg:mt-4 text-13 md:text-17 lg:text-17"
                 >Senior Manager</span
               >
             </p>
@@ -307,7 +308,7 @@
             class="partners-item !mx-0 md:!mx-auto lg:!mx-auto hidden-en-desktop"
           >
             <div
-              class="item-logo"
+              class="item-logo mt-10"
               :style="{
                 backgroundImage: `url('/logo/logo_color_cushman.png')`,
               }"
@@ -316,7 +317,8 @@
               class="text-gray-700 md:text-18 md:w-[300px] lg:text-18 md:text-center text-14 font-medium pl-12 md:pl-0"
             >
               JH Kim,
-              <span class="text-gray-600 font-regular lg:mt-4"
+              <span
+                class="text-gray-600 font-regular lg:mt-4 text-13 md:text-17 lg:text-17"
                 >Senior Manager</span
               >
             </p>
@@ -338,7 +340,7 @@
             >
               Anna Lee,
               <span
-                class="text-gray-600 font-regular mt-4 md:w-[288px] w-[220px] lg:w-auto"
+                class="text-gray-600 font-regular mt-4 md:w-[288px] w-[220px] lg:w-auto text-13 md:text-17 lg:text-17"
               >
                 Architecture Department Lead</span
               >
@@ -367,7 +369,7 @@
             >
               Anna Lee,
               <span
-                class="text-gray-600 font-regular mt-4 md:w-[288px] w-[220px] lg:w-auto"
+                class="text-gray-600 font-regular mt-4 md:w-[288px] w-[220px] lg:w-auto text-13 md:text-17 lg:text-17"
               >
                 Architecture Department Lead</span
               >
@@ -599,48 +601,49 @@ span {
     background-image: url('/en/landing/slider1/pic2.jpg');
 
     img {
-      animation: showMe 18s linear infinite 0s forwards;
+      animation: showMe 18s linear infinite 0s backwards;
       animation-play-state: running;
 
-      &:nth-child(1) {
+      &:nth-child(3) {
+        animation-delay: 1s;
         z-index: 10;
       }
 
-      &:nth-child(2) {
-        animation-delay: 1s;
+      &:nth-child(4) {
+        animation-delay: 2s;
         z-index: 9;
       }
-      &:nth-child(3) {
-        animation-delay: 2s;
+      &:nth-child(5) {
+        animation-delay: 3s;
         z-index: 8;
       }
-      &:nth-child(4) {
-        animation-delay: 3s;
+      &:nth-child(6) {
+        animation-delay: 4s;
         z-index: 7;
       }
 
-      &:nth-child(5) {
-        animation-delay: 4s;
+      &:nth-child(7) {
+        animation-delay: 5s;
         z-index: 6;
       }
 
-      &:nth-child(6) {
-        animation-delay: 5s;
+      &:nth-child(8) {
+        animation-delay: 6s;
         z-index: 5;
       }
 
-      &:nth-child(7) {
-        animation-delay: 6s;
+      &:nth-child(9) {
+        animation-delay: 7s;
         z-index: 4;
       }
 
-      &:nth-child(8) {
-        animation-delay: 7s;
+      &:nth-child(1) {
+        animation-delay: 8s;
         z-index: 3;
       }
 
-      &:nth-child(9) {
-        animation-delay: 8s;
+      &:nth-child(2) {
+        animation-delay: 9s;
         z-index: 2;
       }
 
@@ -770,27 +773,28 @@ span {
   }
 
   &.second-slider {
-    background-image: url('/en/landing/slider2/pic4.jpg');
+    background-image: url('/en/landing/slider2/pic3.jpg');
 
     img {
       animation: showMeSlow 18s linear infinite 0s forwards;
       animation-play-state: running;
 
-      &:nth-child(1) {
+      &:nth-child(4) {
         animation-delay: 9s;
-        z-index: 9;
+        z-index: 4;
+      }
+
+      &:nth-child(1) {
+        animation-delay: 11s;
+        z-index: 4;
       }
       &:nth-child(2) {
-        animation-delay: 11s;
-        z-index: 8;
+        animation-delay: 13s;
+        z-index: 3;
       }
       &:nth-child(3) {
-        animation-delay: 13s;
-        z-index: 7;
-      }
-      &:nth-child(4) {
         animation-delay: 15s;
-        z-index: 6;
+        z-index: 5;
       }
 
       @include en-tablet {

@@ -43,14 +43,14 @@
                 </div>
               </transition>
             </template>
-            <a
+            <router-link
               class="demo-link navigation-link"
-              href="https://maps.zenerate.ai"
+              :to="{ name: 'en-demo' }"
               @click="close"
             >
-              TRY Z-MAPS
+              BOOK A DEMO
               <i class="material-icons"> east </i>
-            </a>
+            </router-link>
           </div>
           <div class="info-wrapper">
             <span class="copyright"
@@ -85,7 +85,7 @@ const router = useRouter()
 const routes = [
   {
     key: 'product',
-    title: 'Product',
+    title: 'Products',
     children: [
       {
         title: 'Zenerate™ App',
