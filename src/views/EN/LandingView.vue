@@ -289,7 +289,7 @@
             >
               JH Kim,
               <span
-                class="text-gray-600 font-regular lg:mt-4 text-13 md:text-17 lg:text-17"
+                class="text-gray-500 font-regular lg:mt-4 text-13 md:text-16 lg:text-16"
                 >Senior Manager</span
               >
             </p>
@@ -318,7 +318,7 @@
             >
               JH Kim,
               <span
-                class="text-gray-600 font-regular lg:mt-4 text-13 md:text-17 lg:text-17"
+                class="text-gray-500 font-regular lg:mt-4 text-13 md:text-16 lg:text-16"
                 >Senior Manager</span
               >
             </p>
@@ -340,7 +340,7 @@
             >
               Anna Lee,
               <span
-                class="text-gray-600 font-regular mt-4 md:w-[288px] w-[220px] lg:w-auto text-13 md:text-17 lg:text-17"
+                class="text-gray-500 font-regular mt-4 md:w-[288px] w-[220px] lg:w-auto text-13 md:text-16 lg:text-16"
               >
                 Architecture Department Lead</span
               >
@@ -369,7 +369,7 @@
             >
               Anna Lee,
               <span
-                class="text-gray-600 font-regular mt-4 md:w-[288px] w-[220px] lg:w-auto text-13 md:text-17 lg:text-17"
+                class="text-gray-500 font-regular mt-4 md:w-[288px] w-[220px] lg:w-auto text-13 md:text-16 lg:text-16"
               >
                 Architecture Department Lead</span
               >
