@@ -3,7 +3,7 @@
     <div class="section section-case-studies">
       <div class="section-inner inner-case-studies">
         <section
-          class="flex flex-col relative pl-18 md:pl-0 pb-70 w-[288px] mx-auto items-start lg:items-start md:items-start lg:pl-44 lg:pr-0 lg:w-[1024px] md:pb-[260px] md:w-[660px] md:px-80"
+          class="flex flex-col relative pl-11 md:pl-0 pb-70 w-[288px] mx-auto items-start lg:items-start md:items-start lg:pl-44 lg:pr-0 lg:w-[1024px] md:pb-[260px] md:w-[660px] md:px-80"
         >
           <div
             class="w-[296px] hero-image-wrapper md:h-[456px] md:min-h-[456px] h-[296px] min-h-[296px] lg:min-h-[352px] lg:h-[352px] md:w-[480px] lg:w-[584px] mb-24 md:mb-0 lg:mb-0 md:absolute md:bottom-0 md:right-0 lg:absolute lg:bottom-[32px] lg:right-[-28px]"
