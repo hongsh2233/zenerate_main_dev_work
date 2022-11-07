@@ -70,7 +70,7 @@
           ></div>
         </div>
         <div
-          class="flex flex-col lg:h-[514px] md:h-[514px] pt-38 pl-54 pr-30 pb-48 md:pl-58 md:pr-20 md:pt-60 md:pb-90 lg:pl-58 lg:pr-20 lg:pt-60 lg:pb-90"
+          class="flex flex-col lg:h-[514px] md:h-[514px] pt-38 pl-54 pr-30 pb-48 md:pl-58 md:pr-20 md:pt-54 md:pb-43 lg:pl-58 lg:pr-20 lg:pt-54 lg:pb-72"
         >
           <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
             <p
@@ -88,13 +88,14 @@
           </div>
 
           <div
-            class="hidden-en-mobile lg:h-[134px] text-18 font-regular leading-[150%] mb-36 text-gray-700"
+            class="hidden-en-mobile lg:h-[134px] text-18 font-regular leading-[150%] mb-28 text-gray-700"
           >
             <p>
               An AI-powered feasibility study tool utilizing<br />
-              generative design and advanced data<br />
-              analytics that zenerates ALL development<br />
-              possibilities with pro forma within a given site.
+              generative design and advanced data <br />analytics that zenerates
+              ALL development<br />
+              possibilities on a given site with floor plans<br />
+              and pro formas.
             </p>
           </div>
           <div
@@ -103,9 +104,10 @@
             <p>
               An AI-powered feasibility study tool<br />
               utilizing generative design and<br />
-              advanced data analytics that <br />
-              zenerates ALL development<br />
-              possibilities with pro forma<br />within a given site.
+              advanced data analytics that<br />
+              zenerates ALL development <br />possibilities on a given site
+              with<br />
+              floor plans and pro formas.
             </p>
           </div>
 
@@ -127,7 +129,7 @@
           class="w-full h-114 md:h-172 lg:h-172 bg-purple-500 justify-between text-white flex flex-col px-18 pt-18 pb-14 md:px-28 md:pt-24 md:pb-20 lg:px-28 lg:pt-24 lg:pb-20"
         >
           <p class="text-18 font-regular leading-[150%] md:text-26 lg:text-26">
-            <strong>Key comp details</strong><br />
+            <strong>Key comps details</strong><br />
             on a map.
           </p>
 
@@ -210,7 +212,7 @@
           ></div>
         </div>
         <div
-          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 pl-54 pr-30 pb-48 md:pl-58 md:pr-20 md:pt-60 md:pb-74 lg:pl-58 lg:pr-20 lg:pt-60 lg:pb-74"
+          class="flex flex-col lg:h-[508px] md:h-[508px] pt-38 pl-54 pr-30 pb-48 md:pl-58 md:pr-20 md:pt-54 md:pb-72 lg:pl-58 lg:pr-20 lg:pt-54 lg:pb-72"
         >
           <div class="flex flex-col mb-12 md:mb-20 lg:mb-20">
             <p class="flex flex-nowrap mb-6 md:mb-10 lg:mb-10">

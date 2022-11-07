@@ -310,11 +310,13 @@
                 <div
                   class="flex flex-col text-14 lg:pt-10 items-start font-regular text-gray-700 leading-[150%] md:text-18 lg:text-18"
                 >
-                  <p class="font-medium mb-8 md:mb-10 lg:mb-10">
-                    Cut down on weeks of
+                  <p
+                    class="font-medium mb-8 md:mb-10 lg:mb-10 text-16 md:text-20 lg:text-20"
+                  >
+                    Cut down on weeks
                   </p>
                   <ul class="flex flex-col">
-                    <li class="flex w-full items-center mb-6">
+                    <li class="flex w-full items-center mb-8">
                       <div
                         class="flex mr-10 items-center justify-center bg-core-500 rounded-[50%] text-white w-16 h-16"
                       >
