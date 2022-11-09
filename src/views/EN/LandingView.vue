@@ -2,28 +2,26 @@
   <div class="min-w-[280px]">
     <section class="section section-landing">
       <div
-        class="py-40 md:py-60 mb-10 lg:pt-100 px-10 md:px-30 lg:px-30 lg:pb-60 w-[320px] md:w-[630px] lg:w-[630px] mx-auto"
+        class="py-40 md:py-60 mb-10 lg:pt-100 px-10 md:px-30 lg:px-30 lg:pb-60 w-[320px] md:w-[630px] lg:w-[750px] mx-auto"
       >
         <div class="flex flex-col">
           <p
-            class="text-26 font-regular leading-[135%] md:mb-28 lg:mb-20 mb-20 text-left md:text-center lg:text-center md:text-30 lg:text-34"
+            class="text-26 font-medium leading-[135%] md:mb-16 lg:mb-22 mb-20 text-left md:text-center lg:text-center md:text-34 lg:text-42"
           >
-            <span>Making <strong>feasibility</strong>&nbsp;</span>
-            <span><strong>studies easier</strong></span>
+            <span>Making feasibility&nbsp;</span>
+            <span>studies easier</span>
             <br />
-            <span>and <strong>projects more&nbsp;</strong></span>
-            <span><strong>profitable</strong>&nbsp;</span>
-            <span>through&nbsp;</span>
-            <span>the power of AI</span>
+            <span>and projects more&nbsp;</span>
+            <span>profitable&nbsp;</span>
           </p>
 
           <p
-            class="text-14 font-regular leading-[150%] md:text-16 lg:text-18 text-left md:text-center lg:text-center"
+            class="text-16 font-regular leading-[150%] lg:mx-auto md:text-20 lg:w-[500px] lg:text-22 text-left md:text-center lg:text-center"
           >
-            <span>Zenerate provides products and&nbsp;</span>
-            <span>services that automate<br /></span>
-            <span>and optimize key aspects of the&nbsp;</span>
-            <span>feasibility study process.</span>
+            <span>Zenerate provides AI-powered&nbsp;</span>
+            <span>feasibility&nbsp;</span>
+            <span>solutions for real&nbsp;</span>
+            <span>estate development.</span>
           </p>
         </div>
       </div>
