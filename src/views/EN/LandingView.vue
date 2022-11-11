@@ -127,7 +127,7 @@
           class="w-full h-114 md:h-172 lg:h-172 bg-purple-500 justify-between text-white flex flex-col px-18 pt-18 pb-14 md:px-28 md:pt-24 md:pb-20 lg:px-28 lg:pt-24 lg:pb-20"
         >
           <p class="text-18 font-regular leading-[150%] md:text-26 lg:text-26">
-            <strong>Key comps details</strong><br />
+            <strong>All the latest developments</strong><br />
             on a map.
           </p>
 
