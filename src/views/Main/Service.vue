@@ -46,6 +46,7 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
+import { useMeta } from 'vue-meta'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 const { locale } = useI18n()
 const serviceTab = ref('consulting')
@@ -53,7 +54,6 @@ const toggleServiceTab = (tab) => {
   serviceTab.value = tab
 }
 
-import { useMeta } from 'vue-meta'
 const { meta } = useMeta({
   title: '서비스 | 제너레잇',
   description:

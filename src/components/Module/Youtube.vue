@@ -4,7 +4,7 @@
       <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/onFOGFiA0xg"
+        src="https://www.youtube.com/embed/onFOGFiA0xg?&rel=0&enablejsapi=1&origin=https://youtube.com"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
@@ -14,7 +14,6 @@
 </template>
 <script lang="ts" scoped></script>
 <style lang="scss" scoped>
-
 .module-youtube-wrapper {
   .youtube-inner {
     width: 688px;
@@ -28,7 +27,7 @@
       padding: 24px 0px;
       padding-left: 12px;
       padding-bottom: 90px;
-      iframe{
+      iframe {
         width: 100%;
         object-fit: cover;
       }
@@ -38,10 +37,9 @@
       height: 300px;
       object-fit: cover;
       padding: 24px 0px;
-      
     }
   }
-  @include mobile{
+  @include mobile {
     margin-bottom: 40px;
   }
 }
