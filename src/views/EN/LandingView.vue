@@ -2,7 +2,7 @@
   <div class="min-w-[280px]">
     <section class="section section-landing">
       <div
-        class="py-40 md:py-60 mb-10 lg:pt-100 px-10 md:px-30 lg:px-30 lg:pb-60 w-[320px] md:w-[630px] lg:w-[750px] mx-auto"
+        class="py-40 md:pt-90 md:pb-60 mb-10 lg:pt-145 px-10 md:px-30 lg:px-30 lg:pb-80 w-[320px] md:w-[630px] lg:w-[750px] mx-auto"
       >
         <div class="flex flex-col">
           <p
