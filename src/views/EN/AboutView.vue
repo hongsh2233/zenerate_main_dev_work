@@ -207,23 +207,57 @@
 </template>
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
+import { useHead } from '@vueuse/head'
 import Store from '/Store/index'
 import Footer from '/Components/EN/Footer.vue'
-import { useMeta } from 'vue-meta'
 
-const { meta } = useMeta({
-  title: 'About | Zenerate',
-  description:
-    'Zenerate is a team of architects, AI developers, software engineers and computational designers who are passionate about innovating the architecture and real estate development industries for better built environment.  ',
+useHead({
+  title: `About Zenerate | Learn about how we're revolutionizing RE development`,
   htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/about' }],
   meta: [
     {
-      name: 'description',
-      content:
-        'Zenerate is a team of architects, AI developers, software engineers and computational designers who are passionate about innovating the architecture and real estate development industries for better built environment.  ',
+      name: `description`,
+      content: `Zenerate provides AI-powered tools for real estate development. Utilizing generative design and AI, we're helping maximize returns and save time.`,
+    },
+    {
+      name: 'twitter:title',
+      content: `About Zenerate | Learn about how we're revolutionizing RE development`,
+    },
+    {
+      name: 'twitter:description',
+      content: `Zenerate provides AI-powered tools for real estate development. Utilizing generative design and AI, we're helping maximize returns and save time.`,
+    },
+    { name: 'keywords', content: 'zenerate' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/about',
+    },
+    {
+      name: 'og:title',
+      content: `About Zenerate | Learn about how we're revolutionizing RE development`,
+    },
+    {
+      name: 'og:description',
+      content: `Zenerate provides AI-powered tools for real estate development. Utilizing generative design and AI, we're helping maximize returns and save time.`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/about' }],
 })
 // const fullpage = computed(() => Store.state.root.FullPage)
 // onMounted(() => {

@@ -1,8 +1,8 @@
 // import devtools from '@vue/devtools'
 // devtools.connect()
 import { createApp } from 'vue'
-import { createMetaManager, defaultConfig } from 'vue-meta'
 import VueGtag from 'vue-gtag-next'
+import { createHead } from '@vueuse/head'
 import i18n from '/Config/locales/i18n'
 import App from './App.vue'
 import Router from './router'
@@ -19,21 +19,17 @@ import '/Assets/scss/timeline.scss'
 import '/Assets/scss/en.scss'
 import '/Assets/css/tailwind.css'
 
-createApp(App)
-  .use(Router)
-  .use(i18n)
-  .use(Store.original)
-  .use(gtmPlugin)
-  .use(VueGtag, {
-    property: [
-      { id: 'UA-212995971-1', default: true },
-      { id: 'UA-214276888-1' },
-    ],
-  })
-  .use(
-    createMetaManager(false, {
-      ...defaultConfig,
-      meta: { tag: 'meta', nameless: true },
-    })
-  )
-  .mount('#app')
+const head = createHead()
+
+const app = createApp(App)
+app.use(Router)
+app.use(i18n)
+app.use(Store.original)
+app.use(gtmPlugin)
+app.use(VueGtag, {
+  property: [{ id: 'UA-212995971-1' }, { id: 'UA-214276888-1' }],
+})
+app.use(head)
+app.mount('#app')
+
+export { app }

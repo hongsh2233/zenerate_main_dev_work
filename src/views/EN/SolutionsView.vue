@@ -106,7 +106,6 @@
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import Store from '/Store/index'
 import Footer from '/Components/EN/Footer.vue'
-import { useMeta } from 'vue-meta'
 const fullpage = computed(() => Store.state.root.FullPage)
 
 onMounted(() => {
@@ -115,33 +114,6 @@ onMounted(() => {
     offsetSections: false,
     // navigation: false,
   })
-})
-
-const { meta } = useMeta({
-  title: 'Services | Zenerate',
-  description:
-    'Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. ',
-  htmlAttrs: { lang: 'en' },
-  meta: [
-    {
-      name: 'description',
-      content:
-        'Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. ',
-    },
-  ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/services' }],
-  og: {
-    url: 'https://www.zenerate.ai/services',
-    type: 'website',
-    title: 'Pricing | Zenerate',
-    description: `Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. `,
-    tags: 'zenerate',
-    keywords: 'zenerate',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: 'Services | Zenerate',
-  },
 })
 </script>
 <style lang="scss" scoped>

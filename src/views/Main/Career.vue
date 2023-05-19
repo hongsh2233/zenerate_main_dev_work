@@ -14,7 +14,7 @@
 </template>
 <script lang="ts" setup>
 import { onMounted, ref, computed } from 'vue'
-import { useMeta } from 'vue-meta'
+import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
 import CareerList from '/Components/Module/CareerList.vue'
 
@@ -23,32 +23,53 @@ const scrollTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
 }
 
-const { meta } = useMeta({
-  title: '채용 | 제너레잇',
-  vmid: 'description',
-  description:
-    '글로벌 프롭테크 스타트업 제너레잇과 부동산개발 산업을 함께 바꾸어 나갈 열정적인 인재를 채용합니다.',
+useHead({
+  title: `채용 | 제너레잇`,
   htmlAttrs: { lang: 'ko' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/career' }],
   meta: [
     {
-      name: 'description',
-      content:
-        '글로벌 프롭테크 스타트업 제너레잇과 부동산개발 산업을 함께 바꾸어 나갈 열정적인 인재를 채용합니다.',
+      name: `description`,
+      content: `글로벌 프롭테크 스타트업 제너레잇과 부동산개발 산업을 함께 바꾸어 나갈 열정적인 인재를 채용합니다.`,
+    },
+    {
+      name: 'twitter:title',
+      content: `채용 | 제너레잇`,
+    },
+    {
+      name: 'twitter:description',
+      content: `글로벌 프롭테크 스타트업 제너레잇과 부동산개발 산업을 함께 바꾸어 나갈 열정적인 인재를 채용합니다.`,
+    },
+    { name: 'keywords', content: '제너레잇' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/kr/main/career',
+    },
+    {
+      name: 'og:title',
+      content: `채용 | 제너레잇`,
+    },
+    {
+      name: 'og:description',
+      content: `글로벌 프롭테크 스타트업 제너레잇과 부동산개발 산업을 함께 바꾸어 나갈 열정적인 인재를 채용합니다.`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/career' }],
-  og: {
-    url: 'https://www.zenerate.ai/kr/main/career',
-    type: 'website',
-    title: '채용 | 제너레잇',
-    description: `글로벌 프롭테크 스타트업 제너레잇과 부동산개발 산업을 함께 바꾸어 나갈 열정적인 인재를 채용합니다.`,
-    tags: '제너레잇',
-    keywords: '제너레잇',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: '채용 | 제너레잇',
-  },
 })
 </script>
 

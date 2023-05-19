@@ -10,12 +10,11 @@
 </template>
 
 <script setup>
-import { useMeta } from 'vue-meta'
 import Header from '/Components/HeaderMain.vue'
 import ModulePage from '/Pages/ModulePage.vue'
 import MenuDrawer from '/Components/MenuDrawer.vue'
 import Footer from '/Components/Footer.vue'
-
+import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
 import { ref } from '@vue/reactivity'
 const { t } = useI18n()
@@ -26,31 +25,56 @@ const toggleDrawer = (flag) => {
   showDrawer.value = flag
 }
 
-const { meta } = useMeta({
+useHead({
   title: '제너레잇 | 부동산개발 수익극대화 빌딩디자인 AI솔루션',
-  description:
-    '제너레잇은 건축 디자인 자동화와 인공지능 기술을 통해 부동산 개발 수익을 극대화합니다. 기존 방식에 비해 평균 12%의 수익을 추가로 만들어 내고 있습니다.',
   htmlAttrs: { lang: 'ko' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr' }],
   meta: [
     {
-      name: 'description',
+      name: `description`,
       content:
         '제너레잇은 건축 디자인 자동화와 인공지능 기술을 통해 부동산 개발 수익을 극대화합니다. 기존 방식에 비해 평균 12%의 수익을 추가로 만들어 내고 있습니다.',
     },
+    {
+      name: 'twitter:title',
+      content: '제너레잇 | 부동산개발 수익극대화 빌딩디자인 AI솔루션',
+    },
+    {
+      name: 'twitter:description',
+      content:
+        '제너레잇은 건축 디자인 자동화와 인공지능 기술을 통해 부동산 개발 수익을 극대화합니다. 기존 방식에 비해 평균 12%의 수익을 추가로 만들어 내고 있습니다.',
+    },
+    { name: 'keywords', content: 'zenerate' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/kr',
+    },
+    {
+      name: 'og:title',
+      content: '제너레잇 | 부동산개발 수익극대화 빌딩디자인 AI솔루션',
+    },
+    {
+      name: 'og:description',
+      content:
+        '제너레잇은 건축 디자인 자동화와 인공지능 기술을 통해 부동산 개발 수익을 극대화합니다. 기존 방식에 비해 평균 12%의 수익을 추가로 만들어 내고 있습니다.',
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
+    },
   ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr' }],
-  og: {
-    url: 'https://www.zenerate.ai/kr',
-    type: 'website',
-    title: '제너레잇 | 부동산개발 수익극대화 빌딩디자인 AI솔루션',
-    description: `건축 디자인 자동화와 인공지능 기술을 통해 부동산 개발 수익을 극대화합니다. 기존 방식에 비해 평균 12%의 수익을 추가로 만들어 내고 있습니다.`,
-    tags: '제너레잇',
-    keywords: '제너레잇',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: '제너레잇 | 부동산개발 수익극대화 빌딩디자인 AI솔루션',
-  },
 })
 </script>
 

@@ -561,9 +561,58 @@ import { useRouter } from 'vue-router'
 import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
 import { useGtag } from 'vue-gtag-next'
-import { useMeta } from 'vue-meta'
 import ImagePreloader from '/Utils/ImagePreloader'
 import PartnersList from '/Constants/partners'
+import { useHead } from '@vueuse/head'
+
+useHead({
+  title: `About the Zenerate App | Instantly evaluate development potential`,
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/zenerate-app' }],
+  meta: [
+    {
+      name: `description`,
+      content: `An AI-powered feasibility study tool utilizing generative design and advanced data analytics that zenerates ALL development possibilities within a given site.`,
+    },
+    {
+      name: 'twitter:title',
+      content: `About the Zenerate App | Instantly evaluate development potential`,
+    },
+    {
+      name: 'twitter:description',
+      content: `An AI-powered feasibility study tool utilizing generative design and advanced data analytics that zenerates ALL development possibilities within a given site.`,
+    },
+    { name: 'keywords', content: 'zenerate' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/zenerate-app',
+    },
+    {
+      name: 'og:title',
+      content: `About the Zenerate App | Instantly evaluate development potential`,
+    },
+    {
+      name: 'og:description',
+      content: `An AI-powered feasibility study tool utilizing generative design and advanced data analytics that zenerates ALL development possibilities within a given site.`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
+    },
+  ],
+})
 
 const preloadImages = {
   desktop: ['/en/overview/overview_hero_desktop.png'],
@@ -609,20 +658,6 @@ const goToApp = () => {
     event_label: '(not yet)',
   })
 }
-const { meta } = useMeta({
-  title: 'Zenerate App | Zenerate',
-  description:
-    'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
-  htmlAttrs: { lang: 'en' },
-  meta: [
-    {
-      name: 'description',
-      content:
-        'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
-    },
-  ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/zenerate-app' }],
-})
 </script>
 <style lang="scss" scoped>
 strong {

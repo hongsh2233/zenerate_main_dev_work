@@ -198,7 +198,6 @@ import { useRoute, useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 import SelectInput from '/Components/SelectInput.vue'
 import { ModalLayout, Button, Form } from '/Components/EN/index'
-import { useMeta } from 'vue-meta'
 // const fullpage = computed(() => Store.state.root.FullPage)
 
 // onMounted(() => {
@@ -369,31 +368,6 @@ const sendEmail = async () => {
   }, 10000)
 }
 const router = useRouter()
-
-const { meta } = useMeta({
-  title: 'Contact Us | Zenerate',
-  description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
-  htmlAttrs: { lang: 'en' },
-  meta: [
-    {
-      name: 'description',
-      content: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
-    },
-  ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/contact' }],
-  og: {
-    url: 'https://www.zenerate.ai/contact',
-    type: 'website',
-    title: 'Contact Us | Zenerate',
-    description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
-    tags: 'zenerate',
-    keywords: 'zenerate',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: 'Contact Us | Zenerate',
-  },
-})
 </script>
 <style lang="scss" scoped>
 .section-contact {

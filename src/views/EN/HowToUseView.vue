@@ -156,7 +156,6 @@
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
 import Store from '/Store/index'
 import { useGtag } from 'vue-gtag-next'
-import { useMeta } from 'vue-meta'
 import Footer from '/Components/EN/Footer.vue'
 
 // const fullpage = computed(() => Store.state.root.FullPage)
@@ -177,21 +176,6 @@ const goToApp = () => {
     event_label: '(not yet)',
   })
 }
-
-const { meta } = useMeta({
-  title: 'How To Use | Zenerate',
-  description:
-    'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
-  htmlAttrs: { lang: 'en' },
-  meta: [
-    {
-      name: 'description',
-      content:
-        'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
-    },
-  ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/how-to-use' }],
-})
 </script>
 <style lang="scss" scoped>
 .section-case-studies {

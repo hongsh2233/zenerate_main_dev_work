@@ -331,9 +331,10 @@
 </template>
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
+import { useHead } from '@vueuse/head'
 import { ref, computed, reactive } from 'vue'
-import { useMeta } from 'vue-meta'
 import timelineItem from '/Constants/timeline'
+
 const { locale } = useI18n()
 const leftItem = ref(
   computed(() => {
@@ -412,13 +413,7 @@ const memberList = reactive<
     linkedin: 'https://www.linkedin.com/in/beomgyo-oh-abb9201a5/',
     // github: 'https://github.com/Coldsewoo/',
   },
-  {
-    name: 'main.team.name.lsh',
-    title: 'main.team.job.lsh',
-    comment: 'main.team.comment.lsh',
-    img: 'lsh',
-    team: 'product',
-  },
+
   {
     name: 'main.team.name.kdh',
     title: 'main.team.job.kdh',
@@ -447,13 +442,6 @@ const memberList = reactive<
     img: 'psj',
     team: 'product',
   },
-  {
-    name: 'main.team.name.ksh',
-    title: 'main.team.job.ksh',
-    comment: 'main.team.comment.ksh',
-    img: 'ksh',
-    team: 'product',
-  },
 ])
 
 const filteredMember = computed(() => {
@@ -461,31 +449,56 @@ const filteredMember = computed(() => {
   return memberList.filter((f) => f.team === currentTab.value)
 })
 
-const { meta } = useMeta({
+useHead({
   title: '회사소개 | 제너레잇',
-  description:
-    '제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.',
   htmlAttrs: { lang: 'ko' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/about' }],
   meta: [
     {
-      name: 'description',
+      name: `description`,
       content:
         '제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.',
     },
+    {
+      name: 'twitter:title',
+      content: '회사소개 | 제너레잇',
+    },
+    {
+      name: 'twitter:description',
+      content:
+        '제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.',
+    },
+    { name: 'keywords', content: '제너레잇' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/kr/main/about',
+    },
+    {
+      name: 'og:title',
+      content: '회사소개 | 제너레잇',
+    },
+    {
+      name: 'og:description',
+      content:
+        '제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.',
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
+    },
   ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/about' }],
-  og: {
-    url: 'https://www.zenerate.ai/kr/main/about',
-    type: 'website',
-    title: '회사소개 | 제너레잇',
-    description: `제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.`,
-    tags: '제너레잇',
-    keywords: '제너레잇',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: '회사소개 | 제너레잇',
-  },
 })
 </script>
 <style lang="scss" scoped>

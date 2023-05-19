@@ -453,6 +453,7 @@ import PartnersList from '/Constants/partners'
 import { useGtag } from 'vue-gtag-next'
 import ImagePreloader from '/Utils/ImagePreloader'
 import { getOSByUserAgent } from '/Utils/getOSByUserAgent'
+import { useHead } from '@vueuse/head'
 
 const { event } = useGtag()
 const goToApp = () => {

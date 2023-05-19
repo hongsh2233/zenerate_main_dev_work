@@ -133,7 +133,6 @@ import Store from '/Store/index'
 import { useRouter } from 'vue-router'
 import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
-import { useMeta } from 'vue-meta'
 
 const fullpage = computed(() => Store.state.root.FullPage)
 const router = useRouter()
@@ -175,33 +174,6 @@ const selectPricingPlan = (item) => {
     }
   })
 }
-
-const { meta } = useMeta({
-  title: 'Service | Zenerate',
-  description:
-    'Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.',
-  htmlAttrs: { lang: 'en' },
-  meta: [
-    {
-      name: 'description',
-      content:
-        'Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.',
-    },
-  ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/services' }],
-  og: {
-    url: 'https://www.zenerate.ai/services',
-    type: 'website',
-    title: 'Service | Zenerate',
-    description: `Join developers, architects, property owners, investors, and planners who use our solutions to maximize project profits.`,
-    tags: 'zenerate',
-    keywords: 'zenerate',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: 'Service | Zenerate',
-  },
-})
 </script>
 <style lang="scss" scoped>
 .section {

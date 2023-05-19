@@ -324,12 +324,10 @@
         "kyj": "Yeonjae Kang",
         "ysh": "Sang-Hoon Yu",
         "obg": "Beomgyo Oh",
-        "lsh": "Sinhoo Lee",
         "kdh": "Daehong Kim",
         "bsh": "Suhyun Bae",
         "ngsa": "Suna Namgung",
-        "psj": "Sangjun Park",
-        "ksh": "Seonghoon Kim"
+        "psj": "Sangjun Park"
       },
       "job": {
         "sbj": "CEO, Architectural Designer",
@@ -338,12 +336,10 @@
         "kyj": "Architectural Designer",
         "ysh": "AI Developer",
         "obg": "Web Developer",
-        "lsh": "Computational Designer",
         "kdh": "Computational Designer",
         "bsh": "Backend Engineer",
         "ngsa": "Web Developer",
-        "psj": "Computational Designer",
-        "ksh": "Computational Designer"
+        "psj": "Computational Designer"
       },
       "comment": {
         "sbj": "It all depends on how we look at it",
@@ -352,12 +348,10 @@
         "kyj": "Expansion through integration",
         "ysh": "Likes: dogs, math and Python",
         "obg": "From Inspiration to Realization",
-        "lsh": "Connect Architecture and Codes",
         "kdh": "Manuscripts don't burn",
         "bsh": "Divide and conquer",
         "ngsa": "Clear and Concise",
-        "psj": "Step by step",
-        "ksh": "Think Different"
+        "psj": "Step by step"
       }
     }
   },

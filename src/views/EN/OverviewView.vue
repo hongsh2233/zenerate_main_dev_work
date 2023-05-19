@@ -384,7 +384,6 @@ import { useRouter } from 'vue-router'
 import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
 import Footer from '/Components/EN/Footer.vue'
 import { useGtag } from 'vue-gtag-next'
-import { useMeta } from 'vue-meta'
 import PartnersList from '/Constants/partners'
 
 // const fullpage = computed(() => Store.state.root.FullPage)
@@ -405,21 +404,6 @@ const goToApp = () => {
     event_label: '(not yet)',
   })
 }
-
-const { meta } = useMeta({
-  title: 'Overview | Zenerate',
-  description:
-    'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
-  htmlAttrs: { lang: 'en' },
-  meta: [
-    {
-      name: 'description',
-      content:
-        'Zenerate is an AI-powered feasibility study tool that boosts real estate development profitability up to 26%',
-    },
-  ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/overview' }],
-})
 </script>
 <style lang="scss" scoped>
 .section-case-studies {

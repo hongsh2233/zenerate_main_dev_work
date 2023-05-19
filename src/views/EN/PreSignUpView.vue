@@ -325,8 +325,6 @@
 <script lang="ts" setup>
 import { reactive, ref, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useMeta } from 'vue-meta'
-import Store from '/Store/index'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import Footer from '/Components/EN/Footer.vue'

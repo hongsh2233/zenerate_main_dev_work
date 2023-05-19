@@ -76,7 +76,7 @@ import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 import { formatDistanceToNowStrict } from 'date-fns'
-import { useMeta } from 'vue-meta'
+import { useHead } from '@vueuse/head'
 const router = useRouter()
 const posted = new Date(2021, 9, 17)
 const today = new Date()
@@ -125,31 +125,56 @@ const JOBS = [
   },
 ]
 
-const { meta } = useMeta({
-  title: 'Career | Zenerate',
-  description:
-    'Join Zenerate to work with the most passionate and intelligent team in the world.',
+useHead({
+  title: `Zenerate Careers | Join us in revolutionizing real estate development`,
   htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/career' }],
   meta: [
     {
-      name: 'description',
-      content:
-        'Join Zenerate to work with the most passionate and intelligent team in the world.',
+      name: `description`,
+      content: `Ready to unlock your full potential and create meaningful work? Explore career opportunities available at Zenerate!
+`,
+    },
+    {
+      name: 'twitter:title',
+      content: `Zenerate Careers | Join us in revolutionizing real estate development`,
+    },
+    {
+      name: 'twitter:description',
+      content: `Ready to unlock your full potential and create meaningful work? Explore career opportunities available at Zenerate!
+`,
+    },
+    { name: 'keywords', content: 'zenerate' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/career',
+    },
+    {
+      name: 'og:title',
+      content: `Zenerate Careers | Join us in revolutionizing real estate development`,
+    },
+    {
+      name: 'og:description',
+      content: `Ready to unlock your full potential and create meaningful work? Explore career opportunities available at Zenerate!
+`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/career' }],
-  og: {
-    url: 'https://www.zenerate.ai/career',
-    type: 'website',
-    title: 'Career Us | Zenerate',
-    description: `Join Zenerate to work with the most passionate and intelligent team in the world.`,
-    tags: 'zenerate',
-    keywords: 'zenerate',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: 'Career Us | Zenerate',
-  },
 })
 </script>
 <style lang="scss" scoped>

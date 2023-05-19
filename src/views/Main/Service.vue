@@ -46,7 +46,7 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
-import { useMeta } from 'vue-meta'
+import { useHead } from '@vueuse/head'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 const { locale } = useI18n()
 const serviceTab = ref('consulting')
@@ -54,31 +54,53 @@ const toggleServiceTab = (tab) => {
   serviceTab.value = tab
 }
 
-const { meta } = useMeta({
-  title: '서비스 | 제너레잇',
-  description:
-    '제너레잇은 컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.',
-  meta: [
-    {
-      name: 'description',
-      content:
-        '제너레잇은 컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.',
-    },
-  ],
+useHead({
+  title: `서비스 | 제너레잇`,
   htmlAttrs: { lang: 'ko' },
   link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/service' }],
-  og: {
-    url: 'https://www.zenerate.ai/kr/main/service',
-    type: 'website',
-    title: '서비스 | 제너레잇',
-    description: `제너레잇은 컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.`,
-    tags: '제너레잇',
-    keywords: '제너레잇',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: '서비스 | 제너레잇',
-  },
+  meta: [
+    {
+      name: `description`,
+      content: `제너레잇은 컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.`,
+    },
+    {
+      name: 'twitter:title',
+      content: `서비스 | 제너레잇`,
+    },
+    {
+      name: 'twitter:description',
+      content: `제너레잇은 컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.`,
+    },
+    { name: 'keywords', content: '제너레잇' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/kr/main/service',
+    },
+    {
+      name: 'og:title',
+      content: `서비스 | 제너레잇`,
+    },
+    {
+      name: 'og:description',
+      content: `제너레잇은 컨설팅 / 웹 서비스를 통해 시장에 대한 인사이트와 최고의 수익안을 제공합니다.`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
+    },
+  ],
 })
 </script>
 

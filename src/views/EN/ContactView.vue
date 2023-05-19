@@ -149,7 +149,7 @@ import Validation from '/Utils/Validation'
 import { useRoute, useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 import SelectInput from '/Components/SelectInput.vue'
-import { useMeta } from 'vue-meta'
+import { useHead } from '@vueuse/head'
 // const fullpage = computed(() => Store.state.root.FullPage)
 
 // onMounted(() => {
@@ -289,31 +289,54 @@ const sendEmail = async () => {
     sendEmailStatus.value = false
   }, 10000)
 }
-const router = useRouter()
 
-const { meta } = useMeta({
-  title: 'Contact Us | Zenerate',
-  description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
+useHead({
+  title: `Contact Us At Zenerate`,
   htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/contact' }],
   meta: [
     {
-      name: 'description',
-      content: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
+      name: `description`,
+      content: `Contact us! We'd love to talk about how we can work together. Get in touch and let us know how we can help.`,
+    },
+    {
+      name: 'twitter:title',
+      content: `Contact Us At Zenerate`,
+    },
+    {
+      name: 'twitter:description',
+      content: `Contact us! We'd love to talk about how we can work together. Get in touch and let us know how we can help.`,
+    },
+    { name: 'keywords', content: 'zenerate' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/contact',
+    },
+    {
+      name: 'og:title',
+      content: `Contact Us At Zenerate`,
+    },
+    {
+      name: 'og:description',
+      content: `Contact us! We'd love to talk about how we can work together. Get in touch and let us know how we can help.`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/contact' }],
-  og: {
-    url: 'https://www.zenerate.ai/contact',
-    type: 'website',
-    title: 'Contact Us | Zenerate',
-    description: `We'd love to hear from you. Please email us for inquiries at help@zenerate.ai`,
-    tags: 'zenerate',
-    keywords: 'zenerate',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: 'Contact Us | Zenerate',
-  },
 })
 </script>
 <style lang="scss" scoped>

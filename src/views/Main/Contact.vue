@@ -61,7 +61,7 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import ApiService from '/Services/api'
-import { useMeta } from 'vue-meta'
+import { useHead } from '@vueuse/head'
 import SelectInput from '/Components/SelectInput.vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
@@ -120,31 +120,53 @@ const sendEmail = async () => {
   sendEmailStatus.value = true
 }
 
-const { meta } = useMeta({
-  title: '문의 | 제너레잇',
-  description:
-    '사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.',
+useHead({
+  title: `문의 | 제너레잇`,
   htmlAttrs: { lang: 'ko' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/contact' }],
   meta: [
     {
-      name: 'description',
-      content:
-        '사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.',
+      name: `description`,
+      content: `사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.`,
+    },
+    {
+      name: 'twitter:title',
+      content: `문의 | 제너레잇`,
+    },
+    {
+      name: 'twitter:description',
+      content: `사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.`,
+    },
+    { name: 'keywords', content: '제너레잇' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/kr/main/contact',
+    },
+    {
+      name: 'og:title',
+      content: `문의 | 제너레잇`,
+    },
+    {
+      name: 'og:description',
+      content: `사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/contact' }],
-  og: {
-    url: 'https://www.zenerate.ai/kr/main/contact',
-    type: 'website',
-    title: '문의 | 제너레잇',
-    description: `사업 제휴, 투자, 홍보 및 채용 등에 관해 궁금한 점들을 문의해주세요.`,
-    tags: '제너레잇',
-    keywords: '제너레잇',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: '문의 | 제너레잇',
-  },
 })
 </script>
 <style lang="scss" scoped>

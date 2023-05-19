@@ -55,7 +55,7 @@ import NewsContent from '/Components/Module/NewsContent.vue'
 import { onMounted, ref, computed } from 'vue'
 import { onBeforeRouteUpdate } from 'vue-router'
 import ApiService from '/Services/api'
-import { useMeta } from 'vue-meta'
+import { useHead } from '@vueuse/head'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
@@ -85,29 +85,53 @@ onMounted(async () => {
   }
 })
 
-const { meta } = useMeta({
-  title: '새소식 | 제너레잇',
-  description: '제너레잇의 최신 소식을 확인하세요.',
+useHead({
+  title: `새소식 | 제너레잇`,
   htmlAttrs: { lang: 'ko' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/news' }],
   meta: [
     {
-      name: 'description',
-      content: '제너레잇의 최신 소식을 확인하세요.',
+      name: `description`,
+      content: `제너레잇의 최신 소식을 확인하세요.`,
+    },
+    {
+      name: 'twitter:title',
+      content: `새소식 | 제너레잇`,
+    },
+    {
+      name: 'twitter:description',
+      content: `제너레잇의 최신 소식을 확인하세요.`,
+    },
+    { name: 'keywords', content: '제너레잇' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/kr/main/news',
+    },
+    {
+      name: 'og:title',
+      content: `새소식 | 제너레잇`,
+    },
+    {
+      name: 'og:description',
+      content: `제너레잇의 최신 소식을 확인하세요.`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/kr/main/news' }],
-  og: {
-    url: 'https://www.zenerate.ai/kr/main/news',
-    type: 'website',
-    title: '새소식 | 제너레잇',
-    description: `제너레잇의 최신 소식을 확인하세요.`,
-    tags: '제너레잇',
-    keywords: '제너레잇',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: '새소식 | 제너레잇',
-  },
 })
 </script>
 <style lang="scss" scoped>

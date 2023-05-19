@@ -50,7 +50,7 @@
 </template>
 <script lang="ts" setup>
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
-import Store from '/Store/index'
+import { useHead } from '@vueuse/head'
 import { useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 
@@ -77,6 +77,55 @@ const goCanlendly = () => {
   })
   return false
 }
+
+useHead({
+  title: `Request a Demo of Zenerate`,
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/demo-signup' }],
+  meta: [
+    {
+      name: `description`,
+      content: `Request a live demo of Zenerate and learn how to utilize our AI-powered tools to maximize returns and save hundreds of hours.`,
+    },
+    {
+      name: 'twitter:title',
+      content: `Request a Demo of Zenerate`,
+    },
+    {
+      name: 'twitter:description',
+      content: `Request a live demo of Zenerate and learn how to utilize our AI-powered tools to maximize returns and save hundreds of hours.`,
+    },
+    { name: 'keywords', content: 'zenerate' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/demo-signup',
+    },
+    {
+      name: 'og:title',
+      content: `Request a Demo of Zenerate`,
+    },
+    {
+      name: 'og:description',
+      content: `Request a live demo of Zenerate and learn how to utilize our AI-powered tools to maximize returns and save hundreds of hours.`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
+    },
+  ],
+})
 </script>
 <style lang="scss" scoped>
 .calendly-wrapper {

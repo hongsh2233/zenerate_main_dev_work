@@ -93,10 +93,8 @@
 </template>
 <script lang="ts" setup>
 import { ref, onMounted, onBeforeUnmount, computed, watch } from 'vue'
-import { useMeta } from 'vue-meta'
-
+import { useHead } from '@vueuse/head'
 import Store from '/Store/index'
-import AOS from 'aos'
 import Footer from '/Components/EN/Footer.vue'
 import Arrow from '/Components/EN/Arrow.vue'
 
@@ -105,31 +103,53 @@ onMounted(() => {
   fullpage.value.destroy()
 })
 
-const { meta } = useMeta({
-  title: 'Case Studies | Zenerate',
-  description:
-    'Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. ',
+useHead({
+  title: `Case Studies Using Zenerate's AI-Powered Tool`,
   htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/case-studies' }],
   meta: [
     {
-      name: 'description',
-      content:
-        'Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. ',
+      name: `description`,
+      content: `An average of 28% additional returns have been generated and hundreds of hours saved by utilizing Zenerate's AI-powered engine.`,
+    },
+    {
+      name: 'twitter:title',
+      content: `Case Studies Using Zenerate's AI-Powered Tool`,
+    },
+    {
+      name: 'twitter:description',
+      content: `An average of 28% additional returns have been generated and hundreds of hours saved by utilizing Zenerate's AI-powered engine.`,
+    },
+    { name: 'keywords', content: 'zenerate' },
+    {
+      name: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:url',
+      content: 'https://www.zenerate.ai/case-studies',
+    },
+    {
+      name: 'og:title',
+      content: `Case Studies Using Zenerate's AI-Powered Tool`,
+    },
+    {
+      name: 'og:description',
+      content: `An average of 28% additional returns have been generated and hundreds of hours saved by utilizing Zenerate's AI-powered engine.`,
+    },
+    {
+      name: 'og:type',
+      content: 'website',
+    },
+    {
+      name: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png',
     },
   ],
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/case-studies' }],
-  og: {
-    url: 'https://www.zenerate.ai/case-studies',
-    type: 'website',
-    title: 'Case Studies | Zenerate',
-    description: `Zenerate provides a web platform for real-time feasibility studies and consulting services for more customized results. `,
-    tags: 'zenerate',
-    keywords: 'zenerate',
-    image: 'https://www.zenerate.ai/img/logo_og.png',
-  },
-  twitter: {
-    title: 'Case Studies | Zenerate',
-  },
 })
 
 const pdfFiles = {
