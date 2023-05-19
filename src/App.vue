@@ -43,9 +43,14 @@ useHead({
       content: computed(() => siteData.description),
     },
     {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    {
       name: 'twitter:title',
-      content:
-        'Zenerate: Creating AI-Powered Tools for Real Estate Development',
+      content: computed(
+        () => 'Zenerate: Creating AI-Powered Tools for Real Estate Development'
+      ),
     },
     {
       name: 'twitter:description',
