@@ -341,18 +341,27 @@ $breakpoint-mobile: 360px;
 
 @mixin mobile {
   @media only screen and (max-width: #{$breakpoint-tablet - 1px}) {
+    .hidden-mobile{
+      display: none !important;
+    }
     @content;
   }
 }
 
 @mixin tablet {
   @media only screen and (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+    .hidden-tablet{
+      display:none !important;
+    }
     @content;
   }
 }
 
 @mixin desktop {
   @media only screen and (min-width: #{$breakpoint-desktop}) {
+    .hidden-desktop{
+      display:none !important;
+    }
     @content;
   }
 }

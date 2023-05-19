@@ -7,6 +7,9 @@ $breakpoint-480: 480px;
 
 @mixin en-desktop {
   @media only screen and (min-width: #{$breakpoint-1024}) {
+    .hidden-desktop{
+      display:none !important;
+    }
     @content;
   }
 }
@@ -25,12 +28,18 @@ $breakpoint-480: 480px;
 
 @mixin en-mobile {
   @media only screen and (max-width: #{$breakpoint-768 - 1px}) {
+    .hidden-mobile{
+      display:none !important;
+    }
     @content;
   }
 }
 
 @mixin en-tablet {
   @media only screen and (min-width: #{$breakpoint-768}) and (max-width: #{$breakpoint-1024 - 1px}) {
+    .hidden-tablet{
+      display:none !important;
+    }
     @content;
   }
 }
