@@ -3,7 +3,7 @@ node_modules
 /dist
 *.local
 backup
-/.history
+.history
 
 # local env files
 .env.local
