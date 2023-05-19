@@ -16,7 +16,7 @@ import MenuDrawer from '/Components/MenuDrawer.vue'
 import Footer from '/Components/Footer.vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import { ref } from '@vue/reactivity'
+import { ref } from 'vue'
 const { t } = useI18n()
 
 const showDrawer = ref(false)
