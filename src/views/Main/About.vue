@@ -251,14 +251,14 @@
           {{ $t('main.team.menu.zenerate') }}
         </div>
         <div class="horizontal-spacer"></div>
-        <div
+        <!-- <div
           class="contents-tab hover-pointer"
           :class="{ active: currentTab === 'marketing' }"
           @click="toggleTab('marketing')"
         >
           {{ $t('main.team.menu.marketing') }}
         </div>
-        <div class="horizontal-spacer"></div>
+        <div class="horizontal-spacer"></div> -->
         <div
           class="contents-tab hover-pointer"
           :class="{ active: currentTab === 'product' }"
