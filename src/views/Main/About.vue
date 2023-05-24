@@ -460,42 +460,51 @@ useHead({
         '제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.',
     },
     {
-      name: 'twitter:title',
+      hid: 'twitter:title',
+      property: 'twitter:title',
       content: '회사소개 | 제너레잇',
     },
     {
-      name: 'twitter:description',
+      hid: 'twitter:description',
+      property: 'twitter:description',
       content:
         '제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.',
     },
     { name: 'keywords', content: '제너레잇' },
     {
-      name: 'twitter:image',
+      hid: 'twitter:image',
+      property: 'twitter:image',
       content: 'https://www.zenerate.ai/img/logo_og.png',
     },
     {
-      name: 'og:url',
+      hid: 'og:url',
+      property: 'og:url',
       content: 'https://www.zenerate.ai/kr/main/about',
     },
     {
-      name: 'og:title',
+      hid: 'og:title',
+      property: 'og:title',
       content: '회사소개 | 제너레잇',
     },
     {
-      name: 'og:description',
+      hid: 'og:description',
+      property: 'og:description',
       content:
         '제너레잇은 건축, 인공지능, 소프트웨어 분야에서 최고의 전문가들로 이루어진 팀입니다. 산업에 대한 통찰력과 최고의 기술력으로 전세계에서 유일하게 부동산 개발수익을 극대화하는 솔루션을 제공하고 있습니다.',
     },
     {
-      name: 'og:type',
+      hid: 'og:type',
+      property: 'og:type',
       content: 'website',
     },
     {
-      name: 'og:image:url',
+      hid: 'og:image:url',
+      property: 'og:image:url',
       content: 'https://www.zenerate.ai/img/logo_og.png',
     },
     {
-      name: 'og:image:type',
+      hid: 'og:image:type',
+      property: 'og:image:type',
       content: 'image/png',
     },
   ],

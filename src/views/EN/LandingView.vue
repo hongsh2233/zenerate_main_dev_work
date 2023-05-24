@@ -51,9 +51,10 @@
           </p>
         </div>
         <div
+          v-if="slider1Blobs"
           class="slider-wrapper first-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] overflow-hidden"
         >
-          <template v-for="(src, index) in slider1Images" :key="index">
+          <template v-for="(src, index) in slider1Blobs" :key="index">
             <img
               class="w-full h-full"
               :src="src"
@@ -194,9 +195,10 @@
           </div>
         </div>
         <div
+          v-if="slider2Blobs"
           class="slider-wrapper second-slider relative w-full md:h-[506px] lg:h-[506px] h-[350px] overflow-hidden"
         >
-          <template v-for="(src, index) in slider2Images" :key="index">
+          <template v-for="(src, index) in slider2Blobs" :key="index">
             <img
               class="w-full h-full"
               :src="src"
@@ -451,7 +453,7 @@ import { useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 import PartnersList from '/Constants/partners'
 import { useGtag } from 'vue-gtag-next'
-import ImagePreloader from '/Utils/ImagePreloader'
+import resolveImages from '/Utils/resolveImages'
 import { getOSByUserAgent } from '/Utils/getOSByUserAgent'
 import { useHead } from '@vueuse/head'
 
@@ -473,28 +475,26 @@ const slider2Images = Array(4)
   .fill('')
   .map((v, i) => `/en/landing/slider2/pic${i + 1}.jpg`)
 
-onBeforeMount(() => {
-  ImagePreloader.sequential([
+const slider1Blobs = ref([])
+const slider2Blobs = ref([])
+onBeforeMount(async () => {
+  const slider1 = (await resolveImages([
     ...slider1Images[slider1PosterIndex],
     ...slider2Images[slider2PosterIndex],
-  ])
+  ])) as string[]
+  slider1Blobs.value = [...slider1]
 
   if (userAgent !== 'web') {
-    ImagePreloader.sequential(slider1Images)
+    const slider1 = (await resolveImages([...slider1Images])) as string[]
+    slider1Blobs.value = [...slider1]
   }
 })
 
-onMounted(() => {
-  if (userAgent !== 'web') {
-    nextTick(() => {
-      ImagePreloader.sequential(slider2Images)
-    })
-  } else {
-    nextTick(() => {
-      ImagePreloader.sequential(slider1Images)
-      ImagePreloader.sequential(slider2Images)
-    })
-  }
+onMounted(async () => {
+  const slider1 = (await resolveImages([...slider1Images])) as string[]
+  const slider2 = (await resolveImages([...slider2Images])) as string[]
+  slider1Blobs.value = [...slider1]
+  slider2Blobs.value = [...slider2]
 })
 </script>
 <style lang="scss" scoped>

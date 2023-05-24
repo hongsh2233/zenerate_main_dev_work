@@ -132,46 +132,52 @@ useHead({
   meta: [
     {
       name: `description`,
-      content: `Ready to unlock your full potential and create meaningful work? Explore career opportunities available at Zenerate!
-`,
+      content: `Ready to unlock your full potential and create meaningful work? Explore career opportunities available at Zenerate!`,
     },
     {
-      name: 'twitter:title',
+      hid: 'twitter:title',
+      property: 'twitter:title',
       content: `Zenerate Careers | Join us in revolutionizing real estate development`,
     },
     {
-      name: 'twitter:description',
-      content: `Ready to unlock your full potential and create meaningful work? Explore career opportunities available at Zenerate!
-`,
+      hid: 'twitter:description',
+      property: 'twitter:description',
+      content: `Ready to unlock your full potential and create meaningful work? Explore career opportunities available at Zenerate!`,
     },
     { name: 'keywords', content: 'zenerate' },
     {
-      name: 'twitter:image',
+      hid: 'twitter:image',
+      property: 'twitter:image',
       content: 'https://www.zenerate.ai/img/logo_og.png',
     },
     {
-      name: 'og:url',
+      hid: 'og:url',
+      property: 'og:url',
       content: 'https://www.zenerate.ai/career',
     },
     {
-      name: 'og:title',
+      hid: 'og:title',
+      property: 'og:title',
       content: `Zenerate Careers | Join us in revolutionizing real estate development`,
     },
     {
-      name: 'og:description',
-      content: `Ready to unlock your full potential and create meaningful work? Explore career opportunities available at Zenerate!
-`,
+      hid: 'og:description',
+      property: 'og:description',
+      content: `Ready to unlock your full potential and create meaningful work? Explore career opportunities available at Zenerate!`,
     },
     {
-      name: 'og:type',
+      hid: 'og:type',
+      property: 'og:type',
       content: 'website',
     },
     {
-      name: 'og:image:url',
+      hid: 'og:image:url',
+      property: 'og:image:url',
       content: 'https://www.zenerate.ai/img/logo_og.png',
     },
     {
-      name: 'og:image:type',
+      hid: 'og:image:type',
+      property: 'og:image:type',
       content: 'image/png',
     },
   ],

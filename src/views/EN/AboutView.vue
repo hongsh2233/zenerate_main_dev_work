@@ -221,51 +221,53 @@ useHead({
       content: `Zenerate provides AI-powered tools for real estate development. Utilizing generative design and AI, we're helping maximize returns and save time.`,
     },
     {
-      name: 'twitter:title',
+      hid: 'twitter:title',
+      property: 'twitter:title',
       content: `About Zenerate | Learn about how we're revolutionizing RE development`,
     },
     {
-      name: 'twitter:description',
+      hid: 'twitter:description',
+      property: 'twitter:description',
       content: `Zenerate provides AI-powered tools for real estate development. Utilizing generative design and AI, we're helping maximize returns and save time.`,
     },
     { name: 'keywords', content: 'zenerate' },
     {
-      name: 'twitter:image',
+      hid: 'twitter:image',
+      property: 'twitter:image',
       content: 'https://www.zenerate.ai/img/logo_og.png',
     },
     {
-      name: 'og:url',
+      hid: 'og:url',
+      property: 'og:url',
       content: 'https://www.zenerate.ai/about',
     },
     {
-      name: 'og:title',
+      hid: 'og:title',
+      property: 'og:title',
       content: `About Zenerate | Learn about how we're revolutionizing RE development`,
     },
     {
-      name: 'og:description',
+      hid: 'og:description',
+      property: 'og:description',
       content: `Zenerate provides AI-powered tools for real estate development. Utilizing generative design and AI, we're helping maximize returns and save time.`,
     },
     {
-      name: 'og:type',
+      hid: 'og:type',
+      property: 'og:type',
       content: 'website',
     },
     {
-      name: 'og:image:url',
+      hid: 'og:image:url',
+      property: 'og:image:url',
       content: 'https://www.zenerate.ai/img/logo_og.png',
     },
     {
-      name: 'og:image:type',
+      hid: 'og:image:type',
+      property: 'og:image:type',
       content: 'image/png',
     },
   ],
 })
-// const fullpage = computed(() => Store.state.root.FullPage)
-// onMounted(() => {
-//   fullpage.value.init('#fullpage-about', { offsetSections: false })
-// })
-// onBeforeUnmount(() => {
-//   fullpage.value.destroy()
-// })
 </script>
 <style lang="scss" scoped>
 .text-blue {

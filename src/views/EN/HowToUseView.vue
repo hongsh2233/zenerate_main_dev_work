@@ -158,17 +158,6 @@ import Store from '/Store/index'
 import { useGtag } from 'vue-gtag-next'
 import Footer from '/Components/EN/Footer.vue'
 
-// const fullpage = computed(() => Store.state.root.FullPage)
-// const router = useRouter()
-// onMounted(() => {
-//   fullpage.value.destroy()
-//   // fullpage.value.init('#fullpage-pricing', {
-//   //   parallax: false,
-//   //   offsetSections: false,
-//   //   navigation: false,
-//   // })
-// })
-
 const { event } = useGtag()
 const goToApp = () => {
   event('generate_lead', {
