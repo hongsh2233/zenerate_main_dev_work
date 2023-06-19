@@ -1014,15 +1014,6 @@ const router = useRouter()
             height: 30px;
           }
         }
-
-        &.email-input {
-          &.empty::after {
-            @include absolute(top 8px left 60px);
-            @include medium(10);
-            content: '* Business mail only';
-            color: rgba(92, 109, 255, 0.8);
-          }
-        }
       }
       .label-textarea {
         width: 100%;
