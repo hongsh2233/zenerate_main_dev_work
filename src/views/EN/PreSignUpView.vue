@@ -595,9 +595,8 @@ const router = useRouter()
 .section-signup {
   @include relative;
   width: 100vw;
-  height: 100%;
+  height: fit-content;
   letter-spacing: -0.2pt;
-  min-height: 100vh;
   .signup-wrapper {
     @include relative;
     @include flex();
@@ -632,7 +631,7 @@ const router = useRouter()
       @include relative();
       width: 50%;
       height: auto;
-      min-height: 100vh;
+      min-height: fit-content;
       background-color: #4848ff;
 
       @include en-tablet {
@@ -823,19 +822,22 @@ const router = useRouter()
       @include en-tablet {
         order: -1;
         width: 100%;
-        padding: 40px 40px 0px;
-        min-height: 100vh;
+        padding: 60px 40px;
+        min-height: fit-content;
       }
+
       @include en-mobile {
         order: -1;
         width: 100%;
-        padding: 44px 32px 0px;
-        height: 100vh;
+        padding: 60px 32px;
         min-height: 820px;
+        min-height: fit-content;
+
+        
 
         &.thank {
           padding: 74px 32px 0px;
-          min-height: 740px;
+          min-height: 100vh;
         }
       }
 
@@ -877,7 +879,7 @@ const router = useRouter()
 
       .form-title {
         @include regular(22);
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         text-align: center;
         line-height: 31px;
 
@@ -1082,11 +1084,11 @@ const router = useRouter()
 
             @include en-tablet {
               height: 60px;
-              margin: 50px auto;
+              margin: 30px auto;
             }
             @include en-mobile {
               height: 45px;
-              margin: 50px auto;
+              margin: 48px auto;
             }
 
             .submit-spinner{
