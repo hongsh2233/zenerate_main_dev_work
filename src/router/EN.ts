@@ -78,7 +78,7 @@ const ENRoute: RouteRecordRaw = {
     //   children: [],
     // },
     {
-      path: '/pre-launch-signup',
+      path: '/beta',
       name: 'SignUp',
       component: PreSignUpView,
     },

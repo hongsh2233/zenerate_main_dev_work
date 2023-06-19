@@ -11,22 +11,25 @@
           </div>
           <div class="signup-text-wrapper">
             <p class="title">
-              <span>The biggest&nbsp;</span><span>game-changer&nbsp;</span>
-              <span>in the&nbsp;</span>real estate industry<br />
-              <span>is launching&nbsp;</span
-              ><span>in new cities soon.&nbsp;</span>
+              <span>Zenerate App</span><span>Beta Tester&nbsp;</span><span>Program&nbsp;</span>
             </p>
-            <p class="text">
-              <strong>Zenerate</strong> upwards of 10,000 designs&nbsp;<span
-                >to maximize profit&nbsp;</span
-              ><span> up to 26%&nbsp;</span
-              ><span>while saving weeks worth of time</span>
-            </p>
+            <div class="text-wrapper">
+              <IconBase class="icon-check" icon-name="checkmark" icon-color="#FFFFFF" :width="20" :height="20"/>
+              <p class="text">Receive early access to the newest version of the Zenerate App</p>
+            </div>
+            <div class="text-wrapper">
+              <IconBase class="icon-check" icon-name="checkmark" icon-color="#FFFFFF" :width="20" :height="20"/>
+              <p class="text">Play a direct role in shaping and refining our innovative tool</p>
+            </div>
+            <div class="text-wrapper">
+              <IconBase class="icon-check" icon-name="checkmark" icon-color="#FFFFFF" :width="20" :height="20"/>
+              <p class="text">Major discounts upon official launch</p>
+            </div>
           </div>
-          <p class="guide hidden-tablet hidden-mobile">
+          <!-- <p class="guide hidden-tablet hidden-mobile">
             <strong>Sign up</strong> and we'll send you an email <br />
             when Zenerate launches in new cities!
-          </p>
+          </p> -->
           <div class="background-building">
             <div class="left-building"></div>
 
@@ -46,7 +49,7 @@
             </div>
           </div>
         </div>
-        <div
+        <!-- <div
           class="go-to-bottom hidden-desktop"
           :class="{ done: sendEmailStatus }"
         >
@@ -54,12 +57,10 @@
             Sign up below to get<br />
             notified of new cities
           </p>
-        </div>
+        </div> -->
         <transition name="fade">
           <div class="signup-form-wrapper" v-if="!sendEmailStatus">
-            <h2 class="form-title">
-              Let me know<br />when Zenerate launches<br />in new cities!
-            </h2>
+            <h2 class="form-title">Become a Zenerate App<br /><span class="form-title-semibold">Beta Tester</span></h2>
             <div class="form-text">
               <div class="form-row">
                 <div class="label-text">
@@ -94,10 +95,13 @@
                 </div>
               </div>
               <div class="form-row">
-                <div class="label-text email-input">
+                <div
+                  class="label-text email-input"
+                  :class="contactForm.email.value == '' ? 'empty' : ''"
+                >
                   <input
                     type="text"
-                    placeholder="Email"
+                    placeholder="E-mail"
                     autocomplete="new-email"
                     inputmode="email"
                     v-model="contactForm.email.value"
@@ -115,7 +119,7 @@
                 <div class="label-text">
                   <input
                     type="text"
-                    placeholder="Company"
+                    placeholder="Company Name"
                     autocomplete="new-company"
                     v-model="contactForm.company.value"
                     @blur="(v) => validation('company')"
@@ -128,7 +132,7 @@
                   </p>
                 </div>
               </div>
-              <div class="form-row">
+              <!-- <div class="form-row">
                 <div class="label-text">
                   <input
                     type="text"
@@ -235,17 +239,19 @@
                     Please enter a valid code
                   </p>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <div class="form-send-wrapper">
               <div class="dummy" ref="dummy"></div>
               <button
                 class="form-send submit hover-pointer"
-                :class="{ disabled: sendEmailStatus }"
+                :disabled="sendEmailStatus || loading"
+                :class="{ disabled: sendEmailStatus || loading }"
                 @click="sendForm"
               >
-                {{ sendEmailStatus ? 'DONE' : 'SUBMIT' }}
+              <DotSpinnerWhite v-if="loading" :loading="true" class="submit-spinner"/>
+              <span v-else>{{ sendEmailStatus ? 'DONE' : 'SUBMIT' }}</span>
               </button>
             </div>
           </div>
@@ -285,21 +291,18 @@
               <span>Thanks</span> <span>for Signing Up!</span>
             </p>
             <div class="thank-text">
-              <p class="purpose">
-                We'll send you an email<br />
-                when we launch in new cities.
-              </p>
+              <p class="purpose">We'll be in touch soon!</p>
               <p>
-                <span>Until then test out Zenerate in L.A. </span>
-                <span class="available"> (Only available on PC or tablet)</span>
+                <span>Until then check out Z-maps!</span>
               </p>
             </div>
             <div class="form-send-wrapper">
               <div class="dummy" ref="dummy"></div>
-              <button type="button" class="form-send hover-pointer">
-                <router-link class="demo-link" :to="{ name: 'en-demo' }">
-                  BOOK A DEMO
-                </router-link>
+              <button
+                class="form-send hover-pointer"
+                @click="goZmaps"
+              >
+                Try Z-maps
               </button>
             </div>
             <div class="thank-text">
@@ -329,6 +332,11 @@ import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import Footer from '/Components/EN/Footer.vue'
 import SelectInput from '/Components/EN/SignUpSelectInput.vue'
+import IconBase from '/Components/EN/ui/IconBase.vue'
+import DotSpinnerWhite from '/Components/EN/ui/DotSpinnerWhite.vue'
+
+const loading = ref(false)
+
 
 // const fullpage = computed(() => Store.state.root.FullPage)
 const sendEmailStatus = ref(false)
@@ -338,6 +346,10 @@ const sendEmailStatus = ref(false)
 //     fullpage.value.destroy()
 //   }
 // })
+
+const goZmaps = () => {
+  window.open('https://maps.zenerate.ai', '_blank')
+}
 
 const goLinkedIn = () => {
   window.open('http://linkedin.com/company/zenerate', '_blank')
@@ -441,41 +453,41 @@ const contactForm = reactive({
     validator: Validation.string,
     valid: null,
   },
-  city: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-  state: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-  country: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-  phone: {
-    value: '',
-    validator: Validation.phone,
-    valid: null,
-  },
-  role: {
-    value: null,
-    validator: (v) => true,
-    valid: null,
-  },
-  buildings: {
-    value: null,
-    validator: (v) => true,
-    valid: null,
-  },
-  promotion: {
-    value: '',
-    validator: Validation.promotion,
-    valid: true,
-  },
+  // city: {
+  //   value: '',
+  //   validator: Validation.string,
+  //   valid: null,
+  // },
+  // state: {
+  //   value: '',
+  //   validator: Validation.string,
+  //   valid: null,
+  // },
+  // country: {
+  //   value: '',
+  //   validator: Validation.string,
+  //   valid: null,
+  // },
+  // phone: {
+  //   value: '',
+  //   validator: Validation.phone,
+  //   valid: null,
+  // },
+  // role: {
+  //   value: null,
+  //   validator: (v) => true,
+  //   valid: null,
+  // },
+  // buildings: {
+  //   value: null,
+  //   validator: (v) => true,
+  //   valid: null,
+  // },
+  // promotion: {
+  //   value: '',
+  //   validator: Validation.promotion,
+  //   valid: true,
+  // },
 })
 
 const validation = (item: string) => {
@@ -504,41 +516,41 @@ const resetForm = () => {
       validator: Validation.string,
       valid: null,
     },
-    city: {
-      value: '',
-      validator: Validation.string,
-      valid: null,
-    },
-    state: {
-      value: '',
-      validator: Validation.string,
-      valid: null,
-    },
-    country: {
-      value: '',
-      validator: Validation.string,
-      valid: null,
-    },
-    phone: {
-      value: '',
-      validator: Validation.phone,
-      valid: null,
-    },
-    role: {
-      value: null,
-      validator: (v) => true,
-      valid: null,
-    },
-    buildings: {
-      value: null,
-      validator: (v) => true,
-      valid: null,
-    },
-    promotion: {
-      value: ' ',
-      validator: Validation.promotion,
-      valid: true,
-    },
+    // city: {
+    //   value: '',
+    //   validator: Validation.string,
+    //   valid: null,
+    // },
+    // state: {
+    //   value: '',
+    //   validator: Validation.string,
+    //   valid: null,
+    // },
+    // country: {
+    //   value: '',
+    //   validator: Validation.string,
+    //   valid: null,
+    // },
+    // phone: {
+    //   value: '',
+    //   validator: Validation.phone,
+    //   valid: null,
+    // },
+    // role: {
+    //   value: null,
+    //   validator: (v) => true,
+    //   valid: null,
+    // },
+    // buildings: {
+    //   value: null,
+    //   validator: (v) => true,
+    //   valid: null,
+    // },
+    // promotion: {
+    //   value: ' ',
+    //   validator: Validation.promotion,
+    //   valid: true,
+    // },
   })
 }
 
@@ -553,18 +565,22 @@ const sendForm = async () => {
     if (!contactForm[key].valid) {
       contactForm[key].valid = false
       isValid = false
-    } else {
-      if (key === 'buildings' || key === 'role') {
-        form[key] = String(contactForm[key].value.label)
-      } else {
+    }
+    else {
+      // if (key === 'buildings' || key === 'role') {
+      //   form[key] = String(contactForm[key].value.label)
+      // }
+      // else {
         form[key] = String(contactForm[key].value)
-      }
+      // }
     }
   }
 
   if (!isValid) return
   try {
+    loading.value = true
     await ApiService.XSLX_TEST(form)
+    loading.value = false
   } catch (e) {}
   resetForm()
   sendEmailStatus.value = true
@@ -728,51 +744,42 @@ const router = useRouter()
 
         .title {
           @include semi-bold(31);
-          max-width: 490px;
+          max-width: 325px;
           color: white;
           line-height: 43px;
           text-align: left;
-          margin: 0px 0px 26px;
+          margin-bottom: 26px;
 
           @include en-tablet {
-            @include semi-bold(35);
-            max-width: 550px;
             text-align: center;
-            line-height: 50px;
+            margin-bottom: 40px;
           }
           @include en-mobile {
-            @include semi-bold(23);
-            max-width: 294px;
-            line-height: 33px;
+            max-width: 300px;
             text-align: center;
-            span:nth-child(1) {
-              display: block;
-            }
+            margin-bottom: 50px;
+          }
+        }
+
+        .text-wrapper {
+          display: flex;
+          flex-direction: row;
+          align-items: start;
+          &:not(:last-child){
+            margin-bottom: 12px;
+          }
+
+          .icon-check{
+            margin: 4px;
           }
         }
         .text {
           @include medium(16);
           color: white;
           line-height: 26px;
-          max-width: 295px;
+          width: 295px;
           text-align: left;
-
-          @include en-tablet {
-            @include medium(15);
-            max-width: 450px;
-            line-height: 23px;
-            text-align: center;
-          }
-          @include en-mobile {
-            @include medium(13);
-            max-width: 300px;
-            line-height: 20px;
-            text-align: center;
-          }
-        }
-
-        @include en-mobile {
-          width: 100%;
+          margin-left: 8px;
         }
       }
     }
@@ -814,11 +821,13 @@ const router = useRouter()
       min-height: 100vh;
 
       @include en-tablet {
+        order: -1;
         width: 100%;
         padding: 40px 40px 0px;
         min-height: 100vh;
       }
       @include en-mobile {
+        order: -1;
         width: 100%;
         padding: 44px 32px 0px;
         height: 100vh;
@@ -867,20 +876,13 @@ const router = useRouter()
       }
 
       .form-title {
-        @include semi-bold(22);
-        margin: 50px 0px;
+        @include regular(22);
+        margin-bottom: 20px;
         text-align: center;
         line-height: 31px;
 
-        @include en-tablet {
-          @include semi-bold(26);
-          line-height: 35px;
-        }
-
-        @include en-mobile {
-          @include semi-bold(20);
-          margin: 20px 0px;
-          line-height: 28px;
+        .form-title-semibold{
+          @include semi-bold(22);
         }
       }
 
@@ -892,7 +894,6 @@ const router = useRouter()
         @include en-tablet {
           @include semi-bold(33);
           margin-bottom: 25px;
-          max-width: 250px;
         }
 
         @include en-mobile {
@@ -998,7 +999,6 @@ const router = useRouter()
           @include center-vertical();
           width: 100%;
           height: 38px;
-          padding: 0px 12px;
           border: 1.5px solid transparent;
           border-bottom: 1.5px solid #e5e5e5;
           color: #161616;
@@ -1016,10 +1016,10 @@ const router = useRouter()
         }
 
         &.email-input {
-          &::after {
-            @include absolute(bottom 0px left 14px);
+          &.empty::after {
+            @include absolute(top 8px left 60px);
             @include medium(10);
-            content: '* Work email only';
+            content: '* Business mail only';
             color: rgba(92, 109, 255, 0.8);
           }
         }
@@ -1080,19 +1080,27 @@ const router = useRouter()
             color: rgba(#fafafc, 0.6);
           }
 
-          @include en-tablet {
-            @include semi-bold(16);
+          &.submit {
             width: 235px;
-            height: 60px;
-          }
+            height: 45px;
+            margin: 40px auto;
 
-          @include en-mobile {
-            width: 100%;
-            max-width: 180px;
+            &:disabled{
+              cursor: not-allowed;
+            }
 
-            &.submit {
-              max-width: 100%;
-              margin: 50px auto 34px;
+            @include en-tablet {
+              height: 60px;
+              margin: 50px auto;
+            }
+            @include en-mobile {
+              height: 45px;
+              margin: 50px auto;
+            }
+
+            .submit-spinner{
+              width: fit-content;
+              margin: 0 auto;
             }
           }
         }

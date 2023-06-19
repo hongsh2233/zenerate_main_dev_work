@@ -4,7 +4,7 @@
       <button
         type="button"
         class="signup-banner"
-        v-show="path !== '/pre-launch-signup'"
+        v-show="path !== '/beta'"
       >
         <div class="signup-banner-inner">
           <p class="uppercase">
@@ -17,7 +17,7 @@
     </a>
 
     <Header
-      v-show="path !== '/pre-launch-signup'"
+      v-show="path !== '/beta'"
       :showDrawer="showDrawer"
       :transparent="transparentHeader"
       @toggleDrawer="toggleDrawer"
