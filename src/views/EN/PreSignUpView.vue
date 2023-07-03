@@ -11,18 +11,41 @@
           </div>
           <div class="signup-text-wrapper">
             <p class="title">
-              <span>Zenerate App</span><span>Beta Tester&nbsp;</span><span>Program&nbsp;</span>
+              <span>Zenerate App</span><span>Beta Tester&nbsp;</span
+              ><span>Program&nbsp;</span>
             </p>
             <div class="text-wrapper">
-              <IconBase class="icon-check" icon-name="checkmark" icon-color="#FFFFFF" :width="20" :height="20"/>
-              <p class="text">Receive early access to the newest version of the Zenerate App</p>
+              <IconBase
+                class="icon-check"
+                icon-name="checkmark"
+                icon-color="#FFFFFF"
+                :width="20"
+                :height="20"
+              />
+              <p class="text">
+                Receive early access to the newest version of the Zenerate App
+              </p>
             </div>
             <div class="text-wrapper">
-              <IconBase class="icon-check" icon-name="checkmark" icon-color="#FFFFFF" :width="20" :height="20"/>
-              <p class="text">Play a direct role in shaping and refining our innovative tool</p>
+              <IconBase
+                class="icon-check"
+                icon-name="checkmark"
+                icon-color="#FFFFFF"
+                :width="20"
+                :height="20"
+              />
+              <p class="text">
+                Play a direct role in shaping and refining our innovative tool
+              </p>
             </div>
             <div class="text-wrapper">
-              <IconBase class="icon-check" icon-name="checkmark" icon-color="#FFFFFF" :width="20" :height="20"/>
+              <IconBase
+                class="icon-check"
+                icon-name="checkmark"
+                icon-color="#FFFFFF"
+                :width="20"
+                :height="20"
+              />
               <p class="text">Major discounts upon official launch</p>
             </div>
           </div>
@@ -60,7 +83,11 @@
         </div> -->
         <transition name="fade">
           <div class="signup-form-wrapper" v-if="!sendEmailStatus">
-            <h2 class="form-title">Become a Zenerate App<br /><span class="form-title-semibold">Beta Tester</span></h2>
+            <h2 class="form-title">
+              Become a Zenerate App<br /><span class="form-title-semibold"
+                >Beta Tester</span
+              >
+            </h2>
             <div class="form-text">
               <div class="form-row">
                 <div class="label-text">
@@ -250,8 +277,12 @@
                 :class="{ disabled: sendEmailStatus || loading }"
                 @click="sendForm"
               >
-              <DotSpinnerWhite v-if="loading" :loading="true" class="submit-spinner"/>
-              <span v-else>{{ sendEmailStatus ? 'DONE' : 'SUBMIT' }}</span>
+                <DotSpinnerWhite
+                  v-if="loading"
+                  :loading="true"
+                  class="submit-spinner"
+                />
+                <span v-else>{{ sendEmailStatus ? 'DONE' : 'SUBMIT' }}</span>
               </button>
             </div>
           </div>
@@ -298,10 +329,7 @@
             </div>
             <div class="form-send-wrapper">
               <div class="dummy" ref="dummy"></div>
-              <button
-                class="form-send hover-pointer"
-                @click="goZmaps"
-              >
+              <button class="form-send hover-pointer" @click="goZmaps">
                 Try Z-maps
               </button>
             </div>
@@ -336,7 +364,6 @@ import IconBase from '/Components/EN/ui/IconBase.vue'
 import DotSpinnerWhite from '/Components/EN/ui/DotSpinnerWhite.vue'
 
 const loading = ref(false)
-
 
 // const fullpage = computed(() => Store.state.root.FullPage)
 const sendEmailStatus = ref(false)
@@ -565,13 +592,12 @@ const sendForm = async () => {
     if (!contactForm[key].valid) {
       contactForm[key].valid = false
       isValid = false
-    }
-    else {
+    } else {
       // if (key === 'buildings' || key === 'role') {
       //   form[key] = String(contactForm[key].value.label)
       // }
       // else {
-        form[key] = String(contactForm[key].value)
+      form[key] = String(contactForm[key].value)
       // }
     }
   }
@@ -589,9 +615,6 @@ const sendForm = async () => {
 const router = useRouter()
 </script>
 <style lang="scss" scoped>
-.section-signup * {
-  font-family: 'Poppins' !important;
-}
 .section-signup {
   @include relative;
   width: 100vw;
@@ -764,11 +787,11 @@ const router = useRouter()
           display: flex;
           flex-direction: row;
           align-items: start;
-          &:not(:last-child){
+          &:not(:last-child) {
             margin-bottom: 12px;
           }
 
-          .icon-check{
+          .icon-check {
             margin: 4px;
           }
         }
@@ -833,8 +856,6 @@ const router = useRouter()
         min-height: 820px;
         min-height: fit-content;
 
-        
-
         &.thank {
           padding: 74px 32px 0px;
           min-height: 100vh;
@@ -883,7 +904,7 @@ const router = useRouter()
         text-align: center;
         line-height: 31px;
 
-        .form-title-semibold{
+        .form-title-semibold {
           @include semi-bold(22);
         }
       }
@@ -1078,7 +1099,7 @@ const router = useRouter()
             height: 45px;
             margin: 40px auto;
 
-            &:disabled{
+            &:disabled {
               cursor: not-allowed;
             }
 
@@ -1091,7 +1112,7 @@ const router = useRouter()
               margin: 48px auto;
             }
 
-            .submit-spinner{
+            .submit-spinner {
               width: fit-content;
               margin: 0 auto;
             }
