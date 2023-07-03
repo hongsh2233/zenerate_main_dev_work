@@ -53,6 +53,7 @@ export default defineConfig({
       { find: '/Utils', replacement: resolve(__dirname, 'src/utils') },
       { find: '/Type', replacement: resolve(__dirname, 'src/typings') },
       { find: '/Workers', replacement: resolve(__dirname, 'src/workers') },
+      { find: '/Plugins', replacement: resolve(__dirname, 'src/plugins') },
     ],
   },
   build: {

@@ -12,12 +12,14 @@ import 'vue-slider-component/theme/default.css'
 import 'vue3-carousel/dist/carousel.css'
 import 'aos/dist/aos.css'
 import 'sweetalert2/src/sweetalert2.scss'
+import '/Assets/font.css'
 import '/Assets/scss/common.scss'
 import '/Assets/scss/transitions.scss'
 import '/Assets/scss/components.scss'
 import '/Assets/scss/timeline.scss'
 import '/Assets/scss/en.scss'
 import '/Assets/css/tailwind.css'
+import '/Plugins/FontObserver'
 
 const head = createHead()
 
