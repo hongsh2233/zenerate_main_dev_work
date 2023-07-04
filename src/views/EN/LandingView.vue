@@ -2,7 +2,7 @@
   <div class="min-w-[280px]">
     <section>
       <div
-        class="mx-auto mt-[148px] mb-[221px] w-[280px] min-w-[280px] bg-[skyblue] md:mt-[220px] md:mb-[416px] md:w-[644px] lg:mt-[236px] lg:mb-[565px] lg:w-[644px]"
+        class="mx-auto mt-[148px] w-[280px] min-w-[280px] md:mt-[220px] md:w-[644px] lg:mt-[236px] lg:w-[644px]"
       >
         <div class="flex flex-col">
           <p
@@ -33,11 +33,20 @@
           </a>
         </div>
       </div>
+
+      <div class="mx-auto w-full max-w-[1200px]">
+        <video
+          class="w-full"
+          :autoplay="true"
+          :muted="true"
+          :loop="true"
+          src="/public/en/landing_video.mp4"
+          alt=""
+        />
+      </div>
     </section>
 
-    <section
-      class="flex flex-col items-center bg-[lightgreen] pt-34 pb-72 md:pb-96 lg:pb-156"
-    >
+    <section class="flex flex-col items-center pt-20 pb-72 md:pb-96 lg:pb-156">
       <ProductCard product="zmaps" class="mb-20" />
       <ProductCard product="zenerate-app" class="mb-20" />
       <ProductCard product="ai-consulting" />
