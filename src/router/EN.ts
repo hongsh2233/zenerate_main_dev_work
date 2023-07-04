@@ -30,6 +30,11 @@ const ENRoute: RouteRecordRaw = {
       component: ZenerateView,
     },
     {
+      path: '/ai-consulting',
+      name: 'en-ai-consulting',
+      component: ZenerateView,
+    },
+    {
       path: '/about',
       name: 'en-about',
       component: AboutView,

@@ -2,7 +2,7 @@
   <div class="icon-menu hover-pointer" @click="toggle()">
     <i
       class="icon-menu-inner material-icons"
-      :class="!showDrawer && 'transparent'"
+      :class="!showDrawer ? 'menu' : 'close'"
       >{{ showDrawer ? 'close' : 'menu' }}</i
     >
   </div>
@@ -55,6 +55,10 @@ const barHeight = computed(() => {
   height: 100%;
   color: $text-darken;
   font-size: 26px;
+
+  &.menu {
+    color: #4848ff;
+  }
 
   @include en-tablet {
     padding: 10px 40px;

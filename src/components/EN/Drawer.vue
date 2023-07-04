@@ -5,7 +5,7 @@
       <div class="drawer-items-wrapper">
         <div class="header-navigation-wrapper hidden-en-desktop">
           <div class="navgation-link-wrapper">
-            <template v-for="(tab, idx) in routes" :key="idx">
+            <template v-for="(tab, idx) in MENU_DATA" :key="idx">
               <p class="navigation-link" @click="() => selectTab(tab.key)">
                 {{ tab.title }}
                 <i
@@ -18,16 +18,6 @@
               <transition name="slide-up">
                 <div v-show="toggleTab[tab.key]" class="navigation-link-list">
                   <template v-for="(nav, idx) in tab.children" :key="idx">
-                    <router-link
-                      :to="{ name: nav.to }"
-                      class="navigation-link sub"
-                      :class="nav.to"
-                      @click="close"
-                    >
-                      <component :is="nav.icon" :width="30" :height="30" />
-
-                      {{ nav.title }}
-                    </router-link>
                     <a
                       v-if="nav.to === 'en-overview'"
                       :href="'https://maps.zenerate.ai'"
@@ -35,10 +25,35 @@
                       :class="nav.to"
                       @click="close"
                     >
-                      <component :is="ZmapsIcon" :width="30" :height="30" />
-
+                      <component
+                        :is="ZmapsIcon"
+                        :width="26"
+                        :height="26"
+                        class="sub-icon"
+                      />
                       Z-Maps
                     </a>
+
+                    <router-link
+                      :to="{ name: nav.to }"
+                      custom
+                      v-slot="{ href, navigate }"
+                    >
+                      <a
+                        :href="href"
+                        @click="selectSubLink(navigate, $event)"
+                        class="navigation-link sub"
+                      >
+                        <IconBase
+                          :icon-name="nav.icon"
+                          :width="26"
+                          :height="26"
+                          :transition="false"
+                          class="sub-icon"
+                        />
+                        {{ nav.title }}
+                      </a>
+                    </router-link>
                   </template>
                 </div>
               </transition>
@@ -48,7 +63,7 @@
               :to="{ name: 'en-demo' }"
               @click="close"
             >
-              BOOK A DEMO
+              Get a Demo
               <i class="material-icons"> east </i>
             </router-link>
           </div>
@@ -65,88 +80,14 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import MenuIcon from './Icons/MenuIcon.vue'
-import AboutIcon from './Icons/header/AboutIcon.vue'
-import CareersIcon from './Icons/header/CareersIcon.vue'
-import CaseIcon from './Icons/header/CaseIcon.vue'
-import ContactIcon from './Icons/header/ContactIcon.vue'
-import FAQIcon from './Icons/header/FAQIcon.vue'
-import HowToUseIcon from './Icons/header/HowToUseIcon.vue'
-import OverviewIcon from './Icons/header/OverviewIcon.vue'
+
 import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
-import PricingIcon from './Icons/header/PricingIcon.vue'
+import MENU_DATA from '/Constants/menu'
+import IconBase from './ui/IconBase.vue'
 
 const props = defineProps({
   showDrawer: Boolean,
 })
-
-// routes
-const router = useRouter()
-const routes = [
-  {
-    key: 'product',
-    title: 'Products',
-    children: [
-      {
-        title: 'Zenerate™ App',
-        to: 'en-overview',
-        icon: OverviewIcon,
-      },
-      // {
-      //   title: 'Z-Maps',
-      //   to: 'en-zmaps',
-      //   icon: ZmapsIcon,
-      // },
-      // {
-      //   title: 'Pricing',
-      //   to: 'en-pricing',
-      //   icon: PricingIcon,
-      // },
-      // {
-      //   title: 'FAQ',
-      //   to: 'en-faq',
-      //   icon: FAQIcon,
-      // },
-    ],
-  },
-  {
-    key: 'resources',
-    title: 'Resources',
-    children: [
-      // {
-      //   title: 'How to use',
-      //   to: 'en-how-to-use',
-      //   icon: HowToUseIcon,
-      // },
-      {
-        title: 'Case Studies',
-        to: 'en-case-studies',
-        icon: CaseIcon,
-      },
-    ],
-  },
-  {
-    key: 'company',
-    title: 'Company',
-    children: [
-      {
-        title: 'About Us',
-        to: 'en-about',
-        icon: AboutIcon,
-      },
-      {
-        title: 'Careers',
-        to: 'en-career',
-        icon: CareersIcon,
-      },
-      {
-        title: 'Contact',
-        to: 'en-contact',
-        icon: ContactIcon,
-      },
-    ],
-  },
-]
 
 const toggleTab = ref({
   product: false,
@@ -169,12 +110,17 @@ const goToKrPage = () => {
 
 const emit = defineEmits(['close'])
 const close = () => {
-  emit('close', null)
+  emit('close')
+}
+const selectSubLink = (navigate, event) => {
+  emit('close')
+  navigate(event)
 }
 </script>
 <style lang="scss" scoped>
 .drawer-wrapper {
   @include relative;
+  min-width: 260px;
   z-index: 9998;
 }
 
@@ -254,58 +200,35 @@ const close = () => {
 
       .navigation-link-list {
         @include vertical-center();
-        padding: 26px 0px;
+        padding: 8px 0px;
         border-bottom: 1px solid theme('colors.gray.100');
         background-color: #fafbfe;
       }
 
       .navigation-link {
         @include flex($justify: space-between);
-        @include medium(18);
+        @include medium(16);
         align-items: center;
-        line-height: 40px;
-        padding: 16px 38px 16px 48px;
+        height: 62px;
+        padding: 0 24px;
         cursor: pointer;
-
-        @include en-mobile {
-          padding: 0px 16px 48px;
-        }
 
         &:not(.sub) {
           border-bottom: 1px solid theme('colors.gray.100');
-          height: 76px;
-        }
-
-        i {
-          @include flex();
-          @include medium(32);
-          align-items: center;
-          color: theme('colors.gray.700');
-
-          &.active {
-            transform: rotate(-180deg);
-          }
-
-          @include en-mobile {
-            @include medium(28);
-          }
         }
 
         &.sub {
-          @include regular(17);
+          @include medium(16);
           @include flex();
+          height: 54px;
+          padding: 14px 24px;
           align-items: center;
           color: theme('colors.gray.700');
-          .icon {
-            width: 28px;
+
+          .sub-icon {
             margin-right: 8px;
-          }
-
-          svg {
-            margin-right: 6px;
-
             :deep(path) {
-              opacity: 0.7;
+              fill: theme('colors.gray.700');
             }
           }
 
@@ -315,18 +238,14 @@ const close = () => {
 
             :deep(path) {
               fill: theme('colors.primary.DEFAULT');
-              opacity: 1;
             }
           }
         }
 
-        @include en-mobile {
-          padding: 10px 28px;
-        }
-
         &.demo-link {
-          @include semi-bold(18);
+          @include semi-bold(16);
           @include flex();
+          height: 66px;
           align-items: center;
           color: theme('colors.primary.DEFAULT');
 
@@ -376,7 +295,8 @@ const close = () => {
       }
 
       .copyright {
-        @include regular(14);
+        @include regular(13);
+        font-weight: 500;
         color: theme('colors.gray.700');
       }
     }
