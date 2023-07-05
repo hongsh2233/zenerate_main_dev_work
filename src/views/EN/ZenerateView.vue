@@ -187,109 +187,47 @@
       </div>
     </section>
 
-    <section class="beta-tester bg-slate-500 pt-60 pb-120 md:pt-120 lg:pt-120">
-      <div
-        class="card mx-auto flex h-fit w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white shadow-200 md:h-[468px] md:w-[708px] lg:h-[648px] lg:min-w-[980px]"
-      >
-        <div class="bg-primary px-32 pt-28 pb-38 text-white">
-          <div class="text-22-semibold mb-20 text-center">
-            Zenerate App<br />Beta Tester Program
-          </div>
-          <div v-for="data in BETA_TESTER" class="flex flex-col not-last:mb-9">
-            <div class="flex flex-row items-start">
-              <IconBase
-                icon-name="checkmark"
-                icon-color="white"
-                :width="18"
-                :height="18"
-                class="mr-8 mt-1 min-w-fit"
-              />
-              <div class="text-13-medium">{{ data }}</div>
+    <section class="beta-tester pt-60 pb-120 md:pt-120 lg:pt-120">
+      <SignUpForm>
+        <template #description>
+          <div class="mx-auto flex w-[256px] flex-col text-white lg:w-[320px]">
+            <div
+              class="text-22-semibold mb-20 text-center md:pl-22 md:text-left lg:mb-24 lg:pl-28 lg:text-left lg:text-28"
+            >
+              Zenerate App<br />Beta Tester Program
+            </div>
+            <div
+              v-for="data in BETA_TESTER"
+              class="flex flex-col not-last:mb-9 lg:not-last:mb-12"
+            >
+              <div class="flex flex-row items-start">
+                <IconBase
+                  icon-name="checkmark"
+                  icon-color="white"
+                  :width="18"
+                  :height="18"
+                  class="mr-8 mt-1 min-w-fit lg:hidden"
+                />
+                <IconBase
+                  icon-name="checkmark-bold"
+                  icon-color="white"
+                  :width="20"
+                  :height="20"
+                  class="mt-2 mr-10 hidden min-w-fit lg:block"
+                />
+                <div class="text-13-medium lg:text-16">{{ data }}</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="bg-white px-32 pt-48 pb-66 text-17">
-          <div class="mb-20 text-center">
+        </template>
+        <template #form-title>
+          <div class="text-center text-17">
             Sign Up to Beta Test<br /><span class="font-semibold text-primary"
               >The Zenerate App!</span
             >
           </div>
-
-          <!-- form -->
-          <div class="form">
-            <div class="flex flex-row">
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  autocomplete="new-firstname"
-                  v-model="contactForm.firstName.value"
-                  @blur="(v) => validation('firstName')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.firstName.valid === false }"
-                >
-                  Please provide a name
-                </p>
-              </div>
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  autocomplete="new-lastname"
-                  v-model="contactForm.lastName.value"
-                  @blur="(v) => validation('lastName')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.lastName.valid === false }"
-                >
-                  Please provide a name
-                </p>
-              </div>
-            </div>
-            <div class="form-row">
-              <div
-                class="label-text email-input"
-                :class="contactForm.email.value == '' ? 'empty' : ''"
-              >
-                <input
-                  type="text"
-                  placeholder="Enter Email"
-                  autocomplete="new-email"
-                  inputmode="email"
-                  v-model="contactForm.email.value"
-                  @blur="(v) => validation('email')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.email.valid === false }"
-                >
-                  Please enter a valid email address
-                </p>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="label-text">
-                <input
-                  type="text"
-                  placeholder="Enter Company"
-                  autocomplete="new-company"
-                  v-model="contactForm.company.value"
-                  @blur="(v) => validation('company')"
-                />
-                <p
-                  class="label-error"
-                  :class="{ active: contactForm.company.valid === false }"
-                >
-                  Please provide your company name
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </template>
+      </SignUpForm>
     </section>
 
     <section class="section section-footer fp-auto-height">
@@ -301,11 +239,12 @@
 import { onMounted, onBeforeMount, ref } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useGtag } from 'vue-gtag-next'
-import Footer from '/Components/EN/Footer.vue'
-import ImagePreloader from '/Utils/ImagePreloader'
+
 import IconBase from '/Components/EN/ui/IconBase.vue'
+import { SignUpForm, Footer } from '/Components/EN'
 import { ROLES } from '/Constants/roles'
-import Validation from '/Utils/Validation'
+
+import ImagePreloader from '/Utils/ImagePreloader'
 
 useHead({
   title: `About the Zenerate App | Instantly evaluate development potential`,
@@ -484,34 +423,6 @@ onMounted(() => {
   ImagePreloader.sequential([...commonPreloadImages.slice(2, 4)])
   ImagePreloader.sequential(onloadImages[mediaQueryDevice])
 })
-
-// Signup Form
-const contactForm = ref({
-  firstName: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-  lastName: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-  email: {
-    value: '',
-    validator: Validation.email,
-    valid: null,
-  },
-  company: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-})
-
-const validation = (item: string) => {
-  contactForm[item].valid = contactForm[item].validator(contactForm[item].value)
-}
 
 // GTM
 const { event } = useGtag()
@@ -705,21 +616,6 @@ const goToApp = () => {
       }
       .description {
         width: 200px;
-      }
-    }
-  }
-}
-
-.beta-tester {
-  .form {
-    input {
-      height: 40px;
-      border: solid 1px theme('colors.gray.350');
-      border-radius: 6px;
-      padding: 0 13px;
-
-      &::placeholder {
-        font-size: 13px;
       }
     }
   }
