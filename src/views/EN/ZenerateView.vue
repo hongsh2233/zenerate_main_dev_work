@@ -1,569 +1,311 @@
 <template>
-  <div class="flex flex-col">
-    <div class="section section-case-studies">
-      <div class="section-inner inner-case-studies">
-        <section
-          class="flex flex-col relative pl-11 md:pl-0 pb-70 w-[288px] mx-auto items-start lg:items-start md:items-start lg:pl-44 lg:pr-0 lg:w-[1024px] md:pb-[260px] md:w-[660px] md:px-80"
-        >
-          <div
-            class="w-[296px] hero-image-wrapper md:h-[456px] md:min-h-[456px] h-[296px] min-h-[296px] lg:min-h-[352px] lg:h-[352px] md:w-[480px] lg:w-[584px] mb-24 md:mb-0 lg:mb-0 md:absolute md:bottom-0 md:right-0 lg:absolute lg:bottom-[32px] lg:right-[-28px]"
-          ></div>
-          <div class="flex flex-col">
-            <p
-              class="text-primary md:text-18 lg:text-20 text-14 mb-8 font-semibold"
-            >
-              Zenerate™ Web App
-            </p>
-            <p
-              class="text-24 font-medium mb-16 md:mb-20 lg:mb-20 lg:text-32 text-black leading-[135%] md:text-28"
-            >
-              Instantly evaluate<br />
-              development potential<br />
-              and maximize returns
-            </p>
+  <div class="relative mx-auto min-w-[280px] max-w-[1200px]">
+    <section class="hero lg:h-[712px]">
+      <div
+        class="mx-auto mt-[168px] w-[320px] min-w-[280px] md:mt-[162px] md:w-[644px] lg:absolute lg:mt-[200px] lg:ml-100 lg:w-[440px]"
+      >
+        <div class="mb-20 flex flex-col items-center lg:items-start">
+          <div class="mb-16 flex flex-row items-center justify-center lg:mb-18">
             <div
-              class="hidden-en-mobile lg:h-[108px] md:text-16 lg:text-18 font-regular leading-[150%] mb-50 text-gray-700"
+              class="mr-8 text-30 text-primary md:mr-10 md:text-36 lg:mr-10 lg:text-36"
             >
-              <p>
-                An AI-powered feasibility study tool utilizing<br />
-                generative design and advanced data <br />
-                analytics that zenerates ALL development<br />
-                possibilities within a given site.
-              </p>
+              <span class="font-semibold">Zenerate</span>&nbsp;App
             </div>
             <div
-              class="text-14 font-regular text-gray-700 leading-[150%] mb-40 hidden-en-desktop hidden-en-tablet"
+              class="flex h-30 w-56 items-center justify-center rounded-[55px] bg-primary text-16 text-white md:h-36 md:w-68 md:rounded-[66px] md:text-20 lg:h-36 lg:w-68 lg:rounded-[66px] lg:text-20"
             >
-              <p>
-                An AI-powered feasibility study<br />
-                tool utilizing generative design<br />
-                and advanced data analytics that<br />
-                zenerates ALL development <br />
-                possibilities within a given site.
-              </p>
+              Beta
             </div>
           </div>
-          <button
-            type="button"
-            class="start-button w-[260px] md:w-[160px] lg:w-[172px] bg-primary hover:text-core-200 text-white active:bg-core-700 active:text-white"
-          >
-            <router-link
-              class="demo-link text-14 lg:text-16"
-              :to="{ name: 'en-demo' }"
-            >
-              BOOK A DEMO
-            </router-link>
-          </button>
-        </section>
-        <section
-          class="case-studies-wrapper pt-66 md:pt-[140px] relative w-full md:pb-[60px] lg:pt-[148px] lg:pb-[4%]"
-        >
-          <div
-            class="bg-gray-50 absolute origin-top-left md:rotate-[3deg] lg:rotate-[2deg] w-[150%] h-full top-0 left-0 z-[-1] transform-sc"
-          ></div>
+
           <p
-            class="text-22 w-full max-w-[352px] md:max-w-[488px] lg:max-w-[488px] pl-34 md:pl-0 lg:pl-0 mb-44 md:mb-52 lg:mb-42 font-regular text-left md:text-center lg:text-center text-black md:text-28 lg:text-30 leading-[135%]"
+            class="mb-24 text-center text-30 md:mb-20 md:text-44 lg:mb-14 lg:text-left lg:text-42 lg:font-light"
           >
-            Instantly evaluate <br />
-            <strong>development potential</strong>
+            <span class="font-medium">AI-Powered, Real-Time</span>Feasibility
+            Study Tool
           </p>
 
-          <div class="case-wrapper lg:max-w-[996px] lg:justify-between">
-            <article class="case shadow-100 overflow-x-hidden">
-              <div class="image-wrapper w-full relative overflow-hidden">
-                <img
-                  class="img-map"
-                  src="/en/overview/overview_step_1.jpg"
-                  alt="find a site and review zoning info"
-                  rel="preload"
-                  decoding="async"
-                />
-                <div
-                  class="absolute top-[-10px] left-[-8px] w-[calc(100%_+_16px)] h-[calc(100%_+_16px)] inner-shadow"
-                ></div>
-              </div>
-              <div
-                class="pl-34 pt-32 pb-40 md:pt-40 w-full md:pl-50 md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
-              >
-                <div class="flex flex-nowrap">
-                  <p
-                    class="lg:mt-2 md:mt-3 min-w-18 w-18 h-18 md:w-30 md:min-w-30 md:h-30 lg:w-30 lg:min-w-30 flex leading-[150%] items-center justify-center lg:h-30 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-20 text-12 lg:text-20 font-semibold"
-                  >
-                    1
-                  </p>
+          <p
+            class="mb-30 w-[280px] text-center text-16 md:mb-40 md:w-[600px] md:text-18 md:text-gray-700 lg:mb-30 lg:mb-36 lg:w-full lg:text-left lg:text-18 lg:text-gray-700"
+          >
+            Instantly evaluate the development potential of any site by
+            generating solutions with 3D models, floor plans and financial
+            analysis.
+          </p>
 
-                  <div class="flex flex-col">
-                    <p
-                      class="mb-10 font-medium text-16 lg:text-26 md:text-30 md:mb-14 lg:mb-14"
-                    >
-                      <span>Find a site &&nbsp;</span>
-                      <span>review zoning info</span>
-                    </p>
-                    <p
-                      class="text-14 font-regular md:text-18 leading-[150%] text-gray-700 lg:text-18"
-                    >
-                      Select a site on the map, review<br />
-                      the details of the parcel and<br />
-                      zoning requirements.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
+          <div class="flex flex-col items-center md:flex-row lg:flex-row">
+            <a
+              href="https://www.zenerate.ai/demo-signup"
+              class="text-18-semibold mb-10 h-48 w-[156px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mb-0 md:mr-10 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:mr-10 lg:mb-0 lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
+              >Try It For Free
+            </a>
 
-            <article class="case shadow-100 overflow-x-hidden">
-              <div class="image-wrapper w-full relative overflow-hidden">
-                <img
-                  class="img-map"
-                  src="/en/overview/overview_step_2.jpg"
-                  alt="Click Start Zenerating"
-                  decoding="async"
-                  loading="lazy"
-                />
-                <div
-                  class="absolute top-[-10px] left-[-8px] w-[calc(100%_+_16px)] h-[calc(100%_+_16px)] inner-shadow"
-                ></div>
-              </div>
-              <div
-                class="pl-34 pt-32 pb-40 md:pt-40 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
-              >
-                <div class="flex flex-nowrap">
-                  <p
-                    class="lg:mt-2 md:mt-3 min-w-18 w-18 h-18 md:w-30 md:min-w-30 md:h-30 lg:w-30 lg:min-w-30 flex leading-[150%] items-center justify-center lg:h-30 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-20 text-12 lg:text-20 font-semibold"
-                  >
-                    2
-                  </p>
-
-                  <div class="flex flex-col">
-                    <p
-                      class="mb-10 font-medium lg:text-26 text-16 md:text-30 md:mb-14 lg:mb-14"
-                    >
-                      Click Start Zenerating
-                    </p>
-                    <p
-                      class="text-14 font-regular md:text-18 leading-[150%] text-gray-700 lg:text-18"
-                    >
-                      Press 'Start Zenerating' and within <br />
-                      minutes our AI-engine zenerates <br />
-                      thousands of feasible solutions.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="case shadow-100 overflow-x-hidden">
-              <div class="image-wrapper w-full relative overflow-hidden">
-                <img
-                  class="img-map"
-                  src="/en/overview/overview_step_3.jpg"
-                  alt="Review zenerated solutions"
-                  decoding="async"
-                  loading="lazy"
-                />
-                <div
-                  class="absolute top-[-10px] left-[-8px] w-[calc(100%_+_16px)] h-[calc(100%_+_16px)] inner-shadow"
-                ></div>
-              </div>
-              <div
-                class="pl-34 pt-32 pb-40 md:pt-40 lg:pr-36 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
-              >
-                <div class="flex flex-nowrap">
-                  <p
-                    class="lg:mt-2 md:mt-3 min-w-18 w-18 h-18 md:w-30 md:min-w-30 md:h-30 lg:w-30 lg:min-w-30 flex leading-[150%] items-center justify-center lg:h-30 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-20 text-12 lg:text-20 font-semibold"
-                  >
-                    3
-                  </p>
-
-                  <div class="flex flex-col">
-                    <p
-                      class="mb-10 font-medium lg:text-26 text-16 md:text-30 md:mb-14 lg:mb-14"
-                    >
-                      Review zenerated solutions
-                    </p>
-                    <p
-                      class="text-14 font-regular md:text-18 leading-[150%] text-gray-700 lg:text-18"
-                    >
-                      Easily find the most profitable <br />
-                      solution by filtering through <br />
-                      based on your needs.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="case shadow-100 overflow-x-hidden">
-              <div class="image-wrapper w-full relative overflow-hidden">
-                <img
-                  class="img-map"
-                  src="/en/overview/overview_step_4.jpg"
-                  alt="Download a report"
-                  decoding="async"
-                  loading="lazy"
-                />
-                <div
-                  class="absolute top-[-10px] left-[-8px] w-[calc(100%_+_16px)] h-[calc(100%_+_16px)] inner-shadow"
-                ></div>
-              </div>
-              <div
-                class="pl-34 pt-32 pb-40 md:pt-40 md:pl-50 w-full md:pb-60 lg:pt-54 lg:pb-0 lg:pl-54"
-              >
-                <div class="flex flex-nowrap">
-                  <p
-                    class="lg:mt-2 md:mt-3 min-w-18 w-18 h-18 md:w-30 md:min-w-30 md:h-30 lg:w-30 lg:min-w-30 flex leading-[150%] items-center justify-center lg:h-30 mr-10 bg-black rounded-[50%] lg:mr-18 md:mr-18 text-white text-center md:text-20 text-12 lg:text-20 font-semibold"
-                  >
-                    4
-                  </p>
-
-                  <div class="flex flex-col">
-                    <p
-                      class="mb-10 font-medium lg:text-26 text-16 md:text-30 md:mb-14 lg:mb-14"
-                    >
-                      Download a report
-                    </p>
-                    <p
-                      class="text-14 mb-8 md:mb-14 lg:mb-14 font-regular md:text-18 leading-[150%] text-gray-700 lg:text-18"
-                    >
-                      Download a report to send to your<br />
-                      team, clients, investors and more.
-                    </p>
-                    <p
-                      class="text-gray-400 text-medium lg:text-18 text-14 md:text-18 leading-[150%]"
-                    >
-                      *CAD and Excel files <br />
-                      also downloadable.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article
-              class="case shadow-100 overflow-x-hidden lg:!w-full lg:!h-auto"
-            >
-              <div
-                class="flex flex-col pt-46 md:pl-74 w-full lg:pl-84 pl-56 pb-60 lg:pr-100 lg:flex-row lg:!justify-around lg:items-center"
-              >
-                <div
-                  class="flex flex-col items-start mb-22 md:mb-28 lg:mb-12 lg:pl-26"
-                >
-                  <div>
-                    <svg
-                      width="72"
-                      height="72"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M53.572 36c0-11.361-9.21-20.571-20.572-20.571-11.361 0-20.571 9.21-20.571 20.571H53.57Z"
-                        fill="#ECEFFF"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M33 60C19.745 60 9 49.255 9 36s10.745-24 24-24 24 10.745 24 24h-4.286c0-10.888-8.826-19.714-19.714-19.714-10.888 0-19.714 8.826-19.714 19.714 0 10.888 8.826 19.714 19.714 19.714V60Z"
-                        fill="#5C6DFF"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M33 12C19.745 12 9 22.745 9 36s10.745 24 24 24v-4.286c-10.888 0-19.714-8.826-19.714-19.714 0-10.888 8.826-19.714 19.714-19.714V12Z"
-                        fill="#A4AEFF"
-                      />
-                      <path
-                        fill="#5C6DFF"
-                        d="M45 49.714h3.429v3.429H45zM50.143 43.714h3.429v3.429h-3.429zM38.143 54.857h3.429v3.429h-3.429z"
-                        style="mix-blend-mode: multiply"
-                      />
-                      <path
-                        fill="#A4AEFF"
-                        d="M31.286 22.286h4.286v17.143h-4.286z"
-                      />
-                      <path
-                        fill="#5C6DFF"
-                        d="M44.143 36v4.286H31.286V36zM54.857 41.143l-7.052-7.715H61.91l-7.052 7.715Z"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M9 36c0 13.255 10.745 24 24 24v-4.286c-10.888 0-19.714-8.826-19.714-19.714H9Z"
-                        fill="#A4AEFF"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-gray-700 font-medium text-20 md:text-24 lg:text-24"
-                  >
-                    Weeks reduced to
-                  </p>
-                  <p
-                    class="text-gray-700 font-semibold text-32 md:text-34 lg:text-34"
-                  >
-                    <span class="number">30&nbsp;</span>
-                    <span class="unit">min.</span>
-                  </p>
-                </div>
-
-                <div
-                  class="flex flex-col text-14 lg:pt-10 items-start font-regular text-gray-700 leading-[150%] md:text-18 lg:text-18"
-                >
-                  <p
-                    class="font-medium mb-8 md:mb-10 lg:mb-10 text-16 md:text-20 lg:text-20"
-                  >
-                    Cut down on weeks
-                  </p>
-                  <ul class="flex flex-col">
-                    <li class="flex w-full items-center mb-8">
-                      <div
-                        class="flex mr-10 items-center justify-center bg-core-500 rounded-[50%] text-white w-16 h-16"
-                      >
-                        <svg
-                          width="12"
-                          height="13"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m2.77 6.962 2.307 2.307 4.154-5.538"
-                            stroke="#fff"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </div>
-                      <span>Searching for sites</span>
-                    </li>
-                    <li class="flex w-full items-center mb-6">
-                      <div
-                        class="flex mr-10 items-center justify-center bg-core-500 rounded-[50%] text-white w-16 h-16"
-                      >
-                        <svg
-                          width="12"
-                          height="13"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m2.77 6.962 2.307 2.307 4.154-5.538"
-                            stroke="#fff"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </div>
-                      <span>Optimizing zoning scenarios</span>
-                    </li>
-                    <li class="flex w-full items-center mb-6">
-                      <div
-                        class="flex mr-10 items-center justify-center bg-core-500 rounded-[50%] text-white w-16 h-16"
-                      >
-                        <svg
-                          width="12"
-                          height="13"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m2.77 6.962 2.307 2.307 4.154-5.538"
-                            stroke="#fff"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </div>
-                      <span>Crunching numbers</span>
-                    </li>
-                    <li class="flex w-full">
-                      <div
-                        class="flex mr-10 mt-3 items-center justify-center bg-core-500 rounded-[50%] text-white w-16 h-16"
-                      >
-                        <svg
-                          width="12"
-                          height="13"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="m2.77 6.962 2.307 2.307 4.154-5.538"
-                            stroke="#fff"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </div>
-                      <span
-                        >Requesting or drafting <br />
-                        preliminary floor plans</span
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </article>
+            <a
+              href="https://www.zenerate.ai/demo-signup"
+              class="text-18-semibold h-48 w-[156px] rounded-5 border-1 border-solid border-primary bg-white text-center leading-[48px] !text-primary duration-300 hover:!bg-core-50 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
+              >Get a Demo
+            </a>
           </div>
-        </section>
-
-        <section
-          class="pt-66 md:pt-[186px] relative w-full md:pb-[90px] lg:pt-[186px] lg:pb-[90px]"
-        >
-          <div
-            class="bg-[#333B61] absolute origin-top-left md:rotate-[3deg] lg:rotate-[2deg] w-[150%] h-full top-0 left-0 z-[-1] transform-sc"
-          ></div>
-          <div class="flex flex-col w-full mx-auto">
-            <p
-              class="font-regular w-[352px] mx-auto md:w-full lg:w-full text-24 md:text-center md:px-20 px-32 lg:text-center leading-[135%] mb-30 text-white md:text-28 md:mb-50 lg:text-34 lg:mb-50"
-            >
-              <strong>Maximize </strong>
-              <span>project returns</span>
-            </p>
-
-            <div
-              class="graph-image-wrapper w-[296px] h-[642px] min-h-[642px] md:h-[416px] lg:h-[600px] lg:min-h-[600px] md:min-h-[416px] md:w-[664px] lg:w-[944px] mb-60 mx-auto"
-            ></div>
-            <div
-              class="flex flex-col w-[352px] mx-auto md:w-[510px] lg:w-[840px] lg:items-center"
-            >
-              <p
-                class="font-semibold text-20 pl-42 pr-60 md:text-26 md:px-20 mb-18 lg:text-26 text-white md:mb-24 lg:mb-24 lg:text-center lg:px-32"
-              >
-                <span>by exploring&nbsp;</span> <span>ALL possibilities</span>
-              </p>
-              <div
-                class="flex mb-50 flex-col pl-42 pr-60 md:px-20 md:mb-62 lg:mb-68 text-white lg:px-[160px] font-regular lg:text-20 text-16 md:text-18 leading-[150%]"
-              >
-                <p class="mb-12">
-                  Our AI engine zenerates all the possible designs including
-                  building massings, unit mixes and layouts.
-                </p>
-                <p>
-                  By exploring all the possibilities and then analyzing the
-                  options, users can confidently find the solution generating
-                  the highest returns.
-                </p>
-              </div>
-            </div>
-            <div
-              class="bg-white/10 md:shadow-100 lg:shadow-100 md:rounded-10 lg:rounded-10 flex flex-col md:w-[510px] lg:w-[840px] mx-auto w-full"
-            >
-              <div
-                class="flex flex-col mx-auto pt-45 w-[280px] lg:pl-38 md:px-74 lg:pt-48 lg:pr-10 lg:w-full md:w-full md:pl-74 pb-56 lg:flex-row lg:!justify-around lg:items-center"
-              >
-                <div class="flex flex-col items-start mb-22 md:mb-28 lg:mb-12">
-                  <div>
-                    <svg
-                      width="72"
-                      height="72"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path fill="#fff" d="M14.023 14H68.49v33.444H14.023z" />
-                      <path fill="#A4AEFF" d="M3.511 25.467h53.511V57H3.511z" />
-                      <path
-                        fill="#C5CBFF"
-                        d="M14.023 14H68.49v33.444H14.023z"
-                        style="mix-blend-mode: multiply"
-                      />
-                      <path fill="#5C6DFF" d="M14.023 25.467h43v21.978h-43z" />
-                      <path
-                        d="M45.888 23.71h-5.94a3.357 3.357 0 1 0 0 6.716h2.583a3.357 3.357 0 1 1 0 6.715h-5.94M41.24 21.645v1.032M41.24 38.174v1.033"
-                        stroke="#fff"
-                        stroke-width="3"
-                        stroke-linecap="square"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p
-                    class="text-white font-medium text-20 md:text-24 lg:text-24"
-                  >
-                    Returns, maximized.
-                  </p>
-                  <p
-                    class="text-white font-semibold text-32 md:text-34 lg:text-34"
-                  >
-                    <span class="number">+28&nbsp;</span>
-                    <span class="unit">%</span>
-                  </p>
-                </div>
-
-                <div
-                  class="flex pr-50 md:pr-0 lg:pr-0 lg:w-[352px] flex-col text-14 items-start font-regular text-white leading-[150%] md:text-18 lg:text-18"
-                >
-                  <p>
-                    <span>Over 40+ multifamily projects&nbsp;</span>
-                    <span>starting&nbsp;</span>
-                    <span>with Zenerate&nbsp;</span>
-                    <span>experienced&nbsp;</span>
-                    <span> an average&nbsp;</span>
-                    <span>of 28%&nbsp;</span>
-                    <span>additional returns&nbsp;</span>
-                    <span> compared&nbsp;</span>
-                    <span>to original plans.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
       </div>
 
-      <section
-        class="pt-38 pb-76 md:pt-[156px] md:pb-[150px] lg:pt-[156px] lg:pb-[150px]"
+      <div
+        class="mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-0 lg:w-[70%] lg:pt-120"
+      >
+        <video
+          class="w-full"
+          :autoplay="true"
+          :muted="true"
+          :loop="true"
+          src="/public/en/zenerate_app/app_hero.mp4"
+          alt=""
+        />
+      </div>
+    </section>
+
+    <section
+      class="product-description flex flex-col items-center pt-80 md:pt-30 lg:pt-30"
+    >
+      <div
+        v-for="(data, idx) in PRODUCT_DESCRIPTION"
+        class="card mb-20 flex h-fit w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white shadow-200 md:mb-23 md:h-[354px] md:w-[708px] md:flex-row md:items-center lg:mb-30 lg:h-[450px] lg:w-[900px] lg:flex-row lg:items-center"
+        :class="`card${idx + 1}`"
+      >
+        <video
+          v-if="data.imgUrl.endsWith('.mp4')"
+          class="h-full w-full md:w-fit lg:w-fit"
+          :autoplay="true"
+          :muted="true"
+          :loop="true"
+          :src="`/public/en/zenerate_app/${data.imgUrl}`"
+          alt=""
+        />
+        <img
+          v-else
+          :src="`/public/en/zenerate_app/${data.imgUrl}`"
+          class="h-full w-full lg:w-fit"
+        />
+
+        <div
+          class="content-area flex h-fit flex-col"
+          :class="data.contentOnRight && 'content-right'"
+        >
+          <div class="title text-18-medium mb-10 lg:mb-14 lg:text-24">
+            {{ data.title }}
+          </div>
+          <div
+            v-for="contentData in data.content"
+            class="flex flex-row items-start not-last:mb-6 lg:not-last:mb-8"
+          >
+            <div
+              class="bg-core mr-8 mt-3 flex h-13 min-h-13 w-13 min-w-13 items-center justify-center rounded-13 bg-core-30 lg:mr-12 lg:h-16 lg:min-h-13 lg:w-16 lg:min-w-16 lg:rounded-16"
+            >
+              <IconBase
+                class="lg:hidden"
+                icon-name="checkmark-bold"
+                icon-color="#5C6DFF"
+                :width="9"
+                :height="9"
+              />
+              <IconBase
+                class="hidden lg:block"
+                icon-name="checkmark-bold"
+                icon-color="#5C6DFF"
+                :width="12"
+                :height="12"
+              />
+            </div>
+            <div class="description text-13 text-gray-700 lg:text-16">
+              {{ contentData }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works pt-60 md:pt-107 lg:pt-116">
+      <div class="mb-6 text-center text-26">How It Works</div>
+      <div
+        class="mx-auto mb-36 w-[360px] text-center text-18 text-gray-550 md:w-[420px] lg:w-full"
+      >
+        Simple, intuitive process generating powerful results
+      </div>
+      <div
+        v-for="(data, idx) in HOW_IT_WORKS"
+        class="card mx-auto mb-20 flex h-fit w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white shadow-200 md:mb-15 md:h-[244px] md:w-[708px] md:flex-row md:items-center lg:mb-20 lg:h-[312px] lg:w-[900px] lg:flex-row lg:items-center"
+        :class="`card${idx + 1}`"
       >
         <div
-          class="flex flex-col items-center mx-auto w-[300px] md:w-auto lg:w-auto"
-        >
-          <p
-            class="mb-30 text-16 font-regular leading-[150%] md:text-24 md:mb-36 lg:mb-40 lg:text-22 text-black text-center"
+          class="image-wrapper h-[200px] w-full md:h-[244px] md:min-w-[356px] md:max-w-[356px] lg:h-[312px] lg:min-w-[452px] lg:max-w-[452px]"
+        ></div>
+        <div class="content-area flex h-fit flex-row">
+          <div
+            class="text-12-semibold mr-12 mt-3 flex h-20 min-h-20 w-20 min-w-20 items-center justify-center rounded-10 bg-black text-white lg:mr-14 lg:h-28 lg:min-h-28 lg:w-28 lg:min-w-28 lg:rounded-14 lg:text-18"
           >
-            <span>You'll never want to start a project&nbsp;</span>
-            <span>without Zenerate again. </span><br />
-            <span>See for yourself why!</span>
-          </p>
-          <button
-            type="button"
-            class="start-button w-[260px] bg-primary hover:text-core-200 text-white active:bg-core-700 active:text-white px-24 md:w-[210px] lg:w-[210px]"
-          >
-            <router-link
-              class="demo-link text-14 lg:text-16"
-              :to="{ name: 'en-demo' }"
-            >
-              BOOK A DEMO
-            </router-link>
-          </button>
+            {{ idx + 1 }}
+          </div>
+          <div>
+            <div class="title text-18-medium mb-10 lg:text-24">
+              {{ data.title }}
+            </div>
+            <div class="description text-14 text-gray-700 lg:text-18">
+              {{ data.description }}
+            </div>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <section class="who-uses-it bg- pt-60 md:pt-[105px] lg:pt-[126px]">
+      <div class="mb-6 text-center text-26">Who Uses It</div>
+      <div
+        class="mx-auto mb-36 w-[280px] text-center text-18 text-gray-550 md:mb-46 md:w-full lg:mb-46 lg:w-full"
+      >
+        Made for everyone involved in real estate development
+      </div>
+      <div
+        v-for="data in WHO_USES_IT"
+        class="card mx-auto mb-20 flex h-fit w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white pl-24 pr-28 pt-16 pb-20 shadow-200 md:mb-10 md:w-[708px] md:flex-row md:items-center md:py-20 md:px-24 lg:mb-12 lg:w-[900px] lg:flex-row lg:items-center lg:py-24 lg:px-32"
+      >
+        <div
+          class="mb-15 md:mb-0 md:mr-30 md:min-w-[198px] lg:mb-0 lg:mr-45 lg:min-w-[245px]"
+        >
+          <span
+            v-for="userKey in data.userRoles"
+            class="text-16-medium mb-5 mr-6 h-34 w-fit rounded-60 bg-coolgray-50 px-14 leading-[34px] md:text-16-medium md:mr-0 md:h-34 md:leading-[34px] md:last:mb-0 lg:text-20-medium lg:mr-0 lg:h-44 lg:leading-[44px] lg:last:mb-0"
+          >
+            <span
+              >{{ ROLES[userKey].icon }}&nbsp;&nbsp;{{
+                ROLES[userKey].text
+              }}</span
+            >
+          </span>
+        </div>
+        <div class="text-16 text-gray-600 lg:text-18">
+          {{ data.description }}
+        </div>
+      </div>
+    </section>
+
+    <section class="beta-tester bg-slate-500 pt-60 pb-120 md:pt-120 lg:pt-120">
+      <div
+        class="card mx-auto flex h-fit w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white shadow-200 md:h-[468px] md:w-[708px] lg:h-[648px] lg:min-w-[980px]"
+      >
+        <div class="bg-primary px-32 pt-28 pb-38 text-white">
+          <div class="text-22-semibold mb-20 text-center">
+            Zenerate App<br />Beta Tester Program
+          </div>
+          <div v-for="data in BETA_TESTER" class="flex flex-col not-last:mb-9">
+            <div class="flex flex-row items-start">
+              <IconBase
+                icon-name="checkmark"
+                icon-color="white"
+                :width="18"
+                :height="18"
+                class="mr-8 mt-1 min-w-fit"
+              />
+              <div class="text-13-medium">{{ data }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white px-32 pt-48 pb-66 text-17">
+          <div class="mb-20 text-center">
+            Sign Up to Beta Test<br /><span class="font-semibold text-primary"
+              >The Zenerate App!</span
+            >
+          </div>
+
+          <!-- form -->
+          <div class="form">
+            <div class="flex flex-row">
+              <div class="label-text">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  autocomplete="new-firstname"
+                  v-model="contactForm.firstName.value"
+                  @blur="(v) => validation('firstName')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.firstName.valid === false }"
+                >
+                  Please provide a name
+                </p>
+              </div>
+              <div class="label-text">
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  autocomplete="new-lastname"
+                  v-model="contactForm.lastName.value"
+                  @blur="(v) => validation('lastName')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.lastName.valid === false }"
+                >
+                  Please provide a name
+                </p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div
+                class="label-text email-input"
+                :class="contactForm.email.value == '' ? 'empty' : ''"
+              >
+                <input
+                  type="text"
+                  placeholder="Enter Email"
+                  autocomplete="new-email"
+                  inputmode="email"
+                  v-model="contactForm.email.value"
+                  @blur="(v) => validation('email')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.email.valid === false }"
+                >
+                  Please enter a valid email address
+                </p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="label-text">
+                <input
+                  type="text"
+                  placeholder="Enter Company"
+                  autocomplete="new-company"
+                  v-model="contactForm.company.value"
+                  @blur="(v) => validation('company')"
+                />
+                <p
+                  class="label-error"
+                  :class="{ active: contactForm.company.valid === false }"
+                >
+                  Please provide your company name
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-footer fp-auto-height">
-      <Footer></Footer>
+      <Footer />
     </section>
   </div>
 </template>
 <script lang="ts" setup>
-import {
-  ref,
-  watch,
-  onMounted,
-  onBeforeUnmount,
-  onBeforeMount,
-  computed,
-  nextTick,
-} from 'vue'
-import Store from '/Store/index'
-import { useRouter } from 'vue-router'
-import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
-import Footer from '/Components/EN/Footer.vue'
-import { useGtag } from 'vue-gtag-next'
-import ImagePreloader from '/Utils/ImagePreloader'
-import PartnersList from '/Constants/partners'
+import { onMounted, onBeforeMount, ref } from 'vue'
 import { useHead } from '@vueuse/head'
+import { useGtag } from 'vue-gtag-next'
+import Footer from '/Components/EN/Footer.vue'
+import ImagePreloader from '/Utils/ImagePreloader'
+import IconBase from '/Components/EN/ui/IconBase.vue'
+import { ROLES } from '/Constants/roles'
+import Validation from '/Utils/Validation'
 
 useHead({
   title: `About the Zenerate App | Instantly evaluate development potential`,
@@ -623,6 +365,90 @@ useHead({
   ],
 })
 
+const PRODUCT_DESCRIPTION = [
+  {
+    imgUrl: 'product_description1.mp4',
+    title: 'Evaluate Development Potential with Various Considerations',
+    content: [
+      'Max out FAR and/or Density',
+      'Unit mix ratios',
+      'Parking options: on-grade, above/underground',
+      'Building uses',
+      'Construction types & building layouts',
+    ],
+    contentOnRight: false,
+  },
+  {
+    imgUrl: 'product_description2.mp4',
+    title: 'Generated Realistic Floor Plans',
+    content: [
+      'Actual Parking layout with circulation, stalls, etc.',
+      'All floor plans from basement to roof',
+      'Residential units, corridor, elevators, stairs, amenities, etc.',
+      'Exportable Floor Plans in CAD',
+    ],
+    contentOnRight: true,
+  },
+  {
+    imgUrl: 'product_description3.png',
+    title: 'Quick Financial Analysis Set to Your Own Metrics',
+    content: [
+      'Input your rent prices & construction cost',
+      'Residual land value',
+      'Yield on Cost',
+      'Excel Export',
+    ],
+    contentOnRight: false,
+  },
+]
+
+const HOW_IT_WORKS = [
+  {
+    title: 'Click on a Site',
+    description:
+      'Select a site, review the details of the parcel and zoning requirements.',
+  },
+  {
+    title: 'Set Inputs and Generate Solutions',
+    description:
+      'Set zoning related requirements and boundaries. Then, generate multiple solutions in real-time.',
+  },
+  {
+    title: 'Explore & Review Solutions',
+    description:
+      'Quickly view FAR, Density, floor plans, etc. of generated solutions along with financial analysis.',
+  },
+  {
+    title: 'Adjust Settings to Generate More Solutions',
+    description: 'Create iterations and test out more scenarios.',
+  },
+]
+
+const WHO_USES_IT = [
+  {
+    userRoles: ['developer', 'owner_investor'],
+    description:
+      'Quickly evaluate go/no-go decisions of various scenarios based on realistic financial projections and actual floor plans & designs',
+  },
+  {
+    userRoles: ['architect'],
+    description:
+      'Eliminate the tedious process of conducting massing / layout studies to maximize density or floor area ratio',
+  },
+  {
+    userRoles: ['broker'],
+    description:
+      'Instantly answer your client\'s question of "what can I build here" with accurate floor plans and returns',
+  },
+]
+
+const BETA_TESTER = [
+  'Receive early access to the newest version of the Zenerate App to test out',
+  'Play a direct role in shaping and refining our innovative tool',
+  'Major discounts upon official launch',
+]
+
+// TODO:
 const preloadImages = {
   desktop: ['/en/overview/overview_hero_desktop.png'],
   tablet: ['/en/overview/overview_hero_tablet.png'],
@@ -659,6 +485,34 @@ onMounted(() => {
   ImagePreloader.sequential(onloadImages[mediaQueryDevice])
 })
 
+// Signup Form
+const contactForm = ref({
+  firstName: {
+    value: '',
+    validator: Validation.string,
+    valid: null,
+  },
+  lastName: {
+    value: '',
+    validator: Validation.string,
+    valid: null,
+  },
+  email: {
+    value: '',
+    validator: Validation.email,
+    valid: null,
+  },
+  company: {
+    value: '',
+    validator: Validation.string,
+    valid: null,
+  },
+})
+
+const validation = (item: string) => {
+  contactForm[item].valid = contactForm[item].validator(contactForm[item].value)
+}
+
 // GTM
 const { event } = useGtag()
 const goToApp = () => {
@@ -669,151 +523,203 @@ const goToApp = () => {
 }
 </script>
 <style lang="scss" scoped>
-strong {
-  font-weight: 600;
+.card {
+  .content-area {
+    @include en-mobile {
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+    }
+  }
 }
 
-p,
-span {
-  cursor: default;
-}
+.product-description {
+  .content-area {
+    @include en-desktop {
+      &.content-right {
+        padding-left: 50px;
+        padding-right: 40px;
+      }
+      &:not(.content-right) {
+        padding-left: 66px;
+        padding-right: 32px;
 
-.inner-shadow {
-  box-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px inset;
-  z-index: 999;
-}
-
-.hero-image-wrapper {
-  background-image: url('/en/overview/overview_hero_desktop.png');
-  background-size: cover;
-  @include en-tablet {
-    background-image: url('/en/overview/overview_hero_tablet.png');
-  }
-  @include en-mobile {
-    background-image: url('/en/overview/overview_hero_mobile.png');
-  }
-}
-.graph-image-wrapper {
-  background-size: cover;
-  background-image: url('/en/overview/overview_graph_desktop.png');
-  @include en-tablet {
-    background-image: url('/en/overview/overview_graph_tablet.png');
-  }
-  @include en-mobile {
-    background-image: url('/en/overview/overview_graph_mobile.png');
-  }
-}
-.start-button {
-  height: 48px;
-  font-weight: 600;
-  border-radius: 5px;
-  letter-spacing: 0.1em;
-  transition: all ease-in-out 0.2s;
-  z-index: 1;
-  a {
-    @include center-center();
-    width: 100%;
-    height: 100%;
-    vertical-align: center;
-    text-align: center;
-  }
-  // &:hover {
-  //   @include elevation-3;
-  //   color: rgba($white, 0.6);
-  //   transform: translateY(-2px);
-  // }
-  // &:active {
-  //   @include elevation-3;
-  //   color: rgba($white, 0.6);
-  //   transform: translateY(-2px);
-  // }
-}
-.section-case-studies {
-  @include relative;
-  width: 100%;
-  height: 100%;
-  .inner-case-studies {
-    @include flex($dir: column);
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    padding: 168px 0px 0px;
+        order: -1;
+      }
+    }
     @include en-tablet {
-      padding: 132px 0px 0px;
+      &.content-right {
+        padding-left: 36px;
+        padding-right: 40px;
+      }
+      &:not(.content-right) {
+        padding-left: 52px;
+        padding-right: 30px;
+        order: -1;
+      }
     }
     @include en-mobile {
-      padding: 98px 0px 0px;
+      padding: 24px 30px 30px 30px;
     }
-    .case-studies-wrapper {
-      @include vertical-center();
-      margin: 0px auto;
-      align-items: center;
+  }
+
+  .card1 {
+    @include en-desktop {
+      .description {
+        width: 280px;
+      }
     }
-    .case-wrapper {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      margin: 0px auto;
+  }
+
+  .card2 {
+    @include en-desktop {
+      .title {
+        width: 240px;
+      }
+    }
+    @include en-tablet {
+      .title {
+        width: 200px;
+      }
+    }
+    @include en-mobile {
+      .title {
+        width: 200px;
+      }
+    }
+  }
+  .card3 {
+    @include en-mobile {
+      .title {
+        width: 200px;
+      }
+      .description {
+        width: 200px;
+      }
+    }
+  }
+}
+
+.how-it-works {
+  .image-wrapper {
+    background-repeat: no-repeat;
+  }
+  .content-area {
+    @include en-desktop {
+      padding: 0 30px 0 50px;
+    }
+    @include en-tablet {
+      padding: 0 24px 0 38px;
+    }
+    @include en-mobile {
+      padding: 26px 20px 30px 26px;
+    }
+  }
+
+  .card1 {
+    .image-wrapper {
+      background-image: url('/public/en/zenerate_app/how_it_works_step1_desktop.png');
       @include en-tablet {
-        @include vertical-center;
-        padding: 0px 20px;
+        background-image: url('/public/en/zenerate_app/how_it_works_step1_tablet.png');
       }
       @include en-mobile {
-        @include vertical-center;
-        padding: 0px;
+        background-image: url('/public/en/zenerate_app/how_it_works_step1_mobile.png');
       }
-      .case {
-        @include relative();
-        @include vertical-center();
-        justify-content: flex-start;
-        align-items: center;
-        width: 488px;
-        // height: auto;
-        height: 590px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        background-color: white;
-        @include en-tablet {
-          height: auto;
-        }
+    }
+    @include en-mobile {
+      .description {
+        width: 220px;
+      }
+    }
+  }
+  .card2 {
+    .image-wrapper {
+      background-image: url('/public/en/zenerate_app/how_it_works_step2_desktop.png');
+      @include en-tablet {
+        background-image: url('/public/en/zenerate_app/how_it_works_step2_tablet.png');
+      }
+      @include en-mobile {
+        background-image: url('/public/en/zenerate_app/how_it_works_step2_mobile.png');
+      }
+    }
+    @include en-desktop {
+      .title {
+        width: 260px;
+      }
+    }
+    @include en-tablet {
+      .title {
+        width: 180px;
+      }
+    }
+    @include en-mobile {
+      .title {
+        width: 180px;
+      }
+      .description {
         @include en-mobile {
-          max-width: 352px;
-          width: 100%;
-          height: auto;
-          border-radius: 0px;
-          margin-bottom: 0px;
-          box-shadow: none;
-          background-color: transparent;
-          @media only screen and (min-width: 360px) {
-            margin-bottom: 20px;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.18);
-            &:last-child {
-              margin-bottom: 52px;
-            }
-          }
+          width: 208px;
         }
-        .image-wrapper {
-          min-height: 312px;
-          @include en-mobile {
-            min-height: 226px;
-          }
-          img {
-            display: block;
-            height: 312px;
-            object-fit: cover;
-            pointer-events: none;
-            @include en-mobile {
-              width: 360px;
-              height: auto;
-            }
-          }
-        }
+      }
+    }
+  }
+  .card3 {
+    .image-wrapper {
+      background-image: url('/public/en/zenerate_app/how_it_works_step3_desktop.png');
+      @include en-tablet {
+        background-image: url('/public/en/zenerate_app/how_it_works_step3_tablet.png');
+      }
+      @include en-mobile {
+        background-image: url('/public/en/zenerate_app/how_it_works_step3_mobile.png');
+      }
+    }
+  }
+  .card4 {
+    .image-wrapper {
+      background-image: url('/public/en/zenerate_app/how_it_works_step4_desktop.png');
+
+      @include en-tablet {
+        background-image: url('/public/en/zenerate_app/how_it_works_step4_tablet.png');
+      }
+      @include en-mobile {
+        background-image: url('/public/en/zenerate_app/how_it_works_step4_mobile.png');
+      }
+    }
+    @include en-desktop {
+      .title {
+        width: 300px;
+      }
+      .description {
+        width: 280px;
+      }
+    }
+    @include en-tablet {
+      .title {
+        width: 204px;
+      }
+      .description {
+        width: 200px;
+      }
+    }
+    @include en-mobile {
+      .title {
+        width: 204px;
+      }
+      .description {
+        width: 200px;
+      }
+    }
+  }
+}
+
+.beta-tester {
+  .form {
+    input {
+      height: 40px;
+      border: solid 1px theme('colors.gray.350');
+      border-radius: 6px;
+      padding: 0 13px;
+
+      &::placeholder {
+        font-size: 13px;
       }
     }
   }

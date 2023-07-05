@@ -38,7 +38,7 @@
         <p
           class="ml-28 text-18 font-light md:ml-60 md:mb-34 md:text-24 lg:mb-48 lg:ml-84 lg:text-32"
         >
-          AI-Powered, Real-time<br /><span class="font-medium"
+          AI-Powered, Real-time<br /><span class="font-semibold"
             >Feasibility Study Tool</span
           >
         </p>
@@ -126,7 +126,7 @@ const product = computed(() => props.product)
 const CARD_DATA = {
   zmaps: {
     bestFor: [
-      'developer',
+      'developer_investor',
       'architect',
       'broker',
       'financial',
@@ -137,12 +137,12 @@ const CARD_DATA = {
     buttonLinkedTo: 'https://maps.zenerate.ai',
   },
   'zenerate-app': {
-    bestFor: ['developer', 'architect', 'broker'],
+    bestFor: ['developer_investor', 'architect', 'broker'],
     buttonText: 'Learn More',
     buttonLinkedTo: 'https://www.zenerate.ai/zenerate-app',
   },
   'ai-consulting': {
-    bestFor: ['developer', 'architect'],
+    bestFor: ['developer_investor', 'architect'],
     buttonText: 'Learn More',
     buttonLinkedTo: 'https://www.zenerate.ai/ai-consulting',
   },

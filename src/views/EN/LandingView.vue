@@ -2,7 +2,7 @@
   <div class="min-w-[280px]">
     <section>
       <div
-        class="mx-auto mt-[148px] w-[280px] min-w-[280px] md:mt-[220px] md:w-[644px] lg:mt-[236px] lg:w-[644px]"
+        class="mx-auto mt-[162px] w-[280px] min-w-[280px] md:mt-[220px] md:w-[644px] lg:mt-[236px] lg:w-[644px]"
       >
         <div class="flex flex-col">
           <p
@@ -40,15 +40,15 @@
           :autoplay="true"
           :muted="true"
           :loop="true"
-          src="/public/en/landing_video.mp4"
+          src="/public/en/landing/landing_hero.mp4"
           alt=""
         />
       </div>
     </section>
 
     <section class="flex flex-col items-center pt-20 pb-72 md:pb-96 lg:pb-156">
-      <ProductCard product="zmaps" class="mb-20" />
-      <ProductCard product="zenerate-app" class="mb-20" />
+      <ProductCard product="zmaps" class="mb-20 lg:mb-30" />
+      <ProductCard product="zenerate-app" class="mb-20 lg:mb-30" />
       <ProductCard product="ai-consulting" />
     </section>
 
@@ -82,9 +82,9 @@
       </Carousel>
     </section>
 
-    <section class="blue-wave-wrapper relative h-[364px] bg-black">
+    <section class="blue-wave-wrapper relative h-[364px] bg-black lg:h-[328px]">
       <div
-        class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center bg-black/50 px-20 pt-88 md:pt-[114px]"
+        class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center bg-black/50 px-20 pt-88 md:pt-[114px] lg:pt-[100px]"
       >
         <span
           class="mb-30 w-[320px] text-center text-22 text-white md:mb-44 md:w-[680px] md:text-26 lg:w-[720px] lg:text-28"
@@ -105,7 +105,7 @@
       </div>
     </section>
 
-    <section class="section section-footer fp-auto-height">
+    <section class="section section-footer fp-auto-height pt-52 md:pt-0">
       <Footer />
     </section>
   </div>
@@ -124,6 +124,7 @@ const TESTMONIAL_DATA = [
     position: 'Senior Manager',
   },
   // {
+  //   key: 'cushman',
   //   content:
   //     'Already on 8 projects, Zenerate was able to explore all possible development scenarios. These contributions have helped us increase the max sales price of each project successfully.',
   //   logoImg: 'logo_color_cushman.png',
