@@ -9,85 +9,116 @@
     </div>
 
     <div
-      class="flex flex-col items-center justify-center bg-white px-32 pt-36 pb-52 md:px-50 lg:px-62"
+      class="flex w-full flex-col items-center justify-center bg-white px-32 pt-36 pb-52 md:px-50 lg:px-62"
     >
       <slot name="form-title"></slot>
 
-      <div class="form mt-16 mb-12 w-full lg:mt-26 lg:mb-16">
-        <div class="form-row">
-          <div
-            class="input-wrapper first-name"
-            :class="{ error: SignUpForm.firstName.valid === false }"
-          >
-            <p class="error-message">Please enter name.</p>
-            <input
-              type="text"
-              placeholder="First Name"
-              autocomplete="new-firstname"
-              v-model="SignUpForm.firstName.value"
-              @blur="(v) => validation('firstName')"
-            />
+      <div v-if="!formSubmitted" class="form-wrapper">
+        <div class="form mt-16 mb-12 w-full lg:mt-26 lg:mb-16">
+          <div class="form-row">
+            <div
+              class="input-wrapper first-name"
+              :class="{ error: SignUpForm.firstName.valid === false }"
+            >
+              <p class="error-message">Please enter name.</p>
+              <input
+                type="text"
+                placeholder="First Name"
+                autocomplete="new-firstname"
+                v-model="SignUpForm.firstName.value"
+                @blur="(v) => validation('firstName')"
+              />
+            </div>
+            <div
+              class="input-wrapper last-name"
+              :class="{ error: SignUpForm.lastName.valid === false }"
+            >
+              <p class="error-message">Please enter name.</p>
+              <input
+                type="text"
+                placeholder="Last Name"
+                autocomplete="new-lastname"
+                v-model="SignUpForm.lastName.value"
+                @blur="(v) => validation('lastName')"
+              />
+            </div>
           </div>
-          <div
-            class="input-wrapper last-name"
-            :class="{ error: SignUpForm.lastName.valid === false }"
-          >
-            <p class="error-message">Please enter name.</p>
-            <input
-              type="text"
-              placeholder="Last Name"
-              autocomplete="new-lastname"
-              v-model="SignUpForm.lastName.value"
-              @blur="(v) => validation('lastName')"
-            />
+          <div class="form-row">
+            <div
+              class="input-wrapper email"
+              :class="{ error: SignUpForm.email.valid === false }"
+            >
+              <p class="error-message">Invalid email address format.</p>
+              <input
+                type="text"
+                placeholder="Enter Email"
+                autocomplete="new-email"
+                inputmode="email"
+                v-model="SignUpForm.email.value"
+                @blur="(v) => validation('email')"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div
+              class="input-wrapper company"
+              :class="{ error: SignUpForm.company.valid === false }"
+            >
+              <p class="error-message">Please enter company name.</p>
+              <input
+                type="text"
+                placeholder="Enter Company"
+                autocomplete="new-company"
+                v-model="SignUpForm.company.value"
+                @blur="(v) => validation('company')"
+              />
+            </div>
           </div>
         </div>
-        <div class="form-row">
-          <div
-            class="input-wrapper email"
-            :class="{ error: SignUpForm.email.valid === false }"
-          >
-            <p class="error-message">Invalid email address format.</p>
-            <input
-              type="text"
-              placeholder="Enter Email"
-              autocomplete="new-email"
-              inputmode="email"
-              v-model="SignUpForm.email.value"
-              @blur="(v) => validation('email')"
-            />
-          </div>
-        </div>
-        <div class="form-row">
-          <div
-            class="input-wrapper company"
-            :class="{ error: SignUpForm.company.valid === false }"
-          >
-            <p class="error-message">Please enter company name.</p>
-            <input
-              type="text"
-              placeholder="Enter Company"
-              autocomplete="new-company"
-              v-model="SignUpForm.company.value"
-              @blur="(v) => validation('company')"
-            />
-          </div>
-        </div>
+        <button
+          type="button"
+          class="submit-button"
+          :disabled="!canSubmitForm"
+          :class="{ disabled: !canSubmitForm }"
+          @click="submitForm"
+        >
+          <DotSpinnerWhite
+            v-if="loading"
+            :loading="true"
+            class="!mx-auto !w-fit"
+          />
+          <span v-else> Submit</span>
+        </button>
       </div>
-      <button
-        type="button"
-        class="submit-button"
-        :disabled="!canSubmitForm"
-        :class="{ disabled: !canSubmitForm }"
-        @click="submitForm"
-      >
-        <DotSpinnerWhite
-          v-if="loading"
-          :loading="true"
-          class="!mx-auto !w-fit"
-        />
-        <span v-else> Submit</span>
-      </button>
+
+      <transition v-else name="fade">
+        <div class="mt-40 flex flex-col items-center">
+          <div class="relative mb-14 h-50 w-50 rounded-50 bg-[#EBEDFE]">
+            <svg
+              width="43"
+              height="35"
+              viewBox="0 0 43 35"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="absolute left-8 top-4"
+            >
+              <path
+                d="M39.6345 0.787109L39.3662 1.10429L39.3739 1.11323L32.1398 9.69946L14.5447 30.5873C14.1699 31.0325 13.6693 31.2603 13.1674 31.2603C12.8671 31.2603 12.5667 31.177 12.2908 31.0131L13.3548 32.0243L14.9619 33.5506C15.3187 33.8886 15.75 34.0569 16.1813 34.0569C16.6831 34.0569 17.1837 33.8306 17.5585 33.3838L42.3877 3.90978L39.6345 0.787109Z"
+                fill="#4848FF"
+              />
+              <path
+                d="M32.1342 9.68945L16.0371 28.7963L13.0746 25.9818L13.0656 25.9729L3.299 16.6928L0.860229 20.1505L10.365 29.1805L10.374 29.1894L12.2916 31.0121C12.5676 31.1759 12.868 31.2593 13.1683 31.2593C13.6702 31.2593 14.1708 31.0329 14.5456 30.5862L32.1419 9.69988L32.1342 9.68945Z"
+                fill="#4848FF"
+                fill-opacity="0.4"
+              />
+            </svg>
+          </div>
+          <span class="mb-24 text-24 font-medium lg:text-28">Thank you!</span>
+          <span class="text-center text-13 text-gray-700 lg:text-16"
+            >We'll contact you within<br />1 to 3 business days.</span
+          >
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -126,6 +157,7 @@ const canSubmitForm = computed(
 )
 
 const loading = ref(false)
+const formSubmitted = ref(false)
 
 const validation = (item: string) => {
   const inputValue = SignUpForm.value[item].value
@@ -134,9 +166,10 @@ const validation = (item: string) => {
 }
 
 const submitForm = () => {
-  // TOOD
-  console.log('SUBMIT')
+  // TODO: logic 연결
   loading.value = true
+  console.log('SUBMIT')
+  formSubmitted.value = true
 }
 </script>
 <style lang="scss" scoped>
