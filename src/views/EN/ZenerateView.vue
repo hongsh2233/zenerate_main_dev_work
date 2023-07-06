@@ -2,7 +2,7 @@
   <div class="relative mx-auto min-w-[280px] max-w-[1200px]">
     <section class="hero lg:h-[712px]">
       <div
-        class="mx-auto mt-[168px] w-[320px] min-w-[280px] md:mt-[162px] md:w-[644px] lg:absolute lg:mt-[200px] lg:ml-100 lg:w-[440px]"
+        class="z-[1] mx-auto mt-[168px] w-[320px] min-w-[280px] md:mt-[162px] md:w-[644px] lg:absolute lg:mt-[200px] lg:ml-100 lg:w-[440px]"
       >
         <div class="mb-20 flex flex-col items-center lg:items-start">
           <div class="mb-16 flex flex-row items-center justify-center lg:mb-18">
@@ -34,12 +34,14 @@
           </p>
 
           <div class="flex flex-col items-center md:flex-row lg:flex-row">
+            <!-- TODO: change link -->
             <a
               href="https://www.zenerate.ai/demo-signup"
               class="text-18-semibold mb-10 h-48 w-[156px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mb-0 md:mr-10 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:mr-10 lg:mb-0 lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
               >Try It For Free
             </a>
 
+            <!-- TODO: change link -->
             <a
               href="https://www.zenerate.ai/demo-signup"
               class="text-18-semibold h-48 w-[156px] rounded-5 border-1 border-solid border-primary bg-white text-center leading-[48px] !text-primary duration-300 hover:!bg-core-50 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
@@ -50,7 +52,7 @@
       </div>
 
       <div
-        class="mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-0 lg:w-[70%] lg:pt-120"
+        class="z-[-1] mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-0 lg:w-[70%] lg:pt-120"
       >
         <video
           class="w-full"

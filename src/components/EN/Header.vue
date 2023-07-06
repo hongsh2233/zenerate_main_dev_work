@@ -74,6 +74,7 @@
         </button> -->
         </nav>
 
+        <!-- TODO: change link -->
         <a
           href="https://www.zenerate.ai/demo-signup"
           class="only-en-desktop text-14-medium mx-auto h-[36px] w-[112px] rounded-5 bg-primary text-center leading-[36px] !text-white duration-300 hover:!text-core-200"
