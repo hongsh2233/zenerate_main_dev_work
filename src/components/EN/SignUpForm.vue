@@ -26,7 +26,7 @@
                 placeholder="First Name"
                 autocomplete="new-firstname"
                 v-model="SignUpForm.firstName.value"
-                @blur="(v) => validation('firstName')"
+                @input="(v) => validation('firstName')"
               />
             </div>
             <div
@@ -39,7 +39,7 @@
                 placeholder="Last Name"
                 autocomplete="new-lastname"
                 v-model="SignUpForm.lastName.value"
-                @blur="(v) => validation('lastName')"
+                @input="(v) => validation('lastName')"
               />
             </div>
           </div>
@@ -55,7 +55,7 @@
                 autocomplete="new-email"
                 inputmode="email"
                 v-model="SignUpForm.email.value"
-                @blur="(v) => validation('email')"
+                @input="(v) => validation('email')"
               />
             </div>
           </div>
@@ -70,7 +70,7 @@
                 placeholder="Enter Company"
                 autocomplete="new-company"
                 v-model="SignUpForm.company.value"
-                @blur="(v) => validation('company')"
+                @input="(v) => validation('company')"
               />
             </div>
           </div>
