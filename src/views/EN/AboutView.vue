@@ -18,28 +18,28 @@
           <div class="mission-content content-text">
             <div class="hidden-en-tablet hidden-en-mobile">
               <p>
-                After completing his master's in architecture at Harvard,
+                After completing his master's in architecture at<br />Harvard,
                 <strong>Benji Shin</strong> spent 6 years as an architect<br />
                 in Los Angeles at HED and HKS.
               </p>
               <p>
                 While working on some of L.A.'s biggest projects,<br />
                 he got frustrated with the inefficiencies and limitations<br />
-                that came with the all-important feasibility study process of
-                real estate development.
+                that came with the all-important feasibility study<br />process
+                of real estate development.
               </p>
             </div>
             <div class="hidden-en-desktop hidden-en-mobile">
               <p>
-                After completing his master's in architecture at Harvard,
+                After completing his master's in architecture at<br />Harvard,
                 <strong>Benji Shin</strong> spent 6 years as an architect<br />
                 in Los Angeles at HED and HKS.
               </p>
               <p>
                 While working on some of L.A.'s biggest projects,<br />
                 he got frustrated with the inefficiencies and limitations<br />
-                that came with the all-important feasibility study process of
-                real estate development.
+                that came with the all-important feasibility study<br />process
+                of real estate development.
               </p>
             </div>
 
@@ -108,7 +108,7 @@
               a short time frame.
             </p>
             <p>
-              So he teamed up with <strong>Jamie Jeong</strong>, a brilliant
+              So he teamed up with <strong>Jamie Jeong</strong>, a brilliant<br />
               mathematician and former Samsung AI Developer,<br />
               to solve this problem through the power of AI.
             </p>
@@ -156,15 +156,16 @@
           </div>
           <div class="mission-content content-text hidden-en-mobile">
             <p>
-              A few years later, with Benji and Jamie leading the way, we're
-              already working with some of the biggest names in real estate.
+              A few years later, with Benji and Jamie leading the way,<br />we're
+              already working with some of the biggest names<br />in real
+              estate.
             </p>
             <p>
-              With substantial funding from incredible VC's backing our mission
-              along with a growing team of world-class architects, AI developers
-              and software engineers<br />
+              With substantial funding from incredible VC's backing<br />our
+              mission along with a growing team of world-class architects, AI
+              developers and software engineers<br />
               (like Co-Founder <strong>Hak Lee</strong>), we're zenerating the
-              future of real estate development one step at a time.
+              future<br />of real estate development one step at a time.
             </p>
           </div>
           <div
