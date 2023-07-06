@@ -21,7 +21,7 @@
               class="md:hidden lg:hidden"
             />
             studies with AI-powered solutions<br />
-            to streamline inefficient processes,<br
+            to streamline inefficient processes,&nbsp;<br
               class="md:hidden lg:hidden"
             />save time and maximize returns.
           </p>
