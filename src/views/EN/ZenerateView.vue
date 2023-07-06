@@ -387,25 +387,25 @@ const BETA_TESTER = [
   'Major discounts upon official launch',
 ]
 
-// TODO:
-const preloadImages = {
-  desktop: ['/en/overview/overview_hero_desktop.png'],
-  tablet: ['/en/overview/overview_hero_tablet.png'],
-  mobile: ['/en/overview/overview_hero_mobile.png'],
-}
-
 const onloadImages = {
-  desktop: ['/en/overview/overview_graph_desktop.png'],
-  tablet: ['/en/overview/overview_graph_tablet.png'],
-  mobile: ['/en/overview/overview_graph_mobile.png'],
+  desktop: [
+    '/en/zenerate_app/how_it_works_step1_desktop.png',
+    '/en/zenerate_app/how_it_works_step2_desktop.png',
+    '/en/zenerate_app/how_it_works_step3_desktop.png',
+  ],
+  tablet: [
+    '/en/zenerate_app/how_it_works_step1_tablet.png',
+    '/en/zenerate_app/how_it_works_step2_tablet.png',
+    '/en/zenerate_app/how_it_works_step3_tablet.png',
+  ],
+  mobile: [
+    '/en/zenerate_app/how_it_works_step1_mobile.png',
+    '/en/zenerate_app/how_it_works_step2_mobile.png',
+    '/en/zenerate_app/how_it_works_step3_mobile.png',
+  ],
 }
 
-const commonPreloadImages = [
-  '/en/overview/overview_step_1.jpg',
-  '/en/overview/overview_step_2.jpg',
-  '/en/overview/overview_step_3.jpg',
-  '/en/overview/overview_step_4.jpg',
-]
+const commonPreloadImages = ['/en/zenerate_app/product_description3.png']
 
 const mediaQueryDevice =
   window.innerWidth >= 1024
@@ -414,13 +414,8 @@ const mediaQueryDevice =
     ? 'tablet'
     : 'mobile'
 
-onBeforeMount(() => {
-  ImagePreloader.sequential(preloadImages[mediaQueryDevice])
-  ImagePreloader.sequential([...commonPreloadImages.slice(0, 2)])
-})
-
 onMounted(() => {
-  ImagePreloader.sequential([...commonPreloadImages.slice(2, 4)])
+  ImagePreloader.sequential(commonPreloadImages)
   ImagePreloader.sequential(onloadImages[mediaQueryDevice])
 })
 
