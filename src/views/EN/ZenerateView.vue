@@ -68,7 +68,7 @@
     >
       <div
         v-for="(data, idx) in PRODUCT_DESCRIPTION"
-        class="card mb-20 flex h-fit w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white shadow-200 md:mb-23 md:h-[354px] md:w-[708px] md:flex-row md:items-center lg:mb-30 lg:h-[450px] lg:w-[900px] lg:flex-row lg:items-center"
+        class="card mb-20 h-fit shadow-200 md:mb-23 md:h-[354px] md:items-center lg:mb-30 lg:h-[450px] lg:items-center"
         :class="`card${idx + 1}`"
       >
         <video
@@ -87,7 +87,7 @@
         />
 
         <div
-          class="content-area flex h-fit flex-col"
+          class="content-area flex flex-col justify-center"
           :class="data.contentOnRight && 'content-right'"
         >
           <div class="title text-18-medium mb-10 lg:mb-14 lg:text-24">
@@ -132,24 +132,26 @@
       </div>
       <div
         v-for="(data, idx) in HOW_IT_WORKS"
-        class="card mx-auto mb-20 flex h-fit w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white shadow-200 md:mb-15 md:h-[244px] md:w-[708px] md:flex-row md:items-center lg:mb-20 lg:h-[312px] lg:w-[900px] lg:flex-row lg:items-center"
+        class="card mx-auto mb-20 h-fit shadow-200 md:mb-15 md:h-[244px] md:items-center lg:mb-20 lg:h-[312px] lg:items-center"
         :class="`card${idx + 1}`"
       >
         <div
           class="image-wrapper h-[200px] w-full md:h-[244px] md:min-w-[356px] md:max-w-[356px] lg:h-[312px] lg:min-w-[452px] lg:max-w-[452px]"
         ></div>
-        <div class="content-area flex h-fit flex-row">
-          <div
-            class="text-12-semibold mr-12 mt-3 flex h-20 min-h-20 w-20 min-w-20 items-center justify-center rounded-10 bg-black text-white lg:mr-14 lg:h-28 lg:min-h-28 lg:w-28 lg:min-w-28 lg:rounded-14 lg:text-18"
-          >
-            {{ idx + 1 }}
-          </div>
-          <div>
-            <div class="title text-18-medium mb-10 lg:text-24">
-              {{ data.title }}
+        <div class="content-area flex items-center">
+          <div class="flex h-fit flex-row">
+            <div
+              class="text-12-semibold mr-12 mt-3 flex h-20 min-h-20 w-20 min-w-20 items-center justify-center rounded-10 bg-black text-white lg:mr-14 lg:h-28 lg:min-h-28 lg:w-28 lg:min-w-28 lg:rounded-14 lg:text-18"
+            >
+              {{ idx + 1 }}
             </div>
-            <div class="description text-14 text-gray-700 lg:text-18">
-              {{ data.description }}
+            <div>
+              <div class="title text-18-medium mb-10 lg:text-24">
+                {{ data.title }}
+              </div>
+              <div class="description text-14 text-gray-700 lg:text-18">
+                {{ data.description }}
+              </div>
             </div>
           </div>
         </div>
@@ -165,7 +167,7 @@
       </div>
       <div
         v-for="data in WHO_USES_IT"
-        class="card mx-auto mb-20 flex h-fit w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white pl-24 pr-28 pt-16 pb-20 shadow-200 md:mb-10 md:w-[708px] md:flex-row md:items-center md:py-20 md:px-24 lg:mb-12 lg:w-[900px] lg:flex-row lg:items-center lg:py-24 lg:px-32"
+        class="card mx-auto mb-20 flex h-fit pl-24 pr-28 pt-16 pb-20 shadow-200 md:mb-10 md:items-center md:py-20 md:px-24 lg:mb-12 lg:items-center lg:py-24 lg:px-32"
       >
         <div
           class="mb-15 md:mb-0 md:mr-30 md:min-w-[198px] lg:mb-0 lg:mr-45 lg:min-w-[245px]"
@@ -430,10 +432,36 @@ const goToApp = () => {
 </script>
 <style lang="scss" scoped>
 .card {
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+
+  @include en-tablet {
+    width: 708px;
+  }
+
+  @include en-mobile {
+    flex-direction: column;
+    width: 320px;
+    min-width: 320px;
+  }
+}
+
+.content-area {
+  width: 100%;
+  height: 100%;
+
+  @include en-mobile {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.how-it-works {
   .content-area {
-    @include en-mobile {
-      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
-    }
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
   }
 }
 

@@ -66,7 +66,7 @@
       >
     </div>
 
-    <div class="bottom-area mt-auto h-fit py-20 px-22 md:px-60 lg:pl-84">
+    <div class="inner-shadow mt-auto h-fit py-20 px-22 md:px-60 lg:pl-84">
       <div class="mb-24 pl-8 md:mb-14 md:pl-0">
         <span
           class="mb-10 text-14 font-semibold text-primary md:hidden lg:hidden"
@@ -189,7 +189,7 @@ const CARD_DATA = {
     }
   }
 
-  .bottom-area {
+  .inner-shadow {
     @include en-mobile {
       box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
     }
