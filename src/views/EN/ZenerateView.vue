@@ -251,23 +251,23 @@ import { ROLES } from '/Constants/roles'
 import ImagePreloader from '/Utils/ImagePreloader'
 
 useHead({
-  title: `About the Zenerate App | Instantly evaluate development potential`,
+  title: `About the Zenerate App | AI-Powered, Real-Time Feasibility Study Tool`,
   htmlAttrs: { lang: 'en' },
   link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/zenerate-app' }],
   meta: [
     {
       name: `description`,
-      content: `An AI-powered feasibility study tool utilizing generative design and advanced data analytics that zenerates ALL development possibilities within a given site.`,
+      content: `Instantly evaluate the development potential of any site by generating solutions with 3D models, floor plans and financial analysis.`,
     },
     {
       hid: 'twitter:title',
       property: 'twitter:title',
-      content: `About the Zenerate App | Instantly evaluate development potential`,
+      content: `About the Zenerate App | AI-Powered, Real-Time Feasibility Study Tool`,
     },
     {
       hid: 'twitter:description',
       property: 'twitter:description',
-      content: `An AI-powered feasibility study tool utilizing generative design and advanced data analytics that zenerates ALL development possibilities within a given site.`,
+      content: `Instantly evaluate the development potential of any site by generating solutions with 3D models, floor plans and financial analysis.`,
     },
     { name: 'keywords', content: 'zenerate' },
     {
@@ -283,12 +283,12 @@ useHead({
     {
       hid: 'og:title',
       property: 'og:title',
-      content: `About the Zenerate App | Instantly evaluate development potential`,
+      content: `About the Zenerate App | AI-Powered, Real-Time Feasibility Study Tool`,
     },
     {
       hid: 'og:description',
       property: 'og:description',
-      content: `An AI-powered feasibility study tool utilizing generative design and advanced data analytics that zenerates ALL development possibilities within a given site.`,
+      content: `Instantly evaluate the development potential of any site by generating solutions with 3D models, floor plans and financial analysis.`,
     },
     {
       hid: 'og:type',
