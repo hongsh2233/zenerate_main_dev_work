@@ -125,7 +125,7 @@
               </router-link>
             </p>
             <div class="flex flex-1 flex-nowrap justify-between">
-              <div class="group relative flex cursor-pointer">
+              <div class="group relative flex">
                 <button
                   type="button"
                   class="peer flex flex-nowrap items-center px-0 text-14 font-semibold text-gray-700"
@@ -134,17 +134,21 @@
                   <p>ENG</p>
                 </button>
                 <div
-                  class="invisible absolute top-0 left-0 pt-36 text-14 font-medium hover:visible group-hover:visible"
+                  class="invisible absolute top-[-10px] left-0 pt-36 text-14 font-medium hover:visible group-hover:visible"
                 >
                   <div
-                    class="flex w-66 flex-col items-center rounded-8 bg-white py-12 px-18 shadow-100"
+                    class="flex w-66 flex-col items-center rounded-8 bg-white py-10 shadow-100"
                   >
-                    <p class="mb-14 cursor-default text-gray-400">ENG</p>
-                    <p class="cursor-pointer text-gray-700 hover:text-primary">
+                    <div class="mb-10 cursor-default px-18 py-2 text-gray-400">
+                      ENG
+                    </div>
+                    <div
+                      class="cursor-pointer px-18 py-2 text-gray-700 hover:text-primary"
+                    >
                       <router-link :to="{ name: 'ModuleLayout' }">
                         KOR</router-link
                       >
-                    </p>
+                    </div>
                   </div>
                 </div>
               </div>
