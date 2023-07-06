@@ -221,7 +221,7 @@
           </div>
         </template>
         <template #form-title>
-          <div class="text-center text-17">
+          <div class="text-center text-17 lg:text-22">
             Sign Up to Beta Test<br /><span class="font-semibold text-primary"
               >The Zenerate App!</span
             >
