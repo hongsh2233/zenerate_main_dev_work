@@ -35,11 +35,13 @@
 
           <div class="flex flex-col items-center md:flex-row lg:flex-row">
             <!-- TODO: change link -->
-            <router-link
-              :to="{ name: 'en-demo' }"
+            <button
+              type="button"
               class="text-18-semibold mb-10 h-48 w-[156px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mb-0 md:mr-10 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:mr-10 lg:mb-0 lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
-              >Try It For Free
-            </router-link>
+              @click="moveToBetaTesterElement"
+            >
+              Try It For Free
+            </button>
 
             <!-- TODO: change link -->
             <router-link
@@ -79,12 +81,12 @@
           :autoplay="true"
           :muted="true"
           :loop="true"
-          :src="`/public/en/zenerate_app/${data.imgUrl}`"
+          :src="`/en/zenerate_app/${data.imgUrl}`"
           alt=""
         />
         <img
           v-else
-          :src="`/public/en/zenerate_app/${data.imgUrl}`"
+          :src="`/en/zenerate_app/${data.imgUrl}`"
           class="h-full w-full lg:w-fit"
         />
 
@@ -191,7 +193,10 @@
       </div>
     </section>
 
-    <section class="beta-tester pt-60 pb-120 md:pt-120 lg:pt-120">
+    <section
+      class="beta-tester pt-60 pb-120 md:pt-120 lg:pt-120"
+      ref="betaTester"
+    >
       <SignUpForm>
         <template #description>
           <div class="mx-auto flex w-[256px] flex-col text-white lg:w-[320px]">
@@ -307,6 +312,11 @@ useHead({
     },
   ],
 })
+
+const betaTester = ref(null)
+const moveToBetaTesterElement = () => {
+  betaTester.value.scrollIntoView({ behavior: 'smooth' })
+}
 
 const PRODUCT_DESCRIPTION = [
   {

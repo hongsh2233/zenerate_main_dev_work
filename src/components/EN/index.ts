@@ -12,6 +12,7 @@ import Carousel from './ui/Carousel.vue'
 import ProductCard from './ProductCard.vue'
 import Footer from './Footer.vue'
 import SignUpForm from './SignUpForm.vue'
+import IconBase from './ui/IconBase.vue'
 
 export {
   Icon,
@@ -28,4 +29,5 @@ export {
   ProductCard,
   Footer,
   SignUpForm,
+  IconBase,
 }
