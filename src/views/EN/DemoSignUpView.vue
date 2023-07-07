@@ -3,14 +3,7 @@
     <div class="section-inner inner-demo">
       <div class="demo-wrapper">
         <div class="title-wrapper">
-          <p class="maincopy">
-            Learn how <span class="blue">Zenerate</span> will
-            <strong>maximize returns</strong>
-          </p>
-          <p class="subcopy">
-            <span>while saving your team&nbsp;</span
-            ><span>hundreds of hours</span>
-          </p>
+          <p class="maincopy">Book a Demo</p>
         </div>
       </div>
       <div class="calendly-wrapper">
