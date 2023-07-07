@@ -77,7 +77,7 @@
             </p>
             <div class="flex flex-row items-center">
               <img
-                :src="`/public/logo/${data.logoImg}`"
+                :src="`/logo/${data.logoImg}`"
                 :alt="`${data.logoText}`"
                 class="logo-img"
               />
