@@ -73,4 +73,5 @@ export default defineConfig({
     jsxFragment: 'Fragment',
     keepNames: true,
   },
+  assetsInclude: ['**/*.mov'],
 })
