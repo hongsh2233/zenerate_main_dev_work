@@ -43,12 +43,12 @@
               Try It For Free
             </button>
 
-            <!-- TODO: change link -->
-            <router-link
-              :to="{ name: 'en-demo' }"
+            <button
               class="text-18-semibold h-48 w-[156px] rounded-5 border-1 border-solid border-primary bg-white text-center leading-[48px] !text-primary duration-300 hover:!bg-core-50 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
-              >Get a Demo
-            </router-link>
+              @click="() => toggleCalendlyPopup(true)"
+            >
+              Get a Demo
+            </button>
           </div>
         </div>
       </div>
@@ -67,6 +67,10 @@
       </div>
     </section>
 
+    <CalendlyPopup
+      v-if="showCalendlyPopup"
+      @togglePopup="toggleCalendlyPopup"
+    />
     <section
       class="product-description flex flex-col items-center pt-80 md:pt-30 lg:pt-30"
     >
@@ -248,10 +252,16 @@ import { useHead } from '@vueuse/head'
 import { useGtag } from 'vue-gtag-next'
 
 import IconBase from '/Components/EN/ui/IconBase.vue'
-import { SignUpForm, Footer } from '/Components/EN'
+import { SignUpForm, Footer, CalendlyPopup } from '/Components/EN'
 import { ROLES } from '/Constants/roles'
 
 import ImagePreloader from '/Utils/ImagePreloader'
+
+const showCalendlyPopup = ref(false)
+const toggleCalendlyPopup = (flag: boolean) => {
+  const fl = flag ?? !showCalendlyPopup.value
+  showCalendlyPopup.value = fl
+}
 
 useHead({
   title: `About the Zenerate App | AI-Powered, Real-Time Feasibility Study Tool`,

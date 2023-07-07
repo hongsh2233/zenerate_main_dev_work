@@ -106,12 +106,12 @@
           >Ready to step into the future of real estate development?</span
         >
         <div class="flex flex-col items-center md:flex-row lg:flex-row">
-          <!-- TODO: change link -->
-          <router-link
-            :to="{ name: 'en-demo' }"
+          <button
             class="text-16-semibold mx-auto mb-6 h-[48px] w-[250px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mr-10 md:mb-0 md:h-[56px] md:w-[236px] md:text-20 md:leading-[56px] lg:mb-0 lg:mr-10 lg:h-[56px] lg:w-[236px] lg:text-20 lg:leading-[56px]"
-            >Get a Demo
-          </router-link>
+            @click="() => toggleCalendlyPopup(true)"
+          >
+            Get a Demo
+          </button>
           <router-link
             :to="{ name: 'en-contact' }"
             class="text-16-semibold mx-auto h-[48px] w-[250px] rounded-5 bg-white text-center leading-[48px] duration-300 hover:!bg-gray-200 md:h-[56px] md:w-[236px] md:text-20 md:leading-[56px] lg:h-[56px] lg:w-[236px] lg:text-20 lg:leading-[56px]"
@@ -124,15 +124,32 @@
     <section class="section section-footer fp-auto-height pt-52 md:pt-0">
       <Footer />
     </section>
+
+    <CalendlyPopup
+      v-if="showCalendlyPopup"
+      @togglePopup="toggleCalendlyPopup"
+    />
   </div>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ProductCard, Carousel, Footer, IconBase } from '/Components/EN'
+import {
+  ProductCard,
+  Carousel,
+  Footer,
+  IconBase,
+  CalendlyPopup,
+} from '/Components/EN'
 
 const startOfProductSection = ref(null)
 const moveToProductSection = () => {
   startOfProductSection.value.scrollIntoView({ behavior: 'smooth' })
+}
+
+const showCalendlyPopup = ref(false)
+const toggleCalendlyPopup = (flag: boolean) => {
+  const fl = flag ?? !showCalendlyPopup.value
+  showCalendlyPopup.value = fl
 }
 
 const TESTMONIAL_DATA = [

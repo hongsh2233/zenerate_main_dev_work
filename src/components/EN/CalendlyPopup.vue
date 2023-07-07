@@ -1,31 +1,15 @@
 <template>
-  <PopUpLayout
-    class="z-demo-request-popup"
-    :show-close-button="false"
-    :close-on-keydown="false"
-    @close="closePopup"
+  <section
+    class="fixed top-0 left-0 z-[12000] flex h-[100vh] max-h-[100vh] w-[100vw] items-center justify-center overflow-auto"
   >
     <div
-      class="relative flex flex-col flex-nowrap items-center rounded-8 bg-white pt-42"
+      class="z-1 fixed top-0 left-0 h-full w-full cursor-pointer bg-black/50"
+      @click.stop="() => emit('togglePopup', false)"
+    ></div>
+
+    <div
+      class="relative flex w-[80vw] min-w-fit max-w-[1200px] flex-col flex-nowrap items-center overflow-hidden rounded-8 bg-white pt-42 shadow-200"
     >
-      <div class="mb-12 flex w-full flex-col items-center">
-        <span class="text-26 font-medium"
-          ><span class="mb-4 font-semibold text-primary">Z-maps&nbsp;</span
-          >Demo</span
-        >
-        <span class="text-center text-12 text-gray-700"
-          >Get a demo to receive access to Z-maps.</span
-        >
-      </div>
-      <BaseButton
-        v-if="isLandingPage"
-        class="absolute top-2 left-8"
-        size="44"
-        subvariant="gray600"
-        before-icon="chevron-left"
-        @click="goBack"
-        >Back</BaseButton
-      >
       <IconBase
         class="absolute top-14 right-14 z-[1] cursor-pointer"
         icon-name="close"
@@ -33,62 +17,52 @@
         icon-hover-color="gray-700"
         :width="24"
         :height="24"
-        @click="closePopup"
+        @click="() => emit('togglePopup', false)"
       />
+
+      <div class="mb-12 flex w-full flex-col items-center">
+        <span class="text-26 font-medium">Book a Demo</span>
+      </div>
+
       <div class="calendly-wrapper">
         <div
-          class="calendly-inline-widget"
           id="calendly"
-          data-url="https://calendly.com/zenerate/z-maps-demo"
+          data-url="https://calendly.com/zenerate/30min?hide_gdpr_banner=1"
           style="position: relative; min-width: 320px"
         ></div>
       </div>
     </div>
-  </PopUpLayout>
+  </section>
 </template>
 <script lang="ts" setup>
-import { onMounted, ref, nextTick } from 'vue'
-import { PopUpLayout, IconBase, BaseButton } from '/Components/UI'
+import { onMounted, ref } from 'vue'
+import { IconBase } from '.'
 
-const showCalendlyPopup = ref(true)
-const togglsCalendlyPopup = (flag?: boolean) => {
-  const f = flag == null ? !showCalendlyPopup.value : flag
-  showCalendlyPopup.value = f
-}
+const emit = defineEmits(['togglePopup'])
 
-//   const goBack = () => {
-//     UIStore.TOGGLE_CALENDLY_POPUP(false)
-//     UIStore.TOGGLE_UPGRADE_PLAN_POPUP(true)
-//   }
+onMounted(() => {
+  const head = document.querySelector('head')
+  const script = document.createElement('script')
+  script.setAttribute(
+    'src',
+    'https://assets.calendly.com/assets/external/widget.js'
+  )
+  head.appendChild(script)
 
-//   const closePopup = () => {
-//     UIStore.TOGGLE_CALENDLY_POPUP(false)
-//   }
-
-//   onMounted(() => {
-//     const head = document.querySelector('head')
-//     const script = document.createElement('script')
-//     script.setAttribute(
-//       'src',
-//       'https://assets.calendly.com/assets/external/widget.js'
-//     )
-//     head.appendChild(script)
-
-//     try {
-//       Calendly.initInlineWidget({
-//         url: 'https://calendly.com/zenerate/z-maps-demo',
-//       })
-//     } catch (error) {
-//       console.error(error)
-//     }
-//   })
+  try {
+    Calendly.initInlineWidget({
+      url: 'https://calendly.com/zenerate/30min?hide_gdpr_banner=1o',
+    })
+  } catch (error) {
+    console.error(error)
+  }
+})
 </script>
 <style lang="scss" scoped>
 .calendly-wrapper {
-  width: fit-content;
+  width: 100%;
 
   #calendly {
-    width: 710px;
     height: 1300px;
     max-height: 624px;
   }
