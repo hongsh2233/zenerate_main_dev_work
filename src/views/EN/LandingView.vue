@@ -178,9 +178,9 @@ const TESTMONIAL_DATA = [
 .testmonial-carousel {
   .cushman {
     .logo-img {
-      width: 304px;
+      width: 180px;
       @include en-tablet {
-        width: 184px;
+        width: 180px;
       }
       @include en-mobile {
         width: 152px;
