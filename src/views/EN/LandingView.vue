@@ -41,7 +41,7 @@
           :autoplay="true"
           :muted="true"
           :loop="true"
-          src="/public/en/landing/landing_hero.mp4"
+          src="/public/en/landing/landing_hero.mov"
           alt=""
         />
       </div>
