@@ -125,9 +125,17 @@
       </div>
 
       <a
+        v-if="product === 'zmaps'"
         :href="CARD_DATA[product].buttonLinkedTo"
         class="text-16-semibold block h-38 rounded-6 bg-core-500 text-center leading-[38px] !text-white duration-300 hover:!text-core-200 md:hidden lg:hidden"
         >{{ CARD_DATA[product].buttonText }}</a
+      >
+      <router-link
+        v-else
+        :to="{ name: CARD_DATA[product].buttonLinkedTo }"
+        class="text-16-semibold block h-38 rounded-6 bg-core-500 text-center leading-[38px] !text-white duration-300 hover:!text-core-200 md:hidden lg:hidden"
+      >
+        {{ CARD_DATA[product].buttonText }}</router-link
       >
     </div>
   </div>
