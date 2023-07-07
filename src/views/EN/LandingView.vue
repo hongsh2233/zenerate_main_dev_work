@@ -86,8 +86,8 @@
                 :alt="`${data.logoText}`"
                 class="logo-img"
               />
-              <div class="ml-14 text-14 text-gray-700 md:text-18 lg:text-18">
-                <span class="font-medium text-black md:text-16 lg:text-16"
+              <div class="ml-14 text-14 text-gray-700 md:text-16 lg:text-16">
+                <span class="font-medium text-black md:text-18 lg:text-18"
                   >{{ data.name }},</span
                 ><br />{{ data.position }}
               </div>
