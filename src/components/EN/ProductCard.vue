@@ -108,7 +108,8 @@
         >
           <span
             v-for="userKey in CARD_DATA[product].bestFor"
-            class="text-13-medium mb-6 mr-6 h-29 w-fit rounded-60 bg-coolgray-50 px-12 leading-[29px] md:text-11-medium md:h-27 md:leading-[27px] lg:text-14-medium lg:mb-10 lg:h-36 lg:leading-[36px]"
+            class="text-13-medium mb-6 mr-6 h-29 w-fit rounded-60 px-12 leading-[29px] md:text-11-medium md:h-27 md:leading-[27px] lg:text-14-medium lg:mb-10 lg:h-36 lg:leading-[36px]"
+            :class="product === 'ai-consulting' ? 'bg-white' : 'bg-coolgray-50'"
           >
             <span class="md:hidden lg:hidden"
               >{{ ROLES[userKey].icon }}&nbsp;&nbsp;{{

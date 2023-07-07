@@ -69,7 +69,7 @@
           </div>
           <div class="info-wrapper">
             <span class="copyright"
-              >© Zenerate, Inc. 2022. All rights reserved</span
+              >© Zenerate, Inc. 2023. All rights reserved.</span
             >
           </div>
         </div>

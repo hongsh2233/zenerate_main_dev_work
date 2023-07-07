@@ -177,7 +177,7 @@
         <p
           class="text-12 font-medium text-gray-700 md:text-14 md:font-regular lg:text-14 lg:font-regular"
         >
-          © Zenerate, Inc. 2022. All rights reserved.
+          © Zenerate, Inc. 2023. All rights reserved.
         </p>
       </div>
     </div>
