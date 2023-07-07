@@ -1,11 +1,7 @@
 <template>
   <div class="layout-en" id="layout-en">
     <a :href="'https://maps.zenerate.ai'">
-      <button
-        type="button"
-        class="signup-banner"
-        v-show="path !== '/beta'"
-      >
+      <button type="button" class="signup-banner" v-show="path !== '/beta'">
         <div class="signup-banner-inner">
           <p class="uppercase">
             <span>VIEW YOUR CITY'S LATEST DEVELOPMENTS&nbsp;</span>
@@ -179,15 +175,6 @@ const toggleDrawer = (flag = undefined) => {
 
   &:hover {
     color: rgba(255, 255, 255, 0.6);
-  }
-}
-
-.layout-en,
-.layout-en * {
-  * {
-    font-family: 'Poppins', 'Roboto', -apple-system, BlinkMacSystemFont,
-      'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
-      sans-serif !important;
   }
 }
 </style>

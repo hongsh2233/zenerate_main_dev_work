@@ -22,6 +22,7 @@ module.exports = {
       semibold: 600,
       medium: 500,
       regular: 400,
+      light: 300,
     },
     extend: {
       transitionProperty: {
@@ -50,6 +51,8 @@ module.exports = {
           active: '#3E3BCB',
         },
         core: {
+          10: '#F4F6FF',
+          30: '#E3E6FF',
           50: '#ECEFFF',
           100: '#DCDFFF',
           200: '#C5CBFF',
@@ -78,6 +81,9 @@ module.exports = {
           750: '#3D3F42',
           800: '#343538',
           850: '#2A2B2D',
+        },
+        coolgray: {
+          50: '#F4F6F9',
         },
         red: {
           50: '#FFF3F4',

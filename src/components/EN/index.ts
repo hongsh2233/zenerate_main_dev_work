@@ -7,6 +7,11 @@ import Form from './ui/Form.vue'
 import Dropdown from './ui/Dropdown.vue'
 import IconButton from './ui/IconButton.vue'
 import ModalLayout from './ui/ModalLayout.vue'
+import ZmapsLogo from './ui/ZmapsLogo.vue'
+import Carousel from './ui/Carousel.vue'
+import ProductCard from './ProductCard.vue'
+import Footer from './Footer.vue'
+import SignUpForm from './SignUpForm.vue'
 
 export {
   Icon,
@@ -18,4 +23,9 @@ export {
   Dropdown,
   IconButton,
   ModalLayout,
+  ZmapsLogo,
+  Carousel,
+  ProductCard,
+  Footer,
+  SignUpForm,
 }

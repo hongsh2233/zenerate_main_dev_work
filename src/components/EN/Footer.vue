@@ -1,34 +1,26 @@
 <template>
-  <div class="flex flex-col w-full h-auto items-center">
+  <div class="flex h-auto w-full flex-col items-center">
     <div
-      class="flex flex-col max-w-[320px] w-full md:max-w-[768px] lg:max-w-[1024px] py-46 md:py-80 lg:py-80"
+      class="flex w-full max-w-[280px] flex-col py-46 md:max-w-[768px] md:py-80 lg:max-w-[1024px] lg:py-80"
     >
       <div
-        class="flex flex-col md:flex-row lg:flex-row md:justify-between lg:justify-between border-b-gray-200"
+        class="flex flex-col border-b-gray-200 md:flex-row md:justify-between lg:flex-row lg:justify-between"
       >
         <div class="flex flex-nowrap">
           <div class="mr-32 md:mr-38 lg:mr-40">
-            <svg
-              width="32"
-              height="32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 0h32v32H0V0Z" fill="#fff" />
-              <path
-                d="M0 0v32h32V0H0Zm9.696 17.216 7.392-8.736h-6.88V5.296H22V8.56l-7.312 8.464h7.584v3.216H9.696V17.2v.016Zm.032 9.488v-3.232h12.576v3.232H9.728Z"
-                fill="#4D49F4"
-              />
-            </svg>
+            <IconBase
+              icon-name="z-main"
+              :width="38"
+              :height="38"
+              icon-color="#4D49F4"
+            />
           </div>
-          <div class="flex flex-col mb-36 md:mb-60 lg:mb-50">
-            <div class="flex flex-col mb-18 lg:mb-22">
-              <p class="mb-4 lg:mb-8 text-black font-semibold text-14">
+          <div class="mb-34 flex flex-col md:mb-60 lg:mb-50">
+            <div class="mb-18 flex flex-col lg:mb-22">
+              <p class="mb-4 text-14 font-semibold text-black lg:mb-8">
                 Headquarters
               </p>
-              <p
-                class="leading-[170%] text-gray-700 font-medium text-13 md:text-14 lg:text-14"
-              >
+              <p class="text-14 font-medium leading-[150%] text-gray-700">
                 United States<br />
                 555 West 5th Street<br />
                 Los Angeles, CA 90013
@@ -36,12 +28,10 @@
             </div>
 
             <div class="flex flex-col">
-              <p class="mb-4 lg:mb-8 text-black font-semibold text-14">
+              <p class="mb-4 text-14 font-semibold text-black lg:mb-8">
                 APAC Office
               </p>
-              <p
-                class="leading-[170%] text-gray-700 font-medium text-13 md:text-14 lg:text-14"
-              >
+              <p class="text-14 font-medium leading-[150%] text-gray-700">
                 South Korea<br />
                 Olympic-ro 362, 5F<br />
                 Songpa-gu, Seoul 05544
@@ -50,64 +40,54 @@
           </div>
         </div>
 
-        <div class="flex flex-col lg:pb-50 pb-20 md:items-end lg:items-end">
-          <div class="flex flex-row md:mb-120 mb-52 lg:mb-84">
+        <div
+          class="flex flex-col pb-36 md:items-end md:pb-16 lg:items-end lg:pb-60"
+        >
+          <div class="mb-24 flex flex-row md:mb-120 lg:mb-84">
             <div
-              class="flex flex-col mr-24 md:mr-30 lg:mr-50 w-[80px] md:w-auto lg:w-auto"
+              class="mr-40 flex flex-col md:mr-30 md:w-auto lg:mr-50 lg:w-auto"
             >
               <p
-                class="text-black font-semibold text-13 mb-12 md:text-14 md:mb-18 lg:text-14 lg:mb-18"
+                class="mb-12 text-14 font-semibold text-black md:mb-18 lg:mb-18"
               >
-                Product
+                Products & Services
               </p>
               <p
-                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14 mb-8 md:mb-10 lg:mb-14"
-              >
-                <router-link :to="{ name: 'en-overview' }">
-                  Zenerate™ App
-                </router-link>
-              </p>
-              <p
-                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14"
+                class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
                 <a :href="'https://maps.zenerate.ai'"> Z-maps </a>
               </p>
-            </div>
-            <div
-              class="flex flex-col mr-20 md:mr-28 lg:mr-62 w-[80px] md:w-auto lg:w-auto"
-            >
               <p
-                class="text-black font-semibold text-13 mb-12 md:text-14 md:mb-18 lg:text-14 lg:mb-18"
+                class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
-                Resources
+                <router-link :to="{ name: 'en-overview' }">
+                  Zenerate App
+                </router-link>
               </p>
-              <p
-                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14"
-              >
-                <router-link :to="{ name: 'en-case-studies' }">
-                  Case Studies
+              <p class="text-14 font-medium text-gray-700">
+                <router-link :to="{ name: 'en-ai-consulting' }">
+                  AI Consulting
                 </router-link>
               </p>
             </div>
+
             <div class="flex flex-col">
               <p
-                class="text-black font-semibold text-13 mb-12 md:text-14 md:mb-18 lg:text-14 lg:mb-18"
+                class="mb-12 text-14 font-semibold text-black md:mb-18 lg:mb-18"
               >
                 Company
               </p>
               <p
-                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14 mb-8 md:mb-10 lg:mb-14"
+                class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
                 <router-link :to="{ name: 'en-about' }"> About Us </router-link>
               </p>
               <p
-                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14 mb-8 md:mb-10 lg:mb-14"
+                class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
                 <router-link :to="{ name: 'en-career' }"> Careers </router-link>
               </p>
-              <p
-                class="text-gray-700 font-medium text-13 md:text-14 lg:text-14"
-              >
+              <p class="text-14 font-medium text-gray-700">
                 <router-link :to="{ name: 'en-contact' }">
                   Contact
                 </router-link>
@@ -115,88 +95,89 @@
             </div>
           </div>
 
-          <div
-            class="flex text-gray-700 font-regular items-center text-13 md:text-14 lg:text-14"
-          >
+          <div class="flex items-center text-14 font-regular text-gray-700">
             <p class="mr-10 font-semibold">Contact</p>
-
             <p>
               <a href="mailto:support@zenerate.ai">support@zenerate.ai</a>
             </p>
           </div>
         </div>
       </div>
-      <div class="flex flex-col pt-40 md:pt-20 lg:pt-30">
-        <div class="flex flex-col md:flex-row lg:flex-row">
+
+      <div class="flex flex-col pt-20 md:pt-20 lg:pt-30">
+        <div class="flex flex-row justify-between md:flex-row lg:flex-row">
           <div
-            class="flex flex-col w-full lg:items-center md:items-center md:flex-row mb-40 md:mb-14 lg:mb-18 lg:flex-row text-gray-700 font-semibold text-14"
+            class="mb-40 flex w-fit flex-col text-14 font-semibold text-gray-700 md:mb-14 md:flex-row md:items-center lg:mb-18 lg:flex-row lg:items-center"
           >
-            <p class="mb-18 md:mb-0 lg:mb-0 md:mr-30 lg:mr-30">
+            <p class="mb-18 md:mb-0 md:mr-30 lg:mb-0 lg:mr-30">
               <router-link :to="{ name: 'en-terms-and-conditions' }">
                 Terms of Service
               </router-link>
             </p>
-            <p class="mb-18 md:mb-0 lg:mb-0 md:mr-30 lg:mr-30">
+            <p class="mb-18 md:mb-0 md:mr-30 lg:mb-0 lg:mr-30">
               <router-link :to="{ name: 'en-privacy-policy' }">
                 Privacy Policy
               </router-link>
             </p>
-            <p class="mb-10 md:mb-0 lg:mb-0 md:mr-30 lg:mr-30">
+            <p class="mb-18 md:mb-0 md:mr-30 lg:mb-0 lg:mr-30">
               <router-link :to="{ name: 'en-contact' }">
                 Contact Us
               </router-link>
             </p>
-            <div class="flex flex-nowrap justify-between flex-1">
-              <div class="flex relative group cursor-pointer">
+            <div class="flex flex-1 flex-nowrap justify-between">
+              <div class="group relative flex">
                 <button
                   type="button"
-                  class="peer text-gray-700 px-0 font-semibold text-14 flex items-center flex-nowrap"
+                  class="peer flex flex-nowrap items-center px-0 text-14 font-semibold text-gray-700"
                 >
                   <i class="material-icons mr-8 text-18"> language </i>
                   <p>ENG</p>
                 </button>
                 <div
-                  class="absolute top-0 pt-36 font-medium text-14 left-0 invisible group-hover:visible hover:visible"
+                  class="invisible absolute top-[-10px] left-0 pt-36 text-14 font-medium hover:visible group-hover:visible"
                 >
                   <div
-                    class="w-66 py-12 px-18 flex flex-col items-center shadow-100 rounded-8 bg-white"
+                    class="flex w-66 flex-col items-center rounded-8 bg-white py-10 shadow-100"
                   >
-                    <p class="text-gray-400 mb-14 cursor-default">ENG</p>
-                    <p class="text-gray-700 cursor-pointer hover:text-primary">
+                    <div class="mb-10 cursor-default px-18 py-2 text-gray-400">
+                      ENG
+                    </div>
+                    <div
+                      class="cursor-pointer px-18 py-2 text-gray-700 hover:text-primary"
+                    >
                       <router-link :to="{ name: 'ModuleLayout' }">
                         KOR</router-link
                       >
-                    </p>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <a
-                href="https://www.linkedin.com/company/zenerate"
-                class="hover-pointer linkedin-icon"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="28px"
-                  height="28px"
-                  viewBox="0 0 20 20"
-                  version="1.1"
-                >
-                  <g id="surface1">
-                    <path
-                      fill="#666666"
-                      d="M 9.972656 0 C 4.464844 0 0 4.464844 0 9.972656 C 0 15.484375 4.464844 19.949219 9.972656 19.949219 C 15.484375 19.949219 19.949219 15.484375 19.949219 9.972656 C 19.949219 4.464844 15.484375 0 9.972656 0 Z M 6.238281 16.726562 L 3.433594 16.726562 L 3.433594 7.707031 L 6.238281 7.707031 Z M 4.835938 6.472656 C 3.9375 6.472656 3.210938 5.746094 3.210938 4.847656 C 3.210938 3.949219 3.9375 3.222656 4.835938 3.222656 C 5.730469 3.222656 6.460938 3.949219 6.460938 4.847656 C 6.460938 5.742188 5.730469 6.472656 4.835938 6.472656 Z M 16.738281 16.726562 L 13.9375 16.726562 L 13.9375 12.339844 C 13.9375 11.292969 13.917969 9.949219 12.480469 9.949219 C 11.023438 9.949219 10.796875 11.085938 10.796875 12.265625 L 10.796875 16.726562 L 7.996094 16.726562 L 7.996094 7.707031 L 10.683594 7.707031 L 10.683594 8.9375 L 10.722656 8.9375 C 11.097656 8.230469 12.011719 7.480469 13.375 7.480469 C 16.214844 7.480469 16.738281 9.351562 16.738281 11.777344 Z M 16.738281 16.726562 "
-                    />
-                  </g>
-                </svg>
-              </a>
             </div>
           </div>
+          <a
+            href="https://www.linkedin.com/company/zenerate"
+            class="hover-pointer linkedin-icon"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28px"
+              height="28px"
+              viewBox="0 0 20 20"
+              version="1.1"
+            >
+              <g id="surface1">
+                <path
+                  fill="#666666"
+                  d="M 9.972656 0 C 4.464844 0 0 4.464844 0 9.972656 C 0 15.484375 4.464844 19.949219 9.972656 19.949219 C 15.484375 19.949219 19.949219 15.484375 19.949219 9.972656 C 19.949219 4.464844 15.484375 0 9.972656 0 Z M 6.238281 16.726562 L 3.433594 16.726562 L 3.433594 7.707031 L 6.238281 7.707031 Z M 4.835938 6.472656 C 3.9375 6.472656 3.210938 5.746094 3.210938 4.847656 C 3.210938 3.949219 3.9375 3.222656 4.835938 3.222656 C 5.730469 3.222656 6.460938 3.949219 6.460938 4.847656 C 6.460938 5.742188 5.730469 6.472656 4.835938 6.472656 Z M 16.738281 16.726562 L 13.9375 16.726562 L 13.9375 12.339844 C 13.9375 11.292969 13.917969 9.949219 12.480469 9.949219 C 11.023438 9.949219 10.796875 11.085938 10.796875 12.265625 L 10.796875 16.726562 L 7.996094 16.726562 L 7.996094 7.707031 L 10.683594 7.707031 L 10.683594 8.9375 L 10.722656 8.9375 C 11.097656 8.230469 12.011719 7.480469 13.375 7.480469 C 16.214844 7.480469 16.738281 9.351562 16.738281 11.777344 Z M 16.738281 16.726562 "
+                />
+              </g>
+            </svg>
+          </a>
         </div>
         <p
-          class="text-gray-700 lg:font-regular font-medium md:font-regular md:text-14 lg:text-14 text-12"
+          class="text-12 font-medium text-gray-700 md:text-14 md:font-regular lg:text-14 lg:font-regular"
         >
-          © Zenerate,Inc. 2022. All rights reserved
+          © Zenerate, Inc. 2022. All rights reserved.
         </p>
       </div>
     </div>
@@ -205,6 +186,8 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import IconBase from './ui/IconBase.vue'
+
 const router = useRouter()
 const showLang = ref(false)
 const toggleLang = (flag?: boolean) => {

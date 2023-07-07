@@ -21,7 +21,7 @@
           <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" /> -->
         </div>
         <nav class="header-navigation-wrapper only-en-desktop">
-          <template v-for="(primary, idx) in routes" :key="idx">
+          <template v-for="(primary, idx) in MENU_DATA" :key="idx">
             <div class="dropdown">
               <button class="dropbtn">
                 {{ primary.title }}
@@ -32,19 +32,22 @@
                   v-for="(secondary, idx) in primary.children"
                   :key="idx"
                 >
-                  <router-link :to="{ name: secondary.to }">
-                    <component :is="secondary.icon" :width="20" :height="20" />
-
-                    {{ secondary.title }}
-                  </router-link>
                   <a
                     v-if="secondary.to === 'en-overview'"
                     :href="'https://maps.zenerate.ai'"
                   >
                     <component :is="ZmapsIcon" :width="20" :height="20" />
-
                     Z-Maps
                   </a>
+                  <router-link :to="{ name: secondary.to }">
+                    <IconBase
+                      :icon-name="secondary.icon"
+                      :width="20"
+                      :height="20"
+                      :transition="false"
+                    />
+                    {{ secondary.title }}
+                  </router-link>
                 </template>
               </div>
             </div>
@@ -71,15 +74,12 @@
         </button> -->
         </nav>
 
-        <button
-          type="button"
-          class="primary-button text-12 h-36 only-en-desktop w-[130px] !px-14"
-        >
-          <router-link class="demo-link" :to="{ name: 'en-demo' }">
-            BOOK A DEMO
-          </router-link>
-        </button>
-
+        <!-- TODO: change link -->
+        <router-link
+          :to="{ name: 'en-demo' }"
+          class="only-en-desktop text-14-medium mx-auto h-[36px] w-[112px] rounded-5 bg-primary text-center leading-[36px] !text-white duration-300 hover:!text-core-200"
+          >Get a Demo
+        </router-link>
         <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
           <MenuIcon
             @toggle="toggleDrawer"
@@ -96,12 +96,9 @@ import { ref, computed } from 'vue'
 import { useGtag } from 'vue-gtag-next'
 import { useRouter } from 'vue-router'
 import MenuIcon from './Icons/MenuIcon.vue'
-import AboutIcon from './Icons/header/AboutIcon.vue'
-import CareersIcon from './Icons/header/CareersIcon.vue'
-import CaseIcon from './Icons/header/CaseIcon.vue'
-import ContactIcon from './Icons/header/ContactIcon.vue'
-import OverviewIcon from './Icons/header/OverviewIcon.vue'
 import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
+import MENU_DATA from '/Constants/menu'
+import IconBase from './ui/IconBase.vue'
 
 const props = defineProps({
   showDrawer: Boolean,
@@ -135,51 +132,6 @@ const goToApp = () => {
 
 // routes
 const router = useRouter()
-const routes = [
-  {
-    key: 'product',
-    title: 'Products',
-    children: [
-      {
-        title: 'Zenerate™ App',
-        to: 'en-overview',
-        icon: OverviewIcon,
-      },
-    ],
-  },
-  {
-    key: 'resources',
-    title: 'Resources',
-    children: [
-      {
-        title: 'Case Studies',
-        to: 'en-case-studies',
-        icon: CaseIcon,
-      },
-    ],
-  },
-  {
-    key: 'company',
-    title: 'Company',
-    children: [
-      {
-        title: 'About Us',
-        to: 'en-about',
-        icon: AboutIcon,
-      },
-      {
-        title: 'Careers',
-        to: 'en-career',
-        icon: CareersIcon,
-      },
-      {
-        title: 'Contact',
-        to: 'en-contact',
-        icon: ContactIcon,
-      },
-    ],
-  },
-]
 
 const selectedPrimaryNav = ref(null)
 const toggleNav = (primary: String) => {
@@ -408,45 +360,36 @@ const toggleNav = (primary: String) => {
 }
 
 .dropdown {
-  width: 137px;
-  margin-right: 0px;
-  overflow: hidden;
+  position: relative;
+  width: fit-content;
+  margin-right: 6px;
 
   &:last-child {
-    margin-right: 18px;
+    margin-right: 26px;
   }
 
-  &:nth-child(2) {
-    width: 150px;
+  .dropbtn {
+    @include flex();
+    @include medium(14);
+    border: none;
+    align-items: center;
+    outline: none;
+    color: $text-darken;
+    padding: 10px 14px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0px auto;
 
-    .dropdown-content {
-      width: 150px;
+    i {
+      @include regular(18);
+      margin-left: 8px;
     }
-  }
-}
-
-.dropdown .dropbtn {
-  @include flex();
-  @include medium(14);
-  border: none;
-  align-items: center;
-  outline: none;
-  color: $text-darken;
-  padding: 10px 14px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0px auto;
-
-  i {
-    @include regular(18);
-    margin-left: 8px;
   }
 }
 
 .navbar a:hover,
 .dropdown:hover .dropbtn {
   color: theme('colors.primary.DEFAULT');
-
   i {
     transform: rotate(-180deg);
   }
@@ -456,9 +399,11 @@ const toggleNav = (primary: String) => {
   @include vertical-center();
   visibility: hidden;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: $white;
-  min-width: 130px;
-  padding: 16px 0px;
+  width: max-content;
+  padding: 16px 0;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
   z-index: 1;
   border-radius: 8px;
@@ -467,23 +412,27 @@ const toggleNav = (primary: String) => {
   svg {
     margin-right: 8px;
   }
-}
 
-.dropdown-content a {
-  @include flex();
-  @include regular(12);
-  color: theme('colors.black');
-  align-items: center;
-  padding: 4px 18px 4px 14px;
-  text-decoration: none;
-  text-align: left;
-}
+  a {
+    @include flex();
+    @include medium(13);
+    align-items: center;
+    text-decoration: none;
+    text-align: left;
+    padding: 0 24px 0 16px;
+    color: theme('colors.gray.700');
+    :deep(path) {
+      fill: theme('colors.gray.700');
+    }
 
-.dropdown-content a:hover {
-  color: theme('colors.primary.DEFAULT');
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
 
-  :deep(svg) {
-    path {
+  a:hover {
+    color: theme('colors.primary.DEFAULT');
+    :deep(path) {
       fill: theme('colors.primary.DEFAULT');
     }
   }

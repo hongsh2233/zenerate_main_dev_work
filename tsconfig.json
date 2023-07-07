@@ -39,7 +39,8 @@
       "/Utils/*": ["src/utils/*"],
       "/Store/*": ["src/store/*"],
       "/Type/*": ["src/typings/*"],
-      "/Workers/*": ["src/workers/*"]
+      "/Workers/*": ["src/workers/*"],
+      "/Plugins/*": ["src/plugins/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
