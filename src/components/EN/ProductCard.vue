@@ -11,18 +11,22 @@
           class="mt-60 ml-60 mb-16 hidden md:block lg:hidden"
         />
         <ZmapsLogo size="large" class="mt-84 ml-84 mb-22 hidden lg:block" />
-
         <p
           class="ml-28 text-18 font-light md:ml-60 md:mb-32 md:w-[240px] md:text-22 lg:ml-84 lg:mb-44 lg:w-[280px] lg:text-30"
         >
           Your City's Ultimate
           <span class="font-medium">Real Estate Development Map</span>
         </p>
+        <a
+          :href="CARD_DATA[product].buttonLinkedTo"
+          class="text-13-medium ml-60 hidden h-34 w-[116px] rounded-4 bg-primary text-center leading-[34px] !text-core-10 duration-300 hover:!text-core-200 md:block lg:ml-84 lg:block lg:h-48 lg:w-[160px] lg:text-18 lg:leading-[48px]"
+          >{{ CARD_DATA[product].buttonText }}</a
+        >
       </template>
 
       <template v-else-if="product === 'zenerate-app'">
         <div
-          class="ml-28 mt-30 mb-16 flex flex-row flex-nowrap items-center md:mt-94 md:ml-60 md:mb-14 lg:ml-84 lg:mt-[130px]"
+          class="ml-28 mt-30 mb-16 flex flex-row flex-nowrap items-center md:mt-94 md:ml-60 md:mb-14 lg:ml-84 lg:mt-[100px]"
         >
           <div
             class="mr-9 text-22 text-primary md:mr-12 md:text-28 lg:mb-18 lg:mr-16 lg:text-40"
@@ -36,12 +40,23 @@
           </div>
         </div>
         <p
-          class="ml-28 text-18 font-light md:ml-60 md:mb-34 md:text-24 lg:mb-48 lg:ml-84 lg:text-32"
+          class="ml-28 text-18 font-light md:ml-60 md:mb-34 md:text-24 lg:mb-52 lg:ml-84 lg:text-32"
         >
           AI-Powered, Real-time<br /><span class="font-semibold"
             >Feasibility Study Tool</span
           >
         </p>
+        <router-link
+          :to="{ name: CARD_DATA[product].buttonLinkedTo }"
+          class="learn-more-button text-18-medium ml-60 hidden w-fit flex-row items-center !text-primary hover:!text-core-700 md:flex lg:ml-84 lg:flex"
+          :class="product"
+          >{{ CARD_DATA[product].buttonText
+          }}<IconBase
+            icon-name="arrow-right"
+            :width="24"
+            :height="24"
+            class="ml-8"
+        /></router-link>
       </template>
 
       <template v-else-if="product === 'ai-consulting'">
@@ -51,31 +66,36 @@
           <span class="font-semibold">Zenerate</span>&nbsp;AI Consulting
         </div>
         <p
-          class="ml-28 text-18 font-light text-white md:ml-60 md:mb-56 md:w-[260px] md:text-22 lg:ml-84 lg:mb-76 lg:w-[360px] lg:text-30"
+          class="ml-28 text-18 font-light text-white md:ml-60 md:mb-30 md:w-[260px] md:text-22 lg:ml-84 lg:mb-52 lg:w-[360px] lg:text-30"
         >
           <span class="font-medium">Explore all development<br /></span
           >&nbsp;<span class="font-medium">possibilities</span>&nbsp;to
           determine<br />the highest & best use
         </p>
+        <router-link
+          :to="{ name: CARD_DATA[product].buttonLinkedTo }"
+          class="learn-more-button text-16-medium ml-60 hidden w-fit flex-row items-center !text-white hover:!text-gray-200 md:flex lg:ml-84 lg:flex"
+          :class="product"
+          >{{ CARD_DATA[product].buttonText
+          }}<IconBase
+            icon-name="arrow-right"
+            :width="20"
+            :height="20"
+            class="ml-8"
+        /></router-link>
       </template>
-
-      <a
-        :href="CARD_DATA[product].buttonLinkedTo"
-        class="text-13-medium ml-60 hidden h-34 w-fit rounded-4 bg-primary px-16 text-center leading-[34px] !text-white duration-300 hover:!text-core-200 md:block lg:text-18-medium lg:ml-84 lg:block lg:h-48 lg:w-[160px] lg:leading-[48px]"
-        >{{ CARD_DATA[product].buttonText }}</a
-      >
     </div>
 
     <div class="inner-shadow mt-auto h-fit py-20 px-22 md:px-60 lg:pl-84">
       <div class="mb-24 pl-8 md:mb-14 md:pl-0">
         <span
           class="mb-10 text-14 font-semibold text-primary md:hidden lg:hidden"
-          >Best For</span
+          >Best for</span
         >
         <span
           class="mb-8 hidden text-11 font-medium md:block lg:mb-12 lg:block lg:text-14"
           :class="product === 'ai-consulting' ? 'text-white' : 'text-primary'"
-          >Made For</span
+          >Made for</span
         >
 
         <div
@@ -116,6 +136,7 @@
 import { PropType, computed } from 'vue'
 import { ZmapsLogo } from '/Components/EN'
 import { ROLES } from '/Constants/roles'
+import IconBase from './ui/IconBase.vue'
 
 const props = defineProps({
   product: String as PropType<'zmaps' | 'zenerate-app' | 'ai-consulting'>,
@@ -138,13 +159,13 @@ const CARD_DATA = {
   },
   'zenerate-app': {
     bestFor: ['developer_investor', 'architect', 'broker'],
-    buttonText: 'Learn More',
-    buttonLinkedTo: 'https://www.zenerate.ai/zenerate-app',
+    buttonText: 'Learn More About the App',
+    buttonLinkedTo: 'en-overview',
   },
   'ai-consulting': {
     bestFor: ['developer_investor', 'architect'],
-    buttonText: 'Learn More',
-    buttonLinkedTo: 'https://www.zenerate.ai/ai-consulting',
+    buttonText: 'Learn More About AI Consulting',
+    buttonLinkedTo: 'en-ai-consulting',
   },
 }
 </script>
@@ -186,6 +207,40 @@ const CARD_DATA = {
     @include en-mobile {
       background-image: url('/public/en/products/ai_consulting_mobile.png');
       background-position: bottom 203px center;
+    }
+  }
+
+  .learn-more-button {
+    &.zenerate-app {
+      svg {
+        :deep(path) {
+          fill: theme('colors.primary.DEFAULT') !important;
+        }
+      }
+
+      &:hover {
+        svg {
+          :deep(path) {
+            fill: theme('colors.core.700') !important;
+          }
+        }
+      }
+    }
+
+    &.ai-consulting {
+      svg {
+        :deep(path) {
+          fill: white !important;
+        }
+      }
+
+      &:hover {
+        svg {
+          :deep(path) {
+            fill: theme('colors.gray.200') !important;
+          }
+        }
+      }
     }
   }
 

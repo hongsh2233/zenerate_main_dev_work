@@ -51,6 +51,7 @@ module.exports = {
           active: '#3E3BCB',
         },
         core: {
+          10: '#F4F6FF',
           30: '#E3E6FF',
           50: '#ECEFFF',
           100: '#DCDFFF',

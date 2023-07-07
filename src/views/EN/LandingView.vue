@@ -15,7 +15,7 @@
           </p>
 
           <p
-            class="mb-20 text-center text-16 font-regular md:mb-30 md:text-18 md:text-gray-700 lg:mb-30 lg:text-18 lg:text-gray-700"
+            class="mb-24 text-center text-16 font-regular md:mb-30 md:text-18 md:text-gray-700 lg:mb-30 lg:text-18 lg:text-gray-700"
           >
             Zenerate is revolutionizing feasibility<br
               class="md:hidden lg:hidden"
@@ -25,15 +25,24 @@
               class="md:hidden lg:hidden"
             />save time and maximize returns.
           </p>
-
-          <!-- TODO: change link -->
-          <a
-            href="https://www.zenerate.ai/demo-signup"
-            class="text-18-medium mx-auto h-[48px] rounded-5 bg-primary px-24 text-center leading-[48px] !text-white duration-300 hover:!text-core-200"
-            >Get a Demo
-          </a>
         </div>
       </div>
+
+      <!-- TODO: change link -->
+      <router-link
+        :to="{ name: 'en-demo' }"
+        class="learn-more-button text-14-medium mx-auto mb-26 flex w-fit cursor-pointer flex-row items-center justify-center !text-primary hover:!text-core-700 md:mb-44 md:text-18 lg:text-18"
+        ><IconBase
+          icon-name="arrow-down"
+          :width="22"
+          :height="22"
+          class="mr-10 md:hidden lg:hidden" />Learn More About&nbsp;<br
+          class="md:hidden lg:hidden" />Our Products & Services<IconBase
+          icon-name="arrow-down"
+          :width="24"
+          :height="24"
+          class="ml-10 hidden md:block lg:block"
+      /></router-link>
 
       <div class="mx-auto w-full max-w-[1200px]">
         <video
@@ -93,16 +102,16 @@
         >
         <div class="flex flex-col items-center md:flex-row lg:flex-row">
           <!-- TODO: change link -->
-          <a
-            href="https://www.zenerate.ai/demo-signup"
+          <router-link
+            :to="{ name: 'en-demo' }"
             class="text-16-semibold mx-auto mb-6 h-[48px] w-[250px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mr-10 md:mb-0 md:h-[56px] md:w-[236px] md:text-20 md:leading-[56px] lg:mb-0 lg:mr-10 lg:h-[56px] lg:w-[236px] lg:text-20 lg:leading-[56px]"
             >Get a Demo
-          </a>
-          <a
-            href="https://www.zenerate.ai/contact"
+          </router-link>
+          <router-link
+            :to="{ name: 'en-contact' }"
             class="text-16-semibold mx-auto h-[48px] w-[250px] rounded-5 bg-white text-center leading-[48px] duration-300 hover:!bg-gray-200 md:h-[56px] md:w-[236px] md:text-20 md:leading-[56px] lg:h-[56px] lg:w-[236px] lg:text-20 lg:leading-[56px]"
             >Contact Us
-          </a>
+          </router-link>
         </div>
       </div>
     </section>
@@ -113,6 +122,7 @@
   </div>
 </template>
 <script lang="ts" setup>
+import IconBase from '/@/components/EN/ui/IconBase.vue'
 import { ProductCard, Carousel, Footer } from '/Components/EN'
 
 const TESTMONIAL_DATA = [
@@ -137,6 +147,22 @@ const TESTMONIAL_DATA = [
 ]
 </script>
 <style lang="scss" scoped>
+.learn-more-button {
+  svg {
+    :deep(path) {
+      fill: theme('colors.primary.DEFAULT') !important;
+    }
+  }
+
+  &:hover {
+    svg {
+      :deep(path) {
+        fill: theme('colors.core.700') !important;
+      }
+    }
+  }
+}
+
 .testmonial-carousel {
   .cushman {
     .logo-img {
