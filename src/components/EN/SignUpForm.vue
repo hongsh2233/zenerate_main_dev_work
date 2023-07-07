@@ -167,9 +167,6 @@ const validation = (item: string) => {
 }
 
 const submitForm = async () => {
-  // if (sendEmailStatus.value == true) return
-  // dummy.value.focus()
-
   const form = {}
   for (const key in SignUpForm.value) {
     form[key] = String(SignUpForm.value[key].value)
@@ -180,11 +177,7 @@ const submitForm = async () => {
     await ApiService.XSLX_TEST(form)
     loading.value = false
     formSubmitted.value = true
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
   } catch (e) {}
-
-  // resetForm()
-  // sendEmailStatus.value = true
 }
 </script>
 <style lang="scss" scoped>
