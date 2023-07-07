@@ -49,7 +49,7 @@
           :autoplay="true"
           :muted="true"
           :loop="true"
-          src="/public/en/landing/landing_hero.mov"
+          src="/public/en/landing/landing_header.mov"
           alt=""
         />
       </div>
