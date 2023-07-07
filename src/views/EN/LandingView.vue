@@ -28,10 +28,9 @@
         </div>
       </div>
 
-      <!-- TODO: change link -->
-      <router-link
-        :to="{ name: 'en-demo' }"
+      <span
         class="learn-more-button text-14-medium mx-auto mb-26 flex w-fit cursor-pointer flex-row items-center justify-center !text-primary hover:!text-core-700 md:mb-44 md:text-18 lg:text-18"
+        @click="moveToProductSection"
         ><IconBase
           icon-name="arrow-down"
           :width="22"
@@ -42,7 +41,7 @@
           :width="24"
           :height="24"
           class="ml-10 hidden md:block lg:block"
-      /></router-link>
+      /></span>
 
       <div class="mx-auto w-full max-w-[1200px]">
         <video
@@ -56,7 +55,13 @@
       </div>
     </section>
 
-    <section class="flex flex-col items-center pt-20 pb-72 md:pb-96 lg:pb-156">
+    <section
+      class="relative flex flex-col items-center pt-20 pb-72 md:pb-96 lg:pb-156"
+    >
+      <div
+        class="absolute top-[-110px] h-0 w-full"
+        ref="startOfProductSection"
+      ></div>
       <ProductCard product="zmaps" class="mb-20 lg:mb-30" />
       <ProductCard product="zenerate-app" class="mb-20 lg:mb-30" />
       <ProductCard product="ai-consulting" />
@@ -122,8 +127,13 @@
   </div>
 </template>
 <script lang="ts" setup>
-import IconBase from '/@/components/EN/ui/IconBase.vue'
-import { ProductCard, Carousel, Footer } from '/Components/EN'
+import { ref } from 'vue'
+import { ProductCard, Carousel, Footer, IconBase } from '/Components/EN'
+
+const startOfProductSection = ref(null)
+const moveToProductSection = () => {
+  startOfProductSection.value.scrollIntoView({ behavior: 'smooth' })
+}
 
 const TESTMONIAL_DATA = [
   {

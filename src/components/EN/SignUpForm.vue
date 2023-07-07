@@ -126,6 +126,7 @@
 import { computed, ref } from 'vue'
 import Validation from '/Utils/Validation'
 import DotSpinnerWhite from './ui/DotSpinnerWhite.vue'
+import ApiService from '/Services/api'
 
 const SignUpForm = ref({
   firstName: {
@@ -165,11 +166,25 @@ const validation = (item: string) => {
     SignUpForm.value[item].validator(inputValue) && inputValue.trim() !== ''
 }
 
-const submitForm = () => {
-  // TODO: logic 연결
-  loading.value = true
-  console.log('SUBMIT')
-  formSubmitted.value = true
+const submitForm = async () => {
+  // if (sendEmailStatus.value == true) return
+  // dummy.value.focus()
+
+  const form = {}
+  for (const key in SignUpForm.value) {
+    form[key] = String(SignUpForm.value[key].value)
+  }
+
+  try {
+    loading.value = true
+    await ApiService.XSLX_TEST(form)
+    loading.value = false
+    formSubmitted.value = true
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  } catch (e) {}
+
+  // resetForm()
+  // sendEmailStatus.value = true
 }
 </script>
 <style lang="scss" scoped>
