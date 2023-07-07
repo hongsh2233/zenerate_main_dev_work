@@ -1,7 +1,7 @@
 <template>
   <div class="flex h-auto w-full flex-col items-center">
     <div
-      class="flex w-full max-w-[280px] flex-col py-46 md:max-w-[768px] md:py-80 lg:max-w-[1024px] lg:py-80"
+      class="flex w-full max-w-[280px] flex-col py-46 md:max-w-[768px] md:py-80 md:px-65 lg:max-w-[1024px] lg:py-80"
     >
       <div
         class="flex flex-col border-b-gray-200 md:flex-row md:justify-between lg:flex-row lg:justify-between"
