@@ -748,7 +748,7 @@
     <section
       class="beta-tester pt-70 pb-80 md:pt-80 md:pb-116 lg:pt-98 lg:pb-88"
     >
-      <SignUpForm>
+      <SignUpForm sheet-name="AIConsulting">
         <template #description>
           <div
             class="mx-auto mx-2 mb-4 mt-13 flex flex-col items-center text-center text-white md:mx-16 md:mb-56 md:items-start md:text-left lg:mx-16 lg:mb-56 lg:items-start lg:text-left"

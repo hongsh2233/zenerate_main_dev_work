@@ -29,7 +29,7 @@ export default {
   GET_RSS_FEED() {
     return req(apiClient.get('/blog'))
   },
-  XSLX_TEST(payload) {
-    return req(apiClient.post('/xlsx', payload))
+  XSLX_TEST(sheetName, payload) {
+    return req(apiClient.post(`/xlsx/${sheetName}`, payload))
   },
 }

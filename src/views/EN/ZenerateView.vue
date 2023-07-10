@@ -195,7 +195,7 @@
 
     <section class="beta-tester relative pt-60 pb-120 md:pt-120 lg:pt-120">
       <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
-      <SignUpForm>
+      <SignUpForm sheet-name="Beta">
         <template #description>
           <div class="mx-auto flex w-[256px] flex-col text-white lg:w-[320px]">
             <div

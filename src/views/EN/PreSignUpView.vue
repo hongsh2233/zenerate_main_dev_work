@@ -605,7 +605,7 @@ const sendForm = async () => {
   if (!isValid) return
   try {
     loading.value = true
-    await ApiService.XSLX_TEST(form)
+    await ApiService.XSLX_TEST('Beta', form)
     loading.value = false
   } catch (e) {}
   resetForm()
