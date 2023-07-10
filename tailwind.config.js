@@ -52,6 +52,7 @@ module.exports = {
         },
         core: {
           10: '#F4F6FF',
+          20: '#ECEFFF',
           30: '#E3E6FF',
           50: '#ECEFFF',
           100: '#DCDFFF',
@@ -84,6 +85,7 @@ module.exports = {
         },
         coolgray: {
           50: '#F4F6F9',
+          70: '#ECEFF5',
         },
         red: {
           50: '#FFF3F4',
@@ -107,6 +109,7 @@ module.exports = {
         green: {
           200: '#8DFABF',
           300: '#63F4A6',
+          350: '#00D085',
           400: '#1DD873',
           500: '#04C05A',
         },

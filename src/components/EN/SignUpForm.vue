@@ -123,10 +123,20 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { PropType, computed, ref } from 'vue'
 import Validation from '/Utils/Validation'
 import DotSpinnerWhite from './ui/DotSpinnerWhite.vue'
 import ApiService from '/Services/api'
+import router from '/@/router'
+
+const props = defineProps({
+  sheetName: {
+    type: String as PropType<'Beta' | 'AIConsulting'>,
+    required: true,
+  },
+})
+
+const sheetName = computed(() => props.sheetName)
 
 const SignUpForm = ref({
   firstName: {
@@ -172,9 +182,14 @@ const submitForm = async () => {
     form[key] = String(SignUpForm.value[key].value)
   }
 
+  const currentParams = { ...router.currentRoute.value.query }
+  for (const key of ['utm_source', 'utm_medium']) {
+    form[key] = currentParams[key]
+  }
+
   try {
     loading.value = true
-    await ApiService.XSLX_TEST(form)
+    await ApiService.XSLX_TEST(sheetName, form)
     loading.value = false
     formSubmitted.value = true
   } catch (e) {}

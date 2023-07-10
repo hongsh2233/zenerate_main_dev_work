@@ -34,7 +34,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, watch, nextTick, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { MENU_EVENT } from '/Constants/eventConstant'
 import Emitter from '/Libraries/bus'
@@ -42,6 +42,7 @@ import Header from '/Components/EN/Header.vue'
 import Footer from '/Components/EN/Footer.vue'
 import Drawer from '/Components/EN/Drawer.vue'
 import { Button } from '/Components/EN/index'
+import useDebounce from '../composables/useDebounce'
 
 const route = useRoute()
 const path = computed(() => route.path)
@@ -76,24 +77,51 @@ onMounted(() => {
   if (sentinalEl) {
     observer.observe(sentinalEl)
   }
+
+  nextTick(() => {
+    window.addEventListener('resize', () => {})
+  })
 })
 
 // ---------------- drawer : mobile, tablet  ----------------
 const showDrawer = ref(false)
 const toggleDrawer = (flag = undefined) => {
   showDrawer.value = flag == null ? !showDrawer.value : flag
-  if (showDrawer.value) {
-    const scrollY = window.scrollY
-    document.body.style.position = 'fixed'
-    document.body.style.top = `-${scrollY}px`
-  } else {
-    // When the modal is hidden...
-    const scrollY = document.body.style.top
-    document.body.style.position = ''
-    document.body.style.top = ''
-    window.scrollTo(0, parseInt(scrollY || '0') * -1)
-  }
 }
+
+const BREAKPOINT = 1024
+const viewWidth = ref()
+const toggleDrawerByViewWidth = useDebounce(() => {
+  viewWidth.value = window.innerWidth
+  if (viewWidth.value >= BREAKPOINT) {
+    showDrawer.value = false
+  }
+}, 200)
+onMounted(() => {
+  nextTick(() => {
+    window.addEventListener('resize', toggleDrawerByViewWidth)
+  })
+})
+onUnmounted(() => {
+  window.removeEventListener('resize', toggleDrawerByViewWidth)
+})
+
+watch(
+  () => showDrawer.value,
+  () => {
+    if (showDrawer.value) {
+      const scrollY = window.scrollY
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollY}px`
+    } else {
+      // When the modal is hidden...
+      const scrollY = document.body.style.top
+      document.body.style.position = ''
+      document.body.style.top = ''
+      window.scrollTo(0, parseInt(scrollY || '0') * -1)
+    }
+  }
+)
 </script>
 <style lang="scss">
 .layout-en {
