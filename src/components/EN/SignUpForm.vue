@@ -189,7 +189,7 @@ const submitForm = async () => {
 
   try {
     loading.value = true
-    await ApiService.XSLX_TEST(sheetName, form)
+    await ApiService.XSLX_TEST(sheetName.value, form)
     loading.value = false
     formSubmitted.value = true
   } catch (e) {}
