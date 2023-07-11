@@ -43,7 +43,7 @@ const infiniteLoop = computed(() => props.infiniteLoop)
 .custom-carousel {
   .swiper-button-prev,
   .swiper-button-next {
-    color: theme('colors.gray.500');
+    color: theme('colors.gray.550');
     z-index: 1 !important;
 
     &:after {
