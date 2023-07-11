@@ -792,7 +792,7 @@ const router = useRouter()
         .text-wrapper {
           display: flex;
           flex-direction: row;
-          align-items: start;
+          align-items: flex-start;
           &:not(:last-child) {
             margin-bottom: 12px;
           }
