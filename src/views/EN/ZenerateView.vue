@@ -455,6 +455,7 @@ const goToApp = () => {
   width: 900px;
   border-radius: 10px;
   overflow: hidden;
+  isolation: isolate;
   background-color: white;
 
   @include en-tablet {
