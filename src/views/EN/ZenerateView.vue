@@ -59,6 +59,7 @@
           :autoplay="true"
           :muted="true"
           :loop="true"
+          :playsinline="true"
           src="/public/en/zenerate_app/app_hero.mp4"
           alt=""
         />
