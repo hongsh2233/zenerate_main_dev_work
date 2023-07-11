@@ -43,7 +43,7 @@
     </section>
 
     <section
-      class="product-description flex flex-col items-center pt-107 md:pt-134 lg:pt-100"
+      class="product-description flex flex-col items-center pt-107 md:pt-134 lg:pt-180"
     >
       <div
         class="mb-6 w-[280px] text-center text-22 md:w-full md:text-26 lg:w-full lg:text-26"
@@ -604,7 +604,7 @@
       </div>
     </section>
 
-    <section class="how-it-works pt-80 md:pt-90 lg:pt-110">
+    <section class="how-it-works pt-80 md:pt-90 lg:pt-150">
       <div class="mb-6 text-center text-26">How It Works</div>
       <div
         class="mx-auto mb-44 w-[280px] text-center text-18 text-gray-550 md:mb-42 md:w-[420px] lg:mb-42 lg:w-full"
