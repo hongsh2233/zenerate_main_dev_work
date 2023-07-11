@@ -49,6 +49,7 @@
           :autoplay="true"
           :muted="true"
           :loop="true"
+          :playsinline="true"
           src="/public/en/landing/landing_hero_background.mp4"
           alt=""
         />

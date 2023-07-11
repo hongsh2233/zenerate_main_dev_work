@@ -79,6 +79,7 @@
           :autoplay="true"
           :muted="true"
           :loop="true"
+          :playsinline="true"
           :src="`/en/zenerate_app/${data.imgUrl}`"
           alt=""
         />
