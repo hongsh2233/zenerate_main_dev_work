@@ -31,16 +31,26 @@
         </section>
       </transition>
     </router-view>
+
+    <transition name="fade">
+      <CalendlyPopup
+        v-if="showCalendlyPopup"
+        :product="calendlyPopupProduct"
+        @close="() => toggleCalendlyPopup(false)"
+      />
+    </transition>
   </div>
 </template>
 <script lang="ts" setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { MENU_EVENT } from '/Constants/eventConstant'
+import useDebounce from '/Composables/useDebounce'
 import Emitter from '/Libraries/bus'
 import Header from '/Components/EN/Header.vue'
 import Footer from '/Components/EN/Footer.vue'
 import Drawer from '/Components/EN/Drawer.vue'
+import CalendlyPopup from '/Components/EN/CalendlyPopup.vue'
 import { Button } from '/Components/EN/index'
 
 const route = useRoute()
@@ -54,10 +64,23 @@ const toggleTryPopup = (flag?: boolean) => {
 }
 Emitter.on(MENU_EVENT.TOGGLE_TRY_POPUP, (v) => toggleTryPopup(v))
 
+// ---------------- calendly popup ----------------
+const showCalendlyPopup = ref(false)
+const calendlyPopupProduct = ref<'all' | 'zmaps'>('all')
+const toggleCalendlyPopup = (option) => {
+  console.log('flag: ', option.flag, ' / product: ', option.product)
+  const f = option.flag == null ? !showCalendlyPopup.value : option.flag
+  if (f) calendlyPopupProduct.value = option.product
+  showCalendlyPopup.value = f
+}
+Emitter.on(MENU_EVENT.TOGGLE_CALENDLY_POPUP, (option) =>
+  toggleCalendlyPopup(option)
+)
+
 // ---------------- header scroll transparent ----------------
 const transparentHeader = ref(true)
-const observerHandler = (entries) => {
-  entries.forEach((entry) => {
+const observerHandler = (entries: any[]) => {
+  entries.forEach((entry: { isIntersecting: any }) => {
     if (!entry.isIntersecting) {
       transparentHeader.value = false
     } else {

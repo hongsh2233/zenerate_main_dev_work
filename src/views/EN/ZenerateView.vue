@@ -34,7 +34,6 @@
           </p>
 
           <div class="flex flex-col items-center md:flex-row lg:flex-row">
-            <!-- TODO: change link -->
             <button
               type="button"
               class="text-18-semibold mb-10 h-48 w-[156px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mb-0 md:mr-10 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:mr-10 lg:mb-0 lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
@@ -42,10 +41,9 @@
             >
               Try It For Free
             </button>
-
             <button
               class="text-18-semibold h-48 w-[156px] rounded-5 border-1 border-solid border-primary bg-white text-center leading-[48px] !text-primary duration-300 hover:!bg-core-50 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
-              @click="() => toggleCalendlyPopup(true)"
+              @click="openCalendlyPopup"
             >
               Get a Demo
             </button>
@@ -67,10 +65,6 @@
       </div>
     </section>
 
-    <CalendlyPopup
-      v-if="showCalendlyPopup"
-      @togglePopup="toggleCalendlyPopup"
-    />
     <section
       class="product-description flex flex-col items-center pt-80 md:pt-30 lg:pt-30"
     >
@@ -252,16 +246,12 @@ import { useHead } from '@vueuse/head'
 import { useGtag } from 'vue-gtag-next'
 
 import IconBase from '/Components/EN/ui/IconBase.vue'
-import { SignUpForm, Footer, CalendlyPopup } from '/Components/EN'
+import { SignUpForm, Footer } from '/Components/EN'
 import { ROLES } from '/Constants/roles'
 
 import ImagePreloader from '/Utils/ImagePreloader'
-
-const showCalendlyPopup = ref(false)
-const toggleCalendlyPopup = (flag: boolean) => {
-  const fl = flag ?? !showCalendlyPopup.value
-  showCalendlyPopup.value = fl
-}
+import Emitter from '/Libraries/bus'
+import { MENU_EVENT } from '/Constants/eventConstant'
 
 useHead({
   title: `About the Zenerate App | AI-Powered, Real-Time Feasibility Study Tool`,
@@ -320,6 +310,13 @@ useHead({
     },
   ],
 })
+
+const openCalendlyPopup = () => {
+  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+    flag: true,
+    product: 'zmaps',
+  })
+}
 
 const betaTester = ref(null)
 const moveToBetaTesterElement = () => {
