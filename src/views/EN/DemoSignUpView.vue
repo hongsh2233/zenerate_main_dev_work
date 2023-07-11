@@ -68,6 +68,8 @@ const goCanlendly = () => {
   Calendly.initPopupWidget({
     url: 'https://calendly.com/zenerate/app-demo',
   })
+  const calendlyOverlay = document.body.querySelector('.calendly-overlay')
+  if (calendlyOverlay) calendlyOverlay.style.zIndex = 99999
   return false
 }
 
