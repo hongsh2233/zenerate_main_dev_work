@@ -311,7 +311,7 @@
                     class="mx-auto flex h-38 w-120 flex-row items-center justify-center rounded-b-8 bg-core-500 text-16 text-white lg:h-48 lg:w-154 lg:rounded-b-10 lg:text-20"
                   >
                     <span class="mr-8">Profit</span>
-                    <span class="text-14-semibold mr-4">37%</span>
+                    <span class="text-14-semibold mr-4 lg:text-18">37%</span>
                     <IconBase
                       icon-name="up"
                       icon-color="white"
@@ -495,7 +495,7 @@
                     class="mx-auto flex h-38 w-120 flex-row items-center justify-center rounded-b-8 bg-core-500 text-16 text-white lg:h-48 lg:w-154 lg:rounded-b-10 lg:text-20"
                   >
                     <span class="mr-8">Profit</span>
-                    <span class="mr-4">29%</span>
+                    <span class="text-14-semibold mr-4 lg:text-18">29%</span>
                     <IconBase
                       icon-name="up"
                       icon-color="white"
