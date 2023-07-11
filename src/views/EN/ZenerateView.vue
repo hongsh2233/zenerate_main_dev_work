@@ -207,7 +207,7 @@
               v-for="data in BETA_TESTER"
               class="flex flex-col not-last:mb-9 lg:not-last:mb-12"
             >
-              <div class="flex flex-row items-start">
+              <div class="flex flex-row">
                 <IconBase
                   icon-name="checkmark"
                   icon-color="white"
