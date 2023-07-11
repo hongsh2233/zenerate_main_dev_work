@@ -113,12 +113,12 @@
               product === 'ai-consulting' ? 'md:bg-white lg:bg-white' : ''
             "
           >
-            <span class="md:hidden lg:hidden"
+            <span class="whitespace-nowrap md:hidden lg:hidden"
               >{{ ROLES[userKey].icon }}&nbsp;&nbsp;{{
                 ROLES[userKey].shortenText ?? ROLES[userKey].text
               }}</span
             >
-            <span class="hidden md:block lg:block"
+            <span class="hidden whitespace-nowrap md:block lg:block"
               >{{ ROLES[userKey].icon }}&nbsp;&nbsp;{{
                 ROLES[userKey].text
               }}</span

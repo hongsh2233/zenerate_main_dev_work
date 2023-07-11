@@ -179,7 +179,7 @@
             v-for="userKey in data.userRoles"
             class="text-16-medium mb-5 mr-6 h-34 w-fit rounded-60 bg-coolgray-50 px-14 leading-[34px] md:text-16-medium md:mr-0 md:h-34 md:leading-[34px] md:last:mb-0 lg:text-20-medium lg:mr-0 lg:h-44 lg:leading-[44px] lg:last:mb-0"
           >
-            <span
+            <span class="whitespace-nowrap"
               >{{ ROLES[userKey].icon }}&nbsp;&nbsp;{{
                 ROLES[userKey].text
               }}</span
