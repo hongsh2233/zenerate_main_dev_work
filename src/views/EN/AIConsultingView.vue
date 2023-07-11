@@ -138,7 +138,7 @@
           <div
             class="md:mr-12 md:flex md:flex-row lg:mr-32 lg:flex lg:flex-row"
           >
-            <div class="mb-28 md:w-[232px] lg:mb-36 lg:w-[292px]">
+            <div class="mb-28 w-[260px] md:w-[232px] lg:mb-36 lg:w-[292px]">
               <div
                 class="mb-4 font-medium text-primary md:mb-8 md:text-16 lg:mb-8 lg:text-16"
               >
@@ -153,7 +153,7 @@
               >
               <div
                 v-for="content in CASE_STUDY.background.contents"
-                class="flex w-[250px] flex-col not-last:mb-4 md:w-full lg:w-full"
+                class="flex w-[204px] flex-col not-last:mb-4 md:w-full lg:w-full"
               >
                 <div class="flex flex-row items-start">
                   <span class="mx-8">&#8226;</span>
@@ -257,9 +257,8 @@
           <p
             class="mb-50 md:mb-46 md:w-[520px] md:text-left md:text-16 lg:mb-44 lg:w-[600px] lg:text-left lg:text-16"
           >
-            Although Type 3 allows for an additional floor and more units
-            compared to Type 5, the project cost far outweighed the increased
-            NOI.
+            Although Type 3 allowed for an additional floor and more units
+            compared to Type 5, the project cost outweighed the increased NOI.
           </p>
 
           <div
@@ -440,10 +439,10 @@
             </div>
           </div>
           <p
-            class="mb-50 md:mb-46 md:w-[520px] md:text-left md:text-16 lg:mb-44 lg:w-[600px] lg:text-left lg:text-16"
+            class="mb-50 md:mb-46 md:w-[520px] md:text-left md:text-16 lg:mb-44 lg:w-[580px] lg:text-left lg:text-16"
           >
-            Although underground parking allows for additional units and
-            increased NOI, the project cost far outweighs the increased NOI.
+            Although underground parking allowed for additional units and
+            increased NOI, the project cost outweighed the increased NOI.
           </p>
 
           <div
@@ -730,12 +729,11 @@
               class="text-16 text-gray-700 lg:text-18"
               :class="[
                 dataIdx === 0 &&
-                  descriptionIdx === 2 &&
-                  'w-[200px] md:w-[390px] lg:w-full',
-                dataIdx === 0 &&
                   descriptionIdx === 0 &&
-                  'md:w-[340px] lg:w-[380px]',
-                dataIdx === 1 && descriptionIdx === 1 && 'md:w-[380px]',
+                  'md:w-[380px] lg:w-[420px]',
+                dataIdx === 0 &&
+                  descriptionIdx === 2 &&
+                  'w-[200px] md:w-full lg:w-full',
               ]"
             >
               {{ description }}
@@ -880,13 +878,13 @@ const CASE_STUDY = {
   objective: {
     title: 'Objective',
     content:
-      'Find the highest and best use development scenario of 3 acre site  ',
+      'Find the most profitable solution considering construction type and parking structure options.',
   },
   background: {
-    title: 'Additional Background',
+    title: 'Background',
     contents: [
-      'Wrap style massing with parking structure needed',
-      'All solutions analyzed on basis of a 7-year holding period',
+      'Type IIIA and a maximum of 300 units were considered.',
+      'A 7-year holding period after completion was assumed.',
     ],
   },
   selectedSolution: {
@@ -927,8 +925,8 @@ const WHO_USES_IT = [
   {
     userRoles: ['developer', 'owner_investor'],
     descriptions: [
-      'Find the absolute highest & best use solution. No unfulfilled returns',
-      'Save time on back and forth between architects for early-stage design',
+      'Evaluate all possible development scenarios to find the most profitable solution',
+      'Save time on back and forth between architects for early-stage feasibility studies',
       'Optimize complex project scenarios in a short amount of time',
     ],
   },
@@ -936,7 +934,7 @@ const WHO_USES_IT = [
     userRoles: ['architect'],
     descriptions: [
       'Gain a design starting point that is backed by financial analysis',
-      'Optimize complex design scenarios and run thousands of iterations at once',
+      'Create designs that make financial sense to avoid numerous rounds of design iteration',
     ],
   },
 ]
