@@ -13,8 +13,8 @@ module.exports = {
   content: ['./src/**/*.{html,ts,js,vue}'],
   theme: {
     screens: {
-      base: { max: '767px' },
-      md: { min: '768px', max: '1023px' },
+      base: { max: '768px' },
+      md: { min: '768px', max: '1024px' },
       lg: { min: '1024px' },
     },
     fontWeight: {

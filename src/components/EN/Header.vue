@@ -235,20 +235,20 @@ const toggleNav = (primary: String) => {
     width: auto;
     height: 100%;
     z-index: 9999;
-    @include desktop {
+    @include en-desktop {
       width: 104px;
       .logo {
         width: 100%;
       }
     }
-    @include tablet {
+    @include en-tablet {
       width: auto;
       height: 100%;
       .logo {
         width: 104px;
       }
     }
-    @include mobile {
+    @include en-mobile {
       width: auto;
       height: 100%;
       .logo {

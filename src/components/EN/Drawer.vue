@@ -152,6 +152,10 @@ const selectSubLink = (navigate, event) => {
 
     .drawer-items-wrapper {
       height: calc(100% - 106px);
+
+      @include en-mobile {
+        height: calc(100% - 94px);
+      }
     }
 
     @include en-mobile-banner-large {
