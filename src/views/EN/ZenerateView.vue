@@ -315,7 +315,7 @@ useHead({
 const openCalendlyPopup = () => {
   Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
     flag: true,
-    product: 'zmaps',
+    product: 'zenerate-app',
   })
 }
 

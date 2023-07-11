@@ -40,17 +40,16 @@ import { PropType, computed, onMounted, onUnmounted, ref } from 'vue'
 import { IconBase } from '/Components/EN'
 
 const props = defineProps({
-  product: String as PropType<'all' | 'zmaps'>,
+  product: String as PropType<'all' | 'zenerate-app'>,
 })
 const emits = defineEmits(['close'])
 const calendlyUrl = computed(() =>
-  props.product === 'zmaps'
+  props.product === 'zenerate-app'
     ? 'https://calendly.com/zenerate/app-demo'
     : 'https://calendly.com/d/yrk-k6f-zbv?hide_gdpr_banner=1'
 )
 
 onMounted(() => {
-  console.log(props.product)
   const head = document.querySelector('head')
   const script = document.createElement('script')
   script.setAttribute(

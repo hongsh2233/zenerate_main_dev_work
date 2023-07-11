@@ -66,9 +66,8 @@ Emitter.on(MENU_EVENT.TOGGLE_TRY_POPUP, (v) => toggleTryPopup(v))
 
 // ---------------- calendly popup ----------------
 const showCalendlyPopup = ref(false)
-const calendlyPopupProduct = ref<'all' | 'zmaps'>('all')
+const calendlyPopupProduct = ref<'all' | 'zenerate-app'>('all')
 const toggleCalendlyPopup = (option) => {
-  console.log('flag: ', option.flag, ' / product: ', option.product)
   const f = option.flag == null ? !showCalendlyPopup.value : option.flag
   if (f) calendlyPopupProduct.value = option.product
   showCalendlyPopup.value = f
