@@ -59,12 +59,18 @@
               </transition>
             </template>
             <router-link
-              class="demo-link navigation-link"
               :to="{ name: 'en-demo' }"
-              @click="close"
+              custom
+              v-slot="{ href, navigate }"
             >
-              Get a Demo
-              <i class="material-icons"> east </i>
+              <a
+                :href="href"
+                @click="selectSubLink(navigate, $event)"
+                class="demo-link navigation-link sub"
+              >
+                Get a Demo
+                <i class="material-icons"> east </i>
+              </a>
             </router-link>
           </div>
           <div class="info-wrapper">
@@ -209,9 +215,12 @@ const selectSubLink = (navigate, event) => {
         @include flex($justify: space-between);
         @include medium(16);
         align-items: center;
-        height: 62px;
+        height: 70px;
         padding: 0 24px;
         cursor: pointer;
+        @include en-mobile {
+          height: 62px;
+        }
 
         &:not(.sub) {
           border-bottom: 1px solid theme('colors.gray.100');

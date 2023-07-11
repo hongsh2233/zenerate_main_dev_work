@@ -49,6 +49,7 @@
           :autoplay="true"
           :muted="true"
           :loop="true"
+          :playsinline="true"
           src="/public/en/landing/landing_hero_background.mp4"
           alt=""
         />
@@ -67,19 +68,20 @@
       <ProductCard product="ai-consulting" />
     </section>
 
-    <section class="h-[460px] bg-coolgray-50 py-48 md:h-[490px] lg:h-[490px]">
+    <section
+      class="h-[460px] bg-coolgray-50 py-14 px-10 md:h-[490px] md:py-50 md:px-30 lg:h-[490px] lg:py-60 lg:px-136"
+    >
       <Carousel
-        :slideCount="TESTMONIAL_DATA.length"
+        :slideCount="TESTIMONIAL_DATA.length"
         :mouseWheelControl="false"
         class="testmonial-carousel"
       >
-        <template v-for="(data, idx) in TESTMONIAL_DATA" #[`slide${idx}`]>
+        <template v-for="(data, idx) in TESTIMONIAL_DATA" #[`slide${idx}`]>
           <div class="flex flex-col items-center" :class="data.key">
             <p
-              class="mb-28 w-[220px] min-w-[220px] text-center text-18 md:w-[500px] md:text-22 lg:w-[624px] lg:text-28"
-            >
-              {{ data.content }}
-            </p>
+              v-html="data.content"
+              class="mb-28 w-[220px] min-w-[220px] text-center text-16 md:w-[500px] md:text-22 lg:w-[624px] lg:text-24"
+            ></p>
             <div class="flex flex-row items-center">
               <img
                 :src="`/logo/${data.logoImg}`"
@@ -87,11 +89,19 @@
                 class="logo-img"
               />
               <div
-                class="ml-14 whitespace-nowrap text-14 text-gray-700 md:text-16 lg:text-16"
+                class="ml-14 flex flex-col whitespace-nowrap text-12 text-gray-700 md:ml-24 md:text-16 lg:ml-24 lg:text-16"
               >
-                <span class="font-medium text-black md:text-18 lg:text-18"
-                  >{{ data.name }},</span
-                ><br />{{ data.position }}
+                <span
+                  class="text-14 font-medium text-black md:text-18 lg:text-18"
+                >
+                  {{ data.name }},
+                </span>
+                <span class="md:hidden lg:hidden">{{
+                  data.positionAbbrev ?? data.position
+                }}</span>
+                <span class="hidden md:block lg:block">{{
+                  data.position
+                }}</span>
               </div>
             </div>
           </div>
@@ -108,12 +118,12 @@
           >Ready to step into the future of real estate development?</span
         >
         <div class="flex flex-col items-center md:flex-row lg:flex-row">
-          <!-- TODO: change link -->
-          <router-link
-            :to="{ name: 'en-demo' }"
+          <button
             class="text-16-semibold mx-auto mb-6 h-[48px] w-[250px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mr-10 md:mb-0 md:h-[56px] md:w-[236px] md:text-20 md:leading-[56px] lg:mb-0 lg:mr-10 lg:h-[56px] lg:w-[236px] lg:text-20 lg:leading-[56px]"
-            >Get a Demo
-          </router-link>
+            @click="openCalendlyPopup"
+          >
+            Get a Demo
+          </button>
           <router-link
             :to="{ name: 'en-contact' }"
             class="text-16-semibold mx-auto h-[48px] w-[250px] rounded-5 bg-white text-center leading-[48px] duration-300 hover:!bg-gray-200 md:h-[56px] md:w-[236px] md:text-20 md:leading-[56px] lg:h-[56px] lg:w-[236px] lg:text-20 lg:leading-[56px]"
@@ -131,31 +141,58 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { ProductCard, Carousel, Footer, IconBase } from '/Components/EN'
+import Emitter from '/Libraries/bus'
+import { MENU_EVENT } from '/Constants/eventConstant'
+
+const openCalendlyPopup = () => {
+  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, { flag: true, product: 'all' })
+}
 
 const startOfProductSection = ref(null)
 const moveToProductSection = () => {
   startOfProductSection.value.scrollIntoView({ behavior: 'smooth' })
 }
 
-const TESTMONIAL_DATA = [
+const TESTIMONIAL_DATA = [
+  {
+    key: 'oltman',
+    content:
+      "Oltmas can safely recommend their product-services&nbsp;<br class='hidden lg:block' />to all CRE professionals looking to&nbsp;<br class='lg:hidden'/>expand their knowledge and footprint on their respective markets.&nbsp;<br class='hidden lg:block' />It's been a pleasure to&nbsp;<br class='hidden md:block' />work with the Zenerate team and look forward to seeing their next set of ideas&nbsp;/&nbsp;innovative&nbsp;<br class='hidden md:block lg:block'/>solutions in the near future.",
+    logoImg: 'logo_color_oltman.png',
+    logoText: 'oltmans construction',
+    name: 'John Dang',
+    position: 'Director of Business Development',
+    positionAbbrev: 'Director of Business Dev.',
+  },
+  {
+    key: 'miranda',
+    content:
+      "Z-maps completely transformed our prospecting workflow by visually mapping LA's development pipeline, enabling us to easily&nbsp;<br class='md:hidden lg:hidden'/>identify work&nbsp;<br class='hidden md:block' />density and bidding opportunities.&nbsp;<br class='md:hidden lg:hidden' />Its overwhelming data and potential for growth make it an invaluable tool for streamlining operations&nbsp;<br class='hidden md:block' />and expanding our business.",
+    logoImg: 'logo_color_miranda.png',
+    logoText: 'miranda logistics',
+    name: 'Andrew Choe',
+    position: 'Business Development Manager',
+    positionAbbrev: 'Business Dev. Manager',
+  },
   {
     key: 'cushman',
     content:
-      'Already on 8 projects, Zenerate was able to explore all possible development scenarios. These contributions have helped us increase the max sales price of each project successfully.',
+      'Already on 8 different residential/mixed use projects, Zenerate was able to explore all possible development scenarios, presenting us with recommended development plans. These contributions and more have helped us increase the max sales price of each project successfully.',
     logoImg: 'logo_color_cushman.png',
     logoText: 'cushman and wakefield',
     name: 'JH Kim',
     position: 'Senior Manager',
   },
-  // {
-  //   key: 'cushman',
-  //   content:
-  //     'Already on 8 projects, Zenerate was able to explore all possible development scenarios. These contributions have helped us increase the max sales price of each project successfully.',
-  //   logoImg: 'logo_color_cushman.png',
-  //   logoText: 'cushman and wakefield',
-  //   name: 'JH Kim',
-  //   position: 'Senior Manager',
-  // },
+  {
+    key: 'neovalue',
+    content:
+      'We looked for a site in Los Angeles to develop a mixed-use project and reviewed tons of sites. Zenerate helped us verify development potential including building uses, density, maximum FAR, cashflow in a timely manner. Utilizing AI solutions such as Zenerate becomes a must and I would highly recommend it to my fellow developers.',
+    logoImg: 'logo_color_neovalue.png',
+    logoText: 'neovalue',
+    name: 'Anna Lee',
+    position: 'Architecture Department Lead',
+    positionAbbrev: 'Architecture Dept. Lead',
+  },
 ]
 </script>
 <style lang="scss" scoped>
@@ -176,14 +213,47 @@ const TESTMONIAL_DATA = [
 }
 
 .testmonial-carousel {
-  .cushman {
+  .oltman {
     .logo-img {
-      width: 180px;
+      width: 116px;
       @include en-tablet {
-        width: 180px;
+        width: 66px;
       }
       @include en-mobile {
-        width: 152px;
+        width: 64px;
+      }
+    }
+  }
+  .miranda {
+    .logo-img {
+      width: 304px;
+      @include en-tablet {
+        width: 184px;
+      }
+      @include en-mobile {
+        width: 112px;
+      }
+    }
+  }
+  .cushman {
+    .logo-img {
+      width: 176px;
+      @include en-tablet {
+        width: 108px;
+      }
+      @include en-mobile {
+        width: 92px;
+      }
+    }
+  }
+  .neovalue {
+    .logo-img {
+      width: 184px;
+      @include en-tablet {
+        width: 112px;
+      }
+      @include en-mobile {
+        width: 92px;
       }
     }
   }

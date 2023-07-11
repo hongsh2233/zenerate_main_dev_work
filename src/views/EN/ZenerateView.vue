@@ -34,7 +34,6 @@
           </p>
 
           <div class="flex flex-col items-center md:flex-row lg:flex-row">
-            <!-- TODO: change link -->
             <button
               type="button"
               class="text-18-semibold mb-10 h-48 w-[156px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mb-0 md:mr-10 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:mr-10 lg:mb-0 lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
@@ -42,13 +41,12 @@
             >
               Try It For Free
             </button>
-
-            <!-- TODO: change link -->
-            <router-link
-              :to="{ name: 'en-demo' }"
+            <button
               class="text-18-semibold h-48 w-[156px] rounded-5 border-1 border-solid border-primary bg-white text-center leading-[48px] !text-primary duration-300 hover:!bg-core-50 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
-              >Get a Demo
-            </router-link>
+              @click="openCalendlyPopup"
+            >
+              Get a Demo
+            </button>
           </div>
         </div>
       </div>
@@ -81,6 +79,7 @@
           :autoplay="true"
           :muted="true"
           :loop="true"
+          :playsinline="true"
           :src="`/en/zenerate_app/${data.imgUrl}`"
           alt=""
         />
@@ -180,7 +179,7 @@
             v-for="userKey in data.userRoles"
             class="text-16-medium mb-5 mr-6 h-34 w-fit rounded-60 bg-coolgray-50 px-14 leading-[34px] md:text-16-medium md:mr-0 md:h-34 md:leading-[34px] md:last:mb-0 lg:text-20-medium lg:mr-0 lg:h-44 lg:leading-[44px] lg:last:mb-0"
           >
-            <span
+            <span class="whitespace-nowrap"
               >{{ ROLES[userKey].icon }}&nbsp;&nbsp;{{
                 ROLES[userKey].text
               }}</span
@@ -252,6 +251,8 @@ import { SignUpForm, Footer } from '/Components/EN'
 import { ROLES } from '/Constants/roles'
 
 import ImagePreloader from '/Utils/ImagePreloader'
+import Emitter from '/Libraries/bus'
+import { MENU_EVENT } from '/Constants/eventConstant'
 
 useHead({
   title: `About the Zenerate App | AI-Powered, Real-Time Feasibility Study Tool`,
@@ -310,6 +311,13 @@ useHead({
     },
   ],
 })
+
+const openCalendlyPopup = () => {
+  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+    flag: true,
+    product: 'zenerate-app',
+  })
+}
 
 const betaTester = ref(null)
 const moveToBetaTesterElement = () => {
@@ -447,6 +455,7 @@ const goToApp = () => {
   width: 900px;
   border-radius: 10px;
   overflow: hidden;
+  isolation: isolate;
   background-color: white;
 
   @include en-tablet {

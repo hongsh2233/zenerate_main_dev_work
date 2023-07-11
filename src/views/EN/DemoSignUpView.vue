@@ -10,7 +10,7 @@
         <div
           class="calendly-inline-widget"
           id="calendly"
-          data-url="https://calendly.com/zenerate/30min?hide_gdpr_banner=1?month=2022-08"
+          data-url="https://calendly.com/zenerate/app-demo"
           style="position: relative; min-width: 320px"
         ></div>
       </div>
@@ -66,8 +66,10 @@ const toContactForm = () => {
 
 const goCanlendly = () => {
   Calendly.initPopupWidget({
-    url: 'https://calendly.com/zenerate/30min?hide_gdpr_banner=1?month=2022-08',
+    url: 'https://calendly.com/zenerate/app-demo',
   })
+  const calendlyOverlay = document.body.querySelector('.calendly-overlay')
+  if (calendlyOverlay) calendlyOverlay.style.zIndex = 99999
   return false
 }
 
