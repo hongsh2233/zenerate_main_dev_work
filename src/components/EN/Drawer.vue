@@ -59,12 +59,18 @@
               </transition>
             </template>
             <router-link
-              class="demo-link navigation-link"
               :to="{ name: 'en-demo' }"
-              @click="close"
+              custom
+              v-slot="{ href, navigate }"
             >
-              Get a Demo
-              <i class="material-icons"> east </i>
+              <a
+                :href="href"
+                @click="selectSubLink(navigate, $event)"
+                class="demo-link navigation-link sub"
+              >
+                Get a Demo
+                <i class="material-icons"> east </i>
+              </a>
             </router-link>
           </div>
           <div class="info-wrapper">
