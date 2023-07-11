@@ -53,7 +53,7 @@
       <div
         class="mx-auto mb-36 w-[200px] text-center text-16 text-gray-550 md:mb-48 md:w-full md:text-18 lg:mb-56 lg:w-full lg:text-18"
       >
-        Upgrade Your Early-Stage Design Process with AI
+        Upgrade your early-stage design process with AI
       </div>
 
       <div class="flex flex-col lg:flex-row">
@@ -768,10 +768,10 @@
           <span
             class="mb-6 w-[200px] text-center text-18 md:pt-8 lg:w-[260px] lg:pt-8 lg:text-22"
           >
-            Have a project in mind? Let's Talk!
+            Have a Project in Mind? Let's Talk!
           </span>
           <span class="text-center text-14 text-gray-550 lg:text-16"
-            >Submit the form and we'll be in touch</span
+            >We'll be in touch soon.</span
           >
         </template>
       </SignUpForm>
