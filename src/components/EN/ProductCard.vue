@@ -87,7 +87,7 @@
     </div>
 
     <div class="inner-shadow mt-auto h-fit py-20 px-22 md:px-60 lg:pl-84">
-      <div class="mb-24 pl-8 md:mb-14 md:pl-0">
+      <div class="mb-24 pl-8 md:mb-14 md:pl-0 lg:pl-0">
         <span
           class="mb-10 text-14 font-semibold text-primary md:hidden lg:hidden"
           >Best for</span
