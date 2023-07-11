@@ -603,6 +603,12 @@ const sendForm = async () => {
   }
 
   if (!isValid) return
+
+  const currentParams = { ...router.currentRoute.value.query }
+  for (const key of ['utm_source', 'utm_medium']) {
+    form[key] = currentParams[key]
+  }
+
   try {
     loading.value = true
     await ApiService.XSLX_TEST('Beta', form)
