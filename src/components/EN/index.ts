@@ -13,6 +13,7 @@ import ProductCard from './ProductCard.vue'
 import Footer from './Footer.vue'
 import SignUpForm from './SignUpForm.vue'
 import IconBase from './ui/IconBase.vue'
+import CalendlyPopup from './CalendlyPopup.vue'
 
 export {
   Icon,
@@ -30,4 +31,5 @@ export {
   Footer,
   SignUpForm,
   IconBase,
+  CalendlyPopup,
 }

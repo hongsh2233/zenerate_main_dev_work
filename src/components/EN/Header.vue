@@ -74,12 +74,12 @@
         </button> -->
         </nav>
 
-        <!-- TODO: change link -->
-        <router-link
-          :to="{ name: 'en-demo' }"
+        <button
           class="only-en-desktop text-14-medium mx-auto h-[36px] w-[112px] rounded-5 bg-primary text-center leading-[36px] !text-white duration-300 hover:!text-core-200"
-          >Get a Demo
-        </router-link>
+          @click="openCalendlyPopup"
+        >
+          Get a Demo
+        </button>
         <div class="header-drawer-wrapper hover-pointer hidden-en-desktop">
           <MenuIcon
             @toggle="toggleDrawer"
@@ -99,6 +99,8 @@ import MenuIcon from './Icons/MenuIcon.vue'
 import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
 import MENU_DATA from '/Constants/menu'
 import IconBase from './ui/IconBase.vue'
+import Emitter from '/Libraries/bus'
+import { MENU_EVENT } from '/Constants/eventConstant'
 
 const props = defineProps({
   showDrawer: Boolean,
@@ -112,6 +114,10 @@ const toggleDrawer = (flag?: boolean) => {
 
 const toggleTryPopup = (flag?: boolean) => {
   emit('toggleTryPopup', flag)
+}
+
+const openCalendlyPopup = () => {
+  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, { flag: true, product: 'all' })
 }
 
 const showDrawer = computed(() => props.showDrawer)
