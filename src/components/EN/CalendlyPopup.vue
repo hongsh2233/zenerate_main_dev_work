@@ -45,7 +45,7 @@ const props = defineProps({
 const emits = defineEmits(['close'])
 const calendlyUrl = computed(() =>
   props.product === 'zmaps'
-    ? 'https://calendly.com/zenerate/z-maps-demo'
+    ? 'https://calendly.com/zenerate/app-demo'
     : 'https://calendly.com/d/yrk-k6f-zbv?hide_gdpr_banner=1'
 )
 
