@@ -203,11 +203,11 @@
             >
               Zenerate App<br />Beta Tester Program
             </div>
-            <div
-              v-for="data in BETA_TESTER"
-              class="flex flex-col not-last:mb-9 lg:not-last:mb-12"
-            >
-              <div class="flex flex-row">
+            <div class="flex flex-col">
+              <div
+                v-for="data in BETA_TESTER"
+                class="flex flex-row not-last:mb-9 lg:not-last:mb-12"
+              >
                 <IconBase
                   icon-name="checkmark"
                   icon-color="white"
