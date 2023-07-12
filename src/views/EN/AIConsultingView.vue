@@ -132,7 +132,7 @@
         >
           <span
             class="mb-30 w-[240px] text-20 md:mb-34 md:w-[500px] md:text-30 lg:mb-42 lg:w-[600px] lg:text-36"
-            ><span class="font-medium">Maximizing Returns</span> for a 3 Acre
+            ><span class="font-medium">Maximizing Returns</span> for a 3-acre
             Multifamily Project in the Midwest</span
           >
           <div
@@ -604,7 +604,7 @@
       </div>
     </section>
 
-    <section class="how-it-works pt-80 md:pt-90 lg:pt-150">
+    <section class="how-it-works pt-80 md:pt-90 lg:pt-110">
       <div class="mb-6 text-center text-26">How It Works</div>
       <div
         class="mx-auto mb-44 w-[280px] text-center text-18 text-gray-550 md:mb-42 md:w-[420px] lg:mb-42 lg:w-full"
@@ -1021,7 +1021,8 @@ const goToApp = () => {
   background-image: url('/en/ai_consulting/hero_desktop.png');
   background-position: bottom right;
   @include en-tablet {
-    background-image: url('/en/ai_consulting/hero_tablet.png');
+    background-image: url('/en/ai_consulting/hero_tablet_new.png');
+    background-size: 1200px 548px;
     background-position: bottom center;
   }
   @include en-mobile {

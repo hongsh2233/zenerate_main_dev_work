@@ -157,7 +157,7 @@ const TESTIMONIAL_DATA = [
   {
     key: 'oltman',
     content:
-      "Oltmas can safely recommend their product-services&nbsp;<br class='hidden lg:block' />to all CRE professionals looking to&nbsp;<br class='lg:hidden'/>expand their knowledge and footprint on their respective markets.&nbsp;<br class='hidden lg:block' />It's been a pleasure to&nbsp;<br class='hidden md:block' />work with the Zenerate team and look forward to seeing their next set of ideas&nbsp;/&nbsp;innovative&nbsp;<br class='hidden md:block lg:block'/>solutions in the near future.",
+      "Oltmans can safely recommend their product-services&nbsp;<br class='hidden lg:block' />to all CRE professionals looking to&nbsp;<br class='lg:hidden'/>expand their knowledge and footprint on their respective markets.&nbsp;<br class='hidden lg:block' />It's been a pleasure to&nbsp;<br class='hidden md:block' />work with the Zenerate team and look forward to seeing their next set of ideas&nbsp;/&nbsp;innovative&nbsp;<br class='hidden md:block lg:block'/>solutions in the near future.",
     logoImg: 'logo_color_oltman.png',
     logoText: 'oltmans construction',
     name: 'John Dang',
