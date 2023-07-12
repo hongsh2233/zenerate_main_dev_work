@@ -1,7 +1,7 @@
 <template>
   <swiper
     :navigation="navigation"
-    :pagination="pagnation"
+    :pagination="pagnation ? { clickable: true } : false"
     :mousewheel="mouseWheelControl"
     :keyboard="keyboardControl"
     :loop="infiniteLoop"
