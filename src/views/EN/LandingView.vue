@@ -74,7 +74,7 @@
       <Carousel
         :slideCount="TESTIMONIAL_DATA.length"
         :mouseWheelControl="false"
-        class="testmonial-carousel"
+        class="testmonial-carousel select-none"
       >
         <template v-for="(data, idx) in TESTIMONIAL_DATA" #[`slide${idx}`]>
           <div class="flex flex-col items-center" :class="data.key">
