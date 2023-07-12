@@ -31,12 +31,12 @@
           </p>
 
           <div class="flex flex-col items-center md:flex-row lg:flex-row">
-            <router-link
-              :to="{ name: 'en-contact' }"
-              href="https://www.zenerate.ai/demo-signup"
+            <button
               class="text-18-semibold h-48 w-[134px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mb-0 md:mr-10 md:h-54 md:w-[144px] md:text-20 md:leading-[54px] lg:mr-10 lg:mb-0 lg:h-54 lg:w-[144px] lg:text-20 lg:leading-[54px]"
-              >Contact Us
-            </router-link>
+              @click="moveToBetaTesterElement"
+            >
+              Contact Us
+            </button>
           </div>
         </div>
       </div>
@@ -744,8 +744,9 @@
     </section>
 
     <section
-      class="beta-tester pt-70 pb-80 md:pt-80 md:pb-116 lg:pt-98 lg:pb-88"
+      class="beta-tester relative pt-70 pb-80 md:pt-80 md:pb-116 lg:pt-98 lg:pb-88"
     >
+      <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
       <SignUpForm sheet-name="AIConsulting">
         <template #description>
           <div
@@ -790,6 +791,11 @@ import { SignUpForm, Footer } from '/Components/EN'
 import { ROLES } from '/Constants/roles'
 
 import ImagePreloader from '/Utils/ImagePreloader'
+
+const betaTester = ref(null)
+const moveToBetaTesterElement = () => {
+  betaTester.value.scrollIntoView({ behavior: 'smooth' })
+}
 
 useHead({
   title: `About the Zenerate AI Consulting | Using AI to Maximize Returns by Exploring All Possibilities`,
@@ -951,7 +957,6 @@ const OTHER_CHALLENGES = {
   ],
 }
 
-// TODO: image preload
 const onloadImages = {
   desktop: [
     '/en/zenerate_app/how_it_works_step1_desktop.png',
