@@ -1,7 +1,7 @@
 <template>
   <swiper
     :navigation="navigation"
-    :pagination="pagnation"
+    :pagination="pagnation ? { clickable: true } : false"
     :mousewheel="mouseWheelControl"
     :keyboard="keyboardControl"
     :loop="infiniteLoop"
@@ -9,7 +9,7 @@
     class="custom-carousel h-full w-full"
   >
     <template v-for="idx in slideCount">
-      <swiper-slide class="flex items-center justify-center px-48">
+      <swiper-slide class="flex items-center justify-center px-60">
         <slot :name="`slide${idx - 1}`">Slide {{ idx }}</slot>
       </swiper-slide>
     </template>
@@ -47,7 +47,14 @@ const infiniteLoop = computed(() => props.infiniteLoop)
     z-index: 1 !important;
 
     &:after {
-      font-size: 24px;
+      font-size: 40px;
+      padding: 20px !important;
+      @include en-tablet {
+        font-size: 36px;
+      }
+      @include en-mobile {
+        font-size: 28px;
+      }
     }
   }
 
