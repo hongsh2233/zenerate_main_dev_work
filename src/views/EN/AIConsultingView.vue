@@ -604,7 +604,7 @@
       </div>
     </section>
 
-    <section class="how-it-works pt-80 md:pt-90 lg:pt-110">
+    <section class="how-it-works pt-80 md:pt-90 lg:pt-150">
       <div class="mb-6 text-center text-26">How It Works</div>
       <div
         class="mx-auto mb-44 w-[280px] text-center text-18 text-gray-550 md:mb-42 md:w-[420px] lg:mb-42 lg:w-full"
@@ -684,7 +684,7 @@
       </div>
     </section>
 
-    <section class="who-uses-it bg- pt-80 md:pt-90 lg:pt-[110px]">
+    <section class="who-uses-it bg- pt-80 md:pt-90 lg:pt-150">
       <div class="mb-6 text-center text-26">Who Uses It</div>
       <div
         class="mx-auto mb-30 w-[240px] text-center text-18 text-gray-550 md:mb-46 md:w-full lg:mb-42 lg:w-full"
