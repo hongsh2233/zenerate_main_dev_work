@@ -182,7 +182,6 @@ const CARD_DATA = {
 </script>
 <style lang="scss" scoped>
 .product-card {
-  background-size: contain;
   background-repeat: no-repeat;
 
   &.zmaps {
@@ -192,7 +191,8 @@ const CARD_DATA = {
       background-image: url('/public/en/products/zmaps_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/products/zmaps_mobile.png');
+      background-image: url('/public/en/products/zmaps_mobile_new.png');
+      background-size: 320px 388px;
       background-position: bottom 272px center;
     }
   }
@@ -204,7 +204,8 @@ const CARD_DATA = {
       background-image: url('/public/en/products/zenerate_app_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/products/zenerate_app_mobile.png');
+      background-image: url('/public/en/products/zenerate_app_mobile_new.png');
+      background-size: 320px 388px;
       background-position: bottom 203px center;
     }
   }
@@ -216,7 +217,8 @@ const CARD_DATA = {
       background-image: url('/public/en/products/ai_consulting_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/products/ai_consulting_mobile.png');
+      background-image: url('/public/en/products/ai_consulting_mobile_new.png');
+      background-size: 320px 388px;
       background-position: bottom 203px center;
     }
   }

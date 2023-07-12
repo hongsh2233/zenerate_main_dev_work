@@ -468,7 +468,7 @@
                   Solution WB4-136
                 </div>
                 <div
-                  class="comparision1-before-image-wrapper h-full w-full"
+                  class="comparision2-before-image-wrapper h-full w-full"
                 ></div>
               </div>
             </div>
@@ -488,7 +488,7 @@
                   Selected Solution : WA8-157
                 </div>
                 <div
-                  class="comparision1-after-image-wrapper relative h-full w-full"
+                  class="comparision2-after-image-wrapper relative h-full w-full"
                 >
                   <div
                     class="mx-auto flex h-38 w-120 flex-row items-center justify-center rounded-b-8 bg-core-500 text-16 text-white lg:h-48 lg:w-154 lg:rounded-b-10 lg:text-20"
@@ -902,19 +902,19 @@ const CASE_STUDY = {
 
 const HOW_IT_WORKS = [
   {
-    icon: 'icon_barchart.png',
+    icon: 'icon_barchart_new.png',
     title: 'Assess Project',
     description:
       'Provide us any data and info on the project you have. We then propose a fee and timeline.',
   },
   {
-    icon: 'icon_linechart.png',
+    icon: 'icon_linechart_new.png',
     title: 'Generate & Analyze Solutions',
     description:
       'Considering entitlement strategies, building massings & layouts, unit mix options, parking structures, pro forma, etc., we generate and evalute various scenarios.',
   },
   {
-    icon: 'icon_document.png',
+    icon: 'icon_document_new.png',
     title: 'Delivery of Report',
     description:
       'We provide a feasibility report containing recommended solutions along with CAD floor plans and Excel files.',
@@ -1045,7 +1045,8 @@ const goToApp = () => {
         background-image: url('/en/ai_consulting/with_zenerate_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/en/ai_consulting/with_zenerate_mobile.png');
+        background-image: url('/en/ai_consulting/with_zenerate_mobile_new.png');
+        background-size: 320px 212px;
       }
     }
 
@@ -1066,7 +1067,8 @@ const goToApp = () => {
         background-image: url('/en/ai_consulting/without_zenerate_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/en/ai_consulting/without_zenerate_mobile.png');
+        background-image: url('/en/ai_consulting/without_zenerate_mobile_new.png');
+        background-size: 320px 212px;
       }
     }
     .description-title {
@@ -1095,7 +1097,8 @@ const goToApp = () => {
       background-image: url('/en/ai_consulting/selected_result_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/en/ai_consulting/selected_result_mobile.png');
+      background-image: url('/en/ai_consulting/selected_result_mobile_new.png');
+      background-size: 320px 244px;
     }
   }
   .comparision1-before-image-wrapper {
@@ -1107,7 +1110,8 @@ const goToApp = () => {
       background-image: url('/en/ai_consulting/comparision1_before_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/en/ai_consulting/comparision1_before_mobile.png');
+      background-image: url('/en/ai_consulting/comparision1_before_mobile_new.png');
+      background-size: 232px 156px;
     }
   }
   .comparision1-after-image-wrapper {
@@ -1119,7 +1123,8 @@ const goToApp = () => {
       background-image: url('/en/ai_consulting/comparision1_after_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/en/ai_consulting/comparision1_after_mobile.png');
+      background-image: url('/en/ai_consulting/comparision1_after_mobile_new.png');
+      background-size: 272px 244px;
     }
   }
   .comparision2-before-image-wrapper {
@@ -1131,7 +1136,8 @@ const goToApp = () => {
       background-image: url('/en/ai_consulting/comparision2_before_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/en/ai_consulting/comparision2_before_mobile.png');
+      background-image: url('/en/ai_consulting/comparision2_before_mobile_new.png');
+      background-size: 232px 156px;
     }
   }
   .comparision2-after-image-wrapper {
@@ -1143,7 +1149,8 @@ const goToApp = () => {
       background-image: url('/en/ai_consulting/comparision2_after_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/en/ai_consulting/comparision2_after_mobile.png');
+      background-image: url('/en/ai_consulting/comparision2_after_mobile_new.png');
+      background-size: 272px 244px;
     }
   }
 }
@@ -1158,7 +1165,8 @@ const goToApp = () => {
       background-image: url('/en/ai_consulting/other_challenges_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/en/ai_consulting/other_challenges_mobile.png');
+      background-image: url('/en/ai_consulting/other_challenges_mobile_new.png');
+      background-size: 320px 320px;
     }
   }
 }
