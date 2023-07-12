@@ -161,6 +161,7 @@ const toggleNav = (primary: String) => {
 .header-wrapper {
   @include fixed(top 0px left 0);
   width: 100vw;
+  min-width: 320px;
   z-index: 10000;
   background: $white;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);

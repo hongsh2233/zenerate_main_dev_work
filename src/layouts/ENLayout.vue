@@ -3,9 +3,9 @@
     <a :href="'https://maps.zenerate.ai'">
       <button type="button" class="signup-banner" v-show="path !== '/beta'">
         <div class="signup-banner-inner">
-          <p class="uppercase">
-            <span>VIEW YOUR CITY'S LATEST DEVELOPMENTS&nbsp;</span>
-            <span>WITH OUR NEW TOOL Z-MAPS!</span>
+          <p>
+            <span>View your city's&nbsp;</span>
+            <span>latest developments with Z-maps!</span>
           </p>
           <i class="material-icons"> east </i>
         </div>
@@ -158,6 +158,7 @@ watch(
   flex-wrap: nowrap;
   align-items: center;
   width: 100%;
+  min-width: 320px;
   height: 35px;
   background: #4848ff;
   color: #ffffff;
@@ -184,25 +185,8 @@ watch(
     margin-left: 8px;
   }
 
-  @include en-mobile {
-    @include medium(10);
-    padding: 0px 30px;
-    .signup-banner-inner {
-      max-width: 474px;
-      justify-content: space-between;
-    }
-    p {
-      text-align: left;
-    }
-
-    i {
-      @include medium(11);
-      margin-left: 4px;
-    }
-  }
-
   @include en-mobile-banner-large {
-    @include medium(10);
+    @include medium(13);
     padding: 0px 30px;
     height: 50px;
     // letter-spacing: 0.5pt;
