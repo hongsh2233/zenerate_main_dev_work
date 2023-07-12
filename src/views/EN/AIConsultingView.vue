@@ -1021,7 +1021,8 @@ const goToApp = () => {
   background-image: url('/en/ai_consulting/hero_desktop.png');
   background-position: bottom right;
   @include en-tablet {
-    background-image: url('/en/ai_consulting/hero_tablet.png');
+    background-image: url('/en/ai_consulting/hero_tablet_new.png');
+    background-size: 1200px 548px;
     background-position: bottom center;
   }
   @include en-mobile {
