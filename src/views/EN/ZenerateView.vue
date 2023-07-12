@@ -254,7 +254,7 @@
         </template>
         <template #after-submit-text>
           <span class="text-center text-13 text-gray-700 lg:text-16"
-            >We'll contact you within<br />1 to 3 business days.</span
+            >We'll be in touch soon.</span
           >
         </template>
       </SignUpForm>
