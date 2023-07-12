@@ -224,7 +224,7 @@
             <div class="flex flex-col">
               <div
                 v-for="data in BETA_TESTER"
-                class="flex flex-row not-last:mb-9 lg:not-last:mb-12"
+                class="flex h-fit flex-row not-last:mb-9 lg:not-last:mb-12"
               >
                 <IconBase
                   icon-name="checkmark"
