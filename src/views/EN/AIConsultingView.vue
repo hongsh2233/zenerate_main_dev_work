@@ -1025,7 +1025,8 @@ const goToApp = () => {
     background-position: bottom center;
   }
   @include en-mobile {
-    background-image: url('/en/ai_consulting/hero_mobile.png');
+    background-image: url('/en/ai_consulting/hero_mobile_new.png');
+    background-size: 768px 246px;
     background-position: bottom center;
   }
 }
