@@ -189,9 +189,9 @@
               Selected Result
             </div>
             <div
-              class="lg:rounded-108 text-16-medium absolute left-11 bottom-10 flex h-32 w-76 items-center justify-center rounded-84 bg-coolgray-70 lg:left-15 lg:bottom-13 lg:h-40 lg:w-94 lg:text-20"
+              class="lg:rounded-108 text-16-medium absolute left-11 bottom-10 flex h-32 w-80 items-center justify-center rounded-84 bg-coolgray-70 lg:left-15 lg:bottom-13 lg:h-40 lg:w-100 lg:text-20"
             >
-              Type 5
+              Type 5A
             </div>
           </div>
 
@@ -255,10 +255,10 @@
             </div>
           </div>
           <p
-            class="mb-50 md:mb-46 md:w-[520px] md:text-left md:text-16 lg:mb-44 lg:w-[600px] lg:text-left lg:text-16"
+            class="mb-50 md:mb-46 md:w-[540px] md:text-left md:text-16 lg:mb-44 lg:w-[620px] lg:text-left lg:text-16"
           >
-            Although Type 3 allowed for an additional floor and more units
-            compared to Type 5, the project cost outweighed the increased NOI.
+            Although Type 3A allowed for an additional floor and more units
+            compared to Type 5A, the project cost outweighed the increased NOI.
           </p>
 
           <div
@@ -268,7 +268,7 @@
               <div
                 class="mb-6 font-medium md:order-2 lg:order-2 lg:mb-8 lg:text-18"
               >
-                Type 3
+                Type 3A
               </div>
               <div
                 class="mb-18 text-gray-700 md:order-3 md:mb-0 lg:order-3 lg:mb-0 lg:text-18"
@@ -410,7 +410,7 @@
                   </div>
                 </div>
               </div>
-              <div class="mb-6 font-medium lg:mb-8 lg:text-18">Type 5</div>
+              <div class="mb-6 font-medium lg:mb-8 lg:text-18">Type 5A</div>
               <div class="text-gray-700 lg:text-18">4 Residential Floors</div>
             </div>
           </div>
