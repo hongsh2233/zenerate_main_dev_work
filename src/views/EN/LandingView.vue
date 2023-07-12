@@ -1,5 +1,5 @@
 <template>
-  <div class="min-w-[280px]">
+  <div class="min-w-[320px]">
     <section>
       <div
         class="mx-auto mt-[162px] w-[280px] min-w-[280px] md:mt-[220px] md:w-[644px] lg:mt-[236px] lg:w-[644px]"
@@ -69,7 +69,7 @@
     </section>
 
     <section
-      class="h-[460px] bg-coolgray-50 py-14 px-10 md:h-[490px] md:py-50 md:px-30 lg:h-[490px] lg:py-60 lg:px-136"
+      class="h-[460px] bg-coolgray-50 py-14 px-8 md:h-[490px] md:py-50 md:px-80 lg:h-[490px] lg:py-60 lg:px-120"
     >
       <Carousel
         :slideCount="TESTIMONIAL_DATA.length"
