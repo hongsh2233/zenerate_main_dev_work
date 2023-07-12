@@ -604,7 +604,7 @@
       </div>
     </section>
 
-    <section class="how-it-works pt-80 md:pt-90 lg:pt-150">
+    <section class="how-it-works pt-80 md:pt-90 lg:pt-110">
       <div class="mb-6 text-center text-26">How It Works</div>
       <div
         class="mx-auto mb-44 w-[280px] text-center text-18 text-gray-550 md:mb-42 md:w-[420px] lg:mb-42 lg:w-full"
