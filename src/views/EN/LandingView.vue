@@ -181,7 +181,8 @@ const TESTIMONIAL_DATA = [
     logoImg: 'logo_color_cushman.png',
     logoText: 'cushman and wakefield',
     name: 'JH Kim',
-    position: 'Senior Manager',
+    position: 'Senior Manager, Capital Markets Group',
+    positionAbbrev: 'Senior Manager',
   },
   {
     key: 'neovalue',
