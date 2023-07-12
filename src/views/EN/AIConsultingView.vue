@@ -132,7 +132,7 @@
         >
           <span
             class="mb-30 w-[240px] text-20 md:mb-34 md:w-[500px] md:text-30 lg:mb-42 lg:w-[600px] lg:text-36"
-            ><span class="font-medium">Maximizing Returns</span> for a 3 Acre
+            ><span class="font-medium">Maximizing Returns</span> for a 3-acre
             Multifamily Project in the Midwest</span
           >
           <div
