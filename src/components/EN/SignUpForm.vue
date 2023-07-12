@@ -114,9 +114,8 @@
             </svg>
           </div>
           <span class="mb-24 text-24 font-medium lg:text-28">Thank you!</span>
-          <span class="text-center text-13 text-gray-700 lg:text-16"
-            >We'll contact you within<br />1 to 3 business days.</span
-          >
+
+          <slot name="after-submit-text"></slot>
         </div>
       </transition>
     </div>
