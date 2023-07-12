@@ -75,7 +75,7 @@
         :class="`card${idx + 1}`"
       >
         <video
-          v-if="data.imgUrl.endsWith('.mp4')"
+          v-if="data.imgType === 'video'"
           class="h-full w-full md:w-fit lg:w-fit"
           :autoplay="true"
           :muted="true"
@@ -84,11 +84,29 @@
           :src="`/en/zenerate_app/${data.imgUrl}`"
           alt=""
         />
-        <img
+        <div
+          class="h-[292px] w-[320px] overflow-hidden md:h-[352px] md:w-[420px] lg:h-[450px] lg:w-[542px]"
           v-else
-          :src="`/en/zenerate_app/${data.imgUrl}`"
-          class="h-full w-full lg:w-fit"
-        />
+        >
+          <img
+            :src="`/en/zenerate_app/${data.imgUrls.desktop}`"
+            width="523"
+            height="441"
+            class="hidden lg:block"
+          />
+          <img
+            :src="`/en/zenerate_app/${data.imgUrls.tablet}`"
+            width="421"
+            height="352"
+            class="hidden md:block lg:hidden"
+          />
+          <img
+            :src="`/en/zenerate_app/${data.imgUrls.mobile}`"
+            width="321"
+            height="292"
+            class="md:hidden lg:hidden"
+          />
+        </div>
 
         <div
           class="content-area flex flex-col justify-center"
@@ -327,6 +345,7 @@ const moveToBetaTesterElement = () => {
 
 const PRODUCT_DESCRIPTION = [
   {
+    imgType: 'video',
     imgUrl: 'product_description1.mp4',
     title: 'Evaluate Development Potential with Various Considerations',
     content: [
@@ -339,6 +358,7 @@ const PRODUCT_DESCRIPTION = [
     contentOnRight: false,
   },
   {
+    imgType: 'video',
     imgUrl: 'product_description2.mp4',
     title: 'Generated Realistic Floor Plans',
     content: [
@@ -350,7 +370,12 @@ const PRODUCT_DESCRIPTION = [
     contentOnRight: true,
   },
   {
-    imgUrl: 'product_description3.png',
+    imgType: 'image',
+    imgUrls: {
+      desktop: 'product_description3_desktop.png',
+      tablet: 'product_description3_tablet.png',
+      mobile: 'product_description3_mobile_new.png',
+    },
     title: 'Quick Financial Analysis Set to Your Own Metrics',
     content: [
       'Input your rent prices & construction cost',
@@ -471,8 +496,9 @@ const goToApp = () => {
 }
 
 .content-area {
-  width: 100%;
+  width: 358px;
   height: 100%;
+  width: 100%;
 
   @include en-mobile {
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
@@ -541,6 +567,15 @@ const goToApp = () => {
     }
   }
   .card3 {
+    .content-area {
+      @include en-desktop {
+        width: 388px;
+      }
+      @include en-tablet {
+        width: 288px;
+      }
+    }
+
     @include en-mobile {
       .title {
         width: 200px;
@@ -555,7 +590,17 @@ const goToApp = () => {
 .how-it-works {
   .image-wrapper {
     background-repeat: no-repeat;
+    background-position: left -1px center;
+
+    @include en-tablet {
+      background-position: left center;
+    }
+    @include en-mobile {
+      background-position: left center;
+      background-position: left -1px center;
+    }
   }
+
   .content-area {
     @include en-desktop {
       padding: 0 30px 0 50px;
@@ -575,7 +620,8 @@ const goToApp = () => {
         background-image: url('/public/en/zenerate_app/how_it_works_step1_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/public/en/zenerate_app/how_it_works_step1_mobile.png');
+        background-image: url('/public/en/zenerate_app/how_it_works_step1_mobile_new.png');
+        background-size: 321px 200px;
       }
     }
     @include en-mobile {
@@ -591,7 +637,8 @@ const goToApp = () => {
         background-image: url('/public/en/zenerate_app/how_it_works_step2_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/public/en/zenerate_app/how_it_works_step2_mobile.png');
+        background-image: url('/public/en/zenerate_app/how_it_works_step2_mobile_new.png');
+        background-size: 321px 200px;
       }
     }
     @include en-desktop {
@@ -622,7 +669,8 @@ const goToApp = () => {
         background-image: url('/public/en/zenerate_app/how_it_works_step3_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/public/en/zenerate_app/how_it_works_step3_mobile.png');
+        background-image: url('/public/en/zenerate_app/how_it_works_step3_mobile_new.png');
+        background-size: 321px 200px;
       }
     }
   }
@@ -634,7 +682,8 @@ const goToApp = () => {
         background-image: url('/public/en/zenerate_app/how_it_works_step4_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/public/en/zenerate_app/how_it_works_step4_mobile.png');
+        background-image: url('/public/en/zenerate_app/how_it_works_step4_mobile_new.png');
+        background-size: 321px 200px;
       }
     }
     @include en-desktop {
