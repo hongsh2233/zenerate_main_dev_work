@@ -224,21 +224,21 @@
             <div class="flex flex-col">
               <div
                 v-for="data in BETA_TESTER"
-                class="flex h-fit flex-row not-last:mb-9 lg:not-last:mb-12"
+                class="flex flex-row not-last:mb-9 lg:not-last:mb-12"
               >
                 <IconBase
                   icon-name="checkmark"
                   icon-color="white"
                   :width="18"
                   :height="18"
-                  class="mr-8 mt-1 min-w-fit lg:hidden"
+                  class="mr-8 mt-1 w-18 min-w-18 max-w-18 lg:hidden"
                 />
                 <IconBase
                   icon-name="checkmark-bold"
                   icon-color="white"
                   :width="20"
                   :height="20"
-                  class="mt-2 mr-10 hidden min-w-fit lg:block"
+                  class="mt-2 mr-10 hidden w-20 min-w-20 max-w-20 lg:block"
                 />
                 <div class="text-13-medium lg:text-16">{{ data }}</div>
               </div>
