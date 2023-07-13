@@ -130,7 +130,36 @@
                   type="button"
                   class="peer flex flex-nowrap items-center px-0 text-14 font-semibold text-gray-700"
                 >
-                  <i class="material-icons mr-8 text-18"> language </i>
+                  <svg
+                    width="21"
+                    height="21"
+                    viewBox="0 0 21 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="mr-8"
+                  >
+                    <path
+                      d="M16.8438 10.5C16.8438 14.0036 14.0036 16.8438 10.5 16.8438C6.99644 16.8438 4.15625 14.0036 4.15625 10.5C4.15625 6.99644 6.99644 4.15625 10.5 4.15625C14.0036 4.15625 16.8438 6.99644 16.8438 10.5Z"
+                      stroke="#484A4F"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.3438 10.5C13.3438 14.4375 11.5873 16.8438 10.5 16.8438C9.41269 16.8438 7.65625 14.4375 7.65625 10.5C7.65625 6.5625 9.41269 4.15625 10.5 4.15625C11.5873 4.15625 13.3438 6.5625 13.3438 10.5Z"
+                      stroke="#484A4F"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M4.375 10.5H16.625"
+                      stroke="#484A4F"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                   <p>ENG</p>
                 </button>
                 <div

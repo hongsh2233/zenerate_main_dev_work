@@ -89,7 +89,7 @@
           <div class="form-send-wrapper">
             <div class="dummy" ref="dummy"></div>
             <button
-              class="form-send start-button hover-pointer bg-primary hover:text-core-200 text-white active:bg-core-700 active:text-white"
+              class="form-send start-button hover-pointer bg-primary text-white hover:text-core-200 active:bg-core-700 active:text-white"
               :class="{ disabled: sendEmailStatus }"
               @click="() => sendEmail()"
             >
@@ -129,7 +129,13 @@
               </p>
               <router-link class="link-button" :to="{ name: 'en-overview' }">
                 View Product Overview
-                <i class="material-icons"> east </i>
+                <IconBase
+                  icon-name="arrow-right"
+                  :width="24"
+                  :height="24"
+                  iconColor="#4D49F4"
+                  class="ml-8"
+                />
               </router-link>
             </div>
           </div>
@@ -150,6 +156,7 @@ import { useRoute, useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 import SelectInput from '/Components/SelectInput.vue'
 import { useHead } from '@vueuse/head'
+import { IconBase } from '/Components/EN'
 // const fullpage = computed(() => Store.state.root.FullPage)
 
 // onMounted(() => {
@@ -519,19 +526,6 @@ useHead({
         background: $white;
         margin: 0px auto;
         color: $navigation;
-
-        i {
-          @include medium(18);
-          margin-left: 8px;
-        }
-
-        @include en-tablet {
-          @include semi-bold(17);
-        }
-
-        @include en-mobile {
-          @include semi-bold(14);
-        }
       }
     }
   }

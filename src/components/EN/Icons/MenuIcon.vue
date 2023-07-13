@@ -1,10 +1,12 @@
 <template>
   <div class="icon-menu hover-pointer" @click="toggle()">
-    <i
-      class="icon-menu-inner material-icons"
-      :class="!showDrawer ? 'menu' : 'close'"
-      >{{ showDrawer ? 'close' : 'menu' }}</i
-    >
+    <IconBase
+      :icon-name="showDrawer ? 'close' : 'menu'"
+      :width="30"
+      :height="30"
+      :iconColor="showDrawer ? 'black' : '#4848ff'"
+      class="my-10 mx-26 md:my-10 md:mx-40 lg:my-10 lg:mx-40"
+    />
   </div>
   <!-- <div
     class="icon-menu hover-pointer"
@@ -20,6 +22,7 @@
 </template>
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
+import { IconBase } from '/Components/EN'
 const props = defineProps({
   width: {
     type: Number,
@@ -47,49 +50,4 @@ const barHeight = computed(() => {
   return Math.floor((props.height / 2 / 12) * 2)
 })
 </script>
-<style lang="scss" scoped>
-.icon-menu-inner {
-  @include flex($dir: column);
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  color: $text-darken;
-  font-size: 26px;
-
-  &.menu {
-    color: #4848ff;
-  }
-
-  @include en-tablet {
-    padding: 10px 40px;
-  }
-  @include en-mobile {
-    padding: 10px 26px;
-  }
-
-  // &.transparent {
-  //   color: $white;
-  // }
-
-  .menu {
-    width: 100%;
-    &:last-child {
-      margin-bottom: 0;
-    }
-    background-color: $black;
-    transition: width 0.3s ease;
-    margin-left: auto;
-  }
-  &:hover {
-    .menu-3 {
-      width: 50%;
-    }
-  }
-  &:active {
-    .menu-1,
-    .menu-3 {
-      width: 50%;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

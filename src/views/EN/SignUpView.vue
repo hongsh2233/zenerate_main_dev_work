@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="flex flex-col">
-          <div class="flex flex-col relative gap-16 mb-40">
+          <div class="relative mb-40 flex flex-col gap-16">
             <div class="flex flex-nowrap">
               <Form
                 :inputValue="contactForm.first_name.value"
@@ -139,7 +139,7 @@
             >
             </Form>
             <span
-              class="text-12-medium text-primary text-right w-full absolute right-0 bottom-[-24px]"
+              class="text-12-medium absolute right-0 bottom-[-24px] w-full text-right text-primary"
               >*required</span
             >
           </div>
@@ -173,11 +173,17 @@
                 <span>If you do not receive a reply&nbsp;</span>
                 <span>within 2 business days</span> <br />
                 please email
-                <a href="mailto: contact@zenerate.ai">contact@zenerate.ai </a>
+                <a href="mailto: contact@zenerate.ai">contact@zenerate.ai</a>
               </p>
               <router-link class="link-button" :to="{ name: 'en-overview' }">
                 View Product Overview
-                <i class="material-icons"> east </i>
+                <IconBase
+                  icon-name="arrow-right"
+                  :width="22"
+                  :height="22"
+                  iconColor="#4D49F4"
+                  class="ml-8"
+                />
               </router-link>
             </div>
           </div>
@@ -197,7 +203,7 @@ import Validation from '/Utils/Validation'
 import { useRoute, useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 import SelectInput from '/Components/SelectInput.vue'
-import { ModalLayout, Button, Form } from '/Components/EN/index'
+import { ModalLayout, Button, Form, IconBase } from '/Components/EN'
 // const fullpage = computed(() => Store.state.root.FullPage)
 
 // onMounted(() => {
@@ -528,11 +534,6 @@ const router = useRouter()
         background: $white;
         margin: 0px auto;
         color: $navigation;
-
-        i {
-          @include medium(18);
-          margin-left: 8px;
-        }
 
         @include en-tablet {
           @include semi-bold(17);
