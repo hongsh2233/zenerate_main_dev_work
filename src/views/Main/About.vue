@@ -716,7 +716,7 @@ useHead({
   }
   .about-tech-wrapper {
     .tech-content-wrapper {
-      width: 768px;
+      width: 762px;
       margin: 0 auto;
       @include tablet {
         width: 80%;

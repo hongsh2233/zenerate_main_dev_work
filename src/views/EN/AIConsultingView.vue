@@ -980,7 +980,7 @@ const commonPreloadImages = ['/en/zenerate_app/product_description3.png']
 const mediaQueryDevice =
   window.innerWidth >= 1024
     ? 'desktop'
-    : window.innerWidth >= 768
+    : window.innerWidth >= 762
     ? 'tablet'
     : 'mobile'
 

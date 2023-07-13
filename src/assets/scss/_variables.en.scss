@@ -2,7 +2,7 @@
 
 $breakpoint-1024: 1024px;
 $breakpoint-960: 960px;
-$breakpoint-768: 768px;
+$breakpoint-762: 762px;
 $breakpoint-480: 480px;
 
 @mixin en-desktop {
@@ -15,19 +15,19 @@ $breakpoint-480: 480px;
 }
 
 @mixin en-tablet-big {
-  @media only screen and (min-width: #{$breakpoint-960}) and (max-width: #{$breakpoint-1024 - 0.1px}) {
+  @media only screen and (min-width: #{$breakpoint-960}) and (max-width: #{$breakpoint-1024 - 0.001px}) {
     @content;
   }
 }
 
 @mixin en-tablet-small {
-  @media only screen and (min-width: #{$breakpoint-768}) and (max-width: #{$breakpoint-960 - 0.1px}) {
+  @media only screen and (min-width: #{$breakpoint-762}) and (max-width: #{$breakpoint-960 - 0.001px}) {
     @content;
   }
 }
 
 @mixin en-mobile {
-  @media only screen and (max-width: #{$breakpoint-768 - 0.1px}) {
+  @media only screen and (max-width: #{$breakpoint-762 - 0.001px}) {
     .hidden-mobile {
       display: none !important;
     }
@@ -36,7 +36,7 @@ $breakpoint-480: 480px;
 }
 
 @mixin en-tablet {
-  @media only screen and (min-width: #{$breakpoint-768}) and (max-width: #{$breakpoint-1024 - 0.1px} ) {
+  @media only screen and (min-width: #{$breakpoint-762}) and (max-width: #{$breakpoint-1024 - 0.001px} ) {
     .hidden-tablet {
       display: none !important;
     }
@@ -45,7 +45,7 @@ $breakpoint-480: 480px;
 }
 
 @mixin en-mobile-banner-small {
-  @media only screen and (min-width: 514px) and (max-width: 767.9px) {
+  @media only screen and (min-width: 514px) and (max-width: 761.999px) {
     @content;
   }
 }
