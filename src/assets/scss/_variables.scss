@@ -340,7 +340,7 @@ $breakpoint-tablet: 768px;
 $breakpoint-mobile: 360px;
 
 @mixin mobile {
-  @media only screen and (max-width: #{$breakpoint-tablet - 0.001px}) {
+  @media only screen and (max-width: #{$breakpoint-tablet - 0.01px}) {
     .hidden-mobile {
       display: none !important;
     }
@@ -349,7 +349,7 @@ $breakpoint-mobile: 360px;
 }
 
 @mixin tablet {
-  @media only screen and (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 0.001px}) {
+  @media only screen and (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 0.01px}) {
     .hidden-tablet {
       display: none !important;
     }
