@@ -20,24 +20,25 @@
         @click="emits('close')"
       />
 
-      <div class="mb-12 flex w-full flex-col items-center">
-        <span class="text-26 font-medium">Book a Demo</span>
+      <div class="mb-12 flex w-full max-w-[740px] flex-col">
+        <span class="text-center text-26 font-medium">Book a Demo</span>
+        <button
+          v-if="product === 'all' && showBackButton"
+          @click="restartCalendly"
+          class="ml-20 h-32 w-fit text-left text-gray-600 hover:text-gray-700"
+        >
+          &lt; Go Back
+        </button>
       </div>
 
-      <div class="calendly-wrapper">
-        <div
-          class="calendly-inline-widget"
-          id="calendly"
-          :data-url="calendlyUrl"
-          style="position: relative; min-width: 320px"
-        ></div>
-      </div>
+      <Calendly v-if="showCalendly" :calendly-url="calendlyUrl" />
     </div>
   </section>
 </template>
 <script lang="ts" setup>
-import { PropType, computed, onMounted, onUnmounted, ref } from 'vue'
+import { PropType, computed, nextTick, ref } from 'vue'
 import { IconBase } from '/Components/EN'
+import Calendly from './Calendly.vue'
 
 const props = defineProps({
   product: String as PropType<'all' | 'zenerate-app'>,
@@ -49,32 +50,29 @@ const calendlyUrl = computed(() =>
     : 'https://calendly.com/d/yrk-k6f-zbv?hide_gdpr_banner=1'
 )
 
-onMounted(() => {
-  const head = document.querySelector('head')
-  const script = document.createElement('script')
-  script.setAttribute(
-    'src',
-    'https://assets.calendly.com/assets/external/widget.js'
+const showBackButton = ref(false)
+
+const showCalendly = ref(true)
+const restartCalendly = () => {
+  showCalendly.value = false
+  nextTick(() => {
+    showBackButton.value = false
+    showCalendly.value = true
+  })
+}
+
+const isCalendlyEvent = (e) => {
+  return (
+    e.origin === 'https://calendly.com' &&
+    e.data.event &&
+    e.data.event.indexOf('calendly.') === 0
   )
-  head.appendChild(script)
+}
 
-  try {
-    Calendly.initInlineWidget({ url: calendlyUrl.value })
-  } catch (error) {
-    console.error(error)
-  }
-})
-
-onUnmounted(() => {
-  try {
-    document.body
-      .querySelectorAll('.calendly-spinner')
-      .forEach((el) => el.remove())
-    document.body
-      .querySelectorAll("iframe[title='Select a Date & Time - Calendly']")
-      .forEach((el) => el.remove())
-  } catch (error) {
-    console.error(error)
+window.addEventListener('message', function (e) {
+  if (isCalendlyEvent(e)) {
+    if (e.data.event === 'calendly.event_type_viewed')
+      showBackButton.value = true
   }
 })
 </script>
@@ -82,17 +80,6 @@ onUnmounted(() => {
 .popup-content {
   width: 80%;
   min-width: 320px;
-  max-width: 1200px;
-
-  .calendly-wrapper {
-    width: 100%;
-
-    #calendly {
-      display: relative;
-      width: 100%;
-      height: 1300px;
-      max-height: 624px;
-    }
-  }
+  max-width: 990px;
 }
 </style>
