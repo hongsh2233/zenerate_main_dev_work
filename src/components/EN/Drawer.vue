@@ -8,12 +8,14 @@
             <template v-for="(tab, idx) in MENU_DATA" :key="idx">
               <p class="navigation-link" @click="() => selectTab(tab.key)">
                 {{ tab.title }}
-                <i
-                  class="material-icons"
-                  :class="{ active: toggleTab[tab.key] }"
-                >
-                  keyboard_arrow_down
-                </i>
+                <IconBase
+                  :icon-name="
+                    toggleTab[tab.key] ? 'chevron-up' : 'chevron-down'
+                  "
+                  :width="32"
+                  :height="32"
+                  iconColor="black"
+                />
               </p>
               <transition name="slide-up">
                 <div v-show="toggleTab[tab.key]" class="navigation-link-list">
@@ -69,7 +71,13 @@
                 class="demo-link navigation-link sub"
               >
                 Get a Demo
-                <i class="material-icons"> east </i>
+                <IconBase
+                  icon-name="arrow-right"
+                  :width="24"
+                  :height="24"
+                  iconColor="#4D49F4"
+                  class="ml-14"
+                />
               </a>
             </router-link>
           </div>
@@ -89,7 +97,7 @@ import { useRouter } from 'vue-router'
 
 import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
 import MENU_DATA from '/Constants/menu'
-import IconBase from './ui/IconBase.vue'
+import { IconBase } from '/Components/EN'
 
 const props = defineProps({
   showDrawer: Boolean,
@@ -262,18 +270,12 @@ const selectSubLink = (navigate, event) => {
           align-items: center;
           color: theme('colors.primary.DEFAULT');
 
-          i {
-            @include semi-bold(18);
-            color: theme('colors.primary.DEFAULT');
-            margin: 0px 0px 0px 14px;
-          }
-
           &:hover,
           :active {
             color: theme('colors.core.700');
 
-            i {
-              color: theme('colors.core.700');
+            :deep(path) {
+              fill: theme('colors.core.700');
             }
           }
         }

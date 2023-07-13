@@ -25,7 +25,13 @@
             <div class="dropdown">
               <button class="dropbtn">
                 {{ primary.title }}
-                <i class="material-icons"> keyboard_arrow_down </i>
+                <IconBase
+                  icon-name="chevron-down"
+                  :width="24"
+                  :height="24"
+                  iconColor="black"
+                  class="ml-8"
+                />
               </button>
               <div class="dropdown-content">
                 <template
@@ -98,7 +104,7 @@ import { useRouter } from 'vue-router'
 import MenuIcon from './Icons/MenuIcon.vue'
 import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
 import MENU_DATA from '/Constants/menu'
-import IconBase from './ui/IconBase.vue'
+import { IconBase } from '/Components/EN'
 import Emitter from '/Libraries/bus'
 import { MENU_EVENT } from '/Constants/eventConstant'
 
@@ -386,18 +392,18 @@ const toggleNav = (primary: String) => {
     background-color: inherit;
     font-family: inherit;
     margin: 0px auto;
-
-    i {
-      @include regular(18);
-      margin-left: 8px;
-    }
   }
 }
 
 .navbar a:hover,
 .dropdown:hover .dropbtn {
   color: theme('colors.primary.DEFAULT');
-  i {
+
+  :deep(path) {
+    fill: theme('colors.primary.DEFAULT');
+  }
+
+  svg {
     transform: rotate(-180deg);
   }
 }
