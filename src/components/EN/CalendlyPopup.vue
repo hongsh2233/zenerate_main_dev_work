@@ -10,6 +10,14 @@
     <div
       class="popup-content relative m-auto flex flex-col flex-nowrap items-center overflow-hidden rounded-8 bg-white pt-42"
     >
+      <button
+        v-if="product === 'all' && showBackButton"
+        @click="restartCalendly"
+        class="absolute top-14 left-14 h-24 text-gray-600 hover:text-gray-700"
+      >
+        &lt; Go Back
+      </button>
+
       <IconBase
         class="absolute top-14 right-14 cursor-pointer"
         icon-name="close"
@@ -20,15 +28,8 @@
         @click="emits('close')"
       />
 
-      <div class="mb-12 flex w-full max-w-[740px] flex-col">
-        <span class="text-center text-26 font-medium">Book a Demo</span>
-        <button
-          v-if="product === 'all' && showBackButton"
-          @click="restartCalendly"
-          class="ml-20 h-32 w-fit text-left text-gray-600 hover:text-gray-700"
-        >
-          &lt; Go Back
-        </button>
+      <div class="mb-12 flex w-full flex-col items-center">
+        <span class="text-26 font-medium">Book a Demo</span>
       </div>
 
       <Calendly v-if="showCalendly" :calendly-url="calendlyUrl" />
