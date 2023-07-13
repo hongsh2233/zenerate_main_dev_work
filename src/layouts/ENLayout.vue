@@ -7,7 +7,13 @@
             <span>View your city's&nbsp;</span>
             <span>latest developments with Z-maps!</span>
           </p>
-          <i class="material-icons"> east </i>
+          <IconBase
+            icon-name="arrow-right"
+            :width="20"
+            :height="20"
+            iconColor="white"
+            class="ml-8"
+          />
         </div>
       </button>
     </a>
@@ -51,7 +57,7 @@ import Header from '/Components/EN/Header.vue'
 import Footer from '/Components/EN/Footer.vue'
 import Drawer from '/Components/EN/Drawer.vue'
 import CalendlyPopup from '/Components/EN/CalendlyPopup.vue'
-import { Button } from '/Components/EN/index'
+import { Button, IconBase } from '/Components/EN'
 
 const route = useRoute()
 const path = computed(() => route.path)
@@ -179,12 +185,6 @@ watch(
     line-height: 14px;
   }
 
-  i {
-    @include semi-bold(13);
-    @include medium(18);
-    margin-left: 8px;
-  }
-
   @include en-mobile-banner-large {
     @include medium(13);
     padding: 0px 30px;
@@ -198,11 +198,6 @@ watch(
 
     p {
       text-align: left;
-    }
-
-    i {
-      @include medium(11);
-      margin-left: 4px;
     }
   }
 

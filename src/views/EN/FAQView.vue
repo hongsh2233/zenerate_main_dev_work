@@ -429,7 +429,7 @@
               >
                 <p class="tab-content">
                   Zenerate only works on PC or tablet with size more than 1024 x
-                  768 pixels.
+                  762 pixels.
                 </p>
               </div>
             </transition>

@@ -21,9 +21,12 @@
               : props.placeholder || 'Select'
           }}</span
         >
-        <i className="material-icons noselect">
-          {{ showDropdown ? 'expand_less' : 'expand_more' }}
-        </i>
+        <IconBase
+          :icon-name="showDropdown ? 'chevron-up' : 'chevron-down'"
+          :width="36"
+          :height="36"
+          iconColor="#c4c4c499"
+        />
       </div>
       <transition name="slide-up">
         <div class="input-select-dropdown" v-show="showDropdown">
@@ -44,6 +47,7 @@
 <script lang="ts" setup>
 import { ref, watch, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { IconBase } from '/Components/EN'
 const { t } = useI18n()
 
 type Item = {
@@ -159,17 +163,6 @@ watch(showDropdown, (v) => {
           @include en-mobile {
             @include regular(14);
           }
-        }
-      }
-      i {
-        @include regular(32);
-        color: rgba(196, 196, 196, 0.6);
-
-        @include en-tablet {
-          @include regular(28);
-        }
-        @include en-mobile {
-          @include regular(28);
         }
       }
     }
