@@ -48,7 +48,6 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .calendly-wrapper {
   width: 100%;
-  margin-top: -16px;
 
   #calendly {
     display: relative;
