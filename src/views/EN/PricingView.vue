@@ -1538,7 +1538,7 @@ const togglePlan = (plan) => {
     max-width: 1200px;
   }
   @include en-tablet {
-    max-width: 768px;
+    max-width: 762px;
   }
 }
 
