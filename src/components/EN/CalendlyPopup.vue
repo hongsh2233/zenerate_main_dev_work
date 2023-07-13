@@ -81,6 +81,6 @@ window.addEventListener('message', function (e) {
 .popup-content {
   width: 80%;
   min-width: 320px;
-  max-width: 990px;
+  max-width: 1200px;
 }
 </style>
