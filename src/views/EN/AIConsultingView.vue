@@ -759,7 +759,7 @@
             <span
               class="w-[220px] text-18 md:w-[240px] lg:w-[240px] lg:text-20"
             >
-              on the 40+ projects we've worked on so far</span
+              on the 50+ projects we've worked on so far</span
             >
           </div>
         </template>
