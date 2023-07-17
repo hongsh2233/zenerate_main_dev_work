@@ -443,16 +443,19 @@ const onloadImages = {
     '/en/zenerate_app/how_it_works_step1_desktop.png',
     '/en/zenerate_app/how_it_works_step2_desktop.png',
     '/en/zenerate_app/how_it_works_step3_desktop.png',
+    '/en/zenerate_app/how_it_works_step4_desktop.png',
   ],
   tablet: [
     '/en/zenerate_app/how_it_works_step1_tablet.png',
     '/en/zenerate_app/how_it_works_step2_tablet.png',
     '/en/zenerate_app/how_it_works_step3_tablet.png',
+    '/en/zenerate_app/how_it_works_step4_tablet.png',
   ],
   mobile: [
     '/en/zenerate_app/how_it_works_step1_mobile.png',
     '/en/zenerate_app/how_it_works_step2_mobile.png',
     '/en/zenerate_app/how_it_works_step3_mobile.png',
+    '/en/zenerate_app/how_it_works_step4_mobile.png',
   ],
 }
 
@@ -662,14 +665,14 @@ const goToApp = () => {
   }
   .card3 {
     .image-wrapper {
-      background-image: url('/public/en/zenerate_app/how_it_works_step3_desktop.png');
+      background-image: url('/public/en/zenerate_app/how_it_works_step3_desktop_edited.png');
       background-position: left -1px top -1px;
       @include en-tablet {
-        background-image: url('/public/en/zenerate_app/how_it_works_step3_tablet.png');
+        background-image: url('/public/en/zenerate_app/how_it_works_step3_tablet_edited.png');
         background-position: left top -1px;
       }
       @include en-mobile {
-        background-image: url('/public/en/zenerate_app/how_it_works_step3_mobile_new.png');
+        background-image: url('/public/en/zenerate_app/how_it_works_step3_mobile_edited.png');
         background-position: left -1px center;
         background-size: 321px 200px;
       }
