@@ -47,6 +47,8 @@ import { useHead } from '@vueuse/head'
 import { useRouter } from 'vue-router'
 import Footer from '/Components/EN/Footer.vue'
 
+// 사용하지 않는 페이지
+
 onMounted(() => {
   const head = document.querySelector('head')
   const script = document.createElement('script')

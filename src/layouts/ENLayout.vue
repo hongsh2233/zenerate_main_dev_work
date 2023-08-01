@@ -41,7 +41,7 @@
     <transition name="fade">
       <CalendlyPopup
         v-if="showCalendlyPopup"
-        :product="calendlyPopupProduct"
+        :trigger="calendlyPopupTrigger"
         @close="() => toggleCalendlyPopup(false)"
       />
     </transition>
@@ -72,10 +72,10 @@ Emitter.on(MENU_EVENT.TOGGLE_TRY_POPUP, (v) => toggleTryPopup(v))
 
 // ---------------- calendly popup ----------------
 const showCalendlyPopup = ref(false)
-const calendlyPopupProduct = ref<'all' | 'zenerate-app'>('all')
+const calendlyPopupTrigger = ref<'zenapp' | 'header' | 'laststrip'>(null)
 const toggleCalendlyPopup = (option) => {
   const f = option.flag == null ? !showCalendlyPopup.value : option.flag
-  if (f) calendlyPopupProduct.value = option.product
+  calendlyPopupTrigger.value = f ? option.trigger : null
   showCalendlyPopup.value = f
 }
 Emitter.on(MENU_EVENT.TOGGLE_CALENDLY_POPUP, (option) =>

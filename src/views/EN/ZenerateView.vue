@@ -339,7 +339,7 @@ useHead({
 const openCalendlyPopup = () => {
   Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
     flag: true,
-    product: 'zenerate-app',
+    trigger: 'zenapp',
   })
 }
 

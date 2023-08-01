@@ -123,7 +123,10 @@ const toggleTryPopup = (flag?: boolean) => {
 }
 
 const openCalendlyPopup = () => {
-  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, { flag: true, product: 'all' })
+  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+    flag: true,
+    trigger: 'header',
+  })
 }
 
 const showDrawer = computed(() => props.showDrawer)

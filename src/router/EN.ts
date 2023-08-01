@@ -88,11 +88,11 @@ const ENRoute: RouteRecordRaw = {
       name: 'SignUp',
       component: PreSignUpView,
     },
-    {
-      path: '/demo-signup',
-      name: 'en-demo',
-      component: DemoSignUpView,
-    },
+    // {
+    //   path: '/demo-signup',
+    //   name: 'en-demo',
+    //   component: DemoSignUpView,
+    // },
     {
       path: '/signup',
       name: 'en-signup',
