@@ -60,26 +60,20 @@
                 </div>
               </transition>
             </template>
-            <router-link
-              :to="{ name: 'en-demo' }"
-              custom
-              v-slot="{ href, navigate }"
+
+            <button
+              @click="openCalendlyPopup"
+              class="demo-link navigation-link sub"
             >
-              <a
-                :href="href"
-                @click="selectSubLink(navigate, $event)"
-                class="demo-link navigation-link sub"
-              >
-                Get a Demo
-                <IconBase
-                  icon-name="arrow-right"
-                  :width="24"
-                  :height="24"
-                  iconColor="#4D49F4"
-                  class="ml-14"
-                />
-              </a>
-            </router-link>
+              Get a Demo
+              <IconBase
+                icon-name="arrow-right"
+                :width="24"
+                :height="24"
+                iconColor="#4D49F4"
+                class="ml-14"
+              />
+            </button>
           </div>
           <div class="info-wrapper">
             <span class="copyright"
@@ -98,6 +92,8 @@ import { useRouter } from 'vue-router'
 import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
 import MENU_DATA from '/Constants/menu'
 import { IconBase } from '/Components/EN'
+import Emitter from '/Libraries/bus'
+import { MENU_EVENT } from '/Constants/eventConstant'
 
 const props = defineProps({
   showDrawer: Boolean,
@@ -120,6 +116,13 @@ const selectTab = (primary): void => {
 
 const goToKrPage = () => {
   window.open('https://www.zenerate.ai/kr', '_blank')
+}
+
+const openCalendlyPopup = () => {
+  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+    flag: true,
+    trigger: 'header',
+  })
 }
 
 const emit = defineEmits(['close'])

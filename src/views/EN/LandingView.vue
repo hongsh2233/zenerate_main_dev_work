@@ -145,7 +145,10 @@ import Emitter from '/Libraries/bus'
 import { MENU_EVENT } from '/Constants/eventConstant'
 
 const openCalendlyPopup = () => {
-  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, { flag: true, product: 'all' })
+  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+    flag: true,
+    trigger: 'laststrip',
+  })
 }
 
 const startOfProductSection = ref(null)

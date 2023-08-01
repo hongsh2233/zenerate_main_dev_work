@@ -11,7 +11,7 @@
       class="popup-content relative m-auto flex flex-col flex-nowrap items-center overflow-hidden rounded-8 bg-white pt-42"
     >
       <button
-        v-if="product === 'all' && showBackButton"
+        v-if="trigger !== 'zenapp' && showBackButton"
         @click="restartCalendly"
         class="absolute top-14 left-14 h-24 text-gray-600 hover:text-gray-700"
       >
@@ -42,14 +42,23 @@ import { IconBase } from '/Components/EN'
 import Calendly from './Calendly.vue'
 
 const props = defineProps({
-  product: String as PropType<'all' | 'zenerate-app'>,
+  trigger: String as PropType<'zenapp' | 'header' | 'laststrip'>,
 })
 const emits = defineEmits(['close'])
-const calendlyUrl = computed(() =>
-  props.product === 'zenerate-app'
-    ? 'https://calendly.com/zenerate/app-demo'
-    : 'https://calendly.com/d/yrk-k6f-zbv?hide_gdpr_banner=1'
-)
+
+const CALENDLY_URL_DIC = {
+  default: 'https://calendly.com/d/yrk-k6f-zbv',
+  zenapp:
+    'https://calendly.com/zenerate/app-demo?&utm_source=homepage-zenapp&utm_medium=website',
+  header:
+    'https://calendly.com/d/yrk-k6f-zbv?utm_source=homepage-header&utm_medium=website',
+  laststrip:
+    'https://calendly.com/d/yrk-k6f-zbv?utm_source=homepage-laststrip&utm_medium=website',
+}
+const calendlyUrl = computed(() => {
+  const trigger = props.trigger ?? 'default'
+  return CALENDLY_URL_DIC[trigger]
+})
 
 const showBackButton = ref(false)
 
