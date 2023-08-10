@@ -37,7 +37,7 @@
             @focus="() => blur()"
             :key="idx"
           >
-            <span>{{ item['label'] }}</span>
+            <span>{{ $t(item['label']) }}</span>
           </div>
         </div>
       </transition>
