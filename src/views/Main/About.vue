@@ -240,9 +240,9 @@
       <div class="contents-title">{{ $t('main.team.title') }}</div>
       <div
         class="team-image"
-        :style="{ 'background-image': `url('/img/team_${currentTab}.jpg')` }"
+        :style="{ 'background-image': `url('/img/main_team_new.jpg')` }"
       ></div>
-      <div class="contents-tab-wrapper">
+      <!-- <div class="contents-tab-wrapper">
         <div
           class="contents-tab hover-pointer"
           :class="{ active: currentTab === 'all' }"
@@ -251,14 +251,14 @@
           {{ $t('main.team.menu.zenerate') }}
         </div>
         <div class="horizontal-spacer"></div>
-        <!-- <div
+        <div
           class="contents-tab hover-pointer"
           :class="{ active: currentTab === 'marketing' }"
           @click="toggleTab('marketing')"
         >
           {{ $t('main.team.menu.marketing') }}
         </div>
-        <div class="horizontal-spacer"></div> -->
+        <div class="horizontal-spacer"></div>
         <div
           class="contents-tab hover-pointer"
           :class="{ active: currentTab === 'product' }"
@@ -274,8 +274,8 @@
         >
           {{ $t('main.team.menu.it') }}
         </div>
-      </div>
-      <div class="contents-item-wrapper">
+      </div> -->
+      <!-- <div class="contents-item-wrapper">
         <transition-group name="fade">
           <div
             class="contents-item"
@@ -325,7 +325,7 @@
         <div class="contents-item fake"></div>
         <div class="contents-item fake"></div>
         <div class="contents-item fake"></div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -1088,18 +1088,17 @@ useHead({
   .team-image {
     width: 100%;
     overflow: hidden;
-    margin-bottom: 24px;
     text-align: center;
     background-size: cover;
     background-position: center;
     @include desktop {
-      height: 500px;
+      height: 700px;
     }
     @include tablet {
-      height: 380px;
+      height: 600px;
     }
     @include mobile {
-      height: 240px;
+      height: 300px;
     }
   }
   @include mobile {
