@@ -87,15 +87,21 @@
           "team": {
             "desc": [
               "제너레잇 팀",
-              "Product Team",
-              "SW Development Team",
+              "Planning Team",
+              "Engine Team",
+              "UI/UX Team",
+              "SD Team",
+              "Business Support Team",
               "Marketing Team"
             ],
             "work": [
               "",
-              "건축, 부동산 개발 R&D",
-              "프론트엔드, 백엔드 개발",
-              "회사 및 솔루션 홍보"
+              "프로덕트 기획 및 데이터 품질 관리",
+              "건축 설계 제품 및 엔진 기획 개발 ",
+              "유저 인터페이스 기획 및 디자인",
+              "소프트웨어 개발",
+              "경영 지원",
+              "제품 마케팅 및 영업"
             ]
           }
         }
