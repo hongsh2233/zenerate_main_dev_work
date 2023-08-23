@@ -13,30 +13,72 @@
       </div>
       <div class="menu-item">
         <div class="item-left">
-          <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/kr/main/about">{{
-              $t('menu.ourCompany')
-            }}</router-link>
+          <div class="left-link">
+            <router-link to="/kr/main/about" custom v-slot="{ href, navigate }">
+              <a
+                :href="href"
+                @click="selectSubLink(navigate, $event)"
+                class="navigation-link sub"
+              >
+                {{ $t('menu.ourCompany') }}
+              </a>
+            </router-link>
           </div>
-          <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/kr/main/news">{{
-              $t('menu.news')
-            }}</router-link>
+          <div class="left-link">
+            <router-link to="/kr/main/news" custom v-slot="{ href, navigate }">
+              <a
+                :href="href"
+                @click="selectSubLink(navigate, $event)"
+                class="navigation-link sub"
+              >
+                {{ $t('menu.news') }}
+              </a>
+            </router-link>
           </div>
-          <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/kr/main/service">{{
-              $t('menu.service')
-            }}</router-link>
+          <div class="left-link">
+            <router-link
+              to="/kr/main/service"
+              custom
+              v-slot="{ href, navigate }"
+            >
+              <a
+                :href="href"
+                @click="selectSubLink(navigate, $event)"
+                class="navigation-link sub"
+              >
+                {{ $t('menu.service') }}
+              </a>
+            </router-link>
           </div>
-          <div class="left-link hover-pointer" v-if="locale != 'en'">
-            <router-link @click="toggleDrawer(false)" to="/kr/main/career">{{
-              $t('menu.career')
-            }}</router-link>
+          <div class="left-link" v-if="locale != 'en'">
+            <router-link
+              to="/kr/main/career"
+              custom
+              v-slot="{ href, navigate }"
+            >
+              <a
+                :href="href"
+                @click="selectSubLink(navigate, $event)"
+                class="navigation-link sub"
+              >
+                {{ $t('menu.career') }}
+              </a>
+            </router-link>
           </div>
-          <div class="left-link hover-pointer">
-            <router-link @click="toggleDrawer(false)" to="/kr/main/contact">{{
-              $t('menu.contact')
-            }}</router-link>
+          <div class="left-link">
+            <router-link
+              to="/kr/main/contact"
+              custom
+              v-slot="{ href, navigate }"
+            >
+              <a
+                :href="href"
+                @click="selectSubLink(navigate, $event)"
+                class="navigation-link sub"
+              >
+                {{ $t('menu.contact') }}
+              </a>
+            </router-link>
           </div>
         </div>
         <!-- <div class="item-right">
@@ -72,6 +114,11 @@ const { t, locale } = useI18n()
 const emit = defineEmits(['toggleDrawer'])
 const toggleDrawer = (flag) => {
   emit('toggleDrawer', flag)
+}
+
+const selectSubLink = (navigate, event) => {
+  toggleDrawer(false)
+  navigate(event)
 }
 </script>
 <style lang="scss" scoped>
