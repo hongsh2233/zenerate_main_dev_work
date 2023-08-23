@@ -129,7 +129,7 @@ const selectSubLink = (navigate, event) => {
   width: 100vw;
   height: 100vh;
   background-color: $white;
-  z-index: 999;
+  z-index: 9999;
   .menu-inner {
     @include desktop {
       width: 1280px;
