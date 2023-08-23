@@ -7,14 +7,14 @@
             <span>{{ $t('module.team.caption') }}</span>
           </router-link>
         </div>
-        <div class="title-date">2017 - 2022</div>
+        <div class="title-date">2017 - 2023</div>
         <div class="title-content">
           {{ $t('module.team.contents[0]') }}
         </div>
       </div>
       <div
         class="team-image"
-        style="background-image: url('/img/main_team.png')"
+        style="background-image: url('/img/main_team_new.jpg')"
       ></div>
     </div>
   </div>
@@ -85,7 +85,7 @@ const router = useRouter()
   .team-image {
     grid-area: image;
     background-position-x: center;
-    background-position-y: top;
+    background-position-y: center;
     background-size: cover;
     @include desktop {
       height: 275px;
