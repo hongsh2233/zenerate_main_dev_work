@@ -1,6 +1,6 @@
 <template>
   <div class="input-select-wrapper">
-    <p>{{ props.title || $t('main.contact.form.purpose') }}</p>
+    <slot name="label">{{ props.title }}</slot>
     <div class="input-select-container">
       <input type="text" class="dummy" ref="dummy" inputmode="none" />
       <div
