@@ -146,6 +146,8 @@
           $t('about.timeline.title[1]')
         }}</span>
         <span>{{ $t('about.timeline.title[2]') }}</span>
+        <br />
+        <span>{{ $t('about.timeline.title[3]') }}</span>
       </div>
       <div class="timeline-item-wrapper">
         <div class="timeline-spacer-wrapper hidden-mobile">
@@ -154,9 +156,10 @@
             <p>2019</p>
             <p>2020</p>
             <p>2021</p>
+            <p>2022</p>
           </div>
           <div class="timeline-spacer"></div>
-          <div class="timeline-end">2022</div>
+          <div class="timeline-end">2023</div>
         </div>
         <div class="timeline-left-wrapper hidden-mobile">
           <div
@@ -907,7 +910,7 @@ useHead({
         transform: translateX(-50%);
         .timeline-start {
           @include flex($dir: column, $justify: space-around);
-          height: 250px;
+          height: 500px;
           margin-bottom: 10px;
           @include mobile {
             display: none;
