@@ -26,10 +26,11 @@
       <div class="first-text" v-else>
         <p>Zenerate finds</p>
         <p>
-          <span class="typing-text">{{ typingEn }}</span><br>
+          <span class="typing-text">{{ typingEn }}</span
+          ><br />
           building design solutions
         </p>
-        <p> for real estate development.</p>
+        <p>for real estate development.</p>
       </div>
     </div>
     <div
@@ -65,7 +66,7 @@
             transform: `translateY(${transform.secondFirstSecond}px)`,
           }"
         >
-          <p>평균 12%의 추가 개발 수익을 발생시키고 있습니다.</p>
+          <p>평균 28%의 추가 개발 수익을 발생시키고 있습니다.</p>
         </div>
       </div>
       <div class="second-first-text" v-else>
@@ -86,7 +87,7 @@
             transform: `translateY(${transform.secondFirstSecond}px)`,
           }"
         >
-          <p>Our clients have seen revenues increase by 12% on average.</p>
+          <p>Our clients have seen revenues increase by 28% on average.</p>
         </div>
       </div>
       <div class="second-second-text" v-if="locale != 'en'">
@@ -123,7 +124,7 @@
             transform: `translateY(${transform.secondSecondFirst}px)`,
           }"
         >
-          <p>Zenerate is disrupting </p>
+          <p>Zenerate is disrupting</p>
           <p>the real estate development industry.</p>
         </div>
         <div
@@ -134,7 +135,7 @@
           }"
         >
           <p>Zenerate leads the way by providing data-driven insights</p>
-          <p>based on multiple key variables produced by </p>
+          <p>based on multiple key variables produced by</p>
           <p>
             our innovative architectural design automation and AI technology.
           </p>
@@ -188,7 +189,27 @@ const vectorColor = ref('#4747FF')
 const typing = ref('')
 const typingLetter = ['최', '고', '의', ' ', '안']
 const typingEn = ref('')
-const typingLetterEn = ['t','h','e',' ','m','o','s','t',' ', 'p','r','o','f','i','t','a','b','l','e']
+const typingLetterEn = [
+  't',
+  'h',
+  'e',
+  ' ',
+  'm',
+  'o',
+  's',
+  't',
+  ' ',
+  'p',
+  'r',
+  'o',
+  'f',
+  'i',
+  't',
+  'a',
+  'b',
+  'l',
+  'e',
+]
 const isVisible = ref('block')
 
 function setVectorColor(scrollY) {
@@ -241,7 +262,7 @@ onMounted(() => {
   }, 500)
   let startTypingEn = setInterval(() => {
     typingEn.value += typingLetterEn[typingEn.value.length]
-    if (typingEn.value.length > typingLetterEn.length-1) {
+    if (typingEn.value.length > typingLetterEn.length - 1) {
       clearInterval(startTypingEn)
     }
   }, 300)
@@ -275,7 +296,6 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-
 .module-scroll-wrapper {
   height: 4000px;
   width: 100%;
@@ -327,7 +347,7 @@ onMounted(() => {
         p {
           @include bold(20);
         }
-        span{
+        span {
           @include bold(20);
         }
       }

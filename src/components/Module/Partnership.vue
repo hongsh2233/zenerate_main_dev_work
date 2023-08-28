@@ -15,11 +15,11 @@
         <img class="partner-image" src="/img/partners/partner_hyundai.png" />
         <img class="partner-image" src="/img/partners/partner_hdc.png" />
         <img class="partner-image" src="/img/partners/partner_kad.png" />
-        <img class="partner-image" src="/img/partners/partner_jlp.png" />
         <img class="partner-image" src="/img/partners/partner_sola.png" />
         <img class="partner-image" src="/img/partners/partner_neovalue.png" />
         <img class="partner-image" src="/img/partners/partner_oltman.png" />
         <img class="partner-image" src="/img/partners/partner_igis.png" />
+        <img class="partner-image" src="/img/partners/partner_cushman.png" />
 
         <img class="partner-image" src="/img/partners/partner_shinyoung.png" />
         <img class="partner-image" src="/img/partners/partner_mdm.png" />

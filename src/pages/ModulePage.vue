@@ -9,7 +9,7 @@
     <div class="grid-item explanation"><Explanation></Explanation></div>
     <div class="grid-item consulting"><Consulting></Consulting></div>
     <div class="grid-item fold"><Fold></Fold></div>
-    <div class="grid-item monthly"><monthly-zenerate></monthly-zenerate></div>
+    <!-- <div class="grid-item monthly"><monthly-zenerate></monthly-zenerate></div> -->
     <div class="grid-item program"><Program></Program></div>
     <div class="grid-item partnership"><Partnership></Partnership></div>
     <div class="grid-item solution"><Solution></Solution></div>
@@ -34,7 +34,7 @@ import News from '/Components/Module/News.vue'
 // @ts-ignore
 import Fold from '/Components/Module/Fold.vue'
 // @ts-ignore
-import MonthlyZenerate from '/Components/Module/MonthlyZenerate.vue'
+// import MonthlyZenerate from '/Components/Module/MonthlyZenerate.vue'
 // @ts-ignore
 import Partnership from '/Components/Module/Partnership.vue'
 // @ts-ignore
@@ -88,7 +88,7 @@ import Scroll from '/Components/Module/Scroll.vue'
   .news {
     grid-area: news;
     @include desktop {
-      height: 1417px;
+      height: 1060px;
       padding: 0px 56px;
     }
     @include tablet {
@@ -101,10 +101,11 @@ import Scroll from '/Components/Module/Scroll.vue'
   .team {
     grid-area: team;
     @include desktop {
-      height: 559px;
+      height: 220px;
     }
     @include tablet {
-      height: auto;
+      margin-top: auto;
+      height: 264px;
     }
     @include mobile {
       height: auto;
@@ -114,7 +115,7 @@ import Scroll from '/Components/Module/Scroll.vue'
     grid-area: consulting;
     background: white;
     @include desktop {
-      height: 608px;
+      height: 540px;
     }
     @include tablet {
       height: 608px;
@@ -126,7 +127,7 @@ import Scroll from '/Components/Module/Scroll.vue'
   .explanation {
     grid-area: explanation;
     @include desktop {
-      height: 250px;
+      height: 180px;
     }
     @include tablet {
       height: auto;
@@ -235,7 +236,6 @@ import Scroll from '/Components/Module/Scroll.vue'
       'column column column column news news news explanation explanation explanation explanation'
       'column column column column news news news consulting consulting consulting consulting'
       'column column column column news news news team team team team'
-      'monthly monthly monthly monthly news news news team team team team'
       'fold fold fold fold fold fold fold fold fold fold fold'
       'program program program program solution solution solution solution solution solution solution'
       'program program program program youtube youtube youtube youtube youtube youtube youtube'
@@ -248,7 +248,6 @@ import Scroll from '/Components/Module/Scroll.vue'
       'column column column column column explanation explanation explanation explanation explanation'
       'column column column column column consulting consulting consulting consulting consulting'
       'column column column column column team team team team team'
-      'monthly monthly monthly monthly monthly team team team team team'
       'news news news news news news news news news news'
       'fold fold fold fold fold fold fold fold fold fold'
       'partnership partnership partnership partnership partnership program program program program program'
@@ -266,7 +265,6 @@ import Scroll from '/Components/Module/Scroll.vue'
       'news news news news news news news news news news'
       'fold fold fold fold fold fold fold fold fold fold'
       'team team team team team team team team team team'
-      'monthly monthly monthly monthly monthly monthly monthly monthly monthly monthly'
       'partnership partnership partnership partnership partnership partnership partnership partnership partnership partnership'
       'career career career career career career career career career career'
       'youtube youtube youtube youtube youtube youtube youtube youtube youtube youtube'
