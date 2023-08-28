@@ -160,11 +160,11 @@
       <div class="timeline-item-wrapper">
         <div class="timeline-spacer-wrapper hidden-mobile">
           <div class="timeline-start">
-            <p>2018</p>
-            <p>2019</p>
-            <p>2020</p>
-            <p>2021</p>
-            <p>2022</p>
+            <p class="absolute top-[5px]">2018</p>
+            <p class="absolute top-[80px]">2019</p>
+            <p class="absolute top-[160px]">2020</p>
+            <p class="absolute top-[1050px] lg:top-[1020px]">2021</p>
+            <p class="absolute top-[1335px] lg:top-[1315px]">2022</p>
           </div>
           <div class="timeline-spacer"></div>
           <div class="timeline-end">2023</div>
@@ -911,12 +911,15 @@ useHead({
         transform: translateX(-50%);
         .timeline-start {
           @include flex($dir: column, $justify: space-around);
-          height: 500px;
+
           margin-bottom: 10px;
           @include mobile {
             display: none;
           }
           p {
+            width: 100%;
+            z-index: 10;
+            background-color: white;
             @include bold(40);
             color: #b9caff;
             &:first-child {
