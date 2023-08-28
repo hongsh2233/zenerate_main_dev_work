@@ -75,7 +75,7 @@ const { locale } = useI18n()
 
 const router = useRouter()
 const newsList = ref([])
-const newsListSliced = computed(() => newsList.value.slice(0, 7))
+const newsListSliced = computed(() => newsList.value.slice(0, 6))
 
 const toNewsPage = (id) => {
   router.push(`/kr/main/news?q=${id}`)
