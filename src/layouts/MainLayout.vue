@@ -16,10 +16,10 @@
         @toggleDrawer="toggleDrawer"
       />
     </transition>
-    <NewsLetterModal
+    <!-- <NewsLetterModal
       v-if="showNewsLetterModal"
       @close="showNewsLetterModal = false"
-    ></NewsLetterModal>
+    ></NewsLetterModal> -->
   </div>
 </template>
 <script setup>
@@ -27,24 +27,24 @@ import { ref, onMounted } from 'vue'
 import Header from '/Components/HeaderMain.vue'
 import Footer from '/Components/Footer.vue'
 import MenuDrawer from '/Components/MenuDrawer.vue'
-import NewsLetterModal from '/Components/NewsLetterModal.vue'
+// import NewsLetterModal from '/Components/NewsLetterModal.vue'
 const showDrawer = ref(false)
 
-const showNewsLetterModal = ref(false)
-const toggleNewsLetterModal = (flag) => {
-  if (flag != null) showNewsLetterModal.value = flag
-  else showNewsLetterModal.value = !showNewsLetterModal.value
-}
+// const showNewsLetterModal = ref(false)
+// const toggleNewsLetterModal = (flag) => {
+//   if (flag != null) showNewsLetterModal.value = flag
+//   else showNewsLetterModal.value = !showNewsLetterModal.value
+// }
 
 const toggleDrawer = (flag) => {
   showDrawer.value = flag
 }
 
-const isFirst = ref(true)
+// const isFirst = ref(true)
 
-onMounted(() => {
-  if (isFirst) toggleNewsLetterModal(true)
-})
+// onMounted(() => {
+//   if (isFirst) toggleNewsLetterModal(true)
+// })
 </script>
 <style lang="scss">
 .layout-main {

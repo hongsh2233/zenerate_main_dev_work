@@ -18,19 +18,28 @@
           <p>{{ $t('main.contact.form.email') }}</p>
           <input type="text" v-model="contactForm.email" />
         </div>
-
-        <SelectInput
-          :placeholder="$t('main.contact.form.purpose')"
-          :items="items"
-          :selected="contactForm.purpose"
-          @onSelect="(v) => (contactForm.purpose = v)"
-        />
+        <div class="label-dropdown">
+          <SelectInput
+            :placeholder="$t('main.contact.form.purpose')"
+            :items="items"
+            :selected="contactForm.purpose"
+            @onSelect="(v) => (contactForm.purpose = v)"
+          >
+            <template #label>
+              <p>{{ $t('main.contact.form.purpose') }}</p>
+            </template>
+          </SelectInput>
+        </div>
         <div class="label-textarea">
           <p>{{ $t('main.contact.form.message') }}</p>
           <textarea v-model="contactForm.message" rows="7" />
         </div>
         <div class="contact-send-wrapper">
-          <div class="contact-send hover-pointer" @click="sendEmail">
+          <div
+            class="contact-send"
+            :class="!sendEmailStatus && 'hover-pointer'"
+            @click="sendEmail"
+          >
             <span>{{
               $t(
                 sendEmailStatus
@@ -39,6 +48,7 @@
               )
             }}</span>
             <svg
+              v-if="!sendEmailStatus"
               width="146"
               height="28"
               viewBox="0 0 146 28"
@@ -110,14 +120,27 @@ const contactForm = reactive({
   message: '',
 })
 
+const resetForm = () => {
+  Object.assign(contactForm, {
+    company: '',
+    name: '',
+    email: '',
+    purpose: null,
+    message: '',
+  })
+}
+
 const sendEmail = async () => {
   if (sendEmailStatus.value == true) return
   const payload = {
     ...contactForm,
-    purpose: t(contactForm.purpose.label),
+    purpose: t(
+      contactForm.purpose?.label ?? 'main.contact.form.dropdown.inquery'
+    ),
   }
   await ApiService.SEND_EMAIL(payload)
   sendEmailStatus.value = true
+  resetForm()
 }
 
 useHead({
@@ -293,6 +316,21 @@ useHead({
     background-color: red;
   }
 }
+.label-dropdown {
+  width: 100%;
+  text-align: left;
+  height: 88px;
+  margin-bottom: 60px;
+  border-radius: 0px;
+  p {
+    @include medium(16);
+    color: rgba($black-1, 0.4);
+    margin-bottom: 12px;
+    @include mobile {
+      @include medium(14);
+    }
+  }
+}
 .label-textarea {
   width: 100%;
   margin-bottom: 40px;
@@ -323,13 +361,17 @@ useHead({
   margin-bottom: 60px;
   position: relative;
   .contact-send {
-    width: 145px;
-    margin-top: 8px;
+    width: 100%;
+    margin-top: 20px;
     position: absolute;
     right: 0;
     @include flex($dir: column);
     text-align: center;
     span {
+      min-width: fit-content;
+      position: absolute;
+      bottom: 0;
+      right: 60px;
       @include bold(16);
       line-height: 40px;
       color: $main;
@@ -340,6 +382,7 @@ useHead({
     svg {
       position: absolute;
       bottom: 0;
+      right: 0;
       @include mobile {
         bottom: -5px;
       }

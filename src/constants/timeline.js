@@ -144,4 +144,18 @@ export default [
     icon: 'emoji_events',
     year: 2022,
   },
+  {
+    kr: ['Z-maps LA 지역 출시'],
+    en: ['Launched Z-maps for LA County'],
+    active: false,
+    icon: 'business',
+    year: 2023,
+  },
+  {
+    kr: ['SoLa Impact 와 전략적 파트너십 체결'],
+    en: ['Entered into a strategic partnership with SoLa Impact'],
+    active: false,
+    icon: 'question_answer',
+    year: 2023,
+  },
 ]

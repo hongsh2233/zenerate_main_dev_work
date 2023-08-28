@@ -348,7 +348,9 @@ const currentComponent = computed(() => {
       margin-top: 80px;
       .team-item {
         @include flex;
+        align-items: center;
         margin-left: 85px;
+        margin-bottom: 24px;
         @include mobile {
           margin-left: 16px;
           margin-right: 16px;
@@ -357,10 +359,11 @@ const currentComponent = computed(() => {
           margin-left: 16px;
         }
         .item-desc {
-          width: 220px;
+          width: 180px;
+          margin-right: 36px;
           @include bold(24);
           color: white;
-          margin-bottom: 24px;
+
           @include mobile {
             @include bold(12);
             width: 100px;

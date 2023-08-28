@@ -112,17 +112,21 @@
             {{ $t('about.partner.content[1]') }}
           </div>
           <div class="partner-image-group">
-            <div>
-              <img src="/img/partner_1.png" alt="partner" />
-              <img src="/img/partner_2.png" alt="partner" />
-              <img src="/img/partner_4.png" alt="partner" />
-              <img src="/img/partner_5.png" alt="partner" />
-            </div>
-            <div>
-              <img src="/img/partner_6.png" alt="partner" />
-              <img src="/img/partner_11.png" alt="partner" />
-              <img src="/img/partner_3.png" alt="partner" />
-            </div>
+            <img src="/img/partners/partner_hyundai.png" alt="partner" />
+            <img src="/img/partners/partner_hdc.png" alt="partner" />
+            <img src="/img/partners/partner_kad.png" alt="partner" />
+            <img src="/img/partners/partner_jlp.png" alt="partner" />
+            <img src="/img/partners/partner_sola.png" alt="partner" />
+            <img src="/img/partners/partner_neovalue.png" alt="partner" />
+            <img src="/img/partners/partner_oltman.png" alt="partner" />
+            <img src="/img/partners/partner_igis.png" alt="partner" />
+            <img src="/img/partners/partner_cushman.png" alt="partner" />
+            <img src="/img/partners/partner_shinyoung.png" alt="partner" />
+            <img src="/img/partners/partner_mdm.png" alt="partner" />
+            <img src="/img/partners/partner_hoban.png" alt="partner" />
+            <img src="/img/partners/partner_hanlim.png" alt="partner" />
+            <img src="/img/partners/partner_gawcapital.png" alt="partner" />
+            <img src="/img/partners/partner_kunsa.png" alt="partner" />
           </div>
         </div>
         <div class="partner-content">
@@ -130,11 +134,15 @@
             {{ $t('about.partner.content[2]') }}
           </div>
           <div class="partner-image-group">
-            <img src="/img/partner_7.png" alt="partner" />
-            <img src="/img/partner_10.png" alt="partner" />
-            <img src="/img/partner_12.png" alt="partner" />
-            <img src="/img/partner_9.png" alt="partner" />
-            <img src="/img/partner_8.png" alt="partner" />
+            <img src="/img/partners/partner_neovalue.png" alt="partner" />
+            <img src="/img/partners/partner_dsn.png" alt="partner" />
+            <img src="/img/partners/partner_sl.png" alt="partner" />
+            <img src="/img/partners/partner_daekyo.png" alt="partner" />
+            <img src="/img/partners/partner_asiafni.png" alt="partner" />
+            <img src="/img/partners/partner_krypton.png" alt="partner" />
+            <img src="/img/partners/partner_bluepoint.png" alt="partner" />
+            <img src="/img/partners/partner_oneoone.png" alt="partner" />
+            <img src="/img/partners/partner_planh.png" alt="partner" />
           </div>
         </div>
       </div>
@@ -146,17 +154,20 @@
           $t('about.timeline.title[1]')
         }}</span>
         <span>{{ $t('about.timeline.title[2]') }}</span>
+        <br />
+        <span>{{ $t('about.timeline.title[3]') }}</span>
       </div>
       <div class="timeline-item-wrapper">
         <div class="timeline-spacer-wrapper hidden-mobile">
           <div class="timeline-start">
-            <p>2018</p>
-            <p>2019</p>
-            <p>2020</p>
-            <p>2021</p>
+            <p class="absolute top-[5px]">2018</p>
+            <p class="absolute top-[80px]">2019</p>
+            <p class="absolute top-[160px]">2020</p>
+            <p class="absolute top-[1050px] lg:top-[1020px]">2021</p>
+            <p class="absolute top-[1335px] lg:top-[1315px]">2022</p>
           </div>
           <div class="timeline-spacer"></div>
-          <div class="timeline-end">2022</div>
+          <div class="timeline-end">2023</div>
         </div>
         <div class="timeline-left-wrapper hidden-mobile">
           <div
@@ -240,9 +251,9 @@
       <div class="contents-title">{{ $t('main.team.title') }}</div>
       <div
         class="team-image"
-        :style="{ 'background-image': `url('/img/team_${currentTab}.jpg')` }"
+        :style="{ 'background-image': `url('/img/main_team_new.jpg')` }"
       ></div>
-      <div class="contents-tab-wrapper">
+      <!-- <div class="contents-tab-wrapper">
         <div
           class="contents-tab hover-pointer"
           :class="{ active: currentTab === 'all' }"
@@ -251,14 +262,14 @@
           {{ $t('main.team.menu.zenerate') }}
         </div>
         <div class="horizontal-spacer"></div>
-        <!-- <div
+        <div
           class="contents-tab hover-pointer"
           :class="{ active: currentTab === 'marketing' }"
           @click="toggleTab('marketing')"
         >
           {{ $t('main.team.menu.marketing') }}
         </div>
-        <div class="horizontal-spacer"></div> -->
+        <div class="horizontal-spacer"></div>
         <div
           class="contents-tab hover-pointer"
           :class="{ active: currentTab === 'product' }"
@@ -274,8 +285,8 @@
         >
           {{ $t('main.team.menu.it') }}
         </div>
-      </div>
-      <div class="contents-item-wrapper">
+      </div> -->
+      <!-- <div class="contents-item-wrapper">
         <transition-group name="fade">
           <div
             class="contents-item"
@@ -325,7 +336,7 @@
         <div class="contents-item fake"></div>
         <div class="contents-item fake"></div>
         <div class="contents-item fake"></div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -834,28 +845,21 @@ useHead({
           }
         }
         .partner-image-group {
-          div {
-            @include tablet {
-              display: inline;
-            }
-            @include mobile {
-              display: inline;
-            }
-            img {
-              width: 164px;
-              margin: 0px 10px;
-              @include mobile {
-                width: 124px;
-                margin: 0px 10px;
-              }
-            }
-          }
+          max-width: 1000px;
+          margin: 0px auto;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
           img {
             width: 164px;
+            height: 100px;
+            object-fit: contain;
             margin: 0px 10px;
             @include mobile {
               width: 124px;
-              margin: 0px 10px;
+              height: 80px;
             }
           }
         }
@@ -907,12 +911,15 @@ useHead({
         transform: translateX(-50%);
         .timeline-start {
           @include flex($dir: column, $justify: space-around);
-          height: 250px;
+
           margin-bottom: 10px;
           @include mobile {
             display: none;
           }
           p {
+            width: 100%;
+            z-index: 10;
+            background-color: white;
             @include bold(40);
             color: #b9caff;
             &:first-child {
@@ -1088,18 +1095,17 @@ useHead({
   .team-image {
     width: 100%;
     overflow: hidden;
-    margin-bottom: 24px;
     text-align: center;
     background-size: cover;
     background-position: center;
     @include desktop {
-      height: 500px;
+      height: 700px;
     }
     @include tablet {
-      height: 380px;
+      height: 600px;
     }
     @include mobile {
-      height: 240px;
+      height: 300px;
     }
   }
   @include mobile {

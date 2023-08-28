@@ -163,10 +163,12 @@ onMounted(async () => {
   .column-insight {
     width: 100%;
     margin-top: auto;
-    flex: 1;
     @include flex($dir: column, $justify: flex-start);
     @include desktop {
-      height: 315px;
+      height: 280px;
+    }
+    @include tablet {
+      height: 240px;
     }
 
     .insight-caption {

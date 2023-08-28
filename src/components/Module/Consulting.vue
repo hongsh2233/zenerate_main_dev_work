@@ -67,7 +67,6 @@ onBeforeUnmount(() => {
 })
 </script>
 <style lang="scss" scoped>
-
 .consulting-inner {
   width: 100%;
   height: 100%;
@@ -108,7 +107,7 @@ onBeforeUnmount(() => {
     transition: opacity 1s ease;
     @include desktop {
       position: absolute;
-      top: 40px;
+      top: 0px;
     }
     @include tablet {
       padding: 0px 8px;

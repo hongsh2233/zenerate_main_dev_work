@@ -75,10 +75,10 @@ const { locale } = useI18n()
 
 const router = useRouter()
 const newsList = ref([])
-const newsListSliced = computed(() => newsList.value.slice(0, 7))
+const newsListSliced = computed(() => newsList.value.slice(0, 6))
 
 const toNewsPage = (id) => {
-  router.push(`/kr/main/news?q=${id}`);
+  router.push(`/kr/main/news?q=${id}`)
 }
 
 onMounted(async () => {
@@ -87,11 +87,10 @@ onMounted(async () => {
 })
 </script>
 <style lang="scss" scoped>
-
 .news-inner {
   width: 100%;
   height: 100%;
-  @include tablet{
+  @include tablet {
     margin-top: 32px;
   }
   .news-caption {
@@ -104,12 +103,21 @@ onMounted(async () => {
     @include desktop {
       height: calc(100% - 75px);
       @include flex();
+      &.hidden-desktop {
+        display: none !important;
+      }
     }
     @include tablet {
       height: 200px;
+      &.hidden-tablet {
+        display: none !important;
+      }
     }
     @include mobile {
       height: 130px;
+      &.hidden-mobile {
+        display: none !important;
+      }
     }
     .news-item {
       @include flex($dir: column, $justify: space-between);
