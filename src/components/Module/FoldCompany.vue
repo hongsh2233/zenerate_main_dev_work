@@ -56,36 +56,12 @@
       </div>
     </div>
     <div class="item-content team" v-show="companyTab === 'team'">
-      <div class="team-item">
+      <div v-for="idx in 5" class="team-item">
         <div class="item-desc">
-          {{ $t('module.fold.company.contents.team.desc[0]') }}
+          {{ $t(`module.fold.company.contents.team.desc[${idx}]`) }}
         </div>
         <div class="item-work">
-          {{ $t('module.fold.company.contents.team.work[0]') }}
-        </div>
-      </div>
-      <div class="team-item">
-        <div class="item-desc">
-          {{ $t('module.fold.company.contents.team.desc[1]') }}
-        </div>
-        <div class="item-work">
-          {{ $t('module.fold.company.contents.team.work[1]') }}
-        </div>
-      </div>
-      <div class="team-item">
-        <div class="item-desc">
-          {{ $t('module.fold.company.contents.team.desc[2]') }}
-        </div>
-        <div class="item-work">
-          {{ $t('module.fold.company.contents.team.work[2]') }}
-        </div>
-      </div>
-      <div class="team-item">
-        <div class="item-desc">
-          {{ $t('module.fold.company.contents.team.desc[3]') }}
-        </div>
-        <div class="item-work">
-          {{ $t('module.fold.company.contents.team.work[3]') }}
+          {{ $t(`module.fold.company.contents.team.work[${idx}]`) }}
         </div>
       </div>
     </div>

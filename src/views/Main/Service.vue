@@ -1,7 +1,25 @@
 <template>
   <section class="section-main-service">
-    <div class="service-container-wrapper">
-      <div class="service-container header">
+    <div class="service-container-wrapper flex flex-col items-center">
+      <div
+        class="text-14-semibold mb-30 w-fit text-center md:text-20 lg:text-26"
+      >
+        <span class="text-[#4D49F4]">zenerate.ai</span> 에서 제너레잇의 서비스에
+        대해<br />더 자세히 보실 수 있습니다.
+      </div>
+
+      <button
+        class="text-12-medium mb-16 h-fit rounded-4 bg-primary px-15 py-9 !text-white duration-300 hover:!text-core-200 md:mb-0 md:px-20 md:py-12 md:text-14 lg:mb-0 lg:px-25 lg:py-15 lg:text-16"
+        @click="openEnglishWeb"
+      >
+        미국 웹사이트로 가기
+      </button>
+
+      <img
+        class="service-image-bg w-full min-w-[360px] max-w-[786px]"
+        src="/img/service_bg.png"
+      />
+      <!-- <div class="service-container header">
         <div class="service-content">
           <p>{{ $t('main.service.content[0]') }}</p>
           <p>{{ $t('main.service.content[1]') }}</p>
@@ -38,7 +56,7 @@
           <img src="/img/service_consulting_1.png" />
           <img src="/img/service_consulting_2.png" />
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -111,11 +129,18 @@ useHead({
     },
   ],
 })
+
+const openEnglishWeb = () => {
+  Object.assign(document.createElement('a'), {
+    target: '_blank',
+    href: 'https://www.zenerate.ai/',
+  }).click()
+}
 </script>
 
 <style lang="scss" scoped>
 .service-container-wrapper {
-  padding-top: 150px;
+  padding-top: 90px;
 
   @include mobile {
     // padding-top: 0px;

@@ -9,6 +9,7 @@
         <span>{{ $t('main.news.title[1]') }}</span>
       </div>
       <div class="news-year-wrapper">
+        <button @click="() => ((targetYear = 2023), (nowId = -1))">2023</button>
         <button @click="() => ((targetYear = 2022), (nowId = -1))">2022</button>
         <button @click="() => ((targetYear = 2021), (nowId = -1))">2021</button>
         <button @click="() => ((targetYear = 2020), (nowId = -1))">2020</button>
@@ -190,13 +191,15 @@ useHead({
       @include center-center;
       @include mobile {
         justify-content: flex-start;
+        flex-wrap: wrap;
       }
       button {
         @include bold(16);
         line-height: 40px;
         background-color: rgba($grey-3, 0.5);
         padding: 4px 20px;
-        margin-right: 28px;
+        margin-right: 16px;
+        margin-bottom: 8px;
         border-radius: 100px;
         &:hover {
           background-color: $grey-3;

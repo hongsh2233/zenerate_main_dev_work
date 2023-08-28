@@ -34,17 +34,26 @@
                 Please Enter!
               </p>
             </div>
-            <SelectInput
-              placeholder="Select"
-              :items="items"
-              title="Inquiries"
-              :skipTranslate="true"
-              :selected="contactForm.purpose.value"
-              :valid="contactForm.purpose.valid"
-              @onSelect="
-                (v) => ((contactForm.purpose.value = v), validation('purpose'))
-              "
-            />
+            <div class="label-dropdown">
+              <SelectInput
+                placeholder="Select"
+                :items="items"
+                title="Inquiries"
+                :skipTranslate="true"
+                :selected="contactForm.purpose.value"
+                :valid="contactForm.purpose.valid"
+                @onSelect="
+                  (v) => (
+                    (contactForm.purpose.value = v), validation('purpose')
+                  )
+                "
+              >
+                <template #label>
+                  <p class="label-title">Inquiries</p>
+                </template>
+              </SelectInput>
+            </div>
+
             <div class="label-text">
               <p class="label-title">Name</p>
               <input
@@ -627,6 +636,7 @@ useHead({
       }
     }
     .label-text,
+    .label-dropdown,
     .label-textarea {
       .label-title {
         @include medium(14);
