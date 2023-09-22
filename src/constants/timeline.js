@@ -158,4 +158,11 @@ export default [
     icon: 'question_answer',
     year: 2023,
   },
+  {
+    kr: ['구글 여성 파운더스 펀드 선정'],
+    en: ['Selected for Google Women Founders Fund'],
+    active: false,
+    icon: 'emoji_events',
+    year: 2023,
+  },
 ]
