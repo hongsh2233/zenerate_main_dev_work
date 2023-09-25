@@ -13,13 +13,13 @@
           <p>{{ $d(new Date(nowNews.date), 'short') }}</p>
         </div>
         <div class="item-content">
-          <p>
-            <span>{{
+          <p
+            v-html="
               locale === 'ko'
                 ? nowNews.content_kr.content
                 : nowNews.content_en.content
-            }}</span>
-          </p>
+            "
+          ></p>
         </div>
         <div
           class="item-links"
