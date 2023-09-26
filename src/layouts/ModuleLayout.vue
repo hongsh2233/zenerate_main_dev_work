@@ -34,10 +34,6 @@ const toggleReductionOfCapitalModal = (flag) => {
   const fl = flag ?? !showReductionOfCapitalModal.value
   showReductionOfCapitalModal.value = fl
 }
-onMounted(() => {
-  console.log('@#@#@#@#@#')
-  toggleReductionOfCapitalModal(true)
-})
 
 useHead({
   title: '제너레잇 | 부동산개발 수익극대화 빌딩디자인 AI솔루션',
