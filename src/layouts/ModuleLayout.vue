@@ -7,6 +7,10 @@
       <MenuDrawer v-show="showDrawer" @toggleDrawer="toggleDrawer" />
     </transition>
   </div>
+  <ReductionOfCapitalModal
+    v-if="showReductionOfCapitalModal"
+    @close="() => toggleReductionOfCapitalModal(false)"
+  />
 </template>
 
 <script setup>
@@ -14,16 +18,26 @@ import Header from '/Components/HeaderMain.vue'
 import ModulePage from '/Pages/ModulePage.vue'
 import MenuDrawer from '/Components/MenuDrawer.vue'
 import Footer from '/Components/Footer.vue'
+import ReductionOfCapitalModal from '/Components/ReductionOfCapitalModal.vue'
 import { useHead } from '@vueuse/head'
 import { useI18n } from 'vue-i18n'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 const { t } = useI18n()
 
 const showDrawer = ref(false)
-
 const toggleDrawer = (flag) => {
   showDrawer.value = flag
 }
+
+const showReductionOfCapitalModal = ref(true)
+const toggleReductionOfCapitalModal = (flag) => {
+  const fl = flag ?? !showReductionOfCapitalModal.value
+  showReductionOfCapitalModal.value = fl
+}
+onMounted(() => {
+  console.log('@#@#@#@#@#')
+  toggleReductionOfCapitalModal(true)
+})
 
 useHead({
   title: '제너레잇 | 부동산개발 수익극대화 빌딩디자인 AI솔루션',
