@@ -174,32 +174,57 @@ const props = defineProps({
 
 const sheetName = computed(() => props.sheetName)
 
-const SignUpForm = ref({
-  firstName: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-  lastName: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-  email: {
-    value: '',
-    validator: Validation.email,
-    valid: null,
-  },
-  company: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-  is_modular_checked: {
-    value: false,
-    valid: true,
-  },
-})
+const SignUpForm = ref(
+  sheetName.value === 'Beta'
+    ? {
+        firstName: {
+          value: '',
+          validator: Validation.string,
+          valid: null,
+        },
+        lastName: {
+          value: '',
+          validator: Validation.string,
+          valid: null,
+        },
+        email: {
+          value: '',
+          validator: Validation.email,
+          valid: null,
+        },
+        company: {
+          value: '',
+          validator: Validation.string,
+          valid: null,
+        },
+        is_modular_checked: {
+          value: false,
+          valid: true,
+        },
+      }
+    : {
+        firstName: {
+          value: '',
+          validator: Validation.string,
+          valid: null,
+        },
+        lastName: {
+          value: '',
+          validator: Validation.string,
+          valid: null,
+        },
+        email: {
+          value: '',
+          validator: Validation.email,
+          valid: null,
+        },
+        company: {
+          value: '',
+          validator: Validation.string,
+          valid: null,
+        },
+      }
+)
 
 const canSubmitForm = computed(
   () =>
