@@ -179,7 +179,9 @@
                   @click="
                     () =>
                       (contactForm.interest.value =
-                        contactForm.interest.value === 'MODULAR' ? '' : '')
+                        contactForm.interest.value === 'MODULAR'
+                          ? ''
+                          : 'MODULAR')
                   "
                 >
                   <IconBase
