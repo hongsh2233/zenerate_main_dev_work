@@ -240,7 +240,7 @@
                   :height="20"
                   class="mt-2 mr-10 hidden w-20 min-w-20 max-w-20 lg:block"
                 />
-                <div class="text-13-medium lg:text-16">{{ data }}</div>
+                <div v-html="data" class="text-13-medium lg:text-16"></div>
               </div>
             </div>
           </div>
@@ -436,6 +436,7 @@ const BETA_TESTER = [
   'Receive early access to the newest version of the Zenerate App to test out',
   'Play a direct role in shaping and refining our innovative tool',
   'Major discounts upon official launch',
+  'Available for modular housing.<br/><i>Check the box in the form if you are interested</i>',
 ]
 
 const onloadImages = {
