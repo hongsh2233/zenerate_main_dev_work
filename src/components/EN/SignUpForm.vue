@@ -80,13 +80,13 @@
                 class="hover-pointer flex flex-row items-center"
                 @click="
                   () =>
-                    (SignUpForm.is_modular_checked.value = !SignUpForm
-                      .is_modular_checked.value)
+                    (SignUpForm.interest.value =
+                      SignUpForm.interest.value === 'MODULAR' ? '' : 'MODULAR')
                 "
               >
                 <IconBase
                   :icon-name="
-                    SignUpForm.is_modular_checked.value === true
+                    SignUpForm.interest.value === 'MODULAR'
                       ? 'checkbox-checked'
                       : 'checkbox'
                   "
@@ -96,7 +96,7 @@
                 />
                 <IconBase
                   :icon-name="
-                    SignUpForm.is_modular_checked.value === true
+                    SignUpForm.interest.value === 'MODULAR'
                       ? 'checkbox-checked'
                       : 'checkbox'
                   "
@@ -174,57 +174,32 @@ const props = defineProps({
 
 const sheetName = computed(() => props.sheetName)
 
-const SignUpForm = ref(
-  sheetName.value === 'Beta'
-    ? {
-        firstName: {
-          value: '',
-          validator: Validation.string,
-          valid: null,
-        },
-        lastName: {
-          value: '',
-          validator: Validation.string,
-          valid: null,
-        },
-        email: {
-          value: '',
-          validator: Validation.email,
-          valid: null,
-        },
-        company: {
-          value: '',
-          validator: Validation.string,
-          valid: null,
-        },
-        is_modular_checked: {
-          value: false,
-          valid: true,
-        },
-      }
-    : {
-        firstName: {
-          value: '',
-          validator: Validation.string,
-          valid: null,
-        },
-        lastName: {
-          value: '',
-          validator: Validation.string,
-          valid: null,
-        },
-        email: {
-          value: '',
-          validator: Validation.email,
-          valid: null,
-        },
-        company: {
-          value: '',
-          validator: Validation.string,
-          valid: null,
-        },
-      }
-)
+const SignUpForm = ref({
+  firstName: {
+    value: '',
+    validator: Validation.string,
+    valid: null,
+  },
+  lastName: {
+    value: '',
+    validator: Validation.string,
+    valid: null,
+  },
+  email: {
+    value: '',
+    validator: Validation.email,
+    valid: null,
+  },
+  company: {
+    value: '',
+    validator: Validation.string,
+    valid: null,
+  },
+  interest: {
+    value: '',
+    valid: true,
+  },
+})
 
 const canSubmitForm = computed(
   () =>

@@ -178,13 +178,13 @@
                   class="hover-pointer flex flex-row items-center"
                   @click="
                     () =>
-                      (contactForm.is_modular_checked.value = !contactForm
-                        .is_modular_checked.value)
+                      (contactForm.interest.value =
+                        contactForm.interest.value === 'MODULAR' ? '' : '')
                   "
                 >
                   <IconBase
                     :icon-name="
-                      contactForm.is_modular_checked.value === true
+                      contactForm.interest.value === 'MODULAR'
                         ? 'checkbox-checked'
                         : 'checkbox'
                     "
@@ -518,8 +518,8 @@ const contactForm = reactive({
     validator: Validation.string,
     valid: null,
   },
-  is_modular_checked: {
-    value: false,
+  interest: {
+    value: '',
     valid: true,
   },
   // city: {
