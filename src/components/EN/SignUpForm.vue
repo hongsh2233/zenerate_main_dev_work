@@ -74,6 +74,42 @@
               />
             </div>
           </div>
+          <div v-if="sheetName === 'Beta'" class="form-row mt-8">
+            <div class="input-wrapper">
+              <div
+                class="hover-pointer flex flex-row items-center"
+                @click="
+                  () =>
+                    (SignUpForm.is_modular_checked.value = !SignUpForm
+                      .is_modular_checked.value)
+                "
+              >
+                <IconBase
+                  :icon-name="
+                    SignUpForm.is_modular_checked.value === true
+                      ? 'checkbox-checked'
+                      : 'checkbox'
+                  "
+                  :width="16"
+                  :height="16"
+                  class="w-16 min-w-16 max-w-16 lg:hidden"
+                />
+                <IconBase
+                  :icon-name="
+                    SignUpForm.is_modular_checked.value === true
+                      ? 'checkbox-checked'
+                      : 'checkbox'
+                  "
+                  :width="20"
+                  :height="20"
+                  class="hidden w-20 min-w-20 max-w-20 lg:block"
+                />
+                <span class="ml-8 text-12 md:text-12 lg:text-14"
+                  >I am interested in an app for modular housing</span
+                >
+              </div>
+            </div>
+          </div>
         </div>
         <button
           type="button"
@@ -127,6 +163,7 @@ import Validation from '/Utils/Validation'
 import DotSpinnerWhite from './ui/DotSpinnerWhite.vue'
 import ApiService from '/Services/api'
 import router from '/@/router'
+import { IconBase } from '.'
 
 const props = defineProps({
   sheetName: {
@@ -157,6 +194,10 @@ const SignUpForm = ref({
     value: '',
     validator: Validation.string,
     valid: null,
+  },
+  is_modular_checked: {
+    value: false,
+    valid: true,
   },
 })
 

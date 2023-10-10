@@ -48,6 +48,20 @@
               />
               <p class="text">Major discounts upon official launch</p>
             </div>
+            <div class="text-wrapper">
+              <IconBase
+                class="icon-check"
+                icon-name="checkmark"
+                icon-color="#FFFFFF"
+                :width="20"
+                :height="20"
+              />
+              <p class="text">
+                Available for modular housing.<br /><i
+                  >Check the box in the form if you are interested</i
+                >
+              </p>
+            </div>
           </div>
           <!-- <p class="guide hidden-tablet hidden-mobile">
             <strong>Sign up</strong> and we'll send you an email <br />
@@ -157,6 +171,30 @@
                   >
                     Please provide your company name
                   </p>
+                </div>
+              </div>
+              <div class="form-row">
+                <div
+                  class="hover-pointer flex flex-row items-center"
+                  @click="
+                    () =>
+                      (contactForm.is_modular_checked.value = !contactForm
+                        .is_modular_checked.value)
+                  "
+                >
+                  <IconBase
+                    :icon-name="
+                      contactForm.is_modular_checked.value === true
+                        ? 'checkbox-checked'
+                        : 'checkbox'
+                    "
+                    :width="20"
+                    :height="20"
+                    class="w-20 min-w-20 max-w-20"
+                  />
+                  <span class="ml-8 text-14"
+                    >I am interested in an app for modular housing</span
+                  >
                 </div>
               </div>
               <!-- <div class="form-row">
@@ -479,6 +517,10 @@ const contactForm = reactive({
     value: '',
     validator: Validation.string,
     valid: null,
+  },
+  is_modular_checked: {
+    value: false,
+    valid: true,
   },
   // city: {
   //   value: '',
