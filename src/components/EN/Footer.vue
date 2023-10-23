@@ -55,19 +55,19 @@
               <p
                 class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
-                <a :href="'https://maps.zenerate.ai'"> Z-maps </a>
-              </p>
-              <p
-                class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
-              >
                 <router-link :to="{ name: 'en-overview' }">
                   Zenerate App
                 </router-link>
               </p>
-              <p class="text-14 font-medium text-gray-700">
+              <p
+                class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
+              >
                 <router-link :to="{ name: 'en-ai-consulting' }">
                   AI Consulting
                 </router-link>
+              </p>
+              <p class="text-14 font-medium text-gray-700">
+                <a :href="'https://maps.zenerate.ai'"> Z-maps </a>
               </p>
             </div>
 

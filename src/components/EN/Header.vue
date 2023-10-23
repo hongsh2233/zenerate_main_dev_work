@@ -38,13 +38,6 @@
                   v-for="(secondary, idx) in primary.children"
                   :key="idx"
                 >
-                  <a
-                    v-if="secondary.to === 'en-overview'"
-                    :href="'https://maps.zenerate.ai'"
-                  >
-                    <component :is="ZmapsIcon" :width="20" :height="20" />
-                    Z-Maps
-                  </a>
                   <router-link :to="{ name: secondary.to }">
                     <IconBase
                       :icon-name="secondary.icon"
@@ -54,6 +47,14 @@
                     />
                     {{ secondary.title }}
                   </router-link>
+
+                  <a
+                    v-if="secondary.to === 'en-ai-consulting'"
+                    :href="'https://maps.zenerate.ai'"
+                  >
+                    <component :is="ZmapsIcon" :width="20" :height="20" />
+                    Z-Maps
+                  </a>
                 </template>
               </div>
             </div>
