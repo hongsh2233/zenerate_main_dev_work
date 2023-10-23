@@ -20,22 +20,6 @@
               <transition name="slide-up">
                 <div v-show="toggleTab[tab.key]" class="navigation-link-list">
                   <template v-for="(nav, idx) in tab.children" :key="idx">
-                    <a
-                      v-if="nav.to === 'en-overview'"
-                      :href="'https://maps.zenerate.ai'"
-                      class="navigation-link sub"
-                      :class="nav.to"
-                      @click="close"
-                    >
-                      <component
-                        :is="ZmapsIcon"
-                        :width="26"
-                        :height="26"
-                        class="sub-icon"
-                      />
-                      Z-Maps
-                    </a>
-
                     <router-link
                       :to="{ name: nav.to }"
                       custom
@@ -56,6 +40,22 @@
                         {{ nav.title }}
                       </a>
                     </router-link>
+
+                    <a
+                      v-if="nav.to === 'en-ai-consulting'"
+                      :href="'https://maps.zenerate.ai'"
+                      class="navigation-link sub"
+                      :class="nav.to"
+                      @click="close"
+                    >
+                      <component
+                        :is="ZmapsIcon"
+                        :width="26"
+                        :height="26"
+                        class="sub-icon"
+                      />
+                      Z-Maps
+                    </a>
                   </template>
                 </div>
               </transition>

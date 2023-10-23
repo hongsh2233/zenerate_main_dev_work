@@ -1,22 +1,24 @@
 <template>
   <div class="layout-en" id="layout-en">
-    <a :href="'https://maps.zenerate.ai'">
-      <button type="button" class="signup-banner" v-show="path !== '/beta'">
-        <div class="signup-banner-inner">
-          <p>
-            <span>View your city's&nbsp;</span>
-            <span>latest developments with Z-maps!</span>
-          </p>
-          <IconBase
-            icon-name="arrow-right"
-            :width="20"
-            :height="20"
-            iconColor="white"
-            class="ml-8"
-          />
-        </div>
-      </button>
-    </a>
+    <button
+      type="button"
+      class="signup-banner"
+      v-show="path !== '/beta'"
+      @click="() => router.push({ name: 'en-overview' })"
+    >
+      <div class="signup-banner-inner">
+        <p>
+          <span>Beta Test the Zenerate App</span>
+        </p>
+        <IconBase
+          icon-name="arrow-right"
+          :width="20"
+          :height="20"
+          iconColor="white"
+          class="ml-8"
+        />
+      </div>
+    </button>
 
     <Header
       v-show="path !== '/beta'"
@@ -60,6 +62,7 @@ import CalendlyPopup from '/Components/EN/CalendlyPopup.vue'
 import { Button, IconBase } from '/Components/EN'
 
 const route = useRoute()
+const router = useRouter()
 const path = computed(() => route.path)
 
 // ---------------- try popup ----------------
