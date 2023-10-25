@@ -24,6 +24,7 @@ import '/Plugins/FontObserver'
 const head = createHead()
 
 const app = createApp(App)
+app.use(head)
 app.use(Router)
 app.use(i18n)
 app.use(Store.original)
@@ -31,7 +32,6 @@ app.use(gtmPlugin)
 app.use(VueGtag, {
   property: [{ id: 'UA-212995971-1' }, { id: 'UA-214276888-1' }],
 })
-app.use(head)
 app.mount('#app')
 
 export { app }
