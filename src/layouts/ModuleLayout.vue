@@ -7,10 +7,10 @@
       <MenuDrawer v-show="showDrawer" @toggleDrawer="toggleDrawer" />
     </transition>
   </div>
-  <ReductionOfCapitalModal
+  <!-- <ReductionOfCapitalModal
     v-if="showReductionOfCapitalModal"
     @close="() => toggleReductionOfCapitalModal(false)"
-  />
+  /> -->
 </template>
 
 <script setup>
