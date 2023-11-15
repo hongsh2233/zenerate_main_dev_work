@@ -391,7 +391,7 @@
         >
 
         <div
-          class="flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px]"
+          class="relative flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px]"
         >
           <template v-if="bannerEmail.isSent">
             <svg
@@ -421,17 +421,25 @@
             <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
           </template>
           <template v-else>
-            <!-- TODO: errormessage -->
+            <!-- TODO: 에러메시지 UI 변경예정 -->
+            <transition name="fade">
+              <span
+                v-if="bannerEmail.showErrorMsg"
+                class="absolute bottom-[-28px] rounded-4 bg-red-50 px-12 py-4 text-12 text-red-500"
+                >Please enter a valid email.</span
+              >
+            </transition>
             <input
               type="text"
-              :placeholder="'Email Address'"
-              class="h-full w-full border-none pl-12"
               inputmode="email"
+              placeholder="Email Address"
               v-model="bannerEmail.inputValue"
-              @input="bannerEmail.validator"
+              class="h-full w-full border-none pl-12"
+              @focus="bannerEmail.showErrorMsg = false"
             />
             <button
-              class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white md:w-[157px] md:min-w-[157px]"
+              class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white hover:bg-core-700 md:w-[157px] md:min-w-[157px]"
+              @click="sendBannerEmail"
             >
               Join Waitlist
             </button>
@@ -449,6 +457,7 @@
 import { onMounted, ref, computed, watch } from 'vue'
 import { useHead } from '@vueuse/head'
 
+import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import ImagePreloader from '/Utils/ImagePreloader'
 import { ROLES } from '/Constants/roles'
@@ -474,19 +483,37 @@ const setModuleIdx = (idx: number) => {
 
 const bannerEmail = ref<{
   inputValue: string
-  validator: () => void
-  isValid: boolean
+  showErrorMsg: boolean
   isSent: boolean
+  isLoading: boolean
 }>({
   inputValue: '',
-  validator: () => {
-    bannerEmail.value.isValid =
-      Validation.email(bannerEmail.value.inputValue) &&
-      bannerEmail.value.inputValue.trim() !== ''
-  },
-  isValid: null,
+  showErrorMsg: null,
   isSent: false,
+  isLoading: false,
 })
+
+const sendBannerEmail = async () => {
+  const isValid =
+    Validation.email(bannerEmail.value.inputValue) &&
+    bannerEmail.value.inputValue.trim() !== ''
+  if (isValid) {
+    try {
+      bannerEmail.value.isLoading = true
+      // TODO: 시트에 쌓이는지 확인
+      await ApiService.XSLX_TEST('AppWaitlist', {
+        email: bannerEmail.value.inputValue,
+      })
+      bannerEmail.value.isLoading = false
+      bannerEmail.value.isSent = true
+      bannerEmail.value.inputValue = ''
+    } catch (e) {
+      console.error(e)
+    }
+  } else {
+    bannerEmail.value.showErrorMsg = true
+  }
+}
 
 // TODO: thumbnail
 useHead({
