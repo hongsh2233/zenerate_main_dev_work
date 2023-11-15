@@ -4,10 +4,26 @@ export const ROLES = {
     icon: '🏗️',
     text: 'Developers & Investors',
   },
-  developer: { key: 'developer', icon: '🏗️', text: 'Developers' },
-  architect: { key: 'architect', icon: '📐', text: 'Architects' },
-  broker: { key: 'broker', icon: '  🤝', text: 'Brokers' },
-  financial: { key: 'financial', icon: '🏦', text: 'Financial Institutions' },
+  developer: {
+    key: 'developer',
+    icon: '🏗️',
+    text: 'Developers',
+  },
+  architect: {
+    key: 'architect',
+    icon: '📐',
+    text: 'Architects',
+  },
+  broker: {
+    key: 'broker',
+    icon: '  🤝',
+    text: 'Brokers',
+  },
+  financial: {
+    key: 'financial',
+    icon: '🏦',
+    text: 'Financial Institutions',
+  },
   bd: {
     key: 'bd',
     icon: '💼',
@@ -23,5 +39,15 @@ export const ROLES = {
     key: 'owner_investor',
     icon: '💰',
     text: 'Owners & Investors',
+  },
+  manufacturer: {
+    key: 'manufacturer',
+    icon: '👷‍♂️',
+    text: 'Manufacturers',
+  },
+  consultant: {
+    key: 'consultant',
+    icon: '💼',
+    text: 'Consultants',
   },
 }
