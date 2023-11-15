@@ -25,18 +25,11 @@
       </template>
 
       <template v-else-if="product === 'zenerate-modular'">
-        <div
-          class="ml-28 mt-30 mb-16 flex flex-row flex-nowrap items-center md:mt-94 md:ml-60 md:mb-14 lg:ml-84 lg:mt-[100px]"
-        >
-          <div
-            class="mr-9 text-22 text-primary md:mr-12 md:text-28 lg:mb-18 lg:mr-16 lg:text-40"
-          >
-            <span class="font-semibold">zenerate</span>&nbsp;<span
-              class="font-semibold text-[#90A3C3]"
-              >modular</span
-            >
-          </div>
-        </div>
+        <img
+          :src="`/en/modular/modular_logo.svg`"
+          alt=""
+          class="ml-28 mt-30 mb-10 w-[200px] md:mt-94 md:ml-60 md:mb-14 md:w-[270px] lg:ml-84 lg:mt-[100px] lg:mb-18 lg:w-[360px]"
+        />
         <p
           class="ml-28 text-18 font-light md:ml-60 md:mb-34 md:text-24 lg:mb-52 lg:ml-84 lg:text-32"
         >

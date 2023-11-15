@@ -8,16 +8,11 @@
         class="z-[1] mx-auto mt-[152px] w-[320px] min-w-[320px] md:mt-[170px] md:w-[644px] lg:absolute lg:mt-[200px] lg:ml-100 lg:w-[440px]"
       >
         <div class="flex flex-col items-center lg:items-start">
-          <div class="mb-16 flex flex-row items-center justify-center lg:mb-18">
-            <div
-              class="mr-8 text-30 text-primary md:mr-10 md:text-36 lg:text-36"
-            >
-              <span class="font-semibold">Zenerate</span>&nbsp;<span
-                class="font-semibold text-[#90A3C3]"
-                >modular</span
-              >
-            </div>
-          </div>
+          <img
+            :src="`/en/modular/modular_logo.svg`"
+            alt=""
+            class="mb-14 w-[296px] md:mb-10 md:w-[360px] lg:mb-16 lg:w-[360px]"
+          />
 
           <span
             class="mb-24 w-[320px] text-center text-30 md:mb-20 md:w-[600px] md:text-44 lg:mb-14 lg:w-[600px] lg:text-left lg:text-42 lg:font-light"
