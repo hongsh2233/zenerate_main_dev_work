@@ -37,7 +37,7 @@ const ENRoute: RouteRecordRaw = {
       component: AIConsultingVIew,
     },
     {
-      path: '/modular',
+      path: '/zenerate-modular',
       name: 'en-modular',
       component: ModularView,
     },

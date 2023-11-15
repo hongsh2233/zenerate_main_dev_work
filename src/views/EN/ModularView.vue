@@ -414,7 +414,9 @@ useHead({
   title: `About the Zenerate Modular | AI-Powered, Real-timeFeasibility Studies
 for Modular Housing`,
   htmlAttrs: { lang: 'en' },
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/modular' }],
+  link: [
+    { rel: 'canonical', href: 'https://www.zenerate.ai/zenerate-modular' },
+  ],
   meta: [
     {
       name: `description`,
@@ -442,7 +444,7 @@ for Modular Housing`,
     {
       hid: 'og:url',
       property: 'og:url',
-      content: 'https://www.zenerate.ai/modular',
+      content: 'https://www.zenerate.ai/zenerate-modular',
     },
     {
       hid: 'og:title',
