@@ -24,31 +24,21 @@
         >
       </template>
 
-      <template v-else-if="product === 'zenerate-app'">
-        <div
-          class="ml-28 mt-30 mb-16 flex flex-row flex-nowrap items-center md:mt-94 md:ml-60 md:mb-14 lg:ml-84 lg:mt-[100px]"
-        >
-          <div
-            class="mr-9 text-22 text-primary md:mr-12 md:text-28 lg:mb-18 lg:mr-16 lg:text-40"
-          >
-            <span class="font-semibold">Zenerate</span>&nbsp;App
-          </div>
-          <div
-            class="h-20 rounded-36 bg-primary px-8 text-11 font-medium leading-[20px] text-white md:h-28 md:rounded-48 md:px-10 md:text-14 md:leading-[28px] lg:h-36 lg:rounded-66 lg:px-14 lg:text-20 lg:leading-[36px]"
-          >
-            Beta
-          </div>
-        </div>
+      <template v-else-if="product === 'zenerate-modular'">
+        <img
+          :src="`/en/modular/modular_logo.svg`"
+          alt=""
+          class="ml-28 mt-30 mb-10 w-[200px] md:mt-94 md:ml-60 md:mb-14 md:w-[270px] lg:ml-84 lg:mt-[100px] lg:mb-18 lg:w-[360px]"
+        />
         <p
           class="ml-28 text-18 font-light md:ml-60 md:mb-34 md:text-24 lg:mb-52 lg:ml-84 lg:text-32"
         >
-          AI-Powered, Real-time<br /><span class="font-semibold"
-            >Feasibility Study Tool</span
-          >
+          <span class="font-semibold">AI-Powered, Real-time</span><br />
+          Feasibility Studies<br />for Modular Housing
         </p>
         <router-link
           :to="{ name: CARD_DATA[product].buttonLinkedTo }"
-          class="learn-more-button text-18-medium ml-60 hidden w-fit flex-row items-center !text-primary hover:!text-core-700 md:flex lg:ml-84 lg:flex"
+          class="learn-more-button text-18-medium ml-60 hidden w-fit flex-row items-center !text-primary hover:!text-core-700 md:text-16-medium md:flex lg:ml-84 lg:flex"
           :class="product"
           >{{ CARD_DATA[product].buttonText
           }}<IconBase
@@ -74,7 +64,7 @@
         </p>
         <router-link
           :to="{ name: CARD_DATA[product].buttonLinkedTo }"
-          class="learn-more-button text-16-medium ml-60 hidden w-fit flex-row items-center !text-white hover:!text-gray-200 md:flex lg:ml-84 lg:flex"
+          class="learn-more-button text-16-medium ml-60 hidden w-fit flex-row items-center !text-white hover:!text-gray-200 md:flex lg:text-18-medium lg:ml-84 lg:flex"
           :class="product"
           >{{ CARD_DATA[product].buttonText
           }}<IconBase
@@ -101,7 +91,7 @@
         <div
           class="flex flex-row flex-wrap"
           :class="
-            product === 'zenerate-app'
+            product === 'zenerate-modular'
               ? 'md:w-[240px] lg:w-[320px]'
               : 'md:w-[280px] lg:w-[340px]'
           "
@@ -150,7 +140,7 @@ import { ROLES } from '/Constants/roles'
 import IconBase from './ui/IconBase.vue'
 
 const props = defineProps({
-  product: String as PropType<'zmaps' | 'zenerate-app' | 'ai-consulting'>,
+  product: String as PropType<'zmaps' | 'zenerate-modular' | 'ai-consulting'>,
 })
 
 const product = computed(() => props.product)
@@ -168,10 +158,10 @@ const CARD_DATA = {
     buttonText: 'Go to Z-Maps',
     buttonLinkedTo: 'https://maps.zenerate.ai',
   },
-  'zenerate-app': {
-    bestFor: ['developer_investor', 'architect', 'broker'],
+  'zenerate-modular': {
+    bestFor: ['developer', 'architect', 'manufacturer', 'consultant'],
     buttonText: 'Learn More About the App',
-    buttonLinkedTo: 'en-overview',
+    buttonLinkedTo: 'en-modular',
   },
   'ai-consulting': {
     bestFor: ['developer_investor', 'architect'],
@@ -197,7 +187,7 @@ const CARD_DATA = {
     }
   }
 
-  &.zenerate-app {
+  &.zenerate-modular {
     background-image: url('/public/en/products/zenerate_app_desktop.png');
     background-position: center;
     @include en-tablet {
@@ -224,7 +214,7 @@ const CARD_DATA = {
   }
 
   .learn-more-button {
-    &.zenerate-app {
+    &.zenerate-modular {
       svg {
         :deep(path) {
           fill: theme('colors.primary.DEFAULT') !important;

@@ -63,7 +63,7 @@
         class="absolute top-[-110px] h-0 w-full"
         ref="startOfProductSection"
       ></div>
-      <ProductCard product="zenerate-app" class="mb-20 lg:mb-30" />
+      <ProductCard product="zenerate-modular" class="mb-20 lg:mb-30" />
       <ProductCard product="ai-consulting" class="mb-20 lg:mb-30" />
       <ProductCard product="zmaps" />
     </section>

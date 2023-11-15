@@ -1,0 +1,939 @@
+<template>
+  <div class="relative mx-auto min-w-[320px]">
+    <!-- HERO -->
+    <section
+      class="hero mx-auto h-[692px] max-w-[1600px] md:h-[988px] lg:h-[712px] lg:w-[1340px]"
+    >
+      <div
+        class="z-[1] mx-auto mt-[152px] w-[320px] min-w-[320px] md:mt-[170px] md:w-[644px] lg:absolute lg:mt-[200px] lg:ml-100 lg:w-[440px]"
+      >
+        <div class="flex flex-col items-center lg:items-start">
+          <img
+            :src="`/en/modular/modular_logo.svg`"
+            alt=""
+            class="mb-14 w-[296px] md:mb-10 md:w-[360px] lg:mb-16 lg:w-[360px]"
+          />
+
+          <span
+            class="mb-24 w-[320px] text-center text-30 md:mb-20 md:w-[600px] md:text-44 lg:mb-14 lg:w-[600px] lg:text-left lg:text-42 lg:font-light"
+          >
+            <span class="inline font-medium">AI-Powered, Real-time</span>
+            <span>Feasibility Studies<br />for Modular Housing</span>
+          </span>
+
+          <p
+            class="mb-30 w-[300px] text-center text-16 text-gray-700 md:mb-40 md:w-[500px] md:text-18 lg:mb-30 lg:mb-36 lg:w-full lg:w-[400px] lg:text-left lg:text-18 lg:leading-27"
+          >
+            Instantly gain optimized<br
+              class="md:hidden lg:hidden"
+            />&nbsp;design options with financial analysis using your own
+            modules.
+          </p>
+
+          <div class="flex flex-col items-center md:flex-row lg:flex-row">
+            <button
+              class="text-18-semibold h-48 w-[160px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mb-0 md:mr-10 md:h-54 md:w-[170px] md:text-20 md:leading-[54px] lg:mr-10 lg:mb-0 lg:h-54 lg:w-[170px] lg:text-20 lg:leading-[54px]"
+              @click="moveToBetaTesterElement"
+            >
+              Try for Free
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT DESCRIPTION -->
+    <section
+      class="product-description flex flex-col items-center pt-80 md:pt-30 lg:pt-70"
+    >
+      <div
+        v-for="(data, idx) in PRODUCT_DESCRIPTION"
+        class="card mb-20 h-fit shadow-200 md:mb-23 md:h-[354px] md:items-center lg:mb-30 lg:h-[450px] lg:items-center"
+        :class="`card${idx + 1}`"
+      >
+        <video
+          v-if="data.imgType === 'video'"
+          class="h-full w-full md:w-fit lg:w-fit"
+          :autoplay="true"
+          :muted="true"
+          :loop="true"
+          :playsinline="true"
+          :src="`/en/zenerate_app/${data.imgUrl}`"
+          alt=""
+        />
+        <div
+          class="h-[292px] w-[320px] overflow-hidden md:h-[352px] md:w-[420px] lg:h-[450px] lg:w-[542px]"
+          v-else
+        >
+          <img
+            :src="`/en/zenerate_app/${data.imgUrls.desktop}`"
+            width="523"
+            height="441"
+            class="hidden lg:block"
+          />
+          <img
+            :src="`/en/zenerate_app/${data.imgUrls.tablet}`"
+            width="421"
+            height="352"
+            class="hidden md:block lg:hidden"
+          />
+          <img
+            :src="`/en/zenerate_app/${data.imgUrls.mobile}`"
+            width="321"
+            height="292"
+            class="md:hidden lg:hidden"
+          />
+        </div>
+
+        <div
+          class="content-area inner-shadow flex flex-col justify-center"
+          :class="data.contentOnRight && 'content-right'"
+        >
+          <div class="title text-18-medium mb-10 lg:mb-14 lg:text-24">
+            {{ data.title }}
+          </div>
+          <div
+            v-for="contentData in data.content"
+            class="flex flex-row items-start not-last:mb-6 lg:not-last:mb-8"
+          >
+            <div
+              class="bg-core mr-8 mt-3 flex h-13 min-h-13 w-13 min-w-13 items-center justify-center rounded-13 bg-core-30 lg:mr-12 lg:h-16 lg:min-h-13 lg:w-16 lg:min-w-16 lg:rounded-16"
+            >
+              <IconBase
+                class="lg:hidden"
+                icon-name="checkmark-bold"
+                icon-color="#5C6DFF"
+                :width="9"
+                :height="9"
+              />
+              <IconBase
+                class="hidden lg:block"
+                icon-name="checkmark-bold"
+                icon-color="#5C6DFF"
+                :width="12"
+                :height="12"
+              />
+            </div>
+            <div class="description text-13 text-gray-700 lg:text-16">
+              {{ contentData }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works pt-80 md:pt-110 lg:pt-200">
+      <div class="mb-6 text-center text-26">How It Works</div>
+      <div
+        class="mx-auto mb-36 w-[300px] text-center text-18 text-gray-550 md:mb-36 md:w-[420px] lg:mb-60 lg:w-full"
+      >
+        Simple, intuitive process generating powerful results
+      </div>
+      <!-- TODO: carousel sync -->
+      <Carousel
+        :slideCount="HOW_IT_WORKS.length"
+        :mouseWheelControl="false"
+        :initial-slide="howItWorksIdx"
+        @on-slide-change="(idx) => setHowItWorksIdx(idx)"
+        class="how-it-works-carousel mb-34 h-96 w-[346px] select-none md:hidden lg:hidden"
+      >
+        <template v-for="(data, idx) in HOW_IT_WORKS" #[`slide${idx}`]>
+          <div class="mb-36 flex flex-row items-center">
+            <div
+              class="text-12-semibold mr-10 flex h-20 max-h-20 min-h-20 w-20 min-w-20 max-w-20 items-center justify-center rounded-10 bg-primary text-white"
+            >
+              {{ idx + 1 }}
+            </div>
+            <span class="text-16-medium min-w-fit">{{ data.title }}</span>
+          </div>
+        </template>
+      </Carousel>
+      <div class="mx-auto flex w-fit flex-row items-center">
+        <div
+          class="mr-20 flex hidden w-[378px] flex-col md:block md:w-[330px] lg:block"
+        >
+          <div
+            v-for="(data, idx) of HOW_IT_WORKS"
+            class="flex h-72 w-full cursor-pointer flex-row items-center rounded-10 pl-30 md:pl-20"
+            :class="
+              howItWorksIdx === idx
+                ? 'bg-core-10'
+                : 'bg-white  hover:bg-coolgray-70'
+            "
+            @click="() => setHowItWorksIdx(idx)"
+          >
+            <div
+              class="text-18-semibold mr-14 flex h-28 max-h-28 min-h-28 w-28 min-w-28 max-w-28 items-center justify-center rounded-14 text-white md:mr-10 md:h-26 md:max-h-26 md:min-h-26 md:w-26 md:min-w-26 md:max-w-26 md:text-16"
+              :class="howItWorksIdx === idx ? 'bg-primary' : 'bg-gray-400'"
+            >
+              {{ idx + 1 }}
+            </div>
+            <span
+              class="text-20 md:text-18"
+              :class="
+                howItWorksIdx === idx
+                  ? 'font-medium text-black'
+                  : 'font-regular text-gray-600'
+              "
+              >{{ data.title }}</span
+            >
+            <IconBase
+              v-if="howItWorksIdx === idx"
+              icon-name="arrow-right"
+              :width="24"
+              :height="24"
+              iconColor="#7D8AFF"
+              class="ml-14"
+            />
+          </div>
+        </div>
+
+        <div
+          class="h-[320px] w-[320px] rounded-8 bg-slate-200 shadow-200 md:h-[360px] md:w-[360px] lg:h-[360px] lg:w-[520px]"
+        >
+          image {{ howItWorksIdx + 1 }}
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO USES IT -->
+    <section class="who-uses-it pt-80 md:pt-130 lg:pt-200">
+      <div class="mb-6 text-center text-26">Who Uses It</div>
+      <div
+        class="mx-auto mb-30 w-[280px] text-center text-18 text-gray-550 md:mb-46 md:w-full lg:mb-46 lg:w-full"
+      >
+        Made for everyone involved in modular housing development
+      </div>
+      <div
+        v-for="(data, dataIdx) in WHO_USES_IT"
+        class="card mx-auto mb-10 flex h-fit flex-col px-26 pt-24 pb-32 shadow-200 md:mb-10 md:flex-row md:px-24 md:py-20 md:pt-16 md:pb-20 lg:mb-12 lg:flex-row lg:pl-30 lg:pr-38 lg:pt-26 lg:pb-30"
+      >
+        <div
+          class="mb-15 md:mb-0 md:mr-30 md:w-[193px] md:min-w-[193px] lg:mb-0 lg:mr-90 lg:w-[200px] lg:min-w-[200px]"
+        >
+          <span
+            v-for="userKey in data.userRoles"
+            class="text-16-medium mb-5 mr-6 h-34 w-fit rounded-60 bg-coolgray-50 px-14 leading-[34px] md:text-16-medium md:mr-0 md:h-34 md:leading-[34px] md:last:mb-0 lg:text-20-medium lg:mr-0 lg:h-44 lg:leading-[44px] lg:last:mb-0"
+          >
+            <span class="whitespace-nowrap"
+              >{{ ROLES[userKey].icon }}&nbsp;&nbsp;{{
+                ROLES[userKey].text
+              }}</span
+            >
+          </span>
+        </div>
+        <div
+          class="flex items-center text-16 text-gray-600 md:w-[431px] md:text-16 lg:text-18"
+        >
+          {{ data.description }}
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATE AND USE YOUR OWN MODULES -->
+    <section class="create-and-use-your-own-modules pt-80 md:pt-130 lg:pt-190">
+      <div
+        class="mx-auto mb-6 w-[260px] text-center text-26 md:w-full lg:w-full"
+      >
+        Create and Use Your Own Modules
+      </div>
+      <div
+        class="mx-auto mb-36 w-[300px] text-center text-18 text-gray-550 md:mb-50 md:w-[420px] lg:mb-50 lg:w-full"
+      >
+        Implement your very own modular units and core elements to their
+        specific dimensions
+      </div>
+      <!-- TODO: carousel sync -->
+      <Carousel
+        :slideCount="CREATE_AND_USE_YOUR_OWN_MODULES.length"
+        :mouseWheelControl="false"
+        :initial-slide="moduleIdx"
+        @on-slide-change="(idx) => setModuleIdx(idx)"
+        class="create-and-use-your-own-modules-carousel mb-34 h-96 w-[346px] select-none md:hidden lg:hidden"
+      >
+        <template
+          v-for="(data, idx) in CREATE_AND_USE_YOUR_OWN_MODULES"
+          #[`slide${idx}`]
+        >
+          <div class="mb-36 flex flex-row items-center">
+            <span class="text-18-medium min-w-fit">{{ data.title }}</span>
+          </div>
+        </template>
+      </Carousel>
+      <div class="mx-auto flex w-fit flex-row items-center">
+        <div
+          class="h-[320px] w-[320px] rounded-8 bg-slate-200 shadow-200 md:w-[380px] lg:w-[520px]"
+        >
+          image {{ moduleIdx + 1 }}
+        </div>
+        <div
+          class="ml-50 flex hidden w-[360px] flex-col md:ml-20 md:block md:w-[300px] lg:block"
+        >
+          <div
+            v-for="(data, idx) of CREATE_AND_USE_YOUR_OWN_MODULES"
+            class="flex h-72 w-full cursor-pointer flex-row items-center rounded-10 pl-30 not-last:mb-10 md:pl-20"
+            :class="
+              moduleIdx === idx ? 'bg-core-10' : 'bg-white hover:bg-coolgray-70'
+            "
+            @click="() => setModuleIdx(idx)"
+          >
+            <IconBase
+              :icon-name="(data.iconName as TIconName)"
+              :width="24"
+              :height="24"
+              :icon-color="moduleIdx === idx ? '#4D49F4' : '#6A6D73'"
+              class="mr-10"
+            />
+            <span
+              class="text-20 md:text-18"
+              :class="
+                moduleIdx === idx
+                  ? 'font-medium text-black'
+                  : 'font-regular text-gray-600'
+              "
+              >{{ data.title }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEED CUSTOMIZATION? -->
+    <section class="need-customization pt-80 md:pt-130 lg:pt-200">
+      <div class="mb-6 text-center text-26">Need Customization?</div>
+      <div
+        class="mx-auto mb-30 w-[280px] text-center text-18 text-gray-550 md:mb-50 md:w-full lg:mb-46 lg:w-full"
+      >
+        Create an application customized for your organization's exact workflow
+        and needs
+      </div>
+      <div
+        class="mx-auto flex w-fit flex-col items-center md:flex-col lg:flex-row"
+      >
+        <div
+          v-for="(data, dataIdx) in NEED_CUSTOMIZATION"
+          class="mb-12 flex h-[210px] w-[354px] flex-col rounded-10 px-30 py-20 shadow-200 md:h-[135px] md:w-[580px] md:flex-row md:py-24 md:px-20 md:not-last:mb-10 lg:h-[252px] lg:not-last:mr-12"
+        >
+          <img
+            :src="`/en/modular/${data.iconName}.png`"
+            width="52"
+            height="52"
+            class="md:mr-20 lg:mb-6"
+            alt=""
+          />
+          <div class="flex flex-col md:w-[426px]">
+            <span class="text-20-medium mb-8">{{ data.title }}</span>
+            <span class="text-18 text-gray-600">{{ data.description }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO FORM -->
+    <!-- TODO: sheet 연결 -->
+    <section
+      class="beta-tester relative pt-70 pb-80 md:pt-80 md:pb-116 lg:pt-200 lg:pb-88"
+    >
+      <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
+      <!-- <SignUpForm sheet-name="Modular">
+        <template #description>
+          <div
+            class="mx-auto flex flex-col items-center text-center text-white md:mx-16 md:items-start md:text-left lg:mx-42 lg:mb-56 lg:items-start lg:text-left"
+          >
+            <span class="mb-32 text-22 lg:text-28"> {{ DEMO_FORM.title }}</span>
+            <div class="flex flex-col">
+              <div
+                v-for="description in DEMO_FORM.descriptions"
+                class="flex flex-row items-start not-last:mb-14"
+              >
+                <IconBase
+                  icon-name="checkmark-bold"
+                  icon-color="white"
+                  :width="16"
+                  :height="16"
+                  class="mr-12 mt-5 h-16 max-h-16 min-h-16 w-16 min-w-16 max-w-16"
+                />
+                <span class="text-18-medium">{{ description }}</span>
+              </div>
+            </div>
+          </div>
+        </template>
+        <template #form-title>
+          <span
+            class="mb-6 w-[200px] text-center text-18 md:pt-8 lg:w-[260px] lg:pt-8 lg:text-22"
+          >
+            Have a Project in Mind? Let's Talk!
+          </span>
+          <span class="text-center text-14 text-gray-550 lg:text-16"
+            >We'll be in touch soon.</span
+          >
+        </template>
+      </SignUpForm> -->
+    </section>
+
+    <!-- WAVE BANNER -->
+    <section
+      class="blue-wave-wrapper relative h-[406px] bg-black md:h-[363px] lg:h-[326px]"
+    >
+      <div
+        class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center bg-black/50 px-20 pt-76 md:pt-[85px] lg:pt-[67px]"
+      >
+        <span
+          class="mb-18 w-[240px] text-center text-22 text-white md:mb-12 md:w-full md:text-26 lg:mb-12 lg:w-full lg:text-28"
+          >Not Interested in Modular Housing?</span
+        >
+        <span
+          class="mb-30 w-[300px] text-center text-16 text-white md:mb-40 md:w-full md:text-18 lg:mb-32 lg:w-full lg:text-20"
+          >Zenerate App for multifamily, not just modular, is set to launch in
+          March 2024.<br />Join the waitlist for early access and exclusive
+          discounts.</span
+        >
+
+        <div
+          class="relative flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px]"
+        >
+          <template v-if="bannerEmail.isSent">
+            <svg
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <ellipse
+                cx="12.1782"
+                cy="12"
+                rx="11.8207"
+                ry="12"
+                fill="#EBEDFE"
+              />
+              <path
+                d="M23.0361 1.81787L22.9074 1.97012L22.9111 1.97441L19.4387 6.0958L10.993 16.1219C10.8131 16.3357 10.5728 16.445 10.3319 16.445C10.1878 16.445 10.0436 16.405 9.91113 16.3264L10.4219 16.8117L11.1933 17.5443C11.3645 17.7066 11.5715 17.7874 11.7786 17.7874C12.0195 17.7874 12.2597 17.6787 12.4396 17.4643L24.3577 3.31675L23.0361 1.81787Z"
+                fill="#4848FF"
+              />
+              <path
+                d="M19.4358 6.09106L11.7092 15.2623L10.2872 13.9114L10.2829 13.9071L5.59493 9.45265L4.42432 11.1124L8.98661 15.4467L8.99093 15.451L9.91139 16.3259C10.0439 16.4045 10.188 16.4446 10.3322 16.4446C10.5731 16.4446 10.8134 16.3359 10.9933 16.1215L19.4395 6.09607L19.4358 6.09106Z"
+                fill="#4848FF"
+                fill-opacity="0.4"
+              />
+            </svg>
+            <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
+          </template>
+          <template v-else>
+            <!-- TODO: 에러메시지 UI 변경예정 -->
+            <transition name="fade">
+              <span
+                v-if="bannerEmail.showErrorMsg"
+                class="absolute bottom-[-28px] rounded-4 bg-red-50 px-12 py-4 text-12 text-red-500"
+                >Please enter a valid email.</span
+              >
+            </transition>
+            <input
+              type="text"
+              inputmode="email"
+              placeholder="Email Address"
+              v-model="bannerEmail.inputValue"
+              class="h-full w-full border-none pl-12"
+              @focus="bannerEmail.showErrorMsg = false"
+            />
+            <button
+              class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white hover:bg-core-700 md:w-[157px] md:min-w-[157px]"
+              @click="sendBannerEmail"
+            >
+              Join Waitlist
+            </button>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-footer fp-auto-height">
+      <Footer />
+    </section>
+  </div>
+</template>
+<script lang="ts" setup>
+import { onMounted, ref, computed, watch } from 'vue'
+import { useHead } from '@vueuse/head'
+
+import ApiService from '/Services/api'
+import Validation from '/Utils/Validation'
+import ImagePreloader from '/Utils/ImagePreloader'
+import { ROLES } from '/Constants/roles'
+import { TIconName } from '/Components/EN/ui/a-icon-base'
+
+import { SignUpForm, Footer, Carousel } from '/Components/EN'
+import IconBase from '/Components/EN/ui/IconBase.vue'
+
+const betaTester = ref(null)
+const moveToBetaTesterElement = () => {
+  betaTester.value.scrollIntoView({ behavior: 'smooth' })
+}
+
+const howItWorksIdx = ref<number>(0)
+const setHowItWorksIdx = (idx: number) => {
+  howItWorksIdx.value = idx
+}
+
+const moduleIdx = ref<number>(0)
+const setModuleIdx = (idx: number) => {
+  moduleIdx.value = idx
+}
+
+const bannerEmail = ref<{
+  inputValue: string
+  showErrorMsg: boolean
+  isSent: boolean
+  isLoading: boolean
+}>({
+  inputValue: '',
+  showErrorMsg: null,
+  isSent: false,
+  isLoading: false,
+})
+
+const sendBannerEmail = async () => {
+  const isValid =
+    Validation.email(bannerEmail.value.inputValue) &&
+    bannerEmail.value.inputValue.trim() !== ''
+  if (isValid) {
+    try {
+      bannerEmail.value.isLoading = true
+      // TODO: 시트에 쌓이는지 확인
+      await ApiService.XSLX_TEST('AppWaitlist', {
+        email: bannerEmail.value.inputValue,
+      })
+      bannerEmail.value.isLoading = false
+      bannerEmail.value.isSent = true
+      bannerEmail.value.inputValue = ''
+    } catch (e) {
+      console.error(e)
+    }
+  } else {
+    bannerEmail.value.showErrorMsg = true
+  }
+}
+
+// TODO: thumbnail
+useHead({
+  title: `About the Zenerate Modular | AI-Powered, Real-timeFeasibility Studies
+for Modular Housing`,
+  htmlAttrs: { lang: 'en' },
+  link: [
+    { rel: 'canonical', href: 'https://www.zenerate.ai/zenerate-modular' },
+  ],
+  meta: [
+    {
+      name: `description`,
+      content: `Instantly gain optimized
+ design options with financial analysis using your own modules.`,
+    },
+    {
+      hid: 'twitter:title',
+      property: 'twitter:title',
+      content: `About the Zenerate Modular | AI-Powered, Real-timeFeasibility Studies
+for Modular Housing`,
+    },
+    {
+      hid: 'twitter:description',
+      property: 'twitter:description',
+      content: `Instantly gain optimized
+ design options with financial analysis using your own modules.`,
+    },
+    { name: 'keywords', content: 'zenerate' },
+    {
+      hid: 'twitter:image',
+      property: 'twitter:image',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      hid: 'og:url',
+      property: 'og:url',
+      content: 'https://www.zenerate.ai/zenerate-modular',
+    },
+    {
+      hid: 'og:title',
+      property: 'og:title',
+      content: `About the Zenerate Modular | AI-Powered, Real-timeFeasibility Studies
+for Modular Housing`,
+    },
+    {
+      hid: 'og:description',
+      property: 'og:description',
+      content: `Instantly gain optimized
+ design options with financial analysis using your own modules.`,
+    },
+    {
+      hid: 'og:type',
+      property: 'og:type',
+      content: 'website',
+    },
+    {
+      hid: 'og:image:url',
+      property: 'og:image:url',
+      content: 'https://www.zenerate.ai/img/logo_og.png',
+    },
+    {
+      hid: 'og:image:type',
+      property: 'og:image:type',
+      content: 'image/png',
+    },
+  ],
+})
+
+const PRODUCT_DESCRIPTION = [
+  {
+    imgType: 'image',
+    // TODO:: imgUrls
+    imgUrls: {
+      desktop: 'product_description3_desktop.png',
+      tablet: 'product_description3_tablet.png',
+      mobile: 'product_description3_mobile_new.png',
+    },
+    title: 'Instantly Generate and Compare Design Scenarios with:',
+    content: [
+      'Maximized FAR and Density',
+      'Various unit mix options',
+      'Diverse building layouts',
+      'Different parking solutions: on-grade, above/underground',
+      'Various construction types',
+    ],
+    contentOnRight: false,
+  },
+  {
+    imgType: 'image',
+    // TODO:: imgUrls
+    imgUrls: {
+      desktop: 'product_description3_desktop.png',
+      tablet: 'product_description3_tablet.png',
+      mobile: 'product_description3_mobile_new.png',
+    },
+    title: 'View and Download Floor Plans that Include:',
+    content: [
+      'All levels',
+      'Residential floor plans composed of modular units',
+      'Ground floor plan with a lobby, electrical room, laundry room, etc.',
+      'Parking layout with stalls, ramps, stairs and cores',
+      'Layouts that you can manually adjust',
+      'CAD exports',
+    ],
+    contentOnRight: true,
+  },
+  {
+    imgType: 'image',
+    // TODO:: imgUrls
+    imgUrls: {
+      desktop: 'product_description3_desktop.png',
+      tablet: 'product_description3_tablet.png',
+      mobile: 'product_description3_mobile_new.png',
+    },
+    title: 'Swiftly Review Financial Analysis with Your Own Data Inputs',
+    content: [
+      'Construction Cost',
+      'NOI and Project Cost',
+      'Residual land value',
+      'Yield on Cost',
+    ],
+    contentOnRight: false,
+  },
+]
+
+// TODO: img
+const HOW_IT_WORKS = [
+  {
+    title: 'Draw Site Boundary',
+  },
+  {
+    title: 'Set Project Settings',
+  },
+  {
+    title: 'Select Module Types',
+  },
+  {
+    title: 'Input Design Settings',
+  },
+  {
+    title: 'Generate Design Solutions',
+  },
+]
+
+const WHO_USES_IT = [
+  {
+    userRoles: ['developer'],
+    description:
+      'Quickly evaluate modular development potential and identify the highest and best use design solution',
+  },
+  {
+    userRoles: ['architect'],
+    description:
+      'Eliminate the tedious process of conducting massing / layout studies to maximize density or floor area ratio',
+  },
+  {
+    userRoles: ['manufacturer', 'consultant'],
+    description:
+      'Upsell modular to developers and project partners by quickly showing site feasibility and providing a cost estimate',
+  },
+]
+
+// TODO: img
+const CREATE_AND_USE_YOUR_OWN_MODULES = [
+  {
+    iconName: 'module-size',
+    title: 'Module Sizes',
+  },
+  {
+    iconName: 'module-unit',
+    title: 'Unit Types',
+  },
+  {
+    iconName: 'module-residential',
+    title: 'Residential & Corridor',
+  },
+  {
+    iconName: 'module-core',
+    title: 'Modularized Core Elements',
+  },
+]
+
+const NEED_CUSTOMIZATION = [
+  {
+    iconName: 'document',
+    title: 'Zoning Inputs',
+    description: `Zoning groups and input settings based on your target jurisdiction's code.`,
+  },
+  {
+    iconName: 'money_bag',
+    title: 'Cost Estimate',
+    description: `Share your cost estimation method with us to gain accurate estimates of the generated solutions' costs.`,
+  },
+  {
+    iconName: 'wrench',
+    title: 'Design Specific Inputs',
+    description: 'Customized modules and manufacturer specific kit of parts.',
+  },
+]
+
+const DEMO_FORM = {
+  title: 'Ready to Automate Feasibility Studies of Your Modular Projects?',
+  descriptions: [
+    'Sign up on the form to the right',
+    'Schedule a quick demo',
+    'Gain immediate access to Zenerate Modular for you and your team ',
+  ],
+}
+
+// TODO: image preload
+const onloadImages = {
+  desktop: [
+    '/en/zenerate_app/how_it_works_step1_desktop.png',
+    '/en/zenerate_app/how_it_works_step2_desktop.png',
+    '/en/zenerate_app/how_it_works_step3_desktop.png',
+  ],
+  tablet: [
+    '/en/zenerate_app/how_it_works_step1_tablet.png',
+    '/en/zenerate_app/how_it_works_step2_tablet.png',
+    '/en/zenerate_app/how_it_works_step3_tablet.png',
+  ],
+  mobile: [
+    '/en/zenerate_app/how_it_works_step1_mobile.png',
+    '/en/zenerate_app/how_it_works_step2_mobile.png',
+    '/en/zenerate_app/how_it_works_step3_mobile.png',
+  ],
+}
+
+const commonPreloadImages = ['/en/zenerate_app/product_description3.png']
+
+const mediaQueryDevice =
+  window.innerWidth >= 1024
+    ? 'desktop'
+    : window.innerWidth >= 762
+    ? 'tablet'
+    : 'mobile'
+
+onMounted(() => {
+  ImagePreloader.sequential(commonPreloadImages)
+  ImagePreloader.sequential(onloadImages[mediaQueryDevice])
+})
+</script>
+<style lang="scss" scoped>
+.card {
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  border-radius: 10px;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: white;
+
+  @include en-tablet {
+    width: 708px;
+  }
+
+  @include en-mobile {
+    flex-direction: column;
+    width: 320px;
+    min-width: 320px;
+  }
+
+  .inner-shadow {
+    @include en-mobile {
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+/* TODO: background image */
+.hero {
+  background-repeat: no-repeat;
+  background-image: url('/en/ai_consulting/hero_desktop.png');
+  background-position: bottom right;
+  @include en-tablet {
+    background-image: url('/en/ai_consulting/hero_tablet_new.png');
+    background-size: 1200px 548px;
+    background-position: bottom center;
+  }
+  @include en-mobile {
+    background-image: url('/en/ai_consulting/hero_mobile_new.png');
+    background-size: 768px 246px;
+    background-position: bottom center;
+  }
+}
+
+.product-description {
+  .content-area {
+    @include en-desktop {
+      &.content-right {
+        padding-left: 50px;
+        padding-right: 40px;
+      }
+      &:not(.content-right) {
+        padding-left: 66px;
+        padding-right: 32px;
+
+        order: -1;
+      }
+    }
+    @include en-tablet {
+      &.content-right {
+        padding-left: 36px;
+        padding-right: 40px;
+      }
+      &:not(.content-right) {
+        padding-left: 52px;
+        padding-right: 30px;
+        order: -1;
+      }
+    }
+    @include en-mobile {
+      padding: 24px 30px 30px 30px;
+    }
+  }
+
+  .card1 {
+    @include en-desktop {
+      .description {
+        width: 220px;
+      }
+    }
+    @include en-tablet {
+      .description {
+        width: 176px;
+      }
+    }
+    @include en-mobile {
+      .title {
+        width: 270px;
+      }
+      .description {
+        width: 176px;
+      }
+    }
+  }
+
+  .card2 {
+    @include en-desktop {
+      .title {
+        width: 320px;
+      }
+      .description {
+        width: 270px;
+      }
+    }
+    @include en-tablet {
+      .title {
+        width: 200px;
+      }
+      .description {
+        width: 220px;
+      }
+    }
+    @include en-mobile {
+      .title {
+        width: 240px;
+      }
+      .description {
+        width: 220px;
+      }
+    }
+  }
+  .card3 {
+    .content-area {
+      @include en-desktop {
+        width: 388px;
+      }
+      @include en-tablet {
+        width: 288px;
+      }
+      @include en-mobile {
+        .title {
+          width: 280px;
+        }
+      }
+    }
+  }
+}
+
+.blue-wave-wrapper {
+  background-image: url('/public/en/img/blue_wave.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+</style>
+<style lang="scss">
+.how-it-works-carousel {
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: theme('colors.gray.600');
+    z-index: 1 !important;
+
+    &:after {
+      font-size: 18px;
+      font-weight: 900;
+      padding: 20px !important;
+    }
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    color: theme('colors.gray.700');
+  }
+
+  .swiper-button-disabled {
+    color: theme('colors.gray.200');
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: theme('colors.gray.300');
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 16px;
+    border-radius: 10px;
+    background-color: theme('colors.primary.DEFAULT');
+  }
+}
+</style>

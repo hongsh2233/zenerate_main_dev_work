@@ -1,5 +1,6 @@
 <template>
   <div class="layout-en" id="layout-en">
+    <!-- TODO: 배너 변경 -->
     <button
       type="button"
       class="signup-banner"

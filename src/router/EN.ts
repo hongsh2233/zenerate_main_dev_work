@@ -13,6 +13,7 @@ import PreSignUpView from '/Views/EN/PreSignUpView.vue'
 import SignUpView from '/Views/EN/SignUpView.vue'
 import ZenerateView from '/Views/EN/ZenerateView.vue'
 import AIConsultingVIew from '/Views/EN/AIConsultingView.vue'
+import ModularView from '/Views/EN/ModularView.vue'
 import DemoSignUpView from '/Views/EN/DemoSignUpView.vue'
 
 const ENRoute: RouteRecordRaw = {
@@ -34,6 +35,11 @@ const ENRoute: RouteRecordRaw = {
       path: '/ai-consulting',
       name: 'en-ai-consulting',
       component: AIConsultingVIew,
+    },
+    {
+      path: '/zenerate-modular',
+      name: 'en-modular',
+      component: ModularView,
     },
     {
       path: '/about',

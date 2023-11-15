@@ -175,7 +175,7 @@
                 please email
                 <a href="mailto: contact@zenerate.ai">contact@zenerate.ai</a>
               </p>
-              <router-link class="link-button" :to="{ name: 'en-overview' }">
+              <router-link class="link-button" :to="{ name: 'en-landing' }">
                 View Product Overview
                 <IconBase
                   icon-name="arrow-right"

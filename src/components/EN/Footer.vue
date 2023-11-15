@@ -55,8 +55,8 @@
               <p
                 class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
-                <router-link :to="{ name: 'en-overview' }">
-                  Zenerate App
+                <router-link :to="{ name: 'en-modular' }">
+                  Zenerate Modular
                 </router-link>
               </p>
               <p
