@@ -336,12 +336,12 @@
     </section>
 
     <!-- DEMO FORM -->
-    <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
     <!-- TODO: sheet 연결 -->
-    <!-- <section
+    <section
       class="beta-tester relative pt-70 pb-80 md:pt-80 md:pb-116 lg:pt-200 lg:pb-88"
     >
-      <SignUpForm sheet-name="Modular">
+      <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
+      <!-- <SignUpForm sheet-name="Modular">
         <template #description>
           <div
             class="mx-auto flex flex-col items-center text-center text-white md:mx-16 md:items-start md:text-left lg:mx-42 lg:mb-56 lg:items-start lg:text-left"
@@ -374,8 +374,76 @@
             >We'll be in touch soon.</span
           >
         </template>
-      </SignUpForm>
-    </section> -->
+      </SignUpForm> -->
+    </section>
+
+    <!-- WAVE BANNER -->
+    <section
+      class="blue-wave-wrapper relative h-[406px] bg-black md:h-[363px] lg:h-[326px]"
+    >
+      <div
+        class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center bg-black/50 px-20 pt-76 md:pt-[85px] lg:pt-[67px]"
+      >
+        <span
+          class="mb-18 w-[240px] text-center text-22 text-white md:mb-12 md:w-full md:text-26 lg:mb-12 lg:w-full lg:text-28"
+          >Not Interested in Modular Housing?</span
+        >
+        <span
+          class="mb-30 w-[300px] text-center text-16 text-white md:mb-40 md:w-full md:text-18 lg:mb-32 lg:w-full lg:text-20"
+          >Zenerate App for multifamily, not just modular, is set to launch in
+          March 2024.<br />Join the waitlist for early access and exclusive
+          discounts.</span
+        >
+
+        <div
+          class="flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px]"
+        >
+          <template v-if="bannerEmail.isSent">
+            <svg
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <ellipse
+                cx="12.1782"
+                cy="12"
+                rx="11.8207"
+                ry="12"
+                fill="#EBEDFE"
+              />
+              <path
+                d="M23.0361 1.81787L22.9074 1.97012L22.9111 1.97441L19.4387 6.0958L10.993 16.1219C10.8131 16.3357 10.5728 16.445 10.3319 16.445C10.1878 16.445 10.0436 16.405 9.91113 16.3264L10.4219 16.8117L11.1933 17.5443C11.3645 17.7066 11.5715 17.7874 11.7786 17.7874C12.0195 17.7874 12.2597 17.6787 12.4396 17.4643L24.3577 3.31675L23.0361 1.81787Z"
+                fill="#4848FF"
+              />
+              <path
+                d="M19.4358 6.09106L11.7092 15.2623L10.2872 13.9114L10.2829 13.9071L5.59493 9.45265L4.42432 11.1124L8.98661 15.4467L8.99093 15.451L9.91139 16.3259C10.0439 16.4045 10.188 16.4446 10.3322 16.4446C10.5731 16.4446 10.8134 16.3359 10.9933 16.1215L19.4395 6.09607L19.4358 6.09106Z"
+                fill="#4848FF"
+                fill-opacity="0.4"
+              />
+            </svg>
+            <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
+          </template>
+          <template v-else>
+            <!-- TODO: errormessage -->
+            <input
+              type="text"
+              :placeholder="'Email Address'"
+              class="h-full w-full border-none pl-12"
+              inputmode="email"
+              v-model="bannerEmail.inputValue"
+              @input="bannerEmail.validator"
+            />
+            <button
+              class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white md:w-[157px] md:min-w-[157px]"
+            >
+              Join Waitlist
+            </button>
+          </template>
+        </div>
+      </div>
+    </section>
 
     <section class="section section-footer fp-auto-height">
       <Footer />
@@ -385,8 +453,8 @@
 <script lang="ts" setup>
 import { onMounted, ref, computed, watch } from 'vue'
 import { useHead } from '@vueuse/head'
-import { useGtag } from 'vue-gtag-next'
 
+import Validation from '/Utils/Validation'
 import ImagePreloader from '/Utils/ImagePreloader'
 import { ROLES } from '/Constants/roles'
 import { TIconName } from '/Components/EN/ui/a-icon-base'
@@ -408,6 +476,22 @@ const moduleIdx = ref<number>(0)
 const setModuleIdx = (idx: number) => {
   moduleIdx.value = idx
 }
+
+const bannerEmail = ref<{
+  inputValue: string
+  validator: () => void
+  isValid: boolean
+  isSent: boolean
+}>({
+  inputValue: '',
+  validator: () => {
+    bannerEmail.value.isValid =
+      Validation.email(bannerEmail.value.inputValue) &&
+      bannerEmail.value.inputValue.trim() !== ''
+  },
+  isValid: null,
+  isSent: false,
+})
 
 // TODO: thumbnail
 useHead({
@@ -786,6 +870,12 @@ onMounted(() => {
       }
     }
   }
+}
+
+.blue-wave-wrapper {
+  background-image: url('/public/en/img/blue_wave.png');
+  background-repeat: no-repeat;
+  background-position: bottom center;
 }
 </style>
 <style lang="scss">
