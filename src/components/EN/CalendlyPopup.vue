@@ -54,6 +54,8 @@ const CALENDLY_URL_DIC = {
     'https://calendly.com/d/yrk-k6f-zbv?utm_source=homepage-header&utm_medium=website',
   laststrip:
     'https://calendly.com/d/yrk-k6f-zbv?utm_source=homepage-laststrip&utm_medium=website',
+  modularlandingpage:
+    'https://calendly.com/zenerate/modular-demo?&utm_source=modularlandingpage&utm_medium=website',
 }
 const calendlyUrl = computed(() => {
   const trigger = props.trigger ?? 'default'

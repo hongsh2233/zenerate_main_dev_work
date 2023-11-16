@@ -7,6 +7,7 @@
     :loop="infiniteLoop"
     :modules="[Navigation, Pagination, Mousewheel, Keyboard]"
     class="custom-carousel h-full w-full"
+    @swiper="onCarousel"
     @slideChange="onSlideChange"
   >
     <template v-for="idx in slideCount">
@@ -40,7 +41,10 @@ const mouseWheelControl = computed(() => props.mouseWheelControl)
 const keyboardControl = computed(() => props.keyboardControl)
 const infiniteLoop = computed(() => props.infiniteLoop)
 
-const emit = defineEmits(['onSlideChange'])
+const emit = defineEmits(['onCarousel', 'onSlideChange'])
+const onCarousel = (swiper) => {
+  emit('onCarousel', swiper)
+}
 const onSlideChange = (v) => {
   emit('onSlideChange', v.realIndex)
 }

@@ -1,20 +1,20 @@
 <template>
   <div
-    class="mx-auto flex h-fit w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white shadow-200 md:h-[360px] md:w-[708px] md:flex-row lg:h-[456px] lg:min-w-[900px] lg:flex-row"
+    class="mx-auto flex w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white shadow-200 md:w-[708px] md:flex-row lg:min-w-[900px] lg:flex-row"
   >
     <div
-      class="flex items-center bg-primary px-24 pt-30 pb-38 md:min-w-[354px] lg:min-w-[450px]"
+      class="flex min-h-full items-center bg-primary md:min-w-[354px] lg:min-w-[450px]"
     >
       <slot name="description"></slot>
     </div>
 
     <div
-      class="flex w-full flex-col items-center justify-center bg-white px-32 pt-36 pb-52 md:px-50 lg:px-62"
+      class="my-auto flex min-h-full w-full flex-col items-center justify-center bg-white px-32 py-36 md:px-50 lg:px-62"
     >
       <slot name="form-title"></slot>
 
       <div v-if="!formSubmitted" class="form-wrapper">
-        <div class="form mt-16 mb-12 w-full lg:mt-26 lg:mb-16">
+        <div class="form mt-10 mb-0 w-full">
           <div class="form-row">
             <div
               class="input-wrapper first-name"
@@ -51,7 +51,7 @@
               <p class="error-message">Invalid email address format.</p>
               <input
                 type="text"
-                placeholder="Enter Email"
+                placeholder="Enter Work Email"
                 autocomplete="new-email"
                 inputmode="email"
                 v-model="SignUpForm.email.value"
@@ -74,7 +74,33 @@
               />
             </div>
           </div>
-          <div v-if="sheetName === 'Beta'" class="form-row mt-8">
+          <div class="form-row">
+            <div
+              class="input-wrapper job-title"
+              :class="{ error: SignUpForm.jobTitle.valid === false }"
+            >
+              <p class="error-message">Please enter job title.</p>
+              <input
+                type="text"
+                placeholder="Enter Job Title"
+                autocomplete="new-job-title"
+                v-model="SignUpForm.jobTitle.value"
+                @input="(v) => validation('jobTitle')"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="input-wrapper message">
+              <textarea
+                type="text"
+                :spellcheck="false"
+                placeholder="Message (Optional)"
+                autocomplete="new-message"
+                v-model="SignUpForm.message.value"
+              />
+            </div>
+          </div>
+          <div v-if="sheetName === 'Beta'" class="form-row mb-8">
             <div class="input-wrapper">
               <div
                 class="hover-pointer flex flex-row items-center"
@@ -150,7 +176,6 @@
             </svg>
           </div>
           <span class="mb-24 text-24 font-medium lg:text-28">Thank you!</span>
-
           <slot name="after-submit-text"></slot>
         </div>
       </transition>
@@ -159,15 +184,17 @@
 </template>
 <script lang="ts" setup>
 import { PropType, computed, ref } from 'vue'
-import Validation from '/Utils/Validation'
-import DotSpinnerWhite from './ui/DotSpinnerWhite.vue'
-import ApiService from '/Services/api'
 import router from '/@/router'
+import Emitter from '/Libraries/bus'
+import ApiService from '/Services/api'
+import Validation from '/Utils/Validation'
+import { MENU_EVENT } from '/Constants/eventConstant'
+import DotSpinnerWhite from './ui/DotSpinnerWhite.vue'
 import { IconBase } from '.'
 
 const props = defineProps({
   sheetName: {
-    type: String as PropType<'Beta' | 'AIConsulting'>,
+    type: String as PropType<'Beta' | 'AIConsulting' | 'Modular'>,
     required: true,
   },
 })
@@ -194,6 +221,15 @@ const SignUpForm = ref({
     value: '',
     validator: Validation.string,
     valid: null,
+  },
+  jobTitle: {
+    value: '',
+    validator: Validation.string,
+    valid: null,
+  },
+  message: {
+    value: '',
+    valid: true,
   },
   interest: {
     value: '',
@@ -222,6 +258,15 @@ const submitForm = async () => {
     form[key] = String(SignUpForm.value[key].value)
   }
 
+  const emailForm = {
+    company: SignUpForm.value.company.value,
+    name:
+      SignUpForm.value.firstName.value + ' ' + SignUpForm.value.lastName.value,
+    email: SignUpForm.value.email.value,
+    jobTitle: SignUpForm.value.jobTitle.value,
+    message: SignUpForm.value.message.value,
+  }
+
   const currentParams = { ...router.currentRoute.value.query }
   for (const key of ['utm_source', 'utm_medium']) {
     form[key] = currentParams[key]
@@ -229,7 +274,17 @@ const submitForm = async () => {
 
   try {
     loading.value = true
+
+    if (sheetName.value === 'Modular') {
+      Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+        flag: true,
+        trigger: 'modularlandingpage',
+      })
+    }
+
     await ApiService.XSLX_TEST(sheetName.value, form)
+    await ApiService.SEND_EMAIL(emailForm)
+
     loading.value = false
     formSubmitted.value = true
   } catch (e) {}
@@ -243,6 +298,7 @@ const submitForm = async () => {
     border: solid 1px theme('colors.gray.350');
     border-radius: 6px;
     padding: 0 16px;
+    font-size: 16px;
     &::placeholder {
       font-size: 16px;
     }
@@ -250,6 +306,7 @@ const submitForm = async () => {
     @include en-tablet {
       height: 40px;
       padding: 0 13px;
+      font-size: 13px;
       &::placeholder {
         font-size: 13px;
       }
@@ -257,6 +314,38 @@ const submitForm = async () => {
     @include en-mobile {
       height: 40px;
       padding: 0 13px;
+      font-size: 13px;
+      &::placeholder {
+        font-size: 13px;
+      }
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    border: solid 1px theme('colors.gray.350');
+    border-radius: 6px;
+    padding: 14px 16px;
+    font: inherit;
+    resize: none;
+    font-size: 16px;
+    &::placeholder {
+      font-size: 16px;
+    }
+
+    @include en-tablet {
+      height: 80px;
+      padding: 11px 13px;
+      font-size: 13px;
+      &::placeholder {
+        font-size: 13px;
+      }
+    }
+    @include en-mobile {
+      height: 80px;
+      padding: 11px 13px;
+      font-size: 13px;
       &::placeholder {
         font-size: 13px;
       }
@@ -281,15 +370,23 @@ const submitForm = async () => {
     .error-message {
       height: 0;
       overflow: hidden;
-      margin-bottom: 4px;
-      font-size: 10px;
       color: transparent;
+      font-size: 12px;
+
+      @include en-tablet {
+        font-size: 10px;
+      }
+
+      @include en-mobile {
+        font-size: 10px;
+      }
     }
 
     &.first-name,
     &.last-name {
       .error-message {
         height: fit-content;
+        margin-bottom: 4px;
       }
     }
 
@@ -300,6 +397,7 @@ const submitForm = async () => {
       .error-message {
         color: theme('colors.red.500');
         height: fit-content;
+        margin-bottom: 4px;
       }
     }
   }

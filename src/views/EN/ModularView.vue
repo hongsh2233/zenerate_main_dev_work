@@ -130,11 +130,10 @@
       >
         Simple, intuitive process generating powerful results
       </div>
-      <!-- TODO: carousel sync -->
       <Carousel
         :slideCount="HOW_IT_WORKS.length"
         :mouseWheelControl="false"
-        :initial-slide="howItWorksIdx"
+        @on-carousel="onHowItWorksCarousel"
         @on-slide-change="(idx) => setHowItWorksIdx(idx)"
         class="how-it-works-carousel mb-34 h-96 w-[346px] select-none md:hidden lg:hidden"
       >
@@ -244,11 +243,10 @@
         Implement your very own modular units and core elements to their
         specific dimensions
       </div>
-      <!-- TODO: carousel sync -->
       <Carousel
         :slideCount="CREATE_AND_USE_YOUR_OWN_MODULES.length"
         :mouseWheelControl="false"
-        :initial-slide="moduleIdx"
+        @on-carousel="onModuleCarousel"
         @on-slide-change="(idx) => setModuleIdx(idx)"
         class="create-and-use-your-own-modules-carousel mb-34 h-96 w-[346px] select-none md:hidden lg:hidden"
       >
@@ -333,43 +331,55 @@
     <!-- DEMO FORM -->
     <!-- TODO: sheet 연결 -->
     <section
-      class="beta-tester relative pt-70 pb-80 md:pt-80 md:pb-116 lg:pt-200 lg:pb-88"
+      class="beta-tester relative pt-80 pb-136 md:pt-130 md:pb-136 lg:pt-200 lg:pb-200"
     >
       <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
-      <!-- <SignUpForm sheet-name="Modular">
+      <SignUpForm
+        sheet-name="Modular"
+        class="min-h-[787px] md:min-h-[499px] lg:min-h-[590px]"
+      >
         <template #description>
           <div
-            class="mx-auto flex flex-col items-center text-center text-white md:mx-16 md:items-start md:text-left lg:mx-42 lg:mb-56 lg:items-start lg:text-left"
+            class="flex flex-col px-42 pt-56 pb-56 text-white md:px-54 md:pt-106 md:pb-126 lg:px-76 lg:pt-132 lg:pb-150"
           >
-            <span class="mb-32 text-22 lg:text-28"> {{ DEMO_FORM.title }}</span>
+            <span
+              class="mb-20 text-20 font-semibold md:mb-30 md:text-22 md:font-semibold lg:mb-42 lg:text-28 lg:font-medium"
+            >
+              {{ DEMO_FORM.title }}</span
+            >
             <div class="flex flex-col">
               <div
                 v-for="description in DEMO_FORM.descriptions"
-                class="flex flex-row items-start not-last:mb-14"
+                class="flex flex-row items-start not-last:mb-4 md:not-last:mb-9 lg:not-last:mb-14"
               >
                 <IconBase
                   icon-name="checkmark-bold"
                   icon-color="white"
                   :width="16"
                   :height="16"
-                  class="mr-12 mt-5 h-16 max-h-16 min-h-16 w-16 min-w-16 max-w-16"
+                  class="mr-8 mt-1 h-16 max-h-16 min-h-16 w-16 min-w-16 max-w-16 md:mt-2 lg:mr-12 lg:mt-5"
                 />
-                <span class="text-18-medium">{{ description }}</span>
+                <span class="text-13 font-medium md:text-13 lg:text-18">{{
+                  description
+                }}</span>
               </div>
             </div>
           </div>
         </template>
         <template #form-title>
-          <span
-            class="mb-6 w-[200px] text-center text-18 md:pt-8 lg:w-[260px] lg:pt-8 lg:text-22"
-          >
-            Have a Project in Mind? Let's Talk!
-          </span>
-          <span class="text-center text-14 text-gray-550 lg:text-16"
-            >We'll be in touch soon.</span
+          <div class="text-center text-16 md:text-17 lg:text-20">
+            Request Access to
+            <span class="font-semibold text-primary lg:font-medium"
+              >Zenerate Modular!</span
+            >
+          </div>
+        </template>
+        <template #after-submit-text>
+          <span class="text-center text-13 text-gray-700 md:text-14 lg:text-18"
+            >We'll contact you within<br />1 to 3 business days.</span
           >
         </template>
-      </SignUpForm> -->
+      </SignUpForm>
     </section>
 
     <!-- WAVE BANNER -->
@@ -391,7 +401,7 @@
         >
 
         <div
-          class="relative flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px]"
+          class="flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px] lg:w-[380px]"
         >
           <template v-if="bannerEmail.isSent">
             <svg
@@ -421,24 +431,37 @@
             <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
           </template>
           <template v-else>
-            <!-- TODO: 에러메시지 UI 변경예정 -->
-            <transition name="fade">
+            <!-- TODO: delay -->
+            <Tooltip
+              placement="top"
+              customName="none-tooltip"
+              :skidding="0"
+              :distance="-50"
+              :shown="bannerEmail.showErrorMsg"
+              :triggers="[]"
+              :auto-hide="false"
+            >
+              <template #icon>
+                <input
+                  ref="bannerEmailInput"
+                  type="text"
+                  inputmode="email"
+                  :spellcheck="false"
+                  placeholder="Email Address"
+                  v-model="bannerEmail.inputValue"
+                  class="h-50 w-[188px] border-none pl-12 md:w-[211px] lg:w-[211px]"
+                  @focus="bannerEmail.showErrorMsg = false"
+                />
+              </template>
               <span
-                v-if="bannerEmail.showErrorMsg"
-                class="absolute bottom-[-28px] rounded-4 bg-red-50 px-12 py-4 text-12 text-red-500"
+                @click="hideBannerEmailErrorMsg"
+                class="flex h-50 w-[188px] items-center bg-white px-12 py-4 text-12 text-red-500 md:w-[211px] md:text-14 lg:w-[211px] lg:text-14"
                 >Please enter a valid email.</span
               >
-            </transition>
-            <input
-              type="text"
-              inputmode="email"
-              placeholder="Email Address"
-              v-model="bannerEmail.inputValue"
-              class="h-full w-full border-none pl-12"
-              @focus="bannerEmail.showErrorMsg = false"
-            />
+            </Tooltip>
+
             <button
-              class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white hover:bg-core-700 md:w-[157px] md:min-w-[157px]"
+              class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white hover:bg-core-700 md:w-[157px] md:min-w-[157px] lg:w-[157px] lg:min-w-[157px]"
               @click="sendBannerEmail"
             >
               Join Waitlist
@@ -464,6 +487,7 @@ import { ROLES } from '/Constants/roles'
 import { TIconName } from '/Components/EN/ui/a-icon-base'
 
 import { SignUpForm, Footer, Carousel } from '/Components/EN'
+import { Tooltip } from '/Components/EN/ui/tooltips'
 import IconBase from '/Components/EN/ui/IconBase.vue'
 
 const betaTester = ref(null)
@@ -471,14 +495,24 @@ const moveToBetaTesterElement = () => {
   betaTester.value.scrollIntoView({ behavior: 'smooth' })
 }
 
+const howItWorksCarousel = ref()
+const onHowItWorksCarousel = (carousel) => {
+  howItWorksCarousel.value = carousel
+}
 const howItWorksIdx = ref<number>(0)
 const setHowItWorksIdx = (idx: number) => {
   howItWorksIdx.value = idx
+  howItWorksCarousel.value.realIndex = idx
 }
 
+const moduleCarousel = ref()
+const onModuleCarousel = (carousel) => {
+  moduleCarousel.value = carousel
+}
 const moduleIdx = ref<number>(0)
 const setModuleIdx = (idx: number) => {
   moduleIdx.value = idx
+  moduleCarousel.value.realIndex = idx
 }
 
 const bannerEmail = ref<{
@@ -488,11 +522,18 @@ const bannerEmail = ref<{
   isLoading: boolean
 }>({
   inputValue: '',
-  showErrorMsg: null,
+  showErrorMsg: false,
   isSent: false,
   isLoading: false,
 })
-
+const bannerEmailInput = ref()
+const showBannerEmailErrorMsg = () => {
+  bannerEmail.value.showErrorMsg = true
+}
+const hideBannerEmailErrorMsg = () => {
+  bannerEmail.value.showErrorMsg = false
+  bannerEmailInput.value.focus()
+}
 const sendBannerEmail = async () => {
   const isValid =
     Validation.email(bannerEmail.value.inputValue) &&
@@ -500,7 +541,6 @@ const sendBannerEmail = async () => {
   if (isValid) {
     try {
       bannerEmail.value.isLoading = true
-      // TODO: 시트에 쌓이는지 확인
       await ApiService.XSLX_TEST('AppWaitlist', {
         email: bannerEmail.value.inputValue,
       })
@@ -511,7 +551,7 @@ const sendBannerEmail = async () => {
       console.error(e)
     }
   } else {
-    bannerEmail.value.showErrorMsg = true
+    showBannerEmailErrorMsg()
   }
 }
 
@@ -585,7 +625,7 @@ for Modular Housing`,
 const PRODUCT_DESCRIPTION = [
   {
     imgType: 'image',
-    // TODO:: imgUrls
+    // TODO: imgUrls
     imgUrls: {
       desktop: 'product_description3_desktop.png',
       tablet: 'product_description3_tablet.png',
@@ -603,7 +643,7 @@ const PRODUCT_DESCRIPTION = [
   },
   {
     imgType: 'image',
-    // TODO:: imgUrls
+    // TODO: imgUrls
     imgUrls: {
       desktop: 'product_description3_desktop.png',
       tablet: 'product_description3_tablet.png',
@@ -622,7 +662,7 @@ const PRODUCT_DESCRIPTION = [
   },
   {
     imgType: 'image',
-    // TODO:: imgUrls
+    // TODO: imgUrls
     imgUrls: {
       desktop: 'product_description3_desktop.png',
       tablet: 'product_description3_tablet.png',

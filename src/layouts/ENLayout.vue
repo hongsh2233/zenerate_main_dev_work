@@ -1,15 +1,14 @@
 <template>
   <div class="layout-en" id="layout-en">
-    <!-- TODO: 배너 변경 -->
     <button
       type="button"
       class="signup-banner"
       v-show="path !== '/beta'"
-      @click="() => router.push({ name: 'en-overview' })"
+      @click="() => router.push({ name: 'en-modular' })"
     >
       <div class="signup-banner-inner">
         <p>
-          <span>Beta Test the Zenerate App</span>
+          <span>Try out Zenerate Modular for FREE!</span>
         </p>
         <IconBase
           icon-name="arrow-right"
