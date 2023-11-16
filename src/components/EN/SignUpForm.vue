@@ -184,10 +184,12 @@
 </template>
 <script lang="ts" setup>
 import { PropType, computed, ref } from 'vue'
-import Validation from '/Utils/Validation'
-import DotSpinnerWhite from './ui/DotSpinnerWhite.vue'
-import ApiService from '/Services/api'
 import router from '/@/router'
+import Emitter from '/Libraries/bus'
+import ApiService from '/Services/api'
+import Validation from '/Utils/Validation'
+import { MENU_EVENT } from '/Constants/eventConstant'
+import DotSpinnerWhite from './ui/DotSpinnerWhite.vue'
 import { IconBase } from '.'
 
 const props = defineProps({
@@ -272,6 +274,14 @@ const submitForm = async () => {
 
   try {
     loading.value = true
+
+    if (sheetName.value === 'Modular') {
+      Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+        flag: true,
+        trigger: 'modularlandingpage',
+      })
+    }
+
     await ApiService.XSLX_TEST(sheetName.value, form)
     await ApiService.SEND_EMAIL(emailForm)
 
