@@ -389,7 +389,7 @@
         >
 
         <div
-          class="relative flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px]"
+          class="flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px] lg:w-[380px]"
         >
           <template v-if="bannerEmail.isSent">
             <svg
@@ -419,24 +419,36 @@
             <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
           </template>
           <template v-else>
-            <!-- TODO: 에러메시지 UI 변경 -->
-            <transition name="fade">
+            <Tooltip
+              placement="top"
+              customName="none-tooltip"
+              :skidding="0"
+              :distance="-50"
+              :shown="bannerEmail.showErrorMsg"
+              :triggers="[]"
+              :auto-hide="false"
+            >
+              <template #icon>
+                <input
+                  ref="bannerEmailInput"
+                  type="text"
+                  inputmode="email"
+                  :spellcheck="false"
+                  placeholder="Email Address"
+                  v-model="bannerEmail.inputValue"
+                  class="h-50 w-[188px] border-none pl-12 md:w-[211px] lg:w-[211px]"
+                  @focus="bannerEmail.showErrorMsg = false"
+                />
+              </template>
               <span
-                v-if="bannerEmail.showErrorMsg"
-                class="absolute bottom-[-28px] rounded-4 bg-red-50 px-12 py-4 text-12 text-red-500"
+                @click="hideBannerEmailErrorMsg"
+                class="flex h-50 w-[188px] items-center bg-white px-12 py-4 text-12 text-red-500 md:w-[211px] md:text-14 lg:w-[211px] lg:text-14"
                 >Please enter a valid email.</span
               >
-            </transition>
-            <input
-              type="text"
-              inputmode="email"
-              placeholder="Email Address"
-              v-model="bannerEmail.inputValue"
-              class="h-full w-full border-none pl-12"
-              @focus="bannerEmail.showErrorMsg = false"
-            />
+            </Tooltip>
+
             <button
-              class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white hover:bg-core-700 md:w-[157px] md:min-w-[157px]"
+              class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white hover:bg-core-700 md:w-[157px] md:min-w-[157px] lg:w-[157px] lg:min-w-[157px]"
               @click="sendBannerEmail"
             >
               Join Waitlist
@@ -462,6 +474,7 @@ import { ROLES } from '/Constants/roles'
 import { TIconName } from '/Components/EN/ui/a-icon-base'
 
 import { SignUpForm, Footer, Carousel } from '/Components/EN'
+import { Tooltip } from '/Components/EN/ui/tooltips'
 import IconBase from '/Components/EN/ui/IconBase.vue'
 
 const betaTester = ref(null)
@@ -496,11 +509,18 @@ const bannerEmail = ref<{
   isLoading: boolean
 }>({
   inputValue: '',
-  showErrorMsg: null,
+  showErrorMsg: false,
   isSent: false,
   isLoading: false,
 })
-
+const bannerEmailInput = ref()
+const showBannerEmailErrorMsg = () => {
+  bannerEmail.value.showErrorMsg = true
+}
+const hideBannerEmailErrorMsg = () => {
+  bannerEmail.value.showErrorMsg = false
+  bannerEmailInput.value.focus()
+}
 const sendBannerEmail = async () => {
   const isValid =
     Validation.email(bannerEmail.value.inputValue) &&
@@ -518,7 +538,7 @@ const sendBannerEmail = async () => {
       console.error(e)
     }
   } else {
-    bannerEmail.value.showErrorMsg = true
+    showBannerEmailErrorMsg()
   }
 }
 
