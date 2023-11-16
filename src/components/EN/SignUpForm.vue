@@ -256,6 +256,15 @@ const submitForm = async () => {
     form[key] = String(SignUpForm.value[key].value)
   }
 
+  const emailForm = {
+    company: SignUpForm.value.company.value,
+    name:
+      SignUpForm.value.firstName.value + ' ' + SignUpForm.value.lastName.value,
+    email: SignUpForm.value.email.value,
+    jobTitle: SignUpForm.value.jobTitle.value,
+    message: SignUpForm.value.message.value,
+  }
+
   const currentParams = { ...router.currentRoute.value.query }
   for (const key of ['utm_source', 'utm_medium']) {
     form[key] = currentParams[key]
@@ -264,6 +273,8 @@ const submitForm = async () => {
   try {
     loading.value = true
     await ApiService.XSLX_TEST(sheetName.value, form)
+    await ApiService.SEND_EMAIL(emailForm)
+
     loading.value = false
     formSubmitted.value = true
   } catch (e) {}
