@@ -130,11 +130,10 @@
       >
         Simple, intuitive process generating powerful results
       </div>
-      <!-- TODO: carousel sync -->
       <Carousel
         :slideCount="HOW_IT_WORKS.length"
         :mouseWheelControl="false"
-        :initial-slide="howItWorksIdx"
+        @on-carousel="onHowItWorksCarousel"
         @on-slide-change="(idx) => setHowItWorksIdx(idx)"
         class="how-it-works-carousel mb-34 h-96 w-[346px] select-none md:hidden lg:hidden"
       >
@@ -244,11 +243,10 @@
         Implement your very own modular units and core elements to their
         specific dimensions
       </div>
-      <!-- TODO: carousel sync -->
       <Carousel
         :slideCount="CREATE_AND_USE_YOUR_OWN_MODULES.length"
         :mouseWheelControl="false"
-        :initial-slide="moduleIdx"
+        @on-carousel="onModuleCarousel"
         @on-slide-change="(idx) => setModuleIdx(idx)"
         class="create-and-use-your-own-modules-carousel mb-34 h-96 w-[346px] select-none md:hidden lg:hidden"
       >
@@ -331,7 +329,7 @@
     </section>
 
     <!-- DEMO FORM -->
-    <!-- TODO: sheet 연결 -->
+    <!-- TODO: UI & sheet 연결 -->
     <section
       class="beta-tester relative pt-70 pb-80 md:pt-80 md:pb-116 lg:pt-200 lg:pb-88"
     >
@@ -421,7 +419,7 @@
             <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
           </template>
           <template v-else>
-            <!-- TODO: 에러메시지 UI 변경예정 -->
+            <!-- TODO: 에러메시지 UI 변경 -->
             <transition name="fade">
               <span
                 v-if="bannerEmail.showErrorMsg"
@@ -471,14 +469,24 @@ const moveToBetaTesterElement = () => {
   betaTester.value.scrollIntoView({ behavior: 'smooth' })
 }
 
+const howItWorksCarousel = ref()
+const onHowItWorksCarousel = (carousel) => {
+  howItWorksCarousel.value = carousel
+}
 const howItWorksIdx = ref<number>(0)
 const setHowItWorksIdx = (idx: number) => {
   howItWorksIdx.value = idx
+  howItWorksCarousel.value.realIndex = idx
 }
 
+const moduleCarousel = ref()
+const onModuleCarousel = (carousel) => {
+  moduleCarousel.value = carousel
+}
 const moduleIdx = ref<number>(0)
 const setModuleIdx = (idx: number) => {
   moduleIdx.value = idx
+  moduleCarousel.value.realIndex = idx
 }
 
 const bannerEmail = ref<{
@@ -500,7 +508,6 @@ const sendBannerEmail = async () => {
   if (isValid) {
     try {
       bannerEmail.value.isLoading = true
-      // TODO: 시트에 쌓이는지 확인
       await ApiService.XSLX_TEST('AppWaitlist', {
         email: bannerEmail.value.inputValue,
       })
@@ -585,7 +592,7 @@ for Modular Housing`,
 const PRODUCT_DESCRIPTION = [
   {
     imgType: 'image',
-    // TODO:: imgUrls
+    // TODO: imgUrls
     imgUrls: {
       desktop: 'product_description3_desktop.png',
       tablet: 'product_description3_tablet.png',
@@ -603,7 +610,7 @@ const PRODUCT_DESCRIPTION = [
   },
   {
     imgType: 'image',
-    // TODO:: imgUrls
+    // TODO: imgUrls
     imgUrls: {
       desktop: 'product_description3_desktop.png',
       tablet: 'product_description3_tablet.png',
@@ -622,7 +629,7 @@ const PRODUCT_DESCRIPTION = [
   },
   {
     imgType: 'image',
-    // TODO:: imgUrls
+    // TODO: imgUrls
     imgUrls: {
       desktop: 'product_description3_desktop.png',
       tablet: 'product_description3_tablet.png',

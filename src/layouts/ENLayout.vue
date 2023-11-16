@@ -1,6 +1,6 @@
 <template>
   <div class="layout-en" id="layout-en">
-    <!-- TODO: 배너 변경 -->
+    <!-- TODO: app 페이지로 연결되는 배너 변경? 삭제? -->
     <button
       type="button"
       class="signup-banner"

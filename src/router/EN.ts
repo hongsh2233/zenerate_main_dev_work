@@ -26,6 +26,7 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-landing',
       component: LandingView,
     },
+    // TODO: 기존 app 페이지 삭제? 유지?
     {
       path: '/zenerate-app',
       name: 'en-overview',
@@ -89,6 +90,7 @@ const ENRoute: RouteRecordRaw = {
     //   component: FAQView,
     //   children: [],
     // },
+    // TODO: /beta 대용 /ed1 페이지 UI?
     {
       path: '/beta',
       name: 'SignUp',
