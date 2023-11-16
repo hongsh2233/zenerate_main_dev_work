@@ -747,10 +747,13 @@
       class="beta-tester relative pt-70 pb-80 md:pt-80 md:pb-116 lg:pt-98 lg:pb-88"
     >
       <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
-      <SignUpForm sheet-name="AIConsulting">
+      <SignUpForm
+        sheet-name="AIConsulting"
+        class="min-h-[779px] md:min-h-[535px] lg:min-h-[631px]"
+      >
         <template #description>
           <div
-            class="mx-auto mx-2 mb-4 mt-13 flex flex-col items-center text-center text-white md:mx-16 md:mb-56 md:items-start md:text-left lg:mx-16 lg:mb-56 lg:items-start lg:text-left"
+            class="flex flex-col items-center pt-43 pb-41 text-center text-white md:items-start md:px-42 md:pt-72 md:pb-120 md:text-left lg:items-start lg:px-40 lg:pb-150 lg:pt-104 lg:text-left"
           >
             <span class="mb-30 text-22 lg:text-30">
               <span class="font-semibold">+28% Additional Returns</span

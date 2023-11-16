@@ -213,9 +213,14 @@
 
     <section class="beta-tester relative pt-60 pb-120 md:pt-120 lg:pt-120">
       <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
-      <SignUpForm sheet-name="Beta">
+      <SignUpForm
+        sheet-name="Beta"
+        class="min-h-[856px] md:min-h-[546px] lg:min-h-[628px]"
+      >
         <template #description>
-          <div class="mx-auto flex w-[256px] flex-col text-white lg:w-[320px]">
+          <div
+            class="flex flex-col items-center px-31 pt-29 pb-38 text-white md:items-start md:px-48 md:pt-84 md:pb-84 md:text-left lg:items-start lg:px-66 lg:pb-84 lg:pt-92 lg:text-left"
+          >
             <div
               class="text-22-semibold mb-20 text-center md:pl-22 md:text-left lg:mb-24 lg:pl-28 lg:text-left lg:text-28"
             >

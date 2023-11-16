@@ -329,45 +329,57 @@
     </section>
 
     <!-- DEMO FORM -->
-    <!-- TODO: UI & sheet 연결 -->
+    <!-- TODO: sheet 연결 -->
     <section
-      class="beta-tester relative pt-70 pb-80 md:pt-80 md:pb-116 lg:pt-200 lg:pb-88"
+      class="beta-tester relative pt-80 pb-136 md:pt-130 md:pb-136 lg:pt-200 lg:pb-200"
     >
       <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
-      <!-- <SignUpForm sheet-name="Modular">
+      <SignUpForm
+        sheet-name="Modular"
+        class="min-h-[787px] md:min-h-[499px] lg:min-h-[590px]"
+      >
         <template #description>
           <div
-            class="mx-auto flex flex-col items-center text-center text-white md:mx-16 md:items-start md:text-left lg:mx-42 lg:mb-56 lg:items-start lg:text-left"
+            class="flex flex-col px-42 pt-56 pb-56 text-white md:px-54 md:pt-106 md:pb-126 lg:px-76 lg:pt-132 lg:pb-150"
           >
-            <span class="mb-32 text-22 lg:text-28"> {{ DEMO_FORM.title }}</span>
+            <span
+              class="mb-20 text-20 font-semibold md:mb-30 md:text-22 md:font-semibold lg:mb-42 lg:text-28 lg:font-medium"
+            >
+              {{ DEMO_FORM.title }}</span
+            >
             <div class="flex flex-col">
               <div
                 v-for="description in DEMO_FORM.descriptions"
-                class="flex flex-row items-start not-last:mb-14"
+                class="flex flex-row items-start not-last:mb-4 md:not-last:mb-9 lg:not-last:mb-14"
               >
                 <IconBase
                   icon-name="checkmark-bold"
                   icon-color="white"
                   :width="16"
                   :height="16"
-                  class="mr-12 mt-5 h-16 max-h-16 min-h-16 w-16 min-w-16 max-w-16"
+                  class="mr-8 mt-1 h-16 max-h-16 min-h-16 w-16 min-w-16 max-w-16 md:mt-2 lg:mr-12 lg:mt-5"
                 />
-                <span class="text-18-medium">{{ description }}</span>
+                <span class="text-13 font-medium md:text-13 lg:text-18">{{
+                  description
+                }}</span>
               </div>
             </div>
           </div>
         </template>
         <template #form-title>
-          <span
-            class="mb-6 w-[200px] text-center text-18 md:pt-8 lg:w-[260px] lg:pt-8 lg:text-22"
-          >
-            Have a Project in Mind? Let's Talk!
-          </span>
-          <span class="text-center text-14 text-gray-550 lg:text-16"
-            >We'll be in touch soon.</span
+          <div class="text-center text-16 md:text-17 lg:text-20">
+            Request Access to
+            <span class="font-semibold text-primary lg:font-medium"
+              >Zenerate Modular!</span
+            >
+          </div>
+        </template>
+        <template #after-submit-text>
+          <span class="text-center text-13 text-gray-700 md:text-14 lg:text-18"
+            >We'll contact you within<br />1 to 3 business days.</span
           >
         </template>
-      </SignUpForm> -->
+      </SignUpForm>
     </section>
 
     <!-- WAVE BANNER -->
@@ -419,6 +431,7 @@
             <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
           </template>
           <template v-else>
+            <!-- TODO: delay -->
             <Tooltip
               placement="top"
               customName="none-tooltip"
