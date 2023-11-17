@@ -158,7 +158,7 @@
             :class="
               howItWorksIdx === idx
                 ? 'bg-core-10'
-                : 'bg-white  hover:bg-coolgray-70'
+                : 'bg-white  hover:bg-coolgray-50'
             "
             @click="() => setHowItWorksIdx(idx)"
           >
@@ -272,7 +272,7 @@
             v-for="(data, idx) of CREATE_AND_USE_YOUR_OWN_MODULES"
             class="flex h-72 w-full cursor-pointer flex-row items-center rounded-10 pl-30 not-last:mb-10 md:pl-20"
             :class="
-              moduleIdx === idx ? 'bg-core-10' : 'bg-white hover:bg-coolgray-70'
+              moduleIdx === idx ? 'bg-core-10' : 'bg-white hover:bg-coolgray-50'
             "
             @click="() => setModuleIdx(idx)"
           >
