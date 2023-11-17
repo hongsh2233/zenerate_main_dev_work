@@ -239,7 +239,7 @@ const bannerEmail = ref<{
 }>({
   inputValue: '',
   showErrorMsg: false,
-  isSent: true,
+  isSent: false,
   isLoading: false,
 })
 const bannerEmailInput = ref()
