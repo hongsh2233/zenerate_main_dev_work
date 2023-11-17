@@ -329,7 +329,6 @@
     </section>
 
     <!-- DEMO FORM -->
-    <!-- TODO: sheet 연결 -->
     <section
       class="beta-tester relative pt-80 pb-136 md:pt-130 md:pb-136 lg:pt-200 lg:pb-200"
     >
@@ -560,9 +559,7 @@ useHead({
   title: `About the Zenerate Modular | AI-Powered, Real-timeFeasibility Studies
 for Modular Housing`,
   htmlAttrs: { lang: 'en' },
-  link: [
-    { rel: 'canonical', href: 'https://www.zenerate.ai/zenerate-modular' },
-  ],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/modular' }],
   meta: [
     {
       name: `description`,
@@ -590,7 +587,7 @@ for Modular Housing`,
     {
       hid: 'og:url',
       property: 'og:url',
-      content: 'https://www.zenerate.ai/zenerate-modular',
+      content: 'https://www.zenerate.ai/modular',
     },
     {
       hid: 'og:title',

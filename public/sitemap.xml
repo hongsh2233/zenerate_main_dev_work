@@ -11,7 +11,7 @@
   <loc>https://www.zenerate.ai/zenerate-app</loc>
 </url>
 <url>
-  <loc>https://www.zenerate.ai/zenerate-modular</loc>
+  <loc>https://www.zenerate.ai/modular</loc>
 </url>
 <url>
   <loc>https://www.zenerate.ai/ai-consulting</loc>
@@ -27,6 +27,12 @@
 </url>
 <url>
   <loc>https://www.zenerate.ai/contact</loc>
+</url>
+<url>
+  <loc>https://www.zenerate.ai/beta</loc>
+</url>
+<url>
+  <loc>https://www.zenerate.ai/ed1-report</loc>
 </url>
 <url>
   <loc>https://www.zenerate.ai/terms-and-conditions</loc>
