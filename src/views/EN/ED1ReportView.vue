@@ -166,21 +166,44 @@
       </div>
     </div>
 
-    <!-- TODO:  -->
     <!-- FORM AREA -->
     <div
-      class="order-[-1] flex h-fit w-full flex-nowrap items-center justify-center bg-white lg:h-full lg:w-[380px] lg:min-w-[380px]"
+      class="order-[-1] flex h-[812px] w-full flex-nowrap items-center justify-center bg-white md:h-[750px] lg:h-full lg:w-[380px] lg:min-w-[380px]"
     >
-      @@@@
+      <div class="flex flex-col items-center">
+        <div class="text-22 font-semibold text-primary">
+          ED 1 Report Request Form
+        </div>
+        <FormContent
+          sheet-name="ED1Report"
+          submit-btn-text="Request Report"
+          class="w-[310px]"
+        >
+          <template #additional-text>
+            <span class="mb-20 text-14 text-gray-450"
+              >*Please reply to the confirmation email with any additional files
+              that we need to be aware of.</span
+            >
+          </template>
+          <template #after-submit-text>
+            <div class="w-[300px] text-center text-gray-700">
+              <span class="mb-18 text-22">Please check your inbox.</span>
+              <span class="text-18"
+                >We sent you a confirmation email with a payment link.</span
+              >
+            </div>
+          </template>
+        </FormContent>
+      </div>
     </div>
   </section>
 </template>
 <script lang="ts" setup>
 import { nextTick, onMounted, ref, watch, computed, onBeforeMount } from 'vue'
-import router from '/@/router'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import { Tooltip } from '/Components/EN/ui/tooltips'
+import { FormContent } from '/Components/EN'
 
 const CARD_CONTENT = {
   title: 'Quick AI-Powered Feasibility Study for ED 1 Projects in Los Angeles',
@@ -208,8 +231,6 @@ const CARD_CONTENT = {
   ],
 }
 
-// TODO: 메일 전송
-// TODO:구글시트 연동 확인
 const bannerEmail = ref<{
   inputValue: string
   showErrorMsg: boolean

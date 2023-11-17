@@ -11,7 +11,8 @@ import ZmapsLogo from './ui/ZmapsLogo.vue'
 import Carousel from './ui/Carousel.vue'
 import ProductCard from './ProductCard.vue'
 import Footer from './Footer.vue'
-import SignUpForm from './SignUpForm.vue'
+import FormWrapper from './FormWrapper.vue'
+import FormContent from './FormContent.vue'
 import IconBase from './ui/IconBase.vue'
 import CalendlyPopup from './CalendlyPopup.vue'
 
@@ -29,7 +30,8 @@ export {
   Carousel,
   ProductCard,
   Footer,
-  SignUpForm,
+  FormWrapper,
+  FormContent,
   IconBase,
   CalendlyPopup,
 }

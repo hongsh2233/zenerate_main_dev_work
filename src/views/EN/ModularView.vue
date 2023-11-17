@@ -333,7 +333,7 @@
       class="beta-tester relative pt-80 pb-136 md:pt-130 md:pb-136 lg:pt-200 lg:pb-200"
     >
       <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
-      <SignUpForm
+      <FormWrapper
         sheet-name="Modular"
         class="min-h-[787px] md:min-h-[499px] lg:min-h-[590px]"
       >
@@ -378,7 +378,7 @@
             >We'll contact you within<br />1 to 3 business days.</span
           >
         </template>
-      </SignUpForm>
+      </FormWrapper>
     </section>
 
     <!-- WAVE BANNER -->
@@ -485,7 +485,7 @@ import ImagePreloader from '/Utils/ImagePreloader'
 import { ROLES } from '/Constants/roles'
 import { TIconName } from '/Components/EN/ui/a-icon-base'
 
-import { SignUpForm, Footer, Carousel } from '/Components/EN'
+import { FormWrapper, Footer, Carousel } from '/Components/EN'
 import { Tooltip } from '/Components/EN/ui/tooltips'
 import IconBase from '/Components/EN/ui/IconBase.vue'
 

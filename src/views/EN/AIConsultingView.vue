@@ -747,7 +747,7 @@
       class="beta-tester relative pt-70 pb-80 md:pt-80 md:pb-116 lg:pt-98 lg:pb-88"
     >
       <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
-      <SignUpForm
+      <FormWrapper
         sheet-name="AIConsulting"
         class="min-h-[779px] md:min-h-[535px] lg:min-h-[631px]"
       >
@@ -776,7 +776,7 @@
             >We'll be in touch soon.</span
           >
         </template>
-      </SignUpForm>
+      </FormWrapper>
     </section>
 
     <section class="section section-footer fp-auto-height">
@@ -790,7 +790,7 @@ import { useHead } from '@vueuse/head'
 import { useGtag } from 'vue-gtag-next'
 
 import IconBase from '/Components/EN/ui/IconBase.vue'
-import { SignUpForm, Footer } from '/Components/EN'
+import { FormWrapper, Footer } from '/Components/EN'
 import { ROLES } from '/Constants/roles'
 
 import ImagePreloader from '/Utils/ImagePreloader'
