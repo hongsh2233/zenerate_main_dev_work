@@ -158,7 +158,7 @@
             :class="
               howItWorksIdx === idx
                 ? 'bg-core-10'
-                : 'bg-white  hover:bg-coolgray-70'
+                : 'bg-white  hover:bg-coolgray-50'
             "
             @click="() => setHowItWorksIdx(idx)"
           >
@@ -206,7 +206,7 @@
       </div>
       <div
         v-for="(data, dataIdx) in WHO_USES_IT"
-        class="card mx-auto mb-10 flex h-fit flex-col px-26 pt-24 pb-32 shadow-200 md:mb-10 md:flex-row md:px-24 md:py-20 md:pt-16 md:pb-20 lg:mb-12 lg:flex-row lg:pl-30 lg:pr-38 lg:pt-26 lg:pb-30"
+        class="card mx-auto mb-10 flex h-fit flex-col px-26 pt-24 pb-32 shadow-200 md:mb-10 md:flex-row md:items-center md:px-24 md:py-20 md:pt-16 md:pb-20 lg:mb-12 lg:flex-row lg:items-center lg:pl-30 lg:pr-38 lg:pt-26 lg:pb-30"
       >
         <div
           class="mb-15 md:mb-0 md:mr-30 md:w-[193px] md:min-w-[193px] lg:mb-0 lg:mr-90 lg:w-[200px] lg:min-w-[200px]"
@@ -272,7 +272,7 @@
             v-for="(data, idx) of CREATE_AND_USE_YOUR_OWN_MODULES"
             class="flex h-72 w-full cursor-pointer flex-row items-center rounded-10 pl-30 not-last:mb-10 md:pl-20"
             :class="
-              moduleIdx === idx ? 'bg-core-10' : 'bg-white hover:bg-coolgray-70'
+              moduleIdx === idx ? 'bg-core-10' : 'bg-white hover:bg-coolgray-50'
             "
             @click="() => setModuleIdx(idx)"
           >
@@ -747,7 +747,7 @@ const NEED_CUSTOMIZATION = [
   {
     iconName: 'wrench',
     title: 'Design Specific Inputs',
-    description: 'Customized modules and manufacturer specific kit of parts.',
+    description: 'Customize modules and manufacture specific kit of parts.',
   },
 ]
 
