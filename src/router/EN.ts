@@ -10,6 +10,7 @@ import LandingView from '/Views/EN/LandingView.vue'
 import TermsAndConditionsView from '/Views/EN/TermsAndConditionsView.vue'
 import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
 import PreSignUpView from '/Views/EN/PreSignUpView.vue'
+import ED1ReportView from '/Views/EN/ED1ReportView.vue'
 import SignUpView from '/Views/EN/SignUpView.vue'
 import ZenerateView from '/Views/EN/ZenerateView.vue'
 import AIConsultingVIew from '/Views/EN/AIConsultingView.vue'
@@ -26,7 +27,7 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-landing',
       component: LandingView,
     },
-    // TODO: 기존 app 페이지 삭제? 유지?
+    // TODO: /zenerate-app -> /modular 리디렉션
     {
       path: '/zenerate-app',
       name: 'en-overview',
@@ -38,7 +39,7 @@ const ENRoute: RouteRecordRaw = {
       component: AIConsultingVIew,
     },
     {
-      path: '/zenerate-modular',
+      path: '/modular',
       name: 'en-modular',
       component: ModularView,
     },
@@ -90,11 +91,15 @@ const ENRoute: RouteRecordRaw = {
     //   component: FAQView,
     //   children: [],
     // },
-    // TODO: /beta 대용 /ed1 페이지 UI?
     {
       path: '/beta',
       name: 'SignUp',
       component: PreSignUpView,
+    },
+    {
+      path: '/ed1-report',
+      name: 'en-ed1-report',
+      component: ED1ReportView,
     },
     // {
     //   path: '/demo-signup',
