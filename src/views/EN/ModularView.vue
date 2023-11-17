@@ -206,7 +206,7 @@
       </div>
       <div
         v-for="(data, dataIdx) in WHO_USES_IT"
-        class="card mx-auto mb-10 flex h-fit flex-col px-26 pt-24 pb-32 shadow-200 md:mb-10 md:flex-row md:px-24 md:py-20 md:pt-16 md:pb-20 lg:mb-12 lg:flex-row lg:pl-30 lg:pr-38 lg:pt-26 lg:pb-30"
+        class="card mx-auto mb-10 flex h-fit flex-col px-26 pt-24 pb-32 shadow-200 md:mb-10 md:flex-row md:items-center md:px-24 md:py-20 md:pt-16 md:pb-20 lg:mb-12 lg:flex-row lg:items-center lg:pl-30 lg:pr-38 lg:pt-26 lg:pb-30"
       >
         <div
           class="mb-15 md:mb-0 md:mr-30 md:w-[193px] md:min-w-[193px] lg:mb-0 lg:mr-90 lg:w-[200px] lg:min-w-[200px]"
