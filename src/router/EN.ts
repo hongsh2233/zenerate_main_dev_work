@@ -9,6 +9,7 @@ import ContactView from '/Views/EN/ContactView.vue'
 import LandingView from '/Views/EN/LandingView.vue'
 import TermsAndConditionsView from '/Views/EN/TermsAndConditionsView.vue'
 import PrivacyPolicyView from '/Views/EN/PrivacyPolicyView.vue'
+import PrivacyPolicyNewView from '/Views/EN/PrivacyPolicyNewView.vue'
 import PreSignUpView from '/Views/EN/PreSignUpView.vue'
 import ED1ReportView from '/Views/EN/ED1ReportView.vue'
 import SignUpView from '/Views/EN/SignUpView.vue'
@@ -119,6 +120,11 @@ const ENRoute: RouteRecordRaw = {
     {
       path: '/privacy-policy',
       name: 'en-privacy-policy',
+      component: PrivacyPolicyNewView,
+    },
+    {
+      path: '/privacy-policy-11292021',
+      name: 'en-privacy-policy-11292021',
       component: PrivacyPolicyView,
     },
   ],
