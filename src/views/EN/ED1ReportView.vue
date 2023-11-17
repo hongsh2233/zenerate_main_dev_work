@@ -1,601 +1,268 @@
 <template>
-  <section class="section section-contact">
-    <div class="contact-hero-wrapper">
+  <section
+    class="flex flex-col flex-nowrap items-center justify-center lg:fixed lg:top-0 lg:left-0 lg:h-[100vh] lg:max-h-[100vh] lg:w-[100vw] lg:max-w-[100vw] lg:flex-row"
+  >
+    <!-- DESCRIPTION AREA -->
+    <div
+      class="landing-area relative flex h-full w-full min-w-fit items-center justify-center bg-primary text-white lg:order-[-1]"
+    >
       <div
-        class="contact-form-wrapper"
-        :class="{ done: sendEmailStatus }"
-        v-if="!sendEmailStatus"
+        class="mt-66 mb-100 flex w-[328px] flex-col md:w-[640px] lg:w-[640px]"
       >
-        <div class="hero-text-wrapper">
-          <p class="title">Contact Us</p>
-          <p class="text">We'd love to hear from you</p>
-          <div class="image-wrapper">
-            <img
-              class="title-image"
-              src="/en/img/contact_email.png"
-              alt="contact us"
-            />
-          </div>
-        </div>
-        <div class="flex flex-col">
-          <div class="relative mb-40 flex flex-col gap-16">
-            <div class="flex flex-nowrap">
-              <Form
-                :inputValue="contactForm.first_name.value"
-                @update:inputValue="(v) => (contactForm.first_name.value = v)"
-                @blur="() => validation('first_name')"
-                :isValid="true"
-                required
-                size="large"
-                placeholder="First Name"
-                typeName="text"
-                label="First Name"
-                width="w-117"
-                direction="col"
-                autocomplete="new-first-name"
-              />
-
-              <Form
-                class="ml-6"
-                :inputValue="contactForm.last_name.value"
-                @update:inputValue="(v) => (contactForm.last_name.value = v)"
-                @blur="() => validation('last_name')"
-                :isValid="true"
-                required
-                size="large"
-                placeholder="Last Name"
-                typeName="text"
-                label="Last Name"
-                width="w-117"
-                direction="col"
-                autocomplete="new-first-name"
-              />
-            </div>
-            <Form
-              :inputValue="contactForm.email.value"
-              @update:inputValue="(v) => (contactForm.email.value = v)"
-              @blur="() => validation('email')"
-              :isValid="contactForm.email.valid !== false"
-              size="large"
-              direction="col"
-              width="w-[240px]"
-              required
-              placeholder="Enter Email"
-              typeName="email"
-              label="Work email"
-              autocomplete="new-email"
+        <!-- logo -->
+        <img
+          src="/public/img/logo_white.svg"
+          alt="zenerate"
+          class="mb-70 w-[180px] md:mb-70 md:w-[200px] lg:mb-70 lg:w-[200px]"
+        />
+        <!-- description -->
+        <div
+          class="mb-42 flex flex-col md:mb-50 md:flex-row md:justify-between lg:mb-50 lg:flex-row lg:justify-between"
+        >
+          <div class="mb-20 md:mb-0 lg:mb-0">
+            <h1
+              class="mb-12 mt-0 text-28 font-semibold md:mb-20 md:text-30 lg:mb-20 lg:text-30"
             >
-            </Form>
-            <Form
-              :inputValue="contactForm.phone.value"
-              @update:inputValue="(v) => (contactForm.phone.value = v)"
-              @blur="() => validation('phone')"
-              :isValid="contactForm.phone.valid !== false"
-              size="large"
-              direction="col"
-              width="w-[240px]"
-              placeholder="123-456.789"
-              typeName="tel"
-              label="Phone number"
-              autocomplete="new-phonenumber"
-            >
-            </Form>
-            <div class="flex flex-nowrap">
-              <Form
-                :inputValue="contactForm.city.value"
-                @update:inputValue="(v) => (contactForm.city.value = v)"
-                @blur="() => validation('city')"
-                :isValid="true"
-                size="large"
-                placeholder="Los Angeles"
-                typeName="text"
-                label="City"
-                width="w-117"
-                direction="col"
-                autocomplete="new-first-city"
-              />
-
-              <Form
-                class="ml-6"
-                :inputValue="contactForm.state.value"
-                @update:inputValue="(v) => (contactForm.state.value = v)"
-                @blur="() => validation('state')"
-                :isValid="true"
-                size="large"
-                placeholder="Califonia"
-                typeName="text"
-                label="State"
-                width="w-117"
-                direction="col"
-                autocomplete="new-state"
-              />
-            </div>
-            <Form
-              :inputValue="contactForm.company.value"
-              @update:inputValue="(v) => (contactForm.company.value = v)"
-              @blur="() => validation('company')"
-              :isValid="contactForm.company.valid !== false"
-              size="large"
-              direction="col"
-              width="w-[240px]"
-              placeholder="Zenerate"
-              typeName="text"
-              label="Company name"
-              autocomplete="new-company-name"
-            >
-            </Form>
-            <Form
-              :inputValue="contactForm.website.value"
-              @update:inputValue="(v) => (contactForm.website.value = v)"
-              @blur="() => validation('website')"
-              :isValid="contactForm.website.valid !== false"
-              size="large"
-              direction="col"
-              width="w-[240px]"
-              placeholder="www.zenerate.ai"
-              typeName="text"
-              label="Company website"
-              autocomplete="new-company-website"
-            >
-            </Form>
-            <span
-              class="text-12-medium absolute right-0 bottom-[-24px] w-full text-right text-primary"
-              >*required</span
+              ED 1 Feasibility Report
+            </h1>
+            <span class="text-18-medium md:text-20 lg:text-20"
+              >Delivery in 1-3 business days</span
             >
           </div>
-          <Button class="w-[240px]" @click="sendEmail"> Receive Access </Button>
+          <div class="md:w-[176px] lg:w-[176px]">
+            <div class="mb-6">
+              <span class="text-26 font-semibold md:text-30 lg:text-30"
+                >$150</span
+              ><span class="text-16-medium">&nbsp;&nbsp;/&nbsp;report</span>
+            </div>
+            <span class="text-14-medium text-gray-300"
+              >*Pricing valid until December 31st, 2023</span
+            >
+          </div>
         </div>
-      </div>
-      <transition name="fade">
-        <div class="contact-form-success" v-if="sendEmailStatus">
-          <div class="contact-form-inner">
-            <div class="check-wrapper">
-              <div class="circle">
-                <svg fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="m121.428.845-.836.845.024.024-22.525 22.892-54.788 55.688a6.006 6.006 0 0 1-7.018 1.136l3.313 2.695 5.004 4.07a6.013 6.013 0 0 0 3.797 1.35 5.99 5.99 0 0 0 4.289-1.795L130 9.17 121.428.845Z"
-                    fill="#4848FF"
-                  />
-                  <path
-                    d="m98.07 24.582-50.122 50.94-9.225-7.503-.028-.024-30.41-24.742L.69 52.472l29.596 24.074.028.024 5.971 4.86c.86.436 1.795.659 2.73.659a5.99 5.99 0 0 0 4.289-1.795l54.79-55.684-.023-.028Z"
-                    fill="#4848FF"
-                    fill-opacity=".4"
-                  />
-                </svg>
+        <!-- card -->
+        <div
+          class="mb-56 w-full rounded-10 bg-black/50 px-24 pt-24 pb-34 md:mb-60 md:px-30 md:pt-30 md:pb-40 lg:mb-60 lg:px-30 lg:pt-30 lg:pb-40"
+        >
+          <span
+            class="text-16-semibold mb-26 md:mb-24 md:text-18 lg:mb-24 lg:text-18"
+            >{{ CARD_CONTENT.title }}</span
+          >
+          <div
+            class="flex flex-col md:flex-row md:justify-between lg:flex-row lg:justify-between"
+          >
+            <div
+              v-for="content in CARD_CONTENT.contents"
+              class="flex flex-col not-last:mb-20 md:mb-0 lg:mb-0"
+            >
+              <div class="w-[280px]">
+                <span
+                  class="mb-18 text-14 font-semibold md:text-16 lg:text-16"
+                  >{{ content.title }}</span
+                >
+                <div
+                  v-for="(description, idx) in content.descriptions"
+                  class="flex flex-row items-start text-14 not-last:mb-3 md:text-15 md:not-last:mb-5 lg:text-15 lg:not-last:mb-5"
+                >
+                  <div class="w-20 min-w-20 text-center">
+                    {{
+                      content.bulletStyleType === 'bullet'
+                        ? '&#8226;'
+                        : content.bulletStyleType === 'number'
+                        ? `${idx + 1}.`
+                        : ''
+                    }}
+                  </div>
+                  <span>{{ description }}</span>
+                </div>
               </div>
             </div>
-            <div class="inner-content">
-              <p class="content-heading">Thank you!</p>
-              <p class="content-text">
-                We'll get back to you as soon as possible.
-              </p>
-              <p class="content-contact">
-                <span>If you do not receive a reply&nbsp;</span>
-                <span>within 2 business days</span> <br />
-                please email
-                <a href="mailto: contact@zenerate.ai">contact@zenerate.ai</a>
-              </p>
-              <router-link class="link-button" :to="{ name: 'en-landing' }">
-                View Product Overview
-                <IconBase
-                  icon-name="arrow-right"
-                  :width="22"
-                  :height="22"
-                  iconColor="#4D49F4"
-                  class="ml-8"
-                />
-              </router-link>
-            </div>
           </div>
         </div>
-      </transition>
+        <!-- form -->
+        <div class="flex flex-col items-center md:flex-row lg:flex-row">
+          <div
+            class="mb-30 text-center md:mb-0 md:text-left lg:mb-0 lg:text-left"
+          >
+            <span class="mb-4 text-18 font-semibold"
+              >Want to view a Sample Report?</span
+            >
+            <span class="text-14"
+              >Enter your email to receive one right away.
+            </span>
+          </div>
+
+          <div
+            class="flex h-58 w-[320px] min-w-[320px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200"
+          >
+            <template v-if="bannerEmail.isSent">
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse
+                  cx="12.1782"
+                  cy="12"
+                  rx="11.8207"
+                  ry="12"
+                  fill="#EBEDFE"
+                />
+                <path
+                  d="M23.0361 1.81787L22.9074 1.97012L22.9111 1.97441L19.4387 6.0958L10.993 16.1219C10.8131 16.3357 10.5728 16.445 10.3319 16.445C10.1878 16.445 10.0436 16.405 9.91113 16.3264L10.4219 16.8117L11.1933 17.5443C11.3645 17.7066 11.5715 17.7874 11.7786 17.7874C12.0195 17.7874 12.2597 17.6787 12.4396 17.4643L24.3577 3.31675L23.0361 1.81787Z"
+                  fill="#4848FF"
+                />
+                <path
+                  d="M19.4358 6.09106L11.7092 15.2623L10.2872 13.9114L10.2829 13.9071L5.59493 9.45265L4.42432 11.1124L8.98661 15.4467L8.99093 15.451L9.91139 16.3259C10.0439 16.4045 10.188 16.4446 10.3322 16.4446C10.5731 16.4446 10.8134 16.3359 10.9933 16.1215L19.4395 6.09607L19.4358 6.09106Z"
+                  fill="#4848FF"
+                  fill-opacity="0.4"
+                />
+              </svg>
+              <span class="text-16-medium ml-10 text-black"
+                >Sent, please check your inbox!</span
+              >
+            </template>
+            <template v-else>
+              <!-- TODO: delay -->
+              <Tooltip
+                placement="top"
+                customName="none-tooltip"
+                :skidding="0"
+                :distance="-50"
+                :shown="bannerEmail.showErrorMsg"
+                :triggers="[]"
+                :auto-hide="false"
+              >
+                <template #icon>
+                  <input
+                    ref="bannerEmailInput"
+                    type="text"
+                    inputmode="email"
+                    :spellcheck="false"
+                    placeholder="Email Address"
+                    v-model="bannerEmail.inputValue"
+                    class="h-50 w-[208px] border-none pl-12"
+                    @focus="bannerEmail.showErrorMsg = false"
+                  />
+                </template>
+                <span
+                  @click="hideBannerEmailErrorMsg"
+                  class="flex h-50 w-[208px] items-center bg-white px-12 py-4 text-14 text-red-500"
+                  >Please enter a valid email.</span
+                >
+              </Tooltip>
+
+              <button
+                class="text-14-medium ml-4 h-50 w-[100px] min-w-[100px] rounded-4 bg-primary text-white hover:bg-core-700"
+                @click="sendBannerEmail"
+              >
+                Send
+              </button>
+            </template>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="section section-footer">
-      <Footer />
+
+    <!-- TODO:  -->
+    <!-- FORM AREA -->
+    <div
+      class="order-[-1] flex h-fit w-full flex-nowrap items-center justify-center bg-white lg:h-full lg:w-[380px] lg:min-w-[380px]"
+    >
+      @@@@
     </div>
   </section>
 </template>
 <script lang="ts" setup>
-import { reactive, ref, onMounted, computed } from 'vue'
-import Store from '/Store/index'
+import { nextTick, onMounted, ref, watch, computed, onBeforeMount } from 'vue'
+import router from '/@/router'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
-import { useRoute, useRouter } from 'vue-router'
-import Footer from '/Components/EN/Footer.vue'
-import SelectInput from '/Components/SelectInput.vue'
-import { ModalLayout, Button, Form, IconBase } from '/Components/EN'
-// const fullpage = computed(() => Store.state.root.FullPage)
+import { Tooltip } from '/Components/EN/ui/tooltips'
 
-// onMounted(() => {
-//   if (fullpage.value) {
-//     fullpage.value.destroy()
-//   }
-// })
-
-type Item = {
-  id: number
-  value: string
-  label: string
-  ref?: string
+const CARD_CONTENT = {
+  title: 'Quick AI-Powered Feasibility Study for ED 1 Projects in Los Angeles',
+  contents: [
+    {
+      title: "What's included?",
+      bulletStyleType: 'bullet',
+      descriptions: [
+        'Zoning requirements analysis',
+        'Design options featuring floor plans',
+        'Maximizing density on a site',
+        '15-minute meeting upon report delivery',
+      ],
+    },
+    {
+      title: 'How to get a report:',
+      bulletStyleType: 'number',
+      descriptions: [
+        'Fill out the Report Request Form',
+        'Receive confirmation email with payment link',
+        'Complete payment',
+        'Receive report in 1-3 business days with 15-minute meeting',
+      ],
+    },
+  ],
 }
 
-const items: Item[] = [
-  {
-    id: 1,
-    value: 'product_service',
-    label: 'Product / Service',
-  },
-  {
-    id: 2,
-    value: 'billing',
-    label: 'Billing',
-  },
-  {
-    id: 3,
-    value: 'partnerships_investments',
-    label: 'Partnerships & Investments',
-  },
-  {
-    id: 4,
-    value: 'pr_media',
-    label: 'PR / Media',
-  },
-  {
-    id: 5,
-    value: 'careers',
-    label: 'Careers',
-  },
-  {
-    id: 6,
-    value: 'other',
-    label: 'Other',
-  },
-]
-const sendEmailStatus = ref(false)
-
-const contactForm = reactive({
-  first_name: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-  last_name: {
-    value: '',
-    validator: Validation.string,
-    valid: null,
-  },
-  email: {
-    value: '',
-    validator: Validation.email,
-    valid: null,
-  },
-  phone: {
-    value: null,
-    validator: (v) => true,
-    valid: null,
-  },
-  city: {
-    value: null,
-    validator: (v) => true,
-    valid: null,
-  },
-  state: {
-    value: null,
-    validator: (v) => true,
-    valid: null,
-  },
-  company: {
-    value: '',
-    validator: (v) => true,
-    valid: null,
-  },
-  website: {
-    value: null,
-    validator: (v) => true,
-    valid: null,
-  },
+// TODO: 메일 전송
+// TODO:구글시트 연동 확인
+const bannerEmail = ref<{
+  inputValue: string
+  showErrorMsg: boolean
+  isSent: boolean
+  isLoading: boolean
+}>({
+  inputValue: '',
+  showErrorMsg: false,
+  isSent: true,
+  isLoading: false,
 })
-
-const validation = (item: string) => {
-  contactForm[item].valid = contactForm[item].validator(contactForm[item].value)
+const bannerEmailInput = ref()
+const showBannerEmailErrorMsg = () => {
+  bannerEmail.value.showErrorMsg = true
 }
-
-const resetForm = () => {
-  Object.assign(contactForm, {
-    first_name: {
-      value: '',
-      validator: Validation.string,
-      valid: null,
-    },
-    last_name: {
-      value: '',
-      validator: Validation.string,
-      valid: null,
-    },
-    email: {
-      value: '',
-      validator: Validation.email,
-      valid: null,
-    },
-    phone: {
-      value: null,
-      validator: (v) => true,
-      valid: null,
-    },
-    city: {
-      value: null,
-      validator: (v) => true,
-      valid: null,
-    },
-    state: {
-      value: null,
-      validator: (v) => true,
-      valid: null,
-    },
-    company: {
-      value: '',
-      validator: Validation.string,
-      valid: null,
-    },
-    website: {
-      value: null,
-      validator: (v) => true,
-      valid: null,
-    },
-  })
+const hideBannerEmailErrorMsg = () => {
+  bannerEmail.value.showErrorMsg = false
+  bannerEmailInput.value.focus()
 }
-
-const dummy = ref(null)
-
-const sendEmail = async () => {
-  if (sendEmailStatus.value == true) return
-  dummy.value.focus()
-  let isValid = true
-  const form = {}
-  for (const key in contactForm) {
-    if (!contactForm[key].valid) {
-      contactForm[key].valid = false
-      isValid = false
-    } else {
-      if (key === 'purpose') {
-        form[key] = contactForm[key].value.label
-      } else {
-        form[key] = contactForm[key].value
-      }
+const sendBannerEmail = async () => {
+  const isValid =
+    Validation.email(bannerEmail.value.inputValue) &&
+    bannerEmail.value.inputValue.trim() !== ''
+  if (isValid) {
+    try {
+      bannerEmail.value.isLoading = true
+      await ApiService.XSLX_TEST('ED1ReportSample', {
+        email: bannerEmail.value.inputValue,
+      })
+      bannerEmail.value.isLoading = false
+      bannerEmail.value.isSent = true
+      bannerEmail.value.inputValue = ''
+    } catch (e) {
+      console.error(e)
     }
+  } else {
+    showBannerEmailErrorMsg()
   }
-  if (!isValid) return
-  await ApiService.SEND_EMAIL(form)
-  resetForm()
-  sendEmailStatus.value = true
-
-  setTimeout(() => {
-    sendEmailStatus.value = false
-  }, 10000)
 }
-const router = useRouter()
 </script>
 <style lang="scss" scoped>
-.section-contact {
-  @include relative;
-  min-width: 100%;
-  width: 100%;
-  .contact-hero-wrapper {
-    @include relative;
-    @include flex();
-    flex-wrap: nowrap;
-    padding-top: 100px;
+.landing-area {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-color: theme('colors.core.700');
 
-    .image-wrapper {
-      @include flex();
-      width: 100%;
-      object-fit: contain;
-      margin-top: 46px;
-      img {
-        width: 157px;
-      }
-
-      @include en-tablet {
-        margin-top: 36px;
-
-        img {
-          width: 120px;
-        }
-      }
-
-      @include en-mobile {
-        justify-content: flex-end;
-        margin-top: 0px;
-        img {
-          width: 80px;
-        }
-      }
-    }
-
-    .hero-text-wrapper {
-      p {
-        color: $text-darken;
-        &.title {
-          @include semi-bold(30);
-
-          @include en-tablet {
-            @include semi-bold(27);
-          }
-          @include en-mobile {
-            @include semi-bold(15);
-          }
-        }
-        &.text {
-          @include medium(18);
-          @include en-tablet {
-            @include medium(16);
-            line-height: 20px;
-          }
-          @include en-mobile {
-            @include medium(12);
-            line-height: 16px;
-          }
-        }
-      }
-
-      @include en-desktop {
-        margin-right: 100px;
-      }
-
-      @include en-tablet {
-        margin-right: 70px;
-      }
-
-      @include en-mobile {
-        margin-bottom: 24px;
-      }
-    }
+  background-image: url('/public/en/ed1_report/bg_desktop.png');
+  @include en-tablet {
+    background-image: url('/public/en/ed1_report/bg_tablet.png');
   }
-
-  .contact-form-success {
-    @include center-center;
-    width: 100%;
-    height: 100%;
-    background-color: $white;
-    padding: 80px 0px 0px;
-    z-index: 10;
-
-    @include en-tablet {
-      padding: 50px 0px 0px;
-    }
-
-    @include en-mobile {
-      padding: 40px 0px 0px;
-    }
-
-    .contact-form-inner {
-      text-align: center;
-
-      .content-heading {
-        @include semi-bold(40);
-        color: $text-darken;
-        margin-bottom: 12px;
-
-        @include en-tablet {
-          @include semi-bold(34);
-        }
-
-        @include en-mobile {
-          @include semi-bold(30);
-          margin-bottom: 6px;
-        }
-      }
-      .content-text {
-        @include medium(24);
-        color: $text-darken;
-        margin-bottom: 28px;
-
-        @include en-tablet {
-          @include medium(20);
-        }
-
-        @include en-mobile {
-          @include medium(15);
-          max-width: 170px;
-          margin-bottom: 40px;
-          line-height: 20px;
-        }
-      }
-
-      .content-contact {
-        @include regular(16);
-        color: $text-darken;
-        margin: 0px auto 160px;
-        line-height: 24px;
-
-        a {
-          font-weight: 500;
-          color: $core;
-        }
-
-        @include en-tablet {
-          @include regular(12);
-          margin: 0px auto 130px;
-          line-height: 20px;
-        }
-
-        @include en-mobile {
-          @include regular(12);
-          max-width: 260px;
-          margin: 0px auto 120px;
-          line-height: 20px;
-        }
-      }
-      .link-button {
-        @include flex($justify: center);
-        @include semi-bold(21);
-        width: 300px;
-        align-items: center;
-        background: $white;
-        margin: 0px auto;
-        color: $navigation;
-
-        @include en-tablet {
-          @include semi-bold(17);
-        }
-
-        @include en-mobile {
-          @include semi-bold(14);
-        }
-      }
-    }
-  }
-  .contact-form-wrapper {
-    @include flex();
-    flex-wrap: nowrap;
-    justify-content: center;
-    margin: 0px auto;
-    padding: 5% 10% 0px;
-    background-color: $white;
-    border-radius: 20px;
-    @include en-mobile {
-      flex-direction: column;
-      padding: 40px 10% 0px;
-    }
-  }
-
-  .check-wrapper {
-    @include relative;
-    @include center-center;
-    margin-bottom: 52px;
-
-    @include en-mobile {
-      @include medium(13);
-      margin-bottom: 40px;
-    }
-    .circle {
-      @include relative;
-      width: 138px;
-      height: 138px;
-      background-color: #ebedfe;
-      border-radius: 50%;
-      svg {
-        @include absolute(top 50% left 50%);
-        transform: translate(-40%, -60%);
-        width: 130px;
-        height: 90px;
-      }
-    }
-
-    @include en-mobile {
-      .circle {
-        @include relative;
-        width: 110px;
-        height: 110px;
-        svg {
-          @include absolute(top 3% left 3%);
-          transform: scale(0.8);
-        }
-      }
-    }
-  }
-  .section-footer {
-    margin-top: 320px;
+  @include en-mobile {
+    background-image: url('/public/en/ed1_report/bg_mobile.png');
   }
 }
 </style>
