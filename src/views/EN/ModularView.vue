@@ -747,7 +747,7 @@ const NEED_CUSTOMIZATION = [
   {
     iconName: 'wrench',
     title: 'Design Specific Inputs',
-    description: 'Customized modules and manufacturer specific kit of parts.',
+    description: 'Customize modules and manufacture specific kit of parts.',
   },
 ]
 
