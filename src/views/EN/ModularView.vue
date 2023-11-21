@@ -594,13 +594,16 @@ const hideBannerEmailErrorMsg = () => {
   bannerEmailInput.value.focus()
 }
 
+let timeoutId = null
 watch(
   () => bannerEmail.value.showErrorMsg,
   (flag) => {
     if (flag === true) {
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         bannerEmail.value.showErrorMsg = false
       }, 1600)
+    } else {
+      clearTimeout(timeoutId)
     }
   }
 )
