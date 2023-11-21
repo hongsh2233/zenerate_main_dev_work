@@ -358,18 +358,6 @@ const submitForm = async () => {
       SignUpForm.value.firstName.value + ' ' + SignUpForm.value.lastName.value,
   }
 
-  const activeCampaignForm = {
-    email: SignUpForm.value.email.value,
-    firstName: SignUpForm.value.firstName.value,
-    lastName: SignUpForm.value.lastName.value,
-    company: SignUpForm.value.company.value,
-    jobTitle: SignUpForm.value.jobTitle.value,
-    ed1_address: SignUpForm.value.address.value,
-    ed1_lot_size: SignUpForm.value.lotSize.value,
-    ed1_message: SignUpForm.value.message.value,
-    tag: 'ed1_report',
-  }
-
   const currentParams = { ...router.currentRoute.value.query }
   for (const key of ['utm_source', 'utm_medium']) {
     form[key] = currentParams[key]
@@ -389,6 +377,17 @@ const submitForm = async () => {
     await ApiService.SEND_EMAIL(emailForm)
 
     if (sheetName.value === 'ED1Report') {
+      const activeCampaignForm = {
+        email: SignUpForm.value.email.value,
+        firstName: SignUpForm.value.firstName.value,
+        lastName: SignUpForm.value.lastName.value,
+        company: SignUpForm.value.company.value,
+        ed1_address: SignUpForm.value.address.value,
+        ed1_lot_size: SignUpForm.value.lotSize.value,
+        ed1_message: SignUpForm.value.projectDetail.value,
+        tag: 'ed1_report',
+      }
+
       await ApiService.ACTIVE_CAMPAIGN(activeCampaignForm)
     }
 
