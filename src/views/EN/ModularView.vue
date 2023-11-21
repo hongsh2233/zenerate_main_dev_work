@@ -139,9 +139,10 @@
         Simple, intuitive process generating powerful results
       </div>
       <Carousel
+        :key="howItWorksIdx"
+        :initial-slide="howItWorksIdx"
         :slideCount="HOW_IT_WORKS.length"
         :mouseWheelControl="false"
-        @on-carousel="onHowItWorksCarousel"
         @on-slide-change="(idx) => setHowItWorksIdx(idx)"
         class="how-it-works-carousel mb-34 h-96 w-[346px] select-none md:hidden lg:hidden"
       >
@@ -271,9 +272,10 @@
         specific dimensions
       </div>
       <Carousel
+        :key="moduleIdx"
+        :initial-slide="moduleIdx"
         :slideCount="CREATE_AND_USE_YOUR_OWN_MODULES.length"
         :mouseWheelControl="false"
-        @on-carousel="onModuleCarousel"
         @on-slide-change="(idx) => setModuleIdx(idx)"
         class="create-and-use-your-own-modules-carousel mb-34 h-96 w-[346px] select-none md:hidden lg:hidden"
       >
@@ -574,27 +576,14 @@ const moveToBetaTesterElement = () => {
   betaTester.value.scrollIntoView({ behavior: 'smooth' })
 }
 
-// TODO: carousel sync
-const howItWorksCarousel = ref()
-const onHowItWorksCarousel = (carousel) => {
-  howItWorksCarousel.value = carousel
-}
 const howItWorksIdx = ref<number>(0)
 const setHowItWorksIdx = (idx: number) => {
   howItWorksIdx.value = idx
-  howItWorksCarousel.value.realIndex = idx
-  howItWorksCarousel.value.activeIndex = idx
-  howItWorksCarousel.value.snapIndex = idx
 }
 
-const moduleCarousel = ref()
-const onModuleCarousel = (carousel) => {
-  moduleCarousel.value = carousel
-}
 const moduleIdx = ref<number>(0)
 const setModuleIdx = (idx: number) => {
   moduleIdx.value = idx
-  moduleCarousel.value.realIndex = idx
 }
 
 const bannerEmail = ref<{
