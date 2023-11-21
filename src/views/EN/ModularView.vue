@@ -47,7 +47,7 @@
           :muted="true"
           :loop="true"
           :playsinline="true"
-          src="/public/en/modular/hero.mp4"
+          src="/en/modular/hero.mp4"
           alt=""
         />
       </div>
@@ -205,7 +205,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/public/en/modular/how_it_works${
+            :src="`/en/modular/how_it_works${
               howItWorksIdx + 1
             }_tablet_mobile.mp4`"
             alt=""
@@ -216,9 +216,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/public/en/modular/how_it_works${
-              howItWorksIdx + 1
-            }_desktop.mp4`"
+            :src="`/en/modular/how_it_works${howItWorksIdx + 1}_desktop.mp4`"
             alt=""
           />
         </div>
@@ -303,7 +301,7 @@
               :muted="true"
               :loop="true"
               :playsinline="true"
-              :src="`/public/en/modular/module${moduleIdx + 1}_mobile.mp4`"
+              :src="`/en/modular/module${moduleIdx + 1}_mobile.mp4`"
               alt=""
             />
             <video
@@ -312,7 +310,7 @@
               :muted="true"
               :loop="true"
               :playsinline="true"
-              :src="`/public/en/modular/module${moduleIdx + 1}_tablet.mp4`"
+              :src="`/en/modular/module${moduleIdx + 1}_tablet.mp4`"
               alt=""
             />
             <video
@@ -321,7 +319,7 @@
               :muted="true"
               :loop="true"
               :playsinline="true"
-              :src="`/public/en/modular/module${moduleIdx + 1}_desktop.mp4`"
+              :src="`/en/modular/module${moduleIdx + 1}_desktop.mp4`"
               alt=""
             />
           </template>
@@ -332,17 +330,17 @@
           >
             <img
               class="h-full w-full md:hidden lg:hidden"
-              :src="`/public/en/modular/module${moduleIdx + 1}_mobile.png`"
+              :src="`/en/modular/module${moduleIdx + 1}_mobile.png`"
               alt=""
             />
             <img
               class="hidden h-full w-full md:block lg:hidden"
-              :src="`/public/en/modular/module${moduleIdx + 1}_tablet.png`"
+              :src="`/en/modular/module${moduleIdx + 1}_tablet.png`"
               alt=""
             />
             <img
               class="hidden h-full w-full md:hidden lg:!block"
-              :src="`/public/en/modular/module${moduleIdx + 1}_desktop.png`"
+              :src="`/en/modular/module${moduleIdx + 1}_desktop.png`"
               alt=""
             />
           </template>
@@ -1041,7 +1039,7 @@ onMounted(() => {
 }
 
 .blue-wave-wrapper {
-  background-image: url('/public/en/img/blue_wave.png');
+  background-image: url('/en/img/blue_wave.png');
   background-repeat: no-repeat;
   background-position: bottom center;
 }
