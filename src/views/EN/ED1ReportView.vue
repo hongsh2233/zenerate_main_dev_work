@@ -183,7 +183,7 @@
         <FormContent
           sheet-name="ED1Report"
           submit-btn-text="Request Report"
-          class="w-[310px]"
+          class="ed1-report-form w-[310px]"
         >
           <template #additional-text>
             <span class="mb-20 text-14 text-gray-450"
@@ -294,6 +294,13 @@ const sendBannerEmail = async () => {
   }
   @include en-mobile {
     background-image: url('/public/en/ed1_report/bg_mobile.png');
+  }
+}
+</style>
+<style lang="scss">
+.ed1-report-form {
+  .submit-button {
+    height: 48px !important;
   }
 }
 </style>
