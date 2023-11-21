@@ -260,6 +260,10 @@ const sendBannerEmail = async () => {
       await ApiService.XSLX_TEST('ED1ReportSample', {
         email: bannerEmail.value.inputValue,
       })
+      await ApiService.ACTIVE_CAMPAIGN({
+        email: bannerEmail.value.inputValue,
+        tag: 'ed1_sample',
+      })
       bannerEmail.value.isLoading = false
       bannerEmail.value.isSent = true
       bannerEmail.value.inputValue = ''
