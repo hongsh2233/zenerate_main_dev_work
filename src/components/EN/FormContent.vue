@@ -359,14 +359,14 @@ const submitForm = async () => {
   }
 
   const activeCampaignForm = {
-    email: SignUpForm.value.email,
-    firstName: SignUpForm.value.firstName,
-    lastName: SignUpForm.value.lastName,
-    company: SignUpForm.value.company,
-    jobTitle: SignUpForm.value.jobTitle,
-    ed1_address: SignUpForm.value.address,
-    ed1_lot_size: SignUpForm.value.lotSize,
-    ed1_message: SignUpForm.value.message,
+    email: SignUpForm.value.email.value,
+    firstName: SignUpForm.value.firstName.value,
+    lastName: SignUpForm.value.lastName.value,
+    company: SignUpForm.value.company.value,
+    jobTitle: SignUpForm.value.jobTitle.value,
+    ed1_address: SignUpForm.value.address.value,
+    ed1_lot_size: SignUpForm.value.lotSize.value,
+    ed1_message: SignUpForm.value.message.value,
     tag: 'ed1_report',
   }
 
