@@ -188,13 +188,15 @@ const CARD_DATA = {
   }
 
   &.zenerate-modular {
-    background-image: url('/public/en/products/zenerate_app_desktop.png');
+    background-image: url('/public/en/products/zenerate_modular_desktop.png');
+    background-size: 980px 648px;
     background-position: center;
     @include en-tablet {
-      background-image: url('/public/en/products/zenerate_app_tablet.png');
+      background-size: 708px 468px;
+      background-image: url('/public/en/products/zenerate_modular_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/products/zenerate_app_mobile_new.png');
+      background-image: url('/public/en/products/zenerate_modular_mobile.png');
       background-size: 320px 388px;
       background-position: bottom 203px center;
     }
