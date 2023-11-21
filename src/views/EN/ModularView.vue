@@ -402,7 +402,9 @@
           />
           <div class="flex flex-col md:w-[426px]">
             <span class="text-20-medium mb-8">{{ data.title }}</span>
-            <span class="text-18 text-gray-600">{{ data.description }}</span>
+            <span class="text-16 text-gray-600 md:text-18 lg:text-18">{{
+              data.description
+            }}</span>
           </div>
         </div>
       </div>
