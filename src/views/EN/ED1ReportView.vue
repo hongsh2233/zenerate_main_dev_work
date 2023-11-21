@@ -301,6 +301,8 @@ const sendBannerEmail = async () => {
 .ed1-report-form {
   .submit-button {
     height: 48px !important;
+    font-size: 16px !important;
+    font-weight: 500;
   }
 }
 </style>
