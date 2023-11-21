@@ -412,6 +412,7 @@
 
     <!-- DEMO FORM -->
     <section
+      ref="modularLink"
       class="beta-tester relative pt-80 pb-136 md:pt-130 md:pb-136 lg:pt-200 lg:pb-200"
     >
       <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
@@ -548,7 +549,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { onMounted, ref, computed, watch } from 'vue'
+import { onMounted, ref, computed, watch, watchEffect, nextTick } from 'vue'
 import { useHead } from '@vueuse/head'
 
 import ApiService from '/Services/api'
@@ -561,6 +562,7 @@ import { TIconName } from '/Components/EN/ui/a-icon-base'
 import { FormWrapper, Footer, Carousel } from '/Components/EN'
 import { Tooltip } from '/Components/EN/ui/tooltips'
 import IconBase from '/Components/EN/ui/IconBase.vue'
+import router from '/@/router'
 
 const betaTester = ref(null)
 const moveToBetaTesterElement = () => {
@@ -938,8 +940,19 @@ const mediaQueryDevice =
     : window.innerWidth >= 762
     ? 'tablet'
     : 'mobile'
+const modularLink = ref<HTMLElement>(null)
 
 onMounted(() => {
+  const isFromBMAC = router.currentRoute.value.query?.utm_source === 'bmac2023'
+
+  if (isFromBMAC) {
+    nextTick(() => {
+      nextTick(() => {
+        scrollTo({ top: modularLink?.value?.getBoundingClientRect().top })
+      })
+    })
+  }
+
   ImagePreloader.sequential(commonPreloadImages)
   ImagePreloader.sequential(onloadImages[mediaQueryDevice])
   VideoPreloader.sequential(commonPreloadVideos)
