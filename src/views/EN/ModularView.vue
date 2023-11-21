@@ -200,7 +200,7 @@
           class="h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:h-[360px] md:w-[360px] lg:h-[360px] lg:w-[520px]"
         >
           <video
-            class="w-full lg:hidden"
+            class="h-full w-full lg:hidden"
             :autoplay="true"
             :muted="true"
             :loop="true"
@@ -211,7 +211,7 @@
             alt=""
           />
           <video
-            class="hidden w-full lg:block"
+            class="hidden h-full w-full lg:block"
             :autoplay="true"
             :muted="true"
             :loop="true"
@@ -298,7 +298,7 @@
             "
           >
             <video
-              class="w-full md:hidden lg:hidden"
+              class="h-full w-full md:hidden lg:hidden"
               :autoplay="true"
               :muted="true"
               :loop="true"
@@ -307,7 +307,7 @@
               alt=""
             />
             <video
-              class="hidden w-full md:block lg:hidden"
+              class="hidden h-full w-full md:block lg:hidden"
               :autoplay="true"
               :muted="true"
               :loop="true"
@@ -316,7 +316,7 @@
               alt=""
             />
             <video
-              class="hidden w-full lg:block"
+              class="hidden h-full w-full lg:block"
               :autoplay="true"
               :muted="true"
               :loop="true"
@@ -331,17 +331,17 @@
             "
           >
             <img
-              class="w-full md:hidden lg:hidden"
+              class="h-full w-full md:hidden lg:hidden"
               :src="`/public/en/modular/module${moduleIdx + 1}_mobile.png`"
               alt=""
             />
             <img
-              class="hidden w-full md:block lg:hidden"
+              class="hidden h-full w-full md:block lg:hidden"
               :src="`/public/en/modular/module${moduleIdx + 1}_tablet.png`"
               alt=""
             />
             <img
-              class="hidden w-full md:hidden lg:!block"
+              class="hidden h-full w-full md:hidden lg:!block"
               :src="`/public/en/modular/module${moduleIdx + 1}_desktop.png`"
               alt=""
             />
