@@ -510,35 +510,25 @@
             <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
           </template>
           <template v-else>
-            <!-- TODO: delay -->
-            <Tooltip
-              placement="top"
-              customName="none-tooltip"
-              :skidding="0"
-              :distance="-50"
-              :shown="bannerEmail.showErrorMsg"
-              :triggers="[]"
-              :auto-hide="false"
-            >
-              <template #icon>
-                <input
-                  ref="bannerEmailInput"
-                  type="text"
-                  inputmode="email"
-                  :spellcheck="false"
-                  placeholder="Email Address"
-                  v-model="bannerEmail.inputValue"
-                  class="h-50 w-[188px] border-none pl-12 md:w-[211px] lg:w-[211px]"
-                  @focus="bannerEmail.showErrorMsg = false"
-                />
-              </template>
+            <div class="relative">
+              <input
+                ref="bannerEmailInput"
+                type="text"
+                inputmode="email"
+                :spellcheck="false"
+                placeholder="Email Address"
+                v-model="bannerEmail.inputValue"
+                class="h-50 w-[188px] border-none pl-12 md:w-[211px] lg:w-[211px]"
+                @focus="bannerEmail.showErrorMsg = false"
+              />
+
               <span
+                v-if="bannerEmail.showErrorMsg"
                 @click="hideBannerEmailErrorMsg"
-                class="flex h-50 w-[188px] items-center bg-white px-12 py-4 text-12 text-red-500 md:w-[211px] md:text-14 lg:w-[211px] lg:text-14"
+                class="absolute top-0 left-0 flex h-50 w-[188px] items-center bg-white px-12 py-4 text-12 text-red-500 md:w-[211px] md:text-14 lg:w-[211px] lg:text-14"
                 >Please enter a valid email.</span
               >
-            </Tooltip>
-
+            </div>
             <button
               class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white hover:bg-core-700 md:w-[157px] md:min-w-[157px] lg:w-[157px] lg:min-w-[157px]"
               @click="sendBannerEmail"
@@ -603,6 +593,20 @@ const hideBannerEmailErrorMsg = () => {
   bannerEmail.value.showErrorMsg = false
   bannerEmailInput.value.focus()
 }
+
+let timeoutId = null
+watch(
+  () => bannerEmail.value.showErrorMsg,
+  (flag) => {
+    if (flag === true) {
+      timeoutId = setTimeout(() => {
+        bannerEmail.value.showErrorMsg = false
+      }, 1600)
+    } else {
+      clearTimeout(timeoutId)
+    }
+  }
+)
 const sendBannerEmail = async () => {
   const isValid =
     Validation.email(bannerEmail.value.inputValue) &&
