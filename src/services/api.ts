@@ -32,4 +32,7 @@ export default {
   XSLX_TEST(sheetName, payload) {
     return req(apiClient.post(`/xlsx/${sheetName}`, payload))
   },
+  ACTIVE_CAMPAIGN(payload) {
+    return req(apiClient.post(`/active-campaign`, payload))
+  },
 }

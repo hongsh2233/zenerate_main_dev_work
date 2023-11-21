@@ -358,6 +358,18 @@ const submitForm = async () => {
       SignUpForm.value.firstName.value + ' ' + SignUpForm.value.lastName.value,
   }
 
+  const activeCampaignForm = {
+    email: SignUpForm.value.email,
+    firstName: SignUpForm.value.firstName,
+    lastName: SignUpForm.value.lastName,
+    company: SignUpForm.value.company,
+    jobTitle: SignUpForm.value.jobTitle,
+    ed1_address: SignUpForm.value.address,
+    ed1_lot_size: SignUpForm.value.lotSize,
+    ed1_message: SignUpForm.value.message,
+    tag: 'ed1_report',
+  }
+
   const currentParams = { ...router.currentRoute.value.query }
   for (const key of ['utm_source', 'utm_medium']) {
     form[key] = currentParams[key]
@@ -375,6 +387,10 @@ const submitForm = async () => {
 
     await ApiService.XSLX_TEST(sheetName.value, form)
     await ApiService.SEND_EMAIL(emailForm)
+
+    if (sheetName.value === 'ED1Report') {
+      await ApiService.ACTIVE_CAMPAIGN(activeCampaignForm)
+    }
 
     loading.value = false
     formSubmitted.value = true

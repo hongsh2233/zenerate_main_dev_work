@@ -626,6 +626,10 @@ const sendBannerEmail = async () => {
       await ApiService.XSLX_TEST('AppWaitlist', {
         email: bannerEmail.value.inputValue,
       })
+      await ApiService.ACTIVE_CAMPAIGN({
+        email: bannerEmail.value.inputValue,
+        tag: 'modular',
+      })
       bannerEmail.value.isLoading = false
       bannerEmail.value.isSent = true
       bannerEmail.value.inputValue = ''
