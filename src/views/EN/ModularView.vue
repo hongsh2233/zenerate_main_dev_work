@@ -1,9 +1,7 @@
 <template>
-  <div class="relative mx-auto min-w-[320px]">
+  <div class="relative mx-auto min-w-[320px] max-w-[1200px]">
     <!-- HERO -->
-    <section
-      class="hero mx-auto h-[692px] max-w-[1600px] md:h-[988px] lg:h-[712px] lg:w-[1340px]"
-    >
+    <section class="mx-auto h-[692px] max-w-[1600px] md:h-[988px] lg:h-[712px]">
       <div
         class="z-[1] mx-auto mt-[152px] w-[320px] min-w-[320px] md:mt-[170px] md:w-[644px] lg:absolute lg:mt-[200px] lg:ml-100 lg:w-[440px]"
       >
@@ -40,6 +38,19 @@
           </div>
         </div>
       </div>
+      <div
+        class="z-[-1] mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-0 lg:w-[60%] lg:pt-140"
+      >
+        <video
+          class="w-full"
+          :autoplay="true"
+          :muted="true"
+          :loop="true"
+          :playsinline="true"
+          src="/public/en/modular/hero.mp4"
+          alt=""
+        />
+      </div>
     </section>
 
     <!-- PRODUCT DESCRIPTION -->
@@ -58,30 +69,27 @@
           :muted="true"
           :loop="true"
           :playsinline="true"
-          :src="`/en/zenerate_app/${data.imgUrl}`"
+          :src="`/en/modular/${data.imgUrl}`"
           alt=""
         />
         <div
-          class="h-[292px] w-[320px] overflow-hidden md:h-[352px] md:w-[420px] lg:h-[450px] lg:w-[542px]"
+          class="flex h-[292px] w-[320px] flex-row items-center justify-center overflow-hidden md:h-[352px] md:w-[420px] lg:h-[450px] lg:w-[542px]"
           v-else
         >
           <img
-            :src="`/en/zenerate_app/${data.imgUrls.desktop}`"
-            width="523"
-            height="441"
-            class="hidden lg:block"
+            :src="`/en/modular/${data.imgUrls.desktop}`"
+            width="455"
+            class="ml-auto mt-40 hidden lg:block"
           />
           <img
-            :src="`/en/zenerate_app/${data.imgUrls.tablet}`"
-            width="421"
-            height="352"
-            class="hidden md:block lg:hidden"
+            :src="`/en/modular/${data.imgUrls.tablet}`"
+            width="358"
+            class="ml-auto mt-30 hidden md:block lg:hidden"
           />
           <img
-            :src="`/en/zenerate_app/${data.imgUrls.mobile}`"
-            width="321"
-            height="292"
-            class="md:hidden lg:hidden"
+            :src="`/en/modular/${data.imgUrls.mobile}`"
+            width="296"
+            class="ml-auto mt-20 md:hidden lg:hidden"
           />
         </div>
 
@@ -189,9 +197,30 @@
         </div>
 
         <div
-          class="h-[320px] w-[320px] rounded-8 bg-slate-200 shadow-200 md:h-[360px] md:w-[360px] lg:h-[360px] lg:w-[520px]"
+          class="h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:h-[360px] md:w-[360px] lg:h-[360px] lg:w-[520px]"
         >
-          image {{ howItWorksIdx + 1 }}
+          <video
+            class="w-full lg:hidden"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/public/en/modular/how_it_works${
+              howItWorksIdx + 1
+            }_tablet_mobile.mp4`"
+            alt=""
+          />
+          <video
+            class="hidden w-full lg:block"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/public/en/modular/how_it_works${
+              howItWorksIdx + 1
+            }_desktop.mp4`"
+            alt=""
+          />
         </div>
       </div>
     </section>
@@ -261,9 +290,62 @@
       </Carousel>
       <div class="mx-auto flex w-fit flex-row items-center">
         <div
-          class="h-[320px] w-[320px] rounded-8 bg-slate-200 shadow-200 md:w-[380px] lg:w-[520px]"
+          class="h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:w-[380px] lg:w-[520px]"
         >
-          image {{ moduleIdx + 1 }}
+          <template
+            v-if="
+              CREATE_AND_USE_YOUR_OWN_MODULES[moduleIdx].imgType === 'video'
+            "
+          >
+            <video
+              class="w-full md:hidden lg:hidden"
+              :autoplay="true"
+              :muted="true"
+              :loop="true"
+              :playsinline="true"
+              :src="`/public/en/modular/module${moduleIdx + 1}_mobile.mp4`"
+              alt=""
+            />
+            <video
+              class="hidden w-full md:block lg:hidden"
+              :autoplay="true"
+              :muted="true"
+              :loop="true"
+              :playsinline="true"
+              :src="`/public/en/modular/module${moduleIdx + 1}_tablet.mp4`"
+              alt=""
+            />
+            <video
+              class="hidden w-full lg:block"
+              :autoplay="true"
+              :muted="true"
+              :loop="true"
+              :playsinline="true"
+              :src="`/public/en/modular/module${moduleIdx + 1}_desktop.mp4`"
+              alt=""
+            />
+          </template>
+          <template
+            v-if="
+              CREATE_AND_USE_YOUR_OWN_MODULES[moduleIdx].imgType === 'image'
+            "
+          >
+            <img
+              class="w-full md:hidden lg:hidden"
+              :src="`/public/en/modular/module${moduleIdx + 1}_mobile.png`"
+              alt=""
+            />
+            <img
+              class="hidden w-full md:block lg:hidden"
+              :src="`/public/en/modular/module${moduleIdx + 1}_tablet.png`"
+              alt=""
+            />
+            <img
+              class="hidden w-full md:hidden lg:!block"
+              :src="`/public/en/modular/module${moduleIdx + 1}_desktop.png`"
+              alt=""
+            />
+          </template>
         </div>
         <div
           class="ml-50 flex hidden w-[360px] flex-col md:ml-20 md:block md:w-[300px] lg:block"
@@ -494,6 +576,7 @@ const moveToBetaTesterElement = () => {
   betaTester.value.scrollIntoView({ behavior: 'smooth' })
 }
 
+// TODO: carousel sync
 const howItWorksCarousel = ref()
 const onHowItWorksCarousel = (carousel) => {
   howItWorksCarousel.value = carousel
@@ -502,6 +585,8 @@ const howItWorksIdx = ref<number>(0)
 const setHowItWorksIdx = (idx: number) => {
   howItWorksIdx.value = idx
   howItWorksCarousel.value.realIndex = idx
+  howItWorksCarousel.value.activeIndex = idx
+  howItWorksCarousel.value.snapIndex = idx
 }
 
 const moduleCarousel = ref()
@@ -621,13 +706,8 @@ for Modular Housing`,
 
 const PRODUCT_DESCRIPTION = [
   {
-    imgType: 'image',
-    // TODO: imgUrls
-    imgUrls: {
-      desktop: 'product_description3_desktop.png',
-      tablet: 'product_description3_tablet.png',
-      mobile: 'product_description3_mobile_new.png',
-    },
+    imgType: 'video',
+    imgUrl: 'product_description1.mp4',
     title: 'Instantly Generate and Compare Design Scenarios with:',
     content: [
       'Maximized FAR and Density',
@@ -639,13 +719,8 @@ const PRODUCT_DESCRIPTION = [
     contentOnRight: false,
   },
   {
-    imgType: 'image',
-    // TODO: imgUrls
-    imgUrls: {
-      desktop: 'product_description3_desktop.png',
-      tablet: 'product_description3_tablet.png',
-      mobile: 'product_description3_mobile_new.png',
-    },
+    imgType: 'video',
+    imgUrl: 'product_description2.mp4',
     title: 'View and Download Floor Plans that Include:',
     content: [
       'All levels',
@@ -659,11 +734,10 @@ const PRODUCT_DESCRIPTION = [
   },
   {
     imgType: 'image',
-    // TODO: imgUrls
     imgUrls: {
       desktop: 'product_description3_desktop.png',
       tablet: 'product_description3_tablet.png',
-      mobile: 'product_description3_mobile_new.png',
+      mobile: 'product_description3_mobile.png',
     },
     title: 'Swiftly Review Financial Analysis with Your Own Data Inputs',
     content: [
@@ -676,22 +750,46 @@ const PRODUCT_DESCRIPTION = [
   },
 ]
 
-// TODO: img
 const HOW_IT_WORKS = [
   {
     title: 'Draw Site Boundary',
+    videoUrls: {
+      desktop: 'how_it_works1_desktop.mp4',
+      tablet: 'how_it_works1_tablet_mobile.mp4',
+      mobile: 'how_it_works1_tablet_mobile.mp4',
+    },
   },
   {
     title: 'Set Project Settings',
+    videoUrls: {
+      desktop: 'how_it_works2_desktop.mp4',
+      tablet: 'how_it_works2_tablet_mobile.mp4',
+      mobile: 'how_it_works2_tablet_mobile.mp4',
+    },
   },
   {
     title: 'Select Module Types',
+    videoUrls: {
+      desktop: 'how_it_works3_desktop.mp4',
+      tablet: 'how_it_works3_tablet_mobile.mp4',
+      mobile: 'how_it_works3_tablet_mobile.mp4',
+    },
   },
   {
     title: 'Input Design Settings',
+    videoUrls: {
+      desktop: 'how_it_works4_desktop.mp4',
+      tablet: 'how_it_works4_tablet_mobile.mp4',
+      mobile: 'how_it_works4_tablet_mobile.mp4',
+    },
   },
   {
     title: 'Generate Design Solutions',
+    videoUrls: {
+      desktop: 'how_it_works5_desktop.mp4',
+      tablet: 'how_it_works5_tablet_mobile.mp4',
+      mobile: 'how_it_works5_tablet_mobile.mp4',
+    },
   },
 ]
 
@@ -713,21 +811,44 @@ const WHO_USES_IT = [
   },
 ]
 
-// TODO: img
 const CREATE_AND_USE_YOUR_OWN_MODULES = [
   {
+    imgType: 'video',
+    videoUrls: {
+      imgUrls: 'module1_desktop.mp4',
+      tablet: 'module1_tablet.mp4',
+      mobile: 'module1_mobile.mp4',
+    },
     iconName: 'module-size',
     title: 'Module Sizes',
   },
   {
+    imgType: 'image',
+    imgUrls: {
+      desktop: 'module2_desktop.png',
+      tablet: 'module2_tablet.png',
+      mobile: 'module2_mobile.png',
+    },
     iconName: 'module-unit',
     title: 'Unit Types',
   },
   {
+    imgType: 'image',
+    imgUrls: {
+      desktop: 'module3_desktop.png',
+      tablet: 'module3_tablet.png',
+      mobile: 'module3_mobile.png',
+    },
     iconName: 'module-residential',
     title: 'Residential & Corridor',
   },
   {
+    imgType: 'image',
+    imgUrls: {
+      desktop: 'module4_desktop.png',
+      tablet: 'module4_tablet.png',
+      mobile: 'module4_mobile.png',
+    },
     iconName: 'module-core',
     title: 'Modularized Core Elements',
   },
@@ -760,26 +881,32 @@ const DEMO_FORM = {
   ],
 }
 
-// TODO: image preload
 const onloadImages = {
   desktop: [
-    '/en/zenerate_app/how_it_works_step1_desktop.png',
-    '/en/zenerate_app/how_it_works_step2_desktop.png',
-    '/en/zenerate_app/how_it_works_step3_desktop.png',
+    '/en/modular/product_description3_desktop.png',
+    '/en/modular/module2_desktop.png',
+    '/en/modular/module3_desktop.png',
+    '/en/modular/module4_desktop.png',
   ],
   tablet: [
-    '/en/zenerate_app/how_it_works_step1_tablet.png',
-    '/en/zenerate_app/how_it_works_step2_tablet.png',
-    '/en/zenerate_app/how_it_works_step3_tablet.png',
+    '/en/modular/product_description3_tablet.png',
+    '/en/modular/module2_tablet.png',
+    '/en/modular/module3_tablet.png',
+    '/en/modular/module4_tablet.png',
   ],
   mobile: [
-    '/en/zenerate_app/how_it_works_step1_mobile.png',
-    '/en/zenerate_app/how_it_works_step2_mobile.png',
-    '/en/zenerate_app/how_it_works_step3_mobile.png',
+    '/en/modular/product_description3_mobile.png',
+    '/en/modular/module2_mobile.png',
+    '/en/modular/module3_mobile.png',
+    '/en/modular/module4_mobile.png',
   ],
 }
 
-const commonPreloadImages = ['/en/zenerate_app/product_description3.png']
+const commonPreloadImages = [
+  '/en/modular/document.png',
+  '/en/modular/money_bag.png',
+  '/en/modular/wrench.png',
+]
 
 const mediaQueryDevice =
   window.innerWidth >= 1024
@@ -820,23 +947,6 @@ onMounted(() => {
   }
 }
 
-/* TODO: background image */
-.hero {
-  background-repeat: no-repeat;
-  background-image: url('/en/ai_consulting/hero_desktop.png');
-  background-position: bottom right;
-  @include en-tablet {
-    background-image: url('/en/ai_consulting/hero_tablet_new.png');
-    background-size: 1200px 548px;
-    background-position: bottom center;
-  }
-  @include en-mobile {
-    background-image: url('/en/ai_consulting/hero_mobile_new.png');
-    background-size: 768px 246px;
-    background-position: bottom center;
-  }
-}
-
 .product-description {
   .content-area {
     @include en-desktop {
@@ -847,7 +957,6 @@ onMounted(() => {
       &:not(.content-right) {
         padding-left: 66px;
         padding-right: 32px;
-
         order: -1;
       }
     }
