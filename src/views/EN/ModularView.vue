@@ -554,7 +554,6 @@ import { useHead } from '@vueuse/head'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import ImagePreloader from '/Utils/ImagePreloader'
-import VideoPreloader from '/Utils/VideoPreloader'
 import { ROLES } from '/Constants/roles'
 import { TIconName } from '/Components/EN/ui/a-icon-base'
 
@@ -899,39 +898,6 @@ const commonPreloadImages = [
   '/en/modular/wrench.png',
 ]
 
-const onloadVideos = {
-  desktop: [
-    '/en/modular/how_it_works1_desktop.mp4',
-    '/en/modular/how_it_works2_desktop_new.mp4',
-    '/en/modular/how_it_works3_desktop.mp4',
-    '/en/modular/how_it_works4_desktop.mp4',
-    '/en/modular/how_it_works5_desktop.mp4',
-    '/en/modular/modular1_desktop.mp4',
-  ],
-  tablet: [
-    '/en/modular/how_it_works1_tablet_mobile.mp4',
-    '/en/modular/how_it_works2_tablet_mobile_new.mp4',
-    '/en/modular/how_it_works3_tablet_mobile.mp4',
-    '/en/modular/how_it_works4_tablet_mobile.mp4',
-    '/en/modular/how_it_works5_tablet_mobile.mp4',
-    '/en/modular/modular1_tabletmp4',
-  ],
-  mobile: [
-    '/en/modular/how_it_works1_tablet_mobile.mp4',
-    '/en/modular/how_it_works2_tablet_mobile_new.mp4',
-    '/en/modular/how_it_works3_tablet_mobile.mp4',
-    '/en/modular/how_it_works4_tablet_mobile.mp4',
-    '/en/modular/how_it_works5_tablet_mobile.mp4',
-    '/en/modular/modular1_mobile.mp4',
-  ],
-}
-
-const commonPreloadVideos = [
-  '/en/modular/hero.mp4',
-  'en/modular/product_description1.mp4',
-  'en/modular/product_description2.mp4',
-]
-
 const mediaQueryDevice =
   window.innerWidth >= 1024
     ? 'desktop'
@@ -942,8 +908,6 @@ const mediaQueryDevice =
 onMounted(() => {
   ImagePreloader.sequential(commonPreloadImages)
   ImagePreloader.sequential(onloadImages[mediaQueryDevice])
-  VideoPreloader.sequential(commonPreloadVideos)
-  VideoPreloader.sequential(onloadVideos[mediaQueryDevice])
 })
 </script>
 <style lang="scss" scoped>
