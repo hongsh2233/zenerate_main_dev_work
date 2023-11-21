@@ -10,11 +10,17 @@
         class="mt-66 mb-100 flex w-[328px] flex-col md:w-[640px] lg:w-[640px]"
       >
         <!-- logo -->
-        <img
-          src="/public/img/logo_white.svg"
-          alt="zenerate"
-          class="mb-70 w-[180px] md:mb-70 md:w-[200px] lg:mb-70 lg:w-[200px]"
-        />
+        <router-link
+          class="mb-70 h-fit w-fit md:mb-70 lg:mb-70"
+          :to="{ name: 'en-landing' }"
+        >
+          <img
+            src="/public/img/logo_white.svg"
+            alt="zenerate"
+            class="w-[180px] md:w-[200px] lg:w-[200px]"
+          />
+        </router-link>
+
         <!-- description -->
         <div
           class="mb-42 flex flex-col md:mb-50 md:flex-row md:justify-between lg:mb-50 lg:flex-row lg:justify-between"

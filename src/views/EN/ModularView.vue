@@ -1,7 +1,7 @@
 <template>
-  <div class="relative mx-auto min-w-[320px] max-w-[1200px]">
+  <div class="relative mx-auto min-w-[320px]">
     <!-- HERO -->
-    <section class="mx-auto h-[692px] max-w-[1600px] md:h-[988px] lg:h-[712px]">
+    <section class="mx-auto h-[692px] max-w-[1100px] md:h-[988px] lg:h-[712px]">
       <div
         class="z-[1] mx-auto mt-[152px] w-[320px] min-w-[320px] md:mt-[170px] md:w-[644px] lg:absolute lg:mt-[200px] lg:ml-100 lg:w-[440px]"
       >
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div
-        class="z-[-1] mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-0 lg:w-[60%] lg:pt-140"
+        class="z-[-1] mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-70 lg:w-[70%] lg:pt-120"
       >
         <video
           class="w-full"
