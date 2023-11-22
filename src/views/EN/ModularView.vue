@@ -201,7 +201,7 @@
           class="isolate h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:h-[360px] md:w-[360px] lg:h-[360px] lg:w-[520px]"
         >
           <video
-            class="h-full w-full lg:hidden"
+            class="how-it-works0 h-full w-full lg:hidden"
             :class="howItWorksIdx !== 0 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -211,7 +211,7 @@
             alt=""
           />
           <video
-            class="hidden h-full w-full lg:block"
+            class="how-it-works0 hidden h-full w-full lg:block"
             :class="howItWorksIdx !== 0 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -221,7 +221,7 @@
             alt=""
           />
           <video
-            class="h-full w-full lg:hidden"
+            class="how-it-works1 h-full w-full lg:hidden"
             :class="howItWorksIdx !== 1 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -231,7 +231,7 @@
             alt=""
           />
           <video
-            class="hidden h-full w-full lg:block"
+            class="how-it-works1 hidden h-full w-full lg:block"
             :class="howItWorksIdx !== 1 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -241,7 +241,7 @@
             alt=""
           />
           <video
-            class="h-full w-full lg:hidden"
+            class="how-it-works2 h-full w-full lg:hidden"
             :class="howItWorksIdx !== 2 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -251,7 +251,7 @@
             alt=""
           />
           <video
-            class="hidden h-full w-full lg:block"
+            class="how-it-works2 hidden h-full w-full lg:block"
             :class="howItWorksIdx !== 2 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -261,7 +261,7 @@
             alt=""
           />
           <video
-            class="h-full w-full lg:hidden"
+            class="how-it-works3 h-full w-full lg:hidden"
             :class="howItWorksIdx !== 3 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -271,7 +271,7 @@
             alt=""
           />
           <video
-            class="hidden h-full w-full lg:block"
+            class="how-it-works3 hidden h-full w-full lg:block"
             :class="howItWorksIdx !== 3 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -281,7 +281,7 @@
             alt=""
           />
           <video
-            class="h-full w-full lg:hidden"
+            class="how-it-works4 h-full w-full lg:hidden"
             :class="howItWorksIdx !== 4 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -291,7 +291,7 @@
             alt=""
           />
           <video
-            class="hidden h-full w-full lg:block"
+            class="how-it-works4 hidden h-full w-full lg:block"
             :class="howItWorksIdx !== 4 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -373,7 +373,7 @@
           class="isolate h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:w-[380px] lg:w-[520px]"
         >
           <video
-            class="h-full w-full md:hidden lg:hidden"
+            class="modular0 h-full w-full md:hidden lg:hidden"
             :class="moduleIdx !== 0 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -383,7 +383,7 @@
             alt=""
           />
           <video
-            class="hidden h-full w-full md:block lg:hidden"
+            class="modular0 hidden h-full w-full md:block lg:hidden"
             :class="moduleIdx !== 0 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -393,7 +393,7 @@
             alt=""
           />
           <video
-            class="hidden h-full w-full lg:block"
+            class="modular0 hidden h-full w-full lg:block"
             :class="moduleIdx !== 0 && '!hidden'"
             :autoplay="true"
             :muted="true"
@@ -652,11 +652,27 @@ const moveToBetaTesterElement = () => {
 const howItWorksIdx = ref<number>(0)
 const setHowItWorksIdx = (idx: number) => {
   howItWorksIdx.value = idx
+  document
+    .querySelectorAll(`.how-it-works${howItWorksIdx.value}`)
+    .forEach((video: HTMLVideoElement) => {
+      video.pause()
+      video.currentTime = 0
+      video.play()
+    })
 }
 
 const moduleIdx = ref<number>(0)
 const setModuleIdx = (idx: number) => {
   moduleIdx.value = idx
+  if (moduleIdx.value === 0) {
+    document
+      .querySelectorAll(`.module${moduleIdx.value}`)
+      .forEach((video: HTMLVideoElement) => {
+        video.pause()
+        video.currentTime = 0
+        video.play()
+      })
+  }
 }
 
 const bannerEmail = ref<{
