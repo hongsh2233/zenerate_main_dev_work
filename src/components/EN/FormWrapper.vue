@@ -11,9 +11,14 @@
     <div
       class="my-auto flex min-h-full w-full flex-col items-center justify-center bg-white px-32 py-36 md:px-50 lg:px-62"
     >
-      <slot name="form-title"></slot>
-
-      <FormContent :sheet-name="sheetName" />
+      <FormContent :sheet-name="sheetName">
+        <template #form-title>
+          <slot name="form-title"></slot>
+        </template>
+        <template #after-submit-title>
+          <slot name="after-submit-title"></slot>
+        </template>
+      </FormContent>
     </div>
   </div>
 </template>

@@ -1,5 +1,6 @@
 <template>
-  <div v-if="!formSubmitted" class="form-wrapper">
+  <div v-if="!formSubmitted" class="form-wrapper flex flex-col items-center">
+    <slot name="form-title"></slot>
     <div class="form mt-10 mb-0 w-full">
       <div
         v-if="
@@ -179,6 +180,7 @@
   </div>
   <transition v-else name="fade">
     <div class="mt-40 flex flex-col items-center">
+      <slot name="after-submit-title"></slot>
       <div class="relative mb-14 h-50 w-50 rounded-50 bg-[#EBEDFE]">
         <svg
           width="43"

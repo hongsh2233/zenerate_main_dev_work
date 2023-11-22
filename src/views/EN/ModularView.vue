@@ -456,6 +456,11 @@
             >
           </div>
         </template>
+        <template #after-submit-title>
+          <span class="mb-40 text-center text-18 md:pt-8 lg:pt-8 lg:text-22">
+            Your request has been submitted!
+          </span>
+        </template>
         <template #after-submit-text>
           <span class="text-center text-13 text-gray-700 md:text-14 lg:text-18"
             >We'll contact you within<br />1 to 3 business days.</span

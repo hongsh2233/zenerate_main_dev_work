@@ -166,19 +166,26 @@
       class="order-[-1] flex h-[812px] w-full flex-nowrap items-center justify-center bg-white md:h-[750px] lg:h-full lg:w-[380px] lg:min-w-[380px]"
     >
       <div class="flex flex-col items-center">
-        <div class="text-22 font-semibold text-primary">
-          ED 1 Report Request Form
-        </div>
         <FormContent
           sheet-name="ED1Report"
           submit-btn-text="Request Report"
           class="ed1-report-form w-[310px]"
         >
+          <template #form-title>
+            <div class="text-22 font-semibold text-primary">
+              ED 1 Report Request Form
+            </div>
+          </template>
           <template #additional-text>
             <span class="mb-20 text-14 text-gray-450"
               >*Please reply to the confirmation email with any additional files
               that we need to be aware of.</span
             >
+          </template>
+          <template #after-submit-title>
+            <span class="mb-40 text-center text-22">
+              Your request has been submitted!
+            </span>
           </template>
           <template #after-submit-text>
             <div class="w-[300px] text-center text-gray-700">
