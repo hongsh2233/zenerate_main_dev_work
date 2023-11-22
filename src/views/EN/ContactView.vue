@@ -283,7 +283,7 @@ const sendEmail = async () => {
   if (sendEmailStatus.value == true) return
   dummy.value.focus()
   let isValid = true
-  const form = {}
+  const form = { tag: 'Contact' }
   for (const key in contactForm) {
     if (!contactForm[key].valid) {
       contactForm[key].valid = false

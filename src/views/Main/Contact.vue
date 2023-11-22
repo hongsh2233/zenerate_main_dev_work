@@ -137,6 +137,7 @@ const sendEmail = async () => {
     purpose: t(
       contactForm.purpose?.label ?? 'main.contact.form.dropdown.inquery'
     ),
+    tag: 'Contact',
   }
   await ApiService.SEND_EMAIL(payload)
   sendEmailStatus.value = true

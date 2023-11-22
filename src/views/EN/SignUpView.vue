@@ -351,7 +351,7 @@ const sendEmail = async () => {
   if (sendEmailStatus.value == true) return
   dummy.value.focus()
   let isValid = true
-  const form = {}
+  const form = { tag: 'Sign Up' }
   for (const key in contactForm) {
     if (!contactForm[key].valid) {
       contactForm[key].valid = false
