@@ -776,6 +776,11 @@
             >We'll be in touch soon.</span
           >
         </template>
+        <template #after-submit-title>
+          <span class="mb-40 text-center text-18 md:pt-8 lg:pt-8 lg:text-22">
+            Your request has been submitted!
+          </span>
+        </template>
       </FormWrapper>
     </section>
 
