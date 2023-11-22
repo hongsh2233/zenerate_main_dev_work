@@ -28,11 +28,10 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-landing',
       component: LandingView,
     },
-    // TODO: /zenerate-app -> /modular 리디렉션
+    // /zenerate-app -> /modular 리다이렉트
     {
       path: '/zenerate-app',
-      name: 'en-overview',
-      component: ZenerateView,
+      redirect: '/modular',
     },
     {
       path: '/ai-consulting',

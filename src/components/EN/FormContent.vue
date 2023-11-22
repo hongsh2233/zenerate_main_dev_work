@@ -354,8 +354,16 @@ const submitForm = async () => {
 
   const emailForm = {
     ...form,
-    name:
-      SignUpForm.value.firstName.value + ' ' + SignUpForm.value.lastName.value,
+    tag:
+      sheetName.value === 'Modular'
+        ? 'Modular'
+        : sheetName.value === 'Beta'
+        ? 'Zenerate App'
+        : sheetName.value === 'AIConsulting'
+        ? 'AI Consulting'
+        : sheetName.value === 'ED1Report'
+        ? 'ED1 Report'
+        : '',
   }
 
   const currentParams = { ...router.currentRoute.value.query }
