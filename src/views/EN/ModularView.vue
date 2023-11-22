@@ -202,20 +202,102 @@
         >
           <video
             class="h-full w-full lg:hidden"
+            :class="howItWorksIdx !== 0 && '!hidden'"
             :autoplay="true"
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/${HOW_IT_WORKS[howItWorksIdx].videoUrls.tabletMobile}`"
+            :src="`/en/modular/how_it_works1_tablet_mobile.mp4`"
             alt=""
           />
           <video
             class="hidden h-full w-full lg:block"
+            :class="howItWorksIdx !== 0 && '!hidden'"
             :autoplay="true"
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/${HOW_IT_WORKS[howItWorksIdx].videoUrls.desktop}`"
+            :src="`/en/modular/how_it_works1_desktop.mp4`"
+            alt=""
+          />
+          <video
+            class="h-full w-full lg:hidden"
+            :class="howItWorksIdx !== 1 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/how_it_works2_tablet_mobile_new.mp4`"
+            alt=""
+          />
+          <video
+            class="hidden h-full w-full lg:block"
+            :class="howItWorksIdx !== 1 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/how_it_works2_desktop_new.mp4`"
+            alt=""
+          />
+          <video
+            class="h-full w-full lg:hidden"
+            :class="howItWorksIdx !== 2 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/how_it_works3_tablet_mobile.mp4`"
+            alt=""
+          />
+          <video
+            class="hidden h-full w-full lg:block"
+            :class="howItWorksIdx !== 2 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/how_it_works3_desktop.mp4`"
+            alt=""
+          />
+          <video
+            class="h-full w-full lg:hidden"
+            :class="howItWorksIdx !== 3 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/how_it_works4_tablet_mobile.mp4`"
+            alt=""
+          />
+          <video
+            class="hidden h-full w-full lg:block"
+            :class="howItWorksIdx !== 3 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/how_it_works4_desktop.mp4`"
+            alt=""
+          />
+          <video
+            class="h-full w-full lg:hidden"
+            :class="howItWorksIdx !== 4 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/how_it_works5_tablet_mobile.mp4`"
+            alt=""
+          />
+          <video
+            class="hidden h-full w-full lg:block"
+            :class="howItWorksIdx !== 4 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/how_it_works5_desktop.mp4`"
             alt=""
           />
         </div>
@@ -290,44 +372,37 @@
         <div
           class="isolate h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:w-[380px] lg:w-[520px]"
         >
-          <template
-            v-if="
-              CREATE_AND_USE_YOUR_OWN_MODULES[moduleIdx].imgType === 'video'
-            "
-          >
-            <video
-              class="h-full w-full md:hidden lg:hidden"
-              :autoplay="true"
-              :muted="true"
-              :loop="true"
-              :playsinline="true"
-              :src="`/en/modular/module${moduleIdx + 1}_mobile.mp4`"
-              alt=""
-            />
-            <video
-              class="hidden h-full w-full md:block lg:hidden"
-              :autoplay="true"
-              :muted="true"
-              :loop="true"
-              :playsinline="true"
-              :src="`/en/modular/module${moduleIdx + 1}_tablet.mp4`"
-              alt=""
-            />
-            <video
-              class="hidden h-full w-full lg:block"
-              :autoplay="true"
-              :muted="true"
-              :loop="true"
-              :playsinline="true"
-              :src="`/en/modular/module${moduleIdx + 1}_desktop.mp4`"
-              alt=""
-            />
-          </template>
-          <template
-            v-if="
-              CREATE_AND_USE_YOUR_OWN_MODULES[moduleIdx].imgType === 'image'
-            "
-          >
+          <video
+            class="h-full w-full md:hidden lg:hidden"
+            :class="moduleIdx !== 0 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/module1_mobile.mp4`"
+            alt=""
+          />
+          <video
+            class="hidden h-full w-full md:block lg:hidden"
+            :class="moduleIdx !== 0 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/module1_tablet.mp4`"
+            alt=""
+          />
+          <video
+            class="hidden h-full w-full lg:block"
+            :class="moduleIdx !== 0 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/module1_desktop.mp4`"
+            alt=""
+          />
+          <template v-if="moduleIdx !== 0">
             <img
               class="h-full w-full md:hidden lg:hidden"
               :src="`/en/modular/module${moduleIdx + 1}_mobile.png`"
