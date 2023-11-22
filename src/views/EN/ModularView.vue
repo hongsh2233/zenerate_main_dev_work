@@ -198,7 +198,7 @@
         </div>
 
         <div
-          class="h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:h-[360px] md:w-[360px] lg:h-[360px] lg:w-[520px]"
+          class="isolate h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:h-[360px] md:w-[360px] lg:h-[360px] lg:w-[520px]"
         >
           <video
             class="h-full w-full lg:hidden"
@@ -288,7 +288,7 @@
       </Carousel>
       <div class="mx-auto flex w-fit flex-row items-center">
         <div
-          class="h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:w-[380px] lg:w-[520px]"
+          class="isolate h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:w-[380px] lg:w-[520px]"
         >
           <template
             v-if="
