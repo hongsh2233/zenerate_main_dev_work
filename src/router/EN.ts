@@ -97,9 +97,13 @@ const ENRoute: RouteRecordRaw = {
       component: PreSignUpView,
     },
     {
-      path: '/ed1-report',
+      path: '/ed1',
       name: 'en-ed1-report',
       component: ED1ReportView,
+    },
+    {
+      path: '/ed1-report',
+      redirect: '/ed1',
     },
     // {
     //   path: '/demo-signup',
