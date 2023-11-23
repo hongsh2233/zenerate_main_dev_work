@@ -3,7 +3,7 @@
     <button
       type="button"
       class="signup-banner"
-      v-show="path !== '/beta' && path !== '/ed1-report'"
+      v-show="path !== '/beta' && path !== '/ed1'"
       @click="() => router.push({ name: 'en-modular' })"
     >
       <div class="signup-banner-inner">
@@ -21,7 +21,7 @@
     </button>
 
     <Header
-      v-show="path !== '/beta' && path !== '/ed1-report'"
+      v-show="path !== '/beta' && path !== '/ed1'"
       :showDrawer="showDrawer"
       :transparent="transparentHeader"
       @toggleDrawer="toggleDrawer"
