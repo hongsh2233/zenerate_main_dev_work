@@ -182,11 +182,13 @@
               that we need to be aware of.</span
             >
           </template>
+          <template #after-submit-subtitle>
+            <span class="mb-18 text-26 font-medium text-black"
+              >Please check your inbox!</span
+            >
+          </template>
           <template #after-submit-text>
             <div class="w-[300px] text-center text-gray-700">
-              <span class="mb-18 text-26 font-medium text-black"
-                >Please check your inbox!</span
-              >
               <span class="mb-30 text-18"
                 >You must complete payment through the link in the confirmation
                 email.
