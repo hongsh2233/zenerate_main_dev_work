@@ -182,17 +182,18 @@
               that we need to be aware of.</span
             >
           </template>
-          <template #after-submit-title>
-            <span class="mb-40 text-center text-22">
-              Your request has been submitted!
-            </span>
-          </template>
           <template #after-submit-text>
             <div class="w-[300px] text-center text-gray-700">
-              <span class="mb-18 text-22">Please check your inbox.</span>
-              <span class="text-18"
-                >We sent you a confirmation email with a payment link.</span
+              <span class="mb-18 text-26 font-medium text-black"
+                >Please check your inbox!</span
               >
+              <span class="mb-30 text-18"
+                >You must complete payment through the link in the confirmation
+                email.
+              </span>
+              <span class="text-18"
+                >We will start the report as soon as payment is received.
+              </span>
             </div>
           </template>
         </FormContent>
