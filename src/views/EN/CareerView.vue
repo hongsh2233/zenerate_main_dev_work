@@ -2,27 +2,27 @@
   <section class="section section-careers">
     <div class="section-inner">
       <div
-        class="w-[80%] max-w-[440px] min-w-[280px] m-auto md:min-w-[628px] md:max-w-[772px] lg:min-w-[772px] lg:max-w-[1200px]"
+        class="m-auto w-[80%] min-w-[280px] max-w-[440px] md:min-w-[628px] md:max-w-[772px] lg:min-w-[772px] lg:max-w-[1200px]"
       >
         <div
-          class="flex flex-col gap-[18px] md:gap-[20px] lg:gap-[16px] mb-[26px] md:mb-[42px] lg:mb-[44px]"
+          class="mb-[26px] flex flex-col gap-[18px] md:mb-[42px] md:gap-[20px] lg:mb-[44px] lg:gap-[16px]"
         >
           <div class="flex flex-col items-start">
             <p
-              class="text-m-20-semibold md:text-t-30-semibold lg:text-d-32-semibold text-black"
+              class="text-m-20-semibold text-black md:text-t-30-semibold lg:text-d-32-semibold"
             >
               Together,
             </p>
 
             <p
-              class="text-m-20-regular text-left md:text-t-30-regular lg:text-d-32-regular text-black"
+              class="text-m-20-regular text-left text-black md:text-t-30-regular lg:text-d-32-regular"
             >
               <span>let's build the future&nbsp;</span>
               <span>of real estate</span>
             </p>
           </div>
           <p
-            class="text-m-13-medium md:text-t-16-medium text-left lg:text-d-15-medium text-black w-[210px] md:w-[370px] lg:w-[340px]"
+            class="text-m-13-medium w-[210px] text-left text-black md:text-t-16-medium md:w-[370px] lg:text-d-15-medium lg:w-[340px]"
           >
             <span>We're looking for passionate, </span>
             <span>talented teammates&nbsp;</span><span>to help grow</span>
@@ -31,32 +31,39 @@
         </div>
 
         <div
-          class="w-full shadow-100 rounded-10 p-[26px] md:px-[42px] md:py-[38px] lg:px-[50px] flex flex-col lg:py-[48px] gap-16 md:gap-26 lg:gap-26"
+          class="flex w-full flex-col gap-16 rounded-10 p-[26px] shadow-100 md:gap-26 md:px-[42px] md:py-[38px] lg:gap-26 lg:px-[50px] lg:py-[48px]"
         >
           <div>
             <h2
-              class="text-m-14-semibold md:text-17 md:font-semibold lg:font-semibold lg:text-17 m-0"
+              class="text-m-14-semibold m-0 md:text-17 md:font-semibold lg:text-17 lg:font-semibold"
             >
               We're Hiring! 🚀
             </h2>
           </div>
-          <div class="w-full flex flex-col gap-16">
+          <div class="flex w-full flex-col gap-16">
             <template v-for="(job, idx) in JOBS">
               <div
-                class="w-full min-h-38 md:min-h-24 cursor-pointer group lg:min-h-28 flex flex-row md:items-center lg:items-center gap-12"
-                @click=";[router.push(`/career/${job.key}`)]"
+                class="group flex min-h-38 w-full cursor-pointer flex-row gap-12 md:min-h-24 md:items-center lg:min-h-28 lg:items-center"
+                @click="
+                  ;[
+                    router.push({
+                      path: `/career/${job.key}`,
+                      query: getCurrentUtmQuery(router),
+                    }),
+                  ]
+                "
               >
                 <span>{{ job.icon }}</span>
                 <div
-                  class="w-full flex flex-col md:flex-row lg:flex-row justify-between items-start md:items-center lg:items-center"
+                  class="flex w-full flex-col items-start justify-between md:flex-row md:items-center lg:flex-row lg:items-center"
                 >
                   <div
-                    class="text-m-13-regular group-hover:text-primary md:text-t-16-regular lg:text-d-18-regular text-black"
+                    class="text-m-13-regular text-black group-hover:text-primary md:text-t-16-regular lg:text-d-18-regular"
                   >
                     {{ job.name }}
                   </div>
                   <span
-                    class="text-left w-[80px] md:pt-2 lg:pt-6 group-hover:text-gray-700 text-12-medium md:text-13-medium lg:text-13-medium text-gray-450"
+                    class="text-12-medium w-[80px] text-left text-gray-450 group-hover:text-gray-700 md:text-13-medium md:pt-2 lg:text-13-medium lg:pt-6"
                     >{{ job.fulltime ? 'Full-time' : 'Part-time' }}</span
                   >
                 </div>
@@ -74,9 +81,9 @@
 <script lang="ts" setup>
 import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import Footer from '/Components/EN/Footer.vue'
-import { formatDistanceToNowStrict } from 'date-fns'
 import { useHead } from '@vueuse/head'
+import { getCurrentUtmQuery } from '/Utils/index'
+import Footer from '/Components/EN/Footer.vue'
 const router = useRouter()
 const posted = new Date(2021, 9, 17)
 const today = new Date()

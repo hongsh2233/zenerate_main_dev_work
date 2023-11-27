@@ -4,7 +4,14 @@
       type="button"
       class="signup-banner"
       v-show="path !== '/beta' && path !== '/ed1'"
-      @click="() => router.push({ name: 'en-modular' })"
+      @click="
+        () => {
+          router.push({
+            name: 'en-modular',
+            query: getCurrentUtmQuery(router),
+          })
+        }
+      "
     >
       <div class="signup-banner-inner">
         <p>
@@ -52,9 +59,10 @@
 <script lang="ts" setup>
 import { ref, computed, onMounted, watch, nextTick, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { MENU_EVENT } from '/Constants/eventConstant'
-import useDebounce from '/Composables/useDebounce'
 import Emitter from '/Libraries/bus'
+import { getCurrentUtmQuery } from '/Utils/index'
+import useDebounce from '/Composables/useDebounce'
+import { MENU_EVENT } from '/Constants/eventConstant'
 import Header from '/Components/EN/Header.vue'
 import Footer from '/Components/EN/Footer.vue'
 import Drawer from '/Components/EN/Drawer.vue'

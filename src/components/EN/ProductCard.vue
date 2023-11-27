@@ -37,7 +37,10 @@
           Feasibility Studies<br />for Modular Housing
         </p>
         <router-link
-          :to="{ name: CARD_DATA[product].buttonLinkedTo }"
+          :to="{
+            name: CARD_DATA[product].buttonLinkedTo,
+            query: getCurrentUtmQuery(router),
+          }"
           class="learn-more-button text-18-medium ml-60 hidden w-fit flex-row items-center !text-primary hover:!text-core-700 md:text-16-medium md:flex lg:ml-84 lg:flex"
           :class="product"
           >{{ CARD_DATA[product].buttonText
@@ -63,7 +66,10 @@
           determine<br />the highest & best use
         </p>
         <router-link
-          :to="{ name: CARD_DATA[product].buttonLinkedTo }"
+          :to="{
+            name: CARD_DATA[product].buttonLinkedTo,
+            query: getCurrentUtmQuery(router),
+          }"
           class="learn-more-button text-16-medium ml-60 hidden w-fit flex-row items-center !text-white hover:!text-gray-200 md:flex lg:text-18-medium lg:ml-84 lg:flex"
           :class="product"
           >{{ CARD_DATA[product].buttonText
@@ -125,7 +131,10 @@
       >
       <router-link
         v-else
-        :to="{ name: CARD_DATA[product].buttonLinkedTo }"
+        :to="{
+          name: CARD_DATA[product].buttonLinkedTo,
+          query: getCurrentUtmQuery(router),
+        }"
         class="text-16-semibold block h-38 rounded-6 bg-core-500 text-center leading-[38px] !text-white duration-300 hover:!text-core-200 md:hidden lg:hidden"
       >
         {{ CARD_DATA[product].buttonText }}</router-link
@@ -135,13 +144,17 @@
 </template>
 <script lang="ts" setup>
 import { PropType, computed } from 'vue'
-import { ZmapsLogo } from '/Components/EN'
+import { useRouter } from 'vue-router'
+import { getCurrentUtmQuery } from '/Utils/index'
 import { ROLES } from '/Constants/roles'
 import IconBase from './ui/IconBase.vue'
+import { ZmapsLogo } from '/Components/EN'
 
 const props = defineProps({
   product: String as PropType<'zmaps' | 'zenerate-modular' | 'ai-consulting'>,
 })
+
+const router = useRouter()
 
 const product = computed(() => props.product)
 

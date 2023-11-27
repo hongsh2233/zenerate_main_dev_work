@@ -1,3 +1,5 @@
+import { Router } from 'vue-router'
+
 export const Base64Binary = {
   _keyStr: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
 
@@ -150,4 +152,12 @@ export function SetProperty(
 
 export function swap(arr: any[], idx1: number, idx2: number): void {
   ;[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]
+}
+
+export function getCurrentUtmQuery(router: Router) {
+  return Object.fromEntries(
+    Object.entries(router.currentRoute.value.query).filter(([key]) =>
+      key.startsWith('utm_')
+    )
+  )
 }

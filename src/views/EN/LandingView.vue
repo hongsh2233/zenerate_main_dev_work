@@ -125,7 +125,7 @@
             Get a Demo
           </button>
           <router-link
-            :to="{ name: 'en-contact' }"
+            :to="{ name: 'en-contact', query: getCurrentUtmQuery(router) }"
             class="text-16-semibold mx-auto h-[48px] w-[250px] rounded-5 bg-white text-center leading-[48px] duration-300 hover:!bg-gray-200 md:h-[56px] md:w-[236px] md:text-20 md:leading-[56px] lg:h-[56px] lg:w-[236px] lg:text-20 lg:leading-[56px]"
             >Contact Us
           </router-link>
@@ -140,9 +140,13 @@
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ProductCard, Carousel, Footer, IconBase } from '/Components/EN'
+import { useRouter } from 'vue-router'
 import Emitter from '/Libraries/bus'
+import { getCurrentUtmQuery } from '/Utils/index'
 import { MENU_EVENT } from '/Constants/eventConstant'
+import { ProductCard, Carousel, Footer, IconBase } from '/Components/EN'
+
+const router = useRouter()
 
 const openCalendlyPopup = () => {
   Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {

@@ -139,7 +139,10 @@
             </div>
 
             <button type="button" class="start-button">
-              <router-link class="demo-link" :to="{ name: 'en-demo' }">
+              <router-link
+                class="demo-link"
+                :to="{ name: 'en-demo', query: getCurrentUtmQuery(router) }"
+              >
                 BOOK A DEMO
               </router-link>
             </button>
@@ -154,9 +157,13 @@
 </template>
 <script lang="ts" setup>
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
-import Store from '/Store/index'
+import { useRouter } from 'vue-router'
 import { useGtag } from 'vue-gtag-next'
+import Store from '/Store/index'
+import { getCurrentUtmQuery } from '/Utils/index'
 import Footer from '/Components/EN/Footer.vue'
+
+const router = useRouter()
 
 const { event } = useGtag()
 const goToApp = () => {

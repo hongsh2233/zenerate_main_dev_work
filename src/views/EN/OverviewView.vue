@@ -303,7 +303,7 @@
                     >If you want to subscribe to our updates list&nbsp;</span
                   >
                   <router-link
-                    :to="{ name: 'SignUp' }"
+                    :to="{ name: 'SignUp', query: getCurrentUtmQuery(router) }"
                     target="_blank"
                     class="blue"
                     >click here.&nbsp;
@@ -318,7 +318,7 @@
                   <span>If you want to subscribe to</span><br />
                   <span>our updates list&nbsp;</span>
                   <router-link
-                    :to="{ name: 'SignUp' }"
+                    :to="{ name: 'SignUp', query: getCurrentUtmQuery(router) }"
                     target="_blank"
                     class="blue"
                     >click here.&nbsp;
@@ -348,7 +348,10 @@
               <strong>maximizing profit</strong>
             </p>
             <button type="button" class="start-button">
-              <router-link class="demo-link" :to="{ name: 'en-demo' }">
+              <router-link
+                class="demo-link"
+                :to="{ name: 'en-demo', query: getCurrentUtmQuery(router) }"
+              >
                 BOOK A DEMO
               </router-link>
             </button>
@@ -379,12 +382,13 @@
 </template>
 <script lang="ts" setup>
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
-import Store from '/Store/index'
-import { useRouter } from 'vue-router'
-import { PRICE_PLAN_CONTENT, CONSULT_PLAN_CONTENT } from '/Constants/pricePlan'
-import Footer from '/Components/EN/Footer.vue'
 import { useGtag } from 'vue-gtag-next'
+import { useRouter } from 'vue-router'
+import { getCurrentUtmQuery } from '/Utils/index'
 import PartnersList from '/Constants/partners'
+import Footer from '/Components/EN/Footer.vue'
+
+const router = useRouter()
 
 const { event } = useGtag()
 const goToApp = () => {
