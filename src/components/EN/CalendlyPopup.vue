@@ -42,20 +42,21 @@ import { IconBase } from '/Components/EN'
 import Calendly from './Calendly.vue'
 
 const props = defineProps({
-  trigger: String as PropType<'zenapp' | 'header' | 'laststrip'>,
+  trigger: String as PropType<
+    'zenapp' | 'header' | 'laststrip' | 'modularlandingpage'
+  >,
 })
+const trigger = computed(() => props.trigger ?? 'default')
 const emits = defineEmits(['close'])
 
 const CALENDLY_URL_DIC = {
   default: 'https://calendly.com/d/yrk-k6f-zbv',
-  zenapp:
-    'https://calendly.com/zenerate/app-demo?&utm_source=homepage-zenapp&utm_medium=website',
-  header:
-    'https://calendly.com/d/yrk-k6f-zbv?utm_source=homepage-header&utm_medium=website',
+  zenapp: 'https://calendly.com/zenerate/app-demo?utm_content=homepage-zenapp',
+  header: 'https://calendly.com/d/yrk-k6f-zbv?utm_content=homepage-header',
   laststrip:
-    'https://calendly.com/d/yrk-k6f-zbv?utm_source=homepage-laststrip&utm_medium=website',
+    'https://calendly.com/d/yrk-k6f-zbv?utm_content=homepage-laststrip',
   modularlandingpage:
-    'https://calendly.com/zenerate/modular-demo?&utm_source=modularlandingpage&utm_medium=website',
+    'https://calendly.com/zenerate/modular-demo?utm_content=modularlandingpage',
 }
 const calendlyUrl = computed(() => {
   const trigger = props.trigger ?? 'default'

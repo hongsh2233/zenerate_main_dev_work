@@ -9,10 +9,14 @@
 </template>
 <script lang="ts" setup>
 import { computed, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { getCurrentUtmQuery } from '/Utils/index'
 
 const props = defineProps({
   calendlyUrl: String,
 })
+
+const router = useRouter()
 
 const calendlyUrl = computed(() => props.calendlyUrl)
 
@@ -26,7 +30,14 @@ onMounted(() => {
   head.appendChild(script)
 
   try {
-    Calendly.initInlineWidget({ url: calendlyUrl.value })
+    Calendly.initInlineWidget({
+      url: calendlyUrl.value,
+      utm: {
+        utmCampaign: getCurrentUtmQuery(router).utm_campaign,
+        utmSource: getCurrentUtmQuery(router).utm_source,
+        utmMedium: getCurrentUtmQuery(router).utm_medium,
+      },
+    })
   } catch (error) {
     console.error(error)
   }
