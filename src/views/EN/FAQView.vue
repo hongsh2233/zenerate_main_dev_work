@@ -7,7 +7,10 @@
           Can't find the answers<br />
           you're looking for?
 
-          <router-link to="contact">Contact us</router-link>
+          <router-link
+            :to="{ path: '/contact', query: getCurrentUtmQuery(router) }"
+            >Contact us</router-link
+          >
         </p>
       </div>
       <div class="faq-body">
@@ -352,7 +355,12 @@
               >
                 <p class="tab-content">
                   You can take a look at our main features here in the
-                  <router-link to="overview" class="blue"
+                  <router-link
+                    :to="{
+                      path: 'overview',
+                      query: getCurrentUtmQuery(router),
+                    }"
+                    class="blue"
                     >Product Overview page.</router-link
                   >
                 </p>
@@ -458,7 +466,12 @@
               >
                 <p class="tab-content">
                   You can view our
-                  <router-link to="how-to-use" class="blue"
+                  <router-link
+                    :to="{
+                      path: '/how-to-use',
+                      query: getCurrentUtmQuery(router),
+                    }"
+                    class="blue"
                     >tutorials here.</router-link
                   >
                   If you have any further questions please reach out to us at
@@ -468,7 +481,13 @@
                   >
                   or
 
-                  <router-link to="contact" class="blue">
+                  <router-link
+                    :to="{
+                      path: '/contact',
+                      query: getCurrentUtmQuery(router),
+                    }"
+                    class="blue"
+                  >
                     contact us here.</router-link
                   >
                 </p>
@@ -482,7 +501,12 @@
 </template>
 <script lang="ts" setup>
 import { ref, computed, onMounted, reactive } from 'vue'
+import { useRouter } from 'vue-router'
 import Store from '/Store/index'
+import { getCurrentUtmQuery } from '/Utils/index'
+
+const router = useRouter()
+
 const currentTab = ref('pricing')
 const toggleTab = (tab) => {
   currentTab.value = tab

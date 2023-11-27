@@ -54,15 +54,6 @@
                 >
                   TRY NOW
                 </button>
-
-                <!-- <button
-                  type="button"
-                  class="action-button hidden-en-desktop hidden-en-tablet"
-                >
-                  <router-link class="demo-link" :to="{ name: 'en-demo' }">
-                    BOOK A DEMO
-                  </router-link>
-                </button> -->
               </div>
               <div class="pricing-plan-bottom">
                 <div class="price-wrapper" @click="() => togglePlan('basic')">
@@ -490,7 +481,10 @@
               </span>
               <span
                 >or fill out the
-                <router-link to="contact">Contact us page.</router-link>
+                <router-link
+                  :to="{ path: '/contact', query: getCurrentUtmQuery(router) }"
+                  >Contact us page.</router-link
+                >
               </span>
             </p>
           </div>
@@ -507,13 +501,13 @@
 </template>
 <script lang="ts" setup>
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
-import Store from '/Store/index'
 import { useRouter } from 'vue-router'
 import { useGtag } from 'vue-gtag-next'
+import { getCurrentUtmQuery } from '/Utils/index'
 import { PRICING_PLAN_CONTENTS } from '/Constants/pricePlan'
 import PartnersList from '/Constants/partners'
-import Footer from '/Components/EN/Footer.vue'
 import FAQ from '/Views/EN/FAQView.vue'
+import Footer from '/Components/EN/Footer.vue'
 
 const { event } = useGtag()
 const goToApp = () => {
@@ -539,6 +533,7 @@ const router = useRouter()
 const toContactForm = () => {
   router.push({
     name: 'en-contact',
+    query: getCurrentUtmQuery(router),
   })
 }
 

@@ -136,7 +136,10 @@
                 please email
                 <a href="mailto: contact@zenerate.ai">contact@zenerate.ai </a>
               </p>
-              <router-link class="link-button" :to="{ name: 'en-landing' }">
+              <router-link
+                class="link-button"
+                :to="{ name: 'en-landing', query: getCurrentUtmQuery(router) }"
+              >
                 View Product Overview
                 <IconBase
                   icon-name="arrow-right"
@@ -158,13 +161,14 @@
 </template>
 <script lang="ts" setup>
 import { reactive, ref, onMounted, computed } from 'vue'
-import Store from '/Store/index'
-import ApiService from '/Services/api'
-import Validation from '/Utils/Validation'
 import { useRoute, useRouter } from 'vue-router'
+import { useHead } from '@vueuse/head'
+import ApiService from '/Services/api'
+import Store from '/Store/index'
+import Validation from '/Utils/Validation'
+import { getCurrentUtmQuery } from '/Utils/index'
 import Footer from '/Components/EN/Footer.vue'
 import SelectInput from '/Components/SelectInput.vue'
-import { useHead } from '@vueuse/head'
 import { IconBase } from '/Components/EN'
 // const fullpage = computed(() => Store.state.root.FullPage)
 
@@ -173,6 +177,8 @@ import { IconBase } from '/Components/EN'
 //     fullpage.value.destroy()
 //   }
 // })
+
+const router = useRouter()
 
 type Item = {
   id: number

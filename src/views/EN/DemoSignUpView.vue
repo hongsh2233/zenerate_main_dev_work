@@ -29,7 +29,11 @@
           <span>Reach out to us at&nbsp;</span>
           <span class="blue"
             ><a href="mailto:product@zenerate.ai">product@zenerate.ai</a>
-            <router-link to="/contact"> (or click here)</router-link></span
+            <router-link
+              :to="{ path: '/contact', query: getCurrentUtmQuery(router) }"
+            >
+              (or click here)</router-link
+            ></span
           ><br />
           <span>and we'll try our best to fit into&nbsp;</span>
           <span>your busy schedule.</span>
@@ -45,6 +49,7 @@
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
 import { useHead } from '@vueuse/head'
 import { useRouter } from 'vue-router'
+import { getCurrentUtmQuery } from '/Utils/index'
 import Footer from '/Components/EN/Footer.vue'
 
 // 사용하지 않는 페이지
@@ -60,11 +65,6 @@ onMounted(() => {
 })
 
 const router = useRouter()
-const toContactForm = () => {
-  router.push({
-    name: 'en-contact',
-  })
-}
 
 const goCanlendly = () => {
   Calendly.initPopupWidget({

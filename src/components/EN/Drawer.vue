@@ -21,7 +21,10 @@
                 <div v-show="toggleTab[tab.key]" class="navigation-link-list">
                   <template v-for="(nav, idx) in tab.children" :key="idx">
                     <router-link
-                      :to="{ name: nav.to }"
+                      :to="{
+                        name: nav.to,
+                        query: getCurrentUtmQuery(router),
+                      }"
                       custom
                       v-slot="{ href, navigate }"
                     >
@@ -88,16 +91,18 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-
-import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
-import MENU_DATA from '/Constants/menu'
-import { IconBase } from '/Components/EN'
 import Emitter from '/Libraries/bus'
+import { getCurrentUtmQuery } from '/Utils/index'
+import MENU_DATA from '/Constants/menu'
 import { MENU_EVENT } from '/Constants/eventConstant'
+import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
+import { IconBase } from '/Components/EN'
 
 const props = defineProps({
   showDrawer: Boolean,
 })
+
+const router = useRouter()
 
 const toggleTab = ref({
   product: false,

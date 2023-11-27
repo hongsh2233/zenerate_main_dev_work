@@ -9,7 +9,13 @@
       <div class="header-inner">
         <div
           class="header-logo hover-pointer"
-          @click="router.push({ name: 'en-landing' }) && toggleDrawer(false)"
+          @click="
+            () =>
+              router.push({
+                name: 'en-landing',
+                query: getCurrentUtmQuery(router),
+              }) && toggleDrawer(false)
+          "
         >
           <img
             class="logo"
@@ -38,7 +44,12 @@
                   v-for="(secondary, idx) in primary.children"
                   :key="idx"
                 >
-                  <router-link :to="{ name: secondary.to }">
+                  <router-link
+                    :to="{
+                      name: secondary.to,
+                      query: getCurrentUtmQuery(router),
+                    }"
+                  >
                     <IconBase
                       :icon-name="secondary.icon"
                       :width="20"
@@ -102,12 +113,13 @@
 import { ref, computed } from 'vue'
 import { useGtag } from 'vue-gtag-next'
 import { useRouter } from 'vue-router'
-import MenuIcon from './Icons/MenuIcon.vue'
-import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
-import MENU_DATA from '/Constants/menu'
-import { IconBase } from '/Components/EN'
 import Emitter from '/Libraries/bus'
+import { getCurrentUtmQuery } from '/Utils/index'
+import MENU_DATA from '/Constants/menu'
 import { MENU_EVENT } from '/Constants/eventConstant'
+import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
+import MenuIcon from './Icons/MenuIcon.vue'
+import { IconBase } from '/Components/EN'
 
 const props = defineProps({
   showDrawer: Boolean,

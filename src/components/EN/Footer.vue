@@ -55,14 +55,24 @@
               <p
                 class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
-                <router-link :to="{ name: 'en-modular' }">
+                <router-link
+                  :to="{
+                    name: 'en-modular',
+                    query: getCurrentUtmQuery(router),
+                  }"
+                >
                   Zenerate Modular
                 </router-link>
               </p>
               <p
                 class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
-                <router-link :to="{ name: 'en-ai-consulting' }">
+                <router-link
+                  :to="{
+                    name: 'en-ai-consulting',
+                    query: getCurrentUtmQuery(router),
+                  }"
+                >
                   AI Consulting
                 </router-link>
               </p>
@@ -80,15 +90,28 @@
               <p
                 class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
-                <router-link :to="{ name: 'en-about' }"> About Us </router-link>
+                <router-link
+                  :to="{ name: 'en-about', query: getCurrentUtmQuery(router) }"
+                >
+                  About Us
+                </router-link>
               </p>
               <p
                 class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
-                <router-link :to="{ name: 'en-career' }"> Careers </router-link>
+                <router-link
+                  :to="{ name: 'en-career', query: getCurrentUtmQuery(router) }"
+                >
+                  Careers
+                </router-link>
               </p>
               <p class="text-14 font-medium text-gray-700">
-                <router-link :to="{ name: 'en-contact' }">
+                <router-link
+                  :to="{
+                    name: 'en-contact',
+                    query: getCurrentUtmQuery(router),
+                  }"
+                >
                   Contact
                 </router-link>
               </p>
@@ -110,17 +133,29 @@
             class="mb-40 flex w-fit flex-col text-14 font-semibold text-gray-700 md:mb-14 md:flex-row md:items-center lg:mb-18 lg:flex-row lg:items-center"
           >
             <p class="mb-18 md:mb-0 md:mr-30 lg:mb-0 lg:mr-30">
-              <router-link :to="{ name: 'en-terms-and-conditions' }">
+              <router-link
+                :to="{
+                  name: 'en-terms-and-conditions',
+                  query: getCurrentUtmQuery(router),
+                }"
+              >
                 Terms of Service
               </router-link>
             </p>
             <p class="mb-18 md:mb-0 md:mr-30 lg:mb-0 lg:mr-30">
-              <router-link :to="{ name: 'en-privacy-policy' }">
+              <router-link
+                :to="{
+                  name: 'en-privacy-policy',
+                  query: getCurrentUtmQuery(router),
+                }"
+              >
                 Privacy Policy
               </router-link>
             </p>
             <p class="mb-18 md:mb-0 md:mr-30 lg:mb-0 lg:mr-30">
-              <router-link :to="{ name: 'en-contact' }">
+              <router-link
+                :to="{ name: 'en-contact', query: getCurrentUtmQuery(router) }"
+              >
                 Contact Us
               </router-link>
             </p>
@@ -215,6 +250,7 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { getCurrentUtmQuery } from '/Utils/index'
 import IconBase from './ui/IconBase.vue'
 
 const router = useRouter()

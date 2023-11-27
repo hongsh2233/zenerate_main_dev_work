@@ -5,7 +5,13 @@
         <div class="signup-header-wrapper" :class="{ done: sendEmailStatus }">
           <div
             class="header-logo hover-pointer"
-            @click="() => router.push({ name: 'en-landing' })"
+            @click="
+              () =>
+                router.push({
+                  name: 'en-landing',
+                  query: getCurrentUtmQuery(router),
+                })
+            "
           >
             <img class="logo" src="/img/logo_white.svg" alt="logo" />
           </div>
@@ -339,7 +345,12 @@
           >
             <div
               class="header-logo hover-pointer hidden-desktop"
-              @click="router.push({ name: 'en-landing' })"
+              @click="
+                router.push({
+                  name: 'en-landing',
+                  query: getCurrentUtmQuery(router),
+                })
+              "
             >
               <img class="logo" src="/img/logo_color.svg" alt="logo" />
             </div>
@@ -398,7 +409,7 @@ import { reactive, ref, onMounted, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
-import Footer from '/Components/EN/Footer.vue'
+import { getCurrentUtmQuery } from '/Utils/index'
 import SelectInput from '/Components/EN/SignUpSelectInput.vue'
 import IconBase from '/Components/EN/ui/IconBase.vue'
 import DotSpinnerWhite from '/Components/EN/ui/DotSpinnerWhite.vue'

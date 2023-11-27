@@ -169,7 +169,9 @@
       </div>
       <button
         class="back-button hover-pointer"
-        @click=";[router.push('/career')]"
+        @click="
+          ;[router.push({ path: '/career', query: getCurrentUtmQuery(router) })]
+        "
       >
         <a href="#firstPage"> <span>BACK</span></a>
         <svg
@@ -370,7 +372,9 @@
       </div>
       <button
         class="back-button hover-pointer"
-        @click=";[router.push('/career')]"
+        @click="
+          ;[router.push({ path: '/career', query: getCurrentUtmQuery(router) })]
+        "
       >
         <a href="#firstPage"> <span>BACK</span></a>
         <svg
@@ -550,7 +554,9 @@
       </div>
       <button
         class="back-button hover-pointer"
-        @click=";[router.push('/career')]"
+        @click="
+          ;[router.push({ path: '/career', query: getCurrentUtmQuery(router) })]
+        "
       >
         <a href="#firstPage"> <span>BACK</span></a>
         <svg
@@ -709,7 +715,9 @@
       </div>
       <button
         class="back-button hover-pointer"
-        @click=";[router.push('/career')]"
+        @click="
+          ;[router.push({ path: '/career', query: getCurrentUtmQuery(router) })]
+        "
       >
         <a href="#firstPage"> <span>BACK</span></a>
         <svg
@@ -877,7 +885,12 @@
         </ul>
       </div>
 
-      <button class="back-button" @click=";[router.push('/career')]">
+      <button
+        class="back-button"
+        @click="
+          ;[router.push({ path: '/career', query: getCurrentUtmQuery(router) })]
+        "
+      >
         <span>BACK</span>
         <svg
           width="122"
@@ -1046,7 +1059,9 @@
       </div>
       <button
         class="back-button hover-pointer"
-        @click=";[router.push('/career')]"
+        @click="
+          ;[router.push({ path: '/career', query: getCurrentUtmQuery(router) })]
+        "
       >
         <a href="#firstPage"> <span>BACK</span></a>
         <svg
@@ -1070,9 +1085,11 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import Store from '/Store/index'
-import CAREERS from '../../constants/careers.ts'
 import { useRouter } from 'vue-router'
+import Store from '/Store/index'
+import { getCurrentUtmQuery } from '/Utils/index'
+import CAREERS from '../../constants/careers.ts'
+
 const fp = computed(() => Store.state.root.FullPage)
 const router = useRouter()
 onMounted(() => {

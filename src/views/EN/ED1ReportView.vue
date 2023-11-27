@@ -12,7 +12,7 @@
         <!-- logo -->
         <router-link
           class="mb-70 h-fit w-fit md:mb-70 lg:mb-70"
-          :to="{ name: 'en-landing' }"
+          :to="{ name: 'en-landing', query: getCurrentUtmQuery(router) }"
         >
           <img
             src="/public/img/logo_white.svg"
@@ -205,10 +205,13 @@
 </template>
 <script lang="ts" setup>
 import { nextTick, onMounted, ref, watch, computed, onBeforeMount } from 'vue'
+import { useRouter } from 'vue-router'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
-import { Tooltip } from '/Components/EN/ui/tooltips'
+import { getCurrentUtmQuery } from '/Utils/index'
 import { FormContent } from '/Components/EN'
+
+const router = useRouter()
 
 const CARD_CONTENT = {
   title: 'Quick AI-Powered Feasibility Study for ED 1 Projects in Los Angeles',
