@@ -93,8 +93,7 @@ const ENRoute: RouteRecordRaw = {
     // },
     {
       path: '/beta',
-      name: 'SignUp',
-      component: PreSignUpView,
+      redirect: '/modular',
     },
     {
       path: '/ed1',
