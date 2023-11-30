@@ -1,6 +1,6 @@
 <template>
   <section
-    class="flex flex-col flex-nowrap items-center justify-center lg:fixed lg:top-0 lg:left-0 lg:h-[100vh] lg:max-h-[100vh] lg:w-[100vw] lg:max-w-[100vw] lg:flex-row"
+    class="flex flex-col flex-nowrap items-center justify-center lg:top-0 lg:left-0 lg:h-[100vh] lg:max-h-[100vh] lg:min-h-[740px] lg:w-[100vw] lg:max-w-[100vw] lg:flex-row"
   >
     <!-- DESCRIPTION AREA -->
     <div
