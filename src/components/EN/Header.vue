@@ -59,13 +59,17 @@
                     {{ secondary.title }}
                   </router-link>
 
-                  <a
-                    v-if="secondary.to === 'en-ai-consulting'"
-                    :href="'https://maps.zenerate.ai'"
-                  >
-                    <component :is="ZmapsIcon" :width="20" :height="20" />
-                    Z-Maps
-                  </a>
+                  <template v-if="secondary.to === 'en-ai-consulting'">
+                    <a :href="'https://www.zenerate.ai/ed1'">
+                      <!-- TODO: 아이콘 변경 -->
+                      <component :is="ZmapsIcon" :width="20" :height="20" />
+                      ED 1 Feasibility Report
+                    </a>
+                    <a :href="'https://maps.zenerate.ai'">
+                      <component :is="ZmapsIcon" :width="20" :height="20" />
+                      Z-maps
+                    </a>
+                  </template>
                 </template>
               </div>
             </div>

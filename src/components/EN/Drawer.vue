@@ -44,21 +44,31 @@
                       </a>
                     </router-link>
 
-                    <a
-                      v-if="nav.to === 'en-ai-consulting'"
-                      :href="'https://maps.zenerate.ai'"
-                      class="navigation-link sub"
-                      :class="nav.to"
-                      @click="close"
-                    >
-                      <component
-                        :is="ZmapsIcon"
-                        :width="26"
-                        :height="26"
-                        class="sub-icon"
-                      />
-                      Z-Maps
-                    </a>
+                    <template v-if="nav.to === 'en-ai-consulting'">
+                      <a
+                        :href="'https://www.zenerate.ai/ed1'"
+                        class="navigation-link sub"
+                        :class="nav.to"
+                        @click="close"
+                      >
+                        <!-- TODO: 아이콘 변경 -->
+                        @@ ED 1 Feasibility Report
+                      </a>
+                      <a
+                        :href="'https://maps.zenerate.ai'"
+                        class="navigation-link sub"
+                        :class="nav.to"
+                        @click="close"
+                      >
+                        <component
+                          :is="ZmapsIcon"
+                          :width="26"
+                          :height="26"
+                          class="sub-icon"
+                        />
+                        Z-maps
+                      </a>
+                    </template>
                   </template>
                 </div>
               </transition>
