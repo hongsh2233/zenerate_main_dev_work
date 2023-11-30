@@ -61,8 +61,13 @@
 
                   <template v-if="secondary.to === 'en-ai-consulting'">
                     <a :href="'https://www.zenerate.ai/ed1'">
-                      <!-- TODO: 아이콘 변경 -->
-                      <component :is="ZmapsIcon" :width="20" :height="20" />
+                      <IconBase
+                        :icon-name="'ed1-report'"
+                        :width="20"
+                        :height="20"
+                        :transition="false"
+                        class="sub-icon"
+                      />
                       ED 1 Feasibility Report
                     </a>
                     <a :href="'https://maps.zenerate.ai'">

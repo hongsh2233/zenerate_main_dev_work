@@ -51,8 +51,14 @@
                         :class="nav.to"
                         @click="close"
                       >
-                        <!-- TODO: 아이콘 변경 -->
-                        @@ ED 1 Feasibility Report
+                        <IconBase
+                          :icon-name="'ed1-report'"
+                          :width="26"
+                          :height="26"
+                          :transition="false"
+                          class="sub-icon"
+                        />
+                        ED 1 Feasibility Report
                       </a>
                       <a
                         :href="'https://maps.zenerate.ai'"

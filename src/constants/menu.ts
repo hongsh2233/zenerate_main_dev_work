@@ -6,7 +6,7 @@ export default [
       {
         title: 'Zenerate Modular',
         to: 'en-modular',
-        icon: 'zenerate-app',
+        icon: 'module-core',
       },
       {
         title: 'AI Consulting',
