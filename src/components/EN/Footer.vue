@@ -76,6 +76,13 @@
                   AI Consulting
                 </router-link>
               </p>
+              <p
+                class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
+              >
+                <a :href="'https://www.zenerate.ai/ed1'">
+                  ED 1 Feasibility Report
+                </a>
+              </p>
               <p class="text-14 font-medium text-gray-700">
                 <a :href="'https://maps.zenerate.ai'"> Z-maps </a>
               </p>

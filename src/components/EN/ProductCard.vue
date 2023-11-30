@@ -168,7 +168,7 @@ const CARD_DATA = {
       'bd',
       'government',
     ],
-    buttonText: 'Go to Z-Maps',
+    buttonText: 'Go to Z-maps',
     buttonLinkedTo: 'https://maps.zenerate.ai',
   },
   'zenerate-modular': {
