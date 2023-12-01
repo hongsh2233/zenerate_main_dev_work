@@ -321,5 +321,12 @@ const sendBannerEmail = async () => {
     font-size: 16px !important;
     font-weight: 500;
   }
+
+  .input-wrapper:not(.error) {
+    input,
+    textarea {
+      border: solid 1px theme('colors.gray.600') !important;
+    }
+  }
 }
 </style>
