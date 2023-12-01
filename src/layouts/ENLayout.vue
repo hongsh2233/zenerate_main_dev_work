@@ -3,7 +3,7 @@
     <button
       type="button"
       class="signup-banner"
-      v-show="path !== '/beta' && path !== '/ed1'"
+      v-show="showHeader"
       @click="
         () => {
           router.push({
@@ -28,7 +28,7 @@
     </button>
 
     <Header
-      v-show="path !== '/beta' && path !== '/ed1'"
+      v-show="showHeader"
       :showDrawer="showDrawer"
       :transparent="transparentHeader"
       @toggleDrawer="toggleDrawer"
@@ -71,7 +71,10 @@ import { Button, IconBase } from '/Components/EN'
 
 const route = useRoute()
 const router = useRouter()
-const path = computed(() => route.path)
+
+const showHeader = computed(
+  () => !route.path.startsWith('/beta') && !route.path.startsWith('/ed1')
+)
 
 // ---------------- try popup ----------------
 const showTryPopup = ref(true)
