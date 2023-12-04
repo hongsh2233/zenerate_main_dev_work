@@ -63,7 +63,7 @@
       </div>
 
       <p
-        class="text-16-regular mt-30 w-[280px] text-center md:mt-46 md:w-[620px] md:text-20 lg:mt-46 lg:w-[740px] lg:text-20"
+        class="text-16-regular mt-30 w-[280px] text-center md:mt-46 md:w-[620px] md:text-20 lg:mt-46 lg:w-[680px] lg:text-20"
       >
         We are now a collective of 20+ visionaries with some of the industry's
         best AI Developers, Real Estate Developers, Software Engineers, Data
