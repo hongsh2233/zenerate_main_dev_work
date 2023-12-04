@@ -19,7 +19,9 @@
         >
           <img
             class="logo"
-            :src="`/img/logo_${transparent ? 'white' : 'color'}.svg`"
+            :src="`/img/logo_${
+              showDrawer ? 'color' : transparent ? 'white' : 'color'
+            }.svg`"
             alt="logo"
           />
           <!-- <img class="logo hidden-desktop" src="/img/logo_short.svg" alt="logo" /> -->
