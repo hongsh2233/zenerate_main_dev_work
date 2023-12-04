@@ -43,7 +43,7 @@ import Calendly from './Calendly.vue'
 
 const props = defineProps({
   trigger: String as PropType<
-    'zenapp' | 'header' | 'laststrip' | 'modularlandingpage'
+    'zenapp' | 'header' | 'laststrip' | 'modularlandingpage' | 'aboutus'
   >,
 })
 const trigger = computed(() => props.trigger ?? 'default')
@@ -57,6 +57,7 @@ const CALENDLY_URL_DIC = {
     'https://calendly.com/d/yrk-k6f-zbv?utm_content=homepage-laststrip',
   modularlandingpage:
     'https://calendly.com/zenerate/modular-demo?utm_content=modularlandingpage',
+  aboutus: 'https://calendly.com/d/yrk-k6f-zbv?utm_content=homepage-aboutus',
 }
 const calendlyUrl = computed(() => {
   const trigger = props.trigger ?? 'default'
