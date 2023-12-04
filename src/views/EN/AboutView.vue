@@ -243,7 +243,7 @@ const NEWS_CONTENT = [
     key: 'news_sola',
     source: 'Yahoo Finance',
     title:
-      'Partnering with SoLa Impact to Automate Affordable /Modular Housing Developments',
+      'Partnering with SoLa Impact to Automate Affordable/Modular Housing Developments',
     description:
       "Learn about how our collaboration helps dramatically accelerate the speed of planning, configuration, design, and the permit approval process for a wide range of SoLa's affording housing projects.",
     url:
