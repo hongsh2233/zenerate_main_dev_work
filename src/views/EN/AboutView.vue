@@ -4,7 +4,7 @@
     <section class="hero">
       <div class="relative mx-auto mt-35 flex w-full justify-center">
         <video
-          class="h-[428px] md:h-[575px] lg:h-fit lg:w-full"
+          class="h-[428px] md:h-[575px] lg:h-full lg:w-[100vw]"
           :autoplay="true"
           :muted="true"
           :loop="true"
