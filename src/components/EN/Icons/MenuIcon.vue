@@ -4,7 +4,7 @@
       :icon-name="showDrawer ? 'close' : 'menu'"
       :width="30"
       :height="30"
-      :iconColor="showDrawer ? 'black' : '#4848ff'"
+      :iconColor="showDrawer ? 'black' : transparentMenu ? 'white' : '#4848ff'"
       class="my-10 mx-26 md:my-10 md:mx-40 lg:my-10 lg:mx-40"
     />
   </div>
@@ -37,14 +37,17 @@ const props = defineProps({
     },
   },
   showDrawer: Boolean,
-  transparent: Boolean,
+  transparentMenu: {
+    type: Boolean,
+    default: false,
+  },
 })
 const emit = defineEmits(['toggle'])
 const toggle = () => {
   emit('toggle', null)
 }
 const showDrawer = computed(() => props.showDrawer)
-const transparent = computed(() => props.transparent)
+const transparentMenu = computed(() => props.transparentMenu)
 
 const barHeight = computed(() => {
   return Math.floor((props.height / 2 / 12) * 2)
