@@ -4,7 +4,7 @@
     <section class="hero">
       <div class="relative mx-auto mt-35 flex w-full justify-center">
         <video
-          class="h-[428px] md:h-[575px] lg:h-fit lg:w-full"
+          class="h-[428px] md:h-[575px] lg:h-full lg:w-[100vw]"
           :autoplay="true"
           :muted="true"
           :loop="true"
@@ -63,7 +63,7 @@
       </div>
 
       <p
-        class="text-16-regular mt-30 w-[280px] text-center md:mt-46 md:w-[620px] md:text-20 lg:mt-46 lg:w-[740px] lg:text-20"
+        class="text-16-regular mt-30 w-[280px] text-center md:mt-46 md:w-[620px] md:text-20 lg:mt-46 lg:w-[680px] lg:text-20"
       >
         We are now a collective of 20+ visionaries with some of the industry's
         best AI Developers, Real Estate Developers, Software Engineers, Data
@@ -149,7 +149,7 @@
         <a
           v-for="news in NEWS_CONTENT"
           :href="news.url"
-          class="isolate flex h-[500px] w-[320px] flex-col overflow-hidden rounded-8 shadow-200 not-last:mb-20 md:h-[560px] md:w-[460px] md:not-last:mb-30 lg:!mb-0 lg:h-[560px] lg:w-[460px] lg:not-last:mr-30"
+          class="isolate flex h-[500px] w-[320px] flex-col overflow-hidden rounded-8 shadow-200 hover:bg-gray-50 not-last:mb-20 md:h-[560px] md:w-[460px] md:not-last:mb-30 lg:!mb-0 lg:h-[560px] lg:w-[460px] lg:not-last:mr-30"
           :class="news.key"
         >
           <div
@@ -243,7 +243,7 @@ const NEWS_CONTENT = [
     key: 'news_sola',
     source: 'Yahoo Finance',
     title:
-      'Partnering with SoLa Impact to Automate Affordable /Modular Housing Developments',
+      'Partnering with SoLa Impact to Automate Affordable/Modular Housing Developments',
     description:
       "Learn about how our collaboration helps dramatically accelerate the speed of planning, configuration, design, and the permit approval process for a wide range of SoLa's affording housing projects.",
     url:
