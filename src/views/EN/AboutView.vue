@@ -149,7 +149,7 @@
         <a
           v-for="news in NEWS_CONTENT"
           :href="news.url"
-          class="isolate flex h-[500px] w-[320px] flex-col overflow-hidden rounded-8 shadow-200 not-last:mb-20 md:h-[560px] md:w-[460px] md:not-last:mb-30 lg:!mb-0 lg:h-[560px] lg:w-[460px] lg:not-last:mr-30"
+          class="isolate flex h-[500px] w-[320px] flex-col overflow-hidden rounded-8 shadow-200 hover:bg-gray-50 not-last:mb-20 md:h-[560px] md:w-[460px] md:not-last:mb-30 lg:!mb-0 lg:h-[560px] lg:w-[460px] lg:not-last:mr-30"
           :class="news.key"
         >
           <div
