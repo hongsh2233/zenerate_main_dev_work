@@ -30,7 +30,8 @@
     <Header
       v-show="showHeader"
       :showDrawer="showDrawer"
-      :transparent="transparentHeader"
+      :is-header-on-top="isHeaderOnTop"
+      :transparent="isHeaderOnTop && isAboutPage"
       @toggleDrawer="toggleDrawer"
       @toggleTryPopup="toggleTryPopup"
     ></Header>
@@ -72,6 +73,7 @@ import { Button, IconBase } from '/Components/EN'
 const route = useRoute()
 const router = useRouter()
 
+const isAboutPage = computed(() => route.path.startsWith('/about'))
 const showHeader = computed(
   () => !route.path.startsWith('/beta') && !route.path.startsWith('/ed1')
 )
@@ -97,13 +99,13 @@ Emitter.on(MENU_EVENT.TOGGLE_CALENDLY_POPUP, (option) =>
 )
 
 // ---------------- header scroll transparent ----------------
-const transparentHeader = ref(true)
+const isHeaderOnTop = ref(true)
 const observerHandler = (entries: any[]) => {
   entries.forEach((entry: { isIntersecting: any }) => {
     if (!entry.isIntersecting) {
-      transparentHeader.value = false
+      isHeaderOnTop.value = false
     } else {
-      transparentHeader.value = true
+      isHeaderOnTop.value = true
     }
   })
 }

@@ -4,7 +4,7 @@
     <div
       id="header"
       class="header-wrapper banner"
-      :class="transparent && 'transparent'"
+      :class="[isHeaderOnTop && 'header-on-top', transparent && 'transparent']"
     >
       <div class="header-inner">
         <div
@@ -20,7 +20,7 @@
           <img
             class="logo"
             :src="`/img/logo_${
-              !showDrawer && transparent ? 'color' : 'color'
+              showDrawer ? 'color' : transparent ? 'white' : 'color'
             }.svg`"
             alt="logo"
           />
@@ -35,7 +35,7 @@
                   icon-name="chevron-down"
                   :width="24"
                   :height="24"
-                  iconColor="black"
+                  :iconColor="transparent ? 'white' : 'black'"
                   class="ml-8"
                 />
               </button>
@@ -111,7 +111,7 @@
           <MenuIcon
             @toggle="toggleDrawer"
             :showDrawer="showDrawer"
-            :transparent="transparent"
+            :transparentMenu="transparent"
           />
         </div>
       </div>
@@ -132,6 +132,7 @@ import { IconBase } from '/Components/EN'
 
 const props = defineProps({
   showDrawer: Boolean,
+  isHeaderOnTop: Boolean,
   transparent: Boolean,
 })
 
@@ -152,6 +153,7 @@ const openCalendlyPopup = () => {
 }
 
 const showDrawer = computed(() => props.showDrawer)
+const isHeaderOnTop = computed(() => props.isHeaderOnTop)
 const transparent = computed(() => props.transparent)
 const showLang = ref(false)
 const toggleLang = (flag?: boolean) => {
@@ -206,27 +208,31 @@ const toggleNav = (primary: String) => {
     }
   }
 
+  &.header-on-top {
+    box-shadow: none;
+  }
+
   &.transparent {
-    // background: transparent;
+    background: transparent;
     box-shadow: none;
 
-    // .dropbtn {
-    //   color: $white;
-    // }
+    .dropbtn {
+      color: $white;
+    }
 
-    // .navbar a:hover,
-    // .dropdown:hover .dropbtn {
-    //   color: $white;
-    //   opacity: 0.6;
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      color: $white;
+      opacity: 0.6;
 
-    //   i {
-    //     opacity: 0.6;
-    //   }
-    // }
+      i {
+        opacity: 0.6;
+      }
+    }
 
-    // .primary-button {
-    //   background: rgba(77, 73, 244, 0.2);
-    // }
+    .primary-button {
+      background: rgba(77, 73, 244, 0.2);
+    }
   }
 
   @include en-desktop {
