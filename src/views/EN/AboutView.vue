@@ -245,7 +245,7 @@ const NEWS_CONTENT = [
     title:
       'Partnering with SoLa Impact to Automate Affordable/Modular Housing Developments',
     description:
-      "Learn about how our collaboration helps dramatically accelerate the speed of planning, configuration, design, and the permit approval process for a wide range of SoLa's affording housing projects.",
+      "Learn about how our collaboration helps dramatically accelerate the speed of planning, configuration, design, and the permit approval process for a wide range of SoLa's affordable housing projects.",
     url:
       'https://finance.yahoo.com/news/zenerate-innovative-ai-startup-partners-160000114.html?fr=sycsrp_catchall',
   },
