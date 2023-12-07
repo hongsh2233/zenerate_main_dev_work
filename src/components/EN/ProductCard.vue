@@ -188,13 +188,15 @@ const CARD_DATA = {
   background-repeat: no-repeat;
 
   &.zmaps {
-    background-image: url('/public/en/products/zmaps_desktop.png');
+    background-image: url('/public/en/products/zmaps_phaseout_desktop.png');
+    background-size: 980px 648px;
     background-position: center right;
     @include en-tablet {
-      background-image: url('/public/en/products/zmaps_tablet.png');
+      background-size: 708px 468px;
+      background-image: url('/public/en/products/zmaps_phaseout_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/products/zmaps_mobile_new.png');
+      background-image: url('/public/en/products/zmaps_phaseout_mobile.png');
       background-size: 320px 388px;
       background-position: bottom 272px center;
     }
