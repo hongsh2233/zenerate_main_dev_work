@@ -395,6 +395,20 @@ const submitForm = async () => {
     await ApiService.XSLX_TEST(sheetName.value, form)
     await ApiService.SEND_EMAIL(emailForm)
 
+    if (sheetName.value === 'Modular') {
+      const activeCampaignForm = {
+        email: SignUpForm.value.email.value,
+        firstName: SignUpForm.value.firstName.value,
+        lastName: SignUpForm.value.lastName.value,
+        company: SignUpForm.value.company.value,
+        jobTitle: SignUpForm.value.jobTitle.value,
+        note: SignUpForm.value.message.value,
+        tag: 'modular',
+      }
+
+      await ApiService.ACTIVE_CAMPAIGN(activeCampaignForm)
+    }
+
     if (sheetName.value === 'ED1Report') {
       const activeCampaignForm = {
         email: SignUpForm.value.email.value,
