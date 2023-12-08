@@ -57,7 +57,7 @@ useHead({
     { name: 'keywords', content: 'zenerate' },
     {
       name: 'twitter:image',
-      content: 'https://www.zenerate.ai/img/logo_og.png',
+      content: 'https://www.zenerate.ai/img/thumbnail.png',
     },
     {
       name: 'og:url',
@@ -78,7 +78,7 @@ useHead({
     },
     {
       name: 'og:image:url',
-      content: 'https://www.zenerate.ai/img/logo_og.png',
+      content: 'https://www.zenerate.ai/img/thumbnail.png',
     },
     {
       name: 'og:image:type',
