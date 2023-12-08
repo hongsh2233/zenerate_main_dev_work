@@ -168,7 +168,7 @@ useHead({
     {
       hid: 'twitter:image',
       property: 'twitter:image',
-      content: 'https://www.zenerate.ai/img/logo_og.png',
+      content: 'https://www.zenerate.ai/img/thumbnail.png',
     },
     {
       hid: 'og:url',
@@ -192,7 +192,7 @@ useHead({
     {
       hid: 'og:image:url',
       property: 'og:image:url',
-      content: 'https://www.zenerate.ai/img/logo_og.png',
+      content: 'https://www.zenerate.ai/img/thumbnail.png',
     },
     {
       hid: 'og:image:type',
