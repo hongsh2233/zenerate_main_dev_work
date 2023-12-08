@@ -8,13 +8,13 @@
         <ZmapsLogo class="ml-28 mt-30 mb-16 md:hidden lg:hidden" />
         <ZmapsLogo
           size="medium"
-          class="mt-60 ml-60 mb-16 hidden md:block lg:hidden"
+          class="mt-77 ml-60 mb-13 hidden md:block lg:hidden"
         />
-        <ZmapsLogo size="large" class="mt-84 ml-84 mb-22 hidden lg:block" />
+        <ZmapsLogo size="large" class="mt-107 ml-84 mb-18 hidden lg:block" />
         <p
-          class="ml-28 text-18 font-light md:ml-60 md:mb-32 md:w-[240px] md:text-22 lg:ml-84 lg:mb-44 lg:w-[280px] lg:text-30"
+          class="ml-28 text-18 font-light md:ml-60 md:mb-30 md:w-[240px] md:text-23 lg:ml-84 lg:mb-41 lg:w-[280px] lg:text-32"
         >
-          Your City's Ultimate
+          The Ultimate
           <span class="font-medium">Real Estate Development Map</span>
         </p>
         <a
@@ -33,7 +33,7 @@
         <p
           class="ml-28 text-18 font-light md:ml-60 md:mb-34 md:text-24 lg:mb-52 lg:ml-84 lg:text-32"
         >
-          <span class="font-semibold">AI-Powered, Real-time</span><br />
+          <span class="font-medium">AI-Powered, Real-time</span><br />
           Feasibility Studies<br />for Modular Housing
         </p>
         <router-link
@@ -188,15 +188,15 @@ const CARD_DATA = {
   background-repeat: no-repeat;
 
   &.zmaps {
-    background-image: url('/public/en/products/zmaps_phaseout_desktop.png');
+    background-image: url('/public/en/products/zmaps_phaseout_desktop_new.png');
     background-size: 980px 648px;
     background-position: center right;
     @include en-tablet {
       background-size: 708px 468px;
-      background-image: url('/public/en/products/zmaps_phaseout_tablet.png');
+      background-image: url('/public/en/products/zmaps_phaseout_tablet_new.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/products/zmaps_phaseout_mobile.png');
+      background-image: url('/public/en/products/zmaps_phaseout_mobile_new.png');
       background-size: 320px 388px;
       background-position: bottom 272px center;
     }
