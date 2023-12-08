@@ -274,7 +274,7 @@ useHead({
   meta: [
     {
       name: `description`,
-      content: `Zenerate provides AI-powered tools for real estate development. Utilizing generative design and AI, we're helping maximize returns and save time.`,
+      content: `Zenerate provides AI-powered feasibility solutions for real estate development in order to maximize returns while saving time.`,
     },
     {
       hid: 'twitter:title',
@@ -284,7 +284,7 @@ useHead({
     {
       hid: 'twitter:description',
       property: 'twitter:description',
-      content: `Zenerate provides AI-powered tools for real estate development. Utilizing generative design and AI, we're helping maximize returns and save time.`,
+      content: `Zenerate provides AI-powered feasibility solutions for real estate development in order to maximize returns while saving time.`,
     },
     { name: 'keywords', content: 'zenerate' },
     {
@@ -305,7 +305,7 @@ useHead({
     {
       hid: 'og:description',
       property: 'og:description',
-      content: `Zenerate provides AI-powered tools for real estate development. Utilizing generative design and AI, we're helping maximize returns and save time.`,
+      content: `Zenerate provides AI-powered feasibility solutions for real estate development in order to maximize returns while saving time.`,
     },
     {
       hid: 'og:type',
