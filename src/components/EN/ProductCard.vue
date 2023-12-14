@@ -169,7 +169,7 @@ const CARD_DATA = {
       'government',
     ],
     buttonText: 'Go to Z-maps',
-    buttonLinkedTo: 'https://maps.zenerate.ai',
+    buttonLinkedTo: 'https://zmaps.ai',
   },
   'zenerate-modular': {
     bestFor: ['developer', 'architect', 'manufacturer', 'consultant'],

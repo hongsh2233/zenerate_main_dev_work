@@ -61,7 +61,7 @@
                         ED 1 Feasibility Report
                       </a>
                       <a
-                        :href="'https://maps.zenerate.ai'"
+                        :href="'https://zmaps.ai'"
                         class="navigation-link sub"
                         :class="nav.to"
                         @click="close"

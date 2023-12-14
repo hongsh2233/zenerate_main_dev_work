@@ -70,7 +70,7 @@
                       />
                       ED 1 Feasibility Report
                     </a>
-                    <a :href="'https://maps.zenerate.ai'">
+                    <a :href="'https://zmaps.ai'">
                       <component :is="ZmapsIcon" :width="20" :height="20" />
                       Z-maps
                     </a>
