@@ -426,7 +426,7 @@ const sendEmailStatus = ref(false)
 // })
 
 const goZmaps = () => {
-  window.open('https://maps.zenerate.ai', '_blank')
+  window.open('https://zmaps.ai', '_blank')
 }
 
 const goLinkedIn = () => {

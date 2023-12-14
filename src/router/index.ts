@@ -116,7 +116,7 @@ trackRouter(router, {
 
 router.beforeEach((to, from, next) => {
   if (to.name === 'en-zmaps') {
-    window.open('https://maps.zenerate.ai')
+    window.open('https://zmaps.ai')
   } else {
     next()
   }

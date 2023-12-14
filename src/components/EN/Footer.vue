@@ -84,7 +84,7 @@
                 </a>
               </p>
               <p class="text-14 font-medium text-gray-700">
-                <a :href="'https://maps.zenerate.ai'"> Z-maps </a>
+                <a :href="'https://zmaps.ai'"> Z-maps </a>
               </p>
             </div>
 
