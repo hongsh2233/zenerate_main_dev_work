@@ -7,7 +7,7 @@
             <span>{{ $t('module.team.caption') }}</span>
           </router-link>
         </div>
-        <div class="title-date">2017 - 2023</div>
+        <div class="title-date">2017 - 2024</div>
         <div class="title-content">
           {{ $t('module.team.contents[0]') }}
         </div>
