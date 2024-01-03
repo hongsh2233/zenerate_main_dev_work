@@ -41,9 +41,9 @@
                 >$150</span
               ><span class="text-16-medium">&nbsp;&nbsp;/&nbsp;report</span>
             </div>
-            <span class="text-14-medium text-gray-300"
+            <!-- <span class="text-14-medium text-gray-300"
               >*Pricing valid until December 31st, 2023</span
-            >
+            > -->
           </div>
         </div>
         <!-- card -->
