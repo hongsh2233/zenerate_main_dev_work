@@ -2,6 +2,7 @@
   <div class="layout-en" id="layout-en">
     <button
       type="button"
+      id="header-banner-gtm"
       class="signup-banner"
       v-show="showHeader"
       @click="

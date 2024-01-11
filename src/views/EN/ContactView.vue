@@ -2,6 +2,7 @@
   <section class="section section-contact">
     <div class="contact-hero-wrapper">
       <div
+        id="contact-form-gtm"
         class="contact-form-wrapper"
         :class="{ done: sendEmailStatus }"
         v-if="!sendEmailStatus"
@@ -98,7 +99,7 @@
           <div class="form-send-wrapper">
             <div class="dummy" ref="dummy"></div>
             <button
-              class="form-send start-button hover-pointer bg-primary text-white hover:text-core-200 active:bg-core-700 active:text-white"
+              class="send-button-gtm form-send start-button hover-pointer bg-primary text-white hover:text-core-200 active:bg-core-700 active:text-white"
               :class="{ disabled: sendEmailStatus }"
               @click="() => sendEmail()"
             >

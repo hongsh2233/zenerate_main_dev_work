@@ -102,7 +102,7 @@
         </nav>
 
         <button
-          class="only-en-desktop text-14-medium mx-auto h-[36px] w-[112px] rounded-5 bg-primary text-center leading-[36px] !text-white duration-300 hover:!text-core-200"
+          class="demo-button-gtm only-en-desktop text-14-medium mx-auto h-[36px] w-[112px] rounded-5 bg-primary text-center leading-[36px] !text-white duration-300 hover:!text-core-200"
           @click="openCalendlyPopup"
         >
           Get a Demo

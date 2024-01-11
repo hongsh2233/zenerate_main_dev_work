@@ -42,7 +42,7 @@
               Try It For Free
             </button>
             <button
-              class="text-18-semibold h-48 w-[156px] rounded-5 border-1 border-solid border-primary bg-white text-center leading-[48px] !text-primary duration-300 hover:!bg-core-50 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
+              class="demo-button-gtm text-18-semibold h-48 w-[156px] rounded-5 border-1 border-solid border-primary bg-white text-center leading-[48px] !text-primary duration-300 hover:!bg-core-50 md:h-54 md:w-[168px] md:text-20 md:leading-[54px] lg:h-54 lg:w-[168px] lg:text-20 lg:leading-[54px]"
               @click="openCalendlyPopup"
             >
               Get a Demo

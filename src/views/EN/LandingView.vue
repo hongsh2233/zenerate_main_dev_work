@@ -119,7 +119,7 @@
         >
         <div class="flex flex-col items-center md:flex-row lg:flex-row">
           <button
-            class="text-16-semibold mx-auto mb-6 h-[48px] w-[250px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mr-10 md:mb-0 md:h-[56px] md:w-[236px] md:text-20 md:leading-[56px] lg:mb-0 lg:mr-10 lg:h-[56px] lg:w-[236px] lg:text-20 lg:leading-[56px]"
+            class="demo-button-gtm text-16-semibold mx-auto mb-6 h-[48px] w-[250px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mr-10 md:mb-0 md:h-[56px] md:w-[236px] md:text-20 md:leading-[56px] lg:mb-0 lg:mr-10 lg:h-[56px] lg:w-[236px] lg:text-20 lg:leading-[56px]"
             @click="openCalendlyPopup"
           >
             Get a Demo
