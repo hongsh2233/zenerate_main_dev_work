@@ -26,6 +26,7 @@
                 type="text"
                 placeholder="Zenerate"
                 v-model="contactForm.company.value"
+                class="first-input-gtm"
                 @blur="(v) => validation('company')"
               />
               <p
