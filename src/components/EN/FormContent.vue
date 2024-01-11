@@ -18,6 +18,7 @@
             placeholder="First Name"
             autocomplete="new-firstname"
             v-model="SignUpForm.firstName.value"
+            class="first-input-gtm"
             @input="(v) => validation('firstName')"
           />
         </div>
