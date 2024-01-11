@@ -175,8 +175,12 @@
       :class="{ disabled: !canSubmitForm }"
       @click="submitForm"
     >
-      <DotSpinnerWhite v-if="loading" :loading="true" class="!mx-auto !w-fit" />
-      <span v-else>{{ submitBtnText }}</span>
+      <DotSpinnerWhite
+        v-if="loading"
+        :loading="true"
+        class="pointer-events-none !mx-auto !w-fit"
+      />
+      <span v-else class="pointer-events-none">{{ submitBtnText }}</span>
     </button>
   </div>
   <transition v-else name="fade">

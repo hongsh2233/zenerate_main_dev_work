@@ -14,7 +14,7 @@
         }
       "
     >
-      <div class="signup-banner-inner">
+      <div class="signup-banner-inner pointer-events-none">
         <p>
           <span>Try out Zenerate Modular for FREE!</span>
         </p>
