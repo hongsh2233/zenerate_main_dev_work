@@ -90,7 +90,7 @@
                 :width="24"
                 :height="24"
                 iconColor="#4D49F4"
-                class="ml-14"
+                class="pointer-events-none ml-14"
               />
             </button>
           </div>
