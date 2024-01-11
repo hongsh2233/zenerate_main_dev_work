@@ -169,7 +169,7 @@
     <slot name="additional-text"></slot>
     <button
       type="button"
-      class="submit-button"
+      class="submit-button-gtm submit-button"
       :disabled="!canSubmitForm"
       :class="{ disabled: !canSubmitForm }"
       @click="submitForm"

@@ -493,6 +493,7 @@
       <div class="absolute top-[-90px] h-0 w-full" ref="betaTester"></div>
       <FormWrapper
         sheet-name="Modular"
+        id="modular-form-gtm"
         class="min-h-[787px] md:min-h-[499px] lg:min-h-[590px]"
       >
         <template #description>
@@ -595,6 +596,7 @@
           <template v-else>
             <div class="relative">
               <input
+                id="modular-waitlist-input-gtm"
                 ref="bannerEmailInput"
                 type="text"
                 inputmode="email"
@@ -613,6 +615,7 @@
               >
             </div>
             <button
+              id="modular-waitlist-submit-button-gtm"
               class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white hover:bg-core-700 md:w-[157px] md:min-w-[157px] lg:w-[157px] lg:min-w-[157px]"
               @click="sendBannerEmail"
             >

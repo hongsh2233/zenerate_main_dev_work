@@ -82,7 +82,7 @@
 
             <button
               @click="openCalendlyPopup"
-              class="demo-link navigation-link sub"
+              class="demo-button-gtm demo-link navigation-link sub"
             >
               Get a Demo
               <IconBase
