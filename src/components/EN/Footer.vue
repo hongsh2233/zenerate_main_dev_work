@@ -146,7 +146,7 @@
                   query: getCurrentUtmQuery(router),
                 }"
               >
-                Terms of Service
+                Terms & Conditions
               </router-link>
             </p>
             <p class="mb-18 md:mb-0 md:mr-30 lg:mb-0 lg:mr-30">
