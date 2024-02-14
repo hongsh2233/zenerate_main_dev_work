@@ -559,7 +559,7 @@
         <span
           class="mb-30 w-[300px] text-center text-16 text-white md:mb-40 md:w-full md:text-18 lg:mb-32 lg:w-full lg:text-20"
           >Zenerate App for multifamily, not just modular, is set to launch in
-          March 2024.<br />Join the waitlist for early access and exclusive
+          June 2024.<br />Join the waitlist for early access and exclusive
           discounts.</span
         >
 
