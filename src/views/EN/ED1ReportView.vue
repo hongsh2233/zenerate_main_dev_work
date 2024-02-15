@@ -223,7 +223,6 @@ const CARD_CONTENT = {
         'Zoning requirements analysis',
         'Design options featuring floor plans',
         'Maximizing density on a site',
-        '15-minute meeting upon report delivery',
       ],
     },
     {
@@ -233,7 +232,7 @@ const CARD_CONTENT = {
         'Fill out the Report Request Form',
         'Receive confirmation email with payment link',
         'Complete payment',
-        'Receive report in 1-3 business days with 15-minute meeting',
+        'Receive report in 1-3 business days',
       ],
     },
   ],
