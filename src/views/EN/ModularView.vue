@@ -491,7 +491,7 @@
       class="beta-tester relative pt-80 pb-136 md:pt-130 md:pb-136 lg:pt-200 lg:pb-200"
     >
       <div
-        class="absolute top-[-90px] h-0 w-full"
+        class="absolute top-[0px] h-0 w-full"
         ref="betaTester"
         id="modular-form"
       ></div>
