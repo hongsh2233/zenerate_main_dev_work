@@ -490,11 +490,7 @@
       ref="modularLink"
       class="beta-tester relative pt-80 pb-136 md:pt-130 md:pb-136 lg:pt-200 lg:pb-200"
     >
-      <div
-        class="absolute top-[0px] h-0 w-full"
-        ref="betaTester"
-        id="modular-form"
-      ></div>
+      <div class="absolute top-[-90px] h-0 w-full" ref="betaTester" />
       <FormWrapper
         sheet-name="Modular"
         id="modular-form-gtm"
@@ -529,7 +525,8 @@
           </div>
         </template>
         <template #form-title>
-          <div class="text-center text-16 md:text-17 lg:text-20">
+          <div class="relative text-center text-16 md:text-17 lg:text-20">
+            <div class="absolute top-[-250px] h-0 w-full" id="modular-form" />
             Request Access to
             <span class="font-semibold text-primary lg:font-medium"
               >Zenerate Modular!</span
