@@ -39,10 +39,10 @@
         </div>
       </div>
       <div
-        class="z-[-1] mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-70 lg:w-[70%] lg:pt-120"
+        class="relative z-[-1] mx-auto w-full max-w-[1200px] p-[60%] lg:my-auto lg:mr-70 lg:w-[70%] lg:pt-120"
       >
         <video
-          class="w-full"
+          class="absolute top-0 left-0 w-full"
           :autoplay="true"
           :muted="true"
           :loop="true"
@@ -528,7 +528,8 @@
           <div
             class="relative text-16 first-letter:text-center md:text-17 lg:text-20"
           >
-            <div ref="formTitle" class="absolute top-[-250px] h-0 w-full" />
+            <div class="absolute top-[-250px] h-0 w-full" id="modular-form" />
+
             Request Access to
             <span class="font-semibold text-primary lg:font-medium"
               >Zenerate Modular!</span
@@ -1042,27 +1043,15 @@ const mediaQueryDevice =
     : window.innerWidth >= 762
     ? 'tablet'
     : 'mobile'
-
 const modularLink = ref<HTMLElement>(null)
-const formTitle = ref<HTMLElement>(null)
 
 onMounted(() => {
   const isFromBMAC = router.currentRoute.value.query?.utm_source === 'bmac2023'
-  const isFromWorldOfModular =
-    router.currentRoute.value.query?.event === 'world-of-modular'
-
-  console.log(router.currentRoute.value)
 
   if (isFromBMAC) {
     nextTick(() => {
       nextTick(() => {
         scrollTo({ top: modularLink?.value?.getBoundingClientRect().top })
-      })
-    })
-  } else if (isFromWorldOfModular) {
-    nextTick(() => {
-      nextTick(() => {
-        scrollTo({ top: formTitle.value?.getBoundingClientRect().top })
       })
     })
   }
