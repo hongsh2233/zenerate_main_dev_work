@@ -42,7 +42,7 @@
         class="z-[-1] mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-70 lg:w-[70%] lg:pt-120"
       >
         <video
-          class="w-full"
+          class="h-[60%] w-full"
           :autoplay="true"
           :muted="true"
           :loop="true"
