@@ -39,10 +39,10 @@
         </div>
       </div>
       <div
-        class="z-[-1] mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-70 lg:w-[70%] lg:pt-120"
+        class="relative z-[-1] mx-auto w-full max-w-[1200px] p-[60%] lg:my-auto lg:mr-70 lg:w-[70%] lg:pt-120"
       >
         <video
-          class="h-[60%] w-full"
+          class="absolute top-0 left-0 w-full"
           :autoplay="true"
           :muted="true"
           :loop="true"
@@ -525,8 +525,10 @@
           </div>
         </template>
         <template #form-title>
-          <div class="relative text-center text-16 md:text-17 lg:text-20">
-            <div class="absolute top-[-250px] h-0 w-full" id="modular-form" />
+          <div
+            class="text-center text-16 md:text-17 lg:text-20"
+            id="modular-form"
+          >
             Request Access to
             <span class="font-semibold text-primary lg:font-medium"
               >Zenerate Modular!</span
