@@ -39,10 +39,10 @@
         </div>
       </div>
       <div
-        class="relative z-[-1] mx-auto w-full max-w-[1200px] p-[60%] lg:my-auto lg:mr-70 lg:w-[70%] lg:pt-120"
+        class="z-[-1] mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-70 lg:w-[70%] lg:pt-120"
       >
         <video
-          class="absolute top-0 left-0 w-full"
+          class="w-full"
           :autoplay="true"
           :muted="true"
           :loop="true"
@@ -529,7 +529,6 @@
             class="relative text-16 first-letter:text-center md:text-17 lg:text-20"
           >
             <div class="absolute top-[-250px] h-0 w-full" id="modular-form" />
-
             Request Access to
             <span class="font-semibold text-primary lg:font-medium"
               >Zenerate Modular!</span
@@ -1120,16 +1119,19 @@ onMounted(() => {
 
   .card1 {
     @include en-desktop {
+      height: 450px;
       .description {
         width: 220px;
       }
     }
     @include en-tablet {
+      height: 354px;
       .description {
         width: 176px;
       }
     }
     @include en-mobile {
+      height: 573px;
       .title {
         width: 270px;
       }
@@ -1141,6 +1143,7 @@ onMounted(() => {
 
   .card2 {
     @include en-desktop {
+      height: 450px;
       .title {
         width: 320px;
       }
@@ -1149,6 +1152,7 @@ onMounted(() => {
       }
     }
     @include en-tablet {
+      height: 354px;
       .title {
         width: 200px;
       }
@@ -1157,6 +1161,7 @@ onMounted(() => {
       }
     }
     @include en-mobile {
+      height: 594px;
       .title {
         width: 240px;
       }
@@ -1166,17 +1171,22 @@ onMounted(() => {
     }
   }
   .card3 {
-    .content-area {
-      @include en-desktop {
+    @include en-desktop {
+      height: 450px;
+      .content-area {
         width: 388px;
       }
-      @include en-tablet {
+    }
+    @include en-tablet {
+      height: 354px;
+      .content-area {
         width: 288px;
       }
-      @include en-mobile {
-        .title {
-          width: 280px;
-        }
+    }
+    @include en-mobile {
+      height: 489px;
+      .title {
+        width: 280px;
       }
     }
   }
