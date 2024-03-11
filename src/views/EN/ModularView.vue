@@ -526,9 +526,10 @@
         </template>
         <template #form-title>
           <div
-            class="text-center text-16 md:text-17 lg:text-20"
-            id="modular-form"
+            class="relative text-16 first-letter:text-center md:text-17 lg:text-20"
           >
+            <div class="absolute top-[-250px] h-0 w-full" id="modular-form" />
+
             Request Access to
             <span class="font-semibold text-primary lg:font-medium"
               >Zenerate Modular!</span
