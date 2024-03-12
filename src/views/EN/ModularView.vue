@@ -528,7 +528,7 @@
           <div
             class="relative text-center text-16 first-letter:text-center md:text-17 lg:text-20"
           >
-            <div class="absolute top-[-250px] h-0 w-full" id="modular-form" />
+            <div class="absolute top-[-250px] h-0 w-full" id="form" />
             Request Access to
             <span class="font-semibold text-primary lg:font-medium"
               >Zenerate Modular!</span
