@@ -501,7 +501,7 @@
             class="flex flex-col px-42 pt-56 pb-56 text-white md:px-54 md:pt-106 md:pb-126 lg:px-76 lg:pt-132 lg:pb-150"
           >
             <span
-              class="mb-20 text-20 font-semibold md:mb-30 md:text-22 md:font-semibold lg:mb-42 lg:text-28 lg:font-medium"
+              class="mb-20 text-20 font-semibold md:mb-20 md:text-22 md:font-semibold lg:mb-32 lg:text-28 lg:font-medium"
             >
               {{ DEMO_FORM.title }}</span
             >
@@ -510,16 +510,17 @@
                 v-for="description in DEMO_FORM.descriptions"
                 class="flex flex-row items-start not-last:mb-4 md:not-last:mb-9 lg:not-last:mb-14"
               >
-                <IconBase
+                <!-- <IconBase
                   icon-name="checkmark-bold"
                   icon-color="white"
                   :width="16"
                   :height="16"
                   class="mr-8 mt-1 h-16 max-h-16 min-h-16 w-16 min-w-16 max-w-16 md:mt-2 lg:mr-12 lg:mt-5"
-                />
-                <span class="text-13 font-medium md:text-13 lg:text-18">{{
-                  description
-                }}</span>
+                /> -->
+                <span
+                  class="w-[210px] text-16 md:text-16 lg:w-[280px] lg:text-20"
+                  >{{ description }}</span
+                >
               </div>
             </div>
           </div>
@@ -970,9 +971,7 @@ const NEED_CUSTOMIZATION = [
 const DEMO_FORM = {
   title: 'Ready to Automate Feasibility Studies of Your Modular Projects?',
   descriptions: [
-    'Sign up on the form to the right',
-    'Schedule a quick demo',
-    'Gain immediate access to Zenerate Modular for you and your team ',
+    'Sign up on the form to get a quick demo and gain access to Zenerate Modular.',
   ],
 }
 
