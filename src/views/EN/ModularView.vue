@@ -526,7 +526,7 @@
         </template>
         <template #form-title>
           <div
-            class="relative text-center text-16 first-letter:text-center md:text-left md:text-17 lg:text-left lg:text-20"
+            class="relative text-center text-16 first-letter:text-center md:text-17 lg:text-20"
           >
             <div class="absolute top-[-250px] h-0 w-full" id="modular-form" />
             Request Access to
