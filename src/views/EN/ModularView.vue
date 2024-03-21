@@ -39,17 +39,16 @@
         </div>
       </div>
       <div
-        class="z-[-1] mx-auto w-full max-w-[1200px] lg:my-auto lg:mr-70 lg:w-[70%] lg:pt-120"
+        class="z-[-1] mx-auto h-[457px] w-full max-w-[1200px] md:h-[602px] lg:my-auto lg:mr-70 lg:h-[463px] lg:w-[70%] lg:pt-120"
       >
         <video
-          class="h-[60%] w-full"
+          class="w-full"
           :autoplay="true"
           :muted="true"
           :loop="true"
           :playsinline="true"
           src="/en/modular/hero.mp4"
           alt=""
-          @loadeddata="() => moveToModularFormInput()"
         />
       </div>
     </section>
@@ -532,6 +531,7 @@
           >
             <div
               class="absolute top-[-250px] h-0 w-full"
+              id="form"
               ref="modularFormInput"
             />
             Request Access to
@@ -1047,13 +1047,6 @@ const mediaQueryDevice =
     : 'mobile'
 const modularLink = ref<HTMLElement>(null)
 const modularFormInput = ref<HTMLElement>(null)
-
-const moveToModularFormInput = () => {
-  const toModularForm = router.currentRoute.value.hash === '#form'
-  if (toModularForm) {
-    scrollTo({ top: modularFormInput.value?.getBoundingClientRect().top })
-  }
-}
 
 onMounted(() => {
   const isFromBMAC = router.currentRoute.value.query?.utm_source === 'bmac2023'
