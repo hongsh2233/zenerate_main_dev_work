@@ -7,11 +7,15 @@
       v-show="showHeader"
       @click="
         () => {
-          router.push({
-            name: 'en-modular',
-            query: getCurrentUtmQuery(router),
-            hash: '#form'
-          })
+          if (route.name === 'en-modular') {
+            goToFormPage()
+          } else {
+            router.push({
+              name: 'en-modular',
+              query: getCurrentUtmQuery(router),
+              hash: '#form',
+            })
+          }
         }
       "
     >
@@ -167,6 +171,13 @@ watch(
     }
   }
 )
+
+const goToFormPage = () => {
+  const offsetY = document.body.clientWidth > 761.9 ? 0 : 250
+  const target = document.querySelector('.beta-tester')
+  const y = target.getBoundingClientRect().top + window.scrollY + offsetY
+  window.scrollTo({ top: y })
+}
 </script>
 <style lang="scss">
 .layout-en {
