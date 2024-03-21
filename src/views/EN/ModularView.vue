@@ -1060,7 +1060,7 @@ onMounted(() => {
         scrollTo({ top: modularLink?.value?.getBoundingClientRect().top })
       }
       if (router.currentRoute.value.hash === '#form') {
-        const offsetY = 250
+        const offsetY = document.body.clientWidth > 761.9 ? 0 : 250
         setTimeout(() => {
           const target = document.querySelector('.beta-tester')
           const y =

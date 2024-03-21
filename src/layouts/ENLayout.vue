@@ -10,6 +10,7 @@
           router.push({
             name: 'en-modular',
             query: getCurrentUtmQuery(router),
+            hash: '#form'
           })
         }
       "
