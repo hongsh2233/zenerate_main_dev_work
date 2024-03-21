@@ -529,7 +529,10 @@
           <div
             class="relative text-center text-16 first-letter:text-center md:text-17 lg:text-20"
           >
-            <div class="absolute top-[-250px] h-0 w-full" id="form" />
+            <div
+              class="absolute top-[-250px] h-0 w-full"
+              ref="modularFormInput"
+            />
             Request Access to
             <span class="font-semibold text-primary lg:font-medium"
               >Zenerate Modular!</span
@@ -1042,14 +1045,24 @@ const mediaQueryDevice =
     ? 'tablet'
     : 'mobile'
 const modularLink = ref<HTMLElement>(null)
+const modularFormInput = ref<HTMLElement>(null)
 
 onMounted(() => {
   const isFromBMAC = router.currentRoute.value.query?.utm_source === 'bmac2023'
+  const toModularForm = router.currentRoute.value.hash === '#form'
 
   if (isFromBMAC) {
     nextTick(() => {
       nextTick(() => {
         scrollTo({ top: modularLink?.value?.getBoundingClientRect().top })
+      })
+    })
+  }
+
+  if (toModularForm) {
+    nextTick(() => {
+      nextTick(() => {
+        scrollTo({ top: modularFormInput.value?.getBoundingClientRect().top })
       })
     })
   }
