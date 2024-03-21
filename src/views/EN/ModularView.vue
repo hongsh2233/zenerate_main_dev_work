@@ -1060,12 +1060,15 @@ onMounted(() => {
   }
 
   if (toModularForm) {
-    document.getElementById('modular-form-gtm').querySelector('input').focus()
-    // nextTick(() => {
-    //   nextTick(() => {
-    //     scrollTo({ top: modularFormInput.value?.getBoundingClientRect().top })
-    //   })
-    // })
+    nextTick(() => {
+      nextTick(() => {
+        // scrollTo({ top: modularFormInput.value?.getBoundingClientRect().top })
+        document
+          .getElementById('modular-form-gtm')
+          .querySelector('input')
+          .focus()
+      })
+    })
   }
 
   ImagePreloader.sequential(commonPreloadImages)
