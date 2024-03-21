@@ -49,6 +49,7 @@
           :playsinline="true"
           src="/en/modular/hero.mp4"
           alt=""
+          @loadeddata="() => moveToModularFormInput()"
         />
       </div>
     </section>
@@ -1047,13 +1048,12 @@ const mediaQueryDevice =
 const modularLink = ref<HTMLElement>(null)
 const modularFormInput = ref<HTMLElement>(null)
 
-watch(modularFormInput, (el) => {
+const moveToModularFormInput = () => {
   const toModularForm = router.currentRoute.value.hash === '#form'
-
   if (toModularForm) {
-    scrollTo({ top: el?.getBoundingClientRect().top })
+    scrollTo({ top: modularFormInput.value?.getBoundingClientRect().top })
   }
-})
+}
 
 onMounted(() => {
   const isFromBMAC = router.currentRoute.value.query?.utm_source === 'bmac2023'
