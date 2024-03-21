@@ -42,7 +42,7 @@
         class="z-[-1] mx-auto h-[457px] w-full max-w-[1200px] md:h-[602px] lg:my-auto lg:mr-70 lg:h-[463px] lg:w-[70%] lg:pt-120"
       >
         <video
-          class="w-full"
+          class="h-full w-full"
           :autoplay="true"
           :muted="true"
           :loop="true"
@@ -62,16 +62,21 @@
         class="card mb-20 h-fit shadow-200 md:mb-23 md:h-[354px] md:items-center lg:mb-30 lg:h-[450px] lg:items-center"
         :class="`card${idx + 1}`"
       >
-        <video
+        <div
           v-if="data.imgType === 'video'"
-          class="h-full w-full md:w-fit lg:w-fit"
-          :autoplay="true"
-          :muted="true"
-          :loop="true"
-          :playsinline="true"
-          :src="`/en/modular/${data.imgUrl}`"
-          alt=""
-        />
+          class="h-[339px] w-full md:h-full md:w-fit lg:h-full lg:w-fit"
+        >
+          <video
+            class="h-full w-full"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/${data.imgUrl}`"
+            alt=""
+          />
+        </div>
+
         <div
           class="flex h-[292px] w-[320px] flex-row items-center justify-center overflow-hidden md:h-[352px] md:w-[420px] lg:h-[450px] lg:w-[542px]"
           v-else
@@ -528,12 +533,10 @@
         <template #form-title>
           <div
             class="relative text-center text-16 first-letter:text-center md:text-17 lg:text-20"
+            id="form"
+            ref="modularFormInput"
           >
-            <div
-              class="absolute top-[-250px] h-0 w-full"
-              id="form"
-              ref="modularFormInput"
-            />
+            <div class="absolute top-[-250px] h-0 w-full" />
             Request Access to
             <span class="font-semibold text-primary lg:font-medium"
               >Zenerate Modular!</span
@@ -642,6 +645,7 @@
 <script lang="ts" setup>
 import { onMounted, ref, computed, watch, watchEffect, nextTick } from 'vue'
 import { useHead } from '@vueuse/head'
+import { scrollIntoView } from 'seamless-scroll-polyfill'
 
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
@@ -1050,14 +1054,35 @@ const modularFormInput = ref<HTMLElement>(null)
 
 onMounted(() => {
   const isFromBMAC = router.currentRoute.value.query?.utm_source === 'bmac2023'
-
-  if (isFromBMAC) {
+  nextTick(() => {
     nextTick(() => {
-      nextTick(() => {
+      if (isFromBMAC) {
         scrollTo({ top: modularLink?.value?.getBoundingClientRect().top })
-      })
+      }
+      if (router.currentRoute.value.hash === '#form') {
+        const offsetY = 250
+        setTimeout(() => {
+          const target = document.querySelector('.beta-tester')
+          const y =
+            target.getBoundingClientRect().top + window.scrollY + offsetY
+          window.scrollTo({ top: y })
+        }, 100)
+        setTimeout(() => {
+          const target = document.querySelector('.beta-tester')
+          const y =
+            target.getBoundingClientRect().top + window.scrollY + offsetY
+          window.scrollTo({ top: y })
+        }, 500)
+
+        setTimeout(() => {
+          const target = document.querySelector('.beta-tester')
+          const y =
+            target.getBoundingClientRect().top + window.scrollY + offsetY
+          window.scrollTo({ top: y })
+        }, 1000)
+      }
     })
-  }
+  })
 
   ImagePreloader.sequential(commonPreloadImages)
   ImagePreloader.sequential(onloadImages[mediaQueryDevice])

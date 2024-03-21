@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "cross-env NODE_ENV_STEP=production NODE_OPTIONS=--max-old-space-size=8192 vite build --mode production",
+    "build-staging": "cross-env NODE_ENV_STEP=staging NODE_OPTIONS=--max-old-space-size=8192 vite build --mode staging",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -23,6 +24,7 @@
     "postcss-cli": "8.3.1",
     "pug": "3.0.2",
     "regenerator-runtime": "0.13.7",
+    "seamless-scroll-polyfill": "^2.3.4",
     "sweetalert2": "10.16.9",
     "swiper": "^10.0.3",
     "terser": "^5.17.4",

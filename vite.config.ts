@@ -23,6 +23,7 @@ export default defineConfig({
       },
     },
   },
+  envDir: resolve(__dirname, 'src', 'config'),
   resolve: {
     alias: [
       // {
@@ -59,11 +60,11 @@ export default defineConfig({
   build: {
     terserOptions: {
       compress: {
-        drop_console: true,
+        drop_console: process.env.NODE_ENV === 'production'
       },
     },
     minify: 'terser',
-    brotliSize: false,
+    sourcemap: process.env.NODE_ENV !== 'production',
     rollupOptions: {
       external: (id) => /^\/media\/.*/.test(id),
     },

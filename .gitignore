@@ -4,6 +4,7 @@ node_modules
 *.local
 backup
 .history
+src/config/.env*
 
 # local env files
 .env.local
