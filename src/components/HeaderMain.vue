@@ -35,14 +35,14 @@
           >
             {{ $t('menu.service') }}
           </div>
-          <div
+          <!-- <div
             class="navigation-main-item hover-pointer"
             v-if="locale != 'en'"
             @click="router.push('/kr/main/career')"
             @mouseover="setMenuHovered(false)"
           >
             {{ $t('menu.career') }}
-          </div>
+          </div> -->
           <div
             class="navigation-main-item hover-pointer"
             @click="router.push('/kr/main/contact')"

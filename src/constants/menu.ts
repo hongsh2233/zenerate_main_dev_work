@@ -24,11 +24,11 @@ export default [
         to: 'en-about',
         icon: 'about',
       },
-      {
-        title: 'Careers',
-        to: 'en-career',
-        icon: 'career',
-      },
+      // {
+      //   title: 'Careers',
+      //   to: 'en-career',
+      //   icon: 'career',
+      // },
       {
         title: 'Contact',
         to: 'en-contact',

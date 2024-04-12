@@ -50,7 +50,7 @@
               </a>
             </router-link>
           </div>
-          <div class="left-link" v-if="locale != 'en'">
+          <!-- <div class="left-link" v-if="locale != 'en'">
             <router-link
               to="/kr/main/career"
               custom
@@ -64,7 +64,7 @@
                 {{ $t('menu.career') }}
               </a>
             </router-link>
-          </div>
+          </div> -->
           <div class="left-link">
             <router-link
               to="/kr/main/contact"

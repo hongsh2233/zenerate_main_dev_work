@@ -68,12 +68,12 @@ const ENRoute: RouteRecordRaw = {
     //   name: 'en-pricing',
     //   component: PricingView,
     // },
-    {
-      path: '/career',
-      name: 'en-career',
-      component: CareerView,
-      children: [],
-    },
+    // {
+    //   path: '/career',
+    //   name: 'en-career',
+    //   component: CareerView,
+    //   children: [],
+    // },
     {
       path: '/career/:id',
       name: 'en-detail',

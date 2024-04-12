@@ -99,37 +99,37 @@ const JOBS = [
   //   name: 'Head of Marketing, B2B SaaS',
   //   fulltime: true,
   // },
-  {
-    key: 'graphic-designer',
-    icon: `🎨`,
-    name: 'Mid-level Graphic Designer',
-    fulltime: true,
-  },
+  // {
+  //   key: 'graphic-designer',
+  //   icon: `🎨`,
+  //   name: 'Mid-level Graphic Designer',
+  //   fulltime: true,
+  // },
   // { key: 'head-of-sales', name: 'Head of Sales', fulltime: true },
-  {
-    key: 'architect-architectural-designer',
-    icon: '🏗️',
-    name: 'Architect / Architectural Designer',
-    fulltime: true,
-  },
-  {
-    key: 'project-analyst-real-estate-development',
-    icon: '📊',
-    name: 'Project Analyst, Real Estate Development',
-    fulltime: false,
-  },
-  {
-    key: 'strategic-account-executive',
-    icon: '🎯',
-    name: 'Strategic Account Executive',
-    fulltime: true,
-  },
-  {
-    key: 'business-development-marketing-intern',
-    icon: '💼',
-    name: ' Business Development & Marketing Intern',
-    fulltime: true,
-  },
+  // {
+  //   key: 'architect-architectural-designer',
+  //   icon: '🏗️',
+  //   name: 'Architect / Architectural Designer',
+  //   fulltime: true,
+  // },
+  // {
+  //   key: 'project-analyst-real-estate-development',
+  //   icon: '📊',
+  //   name: 'Project Analyst, Real Estate Development',
+  //   fulltime: false,
+  // },
+  // {
+  //   key: 'strategic-account-executive',
+  //   icon: '🎯',
+  //   name: 'Strategic Account Executive',
+  //   fulltime: true,
+  // },
+  // {
+  //   key: 'business-development-marketing-intern',
+  //   icon: '💼',
+  //   name: ' Business Development & Marketing Intern',
+  //   fulltime: true,
+  // },
 ]
 
 useHead({

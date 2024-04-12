@@ -103,7 +103,7 @@
                   About Us
                 </router-link>
               </p>
-              <p
+              <!-- <p
                 class="mb-8 text-14 font-medium text-gray-700 md:mb-10 lg:mb-14"
               >
                 <router-link
@@ -111,7 +111,7 @@
                 >
                   Careers
                 </router-link>
-              </p>
+              </p> -->
               <p class="text-14 font-medium text-gray-700">
                 <router-link
                   :to="{
