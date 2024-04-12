@@ -37,9 +37,9 @@ const selectCareer = (key) => {
 }
 
 const CAREER_LIST = [
-  { key: 'urban-data-analyst', title: 'Urban Data Analyst' },
-  { key: 'computational-designer-a', title: '컴퓨테이셔널 디자이너 - A' },
-  { key: 'computational-designer-b', title: '컴퓨테이셔널 디자이너 - B' },
+  // { key: 'urban-data-analyst', title: 'Urban Data Analyst' },
+  // { key: 'computational-designer-a', title: '컴퓨테이셔널 디자이너 - A' },
+  // { key: 'computational-designer-b', title: '컴퓨테이셔널 디자이너 - B' },
   // { key: 'frontend-developer', title: '프론트엔드 개발자 (경력)' },
   // { key: 'backend-developer', title: '백엔드 개발자 (경력)' },
   // { key: 'data-analyst', title: '데이터 분석' },
