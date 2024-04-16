@@ -64,7 +64,7 @@
       >
         <video
           v-if="data.imgType === 'video'"
-          class="h-fit w-full md:h-full md:w-fit lg:h-full lg:w-fit"
+          class="z-[0] h-fit w-full md:h-full md:w-fit lg:h-full lg:w-fit"
           :autoplay="true"
           :muted="true"
           :loop="true"
@@ -75,7 +75,7 @@
 
         <div
           v-else
-          class="flex h-[292px] w-[320px] flex-row items-center justify-center overflow-hidden md:h-[352px] md:w-[420px] lg:h-[450px] lg:w-[542px]"
+          class="z-[0] flex h-[292px] w-[320px] flex-row items-center justify-center overflow-hidden md:h-[352px] md:w-[420px] lg:h-[450px] lg:w-[542px]"
         >
           <img
             :src="`/en/modular/${data.imgUrls.desktop}`"
@@ -95,7 +95,7 @@
         </div>
 
         <div
-          class="content-area inner-shadow flex flex-col justify-center"
+          class="content-area inner-shadow z-[2] flex flex-col justify-center"
           :class="data.contentOnRight && 'content-right'"
         >
           <div class="title text-18-medium mb-10 lg:mb-14 lg:text-24">
