@@ -59,7 +59,7 @@
     >
       <div
         v-for="(data, idx) in PRODUCT_DESCRIPTION"
-        class="card mb-20 h-fit shadow-200 md:mb-23 md:h-[354px] md:items-center lg:mb-30 lg:h-[450px] lg:items-center"
+        class="card mb-20 h-fit max-h-fit shadow-200 md:mb-23 md:h-[354px] md:max-h-[354px] md:items-center lg:mb-30 lg:h-[450px] lg:max-h-[450px] lg:items-center"
         :class="`card${idx + 1}`"
       >
         <video
