@@ -1261,6 +1261,7 @@ const onloadVideos = {
 const commonPreloadVideos = [
   '/en/modular/hero.mp4',
   'en/modular/product_description1.mp4',
+  'en/modular/product_description2_new.mp4',
   'en/modular/product_description2.mp4',
 ]
 
