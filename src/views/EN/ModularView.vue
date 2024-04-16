@@ -1332,8 +1332,8 @@ onMounted(() => {
     min-width: 320px;
   }
 
-  .inner-shadow {
-    @include en-mobile {
+  @include en-mobile {
+    .inner-shadow {
       box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
     }
   }
