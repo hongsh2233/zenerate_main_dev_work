@@ -1382,7 +1382,6 @@ onMounted(() => {
       }
     }
     @include en-mobile {
-      height: 573px;
       .title {
         width: 270px;
       }
@@ -1400,7 +1399,6 @@ onMounted(() => {
       height: 354px;
     }
     @include en-mobile {
-      height: 605px;
     }
   }
 
@@ -1424,7 +1422,6 @@ onMounted(() => {
       }
     }
     @include en-mobile {
-      height: 594px;
       .title {
         width: 240px;
       }
@@ -1448,7 +1445,6 @@ onMounted(() => {
       }
     }
     @include en-mobile {
-      height: 489px;
       .title {
         width: 280px;
       }
