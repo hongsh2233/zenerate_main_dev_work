@@ -62,24 +62,20 @@
         class="card mb-20 h-fit shadow-200 md:mb-23 md:h-[354px] md:items-center lg:mb-30 lg:h-[450px] lg:items-center"
         :class="`card${idx + 1}`"
       >
-        <div
+        <video
           v-if="data.imgType === 'video'"
-          class="h-fit w-full md:h-full md:w-fit lg:h-full lg:w-fit"
-        >
-          <video
-            class="h-fit w-fit max-w-full md:h-full md:max-w-fit lg:h-full lg:max-w-fit"
-            :autoplay="true"
-            :muted="true"
-            :loop="true"
-            :playsinline="true"
-            :src="`/en/modular/${data.imgUrl}`"
-            alt=""
-          />
-        </div>
+          class="h-fit w-fit max-w-full md:h-full md:max-w-fit lg:h-full lg:max-w-fit"
+          :autoplay="true"
+          :muted="true"
+          :loop="true"
+          :playsinline="true"
+          :src="`/en/modular/${data.imgUrl}`"
+          alt=""
+        />
 
         <div
-          class="flex h-[292px] w-[320px] flex-row items-center justify-center overflow-hidden md:h-[352px] md:w-[420px] lg:h-[450px] lg:w-[542px]"
           v-else
+          class="flex h-[292px] w-[320px] flex-row items-center justify-center overflow-hidden md:h-[352px] md:w-[420px] lg:h-[450px] lg:w-[542px]"
         >
           <img
             :src="`/en/modular/${data.imgUrls.desktop}`"
