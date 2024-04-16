@@ -64,7 +64,7 @@
       >
         <video
           v-if="data.imgType === 'video'"
-          class="h-fit w-fit max-w-full md:h-full md:max-w-fit lg:h-full lg:max-w-fit"
+          class="!h-fit w-fit max-w-full md:h-full md:max-w-fit lg:h-full lg:max-w-fit"
           :autoplay="true"
           :muted="true"
           :loop="true"
