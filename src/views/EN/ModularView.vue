@@ -149,17 +149,10 @@
         :slideCount="HOW_IT_WORKS.length"
         :mouseWheelControl="false"
         @on-slide-change="(idx) => setHowItWorksIdx(idx)"
-        class="how-it-works-carousel mb-34 h-96 w-[346px] select-none md:hidden lg:hidden"
+        class="how-it-works-carousel mb-34 h-96 w-[320px] select-none md:hidden lg:hidden"
       >
         <template v-for="(data, idx) in HOW_IT_WORKS" #[`slide${idx}`]>
-          <div class="mb-36 flex flex-row items-center">
-            <div
-              class="text-12-semibold mr-10 flex h-20 max-h-20 min-h-20 w-20 min-w-20 max-w-20 items-center justify-center rounded-10 bg-primary text-white"
-            >
-              {{ idx + 1 }}
-            </div>
-            <span class="text-16-medium min-w-fit">{{ data.title }}</span>
-          </div>
+          <span class="text-18-medium mb-36 text-center">{{ data.title }}</span>
         </template>
       </Carousel>
       <div class="mx-auto flex w-fit flex-row items-center">
@@ -343,6 +336,179 @@
       </div>
     </section>
 
+    <!-- CUSTOMIZE -->
+    <section class="customize pt-80 md:pt-110 lg:pt-200">
+      <div
+        class="mx-auto mb-6 w-[320px] text-center text-26 md:w-full lg:w-full"
+      >
+        Customize Floor Plans and Add Other Uses
+      </div>
+      <div
+        class="mx-auto mb-36 w-[300px] text-center text-18 text-gray-550 md:mb-36 md:w-full lg:mb-60 lg:w-full"
+      >
+        Edit residential or parking layouts and change use of any space
+      </div>
+      <Carousel
+        :key="customizeIdx"
+        :initial-slide="customizeIdx"
+        :slideCount="CUSTOMIZE.length"
+        :mouseWheelControl="false"
+        @on-slide-change="(idx) => setCustomizeIdx(idx)"
+        class="customize-carousel mb-34 h-96 w-[320px] select-none md:hidden lg:hidden"
+      >
+        <template v-for="(data, idx) in CUSTOMIZE" #[`slide${idx}`]>
+          <span class="text-18-medium mb-36 min-w-fit text-center">{{
+            data.title
+          }}</span>
+        </template>
+      </Carousel>
+      <div class="mx-auto flex w-fit flex-row items-center">
+        <div
+          class="mr-20 flex hidden w-[378px] flex-col md:block md:w-[330px] lg:block"
+        >
+          <div
+            v-for="(data, idx) of CUSTOMIZE"
+            class="flex h-72 w-full cursor-pointer flex-row items-center rounded-10 pl-30 md:pl-20"
+            :class="
+              customizeIdx === idx
+                ? 'bg-core-10'
+                : 'bg-white  hover:bg-coolgray-50'
+            "
+            @click="() => setCustomizeIdx(idx)"
+          >
+            <div
+              class="text-18-semibold mr-14 flex h-28 max-h-28 min-h-28 w-28 min-w-28 max-w-28 items-center justify-center rounded-14 text-white md:mr-10 md:h-26 md:max-h-26 md:min-h-26 md:w-26 md:min-w-26 md:max-w-26 md:text-16"
+              :class="customizeIdx === idx ? 'bg-primary' : 'bg-gray-400'"
+            >
+              {{ idx + 1 }}
+            </div>
+            <span
+              class="text-20 md:text-18"
+              :class="
+                customizeIdx === idx
+                  ? 'font-medium text-black'
+                  : 'font-regular text-gray-600'
+              "
+              >{{ data.title }}</span
+            >
+            <IconBase
+              v-if="customizeIdx === idx"
+              icon-name="arrow-right"
+              :width="24"
+              :height="24"
+              iconColor="#7D8AFF"
+              class="ml-14"
+            />
+          </div>
+        </div>
+
+        <div
+          class="isolate h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:h-[360px] md:w-[360px] lg:h-[360px] lg:w-[520px]"
+        >
+          <video
+            class="customize0 h-full w-full lg:hidden"
+            :class="customizeIdx !== 0 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/customize1_small.mp4`"
+            alt=""
+          />
+          <video
+            class="customize0 hidden h-full w-full lg:block"
+            :class="customizeIdx !== 0 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/customize1_big.mp4`"
+            alt=""
+          />
+          <video
+            class="customize1 h-full w-full lg:hidden"
+            :class="customizeIdx !== 1 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/customize2_small.mp4`"
+            alt=""
+          />
+          <video
+            class="customize1 hidden h-full w-full lg:block"
+            :class="customizeIdx !== 1 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/customize2_big.mp4`"
+            alt=""
+          />
+          <video
+            class="customize2 h-full w-full lg:hidden"
+            :class="customizeIdx !== 2 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/customize3_small.mp4`"
+            alt=""
+          />
+          <video
+            class="customize2 hidden h-full w-full lg:block"
+            :class="customizeIdx !== 2 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/customize3_big.mp4`"
+            alt=""
+          />
+          <video
+            class="customize3 h-full w-full lg:hidden"
+            :class="customizeIdx !== 3 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/customize4_small.mp4`"
+            alt=""
+          />
+          <video
+            class="customize3 hidden h-full w-full lg:block"
+            :class="customizeIdx !== 3 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/customize4_big.mp4`"
+            alt=""
+          />
+          <video
+            class="customize4 h-full w-full lg:hidden"
+            :class="customizeIdx !== 4 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/customize5_small.mp4`"
+            alt=""
+          />
+          <video
+            class="customize4 hidden h-full w-full lg:block"
+            :class="customizeIdx !== 4 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/customize5_big.mp4`"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- CREATE AND USE YOUR OWN MODULES -->
     <section class="create-and-use-your-own-modules pt-80 md:pt-130 lg:pt-190">
       <div
@@ -362,15 +528,13 @@
         :slideCount="CREATE_AND_USE_YOUR_OWN_MODULES.length"
         :mouseWheelControl="false"
         @on-slide-change="(idx) => setModuleIdx(idx)"
-        class="create-and-use-your-own-modules-carousel mb-34 h-96 w-[346px] select-none md:hidden lg:hidden"
+        class="create-and-use-your-own-modules-carousel mb-34 h-96 w-[320px] select-none md:hidden lg:hidden"
       >
         <template
           v-for="(data, idx) in CREATE_AND_USE_YOUR_OWN_MODULES"
           #[`slide${idx}`]
         >
-          <div class="mb-36 flex flex-row items-center">
-            <span class="text-18-medium min-w-fit">{{ data.title }}</span>
-          </div>
+          <span class="text-18-medium mb-36 min-w-fit">{{ data.title }}</span>
         </template>
       </Carousel>
       <div class="mx-auto flex w-fit flex-row items-center">
@@ -674,6 +838,18 @@ const setHowItWorksIdx = (idx: number) => {
     })
 }
 
+const customizeIdx = ref<number>(0)
+const setCustomizeIdx = (idx: number) => {
+  customizeIdx.value = idx
+  document
+    .querySelectorAll(`.customize${customizeIdx.value}`)
+    .forEach((video: HTMLVideoElement) => {
+      video.pause()
+      video.currentTime = 0
+      video.play()
+    })
+}
+
 const moduleIdx = ref<number>(0)
 const setModuleIdx = (idx: number) => {
   moduleIdx.value = idx
@@ -874,36 +1050,36 @@ const HOW_IT_WORKS = [
   {
     title: 'Draw Site Boundary',
     videoUrls: {
-      desktop: 'how_it_works1_desktop.mp4',
-      tabletMobile: 'how_it_works1_tablet_mobile.mp4',
+      desktop: 'how_it_works1_big.mp4',
+      tabletMobile: 'how_it_works1_small.mp4',
     },
   },
   {
     title: 'Set Project Settings',
     videoUrls: {
-      desktop: 'how_it_works2_desktop_new.mp4',
-      tabletMobile: 'how_it_works2_tablet_mobile_new.mp4',
+      desktop: 'how_it_works2_big_new.mp4',
+      tabletMobile: 'how_it_works2_small.mp4',
     },
   },
   {
     title: 'Select Module Types',
     videoUrls: {
-      desktop: 'how_it_works3_desktop.mp4',
-      tabletMobile: 'how_it_works3_tablet_mobile.mp4',
+      desktop: 'how_it_works3_big.mp4',
+      tabletMobile: 'how_it_works3_small.mp4',
     },
   },
   {
     title: 'Input Design Settings',
     videoUrls: {
-      desktop: 'how_it_works4_desktop.mp4',
-      tabletMobile: 'how_it_works4_tablet_mobile.mp4',
+      desktop: 'how_it_works4_big.mp4',
+      tabletMobile: 'how_it_works4_small.mp4',
     },
   },
   {
     title: 'Generate Design Solutions',
     videoUrls: {
-      desktop: 'how_it_works5_desktop.mp4',
-      tabletMobile: 'how_it_works5_tablet_mobile.mp4',
+      desktop: 'how_it_works5_big.mp4',
+      tabletMobile: 'how_it_works5_small.mp4',
     },
   },
 ]
@@ -923,6 +1099,44 @@ const WHO_USES_IT = [
     userRoles: ['manufacturer', 'consultant'],
     description:
       'Upsell modular to developers and project partners by quickly showing site feasibility and providing a cost estimate',
+  },
+]
+
+const CUSTOMIZE = [
+  {
+    title: 'Move Residential Units',
+    videoUrls: {
+      desktop: 'customize1_big.mp4',
+      tabletMobile: 'customize1_small.mp4',
+    },
+  },
+  {
+    title: 'Change Use',
+    videoUrls: {
+      desktop: 'customize2_big.mp4',
+      tabletMobile: 'customize2_small.mp4',
+    },
+  },
+  {
+    title: 'Edit Core',
+    videoUrls: {
+      desktop: 'customize3_big.mp4',
+      tabletMobile: 'customize3_small.mp4',
+    },
+  },
+  {
+    title: 'Draw Parking Layouts',
+    videoUrls: {
+      desktop: 'customize4_big.mp4',
+      tabletMobile: 'customize4_small.mp4',
+    },
+  },
+  {
+    title: 'Add Other Use',
+    videoUrls: {
+      desktop: 'customize5_big.mp4',
+      tabletMobile: 'customize5_small.mp4',
+    },
   },
 ]
 
@@ -1239,22 +1453,29 @@ onMounted(() => {
 }
 </style>
 <style lang="scss">
-.how-it-works-carousel {
+.how-it-works-carousel,
+.create-and-use-your-own-modules-carousel,
+.customize-carousel {
+  .swiper-slide {
+    padding: 0 46px;
+  }
+
   .swiper-button-prev,
   .swiper-button-next {
-    color: theme('colors.gray.600');
+    color: theme('colors.gray.700');
     z-index: 1 !important;
 
     &:after {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 900;
-      padding: 20px !important;
+      padding: 16px !important;
+      padding-bottom: 52px !important;
     }
   }
 
   .swiper-button-prev:hover,
   .swiper-button-next:hover {
-    color: theme('colors.gray.700');
+    color: theme('colors.gray.900');
   }
 
   .swiper-button-disabled {
