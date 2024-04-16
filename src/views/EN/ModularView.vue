@@ -59,7 +59,7 @@
     >
       <div
         v-for="(data, idx) in PRODUCT_DESCRIPTION"
-        class="card mb-20 h-fit max-h-fit min-h-fit shadow-200 md:mb-23 md:h-[354px] md:max-h-[354px] md:min-h-[354px] md:items-center lg:mb-30 lg:h-[450px] lg:max-h-[450px] lg:min-h-[450px] lg:items-center"
+        class="card mb-20 shadow-200 md:mb-23 md:items-center lg:mb-30 lg:items-center"
         :class="`card${idx + 1}`"
       >
         <video
@@ -1392,6 +1392,18 @@ onMounted(() => {
     }
   }
 
+  .card2 {
+    @include en-desktop {
+      height: 450px;
+    }
+    @include en-tablet {
+      height: 354px;
+    }
+    @include en-mobile {
+      height: 605px;
+    }
+  }
+
   .card3 {
     @include en-desktop {
       height: 450px;
@@ -1421,6 +1433,7 @@ onMounted(() => {
       }
     }
   }
+
   .card4 {
     @include en-desktop {
       height: 450px;
