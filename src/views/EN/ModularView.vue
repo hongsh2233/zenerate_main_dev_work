@@ -212,7 +212,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/how_it_works1_tablet_mobile.mp4`"
+            :src="`/en/modular/how_it_works1_small.mp4`"
             alt=""
           />
           <video
@@ -222,7 +222,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/how_it_works1_desktop.mp4`"
+            :src="`/en/modular/how_it_works1_big.mp4`"
             alt=""
           />
           <video
@@ -232,7 +232,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/how_it_works2_tablet_mobile_new.mp4`"
+            :src="`/en/modular/how_it_works2_small.mp4`"
             alt=""
           />
           <video
@@ -242,7 +242,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/how_it_works2_desktop_new.mp4`"
+            :src="`/en/modular/how_it_works2_big.mp4`"
             alt=""
           />
           <video
@@ -252,7 +252,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/how_it_works3_tablet_mobile.mp4`"
+            :src="`/en/modular/how_it_works3_small.mp4`"
             alt=""
           />
           <video
@@ -262,7 +262,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/how_it_works3_desktop.mp4`"
+            :src="`/en/modular/how_it_works3_big.mp4`"
             alt=""
           />
           <video
@@ -272,7 +272,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/how_it_works4_tablet_mobile.mp4`"
+            :src="`/en/modular/how_it_works4_small.mp4`"
             alt=""
           />
           <video
@@ -282,7 +282,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/how_it_works4_desktop.mp4`"
+            :src="`/en/modular/how_it_works4_big.mp4`"
             alt=""
           />
           <video
@@ -292,7 +292,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/how_it_works5_tablet_mobile.mp4`"
+            :src="`/en/modular/how_it_works5_small.mp4`"
             alt=""
           />
           <video
@@ -302,7 +302,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            :src="`/en/modular/how_it_works5_desktop.mp4`"
+            :src="`/en/modular/how_it_works5_big.mp4`"
             alt=""
           />
         </div>
