@@ -64,10 +64,10 @@
       >
         <div
           v-if="data.imgType === 'video'"
-          class="h-[339px] w-full md:h-full md:w-fit lg:h-full lg:w-fit"
+          class="h-fit w-full md:h-full md:w-fit lg:h-full lg:w-fit"
         >
           <video
-            class="h-full w-full"
+            class="h-fit w-fit max-w-full md:h-full md:max-w-fit lg:h-full lg:max-w-fit"
             :autoplay="true"
             :muted="true"
             :loop="true"
@@ -643,21 +643,19 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { onMounted, ref, computed, watch, watchEffect, nextTick } from 'vue'
+import { onMounted, ref, watch, nextTick } from 'vue'
 import { useHead } from '@vueuse/head'
-import { scrollIntoView } from 'seamless-scroll-polyfill'
+import router from '/@/router'
 
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import ImagePreloader from '/Utils/ImagePreloader'
 import VideoPreloader from '/Utils/VideoPreloader'
 import { ROLES } from '/Constants/roles'
-import { TIconName } from '/Components/EN/ui/a-icon-base'
 
-import { FormWrapper, Footer, Carousel } from '/Components/EN'
-import { Tooltip } from '/Components/EN/ui/tooltips'
+import { TIconName } from '/Components/EN/ui/a-icon-base'
 import IconBase from '/Components/EN/ui/IconBase.vue'
-import router from '/@/router'
+import { FormWrapper, Footer, Carousel } from '/Components/EN'
 
 const betaTester = ref(null)
 const moveToBetaTesterElement = () => {
@@ -829,6 +827,19 @@ const PRODUCT_DESCRIPTION = [
   },
   {
     imgType: 'video',
+    imgUrl: 'product_description2_new.mp4',
+    title: 'Enter Design Inputs and Edit Solutions:',
+    content: [
+      'Select massing type(s) for your custom or automated design',
+      'Add standalone buildings for parking, clubhouse, amenities, or similar',
+      'Add driveway to generate surface parking in seconds',
+      'Relocate or convert residential units, cores, amenities, or similar spaces',
+      'Move entrances and ramps on the parking layout',
+    ],
+    contentOnRight: true,
+  },
+  {
+    imgType: 'video',
     imgUrl: 'product_description2.mp4',
     title: 'View and Download Floor Plans that Include:',
     content: [
@@ -839,7 +850,7 @@ const PRODUCT_DESCRIPTION = [
       'Layouts that you can manually adjust',
       'CAD exports',
     ],
-    contentOnRight: true,
+    contentOnRight: false,
   },
   {
     imgType: 'image',
@@ -855,7 +866,7 @@ const PRODUCT_DESCRIPTION = [
       'Residual land value',
       'Yield on Cost',
     ],
-    contentOnRight: false,
+    contentOnRight: true,
   },
 ]
 
@@ -1170,7 +1181,7 @@ onMounted(() => {
     }
   }
 
-  .card2 {
+  .card3 {
     @include en-desktop {
       height: 450px;
       .title {
@@ -1199,7 +1210,7 @@ onMounted(() => {
       }
     }
   }
-  .card3 {
+  .card4 {
     @include en-desktop {
       height: 450px;
       .content-area {
