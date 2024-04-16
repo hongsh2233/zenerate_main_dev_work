@@ -336,6 +336,118 @@
       </div>
     </section>
 
+    <!-- CREATE AND USE YOUR OWN MODULES -->
+    <section class="create-and-use-your-own-modules pt-80 md:pt-130 lg:pt-190">
+      <div
+        class="mx-auto mb-6 w-[260px] text-center text-26 md:w-full lg:w-full"
+      >
+        Create and Use Your Own Modules
+      </div>
+      <div
+        class="mx-auto mb-36 w-[300px] text-center text-18 text-gray-550 md:mb-50 md:w-[420px] lg:mb-50 lg:w-full"
+      >
+        Implement your very own modular units and core elements to their
+        specific dimensions
+      </div>
+      <Carousel
+        :key="moduleIdx"
+        :initial-slide="moduleIdx"
+        :slideCount="CREATE_AND_USE_YOUR_OWN_MODULES.length"
+        :mouseWheelControl="false"
+        @on-slide-change="(idx) => setModuleIdx(idx)"
+        class="create-and-use-your-own-modules-carousel mb-34 h-96 w-[320px] select-none md:hidden lg:hidden"
+      >
+        <template
+          v-for="(data, idx) in CREATE_AND_USE_YOUR_OWN_MODULES"
+          #[`slide${idx}`]
+        >
+          <span class="text-18-medium mb-36 min-w-fit">{{ data.title }}</span>
+        </template>
+      </Carousel>
+      <div class="mx-auto flex w-fit flex-row items-center">
+        <div
+          class="isolate h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:w-[380px] lg:w-[520px]"
+        >
+          <video
+            class="modular0 h-full w-full md:hidden lg:hidden"
+            :class="moduleIdx !== 0 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/module1_mobile.mp4`"
+            alt=""
+          />
+          <video
+            class="modular0 hidden h-full w-full md:block lg:hidden"
+            :class="moduleIdx !== 0 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/module1_tablet.mp4`"
+            alt=""
+          />
+          <video
+            class="modular0 hidden h-full w-full lg:block"
+            :class="moduleIdx !== 0 && '!hidden'"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :playsinline="true"
+            :src="`/en/modular/module1_desktop.mp4`"
+            alt=""
+          />
+          <template v-if="moduleIdx !== 0">
+            <img
+              class="h-full w-full md:hidden lg:hidden"
+              :src="`/en/modular/module${moduleIdx + 1}_mobile.png`"
+              alt=""
+            />
+            <img
+              class="hidden h-full w-full md:block lg:hidden"
+              :src="`/en/modular/module${moduleIdx + 1}_tablet.png`"
+              alt=""
+            />
+            <img
+              class="hidden h-full w-full md:hidden lg:!block"
+              :src="`/en/modular/module${moduleIdx + 1}_desktop.png`"
+              alt=""
+            />
+          </template>
+        </div>
+        <div
+          class="ml-50 flex hidden w-[360px] flex-col md:ml-20 md:block md:w-[300px] lg:block"
+        >
+          <div
+            v-for="(data, idx) of CREATE_AND_USE_YOUR_OWN_MODULES"
+            class="flex h-72 w-full cursor-pointer flex-row items-center rounded-10 pl-30 not-last:mb-10 md:pl-20"
+            :class="
+              moduleIdx === idx ? 'bg-core-10' : 'bg-white hover:bg-coolgray-50'
+            "
+            @click="() => setModuleIdx(idx)"
+          >
+            <IconBase
+              :icon-name="(data.iconName as TIconName)"
+              :width="24"
+              :height="24"
+              :icon-color="moduleIdx === idx ? '#4D49F4' : '#6A6D73'"
+              class="mr-10"
+            />
+            <span
+              class="text-20 md:text-18"
+              :class="
+                moduleIdx === idx
+                  ? 'font-medium text-black'
+                  : 'font-regular text-gray-600'
+              "
+              >{{ data.title }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CUSTOMIZE -->
     <section class="customize pt-80 md:pt-110 lg:pt-200">
       <div
@@ -505,118 +617,6 @@
             :src="`/en/modular/customize5_big.mp4`"
             alt=""
           />
-        </div>
-      </div>
-    </section>
-
-    <!-- CREATE AND USE YOUR OWN MODULES -->
-    <section class="create-and-use-your-own-modules pt-80 md:pt-130 lg:pt-190">
-      <div
-        class="mx-auto mb-6 w-[260px] text-center text-26 md:w-full lg:w-full"
-      >
-        Create and Use Your Own Modules
-      </div>
-      <div
-        class="mx-auto mb-36 w-[300px] text-center text-18 text-gray-550 md:mb-50 md:w-[420px] lg:mb-50 lg:w-full"
-      >
-        Implement your very own modular units and core elements to their
-        specific dimensions
-      </div>
-      <Carousel
-        :key="moduleIdx"
-        :initial-slide="moduleIdx"
-        :slideCount="CREATE_AND_USE_YOUR_OWN_MODULES.length"
-        :mouseWheelControl="false"
-        @on-slide-change="(idx) => setModuleIdx(idx)"
-        class="create-and-use-your-own-modules-carousel mb-34 h-96 w-[320px] select-none md:hidden lg:hidden"
-      >
-        <template
-          v-for="(data, idx) in CREATE_AND_USE_YOUR_OWN_MODULES"
-          #[`slide${idx}`]
-        >
-          <span class="text-18-medium mb-36 min-w-fit">{{ data.title }}</span>
-        </template>
-      </Carousel>
-      <div class="mx-auto flex w-fit flex-row items-center">
-        <div
-          class="isolate h-[320px] w-[320px] overflow-hidden rounded-8 bg-slate-200 shadow-200 md:w-[380px] lg:w-[520px]"
-        >
-          <video
-            class="modular0 h-full w-full md:hidden lg:hidden"
-            :class="moduleIdx !== 0 && '!hidden'"
-            :autoplay="true"
-            :muted="true"
-            :loop="true"
-            :playsinline="true"
-            :src="`/en/modular/module1_mobile.mp4`"
-            alt=""
-          />
-          <video
-            class="modular0 hidden h-full w-full md:block lg:hidden"
-            :class="moduleIdx !== 0 && '!hidden'"
-            :autoplay="true"
-            :muted="true"
-            :loop="true"
-            :playsinline="true"
-            :src="`/en/modular/module1_tablet.mp4`"
-            alt=""
-          />
-          <video
-            class="modular0 hidden h-full w-full lg:block"
-            :class="moduleIdx !== 0 && '!hidden'"
-            :autoplay="true"
-            :muted="true"
-            :loop="true"
-            :playsinline="true"
-            :src="`/en/modular/module1_desktop.mp4`"
-            alt=""
-          />
-          <template v-if="moduleIdx !== 0">
-            <img
-              class="h-full w-full md:hidden lg:hidden"
-              :src="`/en/modular/module${moduleIdx + 1}_mobile.png`"
-              alt=""
-            />
-            <img
-              class="hidden h-full w-full md:block lg:hidden"
-              :src="`/en/modular/module${moduleIdx + 1}_tablet.png`"
-              alt=""
-            />
-            <img
-              class="hidden h-full w-full md:hidden lg:!block"
-              :src="`/en/modular/module${moduleIdx + 1}_desktop.png`"
-              alt=""
-            />
-          </template>
-        </div>
-        <div
-          class="ml-50 flex hidden w-[360px] flex-col md:ml-20 md:block md:w-[300px] lg:block"
-        >
-          <div
-            v-for="(data, idx) of CREATE_AND_USE_YOUR_OWN_MODULES"
-            class="flex h-72 w-full cursor-pointer flex-row items-center rounded-10 pl-30 not-last:mb-10 md:pl-20"
-            :class="
-              moduleIdx === idx ? 'bg-core-10' : 'bg-white hover:bg-coolgray-50'
-            "
-            @click="() => setModuleIdx(idx)"
-          >
-            <IconBase
-              :icon-name="(data.iconName as TIconName)"
-              :width="24"
-              :height="24"
-              :icon-color="moduleIdx === idx ? '#4D49F4' : '#6A6D73'"
-              class="mr-10"
-            />
-            <span
-              class="text-20 md:text-18"
-              :class="
-                moduleIdx === idx
-                  ? 'font-medium text-black'
-                  : 'font-regular text-gray-600'
-              "
-              >{{ data.title }}</span
-            >
-          </div>
         </div>
       </div>
     </section>
