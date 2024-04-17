@@ -109,7 +109,7 @@
       </Carousel>
     </section>
 
-    <section class="blue-wave-wrapper relative h-[364px] bg-black lg:h-[328px]">
+    <!-- <section class="blue-wave-wrapper relative h-[364px] bg-black lg:h-[328px]">
       <div
         class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center bg-black/50 px-20 pt-88 md:pt-[114px] lg:pt-[100px]"
       >
@@ -131,6 +131,87 @@
           </router-link>
         </div>
       </div>
+    </section> -->
+
+    <!-- WAVE BANNER -->
+    <section
+      class="blue-wave-wrapper relative h-[406px] bg-black md:h-[363px] lg:h-[326px]"
+    >
+      <div
+        class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center bg-black/50 px-20 pt-76 md:pt-[85px] lg:pt-[67px]"
+      >
+        <span
+          class="mb-18 w-[260px] text-center text-22 text-white md:mb-12 md:w-full md:text-26 lg:mb-12 lg:w-full lg:text-28"
+          >Interested in Non-Modular or Stick-Build solutions?</span
+        >
+        <span
+          class="mb-30 w-[300px] text-center text-16 text-white md:mb-40 md:w-full md:text-18 lg:mb-32 lg:w-full lg:text-20"
+          >Join the waitlist now for early access
+          <br class="md:hidden lg:hidden" />and exclusive discounts on Zenerate
+          App, <br class="lg:hidden" />launching in June 2024.</span
+        >
+
+        <div
+          class="flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px] lg:w-[380px]"
+        >
+          <template v-if="bannerEmail.isSent">
+            <svg
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <ellipse
+                cx="12.1782"
+                cy="12"
+                rx="11.8207"
+                ry="12"
+                fill="#EBEDFE"
+              />
+              <path
+                d="M23.0361 1.81787L22.9074 1.97012L22.9111 1.97441L19.4387 6.0958L10.993 16.1219C10.8131 16.3357 10.5728 16.445 10.3319 16.445C10.1878 16.445 10.0436 16.405 9.91113 16.3264L10.4219 16.8117L11.1933 17.5443C11.3645 17.7066 11.5715 17.7874 11.7786 17.7874C12.0195 17.7874 12.2597 17.6787 12.4396 17.4643L24.3577 3.31675L23.0361 1.81787Z"
+                fill="#4848FF"
+              />
+              <path
+                d="M19.4358 6.09106L11.7092 15.2623L10.2872 13.9114L10.2829 13.9071L5.59493 9.45265L4.42432 11.1124L8.98661 15.4467L8.99093 15.451L9.91139 16.3259C10.0439 16.4045 10.188 16.4446 10.3322 16.4446C10.5731 16.4446 10.8134 16.3359 10.9933 16.1215L19.4395 6.09607L19.4358 6.09106Z"
+                fill="#4848FF"
+                fill-opacity="0.4"
+              />
+            </svg>
+            <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
+          </template>
+          <template v-else>
+            <div class="relative">
+              <input
+                id="modular-waitlist-input-gtm"
+                ref="bannerEmailInput"
+                type="text"
+                inputmode="email"
+                :spellcheck="false"
+                placeholder="Email Address"
+                v-model="bannerEmail.inputValue"
+                class="h-50 w-[188px] border-none pl-12 md:w-[211px] lg:w-[211px]"
+                @focus="bannerEmail.showErrorMsg = false"
+              />
+
+              <span
+                v-if="bannerEmail.showErrorMsg"
+                @click="hideBannerEmailErrorMsg"
+                class="absolute top-0 left-0 flex h-50 w-[188px] items-center bg-white px-12 py-4 text-12 text-red-500 md:w-[211px] md:text-14 lg:w-[211px] lg:text-14"
+                >Please enter a valid email.</span
+              >
+            </div>
+            <button
+              id="modular-waitlist-submit-button-gtm"
+              class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white hover:bg-core-700 md:w-[157px] md:min-w-[157px] lg:w-[157px] lg:min-w-[157px]"
+              @click="sendBannerEmail"
+            >
+              Join Waitlist
+            </button>
+          </template>
+        </div>
+      </div>
     </section>
 
     <section class="section section-footer fp-auto-height pt-52 md:pt-0">
@@ -139,9 +220,11 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import Emitter from '/Libraries/bus'
+import ApiService from '/Services/api'
+import Validation from '/Utils/Validation'
 import { getCurrentUtmQuery } from '/Utils/index'
 import { MENU_EVENT } from '/Constants/eventConstant'
 import { ProductCard, Carousel, Footer, IconBase } from '/Components/EN'
@@ -202,6 +285,64 @@ const TESTIMONIAL_DATA = [
     positionAbbrev: 'Architecture Dept. Lead',
   },
 ]
+
+const bannerEmail = ref<{
+  inputValue: string
+  showErrorMsg: boolean
+  isSent: boolean
+  isLoading: boolean
+}>({
+  inputValue: '',
+  showErrorMsg: false,
+  isSent: false,
+  isLoading: false,
+})
+const bannerEmailInput = ref()
+const showBannerEmailErrorMsg = () => {
+  bannerEmail.value.showErrorMsg = true
+}
+const hideBannerEmailErrorMsg = () => {
+  bannerEmail.value.showErrorMsg = false
+  bannerEmailInput.value.focus()
+}
+
+let timeoutId = null
+watch(
+  () => bannerEmail.value.showErrorMsg,
+  (flag) => {
+    if (flag === true) {
+      timeoutId = setTimeout(() => {
+        bannerEmail.value.showErrorMsg = false
+      }, 1600)
+    } else {
+      clearTimeout(timeoutId)
+    }
+  }
+)
+const sendBannerEmail = async () => {
+  const isValid =
+    Validation.email(bannerEmail.value.inputValue) &&
+    bannerEmail.value.inputValue.trim() !== ''
+  if (isValid) {
+    try {
+      bannerEmail.value.isLoading = true
+      await ApiService.XSLX_TEST('AppWaitlist', {
+        email: bannerEmail.value.inputValue,
+      })
+      // await ApiService.ACTIVE_CAMPAIGN({
+      //   email: bannerEmail.value.inputValue,
+      //   tag: 'modular',
+      // })
+      bannerEmail.value.isLoading = false
+      bannerEmail.value.isSent = true
+      bannerEmail.value.inputValue = ''
+    } catch (e) {
+      console.error(e)
+    }
+  } else {
+    showBannerEmailErrorMsg()
+  }
+}
 </script>
 <style lang="scss" scoped>
 .learn-more-button {

@@ -724,14 +724,14 @@
         class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center bg-black/50 px-20 pt-76 md:pt-[85px] lg:pt-[67px]"
       >
         <span
-          class="mb-18 w-[240px] text-center text-22 text-white md:mb-12 md:w-full md:text-26 lg:mb-12 lg:w-full lg:text-28"
-          >Not Interested in Modular Housing?</span
+          class="mb-18 w-[260px] text-center text-22 text-white md:mb-12 md:w-full md:text-26 lg:mb-12 lg:w-full lg:text-28"
+          >Interested in Non-Modular or Stick-Build solutions?</span
         >
         <span
           class="mb-30 w-[300px] text-center text-16 text-white md:mb-40 md:w-full md:text-18 lg:mb-32 lg:w-full lg:text-20"
-          >Zenerate App for multifamily, not just modular, is set to launch in
-          June 2024.<br />Join the waitlist for early access and exclusive
-          discounts.</span
+          >Join the waitlist now for early access
+          <br class="md:hidden lg:hidden" />and exclusive discounts on Zenerate
+          App, <br class="lg:hidden" />launching in June 2024.</span
         >
 
         <div
