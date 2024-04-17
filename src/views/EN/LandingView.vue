@@ -142,7 +142,7 @@
       >
         <span
           class="mb-18 w-[260px] text-center text-22 text-white md:mb-12 md:w-full md:text-26 lg:mb-12 lg:w-full lg:text-28"
-          >Interested in Non-Modular or Stick-Build solutions?</span
+          >Interested in Non-Modular or Stick-Build Solutions?</span
         >
         <span
           class="mb-30 w-[300px] text-center text-16 text-white md:mb-40 md:w-full md:text-18 lg:mb-32 lg:w-full lg:text-20"
