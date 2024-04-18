@@ -738,30 +738,17 @@
           class="flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px] lg:w-[380px]"
         >
           <template v-if="bannerEmail.isSent">
-            <svg
-              width="25"
-              height="24"
-              viewBox="0 0 25 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="flex h-24 w-24 items-center justify-center rounded-12 bg-core-20"
             >
-              <ellipse
-                cx="12.1782"
-                cy="12"
-                rx="11.8207"
-                ry="12"
-                fill="#EBEDFE"
+              <IconBase
+                icon-name="checkmark-bold"
+                icon-color="#5C6DFF"
+                :width="16"
+                :height="16"
+                class="h-16 w-16"
               />
-              <path
-                d="M23.0361 1.81787L22.9074 1.97012L22.9111 1.97441L19.4387 6.0958L10.993 16.1219C10.8131 16.3357 10.5728 16.445 10.3319 16.445C10.1878 16.445 10.0436 16.405 9.91113 16.3264L10.4219 16.8117L11.1933 17.5443C11.3645 17.7066 11.5715 17.7874 11.7786 17.7874C12.0195 17.7874 12.2597 17.6787 12.4396 17.4643L24.3577 3.31675L23.0361 1.81787Z"
-                fill="#4848FF"
-              />
-              <path
-                d="M19.4358 6.09106L11.7092 15.2623L10.2872 13.9114L10.2829 13.9071L5.59493 9.45265L4.42432 11.1124L8.98661 15.4467L8.99093 15.451L9.91139 16.3259C10.0439 16.4045 10.188 16.4446 10.3322 16.4446C10.5731 16.4446 10.8134 16.3359 10.9933 16.1215L19.4395 6.09607L19.4358 6.09106Z"
-                fill="#4848FF"
-                fill-opacity="0.4"
-              />
-            </svg>
+            </div>
             <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
           </template>
           <template v-else>
