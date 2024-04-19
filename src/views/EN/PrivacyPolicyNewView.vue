@@ -65,8 +65,8 @@
             </li>
             <li>
               <strong>Company</strong> refers to Zenerate Inc., a Delaware
-              corporation, located at 555 West 5th Street, 35th Floor, Los
-              Angeles CA 90013.
+              corporation, located at 222 N Pacific Coast Hwy F 10, El Segundo,
+              CA 90245.
             </li>
             <li>
               <strong>Cookies</strong> are small files that are placed on Your
@@ -546,7 +546,7 @@
             If You have any questions or concerns regarding our privacy policy,
             please contact us at
             <a href="mailto:contact@zenerate.ai">contact@zenerate.ai</a> or at
-            555 West 5th Street, 35th Floor, Los Angeles CA 90013.
+            222 N Pacific Coast Hwy F 10, El Segundo, CA 90245.
           </p>
         </div>
       </div>

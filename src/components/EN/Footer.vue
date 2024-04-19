@@ -22,8 +22,8 @@
               </p>
               <p class="text-14 font-medium leading-[150%] text-gray-700">
                 United States<br />
-                555 West 5th Street<br />
-                Los Angeles, CA 90013
+                222 N Pacific Coast Hwy F 10<br />
+                El Segundo, CA 90245
               </p>
             </div>
 
