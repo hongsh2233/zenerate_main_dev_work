@@ -95,15 +95,15 @@ const ENRoute: RouteRecordRaw = {
       path: '/beta',
       redirect: '/modular',
     },
-    {
-      path: '/ed1',
-      name: 'en-ed1-report',
-      component: ED1ReportView,
-    },
-    {
-      path: '/ed1-report',
-      redirect: '/ed1',
-    },
+    // {
+    //   path: '/ed1',
+    //   name: 'en-ed1-report',
+    //   component: ED1ReportView,
+    // },
+    // {
+    //   path: '/ed1-report',
+    //   redirect: '/ed1',
+    // },
     // {
     //   path: '/demo-signup',
     //   name: 'en-demo',

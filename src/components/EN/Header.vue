@@ -60,7 +60,7 @@
                   </router-link>
 
                   <template v-if="secondary.to === 'en-ai-consulting'">
-                    <a :href="'https://www.zenerate.ai/ed1'">
+                    <!-- <a :href="'https://www.zenerate.ai/ed1'">
                       <IconBase
                         :icon-name="'ed1-report'"
                         :width="20"
@@ -69,7 +69,7 @@
                         class="sub-icon"
                       />
                       ED 1 Feasibility Report
-                    </a>
+                    </a> -->
                     <a :href="'https://zmaps.ai'">
                       <component :is="ZmapsIcon" :width="20" :height="20" />
                       Z-maps
