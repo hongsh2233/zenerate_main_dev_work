@@ -45,7 +45,7 @@
                     </router-link>
 
                     <template v-if="nav.to === 'en-ai-consulting'">
-                      <a
+                      <!-- <a
                         :href="'https://www.zenerate.ai/ed1'"
                         class="navigation-link sub"
                         :class="nav.to"
@@ -59,7 +59,7 @@
                           class="sub-icon"
                         />
                         ED 1 Feasibility Report
-                      </a>
+                      </a> -->
                       <a
                         :href="'https://zmaps.ai'"
                         class="navigation-link sub"
