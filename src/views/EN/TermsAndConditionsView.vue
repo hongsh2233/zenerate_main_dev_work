@@ -688,7 +688,7 @@
               <p>
                 Name: Benji Shin<br />
                 Attn: Copyright Agent<br />
-                Address: 555 W 5TH ST, FL 35, LOS ANGELES CA 90013<br />
+                Address: 222 N Pacific Coast Hwy F 10, El Segundo, CA 90245<br />
                 Email:
                 <a href="mailto:contact@zenerate.ai">contact@zenerate.ai</a>
               </p>
