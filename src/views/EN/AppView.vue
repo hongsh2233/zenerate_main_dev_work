@@ -38,7 +38,7 @@
                 :height="45"
               />
               <span
-                class="ml-12 pb-4 font-['Poppins'] text-34 font-semibold lg:ml-16 lg:pb-6 lg:text-46"
+                class="ml-12 pb-4 font-poppins text-34 font-semibold lg:ml-16 lg:pb-6 lg:text-46"
                 >App</span
               >
             </div>
