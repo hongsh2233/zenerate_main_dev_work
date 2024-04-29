@@ -58,7 +58,7 @@
         <div
           class="my-auto flex min-h-full w-full flex-col items-center justify-center bg-white px-45 pb-40 pt-10 md:px-24 lg:px-50"
         >
-          <FormContent sheet-name="AppWaitList">
+          <FormContent sheet-name="AppWaitlist">
             <template #form-title>
               <div class="mt-40 text-center text-18 lg:text-24">
                 Join the waitlist for

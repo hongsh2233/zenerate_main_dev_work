@@ -35,7 +35,7 @@ import { FormContent } from '.'
 const props = defineProps({
   sheetName: {
     type: String as PropType<
-      'Beta' | 'AIConsulting' | 'Modular' | 'AppWaitList'
+      'Beta' | 'AIConsulting' | 'Modular' | 'AppWaitlist'
     >,
     required: true,
   },

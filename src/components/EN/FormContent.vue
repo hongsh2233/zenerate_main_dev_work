@@ -362,7 +362,7 @@ type SheetName =
   | 'AIConsulting'
   | 'Modular'
   | 'ED1Report'
-  | 'AppWaitList'
+  | 'AppWaitlist'
 type InputType =
   | 'firstName'
   | 'lastName'
@@ -402,7 +402,7 @@ const CONTENT_LIST_DICT: Record<SheetName, InputType[]> = {
     'lotSize',
     'projectDetail',
   ],
-  AppWaitList: ['email', 'jobTitle'],
+  AppWaitlist: ['email', 'jobTitle'],
 }
 
 const sheetName = computed(() => props.sheetName)
