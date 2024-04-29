@@ -22,7 +22,7 @@
             alt=""
           />
           <div
-            class="absolute flex h-full w-full flex-col items-center bg-gradient-to-b from-[rgba(34,35,39,0.50)] via-[rgba(34,35,39,0.50)] to-[rgba(0,7,41,0.60)] px-33 pt-44 pb-26 text-white md:items-start md:pl-34 md:pr-48 md:pt-36 md:pb-38 md:text-left lg:items-start lg:pt-48 lg:pr-60 lg:pb-50 lg:pl-60 lg:text-left"
+            class="absolute flex h-full w-full flex-col items-center bg-gradient-to-b from-[rgba(34,35,39,0.50)] via-[rgba(34,35,39,0.50)] to-[rgba(0,7,41,0.60)] px-28 pt-44 pb-26 text-white md:items-start md:px-38 md:pt-36 md:pb-38 md:text-left lg:items-start lg:pt-48 lg:pr-60 lg:pb-50 lg:pl-60 lg:text-left"
           >
             <div class="mb-4 flex flex-row items-center md:mb-8 lg:mb-12">
               <img
@@ -43,7 +43,7 @@
               >
             </div>
             <span
-              class="mb-[204px] text-center text-24 font-bold md:text-left md:text-26 lg:mb-[268px] lg:text-left lg:text-34"
+              class="mb-[200px] text-center text-24 font-bold md:text-left md:text-26 lg:mb-[268px] lg:text-left lg:text-34"
             >
               AI-powered, Real-time<br />Feasibility Solution
             </span>
