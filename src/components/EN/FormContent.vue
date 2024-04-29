@@ -89,7 +89,7 @@
           class="input-wrapper job-title"
           :class="{ error: SignUpForm.jobTitle.valid === false }"
         >
-          <template v-if="showJobTitleDropdown">
+          <template v-if="jobTitleInputType === 'dropdown'">
             <Dropdown.Wrapper
               :container="jobTitleDropdownContainer"
               @apply-show="() => setDropdownOptionWidth()"
@@ -98,7 +98,7 @@
               <template v-slot="slotProps">
                 <div
                   ref="dropdownBtn"
-                  class="flex h-38 w-full flex-row items-center pl-12 pr-6 lg:h-48"
+                  class="flex h-38 w-full flex-row items-center pl-12 pr-6 lg:h-48 lg:pr-8"
                 >
                   <span
                     class="text-13-medium lg:text-16"
@@ -153,13 +153,26 @@
           </template>
           <template v-else>
             <p class="error-message">Please enter job title.</p>
-            <input
-              type="text"
-              placeholder="Enter Job Title"
-              autocomplete="new-job-title"
-              v-model="SignUpForm.jobTitle.value"
-              @input="(v) => validation('jobTitle')"
-            />
+            <div class="relative h-fit w-full">
+              <input
+                type="text"
+                placeholder="Enter Job Title"
+                autocomplete="new-job-title"
+                v-model="SignUpForm.jobTitle.value"
+                @input="(v) => validation('jobTitle')"
+              />
+              <button
+                type="button"
+                class="absolute right-6 top-[50%] flex h-28 w-28 min-w-28 translate-y-[-50%] flex-row items-center justify-center rounded-16 border-1 border-solid border-gray-350 bg-white shadow-200 hover:bg-gray-70 lg:right-8 lg:h-32 lg:w-32 lg:min-w-32"
+                @click="() => toggleJobTitleInputType('dropdown')"
+              >
+                <IconBase
+                  icon-name="close"
+                  icon-color="#484A4F"
+                  class="h-16 w-16 min-w-16 max-w-16 lg:h-18 lg:w-18 lg:min-w-18 lg:max-w-18"
+                />
+              </button>
+            </div>
           </template>
         </div>
       </div>
@@ -395,7 +408,6 @@ const CONTENT_LIST_DICT: Record<SheetName, InputType[]> = {
 const sheetName = computed(() => props.sheetName)
 const contentList = computed(() => CONTENT_LIST_DICT[sheetName.value])
 
-const showJobTitleDropdown = ref(true)
 const jobTitleDropdownContainer = ref<HTMLElement>()
 const dropdownBtn = ref<HTMLElement>()
 const dropdownBtnWidth = ref(0)
@@ -417,15 +429,20 @@ const JOB_OPTIONS: { key: JobOptionKey; value: string }[] = [
   { key: 'broker', value: 'Broker' },
   { key: 'other', value: 'Other' },
 ]
-const selectJobTitle = (jobOptionKey: JobOptionKey) => {
-  if (jobOptionKey === 'other') {
-    showJobTitleDropdown.value = false
-    SignUpForm.value.jobTitle.value = ''
-    SignUpForm.value.jobTitle.valid = null
+type JobTitleInputType = 'dropdown' | 'input'
+const jobTitleInputType = ref<JobTitleInputType>('dropdown')
+const toggleJobTitleInputType = (type: JobTitleInputType) => {
+  jobTitleInputType.value = type
+  SignUpForm.value.jobTitle.value = ''
+  SignUpForm.value.jobTitle.valid = null
+}
+const selectJobTitle = (key: JobOptionKey) => {
+  if (key === 'other') {
+    toggleJobTitleInputType('input')
     return
   }
   SignUpForm.value.jobTitle.value = JOB_OPTIONS.find(
-    (option) => option.key === jobOptionKey
+    (option) => option.key === key
   )?.value
   SignUpForm.value.jobTitle.valid = true
 }
