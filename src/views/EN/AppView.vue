@@ -13,7 +13,7 @@
           class="relative flex h-[450px] w-[320px] flex-row justify-center !overflow-hidden md:h-[450px] md:w-[434px] md:min-w-[434px] lg:h-[600px] lg:w-[644px] lg:min-w-[644px]"
         >
           <video
-            class="h-full"
+            class="absolute left-[-234px] h-full md:static lg:static"
             :autoplay="true"
             :muted="true"
             :loop="true"
