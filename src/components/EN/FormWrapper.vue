@@ -18,6 +18,12 @@
         <template #after-submit-title>
           <slot name="after-submit-title"></slot>
         </template>
+        <template #additional-text>
+          <slot name="additional-text"></slot>
+        </template>
+        <template #under-submit-btn-text>
+          <slot name="under-submit-btn-text"></slot>
+        </template>
       </FormContent>
     </div>
   </div>
@@ -28,7 +34,9 @@ import { FormContent } from '.'
 
 const props = defineProps({
   sheetName: {
-    type: String as PropType<'Beta' | 'AIConsulting' | 'Modular'>,
+    type: String as PropType<
+      'Beta' | 'AIConsulting' | 'Modular' | 'AppWaitList'
+    >,
     required: true,
   },
 })

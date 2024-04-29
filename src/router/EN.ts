@@ -17,6 +17,7 @@ import ZenerateView from '/Views/EN/ZenerateView.vue'
 import AIConsultingVIew from '/Views/EN/AIConsultingView.vue'
 import ModularView from '/Views/EN/ModularView.vue'
 import DemoSignUpView from '/Views/EN/DemoSignUpView.vue'
+import AppView from '/Views/EN/AppView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -28,11 +29,17 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-landing',
       component: LandingView,
     },
-    // /zenerate-app -> /modular 리다이렉트
+    {
+      path: '/app',
+      name: 'en-app',
+      component: AppView,
+    },
+    // /zenerate-app -> /app 리다이렉트
     {
       path: '/zenerate-app',
-      redirect: '/modular',
+      redirect: '/app',
     },
+
     {
       path: '/ai-consulting',
       name: 'en-ai-consulting',
