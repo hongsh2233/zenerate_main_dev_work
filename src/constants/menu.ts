@@ -4,6 +4,11 @@ export default [
     title: 'Products & Services',
     children: [
       {
+        title: 'Zenerate App',
+        to: 'en-app',
+        icon: 'zenerate-app',
+      },
+      {
         title: 'Zenerate Modular',
         to: 'en-modular',
         icon: 'zenerate-modular',

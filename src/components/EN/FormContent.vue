@@ -7,6 +7,7 @@
           contentList.includes('firstName') || contentList.includes('lastName')
         "
         class="form-row"
+        :class="{ 'first-row': contentList[0] === 'firstName' }"
       >
         <div
           class="input-wrapper first-name"
@@ -36,7 +37,11 @@
           />
         </div>
       </div>
-      <div v-if="contentList.includes('email')" class="form-row">
+      <div
+        v-if="contentList.includes('email')"
+        class="form-row"
+        :class="{ 'first-row': contentList[0] === 'email' }"
+      >
         <div
           class="input-wrapper email"
           :class="{ error: SignUpForm.email.valid === false }"
@@ -50,9 +55,16 @@
             v-model="SignUpForm.email.value"
             @input="(v) => validation('email')"
           />
+          <p class="mt-3 px-3 text-10 text-core-500">
+            *Company email preferred
+          </p>
         </div>
       </div>
-      <div v-if="contentList.includes('company')" class="form-row">
+      <div
+        v-if="contentList.includes('company')"
+        class="form-row"
+        :class="{ 'first-row': contentList[0] === 'company' }"
+      >
         <div
           class="input-wrapper company"
           :class="{ error: SignUpForm.company.valid === false }"
@@ -67,22 +79,108 @@
           />
         </div>
       </div>
-      <div v-if="contentList.includes('jobTitle')" class="form-row">
+      <div
+        v-if="contentList.includes('jobTitle')"
+        class="form-row"
+        :class="{ 'first-row': contentList[0] === 'jobTitle' }"
+        ref="jobTitleDropdownContainer"
+      >
         <div
           class="input-wrapper job-title"
           :class="{ error: SignUpForm.jobTitle.valid === false }"
         >
-          <p class="error-message">Please enter job title.</p>
-          <input
-            type="text"
-            placeholder="Enter Job Title"
-            autocomplete="new-job-title"
-            v-model="SignUpForm.jobTitle.value"
-            @input="(v) => validation('jobTitle')"
-          />
+          <template v-if="jobTitleInputType === 'dropdown'">
+            <Dropdown.Wrapper
+              :container="jobTitleDropdownContainer"
+              @apply-show="() => setDropdownOptionWidth()"
+              class="text-13-regular h-fit w-fit overflow-hidden rounded-6 border-1 border-solid border-gray-350 text-gray-700 lg:text-16"
+            >
+              <template v-slot="slotProps">
+                <div
+                  ref="dropdownBtn"
+                  class="flex h-38 w-full flex-row items-center pl-12 pr-6 lg:h-48 lg:pr-8"
+                >
+                  <span
+                    class="text-13-medium lg:text-16"
+                    :class="
+                      SignUpForm.jobTitle.value === ''
+                        ? 'text-13 text-[#c4c4c4] lg:text-16'
+                        : slotProps.open
+                        ? 'text-gray-450'
+                        : 'text-black'
+                    "
+                    >{{
+                      SignUpForm.jobTitle.value === ''
+                        ? 'Select Job Title'
+                        : SignUpForm.jobTitle.value
+                    }}</span
+                  >
+                  <IconBase
+                    class="ml-auto h-18 w-18"
+                    :width="18"
+                    :height="18"
+                    :icon-name="slotProps.open ? 'caret-up' : 'caret-down'"
+                    :icon-color="'#8D9095'"
+                  />
+                </div>
+              </template>
+              <template #popup>
+                <Dropdown.Select class="w-fit overflow-hidden rounded-6">
+                  <div
+                    class="z-[1] h-fit overflow-y-auto rounded-6 bg-white p-4"
+                    :style="`width: ${dropdownBtnWidth}px`"
+                  >
+                    <div v-for="option in JOB_OPTIONS" :key="option.key">
+                      <Dropdown.Option
+                        :value="option"
+                        :show-checkmark="true"
+                        :selected="option.value === SignUpForm.jobTitle.value"
+                        class="h-36 rounded-4 py-6 px-8 text-13 lg:h-46 lg:text-16"
+                        :class="
+                          option.value === SignUpForm.jobTitle.value
+                            ? '!text-primary'
+                            : 'cursor-pointer text-gray-700  hover:bg-gray-70'
+                        "
+                        @click="() => selectJobTitle(option.key)"
+                      >
+                        <span>{{ option.value }}</span>
+                      </Dropdown.Option>
+                    </div>
+                  </div>
+                </Dropdown.Select>
+              </template>
+            </Dropdown.Wrapper>
+          </template>
+          <template v-else>
+            <p class="error-message">Please enter job title.</p>
+            <div class="relative h-fit w-full">
+              <input
+                type="text"
+                placeholder="Enter Job Title"
+                autocomplete="new-job-title"
+                v-model="SignUpForm.jobTitle.value"
+                @input="(v) => validation('jobTitle')"
+              />
+              <button
+                type="button"
+                class="absolute right-6 top-[50%] flex h-28 w-28 min-w-28 translate-y-[-50%] flex-row items-center justify-center rounded-16 border-1 border-solid border-gray-350 bg-white shadow-200 hover:bg-gray-70 lg:right-8 lg:h-32 lg:w-32 lg:min-w-32"
+                @click="() => toggleJobTitleInputType('dropdown')"
+              >
+                <IconBase
+                  icon-name="close"
+                  icon-color="#484A4F"
+                  class="h-16 w-16 min-w-16 max-w-16 lg:h-18 lg:w-18 lg:min-w-18 lg:max-w-18"
+                />
+              </button>
+            </div>
+          </template>
         </div>
       </div>
-      <div v-if="contentList.includes('address')" class="form-row">
+      <div
+        v-if="contentList.includes('address')"
+        class="form-row"
+        :class="{ 'first-row': contentList[0] === 'address' }"
+      >
         <div
           class="input-wrapper address"
           :class="{ error: SignUpForm.address.valid === false }"
@@ -97,7 +195,11 @@
           />
         </div>
       </div>
-      <div v-if="contentList.includes('lotSize')" class="form-row">
+      <div
+        v-if="contentList.includes('lotSize')"
+        class="form-row"
+        :class="{ 'first-row': contentList[0] === 'lotSize' }"
+      >
         <div class="input-wrapper lotSize">
           <input
             type="text"
@@ -107,7 +209,11 @@
           />
         </div>
       </div>
-      <div v-if="contentList.includes('message')" class="form-row">
+      <div
+        v-if="contentList.includes('message')"
+        class="form-row"
+        :class="{ 'first-row': contentList[0] === 'message' }"
+      >
         <div class="input-wrapper message">
           <textarea
             type="text"
@@ -118,7 +224,11 @@
           />
         </div>
       </div>
-      <div v-if="contentList.includes('projectDetail')" class="form-row">
+      <div
+        v-if="contentList.includes('projectDetail')"
+        class="form-row"
+        :class="{ 'first-row': contentList[0] === 'projectDetail' }"
+      >
         <div class="input-wrapper projectDetail">
           <textarea
             type="text"
@@ -130,7 +240,11 @@
           />
         </div>
       </div>
-      <div v-if="contentList.includes('interest')" class="form-row mb-8">
+      <div
+        v-if="contentList.includes('interest')"
+        class="form-row mb-8"
+        :class="{ 'first-row': contentList[0] === 'interest' }"
+      >
         <div class="input-wrapper">
           <div
             class="hover-pointer flex flex-row items-center"
@@ -182,35 +296,38 @@
       />
       <span v-else class="pointer-events-none">{{ submitBtnText }}</span>
     </button>
+    <slot name="under-submit-btn-text"></slot>
   </div>
   <transition v-else name="fade">
     <div class="mt-40 flex flex-col items-center">
       <slot name="after-submit-title"></slot>
-      <svg
-        width="100"
-        height="101"
-        viewBox="0 0 100 101"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        class="mb-14"
-      >
-        <ellipse
-          cx="49.2531"
-          cy="50.4098"
-          rx="49.2531"
-          ry="50"
-          fill="#EBEDFE"
-        />
-        <path
-          d="M94.4934 7.98485L93.9568 8.61921L93.9723 8.63708L79.5039 25.8095L44.3138 67.5852C43.5642 68.4756 42.563 68.9313 41.5593 68.9313C40.9585 68.9313 40.3578 68.7645 39.8059 68.4369L41.9341 70.4592L45.1481 73.5118C45.8618 74.1879 46.7243 74.5244 47.5869 74.5244C48.5906 74.5244 49.5918 74.0717 50.3414 73.1783L99.9999 14.2302L94.4934 7.98485Z"
-          fill="#4848FF"
-        />
-        <path
-          d="M79.4926 25.7902L47.2983 64.0039L41.3734 58.375L41.3554 58.3572L21.8221 39.7968L16.9446 46.7123L35.9541 64.7723L35.9721 64.7901L39.8074 68.4355C40.3593 68.7631 40.96 68.9299 41.5607 68.9299C42.5645 68.9299 43.5657 68.4772 44.3153 67.5837L79.508 25.8111L79.4926 25.7902Z"
-          fill="#4848FF"
-          fill-opacity="0.4"
-        />
-      </svg>
+      <slot name="after-submit-icon">
+        <svg
+          width="100"
+          height="101"
+          viewBox="0 0 100 101"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="mb-14"
+        >
+          <ellipse
+            cx="49.2531"
+            cy="50.4098"
+            rx="49.2531"
+            ry="50"
+            fill="#EBEDFE"
+          />
+          <path
+            d="M94.4934 7.98485L93.9568 8.61921L93.9723 8.63708L79.5039 25.8095L44.3138 67.5852C43.5642 68.4756 42.563 68.9313 41.5593 68.9313C40.9585 68.9313 40.3578 68.7645 39.8059 68.4369L41.9341 70.4592L45.1481 73.5118C45.8618 74.1879 46.7243 74.5244 47.5869 74.5244C48.5906 74.5244 49.5918 74.0717 50.3414 73.1783L99.9999 14.2302L94.4934 7.98485Z"
+            fill="#4848FF"
+          />
+          <path
+            d="M79.4926 25.7902L47.2983 64.0039L41.3734 58.375L41.3554 58.3572L21.8221 39.7968L16.9446 46.7123L35.9541 64.7723L35.9721 64.7901L39.8074 68.4355C40.3593 68.7631 40.96 68.9299 41.5607 68.9299C42.5645 68.9299 43.5657 68.4772 44.3153 67.5837L79.508 25.8111L79.4926 25.7902Z"
+            fill="#4848FF"
+            fill-opacity="0.4"
+          />
+        </svg>
+      </slot>
 
       <slot name="after-submit-subtitle">
         <span class="mb-24 text-24 font-medium lg:text-28">Thank you!</span>
@@ -227,8 +344,9 @@ import Emitter from '/Libraries/bus'
 import ApiService from '/Services/api'
 import Validation from '/Utils/Validation'
 import { MENU_EVENT } from '/Constants/eventConstant'
-import DotSpinnerWhite from './ui/DotSpinnerWhite.vue'
-import { IconBase } from '.'
+import * as Dropdown from '/Components/EN/ui/dropdown'
+import IconBase from '/Components/EN/ui/IconBase.vue'
+import DotSpinnerWhite from '/Components/EN/ui/DotSpinnerWhite.vue'
 
 const props = defineProps({
   sheetName: {
@@ -241,7 +359,12 @@ const props = defineProps({
   },
 })
 
-type SheetName = 'Beta' | 'AIConsulting' | 'Modular' | 'ED1Report'
+type SheetName =
+  | 'Beta'
+  | 'AIConsulting'
+  | 'Modular'
+  | 'ED1Report'
+  | 'AppWaitlist'
 type InputType =
   | 'firstName'
   | 'lastName'
@@ -281,10 +404,50 @@ const CONTENT_LIST_DICT: Record<SheetName, InputType[]> = {
     'lotSize',
     'projectDetail',
   ],
+  AppWaitlist: ['email', 'jobTitle'],
 }
 
 const sheetName = computed(() => props.sheetName)
 const contentList = computed(() => CONTENT_LIST_DICT[sheetName.value])
+
+const jobTitleDropdownContainer = ref<HTMLElement>()
+const dropdownBtn = ref<HTMLElement>()
+const dropdownBtnWidth = ref(0)
+const setDropdownOptionWidth = () => {
+  dropdownBtnWidth.value = dropdownBtn.value?.offsetWidth
+}
+type JobOptionKey =
+  | 'architect'
+  | 'developer'
+  | 'investor'
+  | 'general_contractor'
+  | 'broker'
+  | 'other'
+const JOB_OPTIONS: { key: JobOptionKey; value: string }[] = [
+  { key: 'architect', value: 'Architect' },
+  { key: 'developer', value: 'Developer' },
+  { key: 'investor', value: 'Investor' },
+  { key: 'general_contractor', value: 'General Contractor' },
+  { key: 'broker', value: 'Broker' },
+  { key: 'other', value: 'Other' },
+]
+type JobTitleInputType = 'dropdown' | 'input'
+const jobTitleInputType = ref<JobTitleInputType>('dropdown')
+const toggleJobTitleInputType = (type: JobTitleInputType) => {
+  jobTitleInputType.value = type
+  SignUpForm.value.jobTitle.value = ''
+  SignUpForm.value.jobTitle.valid = null
+}
+const selectJobTitle = (key: JobOptionKey) => {
+  if (key === 'other') {
+    toggleJobTitleInputType('input')
+    return
+  }
+  SignUpForm.value.jobTitle.value = JOB_OPTIONS.find(
+    (option) => option.key === key
+  )?.value
+  SignUpForm.value.jobTitle.valid = true
+}
 
 const SignUpForm = ref<
   Record<
@@ -435,6 +598,10 @@ const submitForm = async () => {
 }
 </script>
 <style lang="scss" scoped>
+.form-wrapper {
+  width: 100%;
+}
+
 .form {
   input {
     width: 100%;
@@ -507,7 +674,7 @@ const submitForm = async () => {
 
   .input-wrapper {
     width: 100%;
-    &:not(:last-child) {
+    &.first-name {
       margin-right: 4px;
     }
 
@@ -526,14 +693,6 @@ const submitForm = async () => {
       }
     }
 
-    &.first-name,
-    &.last-name {
-      .error-message {
-        height: fit-content;
-        margin-bottom: 4px;
-      }
-    }
-
     &.error {
       input {
         border: solid 1px theme('colors.red.400');
@@ -547,12 +706,20 @@ const submitForm = async () => {
   }
 }
 
+.form-row.first-row {
+  .error-message {
+    height: fit-content;
+    margin-bottom: 4px;
+  }
+}
+
 .submit-button {
   font-size: 16px;
   font-weight: 500;
   width: 100%;
   height: 48px;
   min-height: 48px;
+  margin-top: 10px;
   border-radius: 6px;
   color: white;
   background-color: theme('colors.primary.DEFAULT');

@@ -7,21 +7,19 @@
       v-show="showHeader"
       @click="
         () => {
-          if (route.name === 'en-modular') {
-            goToFormPage()
-          } else {
-            router.push({
-              name: 'en-modular',
-              query: getCurrentUtmQuery(router),
-              hash: '#form',
-            })
+          if (showDrawer) {
+            toggleDrawer(false)
           }
+          router.push({
+            name: 'en-app',
+            query: getCurrentUtmQuery(router),
+          })
         }
       "
     >
       <div class="signup-banner-inner pointer-events-none">
         <p>
-          <span>Try out Zenerate Modular for FREE!</span>
+          <span>Get 2 FREE Months for Zenerate App!</span>
         </p>
         <IconBase
           icon-name="arrow-right"

@@ -710,7 +710,7 @@
         </template>
         <template #after-submit-text>
           <span class="text-center text-13 text-gray-700 md:text-14 lg:text-18"
-            >We'll contact you within<br />1 to 3 business days.</span
+            >We'll contact you within<br />1~3 business days.</span
           >
         </template>
       </FormWrapper>
