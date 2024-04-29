@@ -138,7 +138,7 @@
             <template #after-submit-text>
               <span
                 class="mt-[-16px] w-[142px] text-center text-13 text-gray-700 lg:mt-[-14px] lg:w-[170px] lg:text-14 lg:text-16"
-                >We'll contact you within 1 to 3 business days.</span
+                >We'll contact you within 1~3 business days.</span
               >
             </template>
           </FormContent>
