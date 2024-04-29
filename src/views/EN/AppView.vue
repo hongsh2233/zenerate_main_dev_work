@@ -18,7 +18,7 @@
             :muted="true"
             :loop="true"
             :playsinline="true"
-            src="/en/app/hero.mp4"
+            src="/en/app/hero_new.mp4"
             alt=""
           />
           <div
