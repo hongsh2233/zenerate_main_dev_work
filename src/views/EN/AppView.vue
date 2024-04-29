@@ -56,7 +56,7 @@
         </div>
 
         <div
-          class="my-auto flex min-h-full w-full flex-col items-center justify-center bg-white px-45 pb-40 pt-10 md:px-24 lg:px-50"
+          class="my-auto flex h-[366px] min-h-full w-full flex-col items-center bg-white px-45 pb-60 pt-10 md:px-24 md:pt-0 lg:px-50 lg:pt-0"
         >
           <FormContent sheet-name="AppWaitlist">
             <template #form-title>
@@ -69,22 +69,76 @@
             </template>
             <template #under-submit-btn-text>
               <span
-                class="mt-10 mb-20 text-center text-10 text-gray-500 lg:mt-16 lg:text-12"
+                class="mt-10 text-center text-10 text-gray-500 lg:mt-16 lg:text-12"
                 >*We will grant a 2-month free access on
                 <br class="lg:hidden" />a rolling basis, followed by an
                 exclusive discount.</span
               >
             </template>
             <template #after-submit-title>
-              <span
-                class="mb-40 text-center text-18 md:pt-8 lg:pt-8 lg:text-22"
+              <div class="mb-30 text-center text-18 lg:text-24">
+                Join the waitlist for
+                <br /><span class="font-semibold text-primary"
+                  >Zenerate App!</span
+                >
+              </div>
+            </template>
+            <template #after-submit-icon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="60"
+                height="60"
+                viewBox="0 0 60 60"
+                fill="none"
+                class="mb-14 lg:hidden"
               >
-                Your request has been submitted!
-              </span>
+                <ellipse
+                  cx="29.5519"
+                  cy="30"
+                  rx="29.5519"
+                  ry="30"
+                  fill="#EBEDFE"
+                />
+                <path
+                  d="M56.6963 4.54523L56.3744 4.92584L56.3836 4.93657L47.7026 15.24L26.5885 40.3054C26.1388 40.8397 25.538 41.1131 24.9358 41.1131C24.5754 41.1131 24.2149 41.013 23.8838 40.8165L25.1607 42.0298L27.0891 43.8614C27.5173 44.267 28.0348 44.469 28.5524 44.469C29.1546 44.469 29.7553 44.1974 30.2051 43.6613L60.0002 8.29243L56.6963 4.54523Z"
+                  fill="#4848FF"
+                />
+                <path
+                  d="M47.6958 15.2285L28.3792 38.1567L24.8243 34.7794L24.8135 34.7687L13.0935 23.6325L10.167 27.7817L21.5727 38.6177L21.5835 38.6285L23.8847 40.8157C24.2158 41.0122 24.5763 41.1123 24.9367 41.1123C25.5389 41.1123 26.1396 40.8407 26.5894 40.3046L47.705 15.241L47.6958 15.2285Z"
+                  fill="#4848FF"
+                  fill-opacity="0.4"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="71"
+                height="70"
+                viewBox="0 0 71 70"
+                fill="none"
+                class="mb-18 hidden lg:block"
+              >
+                <ellipse
+                  cx="34.9767"
+                  cy="35"
+                  rx="34.4772"
+                  ry="35"
+                  fill="#EBEDFE"
+                />
+                <path
+                  d="M66.6455 5.30236L66.2699 5.74641L66.2807 5.75892L56.1529 17.7796L31.5198 47.0226C30.995 47.6459 30.2942 47.9649 29.5916 47.9649C29.1711 47.9649 28.7506 47.8481 28.3643 47.6188L29.854 49.0344L32.1038 51.1712C32.6034 51.6445 33.2071 51.8801 33.8109 51.8801C34.5136 51.8801 35.2144 51.5632 35.7391 50.9378L70.5 9.6741L66.6455 5.30236Z"
+                  fill="#4848FF"
+                />
+                <path
+                  d="M56.1449 17.7663L33.6089 44.5158L29.4615 40.5756L29.4489 40.5631L15.7756 27.5709L12.3613 32.4117L25.668 45.0537L25.6806 45.0662L28.3653 47.6179C28.7517 47.8472 29.1721 47.964 29.5926 47.964C30.2953 47.964 30.9961 47.6471 31.5208 47.0217L56.1557 17.7809L56.1449 17.7663Z"
+                  fill="#4848FF"
+                  fill-opacity="0.4"
+                />
+              </svg>
             </template>
             <template #after-submit-text>
-              <span class="text-center text-13 text-gray-700 lg:text-16"
-                >We'll be in touch soon.</span
+              <span
+                class="mt-[-16px] w-[142px] text-center text-13 text-gray-700 lg:mt-[-14px] lg:w-[170px] lg:text-14 lg:text-16"
+                >We'll contact you within 1 to 3 business days.</span
               >
             </template>
           </FormContent>
