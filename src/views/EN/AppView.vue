@@ -3,7 +3,7 @@
     class="relative mx-auto min-h-[816px] min-w-[280px] max-w-[1200px] md:min-h-[546px] lg:min-h-[628px]"
   >
     <section
-      class="relative pt-136 pb-36 md:pt-156 md:pb-54 lg:pt-[212px] lg:pb-124"
+      class="relative pt-136 pb-36 md:pt-156 md:pb-54 lg:pt-[160px] lg:pb-124"
     >
       <!-- App WaitList Form -->
       <div
