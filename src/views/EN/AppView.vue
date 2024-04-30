@@ -137,8 +137,9 @@
             </template>
             <template #after-submit-text>
               <span
-                class="mt-[-16px] w-[142px] text-center text-13 text-gray-700 lg:mt-[-14px] lg:w-[170px] lg:text-14 lg:text-16"
-                >We'll contact you within 1~3 business days.</span
+                class="mt-[-16px] w-fit text-center text-13 text-gray-700 lg:mt-[-14px] lg:text-14 lg:text-16"
+                >Thank you for joining the waitlist.<br />We will reach out to
+                you in early June.</span
               >
             </template>
           </FormContent>
