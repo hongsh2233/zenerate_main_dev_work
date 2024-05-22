@@ -542,6 +542,8 @@ const submitForm = async () => {
         ? 'AI Consulting'
         : sheetName.value === 'ED1Report'
         ? 'ED1 Report'
+        : sheetName.value === 'AppWaitlist'
+        ? 'app_waitlist'
         : '',
   }
 
