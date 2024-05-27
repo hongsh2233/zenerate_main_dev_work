@@ -5,9 +5,18 @@
     <section
       class="relative pt-136 pb-36 md:pt-156 md:pb-54 lg:pt-[160px] lg:pb-124"
     >
+      <!-- <div class="mx-auto">
+        <iframe
+          style="border: 1px solid rgba(0, 0, 0, 0.1)"
+          width="1200"
+          height="824"
+          src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FONKXAJYIqIpbHmibaNA3w0%2FUX-Test-(5%252F21)%3Fnode-id%3D4129-113667%26t%3D2klvlrif825IZo87-1%26scaling%3Dscale-down-width%26page-id%3D4129%253A53082%26starting-point-node-id%3D4129%253A65673"
+        ></iframe>
+      </div> -->
+
       <!-- App WaitList Form -->
       <div
-        class="mx-auto flex w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white shadow-200 md:w-[714px] md:flex-row lg:min-w-[1070px] lg:flex-row"
+        class="app-wait-list-form mx-auto flex w-[320px] min-w-[320px] flex-col overflow-hidden rounded-10 bg-white shadow-200 md:w-[714px] md:flex-row lg:min-w-[1070px] lg:flex-row"
       >
         <div
           class="relative flex h-[450px] w-[320px] flex-row justify-center !overflow-hidden md:h-[450px] md:w-[434px] md:min-w-[434px] lg:h-[600px] lg:w-[644px] lg:min-w-[644px]"
@@ -153,8 +162,40 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { nextTick, onMounted } from 'vue'
 import { useHead } from '@vueuse/head'
+import router from '/@/router'
+
 import { Footer, FormContent } from '/Components/EN'
+
+onMounted(() => {
+  nextTick(() => {
+    nextTick(() => {
+      if (router.currentRoute.value.hash === '#form') {
+        const offsetY = document.body.clientWidth > 761.9 ? -160 : -116
+        setTimeout(() => {
+          const target = document.querySelector('.app-wait-list-form')
+          const y =
+            target.getBoundingClientRect().top + window.scrollY + offsetY
+          window.scrollTo({ top: y })
+        }, 100)
+        setTimeout(() => {
+          const target = document.querySelector('.app-wait-list-form')
+          const y =
+            target.getBoundingClientRect().top + window.scrollY + offsetY
+          window.scrollTo({ top: y })
+        }, 500)
+
+        setTimeout(() => {
+          const target = document.querySelector('.app-wait-list-form')
+          const y =
+            target.getBoundingClientRect().top + window.scrollY + offsetY
+          window.scrollTo({ top: y })
+        }, 1000)
+      }
+    })
+  })
+})
 
 useHead({
   title: `About the Zenerate App | AI-Powered, Real-Time Feasibility Solution`,
