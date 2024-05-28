@@ -172,7 +172,7 @@ onMounted(() => {
   nextTick(() => {
     nextTick(() => {
       if (router.currentRoute.value.hash === '#form') {
-        const offsetY = document.body.clientWidth > 761.9 ? -160 : -116
+        const offsetY = document.body.clientWidth > 761.9 ? -160 : -48
         setTimeout(() => {
           const target = document.querySelector('.app-wait-list-form')
           const y =
