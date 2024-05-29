@@ -49,15 +49,19 @@ const props = defineProps({
 const trigger = computed(() => props.trigger ?? 'default')
 const emits = defineEmits(['close'])
 
+// https://calendly.com/d/yrk-k6f-zbv
 const CALENDLY_URL_DIC = {
-  default: 'https://calendly.com/d/yrk-k6f-zbv',
-  zenapp: 'https://calendly.com/zenerate/app-demo?utm_content=homepage-zenapp',
-  header: 'https://calendly.com/d/yrk-k6f-zbv?utm_content=homepage-header',
+  default: 'https://calendly.com/zenerate/modular-demo',
+  zenapp:
+    'https://calendly.com/zenerate/modular-demo?utm_content=homepage-zenapp',
+  header:
+    'https://calendly.com/zenerate/modular-demo?utm_content=homepage-header',
   laststrip:
-    'https://calendly.com/d/yrk-k6f-zbv?utm_content=homepage-laststrip',
+    'https://calendly.com/zenerate/modular-demo?utm_content=homepage-laststrip',
   modularlandingpage:
     'https://calendly.com/zenerate/modular-demo?utm_content=modularlandingpage',
-  aboutus: 'https://calendly.com/d/yrk-k6f-zbv?utm_content=homepage-aboutus',
+  aboutus:
+    'https://calendly.com/zenerate/modular-demo?utm_content=homepage-aboutus',
 }
 const calendlyUrl = computed(() => {
   const trigger = props.trigger ?? 'default'
