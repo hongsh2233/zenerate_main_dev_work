@@ -31,9 +31,9 @@
             alt=""
           />
           <div
-            class="absolute flex h-full w-full flex-col items-center bg-gradient-to-b from-[rgba(34,35,39,0.50)] via-[rgba(34,35,39,0.50)] to-[rgba(0,7,41,0.60)] px-28 pt-44 pb-26 text-white md:items-start md:pl-38 md:pr-20 md:pt-36 md:pb-38 md:text-left lg:items-start lg:pt-48 lg:pr-40 lg:pb-50 lg:pl-60 lg:text-left"
+            class="absolute flex h-full w-full flex-col items-center bg-gradient-to-b from-[rgba(34,35,39,0.50)] via-[rgba(34,35,39,0.50)] to-[rgba(0,7,41,0.60)] px-18 pt-32 pb-26 text-white md:items-start md:pl-38 md:pr-20 md:pt-44 md:pb-38 md:text-left lg:items-start lg:pt-72 lg:pr-40 lg:pb-50 lg:pl-60 lg:text-left"
           >
-            <div class="mb-4 flex flex-row items-center md:mb-8 lg:mb-12">
+            <!-- <div class="mb-4 flex flex-row items-center md:mb-8 lg:mb-12">
               <img
                 class="lg:hidden"
                 :src="`/img/logo_white.svg`"
@@ -50,16 +50,16 @@
                 class="ml-12 pb-4 font-poppins text-34 font-semibold lg:ml-16 lg:pb-6 lg:text-46"
                 >App</span
               >
-            </div>
+            </div> -->
             <span
-              class="mb-[200px] text-center text-24 font-bold md:text-left md:text-26 lg:mb-[268px] lg:text-left lg:text-34"
+              class="mb-auto text-center text-22 font-bold md:text-left md:text-26 lg:mb-auto lg:text-left lg:text-34"
             >
-              AI-powered, Real-time<br />Feasibility Solution
+              AI-powered, Real-time<br />Automated Design Solution
             </span>
             <span
               class="text-center text-16 font-bold md:text-left md:text-18 lg:text-left lg:text-26"
               >Generate optimized designs for<br />FAR & Density or manually
-              edit floor plans</span
+              edit <br class="md:hidden lg:hidden" />floor plans</span
             >
           </div>
         </div>
@@ -200,7 +200,7 @@ onMounted(() => {
 useHead({
   title: `About the Zenerate App | AI-Powered, Real-Time Feasibility Solution`,
   htmlAttrs: { lang: 'en' },
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/app' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/app-waitlist' }],
   meta: [
     {
       name: `description`,
@@ -225,7 +225,7 @@ useHead({
     {
       hid: 'og:url',
       property: 'og:url',
-      content: 'https://www.zenerate.ai/app',
+      content: 'https://www.zenerate.ai/app-waitlist',
     },
     {
       hid: 'og:title',

@@ -55,7 +55,10 @@
             v-model="SignUpForm.email.value"
             @input="(v) => validation('email')"
           />
-          <p class="mt-3 px-3 text-10 text-core-500">
+          <p
+            v-if="sheetName !== 'AppFreeTrial'"
+            class="mt-3 px-3 text-10 text-core-500"
+          >
             *Company email preferred
           </p>
         </div>
@@ -365,6 +368,7 @@ type SheetName =
   | 'Modular'
   | 'ED1Report'
   | 'AppWaitlist'
+  | 'AppFreeTrial'
 type InputType =
   | 'firstName'
   | 'lastName'
@@ -405,6 +409,7 @@ const CONTENT_LIST_DICT: Record<SheetName, InputType[]> = {
     'projectDetail',
   ],
   AppWaitlist: ['email', 'jobTitle'],
+  AppFreeTrial: ['firstName', 'lastName', 'company', 'email'],
 }
 
 const sheetName = computed(() => props.sheetName)
@@ -544,6 +549,8 @@ const submitForm = async () => {
         ? 'ED1 Report'
         : sheetName.value === 'AppWaitlist'
         ? 'app_waitlist'
+        : sheetName.value === 'AppFreeTrial'
+        ? 'App Free Trial'
         : '',
   }
 

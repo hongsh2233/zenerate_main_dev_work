@@ -57,7 +57,7 @@
               >
                 <router-link
                   :to="{
-                    name: 'en-app',
+                    name: 'en-app-waitlist',
                     query: getCurrentUtmQuery(router),
                   }"
                 >
