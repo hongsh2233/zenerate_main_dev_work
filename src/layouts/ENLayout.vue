@@ -11,7 +11,7 @@
             toggleDrawer(false)
           }
           router.push({
-            name: 'en-app',
+            name: 'en-app-waitlist',
             query: getCurrentUtmQuery(router),
           })
         }

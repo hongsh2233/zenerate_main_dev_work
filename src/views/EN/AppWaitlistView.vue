@@ -200,7 +200,7 @@ onMounted(() => {
 useHead({
   title: `About the Zenerate App | AI-Powered, Real-Time Feasibility Solution`,
   htmlAttrs: { lang: 'en' },
-  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/app' }],
+  link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/app-waitlist' }],
   meta: [
     {
       name: `description`,
@@ -225,7 +225,7 @@ useHead({
     {
       hid: 'og:url',
       property: 'og:url',
-      content: 'https://www.zenerate.ai/app',
+      content: 'https://www.zenerate.ai/app-waitlist',
     },
     {
       hid: 'og:title',

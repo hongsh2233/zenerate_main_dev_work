@@ -17,7 +17,7 @@ import ZenerateView from '/Views/EN/ZenerateView.vue'
 import AIConsultingVIew from '/Views/EN/AIConsultingView.vue'
 import ModularView from '/Views/EN/ModularView.vue'
 import DemoSignUpView from '/Views/EN/DemoSignUpView.vue'
-import AppView from '/Views/EN/AppView.vue'
+import AppAIAView from '/Views/EN/AppAIAView.vue'
 import AppWaitlistView from '/Views/EN/AppWaitlistView.vue'
 
 const ENRoute: RouteRecordRaw = {
@@ -32,8 +32,8 @@ const ENRoute: RouteRecordRaw = {
     },
     {
       path: '/app',
-      name: 'en-app',
-      component: AppView,
+      name: 'en-app-aia',
+      component: AppAIAView,
     },
     // /zenerate-app -> /app 리다이렉트
     {
