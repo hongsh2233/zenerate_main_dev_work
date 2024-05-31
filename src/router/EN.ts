@@ -18,6 +18,7 @@ import AIConsultingVIew from '/Views/EN/AIConsultingView.vue'
 import ModularView from '/Views/EN/ModularView.vue'
 import DemoSignUpView from '/Views/EN/DemoSignUpView.vue'
 import AppView from '/Views/EN/AppView.vue'
+import AppWaitlistView from '/Views/EN/AppWaitlistView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -38,6 +39,11 @@ const ENRoute: RouteRecordRaw = {
     {
       path: '/zenerate-app',
       redirect: '/app',
+    },
+    {
+      path: '/app-waitlist',
+      name: 'en-app-waitlist',
+      component: AppWaitlistView,
     },
 
     {
