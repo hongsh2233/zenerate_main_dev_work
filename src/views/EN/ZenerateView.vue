@@ -21,7 +21,7 @@
           <p
             class="mb-24 text-center text-30 md:mb-20 md:text-44 lg:mb-14 lg:text-left lg:text-42 lg:font-light"
           >
-            <span class="font-medium">AI-Powered, Real-Time</span>Feasibility
+            <span class="font-medium">AI-powered, Real-time,</span>Feasibility
             Study Tool
           </p>
 
@@ -289,7 +289,7 @@ import Emitter from '/Libraries/bus'
 import { MENU_EVENT } from '/Constants/eventConstant'
 
 useHead({
-  title: `About the Zenerate App | AI-Powered, Real-Time Feasibility Study Tool`,
+  title: `About the Zenerate App | AI-powered, Real-time, Feasibility Study Tool`,
   htmlAttrs: { lang: 'en' },
   link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/zenerate-app' }],
   meta: [
@@ -300,7 +300,7 @@ useHead({
     {
       hid: 'twitter:title',
       property: 'twitter:title',
-      content: `About the Zenerate App | AI-Powered, Real-Time Feasibility Study Tool`,
+      content: `About the Zenerate App | AI-powered, Real-time, Feasibility Study Tool`,
     },
     {
       hid: 'twitter:description',
@@ -321,7 +321,7 @@ useHead({
     {
       hid: 'og:title',
       property: 'og:title',
-      content: `About the Zenerate App | AI-Powered, Real-Time Feasibility Study Tool`,
+      content: `About the Zenerate App | AI-powered, Real-time, Feasibility Study Tool`,
     },
     {
       hid: 'og:description',
