@@ -15,7 +15,7 @@
           <span
             class="mb-24 w-[320px] text-center text-30 md:mb-20 md:w-[600px] md:text-44 lg:mb-14 lg:w-[600px] lg:text-left lg:text-42 lg:font-light"
           >
-            <span class="inline font-medium">AI-Powered, Real-time</span>
+            <span class="inline font-medium">AI-powered, Real-time,</span>
             <span>Feasibility Studies<br />for Modular Housing</span>
           </span>
 
@@ -907,7 +907,7 @@ const sendBannerEmail = async () => {
 
 // TODO: thumbnail
 useHead({
-  title: `About the Zenerate Modular | AI-Powered, Real-timeFeasibility Studies
+  title: `About the Zenerate Modular | AI-powered, Real-time, Feasibility Studies
 for Modular Housing`,
   htmlAttrs: { lang: 'en' },
   link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/modular' }],
@@ -920,7 +920,7 @@ for Modular Housing`,
     {
       hid: 'twitter:title',
       property: 'twitter:title',
-      content: `About the Zenerate Modular | AI-Powered, Real-timeFeasibility Studies
+      content: `About the Zenerate Modular | AI-powered, Real-time, Feasibility Studies
 for Modular Housing`,
     },
     {
@@ -943,7 +943,7 @@ for Modular Housing`,
     {
       hid: 'og:title',
       property: 'og:title',
-      content: `About the Zenerate Modular | AI-Powered, Real-timeFeasibility Studies
+      content: `About the Zenerate Modular | AI-powered, Real-time, Feasibility Studies
 for Modular Housing`,
     },
     {

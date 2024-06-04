@@ -54,7 +54,7 @@
             <span
               class="mb-auto text-center text-22 font-bold md:text-left md:text-26 lg:mb-auto lg:text-left lg:text-34"
             >
-              AI-powered, Real-time<br />Automated Design Solution
+              AI-powered, Real-time,<br />Automated Design Solution
             </span>
             <span
               class="text-center text-16 font-bold md:text-left md:text-18 lg:text-left lg:text-26"
@@ -198,7 +198,7 @@ onMounted(() => {
 })
 
 useHead({
-  title: `About the Zenerate App | AI-Powered, Real-Time Feasibility Solution`,
+  title: `About the Zenerate App | AI-powered, Real-time, Feasibility Solution`,
   htmlAttrs: { lang: 'en' },
   link: [{ rel: 'canonical', href: 'https://www.zenerate.ai/app-waitlist' }],
   meta: [
@@ -209,7 +209,7 @@ useHead({
     {
       hid: 'twitter:title',
       property: 'twitter:title',
-      content: `About the Zenerate App | AI-Powered, Real-Time Feasibility Solution`,
+      content: `About the Zenerate App | AI-powered, Real-time, Feasibility Solution`,
     },
     {
       hid: 'twitter:description',
@@ -230,7 +230,7 @@ useHead({
     {
       hid: 'og:title',
       property: 'og:title',
-      content: `About the Zenerate App | AI-Powered, Real-Time Feasibility Solution`,
+      content: `About the Zenerate App | AI-powered, Real-time, Feasibility Solution`,
     },
     {
       hid: 'og:description',

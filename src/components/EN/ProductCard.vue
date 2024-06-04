@@ -33,7 +33,7 @@
         <p
           class="ml-28 text-18 font-light md:ml-60 md:mb-34 md:text-24 lg:mb-52 lg:ml-84 lg:text-32"
         >
-          <span class="font-medium">AI-Powered, Real-time</span><br />
+          <span class="font-medium">AI-Powered, Real-time,</span><br />
           Feasibility Studies<br />for Modular Housing
         </p>
         <router-link
