@@ -20,7 +20,7 @@
       <div class="signup-banner-inner pointer-events-none">
         <p>
           <span
-            >Join the waitlist for Zenerate App for a 2-month free trial</span
+            >Join the waitlist for Zenerate App for a 2-week free trial</span
           >
         </p>
         <IconBase

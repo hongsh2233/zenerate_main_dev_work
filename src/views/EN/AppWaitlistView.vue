@@ -79,7 +79,7 @@
             <template #under-submit-btn-text>
               <span
                 class="mt-10 text-center text-10 text-gray-500 lg:mt-16 lg:text-12"
-                >*We will grant a 2-month free access on
+                >*We will grant a 2-week free access on
                 <br class="lg:hidden" />a rolling basis, followed by an
                 exclusive discount.</span
               >
