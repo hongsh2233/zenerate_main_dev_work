@@ -79,7 +79,7 @@
                 >
               </div>
               <span class="mb-[-6px] text-10 text-gray-450 lg:text-12"
-                >*Trials can be expended upon request.</span
+                >*Trials can be extended upon request.</span
               >
             </template>
             <template #under-submit-btn-text>
