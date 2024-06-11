@@ -63,6 +63,7 @@
         class="absolute top-[-110px] h-0 w-full"
         ref="startOfProductSection"
       ></div>
+      <ProductCard product="zen-app" class="mb-20 lg:mb-30" />
       <ProductCard product="zenerate-modular" class="mb-20 lg:mb-30" />
       <ProductCard product="ai-consulting" class="mb-20 lg:mb-30" />
       <ProductCard product="zmaps" />
@@ -138,66 +139,24 @@
       class="blue-wave-wrapper relative h-[406px] bg-black md:h-[363px] lg:h-[326px]"
     >
       <div
-        class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center bg-black/50 px-20 pt-76 md:pt-[85px] lg:pt-[67px]"
+        class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center bg-black/50 px-20 pt-115 md:pt-[98px] lg:pt-[82px]"
       >
         <span
           class="mb-18 w-[260px] text-center text-22 text-white md:mb-12 md:w-full md:text-26 lg:mb-12 lg:w-full lg:text-28"
-          >Interested in Non-Modular or Stick-Build Solutions?</span
+          >Interested in Getting <br class="md:hidden lg:hidden" />a Free
+          Trial?</span
         >
         <span
           class="mb-30 w-[300px] text-center text-16 text-white md:mb-40 md:w-full md:text-18 lg:mb-32 lg:w-full lg:text-20"
-          >Join the waitlist now for early access
-          <br class="md:hidden lg:hidden" />and exclusive discounts on Zenerate
-          App, <br class="lg:hidden" />launching in June 2024.</span
+          >Schedule a Demo Followed by a Free Trial</span
         >
 
-        <div
-          class="flex h-58 w-[330px] flex-row items-center justify-center rounded-6 border-gray-100 bg-white p-4 shadow-200 md:w-[380px] lg:w-[380px]"
+        <button
+          class="text-16-semibold mx-auto h-[46px] w-[250px] rounded-6 bg-primary text-center leading-[46px] !text-white duration-300 hover:bg-core-700 md:text-20-semibold md:h-[56px] md:w-[236px] md:leading-[56px] lg:text-20-semibold lg:h-[56px] lg:w-[236px] lg:leading-[56px]"
+          @click="openCalendlyPopup"
         >
-          <template v-if="bannerEmail.isSent">
-            <div
-              class="flex h-24 w-24 items-center justify-center rounded-12 bg-core-20"
-            >
-              <IconBase
-                icon-name="checkmark-bold"
-                icon-color="#5C6DFF"
-                :width="16"
-                :height="16"
-                class="h-16 w-16"
-              />
-            </div>
-            <span class="text-16-medium ml-10">Thank you for Signing Up!</span>
-          </template>
-          <template v-else>
-            <div class="relative">
-              <input
-                id="modular-waitlist-input-gtm"
-                ref="bannerEmailInput"
-                type="text"
-                inputmode="email"
-                :spellcheck="false"
-                placeholder="Email Address"
-                v-model="bannerEmail.inputValue"
-                class="h-50 w-[188px] border-none pl-12 md:w-[211px] lg:w-[211px]"
-                @focus="bannerEmail.showErrorMsg = false"
-              />
-
-              <span
-                v-if="bannerEmail.showErrorMsg"
-                @click="hideBannerEmailErrorMsg"
-                class="absolute top-0 left-0 flex h-50 w-[188px] items-center bg-white px-12 py-4 text-12 text-red-500 md:w-[211px] md:text-14 lg:w-[211px] lg:text-14"
-                >Please enter a valid email.</span
-              >
-            </div>
-            <button
-              id="modular-waitlist-submit-button-gtm"
-              class="text-14-medium ml-4 h-50 w-[130px] min-w-[130px] rounded-4 bg-primary text-white hover:bg-core-700 md:w-[157px] md:min-w-[157px] lg:w-[157px] lg:min-w-[157px]"
-              @click="sendBannerEmail"
-            >
-              Join Waitlist
-            </button>
-          </template>
-        </div>
+          Get a Demo
+        </button>
       </div>
     </section>
 
