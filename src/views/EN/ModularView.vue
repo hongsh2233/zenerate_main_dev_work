@@ -717,7 +717,7 @@
     </section>
 
     <!-- WAVE BANNER -->
-    <section
+    <!-- <section
       class="blue-wave-wrapper relative h-[406px] bg-black md:h-[363px] lg:h-[326px]"
     >
       <div
@@ -782,7 +782,7 @@
           </template>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="section section-footer fp-auto-height">
       <Footer />
