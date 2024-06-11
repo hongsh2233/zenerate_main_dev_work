@@ -57,7 +57,7 @@
               >
                 <router-link
                   :to="{
-                    name: 'en-app-waitlist',
+                    name: 'en-zen-app',
                     query: getCurrentUtmQuery(router),
                   }"
                 >

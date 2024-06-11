@@ -11,7 +11,7 @@
             toggleDrawer(false)
           }
           router.push({
-            name: 'en-app-waitlist',
+            name: 'en-zen-app',
             query: getCurrentUtmQuery(router),
           })
         }
