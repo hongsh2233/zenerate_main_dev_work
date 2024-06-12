@@ -146,7 +146,11 @@
             >
               {{ idx + 1 }}
             </div>
-            <span class="text-18-medium min-w-fit">{{ data.title }}</span>
+            <span
+              class="text-18-medium min-w-fit"
+              :class="idx === 2 && 'max-w-[160px]'"
+              >{{ data.title }}</span
+            >
           </div>
         </template>
       </Carousel>
