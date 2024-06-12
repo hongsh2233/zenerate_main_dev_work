@@ -877,7 +877,7 @@ onMounted(() => {
         width: 236px;
       }
       .description {
-        width: 276px;
+        width: 240px;
       }
     }
     @include en-mobile {
