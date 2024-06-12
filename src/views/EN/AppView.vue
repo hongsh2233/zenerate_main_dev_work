@@ -869,7 +869,7 @@ onMounted(() => {
         width: 300px;
       }
       .description {
-        width: 324px;
+        width: 280px;
       }
     }
     @include en-tablet {
