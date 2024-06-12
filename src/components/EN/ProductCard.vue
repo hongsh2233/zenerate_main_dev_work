@@ -274,7 +274,7 @@ const CARD_DATA = {
       background-size: 708px 468px;
     }
     @include en-mobile {
-      background-image: url('/public/en/products/zen_app_mobile.png');
+      background-image: url('/public/en/products/zen_app_mobile_new.png');
       background-size: 320px 388px;
       background-position: bottom 203px center;
     }
