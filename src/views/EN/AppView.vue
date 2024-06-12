@@ -349,21 +349,22 @@
       >
         <div
           v-for="(data, dataIdx) in NEED_CUSTOMIZATION"
-          class="flex h-fit w-[320px] flex-col rounded-10 px-24 pt-20 pb-34 shadow-200 not-last:mb-12 md:h-fit md:w-[580px] md:flex-row md:py-24 md:px-20 md:not-last:mb-10 lg:!mb-0 lg:h-[252px] lg:pl-30 lg:pr-24 lg:pt-30 lg:pb-26 lg:not-last:mr-12"
+          class="flex h-fit w-[320px] flex-col rounded-10 px-24 pt-20 pb-34 shadow-200 not-last:mb-12 md:h-fit md:w-[708px] md:flex-row md:py-24 md:px-20 md:not-last:mb-10 lg:!mb-0 lg:h-[252px] lg:pl-30 lg:pr-24 lg:pt-30 lg:pb-26 lg:not-last:mr-12"
           :class="`card${dataIdx + 1}`"
         >
           <img
             :src="`/en/zen_app/${data.iconName}.png`"
             width="36"
             height="36"
-            class="ml-4 mt-6 mb-12 md:mt-0 md:mr-36 lg:mt-0 lg:mb-16"
+            class="ml-4 mt-6 mb-12 md:mt-4 md:mr-36 md:ml-8 lg:mt-0 lg:mb-16"
             alt=""
           />
-          <div class="flex w-[260px] flex-col md:w-[426px] lg:w-full">
-            <span class="title text-16-medium mb-8 md:text-20 lg:text-20">{{
-              data.title
-            }}</span>
-            <span class="description text-gray-600 md:text-18 lg:text-18">{{
+          <div class="flex w-[260px] flex-col md:w-[584px] lg:w-full">
+            <span
+              class="title text-16-medium mb-8 md:mb-4 md:text-20 lg:text-20"
+              >{{ data.title }}</span
+            >
+            <span class="description text-gray-600 md:text-16 lg:text-18">{{
               data.description
             }}</span>
           </div>
