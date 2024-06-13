@@ -56,7 +56,7 @@
             @input="(v) => validation('email')"
           />
           <p
-            v-if="sheetName !== 'AppFreeTrial'"
+            v-if="sheetName !== 'AppFreeTrial' && sheetName !== 'ZenApp'"
             class="mt-3 px-3 text-10 text-core-500"
           >
             *Company email preferred
@@ -369,6 +369,7 @@ type SheetName =
   | 'ED1Report'
   | 'AppWaitlist'
   | 'AppFreeTrial'
+  | 'ZenApp'
 type InputType =
   | 'firstName'
   | 'lastName'
@@ -410,6 +411,7 @@ const CONTENT_LIST_DICT: Record<SheetName, InputType[]> = {
   ],
   AppWaitlist: ['email', 'jobTitle'],
   AppFreeTrial: ['firstName', 'lastName', 'company', 'email'],
+  ZenApp: ['firstName', 'lastName', 'email', 'company', 'jobTitle', 'message'],
 }
 
 const sheetName = computed(() => props.sheetName)
@@ -551,6 +553,8 @@ const submitForm = async () => {
         ? 'app_waitlist'
         : sheetName.value === 'AppFreeTrial'
         ? 'App Free Trial'
+        : sheetName.value === 'ZenApp'
+        ? 'Zen App'
         : '',
   }
 

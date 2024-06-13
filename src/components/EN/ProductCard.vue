@@ -80,6 +80,34 @@
             class="ml-8"
         /></router-link>
       </template>
+
+      <template v-else-if="product === 'zen-app'">
+        <img
+          :src="`/en/zen_app/zen_app_logo.svg`"
+          alt=""
+          class="ml-28 mt-30 mb-10 w-[148px] md:mt-94 md:ml-60 md:mb-14 md:w-[198px] lg:ml-84 lg:mt-[100px] lg:mb-18 lg:w-[268px]"
+        />
+        <p
+          class="ml-28 text-18 font-light md:ml-60 md:mb-34 md:text-24 lg:mb-52 lg:ml-84 lg:text-32"
+        >
+          <span class="font-medium">AI-Powered, Real-time,</span><br />
+          Automated Design Solution
+        </p>
+        <router-link
+          :to="{
+            name: CARD_DATA[product].buttonLinkedTo,
+            query: getCurrentUtmQuery(router),
+          }"
+          class="learn-more-button text-18-medium ml-60 hidden w-fit flex-row items-center !text-primary hover:!text-core-700 md:text-16-medium md:flex lg:ml-84 lg:flex"
+          :class="product"
+          >{{ CARD_DATA[product].buttonText
+          }}<IconBase
+            icon-name="arrow-right"
+            :width="24"
+            :height="24"
+            class="ml-8"
+        /></router-link>
+      </template>
     </div>
 
     <div class="inner-shadow mt-auto h-fit py-20 px-22 md:px-60 lg:pl-84">
@@ -99,7 +127,7 @@
           :class="
             product === 'zenerate-modular'
               ? 'md:w-[240px] lg:w-[320px]'
-              : 'md:w-[280px] lg:w-[340px]'
+              : 'md:w-[300px] lg:w-[360px]'
           "
         >
           <span
@@ -151,7 +179,9 @@ import IconBase from './ui/IconBase.vue'
 import { ZmapsLogo } from '/Components/EN'
 
 const props = defineProps({
-  product: String as PropType<'zmaps' | 'zenerate-modular' | 'ai-consulting'>,
+  product: String as PropType<
+    'zmaps' | 'zenerate-modular' | 'ai-consulting' | 'zen-app'
+  >,
 })
 
 const router = useRouter()
@@ -180,6 +210,11 @@ const CARD_DATA = {
     bestFor: ['developer_investor', 'architect'],
     buttonText: 'Learn More About AI Consulting',
     buttonLinkedTo: 'en-ai-consulting',
+  },
+  'zen-app': {
+    bestFor: ['developer', 'architect', 'broker'],
+    buttonText: 'Learn More About the App',
+    buttonLinkedTo: 'en-zen-app',
   },
 }
 </script>
@@ -230,8 +265,24 @@ const CARD_DATA = {
     }
   }
 
+  &.zen-app {
+    background-image: url('/public/en/products/zen_app_desktop.png');
+    background-size: 980px 648px;
+    background-position: center;
+    @include en-tablet {
+      background-image: url('/public/en/products/zen_app_tablet.png');
+      background-size: 708px 468px;
+    }
+    @include en-mobile {
+      background-image: url('/public/en/products/zen_app_mobile_new.png');
+      background-size: 320px 388px;
+      background-position: bottom 203px center;
+    }
+  }
+
   .learn-more-button {
-    &.zenerate-modular {
+    &.zenerate-modular,
+    &.zen-app {
       svg {
         :deep(path) {
           fill: theme('colors.primary.DEFAULT') !important;

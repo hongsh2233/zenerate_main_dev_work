@@ -5,7 +5,7 @@ export default [
     children: [
       {
         title: 'Zenerate App',
-        to: 'en-app-waitlist',
+        to: 'en-zen-app',
         icon: 'zenerate-app',
       },
       {
