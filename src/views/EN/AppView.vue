@@ -77,7 +77,7 @@
         :class="`card${idx + 1}`"
       >
         <video
-          class="z-[0] h-fit w-full md:h-full md:w-fit lg:h-full lg:w-fit"
+          class="z-[0] h-fit w-full md:w-[360px] lg:w-[484px]"
           :autoplay="true"
           :muted="true"
           :loop="true"
