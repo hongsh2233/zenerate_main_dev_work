@@ -266,15 +266,15 @@ const CARD_DATA = {
   }
 
   &.zen-app {
-    background-image: url('/public/en/products/zen_app_desktop.png');
+    background-image: url('/public/en/products/zen_app_desktop_new_new.png');
     background-size: 980px 648px;
     background-position: center;
     @include en-tablet {
-      background-image: url('/public/en/products/zen_app_tablet.png');
+      background-image: url('/public/en/products/zen_app_tablet_new_new.png');
       background-size: 708px 468px;
     }
     @include en-mobile {
-      background-image: url('/public/en/products/zen_app_mobile_new.png');
+      background-image: url('/public/en/products/zen_app_mobile_new_new.png');
       background-size: 320px 388px;
       background-position: bottom 203px center;
     }
