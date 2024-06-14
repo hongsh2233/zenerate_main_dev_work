@@ -39,7 +39,7 @@
         </div>
       </div>
       <div
-        class="z-[-1] mx-auto h-[457px] w-full max-w-[1200px] md:h-[602px] lg:!h-[548px] lg:w-fit lg:pt-120 lg:pl-[290px]"
+        class="z-[-1] mx-auto h-[457px] w-full max-w-[1200px] md:h-[602px] lg:!h-[648px] lg:w-fit lg:pt-140 lg:pl-[290px]"
       >
         <video
           class="h-full w-full"
