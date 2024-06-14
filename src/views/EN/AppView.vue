@@ -43,7 +43,7 @@
           :muted="true"
           :loop="true"
           :playsinline="true"
-          src="/en/zen_app/hero_mobile.mp4"
+          src="/en/zen_app/header_mobile.mp4"
           alt=""
         />
         <video
@@ -52,7 +52,7 @@
           :muted="true"
           :loop="true"
           :playsinline="true"
-          src="/en/zen_app/hero_tablet.mp4"
+          src="/en/zen_app/header_tablet.mp4"
           alt=""
         />
         <video
@@ -61,7 +61,7 @@
           :muted="true"
           :loop="true"
           :playsinline="true"
-          src="/en/zen_app/hero_desktop.mp4"
+          src="/en/zen_app/header_desktop.mp4"
           alt=""
         />
       </div>
@@ -733,7 +733,7 @@ const commonPreloadImages = [
 
 const onloadVideos = {
   desktop: [
-    '/en/zen_app/hero_desktop.mp4',
+    '/en/zen_app/header_desktop.mp4',
     '/en/zen_app/how_it_works1_desktop.mp4',
     '/en/zen_app/how_it_works2_desktop.mp4',
     '/en/zen_app/how_it_works3_desktop.mp4',
@@ -741,7 +741,7 @@ const onloadVideos = {
     '/en/zen_app/how_it_works5_desktop.mp4',
   ],
   tablet: [
-    '/en/zen_app/hero_tablet.mp4',
+    '/en/zen_app/header_tablet.mp4',
     '/en/zen_app/how_it_works1_tablet_mobile.mp4',
     '/en/zen_app/how_it_works2_tablet_mobile.mp4',
     '/en/zen_app/how_it_works3_tablet_mobile.mp4',
@@ -749,7 +749,7 @@ const onloadVideos = {
     '/en/zen_app/how_it_works5_tablet_mobile.mp4',
   ],
   mobile: [
-    '/en/zen_app/hero_mobile.mp4',
+    '/en/zen_app/header_mobile.mp4',
     '/en/zen_app/how_it_works1_tablet_mobile.mp4',
     '/en/zen_app/how_it_works2_tablet_mobile.mp4',
     '/en/zen_app/how_it_works3_tablet_mobile.mp4',
