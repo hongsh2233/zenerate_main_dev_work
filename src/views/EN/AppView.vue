@@ -596,7 +596,7 @@ useHead({
 const PRODUCT_DESCRIPTION = [
   {
     imgType: 'video',
-    imgUrl: 'product_description1.mp4',
+    imgUrl: 'product_description1_edited.mp4',
     title: 'Automated Building Design & Site Planning',
     content: [
       'With a few inputs, run our engine to generate various building and site plan options in real-time that meet your project objectives.',
@@ -605,7 +605,7 @@ const PRODUCT_DESCRIPTION = [
   },
   {
     imgType: 'video',
-    imgUrl: 'product_description2.mp4',
+    imgUrl: 'product_description2_edited.mp4',
     title: 'Optimized Design Solutions',
     content: [
       'Optimize your design by maximizing floor area ratio or density, or specifying a unit mix.',
@@ -615,7 +615,7 @@ const PRODUCT_DESCRIPTION = [
   },
   {
     imgType: 'video',
-    imgUrl: 'product_description3.mp4',
+    imgUrl: 'product_description3_edited.mp4',
     title: 'Manual Design',
     content: [
       'Easily insert and adjust parking and building layouts.',
@@ -625,7 +625,7 @@ const PRODUCT_DESCRIPTION = [
   },
   {
     imgType: 'video',
-    imgUrl: 'product_description4.mp4',
+    imgUrl: 'product_description4_edited.mp4',
     title: 'Pro Forma',
     content: [
       'Set financial assumptions to compute net operating income (NOI), construction cost, project cost, yield on cost or residual value.',
@@ -634,7 +634,7 @@ const PRODUCT_DESCRIPTION = [
   },
   {
     imgType: 'video',
-    imgUrl: 'product_description5.mp4',
+    imgUrl: 'product_description5_edited.mp4',
     title: 'Export',
     content: [
       'Quickly generate PDF reports, export data in Excel, or download floor plans in CAD or Revit to further develop design.',
@@ -759,11 +759,11 @@ const onloadVideos = {
 }
 
 const commonPreloadVideos = [
-  '/en/zen_app/product_description1.mp4',
-  '/en/zen_app/product_description2.mp4',
-  '/en/zen_app/product_description3.mp4',
-  '/en/zen_app/product_description4.mp4',
-  '/en/zen_app/product_description5.mp4',
+  '/en/zen_app/product_description1_edited.mp4',
+  '/en/zen_app/product_description2_edited.mp4',
+  '/en/zen_app/product_description3_edited.mp4',
+  '/en/zen_app/product_description4_edited.mp4',
+  '/en/zen_app/product_description5_edited.mp4',
 ]
 
 const mediaQueryDevice =
