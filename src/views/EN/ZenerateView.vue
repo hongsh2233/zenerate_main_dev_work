@@ -150,7 +150,7 @@
       <div
         class="mx-auto mb-36 w-[360px] text-center text-18 text-gray-550 md:w-[420px] lg:w-full"
       >
-        Simple, intuitive process generating powerful results
+        Simple & intuitive process generating powerful results
       </div>
       <div
         v-for="(data, idx) in HOW_IT_WORKS"

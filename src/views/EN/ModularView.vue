@@ -137,7 +137,7 @@
       <div
         class="mx-auto mb-36 w-[300px] text-center text-18 text-gray-550 md:mb-36 md:w-[420px] lg:mb-60 lg:w-full"
       >
-        Simple, intuitive process generating powerful results
+        Simple & intuitive process generating powerful results
       </div>
       <Carousel
         :key="howItWorksIdx"
