@@ -1060,3 +1060,12 @@ onMounted(() => {
   }
 }
 </style>
+<style lang="scss" scoped>
+video {
+  mask-image: -webkit-radial-gradient(white, black);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+</style>
