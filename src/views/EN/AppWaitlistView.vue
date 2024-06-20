@@ -65,13 +65,11 @@
         </div>
 
         <div
-          class="my-auto flex h-[500px] min-h-full w-full flex-col items-center bg-white px-45 pb-60 pt-10 md:h-[450px] md:px-24 md:pt-0 lg:mt-40 lg:mb-60 lg:px-50 lg:pt-0"
+          class="my-auto flex h-[448px] min-h-full w-full flex-col items-center justify-center bg-white px-45 md:h-fit md:px-24 md:pt-0 lg:h-fit lg:px-50 lg:pt-0"
         >
           <FormContent sheet-name="AppWaitlist">
             <template #form-title>
-              <div
-                class="mt-52 text-center text-16 text-primary md:mt-40 lg:mt-20 lg:text-26"
-              >
+              <div class="text-center text-18 text-primary lg:text-26">
                 Get a <span class="font-semibold">2-week Free Trial</span>
                 <br />for <span class="font-semibold">Zenerate App!</span>
               </div>
@@ -91,7 +89,7 @@
                 height="60"
                 viewBox="0 0 60 60"
                 fill="none"
-                class="mb-14 mt-120 lg:hidden"
+                class="mb-14 mt-[-40px] lg:hidden"
               >
                 <ellipse
                   cx="29.5519"
@@ -116,7 +114,7 @@
                 height="70"
                 viewBox="0 0 71 70"
                 fill="none"
-                class="mb-18 mt-120 hidden lg:block"
+                class="mb-18 mt-[-40px] hidden lg:block"
               >
                 <ellipse
                   cx="34.9767"
