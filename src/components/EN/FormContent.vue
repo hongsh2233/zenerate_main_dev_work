@@ -56,7 +56,11 @@
             @input="(v) => validation('email')"
           />
           <p
-            v-if="sheetName !== 'AppFreeTrial' && sheetName !== 'ZenApp'"
+            v-if="
+              sheetName !== 'AppFreeTrial' &&
+              sheetName !== 'ZenApp' &&
+              sheetName !== 'AppWaitlist'
+            "
             class="mt-3 px-3 text-10 text-core-500"
           >
             *Company email preferred
@@ -409,7 +413,7 @@ const CONTENT_LIST_DICT: Record<SheetName, InputType[]> = {
     'lotSize',
     'projectDetail',
   ],
-  AppWaitlist: ['email', 'jobTitle'],
+  AppWaitlist: ['firstName', 'lastName', 'email', 'company', 'jobTitle'],
   AppFreeTrial: ['firstName', 'lastName', 'company', 'email'],
   ZenApp: ['firstName', 'lastName', 'email', 'company', 'jobTitle', 'message'],
 }

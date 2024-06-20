@@ -19,9 +19,7 @@
     >
       <div class="signup-banner-inner pointer-events-none">
         <p>
-          <span
-            >Join the waitlist for Zenerate App for a 2-week free trial</span
-          >
+          <span>Get a 2-week Free Trial</span>
         </p>
         <IconBase
           icon-name="arrow-right"
