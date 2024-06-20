@@ -65,32 +65,22 @@
         </div>
 
         <div
-          class="my-auto flex h-[366px] min-h-full w-full flex-col items-center bg-white px-45 pb-60 pt-10 md:px-24 md:pt-0 lg:px-50 lg:pt-0"
+          class="my-auto flex h-[448px] min-h-full w-full flex-col items-center justify-center bg-white px-45 md:h-fit md:px-24 md:pt-0 lg:h-fit lg:px-50 lg:pt-0"
         >
           <FormContent sheet-name="AppWaitlist">
             <template #form-title>
-              <div class="mt-40 text-center text-18 lg:text-24">
-                Join the waitlist for
-                <br /><span class="font-semibold text-primary"
-                  >Zenerate App!</span
-                >
+              <div class="text-center text-18 text-primary lg:text-26">
+                Get a <span class="font-semibold">2-week Free Trial</span>
+                <br />for <span class="font-semibold">Zenerate App!</span>
               </div>
             </template>
             <template #under-submit-btn-text>
               <span
-                class="mt-10 text-center text-10 text-gray-500 lg:mt-16 lg:text-12"
+                class="mt-8 text-center text-9 text-gray-500 lg:mt-16 lg:text-12"
                 >*We will grant a 2-week free access on
                 <br class="lg:hidden" />a rolling basis, followed by an
                 exclusive discount.</span
               >
-            </template>
-            <template #after-submit-title>
-              <div class="mb-30 text-center text-18 lg:text-24">
-                Join the waitlist for
-                <br /><span class="font-semibold text-primary"
-                  >Zenerate App!</span
-                >
-              </div>
             </template>
             <template #after-submit-icon>
               <svg
@@ -99,7 +89,7 @@
                 height="60"
                 viewBox="0 0 60 60"
                 fill="none"
-                class="mb-14 lg:hidden"
+                class="mb-14 mt-[-40px] lg:hidden"
               >
                 <ellipse
                   cx="29.5519"
@@ -124,7 +114,7 @@
                 height="70"
                 viewBox="0 0 71 70"
                 fill="none"
-                class="mb-18 hidden lg:block"
+                class="mb-18 mt-[-40px] hidden lg:block"
               >
                 <ellipse
                   cx="34.9767"
@@ -146,9 +136,8 @@
             </template>
             <template #after-submit-text>
               <span
-                class="mt-[-16px] w-fit text-center text-13 text-gray-700 lg:mt-[-14px] lg:text-14 lg:text-16"
-                >Thank you for joining the waitlist.<br />We will reach out to
-                you in early June.</span
+                class="mt-[-16px] w-fit text-center text-13 text-gray-700 lg:mt-[-14px] lg:text-16"
+                >We'll contact you via E-mail shortly.</span
               >
             </template>
           </FormContent>
