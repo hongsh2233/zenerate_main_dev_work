@@ -65,12 +65,12 @@
         </div>
 
         <div
-          class="my-auto flex h-[500px] min-h-full w-full flex-col items-center bg-white px-45 pb-60 pt-10 md:h-[450px] md:px-24 md:pt-0 lg:px-50 lg:pt-0"
+          class="my-auto flex h-[500px] min-h-full w-full flex-col items-center bg-white px-45 pb-60 pt-10 md:h-[450px] md:px-24 md:pt-0 lg:mt-40 lg:mb-60 lg:px-50 lg:pt-0"
         >
           <FormContent sheet-name="AppWaitlist">
             <template #form-title>
               <div
-                class="mt-52 text-center text-18 text-primary md:mt-44 lg:mt-20 lg:text-26"
+                class="mt-52 text-center text-16 text-primary md:mt-40 lg:mt-20 lg:text-26"
               >
                 Get a <span class="font-semibold">2-week Free Trial</span>
                 <br />for <span class="font-semibold">Zenerate App!</span>
@@ -78,7 +78,7 @@
             </template>
             <template #under-submit-btn-text>
               <span
-                class="mt-10 text-center text-10 text-gray-500 lg:mt-16 lg:text-12"
+                class="mt-8 text-center text-9 text-gray-500 lg:mt-16 lg:text-12"
                 >*We will grant a 2-week free access on
                 <br class="lg:hidden" />a rolling basis, followed by an
                 exclusive discount.</span
