@@ -13,7 +13,7 @@
           class="input-wrapper first-name"
           :class="{ error: SignUpForm.firstName.valid === false }"
         >
-          <p class="error-message">Please enter name.</p>
+          <p class="error-message">Enter your first name.</p>
           <input
             type="text"
             placeholder="First Name"
@@ -27,7 +27,7 @@
           class="input-wrapper last-name"
           :class="{ error: SignUpForm.lastName.valid === false }"
         >
-          <p class="error-message">Please enter name.</p>
+          <p class="error-message">Enter your last name.</p>
           <input
             type="text"
             placeholder="Last Name"
@@ -77,7 +77,7 @@
           class="input-wrapper company"
           :class="{ error: SignUpForm.company.valid === false }"
         >
-          <p class="error-message">Please enter company name.</p>
+          <p class="error-message">Enter your company name.</p>
           <input
             type="text"
             placeholder="Enter Company"
@@ -160,7 +160,7 @@
             </Dropdown.Wrapper>
           </template>
           <template v-else>
-            <p class="error-message">Please enter job title.</p>
+            <p class="error-message">Enter your job title.</p>
             <div class="relative h-fit w-full">
               <input
                 type="text"
@@ -193,7 +193,7 @@
           class="input-wrapper address"
           :class="{ error: SignUpForm.address.valid === false }"
         >
-          <p class="error-message">Please enter address.</p>
+          <p class="error-message">Enter your address.</p>
           <input
             type="text"
             placeholder="Address (Los Angeles only)"
