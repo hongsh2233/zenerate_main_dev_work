@@ -1,6 +1,6 @@
 <template>
   <section
-    class="top-0 left-0 flex h-[100dvh] w-[100vw] min-w-[340px] overflow-auto bg-core-500 md:min-w-[584px] lg:min-w-[584px]"
+    class="full-height top-0 left-0 flex w-[100vw] min-w-[340px] overflow-auto bg-core-500 md:min-w-[584px] lg:min-w-[584px]"
     :style="{
       justifyContent: 'safe center',
       alignItems: 'safe center',
@@ -130,6 +130,11 @@ const openCalendlyPopup = () => {
 }
 </script>
 <style lang="scss" scoped>
+.full-height {
+  height: 100vh; /* Fallback for older browsers */
+  height: 100dvh; /* New dynamic viewport unit */
+}
+
 .phx-card {
   background-repeat: no-repeat;
   background-position: center bottom;
