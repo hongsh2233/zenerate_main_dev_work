@@ -1,6 +1,6 @@
 <template>
   <section
-    class="top-0 left-0 flex h-[100vh] max-h-[100vh] min-h-[680px] w-[100vw] min-w-[340px] max-w-[100vw] items-center justify-center bg-core-500 md:min-h-[1034px] md:min-w-[584px] lg:min-h-[1034px] lg:min-w-[584px]"
+    class="top-0 left-0 flex h-[100vh] max-h-[100vh] min-h-[660px] w-[100vw] min-w-[340px] max-w-[100vw] items-center justify-center bg-core-500 md:min-h-[1014px] md:min-w-[584px] lg:min-h-[1014px] lg:min-w-[584px]"
   >
     <div
       class="phx-card flex h-[600px] w-[320px] min-w-[320px] flex-col items-center rounded-17 bg-white pt-68 shadow-200 md:h-[954px] md:w-[564px] md:min-w-[564px] md:rounded-30 md:pt-124 lg:h-[954px] lg:w-[564px] lg:min-w-[564px] lg:rounded-30 lg:pt-124"
