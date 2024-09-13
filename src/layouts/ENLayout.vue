@@ -71,7 +71,9 @@ import { MENU_EVENT } from '/Constants/eventConstant'
 import Header from '/Components/EN/Header.vue'
 import Footer from '/Components/EN/Footer.vue'
 import Drawer from '/Components/EN/Drawer.vue'
-import CalendlyPopup from '/Components/EN/CalendlyPopup.vue'
+import CalendlyPopup, {
+  CalendlyTrigger,
+} from '/Components/EN/CalendlyPopup.vue'
 import { Button, IconBase } from '/Components/EN'
 
 const route = useRoute()
@@ -79,7 +81,10 @@ const router = useRouter()
 
 const isAboutPage = computed(() => route.path.startsWith('/about'))
 const showHeader = computed(
-  () => !route.path.startsWith('/beta') && !route.path.startsWith('/ed1')
+  () =>
+    !route.path.toLowerCase().startsWith('/beta') &&
+    !route.path.toLowerCase().startsWith('/ed1') &&
+    !route.path.toLowerCase().startsWith('/phx')
 )
 
 // ---------------- try popup ----------------
@@ -92,8 +97,11 @@ Emitter.on(MENU_EVENT.TOGGLE_TRY_POPUP, (v) => toggleTryPopup(v))
 
 // ---------------- calendly popup ----------------
 const showCalendlyPopup = ref(false)
-const calendlyPopupTrigger = ref<'zenapp' | 'header' | 'laststrip'>(null)
-const toggleCalendlyPopup = (option) => {
+const calendlyPopupTrigger = ref<CalendlyTrigger>(null)
+const toggleCalendlyPopup = (option: {
+  flag?: boolean
+  trigger: CalendlyTrigger
+}) => {
   const f = option.flag == null ? !showCalendlyPopup.value : option.flag
   calendlyPopupTrigger.value = f ? option.trigger : null
   showCalendlyPopup.value = f
