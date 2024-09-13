@@ -82,9 +82,9 @@ const router = useRouter()
 const isAboutPage = computed(() => route.path.startsWith('/about'))
 const showHeader = computed(
   () =>
-    !route.path.startsWith('/beta') &&
-    !route.path.startsWith('/ed1') &&
-    !route.path.startsWith('/PHX')
+    !route.path.toLowerCase().startsWith('/beta') &&
+    !route.path.toLowerCase().startsWith('/ed1') &&
+    !route.path.toLowerCase().startsWith('/phx')
 )
 
 // ---------------- try popup ----------------
