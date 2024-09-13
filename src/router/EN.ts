@@ -115,6 +115,7 @@ const ENRoute: RouteRecordRaw = {
       path: '/beta',
       redirect: '/modular',
     },
+    // ! ED1ReportView 되살릴 경우, Form 부분 수정 필요
     // {
     //   path: '/ed1',
     //   name: 'en-ed1-report',
