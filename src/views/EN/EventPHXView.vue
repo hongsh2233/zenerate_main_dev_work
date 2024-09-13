@@ -125,7 +125,7 @@ import { MENU_EVENT } from '/Constants/eventConstant'
 const openCalendlyPopup = () => {
   Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
     flag: true,
-    trigger: 'header',
+    trigger: 'phx',
   })
 }
 </script>
