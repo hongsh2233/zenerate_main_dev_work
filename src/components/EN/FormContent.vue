@@ -59,7 +59,8 @@
             v-if="
               sheetName !== 'AppFreeTrial' &&
               sheetName !== 'ZenApp' &&
-              sheetName !== 'AppWaitlist'
+              sheetName !== 'AppWaitlist' &&
+              sheetName !== 'PHXDisc'
             "
             class="mt-3 px-3 text-10 text-core-500"
           >
@@ -289,12 +290,13 @@
       </div>
     </div>
     <slot name="additional-text"></slot>
+
     <button
       type="button"
       class="submit-button-gtm submit-button"
       :disabled="!canSubmitForm"
       :class="{ disabled: !canSubmitForm }"
-      @click="submitForm"
+      @click="() => submitForm()"
     >
       <DotSpinnerWhite
         v-if="loading"
@@ -303,6 +305,26 @@
       />
       <span v-else class="pointer-events-none">{{ submitBtnText }}</span>
     </button>
+
+    <!-- !Temporary code for an event -->
+    <button
+      v-if="sheetName === 'PHXDisc'"
+      type="button"
+      class="submit-button-gtm submit-button sub-submit-button"
+      :disabled="!canSubmitForm"
+      :class="{ disabled: !canSubmitForm }"
+      @click="() => submitForm('PHXTrial')"
+    >
+      <DotSpinnerWhite
+        v-if="loading"
+        :loading="true"
+        class="pointer-events-none !mx-auto !w-fit"
+      />
+      <span v-else class="pointer-events-none"
+        >Submit and Start a 2-week Trial</span
+      >
+    </button>
+
     <slot name="under-submit-btn-text"></slot>
   </div>
   <transition v-else name="fade">
@@ -340,7 +362,7 @@
         <span class="mb-24 text-24 font-medium lg:text-28">Thank you!</span>
       </slot>
 
-      <slot name="after-submit-text"></slot>
+      <slot name="after-submit-text" :submitSheetName="submitSheetName"></slot>
     </div>
   </transition>
 </template>
@@ -374,6 +396,7 @@ type SheetName =
   | 'AppWaitlist'
   | 'AppFreeTrial'
   | 'ZenApp'
+  | 'PHXDisc'
 type InputType =
   | 'firstName'
   | 'lastName'
@@ -416,9 +439,11 @@ const CONTENT_LIST_DICT: Record<SheetName, InputType[]> = {
   AppWaitlist: ['firstName', 'lastName', 'email', 'company', 'jobTitle'],
   AppFreeTrial: ['firstName', 'lastName', 'company', 'email'],
   ZenApp: ['firstName', 'lastName', 'email', 'company', 'jobTitle', 'message'],
+  PHXDisc: ['firstName', 'lastName', 'company', 'email'],
 }
 
 const sheetName = computed(() => props.sheetName)
+const submitSheetName = ref<string>(sheetName.value)
 const contentList = computed(() => CONTENT_LIST_DICT[sheetName.value])
 
 const jobTitleDropdownContainer = ref<HTMLElement>()
@@ -534,7 +559,9 @@ const validation = (item: string) => {
     SignUpForm.value[item].validator(inputValue) && inputValue.trim() !== ''
 }
 
-const submitForm = async () => {
+const submitForm = async (newSheetName?: string) => {
+  submitSheetName.value = newSheetName ?? sheetName.value
+
   const form = {}
   for (const key in SignUpForm.value) {
     if (contentList.value.includes(key as InputType)) {
@@ -559,6 +586,8 @@ const submitForm = async () => {
         ? 'App Free Trial'
         : sheetName.value === 'ZenApp'
         ? 'Zen App'
+        : sheetName.value === 'PHXDisc'
+        ? 'PHX'
         : '',
   }
 
@@ -577,7 +606,7 @@ const submitForm = async () => {
       })
     }
 
-    await ApiService.XSLX_TEST(sheetName.value, form)
+    await ApiService.XSLX_TEST(submitSheetName, form)
     await ApiService.SEND_EMAIL(emailForm)
 
     if (sheetName.value === 'Modular') {

@@ -41,16 +41,22 @@ import { PropType, computed, nextTick, ref } from 'vue'
 import { IconBase } from '/Components/EN'
 import Calendly from './Calendly.vue'
 
+export type CalendlyTrigger =
+  | 'zenapp'
+  | 'header'
+  | 'laststrip'
+  | 'modularlandingpage'
+  | 'aboutus'
+  | 'phx'
+
 const props = defineProps({
-  trigger: String as PropType<
-    'zenapp' | 'header' | 'laststrip' | 'modularlandingpage' | 'aboutus'
-  >,
+  trigger: String as PropType<CalendlyTrigger>,
 })
 const trigger = computed(() => props.trigger ?? 'default')
 const emits = defineEmits(['close'])
 
 // https://calendly.com/d/yrk-k6f-zbv
-const CALENDLY_URL_DIC = {
+const CALENDLY_URL_DIC: Record<CalendlyTrigger | 'default', string> = {
   default: 'https://calendly.com/zenerate/modular-demo',
   zenapp:
     'https://calendly.com/zenerate/modular-demo?utm_content=homepage-zenapp',
@@ -62,6 +68,7 @@ const CALENDLY_URL_DIC = {
     'https://calendly.com/zenerate/modular-demo?utm_content=modularlandingpage',
   aboutus:
     'https://calendly.com/zenerate/modular-demo?utm_content=homepage-aboutus',
+  phx: 'https://calendly.com/zenerate/modular-demo?utm_content=phx',
 }
 const calendlyUrl = computed(() => {
   const trigger = props.trigger ?? 'default'
