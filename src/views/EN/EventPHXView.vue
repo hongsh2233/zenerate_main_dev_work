@@ -1,6 +1,6 @@
 <template>
   <section
-    class="top-0 left-0 flex h-[100vh] w-[100vw] min-w-[340px] overflow-auto bg-core-500 md:min-w-[584px] lg:min-w-[584px]"
+    class="top-0 left-0 flex h-[100dvh] w-[100vw] min-w-[340px] overflow-auto bg-core-500 md:min-w-[584px] lg:min-w-[584px]"
     :style="{
       justifyContent: 'safe center',
       alignItems: 'safe center',
