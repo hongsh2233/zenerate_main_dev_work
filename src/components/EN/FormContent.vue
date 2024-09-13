@@ -606,7 +606,7 @@ const submitForm = async (newSheetName?: string) => {
       })
     }
 
-    await ApiService.XSLX_TEST(submitSheetName, form)
+    await ApiService.XSLX_TEST(submitSheetName.value, form)
     await ApiService.SEND_EMAIL(emailForm)
 
     if (sheetName.value === 'Modular') {
