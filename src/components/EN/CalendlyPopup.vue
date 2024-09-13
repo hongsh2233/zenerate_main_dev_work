@@ -10,13 +10,13 @@
     <div
       class="popup-content relative m-auto flex flex-col flex-nowrap items-center overflow-hidden rounded-8 bg-white pt-42"
     >
-      <button
+      <!-- <button
         v-if="trigger !== 'zenapp' && showBackButton"
         @click="restartCalendly"
         class="absolute top-14 left-14 h-24 text-gray-600 hover:text-gray-700"
       >
         &lt; Go Back
-      </button>
+      </button> -->
 
       <IconBase
         class="absolute top-14 right-14 cursor-pointer"
@@ -68,7 +68,7 @@ const CALENDLY_URL_DIC: Record<CalendlyTrigger | 'default', string> = {
     'https://calendly.com/zenerate/modular-demo?utm_content=modularlandingpage',
   aboutus:
     'https://calendly.com/zenerate/modular-demo?utm_content=homepage-aboutus',
-  phx: 'https://calendly.com/zenerate/modular-demo?utm_content=phx',
+  phx: 'https://calendly.com/zenerate/zenerate-app-demo',
 }
 const calendlyUrl = computed(() => {
   const trigger = props.trigger ?? 'default'
