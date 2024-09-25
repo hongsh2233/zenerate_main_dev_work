@@ -135,11 +135,11 @@ const ENRoute: RouteRecordRaw = {
       name: 'en-signup',
       component: SignUpView,
     },
-    {
-      path: '/PHX',
-      name: 'en-phx',
-      component: EventPHXView,
-    },
+    // {
+    //   path: '/PHX',
+    //   name: 'en-phx',
+    //   component: EventPHXView,
+    // },
     {
       path: '/terms-and-conditions',
       name: 'en-terms-and-conditions',
