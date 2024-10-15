@@ -806,6 +806,13 @@ const goToApply = () => {
       height: 100%;
       object-fit: contain;
     }
+    video {
+      mask-image: radial-gradient(white, black);
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+    }
   }
   .career-content-title {
     @include flex($justify: space-between);
