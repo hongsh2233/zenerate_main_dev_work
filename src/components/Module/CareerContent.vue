@@ -88,7 +88,7 @@
         <div class="content-item-title">근무 장소</div>
         <ul class="content-item-content">
           <li>
-            서울시 송파구 올림픽로 362, 5층 (잠실역 5분, 몽촌토성역 3분 거리)
+            서울특별시 영등포구 의사당대로 83, 오투타워 6층 (여의도역 3분거리)
           </li>
         </ul>
       </div>
