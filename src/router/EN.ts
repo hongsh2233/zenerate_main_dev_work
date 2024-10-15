@@ -20,7 +20,8 @@ import DemoSignUpView from '/Views/EN/DemoSignUpView.vue'
 import AppAIAView from '/Views/EN/AppAIAView.vue'
 import AppWaitlistView from '/Views/EN/AppWaitlistView.vue'
 import AppView from '/Views/EN/AppView.vue'
-import EventPHXView from '/@/views/EN/EventPHXView.vue'
+import EventPHXView from '/Views/EN/EventPHXView.vue'
+import EventBostonView from '/Views/EN/EventBostonView.vue'
 
 const ENRoute: RouteRecordRaw = {
   path: '/',
@@ -140,6 +141,11 @@ const ENRoute: RouteRecordRaw = {
     //   name: 'en-phx',
     //   component: EventPHXView,
     // },
+    {
+      path: '/boston',
+      name: 'en-boston',
+      component: EventBostonView,
+    },
     {
       path: '/terms-and-conditions',
       name: 'en-terms-and-conditions',
