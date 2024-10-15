@@ -167,7 +167,7 @@
             <p class="absolute top-[1335px] lg:top-[1315px]">2022</p>
           </div>
           <div class="timeline-spacer"></div>
-          <div class="timeline-end">2023</div>
+          <div class="timeline-end">{{ new Date().getFullYear() }}</div>
         </div>
         <div class="timeline-left-wrapper hidden-mobile">
           <div
