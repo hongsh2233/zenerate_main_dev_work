@@ -201,6 +201,14 @@ textarea {
   border: none;
 }
 
+video {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  mask-image: radial-gradient(white, black);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 // Misc
 .hidden {
   display: none;

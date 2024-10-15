@@ -37,6 +37,7 @@ const selectCareer = (key) => {
 }
 
 const CAREER_LIST = [
+  { key: 'product-planner', title: '건축 프로덕트 기획자' },
   // { key: 'urban-data-analyst', title: 'Urban Data Analyst' },
   // { key: 'computational-designer-a', title: '컴퓨테이셔널 디자이너 - A' },
   // { key: 'computational-designer-b', title: '컴퓨테이셔널 디자이너 - B' },
