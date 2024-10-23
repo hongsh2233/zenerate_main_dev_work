@@ -60,7 +60,8 @@
               sheetName !== 'AppFreeTrial' &&
               sheetName !== 'ZenApp' &&
               sheetName !== 'AppWaitlist' &&
-              sheetName !== 'PHXDisc'
+              sheetName !== 'PHXDisc' &&
+              sheetName !== 'BostonDisc'
             "
             class="mt-3 px-3 text-10 text-core-500"
           >
@@ -308,12 +309,21 @@
 
     <!-- !Temporary code for an event -->
     <button
-      v-if="sheetName === 'PHXDisc'"
+      v-if="sheetName === 'PHXDisc' || sheetName === 'BostonDisc'"
       type="button"
       class="submit-button-gtm submit-button sub-submit-button"
       :disabled="!canSubmitForm"
       :class="{ disabled: !canSubmitForm }"
-      @click="() => submitForm('PHXTrial')"
+      @click="
+        () => {
+          if (sheetName === 'PHXDisc') {
+            submitForm('PHXTrial')
+          }
+          if (sheetName === 'BostonDisc') {
+            submitForm('BostonTrial')
+          }
+        }
+      "
     >
       <DotSpinnerWhite
         v-if="loading"
@@ -388,7 +398,7 @@ const props = defineProps({
   },
 })
 
-type SheetName =
+export type SheetName =
   | 'Beta'
   | 'AIConsulting'
   | 'Modular'
@@ -397,6 +407,7 @@ type SheetName =
   | 'AppFreeTrial'
   | 'ZenApp'
   | 'PHXDisc'
+  | 'BostonDisc'
 type InputType =
   | 'firstName'
   | 'lastName'
@@ -440,6 +451,7 @@ const CONTENT_LIST_DICT: Record<SheetName, InputType[]> = {
   AppFreeTrial: ['firstName', 'lastName', 'company', 'email'],
   ZenApp: ['firstName', 'lastName', 'email', 'company', 'jobTitle', 'message'],
   PHXDisc: ['firstName', 'lastName', 'company', 'email'],
+  BostonDisc: ['firstName', 'lastName', 'company', 'email'],
 }
 
 const sheetName = computed(() => props.sheetName)
@@ -588,6 +600,8 @@ const submitForm = async (newSheetName?: string) => {
         ? 'Zen App'
         : sheetName.value === 'PHXDisc'
         ? 'PHX'
+        : sheetName.value === 'BostonDisc'
+        ? 'Boston'
         : '',
   }
 

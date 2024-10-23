@@ -7,13 +7,12 @@
     }"
   >
     <div
-      class="phx-card my-40 flex h-[600px] w-[320px] min-w-[320px] flex-col items-center rounded-17 bg-white pt-68 shadow-200 md:h-[954px] md:w-[564px] md:min-w-[564px] md:rounded-30 md:pt-124 lg:h-[954px] lg:w-[564px] lg:min-w-[564px] lg:rounded-30 lg:pt-124"
+      class="bisnow-event-card my-40 flex h-[600px] w-[320px] min-w-[320px] flex-col items-center rounded-17 bg-white pt-68 shadow-200 md:h-[954px] md:w-[564px] md:min-w-[564px] md:rounded-30 md:pt-124 lg:h-[954px] lg:w-[564px] lg:min-w-[564px] lg:rounded-30 lg:pt-124"
     >
-      BOSTON EVENT PAGE
-      <!-- <FormContent
-        sheet-name="PHXDisc"
+      <FormContent
+        :sheet-name="sheetName"
         submit-btn-text="Submit"
-        class="phx-form mb-34 md:mb-68 lg:mb-68"
+        class="bisnow-event-form mb-34 md:mb-68 lg:mb-68"
       >
         <template #form-title>
           <img
@@ -86,7 +85,7 @@
             <p
               class="mb-6 text-14 text-gray-700 md:mb-10 md:text-18 lg:mb-10 lg:text-18"
             >
-              <span v-if="slotProps.submitSheetName === 'PHXDisc'">
+              <span v-if="slotProps.submitSheetName === sheetName">
                 Please use the same email address<br />when signing up for a
                 free trial <br class="md:hidden lg:hidden" />or subscription.
               </span>
@@ -100,9 +99,9 @@
             >
           </div>
         </template>
-      </FormContent> -->
+      </FormContent>
 
-      <!-- <button
+      <button
         @click="openCalendlyPopup"
         class="demo-button-gtm flex h-44 w-[230px] flex-row items-center justify-center rounded-100 border-1 border-solid border-core-500 bg-white hover:bg-core-20 md:h-72 md:w-[326px] lg:h-72 lg:w-[326px]"
       >
@@ -114,7 +113,7 @@
           iconColor="#4D49F4"
           class="pointer-events-none ml-6 h-16 w-16 md:ml-10 md:h-24 md:w-24 lg:ml-10 lg:h-24 lg:w-24"
         />
-      </button> -->
+      </button>
     </div>
   </section>
 </template>
@@ -122,11 +121,21 @@
 import Emitter from '/Libraries/bus'
 import { FormContent, IconBase } from '/Components/EN'
 import { MENU_EVENT } from '/Constants/eventConstant'
+import { SheetName } from '/Components/EN/FormContent.vue'
+
+// 이벤트 변경시 수정
+type EventType = 'phx' | 'boston'
+const CURRENT_EVENT: EventType = 'boston'
+const EVENT_SHEET_NAME_DICT: Record<EventType, SheetName> = {
+  phx: 'PHXDisc',
+  boston: 'BostonDisc',
+}
+const sheetName = EVENT_SHEET_NAME_DICT[CURRENT_EVENT]
 
 const openCalendlyPopup = () => {
   Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
     flag: true,
-    trigger: 'phx',
+    trigger: 'bisnow',
   })
 }
 </script>
@@ -135,9 +144,17 @@ const openCalendlyPopup = () => {
   height: 100vh; /* Fallback for older browsers */
   height: 100dvh; /* New dynamic viewport unit */
 }
+
+.bisnow-event-card {
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-color: theme('colors.white');
+  background-size: 100% auto;
+  background-image: url('/public/en/bisnow/card_background.png');
+}
 </style>
 <style lang="scss">
-.phx-form {
+.bisnow-event-form {
   .form {
     margin-top: 8px;
 

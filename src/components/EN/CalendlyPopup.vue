@@ -47,7 +47,7 @@ export type CalendlyTrigger =
   | 'laststrip'
   | 'modularlandingpage'
   | 'aboutus'
-  | 'phx'
+  | 'bisnow'
 
 const props = defineProps({
   trigger: String as PropType<CalendlyTrigger>,
@@ -68,7 +68,7 @@ const CALENDLY_URL_DIC: Record<CalendlyTrigger | 'default', string> = {
     'https://calendly.com/zenerate/modular-demo?utm_content=modularlandingpage',
   aboutus:
     'https://calendly.com/zenerate/modular-demo?utm_content=homepage-aboutus',
-  phx: 'https://calendly.com/zenerate/zenerate-app-demo',
+  bisnow: 'https://calendly.com/zenerate/zenerate-app-demo',
 }
 const calendlyUrl = computed(() => {
   const trigger = props.trigger ?? 'default'
