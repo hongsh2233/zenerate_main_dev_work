@@ -142,6 +142,11 @@ const ENRoute: RouteRecordRaw = {
       component: BisnowEventView,
     },
     {
+      path: '/LA',
+      name: 'en-LA',
+      component: BisnowEventView,
+    },
+    {
       path: '/terms-and-conditions',
       name: 'en-terms-and-conditions',
       component: TermsAndConditionsView,
