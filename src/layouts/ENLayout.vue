@@ -85,7 +85,8 @@ const showHeader = computed(
     !route.path.toLowerCase().startsWith('/beta') &&
     !route.path.toLowerCase().startsWith('/ed1') &&
     !route.path.toLowerCase().startsWith('/phx') &&
-    !route.path.toLowerCase().startsWith('/boston')
+    !route.path.toLowerCase().startsWith('/boston') &&
+    !route.path.toLowerCase().startsWith('/la')
 )
 
 // ---------------- try popup ----------------
