@@ -147,6 +147,7 @@ const openCalendlyPopup = () => {
 }
 
 .bisnow-event-card {
+  user-select: none;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-color: theme('colors.white');
