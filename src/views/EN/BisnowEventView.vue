@@ -124,11 +124,12 @@ import { MENU_EVENT } from '/Constants/eventConstant'
 import { SheetName } from '/Components/EN/FormContent.vue'
 
 // 이벤트 변경시 수정
-type EventType = 'phx' | 'boston'
-const CURRENT_EVENT: EventType = 'boston'
+type EventType = 'phx' | 'boston' | 'la'
+const CURRENT_EVENT: EventType = 'la'
 const EVENT_SHEET_NAME_DICT: Record<EventType, SheetName> = {
   phx: 'PHXDisc',
   boston: 'BostonDisc',
+  la: 'LADisc',
 }
 const sheetName = EVENT_SHEET_NAME_DICT[CURRENT_EVENT]
 
