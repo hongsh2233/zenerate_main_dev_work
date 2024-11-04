@@ -61,7 +61,8 @@
               sheetName !== 'ZenApp' &&
               sheetName !== 'AppWaitlist' &&
               sheetName !== 'PHXDisc' &&
-              sheetName !== 'BostonDisc'
+              sheetName !== 'BostonDisc' &&
+              sheetName !== 'LADisc'
             "
             class="mt-3 px-3 text-10 text-core-500"
           >
@@ -309,7 +310,11 @@
 
     <!-- !Temporary code for an event -->
     <button
-      v-if="sheetName === 'PHXDisc' || sheetName === 'BostonDisc'"
+      v-if="
+        sheetName === 'PHXDisc' ||
+        sheetName === 'BostonDisc' ||
+        sheetName === 'LADisc'
+      "
       type="button"
       class="submit-button-gtm submit-button sub-submit-button"
       :disabled="!canSubmitForm"
@@ -321,6 +326,9 @@
           }
           if (sheetName === 'BostonDisc') {
             submitForm('BostonTrial')
+          }
+          if (sheetName === 'LADisc') {
+            submitForm('LATrial')
           }
         }
       "
@@ -408,6 +416,7 @@ export type SheetName =
   | 'ZenApp'
   | 'PHXDisc'
   | 'BostonDisc'
+  | 'LADisc'
 type InputType =
   | 'firstName'
   | 'lastName'
@@ -452,6 +461,7 @@ const CONTENT_LIST_DICT: Record<SheetName, InputType[]> = {
   ZenApp: ['firstName', 'lastName', 'email', 'company', 'jobTitle', 'message'],
   PHXDisc: ['firstName', 'lastName', 'company', 'email'],
   BostonDisc: ['firstName', 'lastName', 'company', 'email'],
+  LADisc: ['firstName', 'lastName', 'company', 'email'],
 }
 
 const sheetName = computed(() => props.sheetName)
@@ -602,6 +612,8 @@ const submitForm = async (newSheetName?: string) => {
         ? 'PHX'
         : sheetName.value === 'BostonDisc'
         ? 'Boston'
+        : sheetName.value === 'LADisc'
+        ? 'LA'
         : '',
   }
 
