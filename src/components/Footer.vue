@@ -60,10 +60,10 @@
         <span>{{ $t('footer.question[0]') }}</span>
         <a href="mailto:help@zenerate.ai">help@zenerate.ai</a>
       </div>
-      <div class="footer-text address">
+      <!-- <div class="footer-text address">
         <span>{{ $t('footer.address[0]') }}</span>
         <span>{{ $t('footer.address[1]') }}</span>
-      </div>
+      </div> -->
       <div class="footer-text copyright">
         ⓒ Zenerate Inc. All rights reserved.
       </div>
