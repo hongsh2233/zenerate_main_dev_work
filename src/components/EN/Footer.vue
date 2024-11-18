@@ -27,7 +27,7 @@
               </p>
             </div>
 
-            <div class="flex flex-col">
+            <!-- <div class="flex flex-col">
               <p class="mb-4 text-14 font-semibold text-black lg:mb-8">
                 APAC Office
               </p>
@@ -36,7 +36,7 @@
                 Olympic-ro 362, 5F<br />
                 Songpa-gu, Seoul 05544
               </p>
-            </div>
+            </div> -->
           </div>
         </div>
 
