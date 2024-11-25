@@ -9,7 +9,8 @@
     <div
       class="bisnow-event-card my-40 flex h-[600px] w-[320px] min-w-[320px] flex-col items-center rounded-17 bg-white pt-68 shadow-200 md:h-[954px] md:w-[564px] md:min-w-[564px] md:rounded-30 md:pt-124 lg:h-[954px] lg:w-[564px] lg:min-w-[564px] lg:rounded-30 lg:pt-124"
     >
-      <FormContent
+      EVENT TEST PAGE
+      <!-- <FormContent
         :sheet-name="sheetName"
         submit-btn-text="Submit"
         class="bisnow-event-form mb-34 md:mb-68 lg:mb-68"
@@ -99,9 +100,9 @@
             >
           </div>
         </template>
-      </FormContent>
+      </FormContent> -->
 
-      <button
+      <!-- <button
         @click="openCalendlyPopup"
         class="demo-button-gtm flex h-44 w-[230px] flex-row items-center justify-center rounded-100 border-1 border-solid border-core-500 bg-white hover:bg-core-20 md:h-72 md:w-[326px] lg:h-72 lg:w-[326px]"
       >
@@ -113,7 +114,7 @@
           iconColor="#4D49F4"
           class="pointer-events-none ml-6 h-16 w-16 md:ml-10 md:h-24 md:w-24 lg:ml-10 lg:h-24 lg:w-24"
         />
-      </button>
+      </button> -->
     </div>
   </section>
 </template>
