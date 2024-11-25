@@ -136,8 +136,8 @@ const ENRoute: RouteRecordRaw = {
       component: SignUpView,
     },
     {
-      path: '/LA',
-      name: 'en-LA',
+      path: '/demo',
+      name: 'en-demo',
       component: BisnowEventView,
     },
     {

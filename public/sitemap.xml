@@ -28,8 +28,11 @@
 <!-- <url>
   <loc>https://www.zenerate.ai/boston</loc>
 </url> -->
-<url>
+<!-- <url>
   <loc>https://www.zenerate.ai/LA</loc>
+</url> -->
+<url>
+  <loc>https://www.zenerate.ai/demo</loc>
 </url>
 <url>
   <loc>https://www.zenerate.ai/about</loc>
