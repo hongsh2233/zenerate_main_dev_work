@@ -7,9 +7,12 @@
     }"
   >
     <div
-      class="bisnow-event-card my-40 flex h-[600px] w-[320px] min-w-[320px] flex-col items-center rounded-17 bg-white pt-68 shadow-200 md:h-[954px] md:w-[564px] md:min-w-[564px] md:rounded-30 md:pt-124 lg:h-[954px] lg:w-[564px] lg:min-w-[564px] lg:rounded-30 lg:pt-124"
+      class="bisnow-event-card isolate my-40 flex h-[600px] w-[320px] min-w-[320px] flex-col items-center overflow-hidden rounded-17 bg-white shadow-200 md:h-[954px] md:w-[564px] md:min-w-[564px] md:rounded-30 lg:h-[954px] lg:w-[564px] lg:min-w-[564px] lg:rounded-30"
     >
-      EVENT TEST PAGE
+      <Calendly
+        calendly-url="https://calendly.com/zenerate/zenerate-app-demo"
+        class="bisnow-event-calendly"
+      />
       <!-- <FormContent
         :sheet-name="sheetName"
         submit-btn-text="Submit"
@@ -119,27 +122,28 @@
   </section>
 </template>
 <script lang="ts" setup>
-import Emitter from '/Libraries/bus'
-import { FormContent, IconBase } from '/Components/EN'
-import { MENU_EVENT } from '/Constants/eventConstant'
-import { SheetName } from '/Components/EN/FormContent.vue'
+// import Emitter from '/Libraries/bus'
+// import { FormContent, IconBase } from '/Components/EN'
+// import { MENU_EVENT } from '/Constants/eventConstant'
+// import { SheetName } from '/Components/EN/FormContent.vue'
+import Calendly from '/Components/EN/Calendly.vue'
 
 // 이벤트 변경시 수정
-type EventType = 'phx' | 'boston' | 'la'
-const CURRENT_EVENT: EventType = 'la'
-const EVENT_SHEET_NAME_DICT: Record<EventType, SheetName> = {
-  phx: 'PHXDisc',
-  boston: 'BostonDisc',
-  la: 'LADisc',
-}
-const sheetName = EVENT_SHEET_NAME_DICT[CURRENT_EVENT]
+// type EventType = 'phx' | 'boston' | 'la'
+// const CURRENT_EVENT: EventType = 'la'
+// const EVENT_SHEET_NAME_DICT: Record<EventType, SheetName> = {
+//   phx: 'PHXDisc',
+//   boston: 'BostonDisc',
+//   la: 'LADisc',
+// }
+// const sheetName = EVENT_SHEET_NAME_DICT[CURRENT_EVENT]
 
-const openCalendlyPopup = () => {
-  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
-    flag: true,
-    trigger: 'bisnow',
-  })
-}
+// const openCalendlyPopup = () => {
+//   Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+//     flag: true,
+//     trigger: 'bisnow',
+//   })
+// }
 </script>
 <style lang="scss" scoped>
 .full-height {
@@ -147,92 +151,99 @@ const openCalendlyPopup = () => {
   height: 100dvh; /* New dynamic viewport unit */
 }
 
-.bisnow-event-card {
-  user-select: none;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-color: theme('colors.white');
-  background-size: 100% auto;
-  background-image: url('/public/en/bisnow/card_background.png');
-}
+// .bisnow-event-card {
+//   user-select: none;
+//   background-repeat: no-repeat;
+//   background-position: center bottom;
+//   background-color: theme('colors.white');
+//   background-size: 100% auto;
+//   background-image: url('/public/en/bisnow/card_background.png');
+// }
 </style>
 <style lang="scss">
-.bisnow-event-form {
-  .form {
-    margin-top: 8px;
-
-    @include en-mobile {
-      margin-top: 0px;
-    }
-
-    .form-row {
-      width: 326px;
-      margin-left: auto;
-      margin-right: auto;
-
-      @include en-mobile {
-        width: 230px;
-      }
-
-      .input-wrapper {
-        input {
-          width: 100%;
-          height: 48px;
-          border: solid 1px theme('colors.gray.350');
-          border-radius: 6px;
-          padding: 0 16px;
-          font-size: 16px;
-          &::placeholder {
-            font-size: 16px;
-          }
-
-          @include en-mobile {
-            height: 38px;
-            padding: 0 13px;
-            font-size: 13px;
-            &::placeholder {
-              font-size: 13px;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .submit-button {
-    width: 326px;
-    font-size: 16px;
-    height: 48px;
-    min-height: 48px;
-    border-radius: 8px;
-    margin-top: 20px;
-
-    @include en-mobile {
-      width: 230px;
-      font-size: 12px;
-      height: 36px;
-      min-height: 36px;
-      border-radius: 6px;
-      margin-top: 12px;
-    }
-
-    &.sub-submit-button {
-      margin-top: 6px;
-
-      @include en-mobile {
-        margin-top: 4px;
-      }
-    }
-
-    &:not(.sub-submit-button) {
-      background-color: theme('colors.black') !important;
-      &:hover {
-        background-color: theme('colors.gray.800') !important;
-      }
-      &.disabled {
-        background-color: theme('colors.gray.350') !important;
-      }
-    }
+.bisnow-event-calendly {
+  #calendly {
+    height: 100%;
+    max-height: 100% !important;
   }
 }
+
+// .bisnow-event-form {
+//   .form {
+//     margin-top: 8px;
+
+//     @include en-mobile {
+//       margin-top: 0px;
+//     }
+
+//     .form-row {
+//       width: 326px;
+//       margin-left: auto;
+//       margin-right: auto;
+
+//       @include en-mobile {
+//         width: 230px;
+//       }
+
+//       .input-wrapper {
+//         input {
+//           width: 100%;
+//           height: 48px;
+//           border: solid 1px theme('colors.gray.350');
+//           border-radius: 6px;
+//           padding: 0 16px;
+//           font-size: 16px;
+//           &::placeholder {
+//             font-size: 16px;
+//           }
+
+//           @include en-mobile {
+//             height: 38px;
+//             padding: 0 13px;
+//             font-size: 13px;
+//             &::placeholder {
+//               font-size: 13px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   .submit-button {
+//     width: 326px;
+//     font-size: 16px;
+//     height: 48px;
+//     min-height: 48px;
+//     border-radius: 8px;
+//     margin-top: 20px;
+
+//     @include en-mobile {
+//       width: 230px;
+//       font-size: 12px;
+//       height: 36px;
+//       min-height: 36px;
+//       border-radius: 6px;
+//       margin-top: 12px;
+//     }
+
+//     &.sub-submit-button {
+//       margin-top: 6px;
+
+//       @include en-mobile {
+//         margin-top: 4px;
+//       }
+//     }
+
+//     &:not(.sub-submit-button) {
+//       background-color: theme('colors.black') !important;
+//       &:hover {
+//         background-color: theme('colors.gray.800') !important;
+//       }
+//       &.disabled {
+//         background-color: theme('colors.gray.350') !important;
+//       }
+//     }
+//   }
+// }
 </style>
