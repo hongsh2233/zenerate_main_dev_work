@@ -30,10 +30,10 @@
 
           <div class="flex flex-col items-center md:flex-row lg:flex-row">
             <button
-              class="text-18-semibold h-48 w-[160px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mb-0 md:mr-10 md:h-54 md:w-[170px] md:text-20 md:leading-[54px] lg:mr-10 lg:mb-0 lg:h-54 lg:w-[170px] lg:text-20 lg:leading-[54px]"
-              @click="moveToBetaTesterElement"
+              class="text-18-semibold h-48 w-[180px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mb-0 md:mr-10 md:h-54 md:w-[200px] md:text-20 md:leading-[54px] lg:mr-10 lg:mb-0 lg:h-54 lg:w-[200px] lg:text-20 lg:leading-[54px]"
+              @click="openCalendlyPopup"
             >
-              Try for Free
+              Request a Demo
             </button>
           </div>
         </div>
@@ -618,7 +618,9 @@
     </section>
 
     <!-- NEED CUSTOMIZATION? -->
-    <section class="need-customization pt-80 md:pt-130 lg:pt-200">
+    <section
+      class="need-customization pt-80 pb-136 md:pt-130 md:pb-136 lg:pt-200 lg:pb-200"
+    >
       <div class="mb-6 text-center text-26">Need Customization?</div>
       <div
         class="mx-auto mb-30 w-[280px] text-center text-18 text-gray-550 md:mb-50 md:w-full lg:mb-46 lg:w-full"
@@ -651,7 +653,7 @@
     </section>
 
     <!-- DEMO FORM -->
-    <section
+    <!-- <section
       ref="modularLink"
       class="beta-tester relative pt-80 pb-136 md:pt-130 md:pb-136 lg:pt-200 lg:pb-200"
     >
@@ -675,13 +677,6 @@
                 v-for="description in DEMO_FORM.descriptions"
                 class="flex flex-row items-start not-last:mb-4 md:not-last:mb-9 lg:not-last:mb-14"
               >
-                <!-- <IconBase
-                  icon-name="checkmark-bold"
-                  icon-color="white"
-                  :width="16"
-                  :height="16"
-                  class="mr-8 mt-1 h-16 max-h-16 min-h-16 w-16 min-w-16 max-w-16 md:mt-2 lg:mr-12 lg:mt-5"
-                /> -->
                 <span
                   class="w-[210px] text-16 md:text-16 lg:w-[280px] lg:text-20"
                   >{{ description }}</span
@@ -714,7 +709,7 @@
           >
         </template>
       </FormWrapper>
-    </section>
+    </section> -->
 
     <!-- WAVE BANNER -->
     <!-- <section
@@ -803,6 +798,16 @@ import { ROLES } from '/Constants/roles'
 import { TIconName } from '/Components/EN/ui/a-icon-base'
 import IconBase from '/Components/EN/ui/IconBase.vue'
 import { FormWrapper, Footer, Carousel } from '/Components/EN'
+
+import Emitter from '/Libraries/bus'
+import { MENU_EVENT } from '/Constants/eventConstant'
+
+const openCalendlyPopup = () => {
+  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+    flag: true,
+    trigger: 'modularlandingpage',
+  })
+}
 
 const betaTester = ref(null)
 const moveToBetaTesterElement = () => {
