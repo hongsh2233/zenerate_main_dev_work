@@ -123,7 +123,7 @@
             class="demo-button-gtm text-16-semibold mx-auto mb-6 h-[48px] w-[250px] rounded-5 bg-primary text-center leading-[48px] !text-white duration-300 hover:!text-core-200 md:mr-10 md:mb-0 md:h-[56px] md:w-[236px] md:text-20 md:leading-[56px] lg:mb-0 lg:mr-10 lg:h-[56px] lg:w-[236px] lg:text-20 lg:leading-[56px]"
             @click="openCalendlyPopup"
           >
-            Get a Demo
+            Request a Demo
           </button>
           <router-link
             :to="{ name: 'en-contact', query: getCurrentUtmQuery(router) }"
@@ -155,7 +155,7 @@
           class="text-16-semibold mx-auto h-[46px] w-[250px] rounded-6 bg-primary text-center leading-[46px] !text-white duration-300 hover:bg-core-700 md:text-20-semibold md:h-[56px] md:w-[236px] md:leading-[56px] lg:text-20-semibold lg:h-[56px] lg:w-[236px] lg:leading-[56px]"
           @click="openCalendlyPopup"
         >
-          Get a Demo
+          Request a Demo
         </button>
       </div>
     </section>

@@ -29,7 +29,7 @@
       />
 
       <div class="mb-12 flex w-full flex-col items-center">
-        <span class="text-26 font-medium">Get a Demo</span>
+        <span class="text-26 font-medium">Request a Demo</span>
       </div>
 
       <Calendly v-if="showCalendly" :calendly-url="calendlyUrl" />

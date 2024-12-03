@@ -10,16 +10,13 @@
           if (showDrawer) {
             toggleDrawer(false)
           }
-          router.push({
-            name: 'en-app-waitlist',
-            query: getCurrentUtmQuery(router),
-          })
+          toggleCalendlyPopup({ flag: true, trigger: 'header' })
         }
       "
     >
       <div class="signup-banner-inner pointer-events-none">
         <p>
-          <span>Get a 2-week Free Trial</span>
+          <span>Request a Demo and Enjoy a Free Trial</span>
         </p>
         <IconBase
           icon-name="arrow-right"
@@ -56,7 +53,7 @@
       <CalendlyPopup
         v-if="showCalendlyPopup"
         :trigger="calendlyPopupTrigger"
-        @close="() => toggleCalendlyPopup(false)"
+        @close="() => toggleCalendlyPopup({ flag: false })"
       />
     </transition>
   </div>
@@ -103,7 +100,7 @@ const showCalendlyPopup = ref(false)
 const calendlyPopupTrigger = ref<CalendlyTrigger>(null)
 const toggleCalendlyPopup = (option: {
   flag?: boolean
-  trigger: CalendlyTrigger
+  trigger?: CalendlyTrigger
 }) => {
   const f = option.flag == null ? !showCalendlyPopup.value : option.flag
   calendlyPopupTrigger.value = f ? option.trigger : null

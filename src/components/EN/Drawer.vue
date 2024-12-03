@@ -84,7 +84,7 @@
               @click="openCalendlyPopup"
               class="demo-button-gtm demo-link navigation-link sub"
             >
-              Get a Demo
+              Request a Demo
               <IconBase
                 icon-name="arrow-right"
                 :width="24"
