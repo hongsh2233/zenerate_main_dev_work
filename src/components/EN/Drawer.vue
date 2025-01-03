@@ -96,7 +96,7 @@
           </div>
           <div class="info-wrapper">
             <span class="copyright"
-              >© Zenerate, Inc. 2024. All rights reserved.</span
+              >© Zenerate, Inc. 2025. All rights reserved.</span
             >
           </div>
         </div>
