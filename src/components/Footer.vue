@@ -65,7 +65,7 @@
         <span>{{ $t('footer.address[1]') }}</span>
       </div>
       <div class="footer-text copyright">
-        ⓒ Zenerate Inc. All rights reserved.
+        © Zenerate, Inc. 2025. All rights reserved.
       </div>
     </div>
   </section>
