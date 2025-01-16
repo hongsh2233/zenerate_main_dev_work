@@ -180,7 +180,7 @@
             </p>
             <div class="flex flex-1 flex-nowrap justify-between">
               <div class="group relative flex">
-                <button
+                <!-- <button
                   type="button"
                   class="peer flex flex-nowrap items-center px-0 text-14 font-semibold text-gray-700"
                 >
@@ -233,7 +233,7 @@
                       >
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
