@@ -19,79 +19,79 @@ import ENRoute from './EN'
 
 const routes: RouteRecordRaw[] = [
   ENRoute,
-  {
-    path: '/kr',
-    name: 'ModuleLayout',
-    component: ModuleLayout,
-    children: [],
-  },
-  {
-    path: '/kr/main',
-    name: 'MainLayout',
-    component: MainLayout,
-    children: [
-      {
-        path: 'service',
-        name: 'MainService',
-        component: Service,
-      },
-      {
-        path: 'contact',
-        name: 'Contact',
-        component: Contact,
-      },
-      {
-        path: 'about',
-        name: 'About',
-        component: About,
-      },
-      {
-        path: 'news',
-        name: 'News',
-        component: News,
-      },
-      {
-        path: 'career',
-        name: 'Career',
-        component: Career,
-        children: [
-          {
-            path: ':careerKey',
-            name: 'CareerContent',
-            component: Career,
-            props: true,
-          },
-        ],
-      },
-      {
-        path: 'company',
-        name: 'Company',
-        component: Company,
-      },
-      {
-        path: 'timeline',
-        name: 'Timeline',
-        component: Timeline,
-      },
+  // {
+  //   path: '/kr',
+  //   name: 'ModuleLayout',
+  //   component: ModuleLayout,
+  //   children: [],
+  // },
+  // {
+  //   path: '/kr/main',
+  //   name: 'MainLayout',
+  //   component: MainLayout,
+  //   children: [
+  //     {
+  //       path: 'service',
+  //       name: 'MainService',
+  //       component: Service,
+  //     },
+  //     {
+  //       path: 'contact',
+  //       name: 'Contact',
+  //       component: Contact,
+  //     },
+  //     {
+  //       path: 'about',
+  //       name: 'About',
+  //       component: About,
+  //     },
+  //     {
+  //       path: 'news',
+  //       name: 'News',
+  //       component: News,
+  //     },
+  //     {
+  //       path: 'career',
+  //       name: 'Career',
+  //       component: Career,
+  //       children: [
+  //         {
+  //           path: ':careerKey',
+  //           name: 'CareerContent',
+  //           component: Career,
+  //           props: true,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       path: 'company',
+  //       name: 'Company',
+  //       component: Company,
+  //     },
+  //     {
+  //       path: 'timeline',
+  //       name: 'Timeline',
+  //       component: Timeline,
+  //     },
 
-      // {
-      //   path: 'team',
-      //   name: 'Team',
-      //   component: Team,
-      // },
-      // {
-      //   path: 'admin',
-      //   name: 'NewsList',
-      //   component: NewsList,
-      // },
-      // {
-      //   path: 'admin/edit/:id?',
-      //   name: 'NewsEdit',
-      //   component: NewsEdit,
-      //   props: true,
-      // },
-    ],
-  },
+  //     // {
+  //     //   path: 'team',
+  //     //   name: 'Team',
+  //     //   component: Team,
+  //     // },
+  //     // {
+  //     //   path: 'admin',
+  //     //   name: 'NewsList',
+  //     //   component: NewsList,
+  //     // },
+  //     // {
+  //     //   path: 'admin/edit/:id?',
+  //     //   name: 'NewsEdit',
+  //     //   component: NewsEdit,
+  //     //   props: true,
+  //     // },
+  //   ],
+  // },
   {
     path: '/:catchAll(.*)',
     redirect: '/',
