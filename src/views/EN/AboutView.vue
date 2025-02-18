@@ -63,37 +63,40 @@
       </div>
 
       <p
-        class="text-16-regular mt-30 w-[280px] text-center md:mt-46 md:w-[620px] md:text-20 lg:mt-46 lg:w-[680px] lg:text-20"
+        class="text-20-regular mt-30 w-[280px] text-center md:mt-46 md:w-[620px] md:text-20 lg:mt-46 lg:w-[680px] lg:text-20"
       >
-        We are now a collective of 20+ visionaries with some of the industry's
-        best AI Developers, Real Estate Developers, Software Engineers, Data
-        Scientists, Computational Designers, and Architects.
+        We are a team of architects, AI developers, designers, computational
+        designers and software engineers who are passionate for innovating the
+        real estate development, architecture, engineering and construction
+        industries.
       </p>
     </section>
 
     <!-- OUR STORY -->
     <section class="our-story flex flex-col items-center pt-146 lg:pt-140">
       <span class="mb-8 text-26 md:text-40 lg:text-40">Our Story</span>
-      <p
+      <!-- <p
         class="text-16-regular mb-30 w-[240px] text-center text-gray-550 md:mb-36 md:w-[610px] md:text-20 lg:mb-36 lg:w-[700px] lg:text-20"
       >
         Founded by an architect, a mathematician, and a software engineer.
-      </p>
+      </p> -->
       <p
-        class="text-16-regular w-[280px] md:w-[620px] md:text-20 lg:w-[734px] lg:text-20"
+        class="text-16-regular w-[280px] md:w-[620px] md:text-20 lg:w-[734px] lg:text-20 text-center"
       >
-        After earning his master's degree in architecture from Harvard, Benji
-        Shin worked as an architect in Los Angeles for six years. During this
-        time, while contributing to major projects in L.A., he became interested
-        in automating the design process for feasibility studies in real estate
-        development.<br /><br />With the assistance of his long-time friend,
-        Jamie Jeong, Ph.D. in mathematics from Caltech and a Samsung AI
-        Developer, they found that AI can not only help automate the design
-        process but also maximize development returns in the early
-        pre-development process.<br /><br />Benji and Jamie decided to transform
-        this passion project into a company and partnered with Hak Lee, a
-        software engineer with a passion for computational design, to begin
-        developing Zenerate's first prototype. The rest is history...
+        Benji worked as an architect in Los Angeles for six years. During this
+        time, he became interested in automating the early design process for
+        feasibility studies in real estate development to accelerate workflows
+        and make them more efficient.<br /><br />
+        With the assistance of his long-time friend, Jamie Jeong, PhD in
+        mathematics from Caltech, they discovered that AI could not only help
+        automate the design process but also maximize development returns in the
+        pre-development phase. This was demonstrated through a student housing
+        project at the University of Southern California, which became the
+        foundation for their future startup.<br /><br />
+        In 2020, Benji and Jamie decided to turn this passion project into a
+        company. Since then, they have successfully raised multiple rounds of
+        investment and are building web-based building design automation
+        software for real estate development.
       </p>
     </section>
 
@@ -228,13 +231,13 @@ const LEADERSHIP_CONTENT = [
     description:
       'She is a mathematician driven by the desire to create technology that meaningfully contributes to solving challenges closely tied to the real world. Fueled by a passion for addressing housing-related problems, she co-founded the company. Prior to founding Zenerate, she earned a Ph.D. in pure mathematics from Caltech and worked at Samsung F&M, specializing in the planning, development, and operation of AI products and services.',
   },
-  {
-    key: 'hak',
-    name: 'Hak Lee',
-    position: 'Co-Founder · Software Engineer',
-    description:
-      'Based on expertise in both architecture and programming, he is leading the way in defining and solving design automation problems in the field of architecture with co-founders at Zenerate. After creating Rhino3d plugins for automated residential design, and working as a game client maintainer at Ngine studios, he is continuing his journey as a software engineer at Zenerate. He is majoring in architecture and media art, and also minoring computer science and engineering at Seoul National University.',
-  },
+  // {
+  //   key: 'hak',
+  //   name: 'Hak Lee',
+  //   position: 'Co-Founder · Software Engineer',
+  //   description:
+  //     'Based on expertise in both architecture and programming, he is leading the way in defining and solving design automation problems in the field of architecture with co-founders at Zenerate. After creating Rhino3d plugins for automated residential design, and working as a game client maintainer at Ngine studios, he is continuing his journey as a software engineer at Zenerate. He is majoring in architecture and media art, and also minoring computer science and engineering at Seoul National University.',
+  // },
 ]
 
 // ZENERATE IN THE NEWS
