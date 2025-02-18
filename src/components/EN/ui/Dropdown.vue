@@ -63,7 +63,7 @@
           class="flex items-center justify-between pl-8 pr-4"
           :class="[
             item.active
-              ? 'cursor-pointer text-gray-700 hover:bg-gray-70'
+              ? 'cursor-pointer text-gray-700 hover:bg-gray-70 '
               : 'cursor-not-allowed text-gray-300',
             props.selected?.key === item.key && 'text-primary',
 
