@@ -63,7 +63,7 @@
       </div>
 
       <p
-        class="text-20-regular mt-30 w-[280px] text-center md:mt-46 md:w-[620px] md:text-20 lg:mt-46 lg:w-[680px] lg:text-20"
+        class="text-20-regular mt-30 w-[280px] text-center md:mt-46 md:w-[620px] md:text-20 lg:mt-46 lg:w-[720px] lg:text-20"
       >
         We are a team of architects, AI developers, designers, computational
         designers and software engineers who are passionate for innovating the
@@ -81,7 +81,7 @@
         Founded by an architect, a mathematician, and a software engineer.
       </p> -->
       <p
-        class="text-16-regular w-[280px] md:w-[620px] md:text-20 lg:w-[734px] lg:text-20 text-center"
+        class="text-16-regular w-[280px] text-center md:w-[620px] md:text-20 lg:w-[740px] lg:text-20"
       >
         Benji worked as an architect in Los Angeles for six years. During this
         time, he became interested in automating the early design process for

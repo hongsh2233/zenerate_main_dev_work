@@ -149,7 +149,7 @@
                         :class="
                           option.value === SignUpForm.jobTitle.value
                             ? '!text-primary'
-                            : 'cursor-pointer text-gray-700  hover:bg-gray-70'
+                            : 'cursor-pointer text-gray-700  hover:bg-gray-70 '
                         "
                         @click="() => selectJobTitle(option.key)"
                       >
