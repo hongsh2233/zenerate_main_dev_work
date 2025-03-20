@@ -50,7 +50,7 @@
           :muted="true"
           :loop="true"
           :playsinline="true"
-          src="/public/en/landing/landing_hero_background.mp4"
+          src="/en/landing/landing_hero_background.mp4"
           alt=""
         />
       </div>
@@ -355,7 +355,7 @@ const sendBannerEmail = async () => {
 }
 
 .blue-wave-wrapper {
-  background-image: url('/public/en/img/blue_wave.png');
+  background-image: url('/en/img/blue_wave.png');
   background-repeat: no-repeat;
   background-position: bottom center;
 }

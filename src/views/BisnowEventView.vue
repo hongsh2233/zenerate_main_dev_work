@@ -157,7 +157,7 @@ import Calendly from '/Components/Calendly.vue'
 //   background-position: center bottom;
 //   background-color: theme('colors.white');
 //   background-size: 100% auto;
-//   background-image: url('/public/en/bisnow/card_background.png');
+//   background-image: url('/en/bisnow/card_background.png');
 // }
 </style>
 <style lang="scss">

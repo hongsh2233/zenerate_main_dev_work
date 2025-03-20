@@ -17,6 +17,8 @@ import AppAIAView from '/Views/AppAIAView.vue'
 import AppWaitlistView from '/Views/AppWaitlistView.vue'
 import AppView from '/Views/AppView.vue'
 import BisnowEventView from '/@/views/BisnowEventView.vue'
+import BlogListView from '/@/views/BlogListView.vue'
+import BlogContent from '/@/components/blog/BlogContent.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -108,6 +110,17 @@ const routes: RouteRecordRaw[] = [
         path: '/privacy-policy-11292021',
         name: 'privacy-policy-11292021',
         component: PrivacyPolicyView,
+      },
+      {
+        path: '/blog/:content_id',
+        name: 'blog-content',
+        component: BlogContent,
+        props: true,
+      },
+      {
+        path: '/blog',
+        name: 'blog',
+        component: BlogListView,
       },
     ],
   },

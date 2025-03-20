@@ -29,38 +29,47 @@
         <nav class="header-navigation-wrapper only-en-desktop">
           <template v-for="(primary, idx) in MENU_DATA" :key="idx">
             <div class="dropdown">
-              <button class="dropbtn">
+              <router-link
+                v-if="primary.to != null"
+                :to="primary.to"
+                class="dropbtn"
+              >
                 {{ primary.title }}
-                <IconBase
-                  icon-name="chevron-down"
-                  :width="24"
-                  :height="24"
-                  :iconColor="transparent ? 'white' : 'black'"
-                  class="ml-8"
-                />
-              </button>
-              <div class="dropdown-content">
-                <template
-                  v-for="(secondary, idx) in primary.children"
-                  :key="idx"
-                >
-                  <router-link
-                    :to="{
-                      name: secondary.to,
-                      query: getCurrentUtmQuery(router),
-                    }"
-                  >
-                    <IconBase
-                      :icon-name="secondary.icon"
-                      :width="20"
-                      :height="20"
-                      :transition="false"
-                    />
-                    {{ secondary.title }}
-                  </router-link>
+              </router-link>
+              <template v-else>
+                <button class="dropbtn">
+                  {{ primary.title }}
 
-                  <template v-if="secondary.to === 'ai-consulting'">
-                    <!-- <a :href="'https://www.zenerate.ai/ed1'">
+                  <IconBase
+                    icon-name="chevron-down"
+                    :width="24"
+                    :height="24"
+                    :iconColor="transparent ? 'white' : 'black'"
+                    class="ml-8"
+                  />
+                </button>
+                <div class="dropdown-content">
+                  <template
+                    v-for="(secondary, idx) in primary.children"
+                    :key="idx"
+                  >
+                    <router-link
+                      :to="{
+                        name: secondary.to,
+                        query: getCurrentUtmQuery(router),
+                      }"
+                    >
+                      <IconBase
+                        :icon-name="secondary.icon"
+                        :width="20"
+                        :height="20"
+                        :transition="false"
+                      />
+                      {{ secondary.title }}
+                    </router-link>
+
+                    <template v-if="secondary.to === 'ai-consulting'">
+                      <!-- <a :href="'https://www.zenerate.ai/ed1'">
                       <IconBase
                         :icon-name="'ed1-report'"
                         :width="20"
@@ -70,13 +79,14 @@
                       />
                       ED 1 Feasibility Report
                     </a> -->
-                    <a :href="'https://zmaps.ai'">
-                      <component :is="ZmapsIcon" :width="20" :height="20" />
-                      Z-maps
-                    </a>
+                      <a :href="'https://zmaps.ai'">
+                        <component :is="ZmapsIcon" :width="20" :height="20" />
+                        Z-maps
+                      </a>
+                    </template>
                   </template>
-                </template>
-              </div>
+                </div>
+              </template>
             </div>
           </template>
           <!-- 
@@ -128,7 +138,7 @@ import MENU_DATA from '/Constants/menu'
 import { MENU_EVENT } from '/Constants/eventConstant'
 import ZmapsIcon from './Icons/header/ZmapsIcon.vue'
 import MenuIcon from './Icons/MenuIcon.vue'
-import { IconBase } from '/Components/'
+import { IconBase } from '/Components/index'
 
 const props = defineProps({
   showDrawer: Boolean,

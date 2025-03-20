@@ -9,7 +9,7 @@
           :muted="true"
           :loop="true"
           :playsinline="true"
-          src="/public/en/about/hero.mp4"
+          src="/en/about/hero.mp4"
           alt=""
         />
         <div
@@ -332,39 +332,39 @@ useHead({
 .leadership {
   .benji {
     .image-wrapper {
-      background-image: url('/public/en/about/benji_desktop_tablet.png');
+      background-image: url('/en/about/benji_desktop_tablet.png');
       background-size: cover;
       @include en-tablet {
-        background-image: url('/public/en/about/benji_desktop_tablet.png');
+        background-image: url('/en/about/benji_desktop_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/public/en/about/benji_mobile.png');
+        background-image: url('/en/about/benji_mobile.png');
       }
     }
   }
 
   .jamie {
     .image-wrapper {
-      background-image: url('/public/en/about/jamie_desktop_tablet.png');
+      background-image: url('/en/about/jamie_desktop_tablet.png');
       background-size: cover;
       @include en-tablet {
-        background-image: url('/public/en/about/jamie_desktop_tablet.png');
+        background-image: url('/en/about/jamie_desktop_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/public/en/about/jamie_mobile.png');
+        background-image: url('/en/about/jamie_mobile.png');
       }
     }
   }
 
   .hak {
     .image-wrapper {
-      background-image: url('/public/en/about/hak_desktop_tablet.png');
+      background-image: url('/en/about/hak_desktop_tablet.png');
       background-size: cover;
       @include en-tablet {
-        background-image: url('/public/en/about/hak_desktop_tablet.png');
+        background-image: url('/en/about/hak_desktop_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/public/en/about/hak_mobile.png');
+        background-image: url('/en/about/hak_mobile.png');
       }
     }
   }
@@ -372,26 +372,26 @@ useHead({
 
 .funded-by {
   .image-wrapper {
-    background-image: url('/public/en/about/funded_by_desktop.png');
+    background-image: url('/en/about/funded_by_desktop.png');
     background-size: cover;
     @include en-tablet {
-      background-image: url('/public/en/about/funded_by_tablet.png');
+      background-image: url('/en/about/funded_by_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/about/funded_by_mobile.png');
+      background-image: url('/en/about/funded_by_mobile.png');
     }
   }
 }
 
 .featured-partners {
   .image-wrapper {
-    background-image: url('/public/en/about/featured_partners_desktop.png');
+    background-image: url('/en/about/featured_partners_desktop.png');
     background-size: cover;
     @include en-tablet {
-      background-image: url('/public/en/about/featured_partners_tablet.png');
+      background-image: url('/en/about/featured_partners_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/about/featured_partners_mobile.png');
+      background-image: url('/en/about/featured_partners_mobile.png');
     }
   }
 }
@@ -399,33 +399,33 @@ useHead({
 .zenerate-in-the-news {
   .news_sola {
     .image-wrapper {
-      background-image: url('/public/en/about/news_sola_desktop_tablet.png');
+      background-image: url('/en/about/news_sola_desktop_tablet.png');
       background-size: cover;
       @include en-tablet {
-        background-image: url('/public/en/about/news_sola_desktop_tablet.png');
+        background-image: url('/en/about/news_sola_desktop_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/public/en/about/news_sola_mobile.png');
+        background-image: url('/en/about/news_sola_mobile.png');
       }
     }
   }
 
   .news_google {
     .image-wrapper {
-      background-image: url('/public/en/about/news_google_desktop_tablet.png');
+      background-image: url('/en/about/news_google_desktop_tablet.png');
       background-size: cover;
       @include en-tablet {
-        background-image: url('/public/en/about/news_google_desktop_tablet.png');
+        background-image: url('/en/about/news_google_desktop_tablet.png');
       }
       @include en-mobile {
-        background-image: url('/public/en/about/news_google_mobile.png');
+        background-image: url('/en/about/news_google_mobile.png');
       }
     }
   }
 }
 
 .blue-wave-wrapper {
-  background-image: url('/public/en/img/blue_wave.png');
+  background-image: url('/en/img/blue_wave.png');
   background-repeat: no-repeat;
   background-position: bottom center;
 }

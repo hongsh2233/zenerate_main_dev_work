@@ -62,7 +62,7 @@
           :muted="true"
           :loop="true"
           :playsinline="true"
-          src="/public/en/zenerate_app/app_hero.mp4"
+          src="/en/zenerate_app/app_hero.mp4"
           alt=""
         />
       </div>
@@ -623,14 +623,14 @@ const goToApp = () => {
 
   .card1 {
     .image-wrapper {
-      background-image: url('/public/en/zenerate_app/how_it_works_step1_desktop.png');
+      background-image: url('/en/zenerate_app/how_it_works_step1_desktop.png');
       background-position: left -1px bottom -1px;
       @include en-tablet {
-        background-image: url('/public/en/zenerate_app/how_it_works_step1_tablet.png');
+        background-image: url('/en/zenerate_app/how_it_works_step1_tablet.png');
         background-position: left center;
       }
       @include en-mobile {
-        background-image: url('/public/en/zenerate_app/how_it_works_step1_mobile_new.png');
+        background-image: url('/en/zenerate_app/how_it_works_step1_mobile_new.png');
         background-position: left -1px center;
         background-size: 321px 200px;
       }
@@ -643,14 +643,14 @@ const goToApp = () => {
   }
   .card2 {
     .image-wrapper {
-      background-image: url('/public/en/zenerate_app/how_it_works_step2_desktop.png');
+      background-image: url('/en/zenerate_app/how_it_works_step2_desktop.png');
       background-position: left -1px center;
       @include en-tablet {
-        background-image: url('/public/en/zenerate_app/how_it_works_step2_tablet.png');
+        background-image: url('/en/zenerate_app/how_it_works_step2_tablet.png');
         background-position: left center;
       }
       @include en-mobile {
-        background-image: url('/public/en/zenerate_app/how_it_works_step2_mobile_new.png');
+        background-image: url('/en/zenerate_app/how_it_works_step2_mobile_new.png');
         background-position: left -1px center;
         background-size: 321px 200px;
       }
@@ -678,14 +678,14 @@ const goToApp = () => {
   }
   .card3 {
     .image-wrapper {
-      background-image: url('/public/en/zenerate_app/how_it_works_step3_desktop_edited.png');
+      background-image: url('/en/zenerate_app/how_it_works_step3_desktop_edited.png');
       background-position: left -1px top -1px;
       @include en-tablet {
-        background-image: url('/public/en/zenerate_app/how_it_works_step3_tablet_edited.png');
+        background-image: url('/en/zenerate_app/how_it_works_step3_tablet_edited.png');
         background-position: left top -1px;
       }
       @include en-mobile {
-        background-image: url('/public/en/zenerate_app/how_it_works_step3_mobile_edited.png');
+        background-image: url('/en/zenerate_app/how_it_works_step3_mobile_edited.png');
         background-position: left -1px center;
         background-size: 321px 200px;
       }
@@ -693,15 +693,15 @@ const goToApp = () => {
   }
   .card4 {
     .image-wrapper {
-      background-image: url('/public/en/zenerate_app/how_it_works_step4_desktop.png');
+      background-image: url('/en/zenerate_app/how_it_works_step4_desktop.png');
       background-position: left -1px center;
 
       @include en-tablet {
-        background-image: url('/public/en/zenerate_app/how_it_works_step4_tablet.png');
+        background-image: url('/en/zenerate_app/how_it_works_step4_tablet.png');
         background-position: left center;
       }
       @include en-mobile {
-        background-image: url('/public/en/zenerate_app/how_it_works_step4_mobile_new.png');
+        background-image: url('/en/zenerate_app/how_it_works_step4_mobile_new.png');
         background-position: left -1px center;
         background-size: 321px 200px;
       }

@@ -21,6 +21,11 @@ export default [
     ],
   },
   {
+    key: 'blog',
+    title: 'Blog',
+    to: 'blog',
+  },
+  {
     key: 'company',
     title: 'Company',
     children: [

@@ -6,46 +6,64 @@
         <div class="header-navigation-wrapper hidden-en-desktop">
           <div class="navgation-link-wrapper">
             <template v-for="(tab, idx) in MENU_DATA" :key="idx">
-              <p class="navigation-link" @click="() => selectTab(tab.key)">
-                {{ tab.title }}
-                <IconBase
-                  :icon-name="
-                    toggleTab[tab.key] ? 'chevron-up' : 'chevron-down'
-                  "
-                  :width="32"
-                  :height="32"
-                  iconColor="black"
-                />
-              </p>
-              <transition name="slide-up">
-                <div v-show="toggleTab[tab.key]" class="navigation-link-list">
-                  <template v-for="(nav, idx) in tab.children" :key="idx">
-                    <router-link
-                      :to="{
-                        name: nav.to,
-                        query: getCurrentUtmQuery(router),
-                      }"
-                      custom
-                      v-slot="{ href, navigate }"
-                    >
-                      <a
-                        :href="href"
-                        @click="selectSubLink(navigate, $event)"
-                        class="navigation-link sub"
+              <template v-if="tab.to != null">
+                <router-link
+                  :to="{
+                    name: tab.to,
+                  }"
+                  custom
+                  v-slot="{ href, navigate }"
+                >
+                  <a
+                    :href="href"
+                    @click="selectSubLink(navigate, $event)"
+                    class="navigation-link"
+                  >
+                    {{ tab.title }}
+                  </a>
+                </router-link>
+              </template>
+              <template v-else>
+                <p class="navigation-link" @click="() => selectTab(tab.key)">
+                  {{ tab.title }}
+                  <IconBase
+                    :icon-name="
+                      toggleTab[tab.key] ? 'chevron-up' : 'chevron-down'
+                    "
+                    :width="32"
+                    :height="32"
+                    iconColor="black"
+                  />
+                </p>
+                <transition name="slide-up">
+                  <div v-show="toggleTab[tab.key]" class="navigation-link-list">
+                    <template v-for="(nav, idx) in tab.children" :key="idx">
+                      <router-link
+                        :to="{
+                          name: nav.to,
+                          query: getCurrentUtmQuery(router),
+                        }"
+                        custom
+                        v-slot="{ href, navigate }"
                       >
-                        <IconBase
-                          :icon-name="nav.icon"
-                          :width="26"
-                          :height="26"
-                          :transition="false"
-                          class="sub-icon"
-                        />
-                        {{ nav.title }}
-                      </a>
-                    </router-link>
+                        <a
+                          :href="href"
+                          @click="selectSubLink(navigate, $event)"
+                          class="navigation-link sub"
+                        >
+                          <IconBase
+                            :icon-name="nav.icon"
+                            :width="26"
+                            :height="26"
+                            :transition="false"
+                            class="sub-icon"
+                          />
+                          {{ nav.title }}
+                        </a>
+                      </router-link>
 
-                    <template v-if="nav.to === 'ai-consulting'">
-                      <!-- <a
+                      <template v-if="nav.to === 'ai-consulting'">
+                        <!-- <a
                         :href="'https://www.zenerate.ai/ed1'"
                         class="navigation-link sub"
                         :class="nav.to"
@@ -60,24 +78,25 @@
                         />
                         ED 1 Feasibility Report
                       </a> -->
-                      <a
-                        :href="'https://zmaps.ai'"
-                        class="navigation-link sub"
-                        :class="nav.to"
-                        @click="close"
-                      >
-                        <component
-                          :is="ZmapsIcon"
-                          :width="26"
-                          :height="26"
-                          class="sub-icon"
-                        />
-                        Z-maps
-                      </a>
+                        <a
+                          :href="'https://zmaps.ai'"
+                          class="navigation-link sub"
+                          :class="nav.to"
+                          @click="close"
+                        >
+                          <component
+                            :is="ZmapsIcon"
+                            :width="26"
+                            :height="26"
+                            class="sub-icon"
+                          />
+                          Z-maps
+                        </a>
+                      </template>
                     </template>
-                  </template>
-                </div>
-              </transition>
+                  </div>
+                </transition>
+              </template>
             </template>
 
             <button

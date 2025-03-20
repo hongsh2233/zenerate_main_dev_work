@@ -223,58 +223,58 @@ const CARD_DATA = {
   background-repeat: no-repeat;
 
   &.zmaps {
-    background-image: url('/public/en/products/zmaps_phaseout_desktop_new.png');
+    background-image: url('/en/products/zmaps_phaseout_desktop_new.png');
     background-size: 980px 648px;
     background-position: center right;
     @include en-tablet {
       background-size: 708px 468px;
-      background-image: url('/public/en/products/zmaps_phaseout_tablet_new.png');
+      background-image: url('/en/products/zmaps_phaseout_tablet_new.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/products/zmaps_phaseout_mobile_new.png');
+      background-image: url('/en/products/zmaps_phaseout_mobile_new.png');
       background-size: 320px 388px;
       background-position: bottom 272px center;
     }
   }
 
   &.zenerate-modular {
-    background-image: url('/public/en/products/zenerate_modular_desktop.png');
+    background-image: url('/en/products/zenerate_modular_desktop.png');
     background-size: 980px 648px;
     background-position: center;
     @include en-tablet {
       background-size: 708px 468px;
-      background-image: url('/public/en/products/zenerate_modular_tablet.png');
+      background-image: url('/en/products/zenerate_modular_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/products/zenerate_modular_mobile.png');
+      background-image: url('/en/products/zenerate_modular_mobile.png');
       background-size: 320px 388px;
       background-position: bottom 203px center;
     }
   }
 
   &.ai-consulting {
-    background-image: url('/public/en/products/ai_consulting_desktop.png');
+    background-image: url('/en/products/ai_consulting_desktop.png');
     background-position: center;
     @include en-tablet {
-      background-image: url('/public/en/products/ai_consulting_tablet.png');
+      background-image: url('/en/products/ai_consulting_tablet.png');
     }
     @include en-mobile {
-      background-image: url('/public/en/products/ai_consulting_mobile_new.png');
+      background-image: url('/en/products/ai_consulting_mobile_new.png');
       background-size: 320px 388px;
       background-position: bottom 203px center;
     }
   }
 
   &.zen-app {
-    background-image: url('/public/en/products/zen_app_desktop_new_new.png');
+    background-image: url('/en/products/zen_app_desktop_new_new.png');
     background-size: 980px 648px;
     background-position: center;
     @include en-tablet {
-      background-image: url('/public/en/products/zen_app_tablet_new_new.png');
+      background-image: url('/en/products/zen_app_tablet_new_new.png');
       background-size: 708px 468px;
     }
     @include en-mobile {
-      background-image: url('/public/en/products/zen_app_mobile_new_new.png');
+      background-image: url('/en/products/zen_app_mobile_new_new.png');
       background-size: 320px 388px;
       background-position: bottom 194px center;
     }
