@@ -1,6 +1,6 @@
 <template>
   <div class="input-select-wrapper">
-    <slot name="label">{{ props.title }}</slot>
+    <p>{{ props.title || $t('main.contact.form.purpose') }}</p>
     <div class="input-select-container">
       <input type="text" class="dummy" ref="dummy" inputmode="none" />
       <div
@@ -21,12 +21,9 @@
               : props.placeholder || 'Select'
           }}</span
         >
-        <IconBase
-          :icon-name="showDropdown ? 'chevron-up' : 'chevron-down'"
-          :width="36"
-          :height="36"
-          iconColor="#c4c4c499"
-        />
+        <i className="material-icons noselect">
+          {{ showDropdown ? 'expand_less' : 'expand_more' }}
+        </i>
       </div>
       <transition name="slide-up">
         <div class="input-select-dropdown" v-show="showDropdown">
@@ -37,17 +34,22 @@
             @focus="() => blur()"
             :key="idx"
           >
-            <span>{{ $t(item['label']) }}</span>
+            <span>{{ props.skipTranslate ? item.label : $t(item.label) }}</span>
           </div>
         </div>
       </transition>
+      <div
+        class="input-select-error"
+        :class="{ active: props.valid === false }"
+      >
+        Please Select!
+      </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { ref, watch, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { IconBase } from '/Components/EN'
 const { t } = useI18n()
 
 type Item = {
@@ -86,8 +88,8 @@ const props = defineProps({
     required: false,
   },
 })
-
 const emit = defineEmits(['onSelect'])
+const isInvalid = ref(false)
 
 const onSelect = (value) => {
   emit('onSelect', value)
@@ -97,10 +99,18 @@ const onSelect = (value) => {
 const showDropdown = ref(false)
 const toggleDropDown = (flag?) => {
   showDropdown.value = flag == null ? !showDropdown.value : flag
+  if (!showDropdown.value) {
+    if (!props.selected) isInvalid.value = true
+  } else isInvalid.value = false
 }
 
 const dummy = ref<HTMLInputElement>(null)
 const selected = computed(() => props.selected)
+
+watch(selected, (v) => {
+  if (!v) isInvalid.value = true
+  else isInvalid.value = false
+})
 
 watch(showDropdown, (v) => {
   if (v) {
@@ -110,20 +120,12 @@ watch(showDropdown, (v) => {
 </script>
 <style lang="scss" scoped>
 .input-select-wrapper {
-  margin-bottom: 25px;
+  margin-bottom: 40px;
   width: 100%;
   p {
-    @include medium(14);
-    color: $text-darken;
+    @include regular(16);
+    color: rgba($text-grey, 1);
     margin-bottom: 8px;
-
-    @include en-tablet {
-      @include medium(12);
-    }
-
-    @include en-mobile {
-      @include medium(12);
-    }
   }
   .input-select-container {
     height: 42px;
@@ -147,23 +149,17 @@ watch(showDropdown, (v) => {
       align-items: center;
       justify-content: space-between;
       span {
-        @include medium(17);
-        @include en-tablet {
-          @include medium(14);
-        }
-        @include en-mobile {
+        @include medium(18);
+        @include mobile {
           @include medium(14);
         }
         &.placeholder {
-          @include regular(17);
-          color: rgba($black-1, 0.4);
-          @include en-tablet {
-            @include regular(14);
-          }
-          @include en-mobile {
-            @include regular(14);
-          }
+          color: $bt-secondary-stroke-disabled;
         }
+      }
+      i {
+        color: rgba(196, 196, 196, 0.6);
+        font-size: 32px;
       }
     }
   }
@@ -174,16 +170,11 @@ watch(showDropdown, (v) => {
     @include absolute(left -1px top 36px);
     background: $white;
     .input-select-dropdown-item {
-      @include regular(17);
       width: 100%;
-      padding: 7px 12px;
-      @include en-tablet {
-        @include regular(14);
-        padding: 4px 12px;
-      }
-      @include en-mobile {
-        @include regular(14);
-        padding: 4px 12px;
+      @include medium(18);
+      padding: 4px 12px;
+      @include mobile {
+        @include medium(14);
       }
       &:hover {
         color: $main;

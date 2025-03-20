@@ -5,17 +5,17 @@ export default [
     children: [
       {
         title: 'Zenerate App',
-        to: 'en-zen-app',
+        to: 'zen-app',
         icon: 'zenerate-app',
       },
       {
         title: 'Zenerate Modular',
-        to: 'en-modular',
+        to: 'modular',
         icon: 'zenerate-modular',
       },
       {
         title: 'AI Consulting',
-        to: 'en-ai-consulting',
+        to: 'ai-consulting',
         icon: 'ai-consulting',
       },
     ],
@@ -26,17 +26,17 @@ export default [
     children: [
       {
         title: 'About Us',
-        to: 'en-about',
+        to: 'about',
         icon: 'about',
       },
       // {
       //   title: 'Careers',
-      //   to: 'en-career',
+      //   to: 'career',
       //   icon: 'career',
       // },
       {
         title: 'Contact',
-        to: 'en-contact',
+        to: 'contact',
         icon: 'contact',
       },
     ],
