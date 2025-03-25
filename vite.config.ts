@@ -6,7 +6,7 @@ import { resolve } from 'path'
 export default defineConfig({
   base: process.env.BASE_URL || '/',
   server: {
-    host: '127.0.0.5',
+    host: 'localhost',
     port: 14004,
     strictPort: true,
   },
