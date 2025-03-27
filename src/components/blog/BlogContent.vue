@@ -18,8 +18,18 @@
         <!-- //hrefo -->
         <div class="blog-content">
           <div class="blog-content__inner flex justify-between">
-            <div class="blog-category-wrap" v-if="post && post.sections">
-              <ul>
+            <div class="blog-category-wrap" v-if="post && post.sections"
+              :class="{ 'is-fixed': isFixed }"
+              ref="categoryRef"
+            >
+              <button 
+                type="button"
+                class="cate-select-mo"
+                @click="handleMocateDrop"
+              >
+                {{ selectedLabel }}
+              </button>
+              <ul :class="{ 'is-active': isMoCateActive }">
                 <li
                   v-for="(section, index) in headingSections"
                   :key="index"
@@ -32,7 +42,10 @@
               </ul>
             </div>
               <!-- //카테고리 -->
-              <div class="post-content__wrap">
+              <div class="post-content__wrap"
+                :class="{ 'is-fixed': isFixed }"
+                ref="categoryRef"
+              >
                 <div
                   class="post-section"
                     v-for="(section, index) in post.sections"
@@ -67,6 +80,14 @@
 <script lang="ts" setup>
 import { ref, onMounted, computed, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { resolve } from 'path';
+const selectedLabel = ref('Explore Article Topics')
+
+const isMoCateActive = ref(false)
+
+const handleMocateDrop = () => {
+  isMoCateActive.value = !isMoCateActive.value
+}
 
 const route = useRoute()
 const postId = route.params.content_id
@@ -98,6 +119,8 @@ const handleMoveSection = (index: number) => {
     window.scrollTo({ top: y, behavior: 'smooth' })
 
     activeIndex.value = index
+    selectedLabel.value = headingSections.value[index]?.text || 'Explore Article Topics'
+    isMoCateActive.value = false // 선택 후 드롭다운 닫기
   }
 }
 
@@ -136,6 +159,26 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', updateActiveSectionOnScroll)
 })
+
+
+const categoryRef = ref<HTMLElement | null>(null)
+const isFixed = ref(false)
+
+const handleScrollForFixing = () => {
+  if (!categoryRef.value) return
+
+  const threshold = 300 // 필요에 따라 조정 (픽셀 기준)
+  const scrollTop = window.scrollY || document.documentElement.scrollTop
+  isFixed.value = scrollTop > threshold
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScrollForFixing)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScrollForFixing)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -160,6 +203,7 @@ onUnmounted(() => {
         padding: 0 calc(20 / 16 * 1rem);
       }
     .blog-visual__inner {
+      @include relative;
       width: 100%;
       height: 100%;
       max-width: calc(1200 / 16 * 1rem);
@@ -221,6 +265,7 @@ onUnmounted(() => {
   .blog-content {
     // background: #F4F6F9;
     padding: calc(0 / 16 * 1rem) 0 calc(100 / 16 * 1rem);
+    overflow: visible;
     .blog-content__inner {
       max-width: calc(1200 / 16 * 1rem);
       width: 100%;
@@ -236,10 +281,55 @@ onUnmounted(() => {
         width: 100%;
         min-width: calc(322 / 16 * 1rem);
         max-width: calc(322 / 16 * 1rem);
-        position: sticky;
-        top: 110px;
-        height: 400px;
+        z-index: 10;
+        @media only screen and (min-width: 360px) and (max-width: 767px) {
+          min-width: calc(100% - calc(32 / 16 * 1rem));
+          max-width: calc(100% - calc(32 / 16 * 1rem));
+          margin: 0 auto;
+        }
+        .cate-select-mo {
+          @include relative;
+          width: 100%;
+          border: 1px solid #CBCDD2;
+          height: calc(48 / 16 * 1rem);
+          display: none;
+          align-items: center;
+          justify-content: space-between;
+          padding-right: calc(16 / 16 * 1rem);
+          padding-left: calc(16 / 16 * 1rem);
+          width: calc(100% - alc(32 / 16 * 1rem));
+          margin: 0 auto;
+          border-radius: 8px;
+          font-weight: 400;
+          font-size: calc(18 / 16 * 1rem);
+          line-height: 135%;
+          letter-spacing: 0px;
+          vertical-align: middle;          
+          &::after {
+            content: '';
+            display: inline-flex;
+            width: calc(10 / 16 * 1rem);
+            height: calc(6 / 16 * 1rem);
+            background: url('/img/ico_arrow.svg') no-repeat;
+            background-size: 100% auto;
+          }
+          @media only screen and (min-width: 360px) and (max-width: 767px) {
+            display: flex;
+          }
+        }
+        &.is-fixed {
+          position: fixed;
+          top: 120px;
+          left: calc(16 / 16 * 1rem);
+        }
         ul {
+          display: block;
+          @media only screen and (min-width: 360px) and (max-width: 767px) {
+            display: none;
+            &.is-active {
+              display: block;
+            }
+          }
           li {
             padding: 0 calc(24 / 16 * 1rem);
             &.is-active {
@@ -265,12 +355,19 @@ onUnmounted(() => {
       .post-content__wrap {
         width: calc(100% - calc(322 / 16 * 1rem));
         @media only screen and (min-width: 768px) and (max-width: 1200px) {
-          width: calc(100% - 80);
-          padding: 0 calc(40 / 16 * 1rem);
+          width: calc(100% - 40);
+          padding: 0 calc(20 / 16 * 1rem);
         }
         @media only screen and (min-width: 360px) and (max-width: 767px) {
           padding: 0 calc(20 / 16 * 1rem);
-          width: calc(100% - 40);
+          width: calc(100% - calc(40 / 16 * 1rem));
+        }
+        &.is-fixed {
+          padding-left: calc(382 / 16* 1rem);
+          @media only screen and (min-width: 360px) and (max-width: 767px) {
+            width: calc(100% - calc(16 / 16 * 1rem));
+            padding-left: calc(16 / 16* 1rem);
+          }
         }
         .post-section {
           &:first-child {
