@@ -1,0 +1,52 @@
+[
+    {
+        "id": "2025032601",
+        "category": "Tutorials",
+        "title": "Setting Up Your Site",
+        "date": "Jan 26, 2025",
+        "author": "",
+        "tags": ["Tutorial"],
+        "sumary": "Discover the various ways to determine the boundaries of your design solutions ",
+        "thumbnail": "/posts/images/2025032601001.gif"
+    },
+    {
+        "id": "2025032602",
+        "category": "Tutorials",
+        "title": "Adding Non-Residential Rooms and Area",
+        "date": "Jan 26, 2025",
+        "author": "",
+        "tags": ["Tutorial"],
+        "sumary": "See how to quickly and easily add non-residential rooms and areas to your building design for better layout optimization.",
+        "thumbnail": "/posts/images/2025032602001.gif"
+    },
+    {
+        "id": "2025032603",
+        "category": "Tutorials",
+        "title": "Edit & Optimize Building Layouts for Efficiency",
+        "date": "Jan 26, 2025",
+        "author": "",
+        "tags": ["Tutorial"],
+        "sumary": "Explore a simple way to accelerate and optimize your building layouts in under 5 minutes.",
+        "thumbnail": "/posts/images/2025032603001.gif"
+    },
+    {
+        "id": "2025032604",
+        "categorygory": "Tutorials",
+        "title": "Project Setup",
+        "date": "Jan 26, 2025",
+        "author": "",
+        "tags": ["Tutorial"],
+        "sumary": "Learn how to define site rules and regulations to streamline your project's test-fit process.",
+        "thumbnail": "/posts/images/2025032604001.gif"
+    },
+    {
+        "id": "2025032605",
+        "category": "Tutorials",
+        "title": "Optimize Your Feasibility Study Using AI",
+        "date": "Jan 26, 2025",
+        "author": "",
+        "tags": ["Tutorial"],
+        "sumary": "Learn more about Zenerate and how our generative design software can accelerate your feasibility studies.",
+        "thumbnail": "/posts/images/2025032605001.gif"
+    }
+]

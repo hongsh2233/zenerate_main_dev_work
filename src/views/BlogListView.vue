@@ -10,31 +10,44 @@
     <section class="blog-content">
       <div class="blog-content__inner">
           <div class="blog-search__wrap flex">
-              <div class="search-wrap">
-                  <label for="">Search Blogs</label>
-                  <div class="">
+              <div class="search-wrap flex flex-col justify-center">
+                  <label>Search Blogs</label>
+                  <div class="input-wrap flex items-center">
                       <i class="ico-search"></i>
                       <input type="text">
                   </div>
               </div>
-              <div class="get-trial-box">
-                  <div class="">Get a quick walkthrough and a free trial afterward!</div>
-                  <div class="">
-                    
+              <div class="get-trial-box flex flex-col">
+                  <div class="text">Get a quick walkthrough and a free trial afterward!</div>
+                  <div class="button-group">
+                    <button type="button">Book Demo + Get a Free Trial.</button>
                   </div>
               </div>
           </div>
+          <!-- search top -->
+          <div class="blog-view__wrap flex flex-wrap">
+            <div class="blog-list-items flex flex-col"
+              v-for="item in posts" :key="item"
+            >
+              <router-link
+                :to="{ name: 'blog-content', params: { content_id: item.id } }"
+              >
+                  <div class="thum-img">
+                    <img :src="item.thumbnail" :alt="item.title" />
+                  </div>
+                  <div class="blog-list-content">
+                    <div class="cate">{{ item.category }}</div>
+                    <div class="title">{{ item.title }}</div>
+                    <div class="description">{{ item.sumary }}</div>
+                  </div>
+              </router-link> 
+            </div>
+            <div class="button-bottom">
+              <button type="button">See More</button>
+            </div>
+
+          </div>
       </div>
-    </section>
-      <section
-      class="z-[1] mx-auto mb-6 mt-[152px] w-[320px] min-w-[320px] md:mb-42 md:mt-[170px] md:w-[644px] lg:absolute lg:ml-100 lg:mt-[200px] lg:w-[440px]"
-    >
-      <!-- <div>Blog List View</div>
-      <router-link
-        :to="{ name: 'blog-content', params: { content_id: 'test-content-id' } }"
-      >
-        <div class="h-100 w-100 bg-primary text-white">to test</div>
-      </router-link> -->
     </section>
     <div class="section section-footer fp-auto-height">
       <Footer></Footer>
@@ -44,10 +57,21 @@
 </template>
 
 <script lang="ts" setup>
+import { ref, onMounted } from 'vue';
 import Footer from '/Components/Footer.vue'
+
+const posts = ref([]);
+
+onMounted(async () => {
+  try {
+    const res = await fetch('/posts/postList.json');
+    const data = await res.json();
+    posts.value = data.slice(0, 12); // 최대 12개만 노출
+  } catch (err) {
+    console.error('포스트 목록 로딩 오류:', err);
+  }
+});
 </script>
-
-
 
 <style lang="scss" scoped>
 .section-contact {
@@ -61,6 +85,15 @@ import Footer from '/Components/Footer.vue'
     background-image: url('/img/header_blog_bg_full.png');
     background-position: center center;
     background-repeat: repeat-x;
+      @media only screen and (min-width: 1221px) and (max-width: 1600px) {
+        padding: 0 calc(60 / 16 * 1rem);
+      }
+      @media only screen and (min-width: 768px) and (max-width: 1200px) {
+        padding: 0 calc(40 / 16 * 1rem);
+      }
+      @media only screen and (min-width: 360px) and (max-width: 767px) {
+        padding: 0 calc(20 / 16 * 1rem);
+      }
     .blog-visual__inner {
       width: 100%;
       height: 100%;
@@ -71,28 +104,256 @@ import Footer from '/Components/Footer.vue'
       align-content: flex-start;
       justify-content: center;
       color: #fff;
-      gap: calc(16 / 16 * 1rem);
+      gap: calc(14 / 16 * 1rem);
       .title-text {
         font-weight: 600;
-        font-size: 32px;
         line-height: 135%;
         letter-spacing: 0%;
         font-size: calc(32 / 16 * 1rem);        
+        @media only screen and (min-width: 360px) and (max-width: 767px) {
+          font-size: calc(19 / 16 * 1rem);      
+          strong {
+            display: block;
+          }
+        }
       }
       .sub-title {
         font-weight: 400;
         font-size: calc(18 / 16 * 1rem);
         line-height: 135%;
         letter-spacing: 0%;
+        @media only screen and (min-width: 360px) and (max-width: 767px) {
+          font-size: calc(14 / 16 * 1rem);      
+        }
       }
     }
   }
   .blog-content {
     background: #F4F6F9;
-    padding: calc(32 / 16 * 1rem) 0 calc(100 / 16 * 1rem);
+    padding: calc(30 / 16 * 1rem) 0 calc(100 / 16 * 1rem);
     .blog-content__inner {
-      min-width: 100%;
+      max-width: calc(1200 / 16 * 1rem);
       width: 100%;
+      margin: 0 auto;
+      @media only screen and (min-width: 1221px) and (max-width: 1600px) {
+        padding: 0 calc(60 / 16 * 1rem);
+      }
+      @media only screen and (max-width: 1200px) {
+        padding: 0 calc(40 / 16 * 1rem);
+      }
+      @media only screen and (min-width: 360px) and (max-width: 767px) {
+        padding: 0 calc(20 / 16 * 1rem);
+      } 
+    }
+    .blog-search__wrap {
+      padding: calc(20 / 16 * 1rem) 0;
+      .search-wrap {
+        position: relative;
+        width: 50%;
+        height: calc(84 / 16 * 1rem);
+        padding-right: calc(34 / 16 * 1rem);
+        label {
+          font-weight: 400;
+          font-size: calc(16 / 16 * 1rem);
+          line-height: 160%;
+          letter-spacing: 0px;
+          color: #000729;
+          display: block;
+        }
+        .input-wrap {
+          margin-top: 10px;
+          position: relative;
+          width: 100%;
+          border: 1px solid #CBCDD2;
+          border-radius: calc(8 / 16 * 1rem);
+          height: calc(48 / 16 * 1rem);
+          background: #fff;
+          overflow: hidden;
+          i {
+            width: calc(24 / 16 * 1rem);
+            height: calc(24 / 16 * 1rem);
+            position: absolute;
+            display: block;
+            left: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+            &::before {
+              content: '';
+              display: block;
+              width: 100%;
+              height: 100%;
+              background: url('/img/ico_search.svg') no-repeat;
+              background-size: 100% auto;
+            }
+          }
+          input {
+            border: 0;
+            height: calc(45 / 16 * 1rem);
+            width: calc(100% - calc(30 / 16 * 1rem));
+            background: transparent;
+            margin-left: calc(30 / 16 * 1rem)
+          }
+        }
+        &::after {
+          content: '';
+          display: block;
+          width: 1px;
+          height: calc(84 / 16 * 1rem);
+          background: #D9D9D9;
+          position: absolute;
+          right: 0;
+          top:0;
+        }
+      }
+      .get-trial-box {
+        padding-left: calc(34 / 16 * 1rem);
+        gap: calc(8 / 16 * 1rem);
+        .text {
+          font-weight: 400;
+          font-size: calc(16 / 16 * 1rem);
+          line-height: 160%;
+          letter-spacing: 0px;
+          vertical-align: middle;
+          color: #000729;
+        }
+        .button-group {
+          button {
+            background-color: #32353D;
+            height: calc(48 / 16 * 1rem);
+            width: calc(272 / 16 * 1rem);
+            border-radius: calc(5 / 16 * 1rem);
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 135%;
+            letter-spacing: 0px;
+            text-align: center;
+            color: #fff;
+            transition-duration: 300ms;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+      @media only screen and  (max-width: 1200px) {
+          padding: 0;
+          flex-direction: column;
+          align-items: center;
+          max-width: calc(404 / 16 * 1rem);
+          margin: 0 auto;
+          gap: calc(26 / 16 * 1rem);
+          .search-wrap {
+            padding-right: 0;
+            width: 100%;
+            &::after {
+              display: none;
+            }
+          }
+          .get-trial-box { 
+            padding-left: 0;
+            width: 100%;
+            .button-group {
+              button {
+                width: 100%;
+              }
+            }
+          }
+      }
+      @media only screen and (min-width: 360px) and (max-width: 767px) {
+        max-width: 100%;
+        .get-trial-box {
+          display: none;
+        }
+      } 
+    }
+    .blog-view__wrap {
+      max-width: calc(1200 / 16 * 1rem);
+      width: 100%;
+      margin: calc(30 / 16 * 1rem) auto 0;
+      gap: calc(24 / 16 * 1rem);
+      @media only screen and  (max-width: 1200px) {
+        margin: calc(36 / 16 * 1rem) auto 0;
+      }
+      .blog-list-items {
+        box-shadow: 0px 0px 8px 0px #00000014;
+        // height: calc(427 / 16 * 1rem);
+        width: calc((100% / 3) - calc(20 / 16 * 1rem));
+        border-radius: calc(10 / 16 * 1rem);
+        overflow: hidden;
+        @media only screen and  (max-width: 1200px) {
+          width: calc((100% / 2) - calc(20 / 16 * 1rem));
+        }
+        @media only screen and (min-width: 360px) and (max-width: 767px) {
+          width: calc((100% / 1) - calc(0 / 16 * 1rem));
+        }
+        .thum-img {
+          height: calc(207 / 16 * 1rem);
+          width: 100%;
+          overflow: hidden;
+          img {
+            width: 100%;
+          }
+        }
+        .blog-list-content {
+          box-shadow: 0px 0px 8px 0px #00000026;
+          gap: calc(20 / 16 * 1rem);
+          height: calc(207 / 16 * 1rem);
+          background: #fff;
+          padding: calc(24 / 16 * 1rem) calc(32 / 16 * 1rem) calc(32 / 16 * 1rem);
+          .cate {
+            color: #00A3FF;
+            font-family: Poppins;
+            font-weight: 500;
+            font-size: calc(14 / 16 * 1rem);
+            line-height: 135%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+          }
+          .title {
+            font-weight: 600;
+            font-size: calc(20 / 16 * 1rem);
+            line-height: 150%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            color: #000729;
+          }
+          .description {
+            color: #000729;
+            font-weight: 400;
+            font-size: calc(16 / 16 * 1rem);
+            line-height: 160%;
+            letter-spacing: 0px;
+            vertical-align: middle;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+          }
+        }
+      }
+    }
+    .button-bottom {
+      margin-top: calc(60 / 16 * 1rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      button {
+        width: calc(110 / 16 * 1rem);
+        height: calc(50 / 16 * 1rem);
+        border-radius: 30px;      
+        border: 1px solid #6A6D73;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000729;
+        font-weight: 500;
+        font-size: calc(16 / 16 * 1rem);
+        line-height: 135%;
+        letter-spacing: 0px;
+        vertical-align: middle;
+      }
     }
   }
 }

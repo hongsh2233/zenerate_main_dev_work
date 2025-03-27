@@ -1,0 +1,103 @@
+{
+    "id": "2025032601",
+    "category": "Tutorial",
+    "title": "Adding Non-Residential Rooms and Area",
+    "tag": "Tutorial",
+    "summary": "See how to quickly and easily add non-residential rooms and areas to your building design for better layout optimization.",
+    "createdAt": "Jan 36, 2025",
+    "author": "Zenerate",
+    "coverImage": "/posts/images/nonresidential_cover.png",
+    "sections": [
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "prolog"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Non-residential spaces like lobbies, laundry rooms, bike parking, and facility rooms play a crucial role in enhancing a building’s functionality. They accommodate staff and provide essential amenities for tenants, making them an integral part of any well-designed project."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Zenerate makes it simple to incorporate these spaces into your preliminary design, ensuring a more realistic and optimized layout."
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "In the Residential Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Within residential floors, you can easily convert existing units into non-residential spaces by following these steps:"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "1. Click on a unit you would like to change.",
+                        "2. Select the dropdown menu in the edit bar.",
+                        "3. Choose the desired non-residential room type."
+                    ]
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "In the Parking Area"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "In parking areas, adding facility rooms is just as effortless:"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "1. Click on your parking area layout. ",
+                        "2. Select “Room/ Area”.",
+                        "3. Choose the type of non-residential space you want to add.",
+                        "4. Drag and drop it onto the available space."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Zenerate will automatically adjust the parking layout and recalculate parking spot numbers to accommodate the new space."
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "Maximize Space with Zenerate"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "With Zenerate, modifying layouts is quick and hassle-free, allowing you to create more efficient designs in just a few clicks. Explore more design tips on our blog or book a demo with us today and get a free trial!"
+                },
+                {
+                    "type": "button",
+                    "text": "Book Demo + Get a Free Trial",
+                    "class": "demo-button-gtm only-en-desktop",
+                    "event": "openCalendlyPopup"
+                }
+            ]
+        }
+    ]
+}
