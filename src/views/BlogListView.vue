@@ -1,7 +1,7 @@
 <template>
-  <section class="section-contact">
-    <div class="blog-visual">
-      <div class="blog-visual__inner">
+  <section class="section-contact w-full min-w-full pt-[111px]">
+    <div class="blog-visual  w-full">
+      <div class="blog-visual__inner mx-auto flex flex-col justify-center gap-[0.875rem] text-white">
           <p class="title-text">Zenerate Blog: Guide, <strong>Tips and Updates</strong></p>
           <p class="sub-title">Step-by-step guide and the latest insights<br> 
             to enhance your feasibility studies</p>
@@ -26,6 +26,7 @@
           </div>
           <!-- search top -->
           <div class="blog-view__wrap flex flex-wrap">
+              <!-- 결과 없을 때 메시지 -->
             <div class="blog-list-items flex flex-col"
               v-for="item in posts" :key="item"
             >
@@ -42,9 +43,26 @@
                   </div>
               </router-link> 
             </div>
-            <div class="button-bottom">
-              <button type="button">See More</button>
-            </div>
+
+          <!-- 조건 분기: 버튼 또는 메시지 -->
+          <div class="w-full text-center py-4 text-sm text-gray-500">
+            <!-- 포스트가 없을 때 (즉, 전체가 비었을 때) -->
+            <template v-if="posts.length === 0">
+              No posts found.
+            </template>
+
+            <!-- 포스트는 있지만 더 이상 로드할 게 없을 때 -->
+            <template v-else-if="!hasMore">
+              No more posts to show.
+            </template>
+
+            <!-- 아직 더 불러올 수 있는 경우 -->
+            <template v-else>
+              <div class="button-bottom">
+                <button type="button" @click="loadMore">See More</button>
+              </div>
+            </template>
+          </div>
 
           </div>
       </div>
@@ -57,53 +75,66 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
-import Footer from '/Components/Footer.vue'
+  import { ref, onMounted } from 'vue';
+  import Footer from '/Components/Footer.vue';
 
-const posts = ref([]);
+  const allPosts = ref([]);
+  const posts = ref([]);
+  const pageSize = 12;
+  const currentPage = ref(1);
+  const hasMore = ref(true);
 
-onMounted(async () => {
-  try {
-    const res = await fetch('/posts/postList.json');
-    const data = await res.json();
-    posts.value = data.slice(0, 12); // 최대 12개만 노출
-  } catch (err) {
-    console.error('포스트 목록 로딩 오류:', err);
-  }
-});
+  onMounted(async () => {
+    try {
+      const res = await fetch('/posts/postList.json');
+      const data = await res.json();
+      allPosts.value = data;
+      posts.value = data.slice(0, pageSize);
+    } catch (err) {
+      console.error('포스트 목록 로딩 오류:', err);
+    }
+  });
+
+  const loadMore = () => {
+    const nextPage = currentPage.value + 1;
+    const nextPosts = allPosts.value.slice(0, nextPage * pageSize);
+
+    if (nextPosts.length === posts.value.length) {
+      hasMore.value = false;
+      return;
+    }
+
+    posts.value = nextPosts;
+    currentPage.value = nextPage;
+  };
 </script>
 
 <style lang="scss" scoped>
 .section-contact {
   @include relative;
-  min-width: 100%;
-  width: 100%;
-  padding-top: 111px;
   .blog-visual {
-    width: 100%;
     height: calc(218 / 16 * 1rem);
-    background-image: url('/img/header_blog_bg_full.png');
     background-position: center center;
     background-repeat: repeat-x;
+      @media only screen and (min-width: 1601px) {
+        background-image: url('/img/header_blog_bg_full.png');
+      }
       @media only screen and (min-width: 1221px) and (max-width: 1600px) {
         padding: 0 calc(60 / 16 * 1rem);
+        background-image: url('/img/header_blog_bg_pc.png');
       }
       @media only screen and (min-width: 768px) and (max-width: 1200px) {
         padding: 0 calc(40 / 16 * 1rem);
+        background-image: url('/img/header_blog_bg_mo.png');
       }
       @media only screen and (min-width: 360px) and (max-width: 767px) {
         padding: 0 calc(20 / 16 * 1rem);
+        background-image: url('/img/header_blog_bg_mo1.png');
       }
     .blog-visual__inner {
       width: 100%;
       height: 100%;
       max-width: calc(1200 / 16 * 1rem);
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-content: flex-start;
-      justify-content: center;
-      color: #fff;
       gap: calc(14 / 16 * 1rem);
       .title-text {
         font-weight: 600;
@@ -174,7 +205,7 @@ onMounted(async () => {
             height: calc(24 / 16 * 1rem);
             position: absolute;
             display: block;
-            left: 2px;
+            left: 8px;
             top: 50%;
             transform: translateY(-50%);
             &::before {
@@ -191,7 +222,7 @@ onMounted(async () => {
             height: calc(45 / 16 * 1rem);
             width: calc(100% - calc(30 / 16 * 1rem));
             background: transparent;
-            margin-left: calc(30 / 16 * 1rem)
+            margin-left: calc(37 / 16 * 1rem)
           }
         }
         &::after {

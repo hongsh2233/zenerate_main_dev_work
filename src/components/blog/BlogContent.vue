@@ -51,7 +51,7 @@
                     v-for="(section, index) in post.sections"
                     :key="index"
                     v-if="post && post.sections"
-                    :id="`section${index + 1}`"
+                    :id="`section${index}`"
                 >
                   <template v-for="(block, blockIndex) in section.content" :key="blockIndex">
                     <h2 v-if="block.type === 'heading' && block.level === 2">{{ block.text }}</h2>
@@ -313,14 +313,18 @@ onUnmounted(() => {
             background: url('/img/ico_arrow.svg') no-repeat;
             background-size: 100% auto;
           }
-          @media only screen and (min-width: 360px) and (max-width: 767px) {
+          @media only screen and (min-width: 360px) and (max-width: 1119px) {
             display: flex;
           }
         }
         &.is-fixed {
           position: fixed;
           top: 120px;
-          left: calc(16 / 16 * 1rem);
+          left: 50%;
+          transform: translateX(calc(-1 * ((1200 / 16 * 1rem) / 2) - calc(30 / 16 * 1rem)));
+          // @media only screen and (min-width: 768px) and (max-width: 1200px) {
+          //   transform: translateX(calc(-1 * ((1200 / 16 * 1rem) / 2) - calc(30 / 16 * 1rem)));
+          // }
         }
         ul {
           display: block;
@@ -355,7 +359,7 @@ onUnmounted(() => {
       .post-content__wrap {
         width: calc(100% - calc(322 / 16 * 1rem));
         @media only screen and (min-width: 768px) and (max-width: 1200px) {
-          width: calc(100% - 40);
+          width: calc(100% - 40px);
           padding: 0 calc(20 / 16 * 1rem);
         }
         @media only screen and (min-width: 360px) and (max-width: 767px) {
