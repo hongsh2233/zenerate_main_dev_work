@@ -58,7 +58,7 @@
                     <h3 v-else-if="block.type === 'heading' && block.level === 3">{{ block.text }}</h3>
                     <p v-else-if="block.type === 'paragraph'" v-html="block.text"></p>
                     <ul v-else-if="block.type === 'list'">
-                      <li v-for="(item, i) in block.text" :key="i">{{ item }}</li>
+                      <li v-for="(item, i) in block.text" :key="i" v-html="item"></li>
                     </ul>
                     <img v-else-if="block.type === 'image'" :src="block.url" :alt="block.alt || ''" />
                     <button

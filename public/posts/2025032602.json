@@ -1,0 +1,198 @@
+{
+    "id": "2025032602",
+    "category": "Tutorial",
+    "title": "Edit & Optimize Building Layouts for Efficiency",
+    "tag": "Tutorial",
+    "summary": "Explore a simple way to accelerate and optimize your building layouts in under 5 minutes",
+    "createdAt": "Jan 36, 2025",
+    "author": "Zenerate",
+    "coverImage": "/posts/images/nonresidential_cover.png",
+    "sections": [
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "prolog"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "With the extensive options on building layouts, creating the right layout that maximizes your FAR, density and other aspects to get the most optimized design option is a priority. Understanding this needs, Zenerate makes it easy for you to create and edit the components in your building layout."
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "Choose A Building Type"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The first step in editing your building layout is selecting the right type for your feasibility studies. Zenerate provides five different building types, grouped into two categories"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "Multi-Family Residential Buildings: Tower, Midrise and Wrap Type. These building types consist of structured residential units like studios, 1-bedroom, 2-bedroom, and 3 bedroom apartments.",
+                        "Low-Rise Residential Buildings: Townhouse or Standalone. These building types focus on unit sizes to edit their layouts. "
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Once you choose your building type, Zenerate automatically generates a basic layout to kickstart your design. You can then customize the layout settings directly from the right sidebar of your workspace, which appears when you select a building layout. "
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "Multi-Family Residential Buildings"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Under a Multi-Family Residential building type (Tower, Midrise, or Wrap Type), you’ll have access to several editable options:"
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "1. Adjust the Number of Floors & Floor-to-Floor Height"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "You can quickly change the number of floors and adjust the floor-to-floor height by entering your desired values. Zenerate updates the design in real time, allowing you to instantly see the changes in 3D view."
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "2. Layout Type Presets"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Zenerate gives you the option to either customize your layout or choose from several preset layout types, each suited to a specific building design:"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "Tower: Center Core, Bar Shape, L Shape, U Shape",
+                        "Midrise: Bar Type, L Shape, C Shape, Donut ",
+                        "Wrap Type: Donut, Double Donut"
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Simply click on one of the preset options, and Zenerate will adjust your current layout to match that shape."
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "3. Define Unit Configuration"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "Unit Area & Ratio: You can adjust the average area and ratio of each unit to fit your desired layout specifications. Once you are done, click apply to have the system reflect the changes.",
+                        "Unit Depth & Balconies: type in unit depth measurement and turn on the balcony feature if desired."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "These tools allow you to fine-tune your building to meet specific design and functionality needs with precise inputs."
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "Low-Rise Residential Building"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "For Low-Rise Residential buildings like Townhouses and Standalone Buildings, the layout editing process is a bit different but just as flexible:"
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "1. Townhouse Layout"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "Number of Floors & Floor-to-Floor Height: Adjust the number of floors and the floor-to-floor height by typing in your desired measurements.",
+                        "Unit Types: For each townhouse unit, you can customize:<br>- - Parcel Size**: Adjust the size of the parcel for each unit.<br> - Yard Depth**: Set the yard depth for your townhouses.<br> Net Floor Area & Garage Load**: Define the usable floor area and garage load for each unit.",
+                        "Number of Units: You can modify the number of units per type in the layout, and Zenerate will automatically update the design to reflect the changes."
+                    ]
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "2. Standalone Layout"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "<strong>Floor-to-Floor Height:</strong> Set the height for each floor by entering your desired value.",
+                        "<strong>Levels & Usage**:</strong> For Standalone buildings, you'll be adding **levels** instead of units. You can specify:<br><strong>Number of Floors</strong> per level.<br> <strong>*Usage** of each level</strong> (e.g., residential, commercial, or mixed-use).<br><strong>Usage Ratio</strong> to define how much of each level is designated for specific purposes."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Standalone type will only show the areas used for each use type and does not provide individual units that could be changed like other types."
+                },
+                {
+                    "type": "button",
+                    "text": "Book Demo + Get a Free Trial",
+                    "class": "demo-button-gtm only-en-desktop",
+                    "event": "openCalendlyPopup"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "Drag and Drop Editing Feature"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If you’re unsure about the exact measurements for your units, Zenerate’s intuitive drag-and-drop feature makes it easy to adjust your building layout. Simply drag the edge points of your layout to instantly expand or shrink your design."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "As you modify the length of your layout, Zenerate automatically recalculates and generates the most suitable number of units and layout configurations to fit the new dimensions, ensuring that your design remains optimized and efficient."
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "Other Resources"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Zenerate provides multiple features to easily modify your designs. Visit our blog page for more resources or Book a demo with us and get a free trial for a hands-on experience today!"
+                }
+            ]
+        }
+    ]
+}
