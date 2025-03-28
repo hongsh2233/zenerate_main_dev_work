@@ -1,0 +1,183 @@
+{
+    "id": "2025032603",
+    "category": "Tutorial",
+    "title": "Project Setup",
+    "tag": "Tutorial",
+    "summary": "Learn how to define site rules and regulations to streamline your project's test-fit process.",
+    "createdAt": "Jan 36, 2025",
+    "author": "Zenerate",
+    "coverImage": "/posts/images/nonresidential_cover.png",
+    "sections": [
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "prolog"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "During a feasibility study, it is crucial to ensure that your design complies with local zoning regulations.<br> Zenerate helps streamline this process by allowing you to set key site parameters. Once you've selected your site, you can configure the following regulatory settings to align your design with the applicable requirements:"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "1. Street"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Defining the street-facing sides of your site helps Zenerate optimize building entrances and driveway placements. While this step is optional, it allows the system to generate more realistic designs."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "How to Set a Street Side:"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "Click the checkbox corresponding to the side that faces a street.",
+                        "If all sides are streets, tick the <Select All> option."
+                    ]
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "2. Setback"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Setbacks define the outer boundaries of buildable area, ensuring compliance with local zoning laws. Zenerate allows you to set both primary and secondary setbacks. Secondary setbacks are specifically applicable to residential projects, providing additional space between structures for aesthetic or regulatory purposes."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "How to Set a Setback:"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "Enter the required setback measurement.",
+                        "Click <Apply to All Edges> to apply the same setback to all sides.",
+                        "For different setback requirements on specific edges, manually enter the values for each applicable side."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Simply click on one of the preset options, and Zenerate will adjust your current layout to match that shape."
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "3. Height Limit"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Some locations impose height restrictions based on zoning laws. Zenerate allows you to set these limits to ensure your design remains compliant."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "How to Set a Height Limit:"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "Enter the maximum building height measurement (minimum height must at least be 10ft)",
+                        "If unsure or no limit is necessary, leave the <Unknown> checkbox selected and proceed."
+                    ]
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "4. Parking Requirements"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Different building types have varying parking requirements. Zenerate lets you input parking allocations based on your development type."
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "Parking Allocation Methods:"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "<strong>Residential:</strong> Input stalls required per unit type (studio, 1-bed, 2-bed, 3 bedroom or more).",
+                        "<strong>Retail::</strong> Specify the required parking stalls per area of retail space.",
+                        "<strong>Office::</strong> Define stalls needed per area of office space.",
+                        "<strong>Flat Minimum::</strong> Set a minimum number of parking spaces per stall."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "If your project includes mixed-use development, you can select multiple uses and enter parking requirements for each."
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "*Note: The displayed values in the system are placeholders. Users must manually input the correct values based on zoning regulations. "
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "Simple Regulation Tracking"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "As you refine your design, you can easily access your site constraints data and verify whether your project meets all regulatory requirements that have been applied."
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "For more resources, check out our other blogs or book your demo and get a free trial today!"
+                },
+                {
+                    "type": "button",
+                    "text": "Book Demo + Get a Free Trial",
+                    "class": "demo-button-gtm only-en-desktop",
+                    "event": "openCalendlyPopup"
+                }
+            ]
+        }
+    ]
+}

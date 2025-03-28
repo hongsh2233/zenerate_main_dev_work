@@ -1,0 +1,157 @@
+{
+    "id": "2025032604",
+    "category": "Tutorial",
+    "title": "Optimize Your Feasibility Study Using AI",
+    "tag": "Tutorial",
+    "summary": "Learn more about Zenerate and how our generative design software can accelerate your feasibility studies.",
+    "createdAt": "Jan 36, 2025",
+    "author": "Zenerate",
+    "coverImage": "/posts/images/nonresidential_cover.png",
+    "sections": [
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "What is the Zenerate App?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "<strong>The Zenerate App</strong> is a game-changer for architects, developers, contractors, and CRE Brokers looking to streamline the preliminary design and feasibility study process. With its intuitive interface and AI-powered features, Zenerate helps you generate and edit designs, model proforma, and estimate construction costs efficiently, saving you time and effort.<br>Want to see it in action? [Book a demo](https://calendly.com/zenerate/zenerate-app-demo?month=2025-03) today and enjoy a free trial!"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "How Does Zenerate Work?"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "It’s pretty simple, all you need to do is Input, Generate, Edit and Export. Let us break it down for you:"
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "1. Create Your Site"
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "As you go in, create and name your project to start."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Then, you will be redirected to your project page where you can either zoom in on the map to view the parcels or enter an address where your project will be located."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Once you have decided on your site, it’s time for you to choose the area where your project would be on either by choosing from the available parcels, easily drawing the boundaries on the map, or importing a CAD file with the defined boundaries if you prefer."
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "2. Project Setup"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Once you entered the Project Setup page, we need 4 basic information to start off with in order to generate the right designs for you:"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "<strong>Street</strong> is where you should click the sides of the site that is facing the street.",
+                        "<strong>Setbacks</strong> can be inputted either on the panel or directly on the map. **Secondary Setbacks** can be configured for the residential buildings on top of a podium.",
+                        "<strong>Height limit</strong> can be inputted in case there is a maximum height that should be placed on the building. If you are unsure, you can tick the “unknown” box and leave it blank.",
+                        "<strong>Parking Requirements</strong> can be adjusted depending on the jurisdiction’s requirements for your project, and you can choose whether they apply to residential, retail, office, flat minimum, or a combination of several uses."
+                    ]
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "3. Generate Designs"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "There are two ways that you can generate designs, either you can manually build it from scratch, or have our AI tool generate multiple solutions for you."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Our AI technology is designed to cut down your initial designing stage from days to mere seconds. Just by clicking “AI Generate” our app will automatically generate multiple designs that meet the requirements that you have inputted."
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "4. Edit Your Design"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Feel free to choose from the generated designs and click on “See All Details” where you would be redirected to our workspace. In this workspace, you are free to edit the generated design however you like, from changing building and unit layouts to adding another building, parking structure, specialty zones. Here is a little more details about the components that you can add to your design using our app:"
+                },
+                {
+                    "type": "list",
+                    "text": [
+                        "<strong>Building</strong> will give you five types of construction that you can choose from; **Tower, Midrise, Wrap Type, Townhouse and Standalone**. Once selected, it will automatically generate a default building layout. Then, you can change the number of units, floors that you desire and have entered into the system.",
+                        "<strong>Parking** will also give you five options to choose from; </strong>Garage - Speed Ramps, Garage - Sloping Floors, Driveway and Parking, Driveway, and Surface Parking Lot.**",
+                        "<strong>Zone** can be used if you would like to add areas for </strong>easement, open space, Outdoor Amenity, Wetland, or Green Space<br>We also provide a feature called </strong>Block** which allows you to section off or turn a that certain areas in your design into a parcel."
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "After adding all of the desired components, you can edit the measurement of each unit, their ratio and other details in the right-hand window."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "You can easily expand or reduce the length of the building or area by entering values in the measurement box or dragging a point or line of the object. "
+                },
+                {
+                    "type": "heading",
+                    "level": 3,
+                    "text": "5. Export"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Once you have finalized the design that matches your taste, you can also set the financial settings to calculate NOI & Construction Cost, Yield on Cost & Profit Margin or Residual value."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "All the data from the selected design solution can be exported in multiple formats: a PDF for the feasibility report, an Excel file for all project data, a CAD file for floor plans, and a Revit file for the BIM model."
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/"
+                }
+            ]
+        },
+        {
+            "content": [
+                {
+                    "type": "heading",
+                    "level": 2,
+                    "text": "Other Resources"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "For more information on Zenerate App, please contact product@zenerate.ai or <strong>book a demo with us and claim your free trial!</strong>"
+                }
+            ]
+        }
+    ]
+}
