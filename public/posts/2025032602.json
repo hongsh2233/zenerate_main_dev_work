@@ -45,7 +45,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032602c001.gif"
                 }
             ]
         },
@@ -71,7 +71,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032602c002.gif"
                 },
                 {
                     "type": "heading",
@@ -85,9 +85,9 @@
                 {
                     "type": "list",
                     "text": [
-                        "Tower: Center Core, Bar Shape, L Shape, U Shape",
-                        "Midrise: Bar Type, L Shape, C Shape, Donut ",
-                        "Wrap Type: Donut, Double Donut"
+                        "<strong>Tower:</strong> Center Core, Bar Shape, L Shape, U Shape",
+                        "<strong>Midrise:</strong> Bar Type, L Shape, C Shape, Donut ",
+                        "<strong>Wrap Type:</strong> Donut, Double Donut"
                     ]
                 },
                 {
@@ -96,7 +96,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032602c003.webp"
                 },
                 {
                     "type": "heading",
@@ -106,8 +106,8 @@
                 {
                     "type": "list",
                     "text": [
-                        "Unit Area & Ratio: You can adjust the average area and ratio of each unit to fit your desired layout specifications. Once you are done, click apply to have the system reflect the changes.",
-                        "Unit Depth & Balconies: type in unit depth measurement and turn on the balcony feature if desired."
+                        "<strong>Unit Area & Ratio:</strong> You can adjust the average area and ratio of each unit to fit your desired layout specifications. Once you are done, click apply to have the system reflect the changes.",
+                        "<strong>Unit Depth & Balconies:</strong> type in unit depth measurement and turn on the balcony feature if desired."
                     ]
                 },
                 {
@@ -135,9 +135,9 @@
                 {
                     "type": "list",
                     "text": [
-                        "Number of Floors & Floor-to-Floor Height: Adjust the number of floors and the floor-to-floor height by typing in your desired measurements.",
-                        "Unit Types: For each townhouse unit, you can customize:<br>- - Parcel Size**: Adjust the size of the parcel for each unit.<br> - Yard Depth**: Set the yard depth for your townhouses.<br> Net Floor Area & Garage Load**: Define the usable floor area and garage load for each unit.",
-                        "Number of Units: You can modify the number of units per type in the layout, and Zenerate will automatically update the design to reflect the changes."
+                        "<strong>Number of Floors & Floor-to-Floor Height:</strong> Adjust the number of floors and the floor-to-floor height by typing in your desired measurements.",
+                        "<strong>Unit Types:</strong> For each townhouse unit, you can customize:<br>- <strong>Parcel Size:</strong> Adjust the size of the parcel for each unit.<br> - <strong>Yard Depth:</strong> Set the yard depth for your townhouses.<br> - <strong>Net Floor Area & Garage Load:</strong> Define the usable floor area and garage load for each unit.",
+                        "<strong>Number of Units:</strong> You can modify the number of units per type in the layout, and Zenerate will automatically update the design to reflect the changes."
                     ]
                 },
                 {
@@ -149,7 +149,7 @@
                     "type": "list",
                     "text": [
                         "<strong>Floor-to-Floor Height:</strong> Set the height for each floor by entering your desired value.",
-                        "<strong>Levels & Usage**:</strong> For Standalone buildings, you'll be adding **levels** instead of units. You can specify:<br><strong>Number of Floors</strong> per level.<br> <strong>*Usage** of each level</strong> (e.g., residential, commercial, or mixed-use).<br><strong>Usage Ratio</strong> to define how much of each level is designated for specific purposes."
+                        "<strong>Levels & Usage:</strong> For Standalone buildings, you'll be adding <strong>levels</strong> instead of units. You can specify:<br>- <strong>Number of Floors</strong> per level.<br> - <strong>*Usage** of each level</strong> (e.g., residential, commercial, or mixed-use).<br>- <strong>Usage Ratio</strong> to define how much of each level is designated for specific purposes."
                     ]
                 },
                 {
@@ -158,9 +158,7 @@
                 },
                 {
                     "type": "button",
-                    "text": "Book Demo + Get a Free Trial",
-                    "class": "demo-button-gtm only-en-desktop",
-                    "event": "openCalendlyPopup"
+                    "text": "Book Demo + Get a Free Trial"
                 }
             ]
         },

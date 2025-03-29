@@ -1,7 +1,7 @@
 <template>
-    <section class="section-contact">
-        <div class="blog-visual">
-          <div class="blog-visual__inner" v-if="post">
+    <section class="w-full min-w-full section-contact">
+        <div class="w-full bg-repeat-x blog-visual">
+          <div class="flex flex-col items-start justify-center text-white blog-visual__inner" v-if="post">
               <p class="cate" v-if="post.category">{{post.category}}</p>
               <p class="title-text" v-if="post.title" v-html="post.title"></p>
               <p class="post-date">Updated on {{ post.createdAt }}</p>
@@ -57,22 +57,31 @@
                     <h2 v-if="block.type === 'heading' && block.level === 2">{{ block.text }}</h2>
                     <h3 v-else-if="block.type === 'heading' && block.level === 3">{{ block.text }}</h3>
                     <p v-else-if="block.type === 'paragraph'" v-html="block.text"></p>
-                    <ul v-else-if="block.type === 'list'">
-                      <li v-for="(item, i) in block.text" :key="i" v-html="item"></li>
-                    </ul>
+                    <div v-else-if="block.type === 'list'">
+                      <ul v-if="!block.ordered">
+                        <li v-for="(item, i) in block.text" :key="i" v-html="item"></li>
+                      </ul>
+                      <ol v-else>
+                        <li v-for="(item, i) in block.text" :key="i" v-html="item"></li>
+                      </ol>
+                    </div>
                     <img v-else-if="block.type === 'image'" :src="block.url" :alt="block.alt || ''" />
-                    <button
-                      v-else-if="block.type === 'button'"
-                      :class="block.class"
-                      @click="handleEvent(block.event)"
-                    >
-                      {{ block.text }}
-                    </button>
+                    <div v-else-if="block.type === 'button'">
+                        <button
+                          class="demo-button-gtm text-14-medium mx-auto h-[36px] w-[221px] rounded-5 bg-primary text-center leading-[36px] !text-white duration-300 hover:!text-core-200 mt-[20px]"
+                          @click="openCalendlyPopup"
+                        >
+                          {{ block.text }}
+                        </button>
+                    </div>
                   </template>
                 </div>
 
               </div>
           </div>
+        </div>
+        <div class="section section-footer fp-auto-height">
+          <Footer></Footer>
         </div>
     </section>
 
@@ -81,8 +90,24 @@
 import { ref, onMounted, computed, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { resolve } from 'path';
-const selectedLabel = ref('Explore Article Topics')
+import Emitter from '/Libraries/bus'
+import { MENU_EVENT } from '/Constants/eventConstant'
+import Footer from '/Components/Footer.vue';
 
+defineProps({
+  content_id: {
+    type: String,
+    required: true,
+  },
+})
+const openCalendlyPopup = () => {
+  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+    flag: true,
+    trigger: 'blog',
+  })
+}
+
+const selectedLabel = ref('Explore Article Topics')
 const isMoCateActive = ref(false)
 
 const handleMocateDrop = () => {
@@ -92,7 +117,7 @@ const handleMocateDrop = () => {
 const route = useRoute()
 const postId = route.params.content_id
 const post = ref<any>(null)
-  const activeIndex = ref(0)
+const activeIndex = ref(0)
 
 const headingSections = computed(() => {
   if (!post.value || !post.value.sections) return []
@@ -114,7 +139,7 @@ onMounted(async () => {
 const handleMoveSection = (index: number) => {
   const sectionEl = document.getElementById(`section${index}`)
   if (sectionEl) {
-    const yOffset = -80 // 필요 시 header 높이만큼 보정
+    const yOffset = -120 // 필요 시 header 높이만큼 보정
     const y = sectionEl.getBoundingClientRect().top + window.pageYOffset + yOffset
     window.scrollTo({ top: y, behavior: 'smooth' })
 
@@ -124,19 +149,6 @@ const handleMoveSection = (index: number) => {
   }
 }
 
-
-defineProps({
-  content_id: {
-    type: String,
-    required: true,
-  },
-})
-const openCalendlyPopup = () => {
-  Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
-    flag: true,
-    trigger: 'header',
-  })
-}
 
 // 스크롤에 따라 현재 섹션 체크
 const updateActiveSectionOnScroll = () => {
@@ -153,14 +165,6 @@ const updateActiveSectionOnScroll = () => {
 }
 
 
-onMounted(() => {
-  window.addEventListener('scroll', updateActiveSectionOnScroll)
-})
-onUnmounted(() => {
-  window.removeEventListener('scroll', updateActiveSectionOnScroll)
-})
-
-
 const categoryRef = ref<HTMLElement | null>(null)
 const isFixed = ref(false)
 
@@ -173,10 +177,12 @@ const handleScrollForFixing = () => {
 }
 
 onMounted(() => {
+  window.addEventListener('scroll', updateActiveSectionOnScroll)
   window.addEventListener('scroll', handleScrollForFixing)
 })
 
 onUnmounted(() => {
+  window.removeEventListener('scroll', updateActiveSectionOnScroll)
   window.removeEventListener('scroll', handleScrollForFixing)
 })
 </script>
@@ -184,15 +190,11 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .section-contact {
   @include relative;
-  min-width: 100%;
-  width: 100%;
   padding-top: 111px;
-  .blog-visual {
-    width: 100%;
+  .blog-visual {    
     height: calc(314 / 16 * 1rem);
     background-image: url('/img/blog_header_viewpage_bg_full.jpg');
-    background-position: center center;
-    background-repeat: repeat-x;
+    background-position: center center;    
     @media only screen and (min-width: 1221px) and (max-width: 1600px) {
         padding: 0 calc(60 / 16 * 1rem);
       }
@@ -207,12 +209,7 @@ onUnmounted(() => {
       width: 100%;
       height: 100%;
       max-width: calc(1200 / 16 * 1rem);
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      color: #fff;
+      margin: 0 auto;      
       @media only screen and (min-width: 360px) and (max-width: 767px) {
           align-items: center;
           justify-content: center;
@@ -274,7 +271,7 @@ onUnmounted(() => {
       gap: calc(60 / 16 * 1rem);
       overflow: visible;
       align-items: flex-start;
-      @media only screen and (max-width: 1200px) {
+      @media only screen and (max-width: 1023px) {
         flex-direction: column;
       }
       .blog-category-wrap {
@@ -282,7 +279,7 @@ onUnmounted(() => {
         min-width: calc(322 / 16 * 1rem);
         max-width: calc(322 / 16 * 1rem);
         z-index: 10;
-        @media only screen and (min-width: 360px) and (max-width: 767px) {
+        @media only screen and (max-width: 1023px) {
           min-width: calc(100% - calc(32 / 16 * 1rem));
           max-width: calc(100% - calc(32 / 16 * 1rem));
           margin: 0 auto;
@@ -297,7 +294,7 @@ onUnmounted(() => {
           justify-content: space-between;
           padding-right: calc(16 / 16 * 1rem);
           padding-left: calc(16 / 16 * 1rem);
-          width: calc(100% - alc(32 / 16 * 1rem));
+          width: calc(100% - calc(32 / 16 * 1rem));
           margin: 0 auto;
           border-radius: 8px;
           font-weight: 400;
@@ -313,7 +310,7 @@ onUnmounted(() => {
             background: url('/img/ico_arrow.svg') no-repeat;
             background-size: 100% auto;
           }
-          @media only screen and (min-width: 360px) and (max-width: 1119px) {
+          @media only screen and (max-width: 1023px) {
             display: flex;
           }
         }
@@ -322,13 +319,13 @@ onUnmounted(() => {
           top: 120px;
           left: 50%;
           transform: translateX(calc(-1 * ((1200 / 16 * 1rem) / 2) - calc(30 / 16 * 1rem)));
-          // @media only screen and (min-width: 768px) and (max-width: 1200px) {
-          //   transform: translateX(calc(-1 * ((1200 / 16 * 1rem) / 2) - calc(30 / 16 * 1rem)));
-          // }
+          @media only screen and (max-width: 1023px) {
+            transform: translateX(-50%);
+          }
         }
         ul {
           display: block;
-          @media only screen and (min-width: 360px) and (max-width: 767px) {
+          @media only screen and (max-width: 1023px) {
             display: none;
             &.is-active {
               display: block;
@@ -358,22 +355,21 @@ onUnmounted(() => {
       }
       .post-content__wrap {
         width: calc(100% - calc(322 / 16 * 1rem));
-        @media only screen and (min-width: 768px) and (max-width: 1200px) {
-          width: calc(100% - 40px);
-          padding: 0 calc(20 / 16 * 1rem);
-        }
-        @media only screen and (min-width: 360px) and (max-width: 767px) {
-          padding: 0 calc(20 / 16 * 1rem);
-          width: calc(100% - calc(40 / 16 * 1rem));
-        }
         &.is-fixed {
           padding-left: calc(382 / 16* 1rem);
-          @media only screen and (min-width: 360px) and (max-width: 767px) {
-            width: calc(100% - calc(16 / 16 * 1rem));
-            padding-left: calc(16 / 16* 1rem);
+          width: 100%;
+          @media only screen and (max-width: 1023px) {
+            width: calc(100% - calc(322 / 16 * 1rem));
+            // width: calc(100% - 40px);
+            padding: 0 calc(20 / 16 * 1rem);
+            margin: 0 auto;
           }
         }
         .post-section {
+          img {
+              max-width: 100%;
+              margin: calc(20 / 16 * 1rem) 0;
+          }
           &:first-child {
               h2 {
                 margin-top: 0;
@@ -410,6 +406,36 @@ onUnmounted(() => {
             line-height: 135%;
             letter-spacing: 0px;
             vertical-align: middle;
+          }
+          ol {
+            margin: calc(20 / 16 * 1rem) 0;
+            padding: 0;
+            li {
+              &+li {
+                margin-top: 5px;
+              }
+              list-style: none;
+            }
+          }
+          ul {
+            margin: calc(20 / 16 * 1rem) 0;
+            li {
+              position: relative;
+              padding-left: calc(10 / 16 * 1rem);
+              &::before {
+                content: '';
+                width: calc(3 / 16 * 1rem);
+                height: calc(3 / 16 * 1rem);
+                border-radius: 50%;
+                background-color: #6A6D73;
+                position: absolute;
+                left: 0;
+                top: 10px;
+              }
+              &+li {
+                margin-top: 5px;
+              }
+            }
           }
         }
       }

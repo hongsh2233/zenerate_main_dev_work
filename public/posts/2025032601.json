@@ -38,6 +38,7 @@
                 },
                 {
                     "type": "list",
+                    "ordered": true,
                     "text": [
                         "1. Click on a unit you would like to change.",
                         "2. Select the dropdown menu in the edit bar.",
@@ -46,7 +47,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032601c001.gif"
                 }
             ]
         },
@@ -63,6 +64,7 @@
                 },
                 {
                     "type": "list",
+                    "ordered": true,
                     "text": [
                         "1. Click on your parking area layout. ",
                         "2. Select “Room/ Area”.",
@@ -76,7 +78,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032601c002.gif"
                 }
             ]
         },
@@ -93,9 +95,7 @@
                 },
                 {
                     "type": "button",
-                    "text": "Book Demo + Get a Free Trial",
-                    "class": "demo-button-gtm only-en-desktop",
-                    "event": "openCalendlyPopup"
+                    "text": "Book Demo + Get a Free Trial"
                 }
             ]
         }

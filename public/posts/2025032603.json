@@ -41,12 +41,12 @@
                     "type": "list",
                     "text": [
                         "Click the checkbox corresponding to the side that faces a street.",
-                        "If all sides are streets, tick the <Select All> option."
+                        "If all sides are streets, tick the 'Select All' option."
                     ]
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032603c001.gif"
                 }
             ]
         },
@@ -80,7 +80,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032603c002.gif"
                 }
             ]
         },
@@ -109,7 +109,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032603c003.gif"
                 }
             ]
         },
@@ -144,7 +144,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032603c004.gif"
                 },
                 {
                     "type": "paragraph",
@@ -165,7 +165,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032603c005.gif"
                 },
                 {
                     "type": "paragraph",
@@ -173,9 +173,7 @@
                 },
                 {
                     "type": "button",
-                    "text": "Book Demo + Get a Free Trial",
-                    "class": "demo-button-gtm only-en-desktop",
-                    "event": "openCalendlyPopup"
+                    "text": "Book Demo + Get a Free Trial"
                 }
             ]
         }

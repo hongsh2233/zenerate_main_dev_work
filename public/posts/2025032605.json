@@ -34,7 +34,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032605C001.gif"
                 }
                 
             ]
@@ -52,7 +52,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032605C002.gif"
                 }
             ]
         },
@@ -87,7 +87,7 @@
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032605C003.gif"
                 },
                 {
                     "type": "paragraph",
@@ -104,23 +104,23 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "On our platform, we provide three different map views to help you work on your project; Basic View, Satellite View, and Model View. "
+                    "text": "On our platform, we provide three different map views to help you work on your project; <strong>Basic View, Satellite View, and Model View.</strong>"
                 },
                 {
                     "type": "paragraph",
-                    "text": "Basic View is our default view where you would be able to see the streets and building outlines to see the area that you could work on. "
+                    "text": "<strong>Basic View</strong> is our default view where you would be able to see the streets and building outlines to see the area that you could work on. "
                 },
                 {
                     "type": "paragraph",
-                    "text": "Satellite View allows you to see the actual building and terrains that are located in the specific area. This is very beneficial for people who would like to see the current state of the area that they are working on. "
+                    "text": "<strong>Satellite View</strong> allows you to see the actual building and terrains that are located in the specific area. This is very beneficial for people who would like to see the current state of the area that they are working on. "
                 },
                 {
                     "type": "paragraph",
-                    "text": "Model View would just give you a blank canvas space so that you would be able to focus on building your model. "
+                    "text": "<strong>Model View</strong> would just give you a blank canvas space so that you would be able to focus on building your model. "
                 },
                 {
                     "type": "image",
-                    "url": "/posts/images/"
+                    "url": "/posts/images/2025032605C004.webp"
                 }
             ]
         },
@@ -137,9 +137,7 @@
                 },
                 {
                     "type": "button",
-                    "text": "Book Demo + Get a Free Trial",
-                    "class": "demo-button-gtm only-en-desktop",
-                    "event": "openCalendlyPopup"
+                    "text": "Book Demo + Get a Free Trial"
                 }
             ]
         }
