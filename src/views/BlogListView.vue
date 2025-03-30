@@ -14,19 +14,24 @@
                   <label>Search Blogs</label>
                   <div class="input-wrap flex items-center">
                       <i class="ico-search"></i>
-                      <input type="text">
+                      <input type="text" v-model="searchText">
+                      <button type="button" @click="clearKeyword" v-if="searchText.length > 0" class="btn-clear-keyword">
+                        <i class="ico-x"></i>
+                      </button>
                   </div>
               </div>
               <div class="get-trial-box flex flex-col">
                   <div class="text">Get a quick walkthrough and a free trial afterward!</div>
                   <div class="button-group">
-                    <button type="button">Book Demo + Get a Free Trial.</button>
+                    <button type="button" @click="openCalendlyPopup">Book Demo + Get a Free Trial.</button>
                   </div>
               </div>
           </div>
           <!-- search top -->
-          <div class="blog-view__wrap flex flex-wrap">
-              <!-- 결과 없을 때 메시지 -->
+          <div class="flex align-center justify-center display-keyword" v-if="searchText">
+            Showing search result for : <span>{{ searchText }}</span>  
+          </div> 
+          <div class="blog-view__wrap flex flex-wrap">             
             <div class="blog-list-items flex flex-col"
               v-for="item in posts" :key="item"
             >
@@ -77,24 +82,44 @@
 <script lang="ts" setup>
   import { ref, onMounted } from 'vue';
   import Footer from '/Components/Footer.vue';
+  import Emitter from '/Libraries/bus'
+  import { MENU_EVENT } from '/Constants/eventConstant'
 
   const allPosts = ref([]);
+  const filteredPosts = ref([]);
   const posts = ref([]);
+  const searchText = ref('');
   const pageSize = 12;
   const currentPage = ref(1);
   const hasMore = ref(true);
 
+  // 데모 요청 팝업
+  const openCalendlyPopup = () => {
+    Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
+      flag: true,
+      trigger: 'blog',
+    })
+  }
+
+// 전체 포스트 불러오기
   onMounted(async () => {
     try {
       const res = await fetch('/posts/postList.json');
       const data = await res.json();
       allPosts.value = data;
       posts.value = data.slice(0, pageSize);
+      //applySearch(); 
     } catch (err) {
       console.error('포스트 목록 로딩 오류:', err);
     }
   });
 
+  const clearKeyword = () => {
+    searchText.value = '';
+    // applySearch();
+  }
+
+  // 더보기
   const loadMore = () => {
     const nextPage = currentPage.value + 1;
     const nextPosts = allPosts.value.slice(0, nextPage * pageSize);
@@ -159,6 +184,16 @@
       }
     }
   }
+  .display-keyword {
+        padding: calc( 32 / 16 * 1rem) 0 0;
+        font-family: Poppins;
+        font-weight: 400;
+        font-size: calc(18 / 16 * 1rem);
+        line-height: 135%;
+        span {
+          color: #4D49F4;
+        }
+  }
   .blog-content {
     background: #F4F6F9;
     padding: calc(30 / 16 * 1rem) 0 calc(100 / 16 * 1rem);
@@ -200,6 +235,9 @@
           height: calc(48 / 16 * 1rem);
           background: #fff;
           overflow: hidden;
+          &:has(input:focus) {
+            border: 1px solid #4D49F4;
+          }
           i {
             width: calc(24 / 16 * 1rem);
             height: calc(24 / 16 * 1rem);
@@ -222,7 +260,26 @@
             height: calc(45 / 16 * 1rem);
             width: calc(100% - calc(30 / 16 * 1rem));
             background: transparent;
-            margin-left: calc(37 / 16 * 1rem)
+            margin-left: calc(37 / 16 * 1rem);
+          }
+          .btn-clear-keyword {
+              position: absolute;
+              right: calc(20 / 16 * 1rem);
+              top: 50%;
+              transform: translateY(-50%);
+              i.ico-x {
+                width: calc(18 / 16 * 1rem);
+                height: calc(18 / 16 * 1rem);
+                display: block;
+                &::before {
+                  content: '';
+                  display: block;
+                  width: 100%;
+                  height: 100%;
+                  background: url('/img/ico_x.svg') no-repeat;
+                  background-size: 100% auto;
+                }
+              }
           }
         }
         &::after {
@@ -261,7 +318,8 @@
             color: #fff;
             transition-duration: 300ms;
             &:hover {
-              opacity: 0.8;
+              background: #000729;
+              transition: all 0.3s;
             }
           }
         }
@@ -311,6 +369,13 @@
         width: calc((100% / 3) - calc(20 / 16 * 1rem));
         border-radius: calc(10 / 16 * 1rem);
         overflow: hidden;
+        &:hover {
+          background: #00000014;
+          .blog-list-content {
+            background: #00000014;
+            transition: all 0.3s;
+          }
+        }
         @media only screen and  (max-width: 1200px) {
           width: calc((100% / 2) - calc(20 / 16 * 1rem));
         }
