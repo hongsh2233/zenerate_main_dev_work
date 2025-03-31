@@ -25,6 +25,7 @@
               <button 
                 type="button"
                 class="cate-select-mo"
+                :class="{ 'is-active': isMoCateActive }"
                 @click="handleMocateDrop"
               >
                 {{ selectedLabel }}
@@ -283,6 +284,7 @@ onUnmounted(() => {
           min-width: calc(100% - calc(32 / 16 * 1rem));
           max-width: calc(100% - calc(32 / 16 * 1rem));
           margin: 0 auto;
+          position: relative;
         }
         .cate-select-mo {
           @include relative;
@@ -310,6 +312,9 @@ onUnmounted(() => {
             background: url('/img/ico_arrow.svg') no-repeat;
             background-size: 100% auto;
           }
+          &.is-active {
+            border: 1px solid #5C6DFF;         
+        }
           @media only screen and (max-width: 1023px) {
             display: flex;
           }
@@ -329,10 +334,21 @@ onUnmounted(() => {
             display: none;
             &.is-active {
               display: block;
+              width: calc(100% - 32px);
+              position: absolute;
+              left:16px;
+              top: calc(52 / 16 * 1rem);
+              border: 1px solid #D2D4DA;
+              border-radius: 8px;
+              background: #fff;
+              box-shadow: #00000014;
             }
           }
           li {
             padding: 0 calc(24 / 16 * 1rem);
+            @media only screen and (max-width: 768px) {
+              padding: 0 calc(8 / 16 * 1rem);
+            }
             &.is-active {
               a {
                 color: #4D49F4;
@@ -355,12 +371,22 @@ onUnmounted(() => {
       }
       .post-content__wrap {
         width: calc(100% - calc(322 / 16 * 1rem));
+        @media only screen and (max-width: 1023px) {
+            width: calc(100% - 40px);
+            padding: 0 calc(20 / 16 * 1rem);
+            margin: 0 auto;
+        }
         &.is-fixed {
           padding-left: calc(382 / 16* 1rem);
           width: 100%;
           @media only screen and (max-width: 1023px) {
             width: calc(100% - calc(322 / 16 * 1rem));
             // width: calc(100% - 40px);
+            padding: 0 calc(20 / 16 * 1rem);
+            margin: 0 auto;
+          }
+          @media only screen and (max-width: 1023px) {
+            width: calc(100% - 40px);
             padding: 0 calc(20 / 16 * 1rem);
             margin: 0 auto;
           }
