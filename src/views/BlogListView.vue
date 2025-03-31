@@ -21,6 +21,7 @@
                       </button>
                       <input type="text" v-model="searchText" placeholder="Enter Search"
                           @focus="handleFocus"
+                          @keyup.enter="searchPost"
                           v-show="!searchResult"
                       >
                       <span class="keyword-list"  v-if="searchResult && searchText.trim().length > 0">
@@ -40,7 +41,7 @@
           </div>
           <!-- search top -->
           <div class="flex align-center justify-center display-keyword"  v-if="searchResult && searchText.trim().length > 0">
-            Showing search result for : <span>{{ searchText }}</span>  
+            Showing search result for:  <span>{{ searchText }}</span>  
           </div> 
           <div class="blog-view__wrap flex flex-wrap">             
             <div class="blog-list-items flex flex-col"
@@ -73,14 +74,14 @@
               </template>
 
               <!-- 포스트는 있는데 더 이상 로드할 게 없을 경우 -->
-              <template v-else-if="!hasMore">
+              <!-- <template v-else-if="!hasMore">
                 <div class="flex align-center justify-center no-rusult-msg">
                   No more posts to show.
                 </div>
-              </template>
+              </template> -->
 
               <!-- 더보기 버튼 노출 조건 -->
-              <template v-else>
+              <template v-if="hasMore">
                 <div class="button-bottom">
                   <button type="button" @click="loadMore">See More</button>
                 </div>
@@ -107,9 +108,10 @@
   const filteredPosts = ref([]);
   const posts = ref([]);
   const searchText = ref('');
-  const pageSize = 12;
+  // const pageSize = 12;
   const currentPage = ref(1);
   const hasMore = ref(true);
+  const pageSize = ref(12);
 
   const searchResult = ref(false);
   const isInputFocused = ref(false);
@@ -129,36 +131,31 @@
 
 // 전체 포스트 불러오기
   onMounted(async () => {
+    const isMobile = window.innerWidth <= 767;
+    pageSize.value = isMobile ? 6 : 12;
+
     try {
       const res = await fetch('/posts/postList.json');
       const data = await res.json();
       allPosts.value = data;
-      posts.value = data.slice(0, pageSize);
+      posts.value = data.slice(0, pageSize.value);
+      hasMore.value = data.length > pageSize.value;
     } catch (err) {
       console.error('포스트 목록 로딩 오류:', err);
     }
   });
 
   const clearKeyword = () => {
-    // searchText.value = '';
-    // searchResult.value = false;
-    // isInputFocused.value = false;
     searchText.value = '';
     searchResult.value = false;
-    posts.value = allPosts.value.slice(0, pageSize);
+    posts.value = allPosts.value.slice(0, pageSize.value);
     filteredPosts.value = allPosts.value;
     currentPage.value = 1;
-    hasMore.value = allPosts.value.length > pageSize;
+    hasMore.value = allPosts.value.length > pageSize.value;
   }
 
   // 검색
   const searchPost = () => {
-    // const keyword = searchText.value.trim();
-    // if (keyword.length > 0) {
-    //   searchResult.value = true;
-    // } else {
-    //   searchResult.value = false;
-    // }
     const keyword = searchText.value.trim().toLowerCase();
     if (!keyword) {
       resetPost();
@@ -172,27 +169,18 @@
     );
 
     filteredPosts.value = matched;
-    posts.value = matched.slice(0, pageSize);
+    posts.value = matched.slice(0, pageSize.value);
     currentPage.value = 1;
     searchResult.value = true;
-    hasMore.value = posts.value.length < filteredPosts.value.length;
+    // hasMore.value = posts.value.length < filteredPosts.value.length;
+    hasMore.value = filteredPosts.value.length > pageSize.value;
   }
 
   // 더보기
   const loadMore = () => {
-    // const nextPage = currentPage.value + 1;
-    // const nextPosts = allPosts.value.slice(0, nextPage * pageSize);
-
-    // if (nextPosts.length === posts.value.length) {
-    //   hasMore.value = false;
-    //   return;
-    // }
-
-    // posts.value = nextPosts;
-    // currentPage.value = nextPage;
     const nextPage = currentPage.value + 1;
     const source = searchResult.value ? filteredPosts.value : allPosts.value;
-    const nextPosts = source.slice(0, nextPage * pageSize);
+    const nextPosts = source.slice(0, nextPage * pageSize.value);
 
     if (nextPosts.length === posts.value.length) {
       hasMore.value = false;
@@ -201,7 +189,8 @@
 
     posts.value = nextPosts;
     currentPage.value = nextPage;
-    hasMore.value = nextPosts.length < source.length;
+    // hasMore.value = nextPosts.length < source.length;
+    hasMore.value = source.length > nextPage * pageSize.value;
   };
 
   // 초기화
@@ -209,9 +198,10 @@
     searchText.value = '';
     searchResult.value = false;
     filteredPosts.value = allPosts.value;
-    posts.value = allPosts.value.slice(0, pageSize);
+    posts.value = allPosts.value.slice(0, pageSize.value);
     currentPage.value = 1;
-    hasMore.value = posts.value.length < allPosts.value.length;
+    // hasMore.value = posts.value.length < allPosts.value.length;
+    hasMore.value = allPosts.value.length > pageSize.value;
   };
 </script>
 
@@ -272,6 +262,7 @@
         font-size: calc(18 / 16 * 1rem);
         line-height: 135%;
         span {
+          margin-left: 10px;
           color: #4D49F4;
         }
   }
