@@ -12,12 +12,23 @@
           <div class="blog-search__wrap flex">
               <div class="search-wrap flex flex-col justify-center">
                   <label>Search Blogs</label>
-                  <div class="input-wrap flex items-center">
+                  <div class="input-wrap flex items-center"
+                    :class="{ 'is-focused': isInputFocused }"
+                  >
                       <i class="ico-search"></i>
-                      <input type="text" v-model="searchText">
-                      <button type="button" @click="clearKeyword" v-if="searchText.length > 0" class="btn-clear-keyword">
-                        <i class="ico-x"></i>
+                      <button type="button" class="btn-seaarch" @click="searchPost" >
+                        <i class="ico-search"></i>
                       </button>
+                      <input type="text" v-model="searchText" placeholder="Enter Search"
+                          @focus="handleFocus"
+                          v-show="!searchResult"
+                      >
+                      <span class="keyword-list"  v-if="searchResult && searchText.trim().length > 0">
+                        {{ searchText }}
+                        <button type="button" @click="clearKeyword" class="btn-clear-keyword">
+                          <i class="ico-x"></i>
+                      </button>
+                      </span>
                   </div>
               </div>
               <div class="get-trial-box flex flex-col">
@@ -28,7 +39,7 @@
               </div>
           </div>
           <!-- search top -->
-          <div class="flex align-center justify-center display-keyword" v-if="searchText">
+          <div class="flex align-center justify-center display-keyword"  v-if="searchResult && searchText.trim().length > 0">
             Showing search result for : <span>{{ searchText }}</span>  
           </div> 
           <div class="blog-view__wrap flex flex-wrap">             
@@ -93,6 +104,14 @@
   const currentPage = ref(1);
   const hasMore = ref(true);
 
+  const searchResult = ref(false);
+  const isInputFocused = ref(false);
+
+  const handleFocus = () => {
+    isInputFocused.value = true;
+  };
+
+
   // 데모 요청 팝업
   const openCalendlyPopup = () => {
     Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
@@ -108,7 +127,6 @@
       const data = await res.json();
       allPosts.value = data;
       posts.value = data.slice(0, pageSize);
-      //applySearch(); 
     } catch (err) {
       console.error('포스트 목록 로딩 오류:', err);
     }
@@ -116,7 +134,19 @@
 
   const clearKeyword = () => {
     searchText.value = '';
-    // applySearch();
+    searchResult.value = false;
+    isInputFocused.value = false;
+
+  }
+
+  // 검색
+  const searchPost = () => {
+    const keyword = searchText.value.trim();
+    if (keyword.length > 0) {
+      searchResult.value = true;
+    } else {
+      searchResult.value = false;
+    }
   }
 
   // 더보기
@@ -185,7 +215,7 @@
     }
   }
   .display-keyword {
-        padding: calc( 32 / 16 * 1rem) 0 0;
+        padding: calc( 40 / 16 * 1rem) 0 0;
         font-family: Poppins;
         font-weight: 400;
         font-size: calc(18 / 16 * 1rem);
@@ -235,10 +265,31 @@
           height: calc(48 / 16 * 1rem);
           background: #fff;
           overflow: hidden;
-          &:has(input:focus) {
-            border: 1px solid #4D49F4;
+          .keyword-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: calc(1 / 16 * 1rem);
+            margin-left: calc(8 / 16 * 1rem);
+
           }
-          i {
+          &.is-focused {
+            border: 1px solid #4D49F4;
+            i.ico-search {
+              display: none;
+            }
+            .btn-seaarch i.ico-search,
+            .btn-seaarch {
+              display: block;
+            }
+            input {
+              margin-left: calc(8 / 16 * 1rem);
+              &::placeholder {
+                opacity: 1;              
+              }
+          }
+          }
+          i.ico-search {
             width: calc(24 / 16 * 1rem);
             height: calc(24 / 16 * 1rem);
             position: absolute;
@@ -261,12 +312,18 @@
             width: calc(100% - calc(30 / 16 * 1rem));
             background: transparent;
             margin-left: calc(37 / 16 * 1rem);
+            &::placeholder {
+              opacity: 0;
+              transition: opacity 0.2s ease;
+            }
           }
           .btn-clear-keyword {
-              position: absolute;
-              right: calc(20 / 16 * 1rem);
-              top: 50%;
-              transform: translateY(-50%);
+            width: calc(18 / 16 * 1rem);
+            height: calc(18 / 16 * 1rem);
+              // position: absolute;
+              // right: calc(20 / 16 * 1rem);
+              // top: 50%;
+              // transform: translateY(-50%);
               i.ico-x {
                 width: calc(18 / 16 * 1rem);
                 height: calc(18 / 16 * 1rem);
@@ -280,6 +337,15 @@
                   background-size: 100% auto;
                 }
               }
+          }
+          .btn-seaarch {
+            display: none;
+            width: calc(24 / 16 * 1rem);
+            height: calc(24 / 16 * 1rem);
+            position: absolute;
+            right: calc(16 / 16 * 1rem);
+            top: 50%;
+            transform: translateY(-50%);
           }
         }
         &::after {
@@ -449,6 +515,9 @@
         line-height: 135%;
         letter-spacing: 0px;
         vertical-align: middle;
+        &:hover {
+          background: #6A6D73;
+        }
       }
     }
   }
