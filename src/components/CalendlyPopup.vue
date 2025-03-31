@@ -48,6 +48,7 @@ export type CalendlyTrigger =
   | 'modularlandingpage'
   | 'aboutus'
   | 'bisnow'
+  | 'blog'
 
 const props = defineProps({
   trigger: String as PropType<CalendlyTrigger>,

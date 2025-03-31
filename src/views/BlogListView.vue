@@ -62,22 +62,29 @@
 
           <!-- 조건 분기: 버튼 또는 메시지 -->
           <div class="w-full text-center py-4 text-sm text-gray-500">
-            <!-- 포스트가 없을 때 (즉, 전체가 비었을 때) -->
-            <template v-if="posts.length === 0">
-              No posts found.
-            </template>
+              <!-- 아무 포스트도 없는 경우 (검색 결과 없음 등) -->
+              <template v-if="posts.length === 0">
+                <div class="flex align-center justify-center no-rusult-msg">
+                  No posts found.
+                </div>
+                <div class="button-bottom">
+                  <button type="button" @click="resetPost">Go Back</button>
+                </div>
+              </template>
 
-            <!-- 포스트는 있지만 더 이상 로드할 게 없을 때 -->
-            <template v-else-if="!hasMore">
-              No more posts to show.
-            </template>
+              <!-- 포스트는 있는데 더 이상 로드할 게 없을 경우 -->
+              <template v-else-if="!hasMore">
+                <div class="flex align-center justify-center no-rusult-msg">
+                  No more posts to show.
+                </div>
+              </template>
 
-            <!-- 아직 더 불러올 수 있는 경우 -->
-            <template v-else>
-              <div class="button-bottom">
-                <button type="button" @click="loadMore">See More</button>
-              </div>
-            </template>
+              <!-- 더보기 버튼 노출 조건 -->
+              <template v-else>
+                <div class="button-bottom">
+                  <button type="button" @click="loadMore">See More</button>
+                </div>
+              </template>
           </div>
 
           </div>
@@ -133,26 +140,59 @@
   });
 
   const clearKeyword = () => {
+    // searchText.value = '';
+    // searchResult.value = false;
+    // isInputFocused.value = false;
     searchText.value = '';
     searchResult.value = false;
-    isInputFocused.value = false;
-
+    posts.value = allPosts.value.slice(0, pageSize);
+    filteredPosts.value = allPosts.value;
+    currentPage.value = 1;
+    hasMore.value = allPosts.value.length > pageSize;
   }
 
   // 검색
   const searchPost = () => {
-    const keyword = searchText.value.trim();
-    if (keyword.length > 0) {
-      searchResult.value = true;
-    } else {
-      searchResult.value = false;
+    // const keyword = searchText.value.trim();
+    // if (keyword.length > 0) {
+    //   searchResult.value = true;
+    // } else {
+    //   searchResult.value = false;
+    // }
+    const keyword = searchText.value.trim().toLowerCase();
+    if (!keyword) {
+      resetPost();
+      return;
     }
+
+    const matched = allPosts.value.filter(post =>
+      post.title?.toLowerCase().includes(keyword) ||
+      post.category?.toLowerCase().includes(keyword) ||
+      post.sumary?.toLowerCase().includes(keyword)
+    );
+
+    filteredPosts.value = matched;
+    posts.value = matched.slice(0, pageSize);
+    currentPage.value = 1;
+    searchResult.value = true;
+    hasMore.value = posts.value.length < filteredPosts.value.length;
   }
 
   // 더보기
   const loadMore = () => {
+    // const nextPage = currentPage.value + 1;
+    // const nextPosts = allPosts.value.slice(0, nextPage * pageSize);
+
+    // if (nextPosts.length === posts.value.length) {
+    //   hasMore.value = false;
+    //   return;
+    // }
+
+    // posts.value = nextPosts;
+    // currentPage.value = nextPage;
     const nextPage = currentPage.value + 1;
-    const nextPosts = allPosts.value.slice(0, nextPage * pageSize);
+    const source = searchResult.value ? filteredPosts.value : allPosts.value;
+    const nextPosts = source.slice(0, nextPage * pageSize);
 
     if (nextPosts.length === posts.value.length) {
       hasMore.value = false;
@@ -161,6 +201,17 @@
 
     posts.value = nextPosts;
     currentPage.value = nextPage;
+    hasMore.value = nextPosts.length < source.length;
+  };
+
+  // 초기화
+  const resetPost = () => {
+    searchText.value = '';
+    searchResult.value = false;
+    filteredPosts.value = allPosts.value;
+    posts.value = allPosts.value.slice(0, pageSize);
+    currentPage.value = 1;
+    hasMore.value = posts.value.length < allPosts.value.length;
   };
 </script>
 
@@ -519,6 +570,9 @@
           background: #6A6D73;
         }
       }
+    }
+    .no-rusult-msg {
+      padding: calc(100 / 16 * 1rem) 0;
     }
   }
 }
