@@ -205,6 +205,7 @@ onUnmounted(() => {
 <style lang="scss" scoped>
 .section-contact {
   @include relative;
+  font-family: Poppins;
   padding-top: 111px;
   .blog-visual {    
     height: calc(314 / 16 * 1rem);

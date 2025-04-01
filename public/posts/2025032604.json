@@ -17,7 +17,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>The Zenerate App</strong> is a game-changer for architects, developers, contractors, and CRE Brokers looking to streamline the preliminary design and feasibility study process. With its intuitive interface and AI-powered features, Zenerate helps you generate and edit designs, model proforma, and estimate construction costs efficiently, saving you time and effort.<br>Want to see it in action? [Book a demo](https://calendly.com/zenerate/zenerate-app-demo?month=2025-03) today and enjoy a free trial!"
+                    "text": "<strong>The Zenerate App</strong> is a game-changer for architects, developers, contractors, and CRE Brokers looking to streamline the preliminary design and feasibility study process. With its intuitive interface and AI-powered features, Zenerate helps you generate and edit designs, model proforma, and estimate construction costs efficiently, saving you time and effort.<br>Want to see it in action? <a href='https://calendly.com/zenerate/zenerate-app-demo?month=2025-03'>[Book a demo]</a> today and enjoy a free trial!"
                 }
             ]
         },
@@ -108,8 +108,8 @@
                 {
                     "type": "list",
                     "text": [
-                        "<strong>Building</strong> will give you five types of construction that you can choose from; **Tower, Midrise, Wrap Type, Townhouse and Standalone**. Once selected, it will automatically generate a default building layout. Then, you can change the number of units, floors that you desire and have entered into the system.",
-                        "<strong>Parking** will also give you five options to choose from; </strong>Garage - Speed Ramps, Garage - Sloping Floors, Driveway and Parking, Driveway, and Surface Parking Lot.**",
+                        "<strong>Building</strong> will give you five types of construction that you can choose from; Tower, Midrise, Wrap Type, Townhouse and Standalone**. Once selected, it will automatically generate a default building layout. Then, you can change the number of units, floors that you desire and have entered into the system.",
+                        "<strong>Parking will also give you five options to choose from; </strong>Garage - Speed Ramps, Garage - Sloping Floors, Driveway and Parking, Driveway, and Surface Parking Lot.",
                         "<strong>Zone can be used if you would like to add areas for </strong>easement, open space, Outdoor Amenity, Wetland, or Green Space<br>We also provide a feature called </strong>Block** which allows you to section off or turn a that certain areas in your design into a parcel."
                     ]
                 },
@@ -149,7 +149,11 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "For more information on Zenerate App, please contact product@zenerate.ai or <strong>book a demo with us and claim your free trial!</strong>"
+                    "text": "For more information on Zenerate App, please contact product@zenerate.ai or"
+                },
+                {
+                    "type": "button",
+                    "text": "Book Demo + Get a Free Trial"
                 }
             ]
         }

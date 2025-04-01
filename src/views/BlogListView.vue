@@ -51,7 +51,7 @@
                 :to="{ name: 'blog-content', params: { content_id: item.id } }"
               >
                   <div class="thum-img">
-                    <img :src="item.thumbnail" :alt="item.title" />
+                    <img :src="item.thumbnail" class="pc-img" :alt="item.title" /><img :src="item.thumbnailMo" class="mo-img" :alt="item.title" />
                   </div>
                   <div class="blog-list-content">
                     <div class="cate">{{ item.category }}</div>
@@ -208,6 +208,7 @@
 <style lang="scss" scoped>
 .section-contact {
   @include relative;
+  font-family: Poppins;
   .blog-visual {
     height: calc(218 / 16 * 1rem);
     background-position: center center;
@@ -215,15 +216,15 @@
       @media only screen and (min-width: 1601px) {
         background-image: url('/img/header_blog_bg_full.png');
       }
-      @media only screen and (min-width: 1221px) and (max-width: 1600px) {
+      @media only screen and (max-width: 1600px) {
         padding: 0 calc(60 / 16 * 1rem);
         background-image: url('/img/header_blog_bg_pc.png');
       }
-      @media only screen and (min-width: 768px) and (max-width: 1200px) {
+      @media only screen and (max-width: 1200px) {
         padding: 0 calc(40 / 16 * 1rem);
         background-image: url('/img/header_blog_bg_mo.png');
       }
-      @media only screen and (min-width: 360px) and (max-width: 767px) {
+      @media only screen and (max-width: 767px) {
         padding: 0 calc(20 / 16 * 1rem);
         background-image: url('/img/header_blog_bg_mo1.png');
       }
@@ -313,7 +314,7 @@
             justify-content: center;
             gap: calc(1 / 16 * 1rem);
             margin-left: calc(8 / 16 * 1rem);
-
+            color:#000729;
           }
           &.is-focused {
             border: 1px solid #4D49F4;
@@ -326,6 +327,7 @@
             }
             input {
               margin-left: calc(8 / 16 * 1rem);
+              color:#000729;
               &::placeholder {
                 opacity: 1;              
               }
@@ -436,7 +438,7 @@
           padding: 0;
           flex-direction: column;
           align-items: center;
-          max-width: calc(404 / 16 * 1rem);
+          max-width: calc(414 / 16 * 1rem);
           margin: 0 auto;
           gap: calc(26 / 16 * 1rem);
           .search-wrap {
@@ -448,7 +450,10 @@
           }
           .get-trial-box { 
             padding-left: 0;
-            width: 100%;
+            width: 100%;            
+            font-weight: 400;
+            font-size: calc(16 / 16 * 1rem);
+            line-height: 160%;
             .button-group {
               button {
                 width: 100%;
@@ -469,6 +474,9 @@
       margin: calc(30 / 16 * 1rem) auto 0;
       gap: calc(24 / 16 * 1rem);
       @media only screen and  (max-width: 1200px) {
+        margin: calc(66 / 16 * 1rem) auto 0;
+      }
+      @media only screen and  (max-width: 768px) {
         margin: calc(36 / 16 * 1rem) auto 0;
       }
       .blog-list-items {
@@ -494,8 +502,26 @@
           height: calc(207 / 16 * 1rem);
           width: 100%;
           overflow: hidden;
+          @media only screen and (max-width: 1200px) {
+            // height: calc(220 / 16 * 1rem);
+            aspect-ratio: 16 / 11;
+          }
           img {
             width: 100%;
+            &.mo-img {
+              display: none;
+            }
+            &.pc-img {
+              display: block;
+            }
+            @media only screen and (max-width: 768px) {
+              &.mo-img {
+              display: block;
+              }
+              &.pc-img {
+                display: none;
+              }
+            }
           }
         }
         .blog-list-content {
@@ -520,6 +546,14 @@
             letter-spacing: 0px;
             vertical-align: middle;
             color: #000729;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            @media only screen and (max-width: 768px) {
+              -webkit-line-clamp: 2;
+            }
           }
           .description {
             color: #000729;
