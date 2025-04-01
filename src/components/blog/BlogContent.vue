@@ -174,7 +174,21 @@ const handleScrollForFixing = () => {
 
   const threshold = 300 // 필요에 따라 조정 (픽셀 기준)
   const scrollTop = window.scrollY || document.documentElement.scrollTop
-  isFixed.value = scrollTop > threshold
+  // isFixed.value = scrollTop > threshold
+
+  // post-content__wrap 엘리먼트 기준으로 끝점 계산
+  const contentEl = document.querySelector('.post-content__wrap') as HTMLElement;
+  const contentBottom = contentEl?.offsetTop + contentEl?.offsetHeight || 0;
+
+  const scrollBottom = scrollTop + window.innerHeight;
+
+  // 기본 조건: threshold 이상일 때 고정
+  // 추가 조건: 콘텐츠 끝보다 더 내려가면 해제
+  if (scrollTop > threshold && scrollBottom < contentBottom) {
+    isFixed.value = true;
+  } else {
+    isFixed.value = false;
+  }
 }
 
 onMounted(() => {
@@ -227,7 +241,7 @@ onUnmounted(() => {
         margin-bottom: calc(10 / 16 * 1rem);
         @media only screen and (min-width: 360px) and (max-width: 767px) {
           font-size: calc(12 / 16 * 1rem);      
-          margin-bottom: calc(0 / 16 * 1rem);
+          margin-bottom: calc(4 / 16 * 1rem);
         }
       }
       .title-text {
@@ -236,11 +250,13 @@ onUnmounted(() => {
         letter-spacing: 0%;
         font-size: calc(32 / 16 * 1rem);   
         margin-bottom: calc(4 / 16 * 1rem);    
+        word-break: keep-all;
+        box-shadow: #00072914;
         strong {
           display: block;
         } 
-        @media only screen and (min-width: 360px) and (max-width: 767px) {
-          font-size: calc(19 / 16 * 1rem);    
+        @media only screen and (max-width: 767px) {
+          font-size: calc(22 / 16 * 1rem);    
           margin-bottom: calc(0 / 16 * 1rem);  
           strong {
             display: block;
@@ -331,7 +347,7 @@ onUnmounted(() => {
           position: fixed;
           top: 120px;
           left: 50%;
-          transform: translateX(calc(-1 * ((1200 / 16 * 1rem) / 2) - calc(30 / 16 * 1rem)));
+          transform: translateX(calc(-1 * ((1200 / 16 * 1rem) / 2) - calc(0 / 16 * 1rem)));
           @media only screen and (max-width: 1023px) {
             transform: translateX(-50%);
           }
@@ -353,29 +369,36 @@ onUnmounted(() => {
             }
           }
           li {
-            padding: 0 calc(24 / 16 * 1rem);
+            padding: 0 calc(2 / 16 * 1rem);
+            border-bottom: 1px solid #E3E3E8;
             @media only screen and (max-width: 768px) {
-              padding: 0 calc(8 / 16 * 1rem);
+              padding: 0 calc(2 / 16 * 1rem);
+              border-bottom:0;
+              &:hover {
+                a {
+                  background: #F2F2F5;
+                  border-radius: 6px;
+                }
+              }
             }
             &.is-active {
               a {
                 color: #4D49F4;
               }
             }
-            &:hover {
-              background: #F2F2F5;
-            }
             a {
               height: calc(55 / 16 * 1rem);
               display: block;
               display: flex;
               align-items: center;
-              // border-bottom: 1px solid #E3E3E8;
               font-weight: 500;
               font-size: calc(16 / 16 * 1rem);
               line-height: 135%;
               letter-spacing: 0px;
-              padding-left: calc(16 / 16 * 1rem);
+              padding-left: calc(22 / 16 * 1rem);
+              @media only screen and (max-width: 1023px) {
+                height: calc(38 / 16 * 1rem);
+              }
             }
           }
         }
