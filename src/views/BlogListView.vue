@@ -55,8 +55,8 @@
                   </div>
                   <div class="blog-list-content">
                     <div class="cate">{{ item.category }}</div>
-                    <div class="title">{{ item.title }}</div>
-                    <div class="description">{{ item.sumary }}</div>
+                    <div class="title" v-html="highlightKeyword(item.title)"></div>
+                    <div class="description" v-html="highlightKeyword(item.sumary)"></div>
                   </div>
               </router-link> 
             </div>
@@ -202,6 +202,15 @@
     currentPage.value = 1;
     // hasMore.value = posts.value.length < allPosts.value.length;
     hasMore.value = allPosts.value.length > pageSize.value;
+  };
+
+  // 키워드
+  const highlightKeyword = (text: string) => {
+    if (!searchResult.value || !searchText.value.trim()) return text;
+
+    const keyword = searchText.value.trim();
+    const regex = new RegExp(`(${keyword})`, 'gi');
+    return text.replace(regex, '<span style="color: #4D49F4;">$1</span>');
   };
 </script>
 
@@ -551,6 +560,9 @@
             display: -webkit-box;
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
+            span {
+              color: #4D49F4;
+            }
             @media only screen and (max-width: 768px) {
               -webkit-line-clamp: 2;
             }
@@ -567,6 +579,9 @@
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 3;
+            span {
+              color: #4D49F4;
+            }
           }
         }
       }

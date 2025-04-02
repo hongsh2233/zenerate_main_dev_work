@@ -11,9 +11,9 @@
         {
             "content": [
                 {
-                    "type": "heading",
+                    "type": "prolog",
                     "level": 2,
-                    "text": "prolog"
+                    "text": ""
                 },
                 {
                     "type": "paragraph",

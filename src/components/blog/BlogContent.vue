@@ -36,7 +36,10 @@
                   :key="index"
                   :class="{ 'is-active': activeIndex === index }"
                 >
-                  <a :href="`#section${index}`" @click.prevent="handleMoveSection(index)">
+                <a
+                  :href="`#section${section.type === 'prolog' ? index + 1 : index}`"
+                  @click.prevent="handleMoveSection(section.type === 'prolog' ? index + 1 : index)"
+                >
                     {{ section.text }}
                   </a>
                 </li>
@@ -47,13 +50,13 @@
                 :class="{ 'is-fixed': isFixed }"
                 ref="categoryRef"
               >
-                <div
-                  class="post-section"
-                    v-for="(section, index) in post.sections"
-                    :key="index"
-                    v-if="post && post.sections"
-                    :id="`section${index}`"
-                >
+              <div
+              class="post-section"
+                v-for="(section, index) in post.sections"
+                :key="index"
+                v-if="post && post.sections"
+                :id="section.content[0]?.type !== 'prolog' ? `section${getVisibleIndex(index)}` : null"
+              >
                   <template v-for="(block, blockIndex) in section.content" :key="blockIndex">
                     <h2 v-if="block.type === 'heading' && block.level === 2">{{ block.text }}</h2>
                     <h3 v-else-if="block.type === 'heading' && block.level === 3">{{ block.text }}</h3>
@@ -190,6 +193,14 @@ const handleScrollForFixing = () => {
     isFixed.value = false;
   }
 }
+
+const getVisibleIndex = (index: number): number => {
+  if (!post.value?.sections) return 0;
+
+  return post.value.sections
+    .slice(0, index)
+    .filter(section => section.content[0]?.type !== 'prolog').length;
+};
 
 onMounted(() => {
   window.addEventListener('scroll', updateActiveSectionOnScroll)
