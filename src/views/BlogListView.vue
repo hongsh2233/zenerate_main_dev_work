@@ -315,14 +315,15 @@
           border: 1px solid #CBCDD2;
           border-radius: calc(8 / 16 * 1rem);
           height: calc(48 / 16 * 1rem);
-          background: #fff;
+          background: #FAFBFC;
           overflow: hidden;
           .keyword-list {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: calc(1 / 16 * 1rem);
-            margin-left: calc(8 / 16 * 1rem);
+            font-size: calc(16 / 16 * 1rem);
+            margin-left: calc(16 / 16 * 1rem);
             color:#000729;
           }
           &.is-focused {
@@ -335,7 +336,7 @@
               display: block;
             }
             input {
-              margin-left: calc(8 / 16 * 1rem);
+              margin-left: calc(16 / 16 * 1rem);
               color:#000729;
               &::placeholder {
                 opacity: 1;              
@@ -363,6 +364,7 @@
             border: 0;
             height: calc(45 / 16 * 1rem);
             width: calc(100% - calc(30 / 16 * 1rem));
+            font-size: calc(16 / 16 * 1rem);
             background: transparent;
             margin-left: calc(37 / 16 * 1rem);
             &::placeholder {
@@ -606,8 +608,10 @@
         line-height: 135%;
         letter-spacing: 0px;
         vertical-align: middle;
+        background: transparent;
         &:hover {
-          background: #6A6D73;
+          background: #0007291A;
+          transition: all 0.3s;
         }
       }
     }
