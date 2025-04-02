@@ -383,9 +383,13 @@ onUnmounted(() => {
           li {
             padding: 0 calc(2 / 16 * 1rem);
             border-bottom: 1px solid #E3E3E8;
+            &:hover {
+                background: #F2F2F5;
+              }
             @media only screen and (max-width: 768px) {
               padding: 0 calc(2 / 16 * 1rem);
               border-bottom:0;
+              background: transparent;
               &:hover {
                 a {
                   background: #F2F2F5;
