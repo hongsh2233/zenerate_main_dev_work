@@ -1,6 +1,8 @@
 <template>
     <section class="w-full min-w-full section-contact">
-        <div class="w-full bg-repeat-x blog-visual">
+        <div class="w-full bg-repeat-x blog-visual"
+          :style="{ backgroundImage: bgImage }"
+        >
           <div class="flex flex-col items-start justify-center text-white blog-visual__inner" v-if="post">
               <p class="cate" v-if="post.category">{{post.category}}</p>
               <p class="title-text" v-if="post.title" v-html="post.title"></p>
@@ -91,7 +93,7 @@
 
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, computed, onUnmounted } from 'vue'
+import { ref, onMounted, computed, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { resolve } from 'path';
 import Emitter from '/Libraries/bus'
@@ -123,6 +125,35 @@ const postId = route.params.content_id
 const post = ref<any>(null)
 const activeIndex = ref(0)
 
+const bgImage = ref(''); // 배경 이미지 URL
+
+const updateBgImage = () => {
+  if (!post.value) return;
+
+  const width = window.innerWidth;
+
+  // 기본값은 PC 이미지로 먼저 설정
+  let imageUrl = post.value.coverImage;
+
+  if (width >= 1601) {
+    imageUrl = post.value.coverImage;
+  } else if (width >= 1221 && width <= 1600) {
+    imageUrl = post.value.coverImageMiniPc;
+  } else if (width >= 768 && width <= 1200) {
+    imageUrl = post.value.coverImageTablet;
+  } else {
+    imageUrl = post.value.coverImageMo;
+  }
+
+  bgImage.value = `url('${imageUrl}')`;
+};
+
+watch(post, (newPost) => {
+  if (newPost) {
+    updateBgImage()
+  }
+})
+
 const headingSections = computed(() => {
   if (!post.value || !post.value.sections) return []
 
@@ -143,7 +174,7 @@ onMounted(async () => {
 const handleMoveSection = (index: number) => {
   const sectionEl = document.getElementById(`section${index}`)
   if (sectionEl) {
-    const yOffset = -120 // 필요 시 header 높이만큼 보정
+    const yOffset = -150 // 필요 시 header 높이만큼 보정
     const y = sectionEl.getBoundingClientRect().top + window.pageYOffset + yOffset
     window.scrollTo({ top: y, behavior: 'smooth' })
 
@@ -205,11 +236,15 @@ const getVisibleIndex = (index: number): number => {
 onMounted(() => {
   window.addEventListener('scroll', updateActiveSectionOnScroll)
   window.addEventListener('scroll', handleScrollForFixing)
+  updateBgImage(); // post 로딩 직후 바로 배경 이미지 설정
+  window.addEventListener('resize', updateBgImage);
+  window.addEventListener('load', updateBgImage);
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', updateActiveSectionOnScroll)
   window.removeEventListener('scroll', handleScrollForFixing)
+  window.removeEventListener('resize', updateBgImage);
 })
 </script>
 
@@ -226,7 +261,7 @@ onUnmounted(() => {
   }
   .blog-visual {    
     height: calc(314 / 16 * 1rem);
-    background-image: url('/img/blog_header_viewpage_bg_full.jpg');
+    // background-image: url('/img/blog_header_viewpage_bg_full.jpg');
     background-position: center center;    
     @media only screen and (min-width: 1221px) and (max-width: 1600px) {
         padding: 0 calc(60 / 16 * 1rem);
