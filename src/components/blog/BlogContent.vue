@@ -263,7 +263,7 @@ onUnmounted(() => {
     height: calc(314 / 16 * 1rem);
     // background-image: url('/img/blog_header_viewpage_bg_full.jpg');
     background-position: center center;    
-    @media only screen and (min-width: 1221px) and (max-width: 1600px) {
+      @media only screen and (min-width: 1221px) and (max-width: 1600px) {
         padding: 0 calc(60 / 16 * 1rem);
       }
       @media only screen and (min-width: 768px) and (max-width: 1200px) {
@@ -271,6 +271,7 @@ onUnmounted(() => {
       }
       @media only screen and (min-width: 360px) and (max-width: 767px) {
         padding: 0 calc(20 / 16 * 1rem);
+        height: calc(240 / 16 * 1rem);
       }
     .blog-visual__inner {
       @include relative;
