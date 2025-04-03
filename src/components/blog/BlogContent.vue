@@ -154,6 +154,10 @@ watch(post, (newPost) => {
   }
 })
 
+const getResponsiveOffset = () => {
+  return window.innerWidth <= 1200 ? -250 : -150;
+}
+
 const headingSections = computed(() => {
   if (!post.value || !post.value.sections) return []
 
@@ -174,7 +178,8 @@ onMounted(async () => {
 const handleMoveSection = (index: number) => {
   const sectionEl = document.getElementById(`section${index}`)
   if (sectionEl) {
-    const yOffset = -150 // 필요 시 header 높이만큼 보정
+    // const yOffset = -150 // 필요 시 header 높이만큼 보정
+    const yOffset = getResponsiveOffset();
     const y = sectionEl.getBoundingClientRect().top + window.pageYOffset + yOffset
     window.scrollTo({ top: y, behavior: 'smooth' })
 
@@ -187,7 +192,8 @@ const handleMoveSection = (index: number) => {
 
 // 스크롤에 따라 현재 섹션 체크
 const updateActiveSectionOnScroll = () => {
-  const offset = 100 // header 높이만큼 보정
+  // const offset = 100 // header 높이만큼 보정
+  const offset = Math.abs(getResponsiveOffset());
   const positions = headingSections.value.map((_, index) => {
     const el = document.getElementById(`section${index}`)
     return el ? el.getBoundingClientRect().top : Infinity
@@ -213,15 +219,22 @@ const handleScrollForFixing = () => {
   // post-content__wrap 엘리먼트 기준으로 끝점 계산
   const contentEl = document.querySelector('.post-content__wrap') as HTMLElement;
   const contentBottom = contentEl?.offsetTop + contentEl?.offsetHeight || 0;
+  
 
   const scrollBottom = scrollTop + window.innerHeight;
-
-  // 기본 조건: threshold 이상일 때 고정
-  // 추가 조건: 콘텐츠 끝보다 더 내려가면 해제
-  if (scrollTop > threshold && scrollBottom < contentBottom) {
-    isFixed.value = true;
+  let mobileSize = window.innerWidth <= 1020;
+  if(!mobileSize) {
+    if (scrollTop > threshold && scrollBottom < contentBottom) {
+      isFixed.value = true;
+    } else { 
+      isFixed.value = false;  
+    }
   } else {
-    isFixed.value = false;
+    if (scrollTop > threshold) {
+      isFixed.value = true;
+    } else { 
+      isFixed.value = false;  
+    }
   }
 }
 
@@ -236,9 +249,9 @@ const getVisibleIndex = (index: number): number => {
 onMounted(() => {
   window.addEventListener('scroll', updateActiveSectionOnScroll)
   window.addEventListener('scroll', handleScrollForFixing)
-  updateBgImage(); // post 로딩 직후 바로 배경 이미지 설정
+  // updateBgImage(); // post 로딩 직후 바로 배경 이미지 설정
   window.addEventListener('resize', updateBgImage);
-  window.addEventListener('load', updateBgImage);
+  // window.addEventListener('load', updateBgImage);
 })
 
 onUnmounted(() => {
@@ -261,8 +274,22 @@ onUnmounted(() => {
   }
   .blog-visual {    
     height: calc(314 / 16 * 1rem);
-    // background-image: url('/img/blog_header_viewpage_bg_full.jpg');
-    background-position: center center;    
+    position: relative;
+    background-position: center center;   
+    background-size: auto 100%;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: calc(314 / 16 * 1rem);
+      background: #00072980;
+      @media only screen and (min-width: 360px) and (max-width: 767px) {        
+        height: calc(240 / 16 * 1rem);
+      }
+    }
       @media only screen and (min-width: 1221px) and (max-width: 1600px) {
         padding: 0 calc(60 / 16 * 1rem);
       }
@@ -279,6 +306,7 @@ onUnmounted(() => {
       height: 100%;
       max-width: calc(1200 / 16 * 1rem);
       margin: 0 auto;      
+      z-index: 10;
       @media only screen and (min-width: 360px) and (max-width: 767px) {
           align-items: center;
           justify-content: center;
@@ -546,13 +574,13 @@ onUnmounted(() => {
             margin: calc(20 / 16 * 1rem) 0;
             padding: 0;
             li {
+              list-style: none;
               @media only screen and (max-width: 768px) {
                 font-size: calc(18 / 16 * 1rem);
               }
               &+li {
                 margin-top: 5px;
               }
-              list-style: none;
             }
           }
           ul {
