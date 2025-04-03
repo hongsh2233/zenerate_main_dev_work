@@ -31,7 +31,7 @@
             <div class="dropdown">
               <router-link
                 v-if="primary.to != null"
-                :to="primary.to"
+                :to="{ name: primary.to }"
                 class="dropbtn"
               >
                 {{ primary.title }}
