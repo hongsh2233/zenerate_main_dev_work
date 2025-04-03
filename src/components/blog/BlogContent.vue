@@ -7,7 +7,7 @@
               <p class="post-date">Updated on {{ post.createdAt }}</p>
               <p class="bottom-wrap">
                   <button
-                    class="demo-button-gtm text-14-medium mx-auto h-[36px] w-[221px] rounded-5 bg-primary text-center leading-[36px] !text-white duration-300 hover:!text-core-200"
+                    class="demo-button-gtm text-14-medium mx-auto h-[36px] w-[221px] rounded-5 bg-primary btn-get-demo text-center leading-[36px] !text-white duration-300"
                     @click="openCalendlyPopup"
                   >
                     Book Demo + Get a Free Trial
@@ -72,7 +72,7 @@
                     <img v-else-if="block.type === 'image'" :src="block.url" :alt="block.alt || ''" />
                     <div v-else-if="block.type === 'button'">
                         <button
-                          class="demo-button-gtm text-14-medium mx-auto h-[36px] w-[221px] rounded-5 bg-primary text-center leading-[36px] !text-white duration-300 hover:!text-core-200 mt-[20px]"
+                          class="demo-button-gtm text-14-medium mx-auto h-[36px] w-[221px] rounded-5 bg-primary text-center btn-get-demo leading-[36px] !text-white duration-300 mt-[20px]"
                           @click="openCalendlyPopup"
                         >
                           {{ block.text }}
@@ -218,6 +218,12 @@ onUnmounted(() => {
   @include relative;
   font-family: Poppins;
   padding-top: 111px;
+  @media only screen and (max-width: 1023px) {
+    padding-top: 105px;
+  }
+  @media only screen and (max-width: 768px) {
+    padding-top: 93px;
+  }
   .blog-visual {    
     height: calc(314 / 16 * 1rem);
     background-image: url('/img/blog_header_viewpage_bg_full.jpg');
@@ -302,21 +308,27 @@ onUnmounted(() => {
       align-items: flex-start;
       @media only screen and (max-width: 1023px) {
         flex-direction: column;
-        padding-top: calc(34 / 16 * 1rem);
+        padding-top: calc(0 / 16 * 1rem);
       }
-      // @media only screen and (max-width: 768px) {
-      //   padding-top: calc(34 / 16 * 1rem);
-      // }
+      @media only screen and (max-width: 768px) {
+        
+      }
       .blog-category-wrap {
         width: 100%;
         min-width: calc(322 / 16 * 1rem);
         max-width: calc(322 / 16 * 1rem);
         z-index: 10;
         @media only screen and (max-width: 1023px) {
-          min-width: calc(100% - calc(32 / 16 * 1rem));
-          max-width: calc(100% - calc(32 / 16 * 1rem));
+          min-width: 100%;
+          max-width: 100%;
           margin: 0 auto;
           position: relative;
+          box-shadow: 0px 4px 8px 0px #00000014;
+          background: #fff;
+          height: calc(116 / 16 * 1rem);
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         .cate-select-mo {
           @include relative;
@@ -335,7 +347,8 @@ onUnmounted(() => {
           font-size: calc(18 / 16 * 1rem);
           line-height: 135%;
           letter-spacing: 0px;
-          vertical-align: middle;          
+          vertical-align: middle;     
+          color: #000729;    
           &::after {
             content: '';
             display: inline-flex;
@@ -362,6 +375,7 @@ onUnmounted(() => {
           transform: translateX(calc(-1 * ((1200 / 16 * 1rem) / 2) - calc(0 / 16 * 1rem)));
           @media only screen and (max-width: 1023px) {
             transform: translateX(-50%);
+            top: calc(105 / 16 * 1rem);
           }
         }
         ul {
@@ -373,7 +387,7 @@ onUnmounted(() => {
               width: calc(100% - 32px);
               position: absolute;
               left:16px;
-              top: calc(52 / 16 * 1rem);
+              top: calc(85 / 16 * 1rem);
               border: 1px solid #D2D4DA;
               border-radius: 8px;
               background: #fff;
@@ -422,7 +436,7 @@ onUnmounted(() => {
       .post-content__wrap {
         width: calc(100% - calc(322 / 16 * 1rem));
         @media only screen and (max-width: 1023px) {
-            width: calc(100% - 40px);
+            width: 100%;
             padding: 0 calc(20 / 16 * 1rem);
             margin: 0 auto;
         }
@@ -431,13 +445,13 @@ onUnmounted(() => {
           width: 100%;
           @media only screen and (max-width: 1023px) {
             width: calc(100% - calc(322 / 16 * 1rem));
-            // width: calc(100% - 40px);
+            width: 100%;
             padding: 0 calc(20 / 16 * 1rem);
             margin: 0 auto;
           }
           @media only screen and (max-width: 1023px) {
-            width: calc(100% - 40px);
-            padding: 0 calc(20 / 16 * 1rem);
+            // width: calc(100% - 40px);
+            // padding: 0 calc(20 / 16 * 1rem);
             margin: 0 auto;
           }
         }
@@ -460,7 +474,10 @@ onUnmounted(() => {
             letter-spacing: 0%;
             vertical-align: middle;
             margin-top: calc(80 / 16 * 1rem);
-          }
+              @media only screen and (max-width: 768px) {
+                font-size: calc(24 / 16 * 1rem);
+              }
+            }
           p {
             font-weight: 400;
             font-size: calc(18 / 16 * 1rem);
@@ -468,6 +485,9 @@ onUnmounted(() => {
             letter-spacing: 0px;
             vertical-align: middle;
             color: #484A4F;
+            @media only screen and (max-width: 768px) {
+                font-size: calc(18 / 16 * 1rem);
+              }
             &+h2 {
               margin-top: calc(20 / 16 * 1rem);
             }
@@ -482,11 +502,17 @@ onUnmounted(() => {
             line-height: 135%;
             letter-spacing: 0px;
             vertical-align: middle;
+            @media only screen and (max-width: 768px) {
+                font-size: calc(22 / 16 * 1rem);
+              }
           }
           ol {
             margin: calc(20 / 16 * 1rem) 0;
             padding: 0;
             li {
+              @media only screen and (max-width: 768px) {
+                font-size: calc(18 / 16 * 1rem);
+              }
               &+li {
                 margin-top: 5px;
               }
@@ -498,6 +524,9 @@ onUnmounted(() => {
             li {
               position: relative;
               padding-left: calc(10 / 16 * 1rem);
+              @media only screen and (max-width: 768px) {
+                font-size: calc(18 / 16 * 1rem);
+              }
               &::before {
                 content: '';
                 width: calc(3 / 16 * 1rem);
@@ -544,6 +573,14 @@ onUnmounted(() => {
         letter-spacing: 0px;
         vertical-align: middle;
       }
+    }
+  }
+}
+.bg-primary {
+  &.btn-get-demo {
+    background: #4D49F4;
+    &:hover {
+      background: #3E3CCB;
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <section class="section-contact w-full min-w-full pt-[111px]">
+  <section class="section-contact w-full min-w-full">
     <div class="blog-visual  w-full">
       <div class="blog-visual__inner mx-auto flex flex-col justify-center gap-[0.875rem] text-white">
           <p class="title-text">Zenerate Blog: Guide, <strong>Tips and Updates</strong></p>
@@ -218,6 +218,13 @@
 .section-contact {
   @include relative;
   font-family: Poppins;
+  padding-top: 111px;
+  @media only screen and (max-width: 1023px) {
+    padding-top: 105px;
+  }
+  @media only screen and (max-width: 768px) {
+    padding-top: 93px;
+  }
   .blog-visual {
     height: calc(218 / 16 * 1rem);
     background-position: center center;
@@ -229,7 +236,7 @@
         padding: 0 calc(60 / 16 * 1rem);
         background-image: url('/img/header_blog_bg_pc.png');
       }
-      @media only screen and (max-width: 1200px) {
+      @media only screen and (max-width: 1023px) {
         padding: 0 calc(40 / 16 * 1rem);
         background-image: url('/img/header_blog_bg_mo.png');
       }
@@ -499,7 +506,7 @@
         &:hover {
           background: #00000014;
           .blog-list-content {
-            background: #00000014;
+            background: #E7E9F1;
             transition: all 0.3s;
           }
         }
@@ -513,6 +520,8 @@
           height: calc(207 / 16 * 1rem);
           width: 100%;
           overflow: hidden;
+          box-shadow: 0px 0px 8px 0px #00000026;
+
           @media only screen and (max-width: 1200px) {
             // height: calc(220 / 16 * 1rem);
             aspect-ratio: 16 / 11;
@@ -541,6 +550,9 @@
           height: calc(207 / 16 * 1rem);
           background: #fff;
           padding: calc(24 / 16 * 1rem) calc(32 / 16 * 1rem) calc(32 / 16 * 1rem);
+          @media only screen and (max-width: 768px) {
+            height: auto;
+          }
           .cate {
             color: #00A3FF;
             font-family: Poppins;
@@ -549,6 +561,7 @@
             line-height: 135%;
             letter-spacing: 0px;
             vertical-align: middle;
+            margin-bottom: calc(12 / 16 * 1rem);
           }
           .title {
             font-weight: 600;
@@ -556,6 +569,7 @@
             line-height: 150%;
             letter-spacing: 0px;
             vertical-align: middle;
+            margin-bottom: calc(8 / 16 * 1rem);
             color: #000729;
             overflow: hidden;
             text-overflow: ellipsis;
