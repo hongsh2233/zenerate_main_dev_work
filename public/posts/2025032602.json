@@ -4,7 +4,7 @@
     "title": "Edit & Optimize Building Layouts for Efficiency",
     "tag": "Tutorial",
     "summary": "Explore a simple way to accelerate and optimize your building layouts in under 5 minutes",
-    "createdAt": "Jan 36, 2025",
+    "createdAt": "April 4, 2025",
     "author": "Zenerate",
     "coverImage": "/posts/images/blog_header-2025032602_pc.jpg",
     "coverImageMiniPc": "/posts/images/blog_header-2025032602_pc2.jpg",
@@ -38,8 +38,8 @@
                 {
                     "type": "list",
                     "text": [
-                        "Multi-Family Residential Buildings: Tower, Midrise and Wrap Type. These building types consist of structured residential units like studios, 1-bedroom, 2-bedroom, and 3 bedroom apartments.",
-                        "Low-Rise Residential Buildings: Townhouse or Standalone. These building types focus on unit sizes to edit their layouts. "
+                        "<strong>Multi-Family Residential Buildings:</strong> Tower, Midrise and Wrap Type. These building types consist of structured residential units like studios, 1-bedroom, 2-bedroom, and 3 bedroom apartments.",
+                        "<strong>Low-Rise Residential Buildings:</strong> Townhouse or Standalone. These building types focus on unit sizes to edit their layouts. "
                     ]
                 },
                 {
@@ -152,16 +152,12 @@
                     "type": "list",
                     "text": [
                         "<strong>Floor-to-Floor Height:</strong> Set the height for each floor by entering your desired value.",
-                        "<strong>Levels & Usage:</strong> For Standalone buildings, you'll be adding <strong>levels</strong> instead of units. You can specify:<br>- <strong>Number of Floors</strong> per level.<br> - <strong>*Usage** of each level</strong> (e.g., residential, commercial, or mixed-use).<br>- <strong>Usage Ratio</strong> to define how much of each level is designated for specific purposes."
+                        "<strong>Levels & Usage:</strong> For Standalone buildings, you'll be adding <strong>levels</strong> instead of units. You can specify:<br>- <strong>Number of Floors</strong> per level.<br> - <strong>Usage of each level</strong> (e.g., residential, commercial, or mixed-use).<br>- <strong>Usage Ratio</strong> to define how much of each level is designated for specific purposes."
                     ]
                 },
                 {
                     "type": "paragraph",
                     "text": "Standalone type will only show the areas used for each use type and does not provide individual units that could be changed like other types."
-                },
-                {
-                    "type": "button",
-                    "text": "Book Demo + Get a Free Trial"
                 }
             ]
         },
@@ -179,6 +175,10 @@
                 {
                     "type": "paragraph",
                     "text": "As you modify the length of your layout, Zenerate automatically recalculates and generates the most suitable number of units and layout configurations to fit the new dimensions, ensuring that your design remains optimized and efficient."
+                },
+                {
+                    "type": "image",
+                    "url": "/posts/images/2025032602c004.gif"
                 }
             ]
         },
@@ -192,6 +192,10 @@
                 {
                     "type": "paragraph",
                     "text": "Zenerate provides multiple features to easily modify your designs. Visit our blog page for more resources or Book a demo with us and get a free trial for a hands-on experience today!"
+                },
+                {
+                    "type": "button",
+                    "text": "Book Demo + Get a Free Trial"
                 }
             ]
         }

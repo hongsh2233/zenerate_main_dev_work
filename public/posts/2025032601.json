@@ -4,7 +4,7 @@
     "title": "Adding Non-Residential Rooms and Area",
     "tag": "Tutorial",
     "summary": "See how to quickly and easily add non-residential rooms and areas to your building design for better layout optimization.",
-    "createdAt": "Jan 36, 2025",
+    "createdAt": "April 4, 2025",
     "author": "Zenerate",
     "coverImage": "/posts/images/blog_header-2025032601_pc.jpg",
     "coverImageMiniPc": "/posts/images/blog_header-2025032601_pc2.jpg",
@@ -94,7 +94,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "With Zenerate, modifying layouts is quick and hassle-free, allowing you to create more efficient designs in just a few clicks. Explore more design tips on our blog or book a demo with us today and get a free trial!"
+                    "text": "With Zenerate, modifying layouts is quick and hassle-free, allowing you to create more efficient designs in just a few clicks. Explore more design tips on our <a href='https://calendly.com/zenerate/zenerate-app-demo?month=2025-03'  style='text-decoration: underline  !important;color: #5C6DFF !important;'>blog</a> or book a demo with us today and get a <a href='https://calendly.com/zenerate/zenerate-app-demo?month=2025-03'  style='text-decoration: underline  !important;color: #5C6DFF !important;'>free trial!</a>"
                 },
                 {
                     "type": "button",

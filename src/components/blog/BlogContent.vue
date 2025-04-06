@@ -1,6 +1,6 @@
 <template>
     <section class="w-full min-w-full section-contact">
-        <div class="w-full bg-repeat-x blog-visual"
+        <div class="w-full blog-visual"
           :style="{ backgroundImage: bgImage }"
         >
           <div class="flex flex-col items-start justify-center text-white blog-visual__inner" v-if="post">
@@ -109,7 +109,7 @@ defineProps({
 const openCalendlyPopup = () => {
   Emitter.emit(MENU_EVENT.TOGGLE_CALENDLY_POPUP, {
     flag: true,
-    trigger: 'blog',
+    trigger: 'blogView',
   })
 }
 
@@ -221,20 +221,25 @@ const handleScrollForFixing = () => {
   const contentBottom = contentEl?.offsetTop + contentEl?.offsetHeight || 0;
   
 
-  const scrollBottom = scrollTop + window.innerHeight;
-  let mobileSize = window.innerWidth <= 1020;
-  if(!mobileSize) {
-    if (scrollTop > threshold && scrollBottom < contentBottom) {
-      isFixed.value = true;
-    } else { 
-      isFixed.value = false;  
-    }
-  } else {
-    if (scrollTop > threshold) {
-      isFixed.value = true;
-    } else { 
-      isFixed.value = false;  
-    }
+  // const scrollBottom = scrollTop + window.innerHeight;
+  // let mobileSize = window.innerWidth <= 1020;
+  // if(!mobileSize) {
+  //   if (scrollTop > threshold && scrollBottom < contentBottom) {
+  //     isFixed.value = true;
+  //   } else { 
+  //     isFixed.value = false;  
+  //   }
+  // } else {
+  //   if (scrollTop > threshold) {
+  //     isFixed.value = true;
+  //   } else { 
+  //     isFixed.value = false;  
+  //   }
+  // }
+  if (scrollTop > threshold) {
+    isFixed.value = true;
+  } else { 
+    isFixed.value = false;  
   }
 }
 
@@ -276,7 +281,8 @@ onUnmounted(() => {
     height: calc(314 / 16 * 1rem);
     position: relative;
     background-position: center center;   
-    background-size: auto 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     &::after {
       content: '';
       display: block;
@@ -286,17 +292,17 @@ onUnmounted(() => {
       width: 100%;
       height: calc(314 / 16 * 1rem);
       background: #00072980;
-      @media only screen and (min-width: 360px) and (max-width: 767px) {        
-        height: calc(240 / 16 * 1rem);
-      }
     }
-      @media only screen and (min-width: 1221px) and (max-width: 1600px) {
+      @media only screen and (max-width: 1600px) {
         padding: 0 calc(60 / 16 * 1rem);
       }
-      @media only screen and (min-width: 768px) and (max-width: 1200px) {
+      @media only screen and (max-width: 1200px) {
+        padding: 0 calc(60 / 16 * 1rem);
+      }
+      @media only screen and (max-width: 1023px) {
         padding: 0 calc(40 / 16 * 1rem);
       }
-      @media only screen and (min-width: 360px) and (max-width: 767px) {
+      @media only screen and (max-width: 767px) {
         padding: 0 calc(20 / 16 * 1rem);
         height: calc(240 / 16 * 1rem);
       }
@@ -327,7 +333,7 @@ onUnmounted(() => {
         }
       }
       .title-text {
-        font-weight: 400;
+        font-weight: 500;
         line-height: 135%;
         letter-spacing: 0%;
         font-size: calc(32 / 16 * 1rem);   
@@ -338,7 +344,7 @@ onUnmounted(() => {
           display: block;
         } 
         @media only screen and (max-width: 767px) {
-          font-size: calc(22 / 16 * 1rem);    
+          font-size: calc(26 / 16 * 1rem);    
           margin-bottom: calc(0 / 16 * 1rem);  
           strong {
             display: block;
@@ -362,6 +368,7 @@ onUnmounted(() => {
     // background: #F4F6F9;
     padding: calc(0 / 16 * 1rem) 0 calc(100 / 16 * 1rem);
     overflow: visible;
+    min-height: calc(500 / 16 * 1rem);
     .blog-content__inner {
       max-width: calc(1200 / 16 * 1rem);
       width: 100%;
@@ -370,11 +377,15 @@ onUnmounted(() => {
       gap: calc(60 / 16 * 1rem);
       overflow: visible;
       align-items: flex-start;
+      @media only screen and (max-width: 1296px) {
+        max-width: 100%;
+        // gap: calc(40 / 16 * 1rem);
+      }
       @media only screen and (max-width: 1023px) {
         flex-direction: column;
         padding-top: calc(0 / 16 * 1rem);
       }
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 761.9px) {
         
       }
       .blog-category-wrap {
@@ -382,20 +393,28 @@ onUnmounted(() => {
         min-width: calc(322 / 16 * 1rem);
         max-width: calc(322 / 16 * 1rem);
         z-index: 10;
+        @media only screen and (max-width: 1296px) {
+          margin-left: 60px;
+        }
         @media only screen and (max-width: 1023px) {
           min-width: 100%;
           max-width: 100%;
           margin: 0 auto;
           position: relative;
-          box-shadow: 0px 4px 8px 0px #00000014;
           background: #fff;
           height: calc(116 / 16 * 1rem);
           display: flex;
           align-items: center;
           justify-content: center;
+          padding: 0 40px;
+          margin-left:0;
+        }
+        @media only screen and (max-width: 768px) {
+          padding: 0 20px;
         }
         .cate-select-mo {
           @include relative;
+          font-family: Poppins;
           width: 100%;
           border: 1px solid #CBCDD2;
           height: calc(48 / 16 * 1rem);
@@ -403,8 +422,7 @@ onUnmounted(() => {
           align-items: center;
           justify-content: space-between;
           padding-right: calc(16 / 16 * 1rem);
-          padding-left: calc(16 / 16 * 1rem);
-          width: calc(100% - calc(32 / 16 * 1rem));
+          padding-left: calc(16 / 16 * 1rem);          
           margin: 0 auto;
           border-radius: 8px;
           font-weight: 400;
@@ -423,6 +441,7 @@ onUnmounted(() => {
           }
           &.is-active {
             border: 1px solid #5C6DFF;   
+            color:#A6A9B0;
             &::after {
               transition: all 0.3s;
               transform: rotate(-180deg);
@@ -436,10 +455,20 @@ onUnmounted(() => {
           position: fixed;
           top: 120px;
           left: 50%;
-          transform: translateX(calc(-1 * ((1200 / 16 * 1rem) / 2) - calc(0 / 16 * 1rem)));
+          transform: translateX(-600px);
+          @media only screen and (max-width: 1296px) {
+            left: 60px;
+            transform: translateX(0);
+            margin-left:0;
+          }
           @media only screen and (max-width: 1023px) {
-            transform: translateX(-50%);
+            left: 0px;
             top: calc(105 / 16 * 1rem);
+            box-shadow: 0px 4px 8px 0px #00000014;
+            transition: all 0.3s;
+          }
+          @media only screen and (max-width:768px) {            
+            top: calc(93 / 16 * 1rem);
           }
         }
         ul {
@@ -448,9 +477,9 @@ onUnmounted(() => {
             display: none;
             &.is-active {
               display: block;
-              width: calc(100% - 32px);
+              width: 100%;
               position: absolute;
-              left:16px;
+              left:0;
               top: calc(85 / 16 * 1rem);
               border: 1px solid #D2D4DA;
               border-radius: 8px;
@@ -461,12 +490,18 @@ onUnmounted(() => {
           li {
             padding: 0 calc(2 / 16 * 1rem);
             border-bottom: 1px solid #E3E3E8;
+            font-size: calc(18 / 16 * 1rem);
+            color: #484A4F;
+            line-height: 155%;
+            strong {
+              font-weight: 600;
+            }
             &:hover {
                 background: #F2F2F5;
               }
-            @media only screen and (max-width: 768px) {
-              padding: 0 calc(2 / 16 * 1rem);
+            @media only screen and (max-width: 1023px) {
               border-bottom:0;
+              padding: 0 calc(2 / 16 * 1rem);              
               background: transparent;
               &:hover {
                 a {
@@ -489,7 +524,7 @@ onUnmounted(() => {
               font-size: calc(16 / 16 * 1rem);
               line-height: 135%;
               letter-spacing: 0px;
-              padding-left: calc(22 / 16 * 1rem);
+              padding-left: calc(16 / 16 * 1rem);
               @media only screen and (max-width: 1023px) {
                 height: calc(38 / 16 * 1rem);
               }
@@ -499,24 +534,32 @@ onUnmounted(() => {
       }
       .post-content__wrap {
         width: calc(100% - calc(322 / 16 * 1rem));
+        @media only screen and (max-width: 1296px) {
+          padding: 0px 60px 0 0;
+        }
         @media only screen and (max-width: 1023px) {
-            width: 100%;
-            padding: 0 calc(20 / 16 * 1rem);
+            width: 100%;            
             margin: 0 auto;
+            padding: 0px 40px;
+        }
+        @media only screen and (max-width: 768px) {
+          padding: 0px 20px;
         }
         &.is-fixed {
           padding-left: calc(382 / 16* 1rem);
+
           width: 100%;
-          @media only screen and (max-width: 1023px) {
-            width: calc(100% - calc(322 / 16 * 1rem));
-            width: 100%;
-            padding: 0 calc(20 / 16 * 1rem);
+          @media only screen and (max-width: 1296px) {
+            padding-left: 442px;
             margin: 0 auto;
           }
           @media only screen and (max-width: 1023px) {
-            // width: calc(100% - 40px);
-            // padding: 0 calc(20 / 16 * 1rem);
-            margin: 0 auto;
+            width: calc(100% - calc(322 / 16 * 1rem));
+            width: 100%;
+            padding: 0 calc(40 / 16 * 1rem);
+          }
+          @media only screen and (max-width: 768px) {
+            padding: 0px 20px;
           }
         }
         .post-section {
@@ -549,6 +592,12 @@ onUnmounted(() => {
             letter-spacing: 0px;
             vertical-align: middle;
             color: #484A4F;
+            a {
+              &:link {
+                text-decoration: underline  !important;
+                color: #5C6DFF !important;
+              }              
+            }
             @media only screen and (max-width: 768px) {
                 font-size: calc(18 / 16 * 1rem);
               }
@@ -575,11 +624,19 @@ onUnmounted(() => {
             padding: 0;
             li {
               list-style: none;
+              font-size: calc(18 / 16 * 1rem);
+              line-height: 155%;
               @media only screen and (max-width: 768px) {
                 font-size: calc(18 / 16 * 1rem);
               }
               &+li {
                 margin-top: 5px;
+              }
+              a {
+                &:link {
+                  text-decoration: underline  !important;
+                  color: #5C6DFF !important;
+                }              
               }
             }
           }
@@ -588,6 +645,14 @@ onUnmounted(() => {
             li {
               position: relative;
               padding-left: calc(10 / 16 * 1rem);
+              font-size: calc(18 / 16 * 1rem);
+              line-height: 155%;
+              a {
+                &:link {
+                  text-decoration: underline  !important;
+                  color: #5C6DFF !important;
+                }              
+              }
               @media only screen and (max-width: 768px) {
                 font-size: calc(18 / 16 * 1rem);
               }
@@ -606,6 +671,10 @@ onUnmounted(() => {
               }
             }
           }
+          a {
+            text-decoration: underline  !important;
+            color: #5C6DFF !important;
+          }              
         }
       }
     }
@@ -614,7 +683,6 @@ onUnmounted(() => {
       width: 100%;
       margin: calc(32 / 16 * 1rem) auto 0;
       gap: calc(24 / 16 * 1rem);
-
     }
     .button-bottom {
       margin-top: calc(32 / 16 * 1rem);
@@ -623,6 +691,7 @@ onUnmounted(() => {
       justify-content: center;
       width: 100%;
       button {
+        font-family: Poppins;
         width: calc(110 / 16 * 1rem);
         height: calc(50 / 16 * 1rem);
         border-radius: 30px;      
@@ -642,10 +711,15 @@ onUnmounted(() => {
 }
 .bg-primary {
   &.btn-get-demo {
+    font-family: Poppins;
     background: #4D49F4;
     &:hover {
       background: #3E3CCB;
     }
   }
+}
+.link {
+  // text-decoration: underline  !important;
+  color: #5C6DFF !important; 
 }
 </style>

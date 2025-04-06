@@ -4,7 +4,7 @@
     "title": "Optimize Your Feasibility Study Using AI",
     "tag": "Tutorial",
     "summary": "Learn more about Zenerate and how our generative design software can accelerate your feasibility studies.",
-    "createdAt": "Jan 36, 2025",
+    "createdAt": "April 4, 2025",
     "author": "Zenerate",
     "coverImage": "/posts/images/blog_header-2025032604_pc.jpg",
     "coverImageMiniPc": "/posts/images/blog_header-2025032604_pc2.jpg",
@@ -20,7 +20,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>The Zenerate App</strong> is a game-changer for architects, developers, contractors, and CRE Brokers looking to streamline the preliminary design and feasibility study process. With its intuitive interface and AI-powered features, Zenerate helps you generate and edit designs, model proforma, and estimate construction costs efficiently, saving you time and effort.<br>Want to see it in action? <a href='https://calendly.com/zenerate/zenerate-app-demo?month=2025-03'>[Book a demo]</a> today and enjoy a free trial!"
+                    "text": "<strong>The Zenerate App</strong> is a game-changer for architects, developers, contractors, and CRE Brokers looking to streamline the preliminary design and feasibility study process. With its intuitive interface and AI-powered features, Zenerate helps you generate and edit designs, model proforma, and estimate construction costs efficiently, saving you time and effort.<br>Want to see it in action? <a href='https://calendly.com/zenerate/zenerate-app-demo?month=2025-03'  style='text-decoration: underline  !important;color: #5C6DFF !important;'>Book a demo</a> today and enjoy a free trial!"
                 }
             ]
         },
@@ -73,7 +73,7 @@
                     "type": "list",
                     "text": [
                         "<strong>Street</strong> is where you should click the sides of the site that is facing the street.",
-                        "<strong>Setbacks</strong> can be inputted either on the panel or directly on the map. **Secondary Setbacks** can be configured for the residential buildings on top of a podium.",
+                        "<strong>Setbacks</strong> can be inputted either on the panel or directly on the map. Secondary Setbacks can be configured for the residential buildings on top of a podium.",
                         "<strong>Height limit</strong> can be inputted in case there is a maximum height that should be placed on the building. If you are unsure, you can tick the “unknown” box and leave it blank.",
                         "<strong>Parking Requirements</strong> can be adjusted depending on the jurisdiction’s requirements for your project, and you can choose whether they apply to residential, retail, office, flat minimum, or a combination of several uses."
                     ]
@@ -111,9 +111,9 @@
                 {
                     "type": "list",
                     "text": [
-                        "<strong>Building</strong> will give you five types of construction that you can choose from; Tower, Midrise, Wrap Type, Townhouse and Standalone**. Once selected, it will automatically generate a default building layout. Then, you can change the number of units, floors that you desire and have entered into the system.",
+                        "<strong>Building</strong> will give you five types of construction that you can choose from; Tower, Midrise, Wrap Type, Townhouse and Standalone. Once selected, it will automatically generate a default building layout. Then, you can change the number of units, floors that you desire and have entered into the system.",
                         "<strong>Parking will also give you five options to choose from; </strong>Garage - Speed Ramps, Garage - Sloping Floors, Driveway and Parking, Driveway, and Surface Parking Lot.",
-                        "<strong>Zone can be used if you would like to add areas for </strong>easement, open space, Outdoor Amenity, Wetland, or Green Space<br>We also provide a feature called </strong>Block** which allows you to section off or turn a that certain areas in your design into a parcel."
+                        "<strong>Zone can be used if you would like to add areas for </strong>Easement, Open Space, Outdoor Amenity, Wetland or Green Space<br>We also provide a feature called </strong>Block which allows you to section off or turn a that certain areas in your design into a parcel."
                     ]
                 },
                 {
@@ -131,7 +131,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "Once you have finalized the design that matches your taste, you can also set the financial settings to calculate NOI & Construction Cost, Yield on Cost & Profit Margin or Residual value."
+                    "text": "Once you have finalized the design that matches your taste, you can also set the financial settings to calculate NOI & Construction Cost, Yield on Cost & Profit Margin or Residual Value."
                 },
                 {
                     "type": "paragraph",
@@ -152,7 +152,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "For more information on Zenerate App, please contact product@zenerate.ai or"
+                    "text": "For more information on Zenerate App, please contact <a href='mailto: product@zenerate.ai' style='text-decoration: underline  !important;color: #5C6DFF !important;'>product@zenerate.ai</a>"
                 },
                 {
                     "type": "button",

@@ -4,7 +4,7 @@
     "title": "Setting Up Your Site",
     "tag": "Tutorial",
     "summary": "Discover the various ways to determine the boundaries of your design solutions",
-    "createdAt": "Jan 36, 2025",
+    "createdAt": "April 4, 2025",
     "author": "Zenerate",
     "coverImage": "/posts/images/blog_header-2025032605_pc.jpg",
     "coverImageMiniPc": "/posts/images/blog_header-2025032605_pc2.jpg",
@@ -119,7 +119,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "<strong>Model View</strong> would just give you a blank canvas space so that you would be able to focus on building your model. "
+                    "text": "<strong>Model View</strong> would show massing around your site so that you would be able to focus on building your model."
                 },
                 {
                     "type": "image",

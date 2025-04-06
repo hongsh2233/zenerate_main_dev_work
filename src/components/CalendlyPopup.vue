@@ -49,6 +49,7 @@ export type CalendlyTrigger =
   | 'aboutus'
   | 'bisnow'
   | 'blog'
+  | 'blogView'
 
 const props = defineProps({
   trigger: String as PropType<CalendlyTrigger>,

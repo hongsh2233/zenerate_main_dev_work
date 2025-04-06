@@ -13,7 +13,7 @@
               <div class="search-wrap flex flex-col justify-center">
                   <label>Search Blogs</label>
                   <div class="input-wrap flex items-center"
-                    :class="{ 'is-focused': isInputFocused }"
+                    :class="{ 'is-focused': isInputFocused, 'is-searching': isSearching }"
                   >
                       <i class="ico-search"></i>
                       <button type="button" class="btn-seaarch" @click="searchPost" >
@@ -21,6 +21,7 @@
                       </button>
                       <input type="text" v-model="searchText" placeholder="Enter Search"
                           @focus="handleFocus"
+                          @blur="handleBlur"
                           @keyup.enter="searchPost"
                           v-show="!searchResult"
                       >
@@ -51,6 +52,9 @@
                 :to="{ name: 'blog-content', params: { content_id: item.id } }"
               >
                   <div class="thum-img">
+                    <div class="title-area">
+                      {{ item.title }}
+                    </div>
                     <img :src="item.thumbnail" class="pc-img" :alt="item.title" /><img :src="item.thumbnailMo" class="mo-img" :alt="item.title" />
                   </div>
                   <div class="blog-list-content">
@@ -69,7 +73,7 @@
                   No posts found.
                 </div>
                 <div class="button-bottom">
-                  <button type="button" @click="resetPost">Go Back</button>
+                  <button type="button" @click="resetPost"><i class="ico-arrow-left"></i> Back</button>
                 </div>
               </template>
 
@@ -115,11 +119,15 @@
 
   const searchResult = ref(false);
   const isInputFocused = ref(false);
+  const isSearching = ref(false)
 
   const handleFocus = () => {
     isInputFocused.value = true;
   };
 
+  const handleBlur = () => {
+    isInputFocused.value = false;
+  }
 
   // 데모 요청 팝업
   const openCalendlyPopup = () => {
@@ -152,6 +160,7 @@
     filteredPosts.value = allPosts.value;
     currentPage.value = 1;
     hasMore.value = allPosts.value.length > pageSize.value;
+    isSearching.value = false
   }
 
   // 검색
@@ -174,6 +183,7 @@
     searchResult.value = true;
     // hasMore.value = posts.value.length < filteredPosts.value.length;
     hasMore.value = filteredPosts.value.length > pageSize.value;
+    isSearching.value = true
   }
 
   // 더보기
@@ -202,6 +212,7 @@
     currentPage.value = 1;
     // hasMore.value = posts.value.length < allPosts.value.length;
     hasMore.value = allPosts.value.length > pageSize.value;
+    isSearching.value = false
   };
 
   // 키워드
@@ -333,18 +344,21 @@
             margin-left: calc(16 / 16 * 1rem);
             color:#000729;
           }
+          &.is-searching,
           &.is-focused {
             border: 1px solid #4D49F4;
+            font-family: Poppins;
             i.ico-search {
-              display: none;
+              opacity: 0;
             }
             .btn-seaarch i.ico-search,
             .btn-seaarch {
-              display: block;
+              opacity: 1;
             }
             input {
               margin-left: calc(16 / 16 * 1rem);
               color:#000729;
+              font-family: Poppins;
               &::placeholder {
                 opacity: 1;              
               }
@@ -372,6 +386,7 @@
             height: calc(45 / 16 * 1rem);
             width: calc(100% - calc(30 / 16 * 1rem));
             font-size: calc(16 / 16 * 1rem);
+            font-family: Poppins;
             background: transparent;
             margin-left: calc(37 / 16 * 1rem);
             &::placeholder {
@@ -401,10 +416,11 @@
               }
           }
           .btn-seaarch {
-            display: none;
+            opacity: 0;
             width: calc(24 / 16 * 1rem);
             height: calc(24 / 16 * 1rem);
             position: absolute;
+            background: transparent;
             right: calc(16 / 16 * 1rem);
             top: 50%;
             transform: translateY(-50%);
@@ -434,6 +450,7 @@
         }
         .button-group {
           button {
+            font-family: Poppins;
             background-color: #32353D;
             height: calc(48 / 16 * 1rem);
             width: calc(272 / 16 * 1rem);
@@ -520,8 +537,37 @@
           height: calc(207 / 16 * 1rem);
           width: 100%;
           overflow: hidden;
-          box-shadow: 0px 0px 8px 0px #00000026;
-
+          box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+          position: relative;
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left:0;
+            top:0;
+            background: rgba(0, 7, 41, 0.4);
+          }
+          .title-area {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left:0;
+            top:0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            font-weight: 600;
+            line-height: 135%;
+            letter-spacing: 0%;
+            font-size: calc(28 / 16 * 1rem);    
+            color: #fff;
+            z-index: 11;
+            text-align: right;
+            word-break: keep-all;
+            padding: calc(20 / 16 * 1rem);
+          }
           @media only screen and (max-width: 1200px) {
             // height: calc(220 / 16 * 1rem);
             aspect-ratio: 16 / 11;
@@ -608,6 +654,20 @@
       align-items: center;
       justify-content: center;
       width: 100%;
+      .ico-arrow-left {
+        width: calc(24 / 16 * 1rem);
+        height: calc(24 / 16 * 1rem); 
+        display: inline-flex;
+        margin-right: 8px;
+        &::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: url('/img/ico_arrow_left.svg') no-repeat;
+          background-size: 100% auto;
+        }
+      }
       button {
         width: calc(110 / 16 * 1rem);
         height: calc(50 / 16 * 1rem);
