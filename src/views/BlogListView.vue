@@ -164,26 +164,79 @@
   }
 
   // 검색
-  const searchPost = () => {
+  const searchPost = async () => {
     const keyword = searchText.value.trim().toLowerCase();
     if (!keyword) {
       resetPost();
       return;
     }
 
-    const matched = allPosts.value.filter(post =>
-      post.title?.toLowerCase().includes(keyword) ||
-      post.category?.toLowerCase().includes(keyword) ||
-      post.sumary?.toLowerCase().includes(keyword)
-    );
+    try {
+        const res = await fetch('/posts/postList.json');
+        const postList: any[] = await res.json(); // postList.json 구조 기준
 
-    filteredPosts.value = matched;
-    posts.value = matched.slice(0, pageSize.value);
-    currentPage.value = 1;
-    searchResult.value = true;
-    // hasMore.value = posts.value.length < filteredPosts.value.length;
-    hasMore.value = filteredPosts.value.length > pageSize.value;
-    isSearching.value = true
+        let matched: any[] = [];
+
+        matched = postList.filter(post =>
+          post.title?.toLowerCase().includes(keyword) ||
+          post.category?.toLowerCase().includes(keyword) ||
+          post.sumary?.toLowerCase().includes(keyword)
+        );
+
+        if (matched.length === 0) {
+          const detailResults: any[] = [];
+
+          await Promise.all(
+            postList.map(async (post) => {
+              try {
+                const detailRes = await fetch(`/posts/${post.id}.json`);
+                const detail = await detailRes.json();
+
+                let foundText = '';
+
+                const foundInSections = detail.sections?.some((section: any) =>
+                  section.content?.some((block: any) => {
+                    if (typeof block.text === 'string') {
+                      if (block.text.toLowerCase().includes(keyword)) {
+                        if (!foundText) foundText = block.text;
+                        return true;
+                      }
+                    } else if (Array.isArray(block.text)) {
+                      const match = block.text.find((txt: string) =>
+                        txt.toLowerCase().includes(keyword)
+                      );
+                      if (match && !foundText) foundText = match;
+                      return !!match;
+                    }
+                    return false;
+                  })
+                );
+
+                if (foundInSections) {
+                  detailResults.push({
+                    ...post,
+                    sumary: foundText // 카드 하단에 표시될 요약 텍스트로 활용됨
+                  });
+                }
+              } catch (e) {
+                console.warn(`${post.id}.json 파일 로드 실패`, e);
+              }
+            })
+          );
+
+          matched = detailResults;
+        }
+
+        filteredPosts.value = matched;
+        posts.value = matched.slice(0, pageSize.value);
+        hasMore.value = filteredPosts.value.length > pageSize.value;
+
+        currentPage.value = 1;
+        searchResult.value = true;
+        isSearching.value = true;
+      } catch (err) {
+        console.error('검색 중 오류 발생:', err);
+      }
   }
 
   // 더보기
