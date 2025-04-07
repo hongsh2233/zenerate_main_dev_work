@@ -136,7 +136,7 @@
                 },
                 {
                     "type": "paragraph",
-                    "text": "To learn more about the Zenerate app, Also read our Zenerate App Overview or book your demo today and get yourself a FREE TRIAL!"
+                    "text": "To learn more about the <a href='https://www.zenerate.ai/zen-app'  style='text-decoration: underline  !important;color: #5C6DFF !important;'>Zenerate app</a>, Also read our  <a href='/blog/2025032604'  style='text-decoration: underline  !important;color: #5C6DFF !important;'>Zenerate App Overview</a> or book your demo today and get yourself a  <a href='https://www.zenerate.ai/app-waitlist'  style='text-decoration: underline  !important;color: #5C6DFF !important;'>FREE TRIAL!</a>"
                 },
                 {
                     "type": "button",

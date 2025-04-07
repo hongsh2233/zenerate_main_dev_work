@@ -313,7 +313,7 @@ onUnmounted(() => {
       max-width: calc(1200 / 16 * 1rem);
       margin: 0 auto;      
       z-index: 10;
-      @media only screen and (min-width: 360px) and (max-width: 767px) {
+      @media only screen and (max-width: 767px) {
           align-items: center;
           justify-content: center;
           word-break: keep-all;
@@ -327,7 +327,7 @@ onUnmounted(() => {
         letter-spacing: 0px;
         vertical-align: middle;
         margin-bottom: calc(10 / 16 * 1rem);
-        @media only screen and (min-width: 360px) and (max-width: 767px) {
+        @media only screen and (max-width: 767px) {
           font-size: calc(12 / 16 * 1rem);      
           margin-bottom: calc(4 / 16 * 1rem);
         }
@@ -357,7 +357,7 @@ onUnmounted(() => {
         line-height: 135%;
         letter-spacing: 0%;
         margin-bottom: calc(18 / 16 * 1rem);
-        @media only screen and (min-width: 360px) and (max-width: 767px) {
+        @media only screen and (max-width: 767px) {
           font-size: calc(12 / 16 * 1rem);      
           margin-bottom: calc(20 / 16 * 1rem);    
         }
@@ -477,14 +477,18 @@ onUnmounted(() => {
             display: none;
             &.is-active {
               display: block;
-              width: 100%;
+              width: calc(100%  - 80px);
               position: absolute;
-              left:0;
+              left:40px;
               top: calc(85 / 16 * 1rem);
               border: 1px solid #D2D4DA;
               border-radius: 8px;
               background: #fff;
               box-shadow: #00000014;
+              @media only screen and (max-width: 768px) {
+                width: calc(100%  - 40px);
+                left:20px;
+              }
             }
           }
           li {
@@ -521,10 +525,11 @@ onUnmounted(() => {
               display: flex;
               align-items: center;
               font-weight: 500;
-              font-size: calc(16 / 16 * 1rem);
+              font-size: calc(18 / 16 * 1rem);
               line-height: 135%;
               letter-spacing: 0px;
               padding-left: calc(16 / 16 * 1rem);
+              font-family: 'Pretendard', Arial;
               @media only screen and (max-width: 1023px) {
                 height: calc(38 / 16 * 1rem);
               }
@@ -626,6 +631,7 @@ onUnmounted(() => {
               list-style: none;
               font-size: calc(18 / 16 * 1rem);
               line-height: 155%;
+              color: #484A4F;
               @media only screen and (max-width: 768px) {
                 font-size: calc(18 / 16 * 1rem);
               }
@@ -647,6 +653,7 @@ onUnmounted(() => {
               padding-left: calc(10 / 16 * 1rem);
               font-size: calc(18 / 16 * 1rem);
               line-height: 155%;
+              color: #484A4F;
               a {
                 &:link {
                   text-decoration: underline  !important;
@@ -713,6 +720,10 @@ onUnmounted(() => {
   &.btn-get-demo {
     font-family: Poppins;
     background: #4D49F4;
+    @media only screen and (max-width: 768px) {
+      white-space: nowrap;
+      width: fit-content;
+    }
     &:hover {
       background: #3E3CCB;
     }

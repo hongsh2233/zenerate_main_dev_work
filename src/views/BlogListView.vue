@@ -164,6 +164,80 @@
   }
 
   // 검색
+  // const searchPost = async () => {
+  //   const keyword = searchText.value.trim().toLowerCase();
+  //   if (!keyword) {
+  //     resetPost();
+  //     return;
+  //   }
+
+  //   try {
+  //       const res = await fetch('/posts/postList.json');
+  //       const postList: any[] = await res.json(); // postList.json 구조 기준
+
+  //       let matched: any[] = [];
+
+  //       matched = postList.filter(post =>
+  //         post.title?.toLowerCase().includes(keyword) ||
+  //         post.category?.toLowerCase().includes(keyword) ||
+  //         post.sumary?.toLowerCase().includes(keyword)
+  //       );
+
+  //       if (matched.length === 0) {
+  //         const detailResults: any[] = [];
+
+  //         await Promise.all(
+  //           postList.map(async (post) => {
+  //             try {
+  //               const detailRes = await fetch(`/posts/${post.id}.json`);
+  //               const detail = await detailRes.json();
+
+  //               let foundText = '';
+
+  //               const foundInSections = detail.sections?.some((section: any) =>
+  //                 section.content?.some((block: any) => {
+  //                   if (typeof block.text === 'string') {
+  //                     if (block.text.toLowerCase().includes(keyword)) {
+  //                       if (!foundText) foundText = block.text;
+  //                       return true;
+  //                     }
+  //                   } else if (Array.isArray(block.text)) {
+  //                     const match = block.text.find((txt: string) =>
+  //                       txt.toLowerCase().includes(keyword)
+  //                     );
+  //                     if (match && !foundText) foundText = match;
+  //                     return !!match;
+  //                   }
+  //                   return false;
+  //                 })
+  //               );
+
+  //               if (foundInSections) {
+  //                 detailResults.push({
+  //                   ...post,
+  //                   sumary: foundText // 카드 하단에 표시될 요약 텍스트로 활용됨
+  //                 });
+  //               }
+  //             } catch (e) {
+  //               console.warn(`${post.id}.json 파일 로드 실패`, e);
+  //             }
+  //           })
+  //         );
+
+  //         matched = detailResults;
+  //       }
+
+  //       filteredPosts.value = matched;
+  //       posts.value = matched.slice(0, pageSize.value);
+  //       hasMore.value = filteredPosts.value.length > pageSize.value;
+
+  //       currentPage.value = 1;
+  //       searchResult.value = true;
+  //       isSearching.value = true;
+  //     } catch (err) {
+  //       console.error('검색 중 오류 발생:', err);
+  //     }
+  // }
   const searchPost = async () => {
     const keyword = searchText.value.trim().toLowerCase();
     if (!keyword) {
@@ -172,73 +246,72 @@
     }
 
     try {
-        const res = await fetch('/posts/postList.json');
-        const postList: any[] = await res.json(); // postList.json 구조 기준
+      const res = await fetch('/posts/postList.json');
+      const postList: any[] = await res.json();
 
-        let matched: any[] = [];
+      const matchedFromList = postList.filter(post =>
+        post.title?.toLowerCase().includes(keyword) ||
+        post.category?.toLowerCase().includes(keyword) ||
+        post.sumary?.toLowerCase().includes(keyword)
+      );
 
-        matched = postList.filter(post =>
-          post.title?.toLowerCase().includes(keyword) ||
-          post.category?.toLowerCase().includes(keyword) ||
-          post.sumary?.toLowerCase().includes(keyword)
-        );
+      const matchedIds = matchedFromList.map(post => post.id);
+      const candidatesForDetailSearch = postList.filter(post => !matchedIds.includes(post.id));
 
-        if (matched.length === 0) {
-          const detailResults: any[] = [];
+      const matchedFromDetail: any[] = [];
 
-          await Promise.all(
-            postList.map(async (post) => {
-              try {
-                const detailRes = await fetch(`/posts/${post.id}.json`);
-                const detail = await detailRes.json();
+      await Promise.all(
+        candidatesForDetailSearch.map(async (post) => {
+          try {
+            const detailRes = await fetch(`/posts/${post.id}.json`);
+            const detail = await detailRes.json();
 
-                let foundText = '';
+            let foundText = '';
 
-                const foundInSections = detail.sections?.some((section: any) =>
-                  section.content?.some((block: any) => {
-                    if (typeof block.text === 'string') {
-                      if (block.text.toLowerCase().includes(keyword)) {
-                        if (!foundText) foundText = block.text;
-                        return true;
-                      }
-                    } else if (Array.isArray(block.text)) {
-                      const match = block.text.find((txt: string) =>
-                        txt.toLowerCase().includes(keyword)
-                      );
-                      if (match && !foundText) foundText = match;
-                      return !!match;
-                    }
-                    return false;
-                  })
-                );
-
-                if (foundInSections) {
-                  detailResults.push({
-                    ...post,
-                    sumary: foundText // 카드 하단에 표시될 요약 텍스트로 활용됨
-                  });
+            const foundInSections = detail.sections?.some((section: any) =>
+              section.content?.some((block: any) => {
+                if (typeof block.text === 'string') {
+                  if (block.text.toLowerCase().includes(keyword)) {
+                    if (!foundText) foundText = block.text;
+                    return true;
+                  }
+                } else if (Array.isArray(block.text)) {
+                  const match = block.text.find((txt: string) =>
+                    txt.toLowerCase().includes(keyword)
+                  );
+                  if (match && !foundText) foundText = match;
+                  return !!match;
                 }
-              } catch (e) {
-                console.warn(`${post.id}.json 파일 로드 실패`, e);
-              }
-            })
-          );
+                return false;
+              })
+            );
 
-          matched = detailResults;
-        }
+            if (foundInSections) {
+              matchedFromDetail.push({
+                ...post,
+                sumary: foundText
+              });
+            }
+          } catch (e) {
+            console.warn(`${post.id}.json 상세 검색 실패`, e);
+          }
+        })
+      );
 
-        filteredPosts.value = matched;
-        posts.value = matched.slice(0, pageSize.value);
-        hasMore.value = filteredPosts.value.length > pageSize.value;
+      const finalMatched = [...matchedFromList, ...matchedFromDetail];
 
-        currentPage.value = 1;
-        searchResult.value = true;
-        isSearching.value = true;
-      } catch (err) {
-        console.error('검색 중 오류 발생:', err);
-      }
-  }
+      filteredPosts.value = finalMatched;
+      posts.value = finalMatched.slice(0, pageSize.value);
+      hasMore.value = finalMatched.length > pageSize.value;
 
+      currentPage.value = 1;
+      searchResult.value = true;
+      isSearching.value = true;
+
+    } catch (err) {
+      console.error('검색 중 오류 발생:', err);
+    }
+  };
   // 더보기
   const loadMore = () => {
     const nextPage = currentPage.value + 1;
@@ -450,6 +523,7 @@
           .btn-clear-keyword {
             width: calc(18 / 16 * 1rem);
             height: calc(18 / 16 * 1rem);
+            background: transparent;
               // position: absolute;
               // right: calc(20 / 16 * 1rem);
               // top: 50%;
